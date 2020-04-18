@@ -30,8 +30,21 @@
 \usepackage{mathtools}
 \usepackage{nccmath}
 \usepackage{url}
-\graphicspath{ {images/} }
+\graphicspath{{images/}}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    filecolor = blue,      
+    urlcolor = blue,
+    citecolor = blue,
+    pdftitle = {Sharelatex Example},
+    bookmarks = true,
+    pdfpagemode = FullScreen,
+}
+
+\urlstyle{same}
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -7310,7 +7323,7 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\bf *}
 ~\begin{enumerate}[label=(\alph*)]
     \item Let $A$ be an $n \times n$ real symmetric matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
     
