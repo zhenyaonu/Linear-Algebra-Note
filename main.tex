@@ -141,7 +141,7 @@ Some important structures are “very nearly”fields. For example, let $\mathbb
     \infty & {\rm otherwise}.
     \end{cases}
 \end{align*}
-This structure, called the \emph{optimization algebra}, satisfies all of the conditions of a field \emph{except} for the existence of additive inverse (such structures are known as \emph{semiﬁelds}\cite{2}).
+This structure, called the \emph{optimization algebra}, satisfies all of the conditions of a field \emph{except} for the existence of additive inverse (such structures are known as \emph{semifields}\cite{2}).
 \end{example}
 
 \medskip
@@ -251,6 +251,8 @@ $0x = x, (-1)\cdot x = -x$.
 A one-to-one corresponding between two linear spaces over the same field that maps sum into sum and scalar multiples into scalar multiples is called isomorphism.
 \end{definition}
 
+\medskip
+
 \begin{example}
 The linear space of real valued functions on $\{1,2,\cdots,n\}$ is isomorphic to $\mathbb{R}^n$.
 \end{example}
@@ -258,7 +260,7 @@ The linear space of real valued functions on $\{1,2,\cdots,n\}$ is isomorphic to
 \medskip
 
 \begin{example}
-The set $(ii)$ and $(v)$ in example (\ref{example_1}) are isomorphic.
+The set (ii) and (v) in example (\ref{example_1}) are isomorphic.
 \end{example}
 \begin{proof}
 Polynomials can be written as $a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, where we can represent this as $p(x) = (a_1,a_2,\cdots,a_n)x$. Then we can define a map $p(a_1,a_2,\cdots,a_n) = a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, which is an isomorphism.
@@ -267,7 +269,7 @@ Polynomials can be written as $a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, where we can 
 \medskip
 
 \begin{example}
-If $S$ in $(iv)$ has $n$ elements, then $(ii)$ and $(iv)$ in example (\ref{example_1}) are isomorphic.
+If $S$ in (iv) has $n$ elements, then (ii) and (iv) in example (\ref{example_1}) are isomorphic.
 \end{example}
 \begin{proof}
 Assume $S = \{x_1, x_2,\cdots, x_n\}$, then we can define $T(f) = (f(x_1), f(x_2), \cdots, f(x_n))\in K^S$, which is indeed an isomorphism.
@@ -276,7 +278,7 @@ Assume $S = \{x_1, x_2,\cdots, x_n\}$, then we can define $T(f) = (f(x_1), f(x_2
 \medskip
 
 \begin{example}
-If $K=\mathbb{R}$ in $(v)$, then $(v)$ and $(iv)$ in example (\ref{example_1}) are isomorphic when S
+If $K=\mathbb{R}$ in (v), then (v) and (iv) in example (\ref{example_1}) are isomorphic when S
 consists of $n$ distinct points of $\mathbb{R}$.
 \end{example}
 
@@ -337,7 +339,7 @@ If $(X,\cdot)$ is an associative and $K$-algebra having a multiplicaiton identit
 \end{align*}
 similarly, $\left(y^{-1}\cdot x^{-1}\right)\cdot(x\cdot y) = e$. 
 \begin{remark}
-Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which the inverses exist, since the proof relies only on associativity of addition and multiplication and distributivity of multiplication over addition\cite{2}.
+Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which the inverses exist, since the proof relies only on associativity of addition and multiplication and distributivity of multiplication over addition{\rm \cite{2}}.
 \end{remark}
 
 \medskip
@@ -407,7 +409,7 @@ and $(\mathbb{R}^3,\times)$ is a Lie algebra over $\mathbb{R}$. Moreover, the cr
 
 \medskip
 
-\begin{exercise}\label{ex_6}\cite{1}
+\begin{exercise}\label{ex_6}{\rm \cite{1}}
 Let $\mathbb{C},\mathbb{R}$, and $\mathbb{Q}$ be the fields of complex, real, and rational numbers, respectively. Determine whether each of the following is a vector space. Find the dimension and a basis for each that is a vector space.
 \begin{enumerate}[label=(\alph*)]
     \item $\mathbb{C}$ over $\mathbb{C}$. Yes, the dimension is $1$, with a basis $\{1\}$.
@@ -1538,7 +1540,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
         \Rightarrow \dim R_{AB} - \dim R_A - \dim R_B + n = \dim N_A + \dim N_B - \dim N_{AB} \geq \dim N_A \geq 0
     \end{align*}
     since $\dim N_B - \dim N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $BV = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
-    \item Consider $A_{m\times n}$ and $B_{n\times k}$ and $B$ is of rank $r$. Using full-rank factorization of $B$, we have $B = U_{n\times r}V_{r\times k}$, where both $U$ and $V$ are of rank $r$\cite{7}\cite{5}. With Sylvester’s rank inequality, we have
+    \item Consider $A_{m\times n}$ and $B_{n\times k}$ and $B$ is of rank $r$. Using full-rank factorization of $B$, we have $B = U_{n\times r}V_{r\times k}$, where both $U$ and $V$ are of rank $r$\cite{7,5}. With Sylvester’s rank inequality, we have
     \begin{align*}
         {\rm rank}\, (ABC) & \geq {\rm rank}\, (AU) + {\rm rank}\, (VC) - r\\
         & = {\rm rank}\, (AB) + {\rm rank}\, (BC) - {\rm rank}\, (B)
@@ -1833,7 +1835,7 @@ we denote $p^{-1}$ by $\Tilde{p}$, then we have
 Let $A,B$ be two $n\times n$ matrices, then $\det (BA) = \det A\cdot \det B$.
 \end{theorem}
 \begin{proof}
-Assume $A = D(a_1,\cdots,a_n)$, then $BA = (Ba_1,\cdots,Ba_n)$, which implies $\det BA = D(Ba_1,\cdots,Ba_n)$. 
+Assume $A = D(a_1,\cdots,a_n)$, then $BA = (Ba_1,\cdots,Ba_n)$, which implies $$\det BA = D(Ba_1,\cdots,Ba_n).$$
 \begin{enumerate}[label=(\arabic*)]
     \item Define for $\det B\neq 0$, that $C(a_1,\cdots,a_n) = \frac{\det BA}{\det B}$. It suffices to show that $C$ satisfies:
     \begin{enumerate}[label=(\roman*)]
@@ -2437,7 +2439,7 @@ A nonzero vector $u$ is said to be a generalized eigenvector of $A$ correspondin
 $$\left(A - \lambda I\right)^m u = 0,$$
 but
 $$\left(A - \lambda I\right)^{m-1} u \neq 0,$$
-for some $m\in\mathbb{N}$ \cite{15}.
+for some $m\in\mathbb{N}$ {\rm \cite{15}}.
 \end{definition}
 
 \medskip
@@ -3102,7 +3104,7 @@ The inverse of this lemma is also true.
 
 \medskip
 
-\begin{theorem}\cite{18}\label{commute_eigenspace}
+\begin{theorem}{\rm \cite{18}}\label{commute_eigenspace}
 Suppose $A, B$ are $n\times n$ matrices, such that $AB = BA$, then there is a basis of $\mathbb{C}^n$ which consists of eigenvectors and generalized eigenvectors of both $A$ and $B$.
 \end{theorem}
 \begin{proof}
@@ -5533,7 +5535,7 @@ Let $y = \sqrt{H}x$, then $(x, Hx) = (y, y)$. Then,
 
 \section{Eigenvalues}
 \begin{lemma}
-Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself. We denote by $p_+(A)$ the number of positive eigenvalues of $A$
+Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself. We denote by $p_+(A)$ the number of positive eigenvalues of $A$ and denote by $p_-(A)$ the number of its negative eigenvalues. Then, $p_+(A) = $ maximum dimension of subspace $S$ of $U$ such that $(Au, u)$ is positive on $S$. $p_-(A) = $ maximum dimension of subspace $S$ of $U$ such that $(Au, u)$ is negative on $S$.
 \end{lemma}
 
 
@@ -5667,7 +5669,6 @@ Then we consider the case when ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n-2
 
 Now we can continue this induction and consider ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = m, m < n$, and we can find $v \notin U_k$ for every $k$. Then we can define $\title{\Tilde{U}_i} = \text{span}(u_i,v)$ for $1 \leq i \leq k$, and we can immediately know that ${\rm dim}\, \Tilde{U}_i = m + 1$. Then we can get a complement of $\Tilde{U}_i$, denoted by $U_i^c$ and we have ${\rm dim}\, U_i^c = n - m - 1$. In particular, $v \notin U_i^c$, so we can take $\text{span} (U_i^c, v)$, which is dimension $n - m$ and a complement of $U_1, U_2, \cdots, U_k$.
 \end{proof}
-Exercises (\ref{ex_1}) to (\ref{ex_5}) are Homework 1 for MATH2370. Next we present some exercises from other materials.
 
 \medskip
 
@@ -5803,7 +5804,7 @@ Let $X$ be a finite dimensional linear space. Show that two nonzero linear funct
 \medskip
 
 \begin{exercise}{\bf *}
-Let $Y$ be a finite dimensional subspace of (not necessarily finite dimensional) linear space $X$. Show that $Y'$ is isomorphism to $X'/Y^\bot$\cite{12}.
+Let $Y$ be a finite dimensional subspace of (not necessarily finite dimensional) linear space $X$. Show that $Y'$ is isomorphism to $X'/Y^\bot${\rm \cite{12}}.
 \end{exercise}
 \begin{proof}
 Define linear map $T: X' \to Y'$ such that for any $l \in X'$, $Tl = l|_Y$. $T$ is onto. Indeed, for any $\tilde{l} \in Y'$, we could extend $\tilde{l}$ to $X'$ by define $\tilde{l} = 0$ on $X'\setminus Y'$.
@@ -6455,7 +6456,7 @@ then we have
 which implies ${\rm tr} (ABC) = -2 \neq 1 = {\rm tr} (ACB)$.
 \end{proof}
 \begin{remark}
-It is true that ${\rm tr} (ABC) = {\rm tr} (BCA) = {\rm tr} (CAB)$. But in general ${\rm tr} (ABC) = {\rm tr} (ACB)$ does not hold\cite{16}.
+It is true that ${\rm tr} (ABC) = {\rm tr} (BCA) = {\rm tr} (CAB)$. But in general ${\rm tr} (ABC) = {\rm tr} (ACB)$ does not hold{\rm \cite{16}}.
 \end{remark}
 
 \medskip
@@ -6530,7 +6531,7 @@ Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and
     \begin{align*}
         A x_1 = \lambda_1 x_1, \,\, A x_2 = \lambda_2 x_2.
     \end{align*}
-    Then, $AB = BA, AC = CA$ implies that $x_1, x_2$ are also eigenvectors for $B$ and $C$ by (\ref{commute_eigenspace}). Then, $A, B, C$ can be simultaniously diagonalized by remark (\ref{diagonalized_same_time}). In particular, $BC = CD$., which is a contradiction.
+    Then, $AB = BA, AC = CA$ implies that $x_1, x_2$ are also eigenvectors for $B$ and $C$ by (\ref{commute_eigenspace}). Then, $A, B, C$ can be simultaniously diagonalized. In particular, $BC = CD$., which is a contradiction.
     
     \item Thus, $A$ has repeated eigenvalue $\lambda$, and we could assume $\lambda = 0$ by considering $\widetilde{A} = A - \lambda I$. If $A \neq 0$, then we could assume 
     \begin{align*}
@@ -6700,7 +6701,7 @@ $\operatorname*{rank}A=1$.
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}\label{generalized_eigenvectors}
 Let $A_{k}$, $1\leq k\leq K$ be $n\times n$ matrices satisfying%
 $$
 A_{i}A_{j}=A_{j}A_{i}\text{ for any }1\leq i,j\leq k.
@@ -6721,7 +6722,7 @@ which means $A_i x\in N_j$. Thus, $A_i$ is a mapping from $N_j$ to $N_j$. Now we
 eigenvectors and generalized eigenvectors of $A_{j}$ for each $1\leq j\leq K$. The proof is complete.
 \end{proof}
 
-\noindent \textbf{Method II of proof}
+\noindent \textbf{Method II for Exercise \ref{generalized_eigenvectors}.}
 \begin{proof}
 We will prove it by induction on $\dim V$ and $1\leq k\leq K$. And assume we have pairwise commuting operators $A_1, A_2,\cdots, A_K$ on $V$. 
 
@@ -7039,14 +7040,14 @@ Since $A$ is real symmetric, then $A$ is diagonalizable\footnote{Every normal ma
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}\label{exer_trace}
 Suppose $A$ is a $2 \times 2$ real matrix with trace ${\rm tr}\left(A \right) = 7$ and determinant $\det (A) = 11$. Find ${\rm tr}\left(A^2 \right)$.
 \end{exercise}
 \begin{proof}
 Assume $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, and then $a + d = 7, ad - bc = 11$. Also, $A^2 = \begin{pmatrix} a^2+bc &ad+bd \\ ac+bd & bc+d^2 \end{pmatrix}$. Thus, ${\rm tr}\left(A^2 \right) = a^2 + d^2 + 2bc = (a+d)^2 - 2(ad-bc) = 27$.
 \end{proof}
 
-\noindent{\bf Method II.}
+\noindent{\bf Method II for Exercies \ref{exer_trace}.}
 \begin{proof}
 \begin{align*}
     {\rm tr}\left(A^2 \right) & = \lambda_1^2 + \lambda_2^2 \\
@@ -7323,9 +7324,9 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise}{\bf *}\label{commute_with_all_matrix}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Let $A$ be an $n \times n$ real symmetric matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
+    \item Let $A$ be an $n \times n$ complex symmetric matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
     
     \item Let $A$ be an $n \times n$ orthogonal matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
     
@@ -7335,12 +7336,19 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 \begin{proof}
 For any $A, B$, such that $AB = BA$, $A: N_{B - \lambda I} \to N_{B - \lambda I}$, where $\lambda$ is eigenvalue of $B$. If $N_{B - \lambda I} \neq \{0\}$, then there exists an eigenvector of $A$ in $N_{B - \lambda I}$. If $\dim N_{B - \lambda I} = 1$, then for any nonzero $v \in N_{B - \lambda I}$ is an eigenvector of $A$.
 
-Claim: any nonzero vector is an eigenvector for $A$. For any real $v \neq 0$, need to find $Q$, so that $Qv = v$, $N_{Q-I} = {\rm span}\{v\}$.
+Claim: any nonzero vector is an eigenvector for $A$. For any real $v \neq 0$, need to find $Q$, so that $Qv = \mu v$, and $N_{Q-\mu I} = {\rm span}\{v\}$, where $\mu$ is eigenvalue of $Q$. Then, $v$ is an eigenvector of $A$. 
 
-This argument works for $(b)$ and $(c)$, and for part $(a)$, we can split complex matrix $A$ into two parts $\Im A$ and $\Re A$ and this argument works.
+Claim: $A = kI$, if any vector $y \neq 0$ is an eigenvector. Suppose $\lambda_1 \neq \lambda_2$ such that
+\begin{align*}
+    Av_1 = \lambda_1 v_1, \quad Av_2 = \lambda_2 v_2,
+\end{align*}
+then $v_1 + v_2$ is not an eigenvector. Otherwise, $v_1$ and $v_2$ are linearly dependent, which is a contraction. Thus, $A = kI$.
 \end{proof}
+\begin{remark}
+This argument works for $(b)$ and $(c)$, and for part $(a)$, we can split complex matrix $A$ into two parts $\Im A$ and $\Re A$ and this argument works.
+\end{remark}
 
-\noindent{\bf Method II.}\cite{23}
+\noindent{\bf Method II for Exercise \ref{commute_with_all_matrix}.}\cite{23}
 \begin{proof}
 For a basis-free proof, consider $S \in \mathscr{L}(V, V)$ given by $Sx = f(x)v$ for some vector $v$ and some linear functional $f$ on $V$. Then $TS(x) = f(x) Tv = ST x = f(Tx) v$ for any $x$. In particular, as long as a nontrivial linear functional $f$ on $V$ exists, there is $x$ such that $f(x) \neq 0$ and then $Tv = \alpha v$ for all $v$, where $\alpha = f(Tx)/f(x)$. Thus, $T$ can only be scalar matrix.
 \end{proof}
