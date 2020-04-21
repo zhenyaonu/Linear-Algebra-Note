@@ -3,7 +3,6 @@
 %\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-
 \usepackage{latexsym,amsmath,amssymb}
 \usepackage{amsthm}
 %\usepackage[notref,notcite]{showkeys}
@@ -21,7 +20,6 @@
 \usepackage{physics}
 \usepackage{afterpage}
 \usepackage{enumitem}
-\usepackage[utf8]{inputenc}
 \usepackage{mathrsfs}
 \usepackage{scalerel}
 \usepackage{stackengine,wasysym}
@@ -30,6 +28,8 @@
 \usepackage{mathtools}
 \usepackage{nccmath}
 \usepackage{url}
+\usepackage{float}
+\usepackage{lipsum}
 \graphicspath{{images/}}
 
 \usepackage{hyperref}
@@ -71,7 +71,8 @@
 \newtheorem{remark}{Remark}[section]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[section]
-\numberwithin{equation}{subsection}
+\numberwithin{equation}{chapter}
+
 
 \def\dsp{\def\baselinestretch{1.35}\large
 \normalsize}
@@ -260,7 +261,7 @@ The linear space of real valued functions on $\{1,2,\cdots,n\}$ is isomorphic to
 \medskip
 
 \begin{example}
-The set (ii) and (v) in example (\ref{example_1}) are isomorphic.
+The set (ii) and (v) in Example \ref{example_1} are isomorphic.
 \end{example}
 \begin{proof}
 Polynomials can be written as $a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, where we can represent this as $p(x) = (a_1,a_2,\cdots,a_n)x$. Then we can define a map $p(a_1,a_2,\cdots,a_n) = a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, which is an isomorphism.
@@ -269,7 +270,7 @@ Polynomials can be written as $a_1+a_2x+a_3x^2+\cdots+a_nx^{n-1}$, where we can 
 \medskip
 
 \begin{example}
-If $S$ in (iv) has $n$ elements, then (ii) and (iv) in example (\ref{example_1}) are isomorphic.
+If $S$ in (iv) has $n$ elements, then (ii) and (iv) in Example \ref{example_1} are isomorphic.
 \end{example}
 \begin{proof}
 Assume $S = \{x_1, x_2,\cdots, x_n\}$, then we can define $T(f) = (f(x_1), f(x_2), \cdots, f(x_n))\in K^S$, which is indeed an isomorphism.
@@ -278,7 +279,7 @@ Assume $S = \{x_1, x_2,\cdots, x_n\}$, then we can define $T(f) = (f(x_1), f(x_2
 \medskip
 
 \begin{example}
-If $K=\mathbb{R}$ in (v), then (v) and (iv) in example (\ref{example_1}) are isomorphic when S
+If $K=\mathbb{R}$ in (v), then (v) and (iv) in Example \ref{example_1} are isomorphic when S
 consists of $n$ distinct points of $\mathbb{R}$.
 \end{example}
 
@@ -704,7 +705,9 @@ The Cartesian sum $X_1\oplus X_2$ of two linear spaces $X_1, X_2$ over the same 
 $${\rm dim}X_1\oplus X_2 = {\rm dim}X_1 + {\rm dim}X_2$$
 \end{theorem}
 \begin{proof}
-Let $x_1, \cdots, x_n$ be a basis of $X_1$ and $y_1, \cdots, y_m$ be a basis of $X_2$. We claim that $(x_1,0),\cdots, (x_n,0), (0,y_1), \cdots, (0,y_n)$ form a basis for $X_1\oplus X_2$ by verifying this is indeed a basis.
+Let $x_1, \cdots, x_n$ be a basis of $X_1$ and $y_1, \cdots, y_m$ be a basis of $X_2$. We claim that 
+$$(x_1,0),\cdots, (x_n,0), (0,y_1), \cdots, (0,y_n)$$ 
+form a basis for $X_1\oplus X_2$ by verifying this is indeed a basis.
 
 Also, we can prove it in another way by defining
 \begin{align*}
@@ -806,7 +809,7 @@ Suppose ${\rm dim}X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\
 
 \medskip
 
-We defined $l(x) = \sum^n_{k=1} a_k c_k$ in theorem (\ref{theorem_dual}), the right-hand side depends symmetrically on $l$ and $x$, then we can write left-hand side also symmetrically, we introduce the \emph{scalar product} notation
+We defined $l(x) = \sum^n_{k=1} a_k c_k$ in Theorem \ref{theorem_dual}, the right-hand side depends symmetrically on $l$ and $x$, then we can write left-hand side also symmetrically, we introduce the \emph{scalar product} notation
 \begin{align*}
     (l,x) \equiv l(x)
 \end{align*}
@@ -890,7 +893,7 @@ Denote by $Y$ the smallest subspace containing $S$, then $S^\bot = Y^\bot$.
     \item Since $S\subset Y$, then $Y^\bot\subset S^\bot$. Indeed, if $l\in Y^\bot$, then $l(y) = 0$ for all $y\in Y$. Since $S\subset Y$, then for $\forall s\in S$, we have $l(s) = 0$. Thus, $Y^\bot\subset S^\bot$. 
     \item Now we prove $S^\bot\subset Y^\bot$. Suppose $x_1,\cdots,x_j$ be the basis of $S$, then ${\rm span}\{x_1,\cdots,x_j\} = Y$. Then for any $y\in Y$, it can be written as $y = \sum^j_{k=1}c_k x_k$. For $l\in S^\bot$, we have $l(x_k) = 0, 1\leq k \leq j$, then $l(y) = \sum^j_{k=1}c_k l(x_k) = 0$. Thus, $l\in Y^\bot$, which implies $S^\bot\subset Y^\bot$. 
 \end{enumerate}
-In another words, $S^\bot = ({\rm span}S)^\bot$.
+In another words, $S^\bot = ({\rm span} S)^\bot$.
 \end{proof}
 
 \medskip
@@ -966,6 +969,8 @@ The range of $T$ is the image of $X$ under $T$, denoted by $R_T$. The null-space
 If $T:X\to U$, then $R_T\subset U, N_T\subset U$ are subspaces of $U$.
 \end{remark}
 
+\medskip
+
 \begin{definition}
 ${\rm dim}\,R_T$ is called the rank of the mapping $T$ and ${\rm dim}\,N_T$ is called the nullity of the mapping $T$.
 \end{definition}
@@ -979,7 +984,7 @@ Let $T:X\to U$ be a linear map. Then $${\rm dim}\,R_T + {\rm dim}\,N_T = {\rm di
 \begin{proof}
 We can define $\Tilde{T}:X/N_T\to R_T$ as $\Tilde{T}(\{x\}) = Tx \in R_T$, for $\forall x\in X$. We claim that $\Tilde{T}$ is an isomorphism. Indeed, if $\{x\} = \{y\}$, then $x-y\in N_T$, then we have $T(x-y) = 0$, which implies $Tx = Ty$. Thus, $\Tilde{T}(\{x\}) = \Tilde{T}(\{y\})$. Also, $\Tilde{T}$ is linear, since $\Tilde{T}(a\{x\} + b\{y\}) = a\Tilde{T}(\{x\}) + b\Tilde{T}(\{y\})$. 
 
-Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With theorem (\ref{theorem_quotient_dim}), we have ${\rm dim}\,X - {\rm dim}\,N_T = {\rm dim}\, R_T$.
+Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With Theorem \ref{theorem_quotient_dim}, we have ${\rm dim}\,X - {\rm dim}\,N_T = {\rm dim}\, R_T$.
 \end{proof}
 
 \medskip
@@ -1301,7 +1306,7 @@ Similarity is an equivalence relation, i.e., it is:
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\roman*)]
-    \item It is true if we choose $S=I$ in definition (\ref{similarity}).
+    \item It is true if we choose $S=I$ in Definition \ref{similarity}.
     \item We have $K = SMS^{-1}$, then we have $S^{-1}KS = S^{-1} S M S^{-1} S = M$. Then $K$ is similar to $M$.
     \item We have $K = SMS^{-1}$ and $L=TKT^{-1}$, then we have $$L = TSMS^{-1}T^{-1} = (TS)M(TS)^{-1}$$ which is similar to $M$.
 \end{enumerate}
@@ -1865,7 +1870,7 @@ Let $A$ be an $n\times n$ matrix, then $A$ is invertible if and only if $\det A\
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) If $A$ is invertible, then there exists $A^{-1}$ such that $A^{-1}A = I$. Then we have $\det A = 1/\det A^{-1} \neq 0$.
-    \item If $\det A\neq 0$, then $A$ is both full  row rank and full column rank. Then, $A$ is bijective from $\mathbb{R}^n$ to $\mathbb{R}^n$. Thus, $A$ is invertible.
+    \item ($\Leftarrow$) If $\det A\neq 0$, then $A$ is both full  row rank and full column rank. Then, $A$ is bijective from $\mathbb{R}^n$ to $\mathbb{R}^n$. Thus, $A$ is invertible.
 \end{enumerate}
 \end{proof}
 
@@ -1876,7 +1881,7 @@ Now we discuss another property of determinant, starting with a lemma.
 
 \medskip
 
-\begin{lemma}
+\begin{lemma}\label{lemma_determinant}
 Let $A$ be an $n\times n$ matrix, whose first column is $e_1$:
 \begin{align*}
     A = \left(
@@ -1939,7 +1944,7 @@ then it suffices to verify $C$ satisfies all three properties:
 \end{proof}
 
 Now we present another approach to prove this lemma.
-\begin{proof}
+\begin{proof}[Second Proof of Lemma \ref{lemma_determinant}]
 \begin{align*}
     \det \left(
     \begin{matrix}
@@ -2648,7 +2653,7 @@ where $\lambda$ is the eigenvalue of $A$.
 
 \medskip
 
-\subsection{Another Proof}
+\subsection{Another Proof of Jordan Canonical Form}
 Now we present more details about Jordan canonical form from other materials\cite{8}. We start from the beginning and consider nilpotent operator.
 \begin{example}
 Let $N\in\mathcal{L}(\mathbb{R}^4,\mathbb{R}^4)$ be the nilpotent operator defined by
@@ -3116,7 +3121,7 @@ where $N_j = N_{(A - \lambda_j I)^{d(\lambda_j)}}$. For any $x\in\mathbb{C}^n$, 
 \begin{align*}
     (A - \lambda_j I)^{d(\lambda_j)} B x = B (A - \lambda_j I)^{d(\lambda_j)} x.
 \end{align*}
-If $x\in N_j$, then $ (A - \lambda_j I)^{d(\lambda_j)} x = 0$, which implies $Bx\in N_j$. Then, $B$ is a map from $N_j$ into $N_j$. Applying Spectral theorem (\ref{spectral_theorem}) to $B|_{N_j}$, then we obtain a spectral decomposition of each $N_j$, i.e., $N_j$ has a basis consisting of eigenvectors and generalized eigenvectors of $B$. Thus, we obtain a basis of $\mathbb{C}^n$. 
+If $x\in N_j$, then $ (A - \lambda_j I)^{d(\lambda_j)} x = 0$, which implies $Bx\in N_j$. Then, $B$ is a map from $N_j$ into $N_j$. Applying Spectral Theorem \ref{spectral_theorem} to $B|_{N_j}$, then we obtain a spectral decomposition of each $N_j$, i.e., $N_j$ has a basis consisting of eigenvectors and generalized eigenvectors of $B$. Thus, we obtain a basis of $\mathbb{C}^n$. 
 \end{proof}
 
 \begin{remark}\label{diagonalized_same_time}
@@ -3337,6 +3342,35 @@ For any $x\in X$, we can write $x = x_1 + x_2$, where $x_1\in P_Y x, x_2\in Y^\p
 \end{align*}
 and the equation obtain equal sign only when $z = x_1 = P_Y x$.
 \end{proof}
+
+\begin{example}[Orthogonal projection onto a line]
+Let $L = {\rm span}\{u\}$ be a line in $\mathbb{R}^n$ and let $x$ be a vector in $\mathbb{R}^n$, then the orthogonal projection $x_L$ of $x$ is $$x_L = \frac{u \cdot x}{u \cdot u}u$$
+and $x_{L^\bot} = x - x_L$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{Orthogonal_projection_1}
+    \caption{Orthogonal projection onto a line.}
+    \label{fig:plot_1}
+\end{figure}
+The vector $x_L$ is a multiple of $u$, say $x_L = cu$. This multiple is chosen so that 
+\begin{align*}
+    (x - cu) \cdot u = 0,
+\end{align*}
+and hence,
+\begin{align*}
+    c = \frac{u \cdot x}{u \cdot u}.
+\end{align*}
+\end{example}
+
+\medskip
+
+\begin{theorem}
+Let $A$ be an $m \times n$ matrix and its columns $a_1, a_2, \cdots, a_n$. Let $W = {\rm span}\{a_i\}$ and let $x$ be a vector in $\mathbb{R}^m$. Then the matrix equation
+\begin{align*}
+    A^T Ac = A^T x,
+\end{align*}
+in the unknown vector $c$ is consistent, and $x_W$ is equal to $Ac$ for any solution $c$.
+\end{theorem}
 
 \medskip
 
@@ -3846,7 +3880,7 @@ A linear mapping of a complex Euclidean space into itself is called unitary if i
 \medskip
 
 \begin{theorem}
-$M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $|\det M| = 1$.
+$M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$|\det M| = 1.$$
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
@@ -4023,11 +4057,28 @@ If we pick an orthogonal basis of Euclidean space, we can view $A$ as a matrix $
 
 \medskip
 
-\begin{theorem}\label{theorem_hermitian}
+\begin{definition}
+Let $M$ be an arbitrary linear mapping in a Euclidean space, we define its self-adjoint part as 
+\begin{align*}
+    M_s = \frac{M + M^*}{2}.
+\end{align*}
+\end{definition}
+
+\medskip
+
+\begin{theorem}\label{hermitian_eigenvalue}
 A self-adjoint map $H$ of complex Euclidean space $X$ into itself has real eigenvalues and the set of eigenvectors which is formed by orthogonal basis of $X$.
 \end{theorem}
 \begin{proof}
-We can view $H$ as a matrix. Then,
+We can view $H$ as a matrix. Then, we need to show that $H$ has following properties:
+\begin{enumerate}[label=(\roman*)]
+    \item $H$ has only real eigenvalues.
+    
+    \item $H$ has no generalized eigenvalues, only genuine ones.
+    
+    \item Eigenvectors of $H$ corresponding to different eigenvalues are orthogonal.
+\end{enumerate}
+Then, 
 \begin{enumerate}[label=(\roman*)]
     \item All eigenvalues are real. Assume $\lambda$ is eigenvalue, such that $Hx = \lambda x$. Then we have
     \begin{align*}
@@ -4054,16 +4105,11 @@ We can view $H$ as a matrix. Then,
 \end{enumerate}
 \end{proof}
 
-\begin{remark}
-With the theorem abovem, $X = \oplus_{\lambda_i}N_{(H-\lambda_i I)}$. We can pick orthogonal basis for $N_{(H-\lambda_i I)}$ for each $\lambda_i$, then we get orthogonal basis.
-\end{remark}
-
-
 \medskip
 
-\begin{corollary}
-Any Hermitian matrix can be diagonalized by a unitary matrix.
-\end{corollary}
+\begin{theorem}
+Any Hermitian matrix $A$ can be diagonalized by a unitary matrix.
+\end{theorem}
 \begin{proof}
 Let $\{x_k\}^n_{k=1}$ be the orthogonal basis consisting of eigenvectors of $A$, such that $Ax_k = \lambda_k x_k$, and $\lambda_k$ is real. Let $U = (x_1, x_2,\cdots, x_n)$, which is unitary, then we have 
 \begin{align*}
@@ -4078,11 +4124,54 @@ which implies $A = U\Lambda U^{-1}$.
 
 \medskip
 
+\begin{corollary}
+Any real self-adjoint matrix $H$ can be diagonalized by an orthogonal matrix, i.e. there is an orthognal matrix $M$ such that 
+\begin{align*}
+    M^* H M = D,
+\end{align*}
+where $D$ is a diagonal matrix whose entries are the eigenvalues of $H$. $M$ satisfies $M^*M = I$.
+\end{corollary}
+\begin{proof}
+The eigenvectors $v$ of $H$ satisfies 
+\begin{align}\label{equ_eigenvalue}
+    Hv = \lambda v.
+\end{align}
+$H$ is a real self-adjoint matrix, then with part (i) in Theorem \ref{hermitian_eigenvalue}, the eigenvalues of $H$ are real. It follows from (\ref{equ_eigenvalue}) that the real and imaginary parts of $v$ are also eigenvectors. Then we can choose an orthogonal basis consisting of real eigenvectors in each eigenapsce $N_\alpha$. Since by part (iii) in Theorem \ref{hermitian_eigenvalue}, eigenvectors corresponding to disctint eigenvalues are orthogonal, we have an orthogonal basis of $X$ consisting of real eivenvectors $v_j$ of $H$. Every vector $y$ in $X$ can be expressed as
+\begin{align}\label{orthogonal_basis_express}
+    y = \sum^n_{j=1} z_i v_i.
+\end{align}
+For real $y$, then $z_i$ are real. We denote the vector with components $z_j$ as $z = \left(z_1, \cdots, z_n\right)$. Since $\{v_i\}$ form an orthogonal basis, 
+\begin{align}\label{orthogonal_basis_norm}
+    \|y\|^2 = \sum^n_{j=1} z_j^2 = \|z\|^2.
+\end{align}
+Applying $H$ to (\ref{orthogonal_basis_express}), we have \begin{align*}
+    Hy = \sum^n_{j=1} z_j \lambda_j v_j.
+\end{align*}
+Also, setting (\ref{equ_eigenvalue}) and (\ref{orthogonal_basis_norm}) into quadratic forms $q(y) = \sum_{i,j}h_{ij} y_i y_j$ gives
+\begin{align}\label{quadrtic_form}
+    q(y) = (y, Hy) = \sum^n_{j=1} \lambda_j z_j^2
+\end{align} 
+This shows that the introduction of the new variables $z$ diagonalizes the quadratic form $q$. Relation (\ref{orthogonal_basis_norm}) states that the new vector has the same length as the old. Denote by $M$ the relation of $z$ to $y$ such that $y = Mz$. Substituting this into (\ref{quadrtic_form}) gives
+\begin{align*}
+    q(y) = (y, Hy) = (Mz, HMz) = (z, M^*HMz).
+\end{align*}
+Using (\ref{quadrtic_form}), we conclude that $M^*HM = D$.
+\end{proof}
+
+\medskip
+
+
+\begin{remark}
+With the theorem abovem, $X = \oplus_{\lambda_i}N_{(H-\lambda_i I)}$. We can pick orthogonal basis for $N_{(H-\lambda_i I)}$ for each $\lambda_i$, then we get orthogonal basis.
+\end{remark}
+
+\medskip
+
 \begin{theorem}\label{theorem_symmetric}
 A self-adjoint map $H$ of real Euclidean space $X$ into itself has real eigenvalues and a set of eigenvectors which is formed by orthogonal basis of $X$.
 \end{theorem}
 \begin{proof}
-We pick an orthogonal basis of $X$ and $H$ can be represented by a matrix $A$ if we identify $X$ as $\mathbb{R}^n$, then we have $A^T = A$. We can extend $A$ to a map from $\mathbb{C}^n$ to $\mathbb{C}^n$, denoted by $\widetilde{A}$, then $\widetilde{A}^* = \widetilde{A}$. Then $\widetilde{A}$ is Hermitian matrix and we can apply the theorem (\ref{theorem_hermitian}). 
+We pick an orthogonal basis of $X$ and $H$ can be represented by a matrix $A$ if we identify $X$ as $\mathbb{R}^n$, then we have $A^T = A$. We can extend $A$ to a map from $\mathbb{C}^n$ to $\mathbb{C}^n$, denoted by $\widetilde{A}$, then $\widetilde{A}^* = \widetilde{A}$. Then $\widetilde{A}$ is Hermitian matrix and we can apply the Theorem \ref{theorem_hermitian}.
 
 We claim $\sigma(A) = \sigma \left(\widetilde{A}\right)$ and $$N_{(A - \lambda I)} = \Re N_{\left(\widetilde{A} - \lambda I\right)}.$$
 Indeed, $\widetilde{A}$ can be diagonalized by a unitary matrix $U$ such that $A = U\Lambda U^{-1}$, where $\Lambda$ is a real diagonal matrix. Then, $A$ can be diagonalized by a real matrix $M$ such that $A = M\Lambda M^{-1}$. Thus, the eigenvalues of $A$ are all real. Ans since
@@ -4096,11 +4185,6 @@ we have
 Thus, we can find a set of eigenvectors that form an orthogonal basis of $\mathbb{R}^n$.
 \end{proof}
 
-\medskip
-
-\begin{corollary}
-Any symmetric matrix can be diagonalized by an orthogonal matrix.
-\end{corollary}
 
 \medskip
 
@@ -4155,7 +4239,7 @@ and we can pick $L = Q^{-1} = Q^*$. Thus the proof is complete.
 \medskip
 
 \section{Law of Inertia}
-\begin{theorem}[Sylvester’s Law of Inertia]
+\begin{theorem}[Sylvester’s Law of Inertia]\label{Law_of_Inertia}
 Let $H$ be symmetric, $q(x) = (x, Hx)$ and $L$ be an invertible matrix such that
 \begin{align*}
     q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2
@@ -4334,7 +4418,7 @@ $N$ is a normal matrix if and only if $N$ can be unitarily diagonalized.
     \begin{enumerate}[label=(\alph*)]
         \item If a normal matrix is upper triangular, then it is diagonal.
         
-        \item By Schur decomposition\footnote{Schur decomposition theorem is talked later in theorem (\ref{Schur_Decomposition}).}, every matrix is unitary similar to an upper triangular matrix.
+        \item By Schur decomposition\footnote{Schur decomposition theorem is talked later in Theorem \ref{Schur_Decomposition}.}, every matrix is unitary similar to an upper triangular matrix.
         
         \item Then, $N$ is similar to an upper triangular matrix, which is necessarily diagonal.
     \end{enumerate}
@@ -4420,7 +4504,7 @@ Every eigenvector $x$ of $H$ is a critical point of $R_H$, that is, the first de
 
 \section{Minimax Principle}
 
-\begin{theorem}
+\begin{theorem}\label{minimax_principle}
 Let $H$ be a self-adjoint map of a Euclidean space $X$ of finite dimension. Denote the eigenvalues of $H$, arranged in increasing order by $\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$. Then,
 \begin{align*}
     \lambda_j = \min_{\dim S=j} \max_{x\in S, x\neq 0} R_H(x),
@@ -4652,222 +4736,6 @@ where $\lambda_j\in\sigma(A), \mu_j\in\sigma(B)$. Thus we have
 
 \medskip
 
-\section{Exercises}
-
-\begin{exercise}
-Let%
-$$
-q\left(  x\right)  =2x_{1}x_{2}-6x_{2}x_{3}+2x_{1}x_{3}.
-$$
-Find an invertible matrix $L$, such that%
-$$
-q\left(  L^{-1}y\right)  =d_{1}y_{1}^{2}+d_{2}y_{2}^{2}+d_{3}y_{3}^{2}%
-$$
-where $d_{i}=0$ or $\pm1$.
-\end{exercise}
-\begin{proof}
-We have $q(x) = (x,Hx)$, where 
-$$
-H = \left(
-\begin{matrix}
-0 & 1 & 1\\
-1 & 0 & -3\\
-1 & -3 & 0
-\end{matrix}
-\right)
-$$
-and we need to normalize the matrix $H$, then we can compute for its eigenvalues, which are $\lambda = 3, \frac{3-\sqrt{17}}{2}, \frac{3+\sqrt{17}}{2}$, with eigenvectors 
-\begin{align*}
-    \left(\begin{matrix} 0 \\ - 1\\ 1 
-    \end{matrix}\right), 
-    \left(\begin{matrix} \frac{3-\sqrt{17}}{2} \\ 1\\ 1 
-    \end{matrix}\right), 
-    \left(\begin{matrix} \frac{3+\sqrt{17}}{2} \\ 1\\ 1 
-    \end{matrix}\right), 
-\end{align*}
-Now we can normalize these vectors and we get 
-\begin{align*}
-    \left(\begin{matrix} 0 \\ - \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}} 
-    \end{matrix}\right), 
-    \left(\begin{matrix} -\sqrt{\frac{17-3\sqrt{17}}{34}} \\ \frac{2}{\sqrt{17-3\sqrt{17}}}\\ \frac{2}{\sqrt{17-3\sqrt{17}}} 
-    \end{matrix}\right), 
-    \left(\begin{matrix} \sqrt{\frac{17+3\sqrt{17}}{34}} \\ \frac{2}{\sqrt{17+3\sqrt{17}}} \\ \frac{2}{\sqrt{17+3\sqrt{17}}} 
-    \end{matrix}\right), 
-\end{align*}
-And we arrange eigenvectors into a matrix, denoting it by 
-\begin{align*}
-    C = \left(\begin{matrix}
-    0 & -\sqrt{\frac{17-3\sqrt{17}}{34}} & \sqrt{\frac{17+3\sqrt{17}}{34}} \\
-    - \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{17-3\sqrt{17}}} & \frac{2}{\sqrt{17+3\sqrt{17}}} \\
-    \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{17-3\sqrt{17}}} & \frac{2}{\sqrt{17+3\sqrt{17}}}
-    \end{matrix}\right).
-\end{align*}
-We can verify that $C^*HC = \left(
-\begin{matrix}
-3 & 0 & 0\\
-0 & \frac{3-\sqrt{17}}{2} & 0\\
-0 & 0 & \frac{3+\sqrt{17}}{2}
-\end{matrix}
-\right)$. Now we denote $z = Cx = (z_1, z_2, z_3)$, where 
-\begin{align*}
-    z_1 & = -\sqrt{\frac{17-3\sqrt{17}}{34}}x_2 + \sqrt{\frac{17+3\sqrt{17}}{34}}x_3\\
-    z_2 & = - \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3 \\
-    z_3 & = \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3
-\end{align*}
-and we need to change variable to get the quadratic form $q\left(  L^{-1}y\right)  =d_{1}y_{1}^{2}+d_{2}y_{2}^{2}+d_{3}y_{3}^{2}$. We make the change of variable
-\begin{align*}
-    y_1 & = \frac{1}{\sqrt{3}}z_1 \\
-    y_2 & = \sqrt{\frac{2}{3-\sqrt{17}}} z_2\\
-    y_3 & = \sqrt{\frac{2}{3+\sqrt{17}}} z_3
-\end{align*}
-and we can denote this transform by matrix $E$, where 
-\begin{align*}
-    E = \left(
-    \begin{matrix}
-    \frac{1}{\sqrt{3}} & 0 & 0\\
-    0 & \sqrt{\frac{2}{3-\sqrt{17}}} & 0\\
-    0 & 0 & \sqrt{\frac{2}{3+\sqrt{17}}}
-    \end{matrix}
-    \right)
-\end{align*}
-then we can know that $L^{-1} = CE$, which are defined above. And finally, $L = (CE)^{-1}$.
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Show that the congruence is an equivalence relation for symmetric
-matrices. Find the total number of equivalence classes for $n\times n$
-symmetric matrices.
-\end{exercise}
-\begin{proof}
-We denote the relation of congruence by $\sim$.
-\begin{enumerate}[label=(\arabic*)]
-    \item \begin{enumerate}[label=\alph*.]
-        \item For $A$ is a symmetric matrix, then we have $A\sim A$, since $A = I^TAI$, where $I$ is identity matrix.
-        \item For $A,B$ are symmetric matrices, we have if $A\sim B$ , then $B\sim A$. Since if $A = S^TBS$, where $S$ is invertible, then we have $B = (S^T)^{-1}AS^{-1}$, which means $B\sim A$.
-        \item For $A,B$ and $C$ are symmetric matrices, we have if $A\sim B,B\sim C$, then $A\sim C$. Since if we have $A = S^TBS$ and $B = P^TCP$, then we have $A = S^TP^TCPS = (PS)^TCPS$, which implies $A\sim C$. Then we proved the congruence is an equivalence relation.
-    \end{enumerate}
-    \item Suppose $A = S^TBS$, and $S$ is invetible. Also, we have $R_{BS}\subseteq R_{B}$ with equality when $S$ is invertible, since $S$ is full rank. Then we have, in this case, $\dim B = \dim BS$. Then we have $S^T$ is also full rank and $\dim A = \dim S^TBS = \dim B$. So we can know that for symmetric matrices $A$ and $B$, if they are congruent then they have the same rank, which means there are $n+1$ equivalebce classes, since there are matrix with rank $0,1,2,\cdots,n$, which are $n+1$ possibilities.
-\end{enumerate}
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Let $A,B$ be two $n\times n$ real orthogonal matrices satisfying
-$$\det A+\det B=0.$$
-Show there exists a unit vector $x$ such that%
-$$Ax=-Bx.$$
-\end{exercise}
-\begin{proof}
-Since $A$ and $B$ are orthogonal matrices, then we have $\det A = \det B = \pm 1$ and $A^TA = B^TB = I$. Also, with $\det A+\det B=0$, we have $\det A\det B = -1$. Now consider 
-\begin{align*}
-    \det(A+B) & = \det(A(A^T+B^T)B) \\
-    & = \det A \det(A^T+B^T) \det B \\
-    & = - \det(A^T+B^T) \\
-    & = - \det(A+B)^T  \\
-    &= - \det(A+B).
-\end{align*}
-Then we have $\det(A+B) = 0$, which means $A+B$ is not full rank. Then we can find a vector $y\in N_{A+B}$ such that $(A+B)y = 0$. Now we pick $x = \frac{y}{\|y\|}$, this is the unit vector we need.
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Suppose $A$ and $B$ are normal complex $n\times n$ matrices. Prove that%
-$$
-r(AB)\leq r(A)r(B).
-$$
-Here $r(\cdot)$ is the spectral radius of a matrix. Find a counter example if
-$A$ or $B$ is not normal.
-\end{exercise}
-\begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
-    \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have 
-    \begin{align*}
-        AB x & = \lambda x \\
-        \Rightarrow \|AB\|\|x\| & \geq \|AB x\| = |\lambda|\|x\| \\
-        \Rightarrow \|AB\| & \geq |\lambda|.
-    \end{align*}
-    Also, we have $\|AB\|\leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\|A\| = r(A)$ and $\|B\| = r(B)$. Thus, with all the results above, we have 
-    \begin{align*}
-        r(AB)\leq \|AB\|\leq \|A\| \|B\| = r(A)r(B).
-    \end{align*}
-    The proof is complete. 
-    \item Take $A = \left(
-    \begin{matrix}
-        1 & 0\\
-        1 & 1
-        \end{matrix}
-    \right)$ and $B = \left(
-    \begin{matrix}
-        2 & 1\\
-        -1 & 0
-    \end{matrix}
-    \right)$ and $A,B$ are not normal. We can compute that $r(AB) = \sqrt{3}$ and $r(A)r(B) = 1\cdot 1 = 1 < r(AB)$. This is a counter example if $A$ and $B$ are not normal.
-\end{enumerate}
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-What is the operator norm of the matrix%
-$$
-\left(
-\begin{array}
-[c]{ccc}%
-1 & 0 & 1\\
-2 & 3 & 0
-\end{array}
-\right)
-$$
-in the standard Euclidean structures of $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$.
-\end{exercise}
-\begin{proof}
-Denote the matrix above by $A$, then the operator norm of $A$ is $\sqrt{r(A^*A)} = \sqrt{\frac{15+\sqrt{137}}{2}}$.
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Let $\left\{  \lambda_{i}\right\}  _{i=1}^{n}$ be eigenvalues of matrix
-$A=\left(  a_{ij}\right)  _{n\times n}$. Show that%
-$$
-\sum_{j=1}^{n}\left\vert \lambda_{j}\right\vert ^{2}\leq\sum_{i,j=1}%
-^{n}\left\vert a_{ij}\right\vert ^{2}.
-$$
-\end{exercise}
-\begin{proof}
-With Schur decomposition, we cnould know that $A = Q U Q^*$, where $Q$ is unitary and $U$ is upper triangular and its diagonal entries are engenvalues of $A$, since $A$ and $U$ are similar. And we can show that Hilbert-Schwarz norm norm $\|A\|_{HS} = \sqrt{\sum_{i,j=1}^{n} \left|a_{ij}\right|^2}$ is invariant under unitary matrix multiplication:
-\begin{align*}
-    \|QA\|_{HS}^2 = \text{tr} \left((QA)^* (QA)\right) = \text{tr} \left(A^* Q^* QA\right) = \text{tr} \left(A^* A\right) = \|A\|_{HS}^2
-\end{align*}
-then we can have 
-\begin{align*}
-    \|A\|_{HS}^2 = \|QAQ^*\|_{HS}^2 = \|U\|_{HS}^2.
-\end{align*}
-Also we can know that
-\begin{align*}
-    \sum_{j=1}^{n}\left| \lambda_{j}\right|^{2}\leq \sum_{i,j=1}^{n}\left| u_{ij}\right|^{2} = \|A\|_{HS}^2,
-\end{align*}
-since the square sum of all diagonal entries of $U$ is smaller than that of all entries of $U$.
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Let $A=\left(  a_{ij}\right)  _{n\times n}$ be normal. Show that%
-$$
-r\left(  A\right)  \geq\max_{1\leq i\leq n}\left\vert a_{ii}\right\vert .
-$$
-\end{exercise}
-\begin{proof}
-Since $A$ is normal matrix, then we have $\|A\| = r(A)$. Also, we have known that for all $a_{ij}$, $\left|a_{ij}\right|\leq \|A\|$. Thus, we have $r(A)\geq \max_{1\leq i\leq n}\left|a_{ii}\right|$.
-\end{proof}
-
-
-
 \chapter{Calculus of Vector and Matrix valued Functions}
 
 \section{Convergence in Norm}
@@ -5098,7 +4966,7 @@ With Jordan canonical form, $A = SJS^{-1}$ and $e^A = Se^JS^{-1}$. Thus, we have
 \medskip
 
 \begin{theorem}
-The eigenvalues depend continuously on the matrix in the sense: If $\lim_{n\to\infty}A_n = A$, then $\sigma(A_n)\to \sigma(A)$, i.e., for every $\varepsilon > 0$, there exists $N > 0$ such that for $\forall n\geq N$, all eigenvalues of $A_n$ are contained in the neighborhood of eigenvalues of $A$ with radius $\varepsilon$.
+The eigenvalues depend continuously on the matrix in the sense: If we have $\lim_{n\to\infty}A_n = A$, then $\sigma(A_n)\to \sigma(A)$, i.e., for every $\varepsilon > 0$, there exists $N > 0$ such that for $\forall n\geq N$, all eigenvalues of $A_n$ are contained in the neighborhood of eigenvalues of $A$ with radius $\varepsilon$.
 \end{theorem}
 \begin{proof}
 $p_\lambda(A) = \det(\lambda I - A) = 0$ and roots of polynomials depend continuous on the coefficients.
@@ -5252,19 +5120,21 @@ Now we discuss some basic properties of positive mapping.
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{inverse_of_positive_matrix}
 If $M > N > 0$, then $0 < M^{-1} < N^{-1}$.
 \end{theorem}
 \begin{proof}
-${}$ \newline 
-\noindent{\bf Method I.} If $N = I, M > I$, then $M^{-1} < I$. Now turn to any matrix $N$. Let $R = \sqrt{N} > 0$, then we have $M > R^2$. Then
+If $N = I, M > I$, then $M^{-1} < I$. Now turn to any matrix $N$. Let $R = \sqrt{N} > 0$, then we have $M > R^2$. Then
 \begin{align*}
     R^{-1} M R & > I \\
     \Rightarrow \left(R^{-1} M R\right)^{-1} & < I \\
     \Rightarrow R M^{-1} R^{-1} & < I \\
     \Rightarrow M^{-1} & < \left(R^2\right)^{-1} = N^{-1}.
 \end{align*}
-\noindent{\bf Method II.} Define $A(t) = tM + (1-t)M$, and for any $t\in [0,1]$, $A(t) > 0$. And we have 
+\end{proof}
+
+\begin{proof}[Second Proof of Theorem \ref{inverse_of_positive_matrix}]
+Define $A(t) = tM + (1-t)M$, and for any $t\in [0,1]$, $A(t) > 0$. And we have 
 \begin{align*}
     \dv{}{t}A^{-1}(t) = - A^{-1} \dot{A} A^{-1} = - A^{-1} (M - N) A^{-1} < 0.
 \end{align*}
@@ -5465,7 +5335,7 @@ Since $\log$ is a monotonic function, we have the equivalent inequality:
 \begin{align*}
     \log \det \left(tA + (1-t)B \right) \geq t \log (\det A) + (1-t) \log (\det B).
 \end{align*}
-It remains to show that $\log \det H$ is concave on the set of positive matrices. Note that a function whose {\em second derivative} is negative is concave. And we need to calculate the second derivative of the function $f(t) = \log \det (tA + (1-t)B)$ and verify that it is negative. Then, by theorem (\ref{trace_determinant}),
+It remains to show that $\log \det H$ is concave on the set of positive matrices. Note that a function whose {\em second derivative} is negative is concave. And we need to calculate the second derivative of the function $f(t) = \log \det (tA + (1-t)B)$ and verify that it is negative. Then, by Theorem \ref{trace_determinant},
 \begin{align*}
     \dv{}{t} \log \det Y = {\rm tr} \left(Y^{-1} \dot{Y} \right).
 \end{align*}
@@ -5535,20 +5405,257 @@ Let $y = \sqrt{H}x$, then $(x, Hx) = (y, y)$. Then,
 
 \section{Eigenvalues}
 \begin{lemma}
-Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself. We denote by $p_+(A)$ the number of positive eigenvalues of $A$ and denote by $p_-(A)$ the number of its negative eigenvalues. Then, $p_+(A) = $ maximum dimension of subspace $S$ of $U$ such that $(Au, u)$ is positive on $S$. $p_-(A) = $ maximum dimension of subspace $S$ of $U$ such that $(Au, u)$ is negative on $S$.
+Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself. We denote by $p_+(A)$ the number of positive eigenvalues of $A$ and denote by $p_-(A)$ the number of its negative eigenvalues. Then, 
+\begin{align*}
+    p_+(A) & = \text{maximum dimension of subspace S of U such that (Au, u) is positive on S}, \\
+    p_-(A) & = \text{maximum dimension of subspace S of U such that (Au, u) is negative on S}.
+\end{align*}
 \end{lemma}
+\begin{proof}
+It follows from Sylvester’s Law of Inertia \ref{Law_of_Inertia} and minimax principle \ref{minimax_principle}.
+\end{proof}
 
+\medskip
 
+\begin{theorem}\label{orthogonal_dimension}
+Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself and $V$ be a subspace of $U$ with $\dim V = \dim U - 1$. Denote by $P$ the orthogonal projection onto $V$. The $PAP$ is a self-adjoint map of $U$ into $U$ that maps $V$ into $V$, we denote by $B$ the restriction of $PAP$ to $V$, i.e. $B = PAP|_V$. Then,
+\begin{align*}
+    p_+(A) - 1 \leq p_+(B) \leq p_+(A), \\
+    p_-(A) - 1 \leq p_-(B) \leq p_-(A).
+\end{align*}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Let $T$ denote a subspace of $V$ of dimension $p_+(B)$ on which $B$ is positive, then $A > 0$ on $T$. Indeed, for any $v \in T$,
+    \begin{align*}
+        (v, Av) = (Pv, APv) = (v, PAPv) = (v, Bv) > 0.
+    \end{align*}
+    Then $p_+(B) \leq p_+(A)$.
+    
+    \item To estimate $p_+(B)$ from below, let $S$ be a subspace of $U$ of dimension $p_+(A)$ on which $A$ is positive. Let $T = S \cap V$, then we claim $\dim T \geq \dim S - 1$. Indeed, if $S$ is a subspace of $V$, then $T = S$ and $\dim T = \dim S$. If not, choose a basis $\{s_1, \cdots, s_k\}$ in $S$. At least one of these does not belong to $V$, say $s_1$. This means that $s_1$ has a nonzero component orthogonal to $V$. Then we can choose scalars $a_2, \cdots, a_k$ such that
+    \begin{align*}
+        s_2 - a_2 s_1, \cdots, s_k - a_k s_1
+    \end{align*}
+    belong to $V$. They are linearly independent, since $s_1, \cdots, s_k$ are linearly independent. It follows that 
+    \begin{align*}
+        \dim S - 1 \leq \dim T.
+    \end{align*}
+    
+    We claim that $B$ is positive on $T$. Take any $v \neq 0$ in $T$, then
+    \begin{align*}
+        (Bv, v) = (PAPv, v) = (APv, Pv) = (Av, v),
+    \end{align*}
+    since $v$ belongs to $V$. Also, $v$ belongs to $S$, then $(Av, v) > 0$.
+    
+    Since $p_+(B)$ is defined as the dimension of the largest subspace on which $B$ is positive, then $\dim T \leq p_+(B)$, and since $\dim T \geq \dim S - 1$, then $p_+(A) - 1 \leq p_+(B)$. The other inequality can be proved similarly. 
+    \end{enumerate}
+\end{proof}
 
+\medskip
 
+\section{Separation of Eigenvalues}
+\begin{theorem}
+Let $U, V, A$ and $B$ be as in Theorem \ref{orthogonal_dimension}. Denote the eigenvalues of $A$ as $\lambda_1, \cdots, \lambda_n$ and denote those of $B$ as $\mu_1, \cdots, \mu_{n-1}$. The eigenvalues of $B$ separate the eigenvalues of $A$:
+\begin{align*}
+    \lambda_1 \leq \mu_1 \leq \cdots \mu_{n-1} \leq \lambda_n.
+\end{align*}
+\end{theorem}
 
+\medskip
 
+\begin{theorem}
+Let $M$ and $N$ denote self-adjoint matrix satisfying $M < N$. Denote the eigenvalues of $M$ in increasing order by $\lambda_1 \leq \cdots \leq \lambda_n$ and those of $N$ by $\mu_1 \leq \cdots \mu_n$. Then, $\lambda_j \leq \mu_j$ for $j = 1, \cdots, n$.
+\end{theorem}
+\begin{proof}
+With minimax principle,
+\begin{align*}
+    \lambda_j & = \min_{\dim S=j} \max_{x\in S, x\neq 0} \frac{(x, Mx)}{(x,x)}, \\
+    \mu_j & = \min_{\dim S=j} \max_{x\in S, x\neq 0} \frac{(x, Nx)}{(x,x)}.
+\end{align*}
+Let $T$ be the subspace of dimension $j$, then
+\begin{align*}
+    \mu_j = \max_{x\in T, x\neq 0} \frac{(x, N x)}{(x,x)} > \max_{x\in T, x\neq 0} \frac{(x, M x)}{(x,x)} = \lambda_j.
+\end{align*}
+Indeed, pick $x^* \neq 0, x^* \in T$ such that
+\begin{align*}
+    \frac{(x^*, M x^*)}{(x^*,x^*)} = \max_{x\in T} \frac{(x, M x)}{(x,x)}.
+\end{align*}
+Also,
+\begin{align*}
+    \max_{x\in T} \frac{(x, M x)}{(x,x)} \leq \frac{(x^*, N x^*)}{(x^*,x^*)} \leq \max_{x\in T} \frac{(x, Nx)}{(x,x)}.
+\end{align*}
+Thus, $\mu_j > \lambda_j$.
+\end{proof}
 
+\medskip
 
+\begin{theorem}
+Let $M$ and $N$ be self-adjoint matrices, $\lambda_j$ and $\mu_j$ their eigenvalues arrayed in increasing order. Then
+\begin{align*}
+    \left|\lambda_j - \mu_j\right| \leq \|M - N\|.
+\end{align*}
+\end{theorem}
+\begin{proof}
+Let $d = \|M - N\|$, then 
+\begin{align*}
+    N - dI \leq M \leq N + dI.
+\end{align*}
+Indeed, for any $x$,
+\begin{align*}
+    (x, (N - dI - M)x) = (x, (N - M)x) - d \|x\|^2 \leq \|N - M\| \|x\|^2 - d \|x\|^2 = 0.
+\end{align*}
+Similarly\cite{26}, 
+\begin{align*}
+    (x, (M - dI - N)x) = (x, (M - N)x) - d \|x\|^2 \leq \|M - N\| \|x\|^2 - d \|x\|^2 = 0.
+\end{align*}
+Then, $\mu_j - d \leq \lambda_j \leq \mu_j + d$. Thus, $\left|\lambda_j - \mu_j\right| \leq d$, for any $j$.
+\end{proof}
 
+\medskip
 
+\section{Wielandt-Hoffman Theorem}
+\begin{theorem}[Wielandt-Hoffman\cite{27}]
+Let $M, N$ be self-adjoint $n \times n$ matrices and $\lambda_j$ and $\mu_j$ their eigenvalues arranged in increasing order. Then
+\begin{align*}
+    \sum^n_{j=1} \left(\lambda_j - \mu_j \right)^2 \leq \|M - N\|^2_2,
+\end{align*}
+where $\| \cdot \|_2$ is Hilbert-Schmidt norm.
+\end{theorem}
+\begin{proof}
+\begin{align*}
+    \|M - N\|^2_2 & = \tr (M-N)^*(M-N) = \tr (M-N)^2 \\
+    & = \tr \left(M^2 - MN - NM + N^2\right) \\
+    & = \tr \left(M^2\right) - 2 \tr (MN) + \tr \left(N^2\right) \\
+    & = \sum^n_{j=1} \lambda_j^2 - 2 \tr (MN) + \sum^n_{j=1} \mu_j^2.
+\end{align*}
+Also, 
+\begin{align*}
+    \sum^n_{j=1} \left(\lambda_j - \mu_j \right)^2 = \sum^n_{j=1} \lambda_j^2 - 2 \sum^n_{j=1} \lambda_j \mu_j + \sum^n_{j=1} \mu_j^2.
+\end{align*}
+It suffices to show that $\sum^n_{j=1} \lambda_j \mu_j \geq \tr (MN)$. 
+\begin{enumerate}[label=(\alph*)]
+    \item If $M, N$ commutes, then $M, N$ can be diagonalized at the same time. The eigenvalues of $MN$ are $\lambda_j \widetilde{\mu_j}, 1 \leq j \leq n$, where $\widetilde{\mu_j}$ is a permutation of $\mu_j$. 
+    Then, 
+    \begin{align*}
+        \tr (MN) = \sum^N_{j=1} \lambda_j \widetilde{\mu_j} \leq \lambda_j \mu_j,
+    \end{align*}
+    since if $a > c, b > d$, $(ab + cd) - (ad + cb) = (a - c)(b - d) \geq 0$.
+    
+    \item If $M, N$ does not commute, fix $M$ and consider all self-adjoint matrices $N$ whose eigenvalues are $\mu_1, \cdots, \mu_n$. The set $S$ of such matrices $N$ forms a bounded set in the space of all self-adjoint matrices. By compactness, there is such matrix $N \in S$ so that $\tr (MN)$ attains its maximum value. 
+    
+    Indeed, $S$ is compact. $S$ has bounded spectral radius, and hence bounded. Thus, 
+    $$\max_{N \in S} \tr (MN)$$ 
+    is well defined and such $N$ exists, denoted by $N_m$. 
+    
+    If $N(t)$ is a differentiable function whose values are self-adjoint matrices with eigenvalues $\mu_1, \cdots, \mu_n$ and $N(0) = N_m$, then 
+    \begin{align*}
+        \dv{}{t} \tr (N(t)M)\Bigg|_{t=0} = 0.
+    \end{align*}
+    Let $A = N_m M - M N_m$, then $A^* = - A$, and thus $e^{At}$ is a unitary matrix. Now let $N(t) = e^{At} N_m e^{-At}$, then
+    \begin{align*}
+        \dv{}{t} \tr (N(t)M)\Bigg|_{t=0} & = \dv{}{t} \tr \left(M e^{At} N_m e^{-At} \right)\Bigg|_{t=0} \\
+        & = \tr \left(M A e^{At} N_m e^{-At} - M e^{At} N_m A e^{-At} \right)\Bigg|_{t=0} \\
+        & = \tr \left(M A N_m - M N_m A \right) \\
+        & = \tr \left(N_m M A - M N_m A \right)
+    \end{align*}
+    where in the last step we used the commutativity of trace. Then, 
+    \begin{align*}
+        \tr \left(N_m M A - M N_m A \right) = \tr \left(N_m M - M N_m \right) \tr (A) = \tr \left(A^2 \right) = - \tr (A^*A) \leq 0.
+    \end{align*}
+    Thus, $A = 0$ and hence $M, N_m$ commute. The rest is similar to part (a).
+\end{enumerate}
+\end{proof}
 
+\medskip
 
+\begin{theorem}
+Denote by $\lambda_{\min}(H)$ the smallest eigenvalue of a self-adjoint mapping $H$ in a Euclidean space. Then $\lambda_{\min}(H)$ is a concave funuction of $H$, that is, for $0 \leq t \leq 1$,
+\begin{align*}
+    \lambda_{\min}(tL + (1-t)M) \geq t \lambda_{\min}(L) + (1-t) \lambda_{\min}(M).
+\end{align*}
+Similarly, $\lambda_{\max}(H)$ is a convex function of $H$, that is, for $0 \leq t \leq 1$,
+\begin{align*}
+    \lambda_{\max}(tL + (1-t)M) \leq t \lambda_{\max}(L) + (1-t) \lambda_{\max}(M).
+\end{align*}
+\end{theorem}
+\begin{proof}
+The smallest eigenvalue of a mapping can be characterized as a minimum:
+\begin{align*}
+    \lambda_{\min}(H) = \min_{\|x\|=1} (x, Hx).
+\end{align*}
+Let $x \neq 0$ be an unit vector such that
+\begin{align*}
+    \lambda_{\min}(tL + (1-t)M) & = (x, (tL+(1-t)M)x) \\
+    & = t(x, Lx) + (1-t) (x, Mx) \\
+    & \geq t \lambda_{\min}(L) + (1-t) \lambda_{\min}(M).
+\end{align*}
+Since $- \lambda_{\max}(H) = \lambda_{\min}(-H)$, the convexity of $\lambda_{\max}(H)$ follows.
+\end{proof}
+
+\medskip
+
+\section{Matrices with Positive Self-Adjoint Part}
+
+Every linear mapping $Z$ of a complex Euclidean space into itself can be decomposed, uniquely, as a sum of a self-adjoint mapping and an anti-self-adjoint one:
+\begin{align*}
+    Z = H + A,
+\end{align*}
+where
+\begin{align*}
+    H^* = H, \quad A^* = - A,
+\end{align*}
+are given by 
+\begin{align*}
+    H = \frac{Z + Z^*}{2}, \quad A = \frac{Z - Z^*}{2}.
+\end{align*}
+
+\medskip
+
+\begin{theorem}
+Suppose the self-adjoint part $Z$ is positive, i.e. $Z + Z^* > 0$. Then the eigenvalues of $Z$ have positive real part.
+\end{theorem}
+\begin{proof}
+Using the conjugate symmetry of scalar product in a complex Euclidean space, and the definition of adjoint, we have, for any vector $h$,
+\begin{align*}
+    2 \Re (h, Zh) = (h, Zh) + \overline{(h, Zh)} = (h, Zh) + (Zh, h) = (h, (Z+Z^*)h) > 0
+\end{align*}
+Let $h$ be an eigenvector of $Z$ of norm $1$, corresponding to eigenvalue $\lambda$, such that $Zh = \lambda h$. Then $(h, Zh) = z$ has positive real part.
+\end{proof}
+
+\medskip
+
+Let $a$ denote any complex number with positive real part, define
+\begin{align*}
+    w = \frac{1 - az}{1+\overline{a}z},
+\end{align*}
+and then $z \mapsto w$ maps the right half plane $\Re z > 0$ onto the unit disc $|w| < 1$. 
+
+\medskip
+
+\begin{theorem}
+Let $a \in \mathbb{C}$ with $\Re a > 0$. Let $Z$ be a mapping whose self-adjoint part $Z + Z^* > 0$. Then
+\begin{align*}
+    W = \frac{1 - aZ}{1+\overline{a}Z}
+\end{align*}
+is a mapping of norm less than $1$. Conversely, $\|W\| < 1$ implies that $Z + Z^* > 0$.
+\end{theorem}
+\begin{proof}
+Suppose $Z + Z^* > 0$, then $\Re \lambda > 0$ for any eigenvalue $\lambda$ of $Z$. It follows that eigenvalues of $I + \overline{a} Z$ and $1 + aZ$ are not zero, therefore $I + \overline{a} Z$ is invertible. For any vector $x$, denote $(I + \overline{a} Z)^{-1}x = y$, then \begin{align*}
+    (1 - aZ)y = Wx,
+\end{align*}
+and then 
+\begin{align*}
+    x = (I + \overline{a} Z)y.
+\end{align*}
+Thus,
+\begin{align*}
+    \|W\| \leq 1 & \Leftrightarrow \|Wx\| \leq \|x\| \\
+    & \Leftrightarrow \|(1 - aZ)y\| \leq \|(I + \overline{a} Z)y\| \\
+    & \Leftrightarrow (a+\overline{a})(y,Zy) + (a+\overline{a})(Zy,y) > 0 \\
+    & \Leftrightarrow (y, (Z+Z^*)y) > 0 \\
+    & \Leftrightarrow Z+Z^* > 0.
+\end{align*}
+\end{proof}
 
 
 \chapter{Exercises}
@@ -5581,9 +5688,9 @@ Let $U, V$ and $W$ be subspaces of a finite-dimensional vector space $X$. Is the
     {\rm dim}(U + V + W) = & {\rm dim} U + {\rm dim} V + {\rm dim} W - {\rm dim}(U \cap V) - {\rm dim}(U \cap W) \\
     & - {\rm dim}(V \cap W) + {\rm dim}(U \cap V \cap W)
 \end{align*}
-true or false? If true, prove it. If false, provide a counterexample
+true or false? If true, prove it. If false, provide a counterexample.
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 The statement is not true. Consider three lines $U,V,W$ in $\mathbb{R}^2$ such that they intersect in one point. So we have
 $$\text{dim} (U+V+W) = 2$$
 and
@@ -5929,9 +6036,9 @@ Now we assume $Z = N_{ST}\subset U$, then we have $ST(z) = 0$  for $z\in Z$, and
 combining these, we have ${\rm dim}\, N_{ST} \leq {\rm dim}\, N_S + {\rm dim}\, N_T$.
 \end{proof}
 
-We present another approach of proof.
+\medskip
 
-\begin{proof}
+\begin{proof}[Second Proof of Exercise \ref{April_2011_p1}]
 ~\begin{enumerate}[label=(\alph*)]
     \item Let $x \in N_T$, then we have $Tx = 0$. And then $STx = 0$, which implies $x \in N_{ST}$. Thus, $N_{T} \subset N_{ST}$ and it follows that $\dim N_T \leq \dim N_{ST}$.
     
@@ -6001,7 +6108,7 @@ Let $f$ be a linear functional on a finite dimensional vector space $V$ over a f
 \begin{exercise}{\bf *}
 Let $A$ and $B$ be two complex square matrices. Suppose $AB - I$ is a projection. Is it true that $BA - I$ is a projection?
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 True. $AB - I$ is a projection, then its eigenvlaues are $0$ and $1$, hence $AB$ has eigenvlaues $1$ or $2$, which implies $A,B$ are all invertible. Also, 
 \begin{align*}
     BA - I = B\left(AB - I\right) B^{-1}.
@@ -6041,8 +6148,8 @@ which implies $P_2 P_1 x = - P_1 x$. It follows naturally that $P_1 x$ is eigenv
 \begin{exercise}
 Suppose $B$ is a projection and $A^2$ commutes with $B$. Is it true that $A$ commutes with $B$?
 \end{exercise}
-\begin{proof}
-It is naturally to pick $A$ such that $A^2 = 0$, since zero matrix commutes with every matrix. Take
+\begin{proof}[Solution]
+No. It is naturally to pick $A$ such that $A^2 = 0$, since zero matrix commutes with every matrix. Take
 \begin{align*}
     A = \begin{pmatrix}
         0 & 1 \\
@@ -6092,6 +6199,8 @@ Let $V$ be a finite dimensional vector space over a field $\mathbb{R}$ or $\math
 \begin{proof}
 It has been proved in (\ref{April_2011_p1}).
 \end{proof}
+
+\medskip
 
 \begin{exercise}
 Suppose $A, B, C$ and $D$ are $n \times n$ matrices such that $AC = BC$ and $AD = - BD$. Suppose that $A$ is invetible, prove that $\rank C + \rank D \leq n$.
@@ -6250,7 +6359,7 @@ $$
 $$
 Prove or find a counter example.
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 In general, it is not true. Take $A = \begin{pmatrix}
     1 & 0 \\
     0 & 10
@@ -6401,7 +6510,7 @@ Let $A, B$ be two $n \times n$ matrices, show that $\det (I - AB) = \det (I - BA
 \medskip
 
 \begin{exercise}
-Prove there are no two matrices $A, B \in \mathbb{C}^{n \times n}$ such that $AB - BA = I$\cite{19}. 
+Prove there are no two matrices $A, B \in \mathbb{C}^{n \times n}$ such that $AB - BA = I${\rm \cite{19}}. 
 \end{exercise}
 \begin{proof}
 For any two matrices $A, B$, ${\rm tr}(AB - BA) = 0$\cite{20}. However, ${\rm tr} (I) = n$. Thus, there are no two matrices such that $AB - BA = I$.
@@ -6429,7 +6538,7 @@ Prove that $F_C$ is non-degenerate if and only if $C$ is invertible. ($F_C$ is n
 \begin{exercise}\label{trace_ABC}
 Is it true that for any three $n \times n$ matrices $A, B, C$, ${\rm tr} (ABC) = {\rm tr} (ACB)$?
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 No. Consider 
 \begin{align*}
     A = \begin{pmatrix}
@@ -6464,7 +6573,7 @@ It is true that ${\rm tr} (ABC) = {\rm tr} (BCA) = {\rm tr} (CAB)$. But in gener
 \begin{exercise}
 Is it true that for any three $n \times n$ matrices $A, B, C$, $\det (I - ABC) = \det (I - BAC)$?
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 No. Consider $A, B, C$ the same as (\ref{trace_ABC}), then we have
 \begin{align*}
     ABC = \begin{pmatrix}
@@ -6523,7 +6632,7 @@ holds for any pair of matrices $A, B$. Show that $C = kI$ for some scalar $k$.
 \medskip
 
 \begin{exercise}{\bf *}
-Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and $BC \neq CB$. Prove tha $A$ is a scalar matrix.
+Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and $BC \neq CB$. Prove that $A$ is a scalar matrix.
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -6615,7 +6724,68 @@ and
     (AB - BA)^3 & = NBNBNB - NBNBBN + NBBNBN \\
     & - BNBNBN.
 \end{align*}
-Since ${\rm tr} (NBNB \cdot NB) = {\rm tr} (NBNB \cdot BN)$ and ${\rm tr} (NB \cdot BNBN) = {\rm tr} (BN \cdot BNBN)$, then ${\rm tr} (AB - BA)^3 = 0$. In general, ${\rm tr} (AB - BA)^{2k+1} = 0$.
+Since ${\rm tr} (NBNB \cdot NB) = {\rm tr} (NBNB \cdot BN)$ and ${\rm tr} (NB \cdot BNBN) = {\rm tr} (BN \cdot BNBN)$, then ${\rm tr} (AB - BA)^3 = 0$.
+\end{proof}
+
+\begin{remark}
+In general, ${\rm tr} (AB - BA)^{2k+1} = 0$.
+\end{remark}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item First we consider the case when $A,B$ are $2 \times 2$ matrices. Let $A - B = N$, then $N^2 = 0$. Either $N = 0$, the result if trivial, or
+    \begin{align*}
+        N = P \begin{pmatrix}
+            0 & 1 \\
+            0 & 0
+        \end{pmatrix} P^{-1},
+    \end{align*}
+    for some invertible matrix $P$. Denote by $\tilde{A} = P^{-1}AP$ and $\tilde{B} = P^{-1}BP$, then
+    \begin{align*}
+        {\rm tr} (AB - BA)^{2k+1} = {\rm tr} (\tilde{A}\tilde{B} - \tilde{B}\tilde{A})^{2k+1},
+    \end{align*}
+    and
+    \begin{align*}
+        \tilde{A} - \tilde{B} = P^{-1} N P = \begin{pmatrix}
+            0 & 1 \\
+            0 & 0
+        \end{pmatrix} = J_N.
+    \end{align*}
+    Then, 
+    \begin{align*}
+        \tilde{A}\tilde{B} - \tilde{B}\tilde{A} & = J_N \tilde{B} - \tilde{B} J_N.
+    \end{align*}
+
+    Now let $\tilde{B} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, then $\tilde{A}\tilde{B} - \tilde{B}\tilde{A} = \begin{pmatrix} c & d-a \\ 0 & -c \end{pmatrix}$ and ${\rm tr}\left(\tilde{A}\tilde{B} - \tilde{B}\tilde{A}\right) = 0$. And then
+    \begin{align*}
+        \left(\tilde{A}\tilde{B} - \tilde{B}\tilde{A}\right)^{2n+1} = \begin{pmatrix} 
+            c^{2n+1} & * \\ 
+            0 & -c^{2n+1}
+        \end{pmatrix},
+    \end{align*}
+    and hence ${\rm tr}\left(\tilde{A}\tilde{B} - \tilde{B}\tilde{A}\right)^{2n+1} = {\rm tr}\left(AB - BA\right)^{2n+1} = 0$.
+    
+    \item For general dimension. In general,
+    \begin{align*}
+        \left(AB - BA\right)^{2n+1} = \left(NB - BN\right)^{2n+1} \neq \sum^n_{k=0} \dbinom{2n+1}{k} (NB)^k (-BN)^{2n+1-k},
+    \end{align*}
+    for noncommuting $B$ and $N$. Now, with $N^2 = 0$, 
+    \begin{align*}
+        (NB - BN)^2 & = NBNB - NBBN + BNBN, \\
+        (NB - BN)^3 & = (NB)^3 - (NB)^2BN + NB(BN)^2 - (BN)^3.
+    \end{align*}
+    
+    Claim: $$(NB - BN)^{n} = \sum^n_{k=0} (-1)^k (NB)^{n-k}(BN)^k.$$
+    Indeed, it can be proved by induction. And then,
+    \begin{align*}
+        {\rm tr} (NB - BN)^{n} & = \sum^n_{k=0} (-1)^k {\rm tr} \left((NB)^{n-k}(BN)^k \right) \\
+        & = \sum^n_{k=0} (-1)^k {\rm tr} \left((BN)^k (NB)^{n-k} \right) \\
+        & = {\rm tr} \left((NB)^n\right) + (-1)^n {\rm tr} \left((BN)^n\right) \\
+        & = \begin{cases}
+            2 {\rm tr} \left((NB)^n\right), & n \,\, {\rm even}, \\
+            0, & n \,\, {\rm odd}.
+        \end{cases}
+    \end{align*}
+\end{enumerate}
 \end{proof}
 
 \medskip
@@ -6722,8 +6892,9 @@ which means $A_i x\in N_j$. Thus, $A_i$ is a mapping from $N_j$ to $N_j$. Now we
 eigenvectors and generalized eigenvectors of $A_{j}$ for each $1\leq j\leq K$. The proof is complete.
 \end{proof}
 
-\noindent \textbf{Method II for Exercise \ref{generalized_eigenvectors}.}
-\begin{proof}
+\medskip
+
+\begin{proof}[Second Proof of Exercise \ref{generalized_eigenvectors}]
 We will prove it by induction on $\dim V$ and $1\leq k\leq K$. And assume we have pairwise commuting operators $A_1, A_2,\cdots, A_K$ on $V$. 
 
 When $\dim V = 1$, and in this case, all $A_i$ are scalars. Take $B = \{1\}$, and $k$ be arbitrary. Assume the result is true whenever $\dim V < l$, and $A_1, A_2, \cdots, A_k$ are pairwise commuting operators on $V$ if $\dim V < l$. And we want to show that if $\dim V = l$, and $A_1, \cdots, A_{k+1}$ are pairwise commuting operators on $V$, then there exists a basis of generalized eigenvectors. 
@@ -6735,7 +6906,7 @@ For $A_1$, we have
 since $A_1A_i = A_iA_1, 2 \leq i \leq k+1$, we have $A_i:N_{\lambda_j}(A_1)\rightarrow N_{\lambda_j}(A_1), \forall j = 1,\cdots, m$ and $\forall i = 1,2,\cdots, k+1$. 
 \begin{enumerate}[label=(\arabic*)]
     \item If $m = 1$, then there exists a basis $B$ of $\mathbb{C}^1$ consisting of generalized eigenvectors for $A_2, \cdots, A_k,A_{k+1}$. Any vectors in $\mathbb{C}^l$ is a generalized eigenvectors for $A_1$ because $\mathbb{C}^l = N_{\lambda_1}(A_1)$, then any vectors in $B$ is a a generalized eigenvectors for $A_1, A_2, \cdots, A_{k+1}$.
-    \item If $m > 1$, then $N_{\lambda_j}(A_1)\neq \mathbb{C}^l, \forall j = 1,\cdots, k+1$. On $N_{\lambda_j}(A_1)$, we have $A_1|_{N_{\lambda_j}(A_1)}, A_2|_N_{\lambda_j}(A_1), \cdots, A_{k+1}|_N_{\lambda_j}(A_1)$. By induction, there exists a basis $\beta_j, j=1,2,\cdots, m$ of $N_{\lambda_j}(A_1)$, which are generalized eigenvectors for $A_1|_{N_{\lambda_j}(A_1)}, \cdots, A_{k+1}|_N_{\lambda_j}(A_1)$. Take 
+    \item If $m > 1$, then $N_{\lambda_j}(A_1)\neq \mathbb{C}^l, \forall j = 1,\cdots, k+1$. On $N_{\lambda_j}(A_1)$, we have $$A_1|_{N_{\lambda_j}(A_1)}, A_2|_N_{\lambda_j}(A_1), \cdots, A_{k+1}|_N_{\lambda_j}(A_1).$$ By induction, there exists a basis $\beta_j, j=1,2,\cdots, m$ of $N_{\lambda_j}(A_1)$, which are generalized eigenvectors for $A_1|_{N_{\lambda_j}(A_1)}, \cdots, A_{k+1}|_N_{\lambda_j}(A_1)$. Take 
     \begin{align*}
         \beta = \bigcup^m_{j=1}\beta_j
     \end{align*}
@@ -7043,12 +7214,13 @@ Since $A$ is real symmetric, then $A$ is diagonalizable\footnote{Every normal ma
 \begin{exercise}\label{exer_trace}
 Suppose $A$ is a $2 \times 2$ real matrix with trace ${\rm tr}\left(A \right) = 7$ and determinant $\det (A) = 11$. Find ${\rm tr}\left(A^2 \right)$.
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 Assume $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$, and then $a + d = 7, ad - bc = 11$. Also, $A^2 = \begin{pmatrix} a^2+bc &ad+bd \\ ac+bd & bc+d^2 \end{pmatrix}$. Thus, ${\rm tr}\left(A^2 \right) = a^2 + d^2 + 2bc = (a+d)^2 - 2(ad-bc) = 27$.
 \end{proof}
 
-\noindent{\bf Method II for Exercies \ref{exer_trace}.}
-\begin{proof}
+\medskip
+
+\begin{proof}[Second Solution of Exercise \ref{exer_trace}]
 \begin{align*}
     {\rm tr}\left(A^2 \right) & = \lambda_1^2 + \lambda_2^2 \\
     & = \left(\lambda^2 + \lambda^2\right)^2 - 2 \lambda_1 \lambda_2 \\
@@ -7348,8 +7520,9 @@ then $v_1 + v_2$ is not an eigenvector. Otherwise, $v_1$ and $v_2$ are linearly 
 This argument works for $(b)$ and $(c)$, and for part $(a)$, we can split complex matrix $A$ into two parts $\Im A$ and $\Re A$ and this argument works.
 \end{remark}
 
-\noindent{\bf Method II for Exercise \ref{commute_with_all_matrix}.}\cite{23}
-\begin{proof}
+\medskip
+
+\begin{proof}[Second Proof of Exercise \ref{commute_with_all_matrix} {\rm \cite{23}}]
 For a basis-free proof, consider $S \in \mathscr{L}(V, V)$ given by $Sx = f(x)v$ for some vector $v$ and some linear functional $f$ on $V$. Then $TS(x) = f(x) Tv = ST x = f(Tx) v$ for any $x$. In particular, as long as a nontrivial linear functional $f$ on $V$ exists, there is $x$ such that $f(x) \neq 0$ and then $Tv = \alpha v$ for all $v$, where $\alpha = f(Tx)/f(x)$. Thus, $T$ can only be scalar matrix.
 \end{proof}
 
@@ -7418,7 +7591,7 @@ $$
 Find the spectral radius, operator norm and Hilbert-Schmidt norm of
 $A:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$.
 \end{exercise}
-\begin{proof}
+\begin{proof}[Solution]
 The eigenvalues of $A$ are $1$ and $3$, and then we can know that the spectral radius is $r(a) = \max |\lambda| = 3$. The operator norm of $A$ is  the largest eigenvalues of $AA^T$, which is 
 $$
 AA^T=\left(
@@ -7531,7 +7704,219 @@ which is a contradiction. Hence, we constructed $k - 2$ vectors in $\mathbb{R}^{
 \end{proof}
 
 
+\section{Spectral Theory of Self-Adjoint Mappings}
 
+\begin{exercise}
+Let%
+$$
+q\left(  x\right)  =2x_{1}x_{2}-6x_{2}x_{3}+2x_{1}x_{3}.
+$$
+Find an invertible matrix $L$, such that%
+$$
+q\left(  L^{-1}y\right)  =d_{1}y_{1}^{2}+d_{2}y_{2}^{2}+d_{3}y_{3}^{2}%
+$$
+where $d_{i}=0$ or $\pm1$.
+\end{exercise}
+\begin{proof}
+We have $q(x) = (x,Hx)$, where 
+$$
+H = \left(
+\begin{matrix}
+0 & 1 & 1\\
+1 & 0 & -3\\
+1 & -3 & 0
+\end{matrix}
+\right)
+$$
+and we need to normalize the matrix $H$, then we can compute for its eigenvalues, which are $\lambda = 3, \frac{3-\sqrt{17}}{2}, \frac{3+\sqrt{17}}{2}$, with eigenvectors 
+\begin{align*}
+    \left(\begin{matrix} 0 \\ - 1\\ 1 
+    \end{matrix}\right), 
+    \left(\begin{matrix} \frac{3-\sqrt{17}}{2} \\ 1\\ 1 
+    \end{matrix}\right), 
+    \left(\begin{matrix} \frac{3+\sqrt{17}}{2} \\ 1\\ 1 
+    \end{matrix}\right), 
+\end{align*}
+Now we can normalize these vectors and we get 
+\begin{align*}
+    \left(\begin{matrix} 0 \\ - \frac{1}{\sqrt{2}}\\ \frac{1}{\sqrt{2}} 
+    \end{matrix}\right), 
+    \left(\begin{matrix} -\sqrt{\frac{17-3\sqrt{17}}{34}} \\ \frac{2}{\sqrt{17-3\sqrt{17}}}\\ \frac{2}{\sqrt{17-3\sqrt{17}}} 
+    \end{matrix}\right), 
+    \left(\begin{matrix} \sqrt{\frac{17+3\sqrt{17}}{34}} \\ \frac{2}{\sqrt{17+3\sqrt{17}}} \\ \frac{2}{\sqrt{17+3\sqrt{17}}} 
+    \end{matrix}\right), 
+\end{align*}
+And we arrange eigenvectors into a matrix, denoting it by 
+\begin{align*}
+    C = \left(\begin{matrix}
+    0 & -\sqrt{\frac{17-3\sqrt{17}}{34}} & \sqrt{\frac{17+3\sqrt{17}}{34}} \\
+    - \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{17-3\sqrt{17}}} & \frac{2}{\sqrt{17+3\sqrt{17}}} \\
+    \frac{1}{\sqrt{2}} & \frac{2}{\sqrt{17-3\sqrt{17}}} & \frac{2}{\sqrt{17+3\sqrt{17}}}
+    \end{matrix}\right).
+\end{align*}
+We can verify that $C^*HC = \left(
+\begin{matrix}
+3 & 0 & 0\\
+0 & \frac{3-\sqrt{17}}{2} & 0\\
+0 & 0 & \frac{3+\sqrt{17}}{2}
+\end{matrix}
+\right)$. Now we denote $z = Cx = (z_1, z_2, z_3)$, where 
+\begin{align*}
+    z_1 & = -\sqrt{\frac{17-3\sqrt{17}}{34}}x_2 + \sqrt{\frac{17+3\sqrt{17}}{34}}x_3\\
+    z_2 & = - \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3 \\
+    z_3 & = \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3
+\end{align*}
+and we need to change variable to get the quadratic form $q\left(  L^{-1}y\right)  =d_{1}y_{1}^{2}+d_{2}y_{2}^{2}+d_{3}y_{3}^{2}$. We make the change of variable
+\begin{align*}
+    y_1 & = \frac{1}{\sqrt{3}}z_1 \\
+    y_2 & = \sqrt{\frac{2}{3-\sqrt{17}}} z_2\\
+    y_3 & = \sqrt{\frac{2}{3+\sqrt{17}}} z_3
+\end{align*}
+and we can denote this transform by matrix $E$, where 
+\begin{align*}
+    E = \left(
+    \begin{matrix}
+    \frac{1}{\sqrt{3}} & 0 & 0\\
+    0 & \sqrt{\frac{2}{3-\sqrt{17}}} & 0\\
+    0 & 0 & \sqrt{\frac{2}{3+\sqrt{17}}}
+    \end{matrix}
+    \right)
+\end{align*}
+then we can know that $L^{-1} = CE$, which are defined above. And finally, $L = (CE)^{-1}$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Show that the congruence is an equivalence relation for symmetric
+matrices. Find the total number of equivalence classes for $n\times n$
+symmetric matrices.
+\end{exercise}
+\begin{proof}
+We denote the relation of congruence by $\sim$.
+\begin{enumerate}[label=(\arabic*)]
+    \item \begin{enumerate}[label=\alph*).]
+        \item For $A$ is a symmetric matrix, then we have $A\sim A$, since $A = I^TAI$, where $I$ is identity matrix.
+        \item For $A,B$ are symmetric matrices, we have if $A\sim B$ , then $B\sim A$. Since if $A = S^TBS$, where $S$ is invertible, then we have $B = (S^T)^{-1}AS^{-1}$, which means $B\sim A$.
+        \item For $A,B$ and $C$ are symmetric matrices, we have if $A\sim B,B\sim C$, then $A\sim C$. Since if we have $A = S^TBS$ and $B = P^TCP$, then we have $A = S^TP^TCPS = (PS)^TCPS$, which implies $A\sim C$. Then we proved the congruence is an equivalence relation.
+    \end{enumerate}
+    \item Suppose $A = S^TBS$, and $S$ is invetible. Also, we have $R_{BS}\subseteq R_{B}$ with equality when $S$ is invertible, since $S$ is full rank. Then we have, in this case, $\dim B = \dim BS$. Then we have $S^T$ is also full rank and $\dim A = \dim S^TBS = \dim B$. So we can know that for symmetric matrices $A$ and $B$, if they are congruent then they have the same rank, which means there are $n+1$ equivalebce classes, since there are matrix with rank $0,1,2,\cdots,n$, which are $n+1$ possibilities.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A,B$ be two $n\times n$ real orthogonal matrices satisfying
+$$\det A+\det B=0.$$
+Show there exists a unit vector $x$ such that%
+$$Ax=-Bx.$$
+\end{exercise}
+\begin{proof}
+Since $A$ and $B$ are orthogonal matrices, then we have $\det A = \det B = \pm 1$ and $A^TA = B^TB = I$. Also, with $\det A+\det B=0$, we have $\det A\det B = -1$. Now consider 
+\begin{align*}
+    \det(A+B) & = \det(A(A^T+B^T)B) \\
+    & = \det A \det(A^T+B^T) \det B \\
+    & = - \det(A^T+B^T) \\
+    & = - \det(A+B)^T  \\
+    &= - \det(A+B).
+\end{align*}
+Then we have $\det(A+B) = 0$, which means $A+B$ is not full rank. Then we can find a vector $y\in N_{A+B}$ such that $(A+B)y = 0$. Now we pick $x = \frac{y}{\|y\|}$, this is the unit vector we need.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ and $B$ are normal complex $n\times n$ matrices. Prove that%
+$$
+r(AB)\leq r(A)r(B).
+$$
+Here $r(\cdot)$ is the spectral radius of a matrix. Find a counter example if
+$A$ or $B$ is not normal.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have 
+    \begin{align*}
+        AB x & = \lambda x \\
+        \Rightarrow \|AB\|\|x\| & \geq \|AB x\| = |\lambda|\|x\| \\
+        \Rightarrow \|AB\| & \geq |\lambda|.
+    \end{align*}
+    Also, we have $\|AB\|\leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\|A\| = r(A)$ and $\|B\| = r(B)$. Thus, with all the results above, we have 
+    \begin{align*}
+        r(AB)\leq \|AB\|\leq \|A\| \|B\| = r(A)r(B).
+    \end{align*}
+    The proof is complete. 
+    \item Take $A = \left(
+    \begin{matrix}
+        1 & 0\\
+        1 & 1
+        \end{matrix}
+    \right)$ and $B = \left(
+    \begin{matrix}
+        2 & 1\\
+        -1 & 0
+    \end{matrix}
+    \right)$ and $A,B$ are not normal. We can compute that $r(AB) = \sqrt{3}$ and $r(A)r(B) = 1\cdot 1 = 1 < r(AB)$. This is a counter example if $A$ and $B$ are not normal.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+What is the operator norm of the matrix%
+$$
+\left(
+\begin{array}
+[c]{ccc}%
+1 & 0 & 1\\
+2 & 3 & 0
+\end{array}
+\right)
+$$
+in the standard Euclidean structures of $\mathbb{R}^{2}$ and $\mathbb{R}^{3}$.
+\end{exercise}
+\begin{proof}[Solution]
+Denote the matrix above by $A$, then the operator norm of $A$ is $\sqrt{r(A^*A)} = \sqrt{\frac{15+\sqrt{137}}{2}}$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $\left\{  \lambda_{i}\right\}  _{i=1}^{n}$ be eigenvalues of matrix
+$A=\left(  a_{ij}\right)  _{n\times n}$. Show that%
+$$
+\sum_{j=1}^{n}\left\vert \lambda_{j}\right\vert ^{2}\leq\sum_{i,j=1}%
+^{n}\left\vert a_{ij}\right\vert ^{2}.
+$$
+\end{exercise}
+\begin{proof}
+With Schur decomposition, we cnould know that $A = Q U Q^*$, where $Q$ is unitary and $U$ is upper triangular and its diagonal entries are engenvalues of $A$, since $A$ and $U$ are similar. And we can show that Hilbert-Schwarz norm norm $\|A\|_{HS} = \sqrt{\sum_{i,j=1}^{n} \left|a_{ij}\right|^2}$ is invariant under unitary matrix multiplication:
+\begin{align*}
+    \|QA\|_{HS}^2 = \text{tr} \left((QA)^* (QA)\right) = \text{tr} \left(A^* Q^* QA\right) = \text{tr} \left(A^* A\right) = \|A\|_{HS}^2
+\end{align*}
+then we can have 
+\begin{align*}
+    \|A\|_{HS}^2 = \|QAQ^*\|_{HS}^2 = \|U\|_{HS}^2.
+\end{align*}
+Also we can know that
+\begin{align*}
+    \sum_{j=1}^{n}\left| \lambda_{j}\right|^{2}\leq \sum_{i,j=1}^{n}\left| u_{ij}\right|^{2} = \|A\|_{HS}^2,
+\end{align*}
+since the square sum of all diagonal entries of $U$ is smaller than that of all entries of $U$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A=\left(  a_{ij}\right)  _{n\times n}$ be normal. Show that%
+$$
+r\left(  A\right)  \geq\max_{1\leq i\leq n}\left\vert a_{ii}\right\vert .
+$$
+\end{exercise}
+\begin{proof}
+Since $A$ is normal matrix, then we have $\|A\| = r(A)$. Also, we have known that for all $a_{ij}$, $\left|a_{ij}\right|\leq \|A\|$. Thus, we have $r(A)\geq \max_{1\leq i\leq n}\left|a_{ii}\right|$.
+\end{proof}
 
 
 
