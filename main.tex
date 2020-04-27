@@ -1340,7 +1340,7 @@ A linear mapping $P\in \mathscr{L}(X,X)$ is called a projection if $P^2=P$.
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{projection_direct_sum}
 If $P\in\mathscr{L}(X,X)$ is a projection, then $X = N_P\oplus R_P$, and $P|_{R_P} = I$ is identity.
 \end{theorem}
 \begin{proof}
@@ -3352,23 +3352,26 @@ For any $x\in X$, we can write $x = x_1 + x_2$, where $x_1\in P_Y x, x_2\in Y^\p
 and the equation obtain equal sign only when $z = x_1 = P_Y x$.
 \end{proof}
 
-\begin{example}[Orthogonal projection onto a line]
-Let $L = {\rm span}\{u\}$ be a line in $\mathbb{R}^n$ and let $x$ be a vector in $\mathbb{R}^n$, then the orthogonal projection $x_L$ of $x$ is $$x_L = \frac{u \cdot x}{u \cdot u}u$$
+\medskip
+
+\begin{example}[Orthogonal projection onto a line]\label{Orthogonal projection onto a line}
+Let $L = {\rm span}\{u\}$ be a line in $\mathbb{R}^n$ and let $x$ be a vector in $\mathbb{R}^n$, then the orthogonal projection $x_L$ of $x$ is $$x_L = \frac{(u,x)}{(u,u)}u$$
 and $x_{L^\bot} = x - x_L$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Orthogonal_projection_1}
-    \caption{Orthogonal projection onto a line.}
+    \caption{Orthogonal projection onto a line}
     \label{fig:plot_1}
 \end{figure}
 The vector $x_L$ is a multiple of $u$, say $x_L = cu$. This multiple is chosen so that 
 \begin{align*}
-    (x - cu) \cdot u = 0,
+    ((x - cu), u) = 0,
 \end{align*}
 and hence,
 \begin{align*}
-    c = \frac{u \cdot x}{u \cdot u}.
+    c = \frac{(u, x)}{(u, u)}.
 \end{align*}
+The above picture\footnote{Picture source: \url{https://textbooks.math.gatech.edu/ila/projections.html}} shows the orthogonal projection in $\mathbb{R}^2$.
 \end{example}
 
 \medskip
@@ -4292,7 +4295,7 @@ The set of eigenvalues of $H$ is called the spectral of $H$.
 
 \medskip
 
-Let $H$ be a self-adjoint map from $X$ into $X$, then we have 
+Projections can be used to describe direct-sum decompositions of the space $X$\cite{33}. Let $H$ be a self-adjoint map from $X$ into $X$, then we have 
 \begin{align*}
     X = \oplus_{\lambda_j \in \sigma(H)}N_{H - \lambda_j I}.
 \end{align*}
@@ -6078,7 +6081,112 @@ $$v = Pv + (v - Pv),$$
 where $Pv \in W$ and $v - Pv \in N_P$. Indeed, $P(v - Pv) = Pv - P^2 v = 0$, then $v - Pv \in N_P$. Then, every vector can be written as the sum of a vector in $W$, which is eigenvector corresponding to eigenvalue $1$ and a vector in $N_P$, which is eigenvector corresponding to eigenvalue $0$. So the union of basis for $W$ and $N_P$ form a basis of the whole space. Thus, the matrix $P$ under this basis is diagonal.
 \end{proof}
 
+\medskip
 
+Consider a projection $P: X \to X$, by Theorem \ref{projection_direct_sum}, $X = R_P \oplus N_P$ and $P|_{R_P} = I$. We say a projection $P$ is an orthogonal projection if $R_P \bot N_P$.
+
+\begin{corollary}
+$P$ is an orthogonal projection if and only if $P^2 = P$ and $P$ is self-adjoint.
+\end{corollary}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Suppose $R_P \bot N_P$, then let $y_1 \in N_P, x_1 \in R_P$, and hence $(x_1, y_1) = 0$. Also, take $y_2 \in N_P, x_2 \in R_P$, and then $(x_1, y_1) = 0 = (x_2, y_2)$. Then,
+    \begin{align*}
+        (x_1, y_1) + (x_1, x_2) = (x_2, y_2) + (x_1, x_2),
+    \end{align*}
+    which is equivalent to $(x_1, y_1 + x_2) = (x_1 + y_2, x_2)$. Extend $x_1$ and $x_2$ to $P(x_1 + y_2)$ and $P(x_2 + y_1)$\cite{34} yields 
+    \begin{align*}
+        (P(x_1 + y_2), y_1 + x_2) = (x_1 + y_2, P(x_2 + y_1)),
+    \end{align*}
+    and then $(Px_1, y_1) = (x_1, Py_1)$. Since $(Px_1, y_1) = (x_1, P^*y_1)$, then $P = P^*$.
+    
+    \item If $P^2 = P$, then $P$ is a projection. If $P$ is self-adjoint, then let $x \in R_P, y \in N_P$, and we have
+    \begin{align*}
+        (x, y) = (Px, y) = (x, P^*y) = (x, Py) = (x, 0) = 0,
+    \end{align*}
+    and hence $R_P \bot N_P$.
+\end{enumerate}
+\end{proof}
+
+\begin{remark}
+In general, if a map $T$ is self-adjoint, then $R_T \bot N_P$.
+\end{remark}
+
+\medskip
+
+\section{Involution}
+\begin{definition}
+An involution, or an involutory function, is a function $f$ that is its own inverse, i.e., $f(f(x)) = x,$ for all $x$ in the domain of $f$. Equivalently, applying $f$ twice produces the original value.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+An involutory matrix is a matrix that is its own inverse. That is, matrix $A$ is an involution if and only if $A^2 = I$.
+\end{definition}
+
+\medskip
+
+\begin{proposition}
+$A^2 = I$ if and only if $\left(\frac{1}{2} (A + I) \right)^2 = \frac{1}{2} (A + I)$.
+\end{proposition}
+\begin{proof}
+\begin{align*}
+    & \left(\frac{1}{2} (A + I) \right)^2 = \frac{1}{2}(A + I) \\
+    \Longleftrightarrow & \frac{1}{4} A^2 + \frac{1}{2} A + \frac{1}{4} I = \frac{1}{2} A + \frac{1}{2} I \\
+    \Longleftrightarrow & A^2 = I.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\section{Reflection}
+
+Given a unit vector $v \in \mathbb{R}^n, n \geq 2$, a reflection of the hyperplane which is orthogonal to $v$ is defined as 
+\begin{align*}
+    R_v = I - 2 v v^T.
+\end{align*}
+
+In order to see this, we could consider it in $\mathbb{R}^3$ like below:\\
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        \draw[-] (0,-2)--(2,-1) node[pos=.5, below right]{$Q$};
+        \draw[-] (2,-1)--(-0.5,2.83);
+        \draw[-] (-0.5,2.83)--(-2.5,1.83);
+        \draw[-] (-2.5,1.83)--(0,-2);
+        \draw[-] (-2,-1.2)--(0,0) node[pos=0.2,below right]{$L$};
+        \draw[dotted,-] (0,0) node[below right]{$0$}--(0.95, 0.57);
+        \draw[->] (0.95, 0.57)--(2,1.2) node[below right]{$v$};
+        \draw[thick,->] (0,0)--(-2.5,0.5) node[pos=.5, above]{$x$};
+        %\draw[-] (-1.61,-0.97)node[below right]{$x_L$}--(-2.5,0.5) node[pos=.5, below left]{$x_{L^\bot}$};
+        \draw[thick,dotted,->] (-2.5,0.5)--(-0.88,1.47) node[pos=0.8,above left]{$-x_L$};
+        \draw[dotted,-] (0,0)--(-0.88,1.47);
+        \draw[dotted,-] (-0.88,1.47)--(0,2);
+        \draw[-] (0,2)--(0.74,2.44);
+        \draw[dotted,-] (0,0)--(0.403,1.329);
+        \draw[thick,->] (0.42,1.4)--(0.74,2.44) node[pos=.4, below right]{$x_R$};
+    \end{tikzpicture}
+    \caption{Reflection about the hyperplane $Q$}
+    \label{fig:plot_2}
+\end{figure}\\
+For vector $x$, its reflection about the hyperplane $Q$ which is orthogonal to vector $v$ is $x_R$. It is obvious that $x_R = x - 2 x_L$, where $x_L$ is the orthogonal projection of $x$ onto the line $L$, by Example \ref{Orthogonal projection onto a line}, $x_L = \frac{(uv,x)}{(v,v)}v$, and then the reflection $R_v$ satisfies
+\begin{align*}
+    R_v x = x_R = x - 2 \frac{(v,x)}{(v,v)}v.
+\end{align*}
+Thus, it is clear that $R_v = I - 2 v v^T$ when $v$ is unit vector. 
+
+\begin{remark}
+~\begin{enumerate}[label=(\alph*)]
+    \item $R_v(kv) = k R_v(v) = k (v - 2 v v^T v) = -kv$.
+    
+    \item If $u \bot v$, then $R_v(u) = u - 2 v v^T u = u$.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}
+$R_v^2 = I$ and $R_v$ is symmetric, then $R_v$ is orthogonal.
+\end{remark}
 
 \end{subappendices}
 
