@@ -30,6 +30,9 @@
 \usepackage{url}
 \usepackage{float}
 \usepackage{lipsum}
+\usepackage{appendix}
+\usepackage{chngcntr}
+\usepackage{etoolbox}
 \graphicspath{{images/}}
 
 \usepackage{hyperref}
@@ -73,6 +76,12 @@
 \newtheorem{example}{Example}[section]
 \numberwithin{equation}{chapter}
 
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
 
 \def\dsp{\def\baselinestretch{1.35}\large
 \normalsize}
@@ -4107,7 +4116,7 @@ Then,
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{hermitian_diagonal}
 Any Hermitian matrix $A$ can be diagonalized by a unitary matrix.
 \end{theorem}
 \begin{proof}
@@ -4124,7 +4133,7 @@ which implies $A = U\Lambda U^{-1}$.
 
 \medskip
 
-\begin{corollary}
+\begin{corollary}\label{self-adjoint-diagonal}
 Any real self-adjoint matrix $H$ can be diagonalized by an orthogonal matrix, i.e. there is an orthognal matrix $M$ such that 
 \begin{align*}
     M^* H M = D,
@@ -5065,7 +5074,7 @@ Now we discuss some basic properties of positive mapping.
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{unique_square_root}
 ~\begin{enumerate}[label=(\roman*)]
     \item The identity $I > 0$.
     \item If $A, B > 0$, then $A + B > 0$.
@@ -5246,7 +5255,7 @@ is called the Gram matrix of the set of vectors.
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{gram_matrix_theorem}
 ~\begin{enumerate}[label=(\roman*)]
     \item Every Gram matrix is nonnegative.
     
@@ -5656,6 +5665,435 @@ Thus,
     & \Leftrightarrow Z+Z^* > 0.
 \end{align*}
 \end{proof}
+
+\section{Polar Decomposition}
+\begin{theorem}\label{polar_decomposition_theorem}
+Let $A$ be a linear mapping of a complex Euclidean space into itself. Then $A$ can be factored as 
+\begin{align}\label{polar_decomposition}
+    A = RU,
+\end{align}
+where $R$ is a nonnegative self-adjoint mapping, and $U$ is unitary. When $A$ is invertible, $R$ is positive.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item When $A$ is invertible, then so is $A^*$. For any $x \neq 0$,
+    \begin{align*}
+        (A A^* x, x) = (A^* x, A^* x) = \Vert A^* x \Vert > 0.
+    \end{align*}
+    This proves that $A A^*$ is a positive mapping. According to Theorem \ref{unique_square_root}, $A A^*$ has a unique positive square root $R$, i.e., $A A^* = R^2$. Define $U = R^{-1}A$, then $U^* = A^* R^{-1}$. Indeed, $R^{-1}$ is self-adjoint\footnote{According to Theorem \ref{gram_matrix_theorem}, every positive matrix can be represented as a Gram matrix, so it is self-adjoint.}. Then,
+    \begin{align*}
+        U U^* = R^{-1}A A^* R^{-1} = R^{-1} R^2 R^{-1} = I,
+    \end{align*}
+    which implies $U$ is unitary. By definition of $U$, $A = RU$.
+    
+    \item When $A$ is not invertible, $AA^*$ is a nonnegative self-adjoint map, then it has a unique nonnegative square root $R$. Therefore, 
+    \begin{align}\label{equ_square_norm}
+        \Vert R x \Vert^2 = (Rx, Rx) = (x, R^2 x) = (x, AA^*x) = (A^*x, A^*x) = \Vert A^*x \Vert^2.
+    \end{align}
+    Suppose $Rx = Ry$, then $\Vert R (x - y) \Vert = 0$, and according to (\ref{equ_square_norm}), $\Vert A^* (x - y) \Vert = 0$, therefore $A^* x = A^* y$. This shows that for any $u$ in the range of $R$, $u = Rx$, we can define $Vu$ as 
+    $A^* x$ and then $V$ is isometry, therefore it can be extended to the whole space as a unitary mapping. By definition, $A^* = VR$, and then $A = RV^*$.
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Second Proof of Theorem \ref{polar_decomposition_theorem}(b)]
+When $A$ is not invertible, let $A_\varepsilon = A + \varepsilon I$ be invertible, where $\varepsilon$ is arbitrary and positive. Let $R_\varepsilon = \sqrt{A_\varepsilon A_\varepsilon^*}$, and similarly, $R_\varepsilon$ is unique and positive. Define $U_\varepsilon = R_\varepsilon^{-1} A_\varepsilon$, then $A_\varepsilon = R_\varepsilon U_\varepsilon$. And $A_\varepsilon, R_\varepsilon, U_\varepsilon$ have convergent subsequences, meaning $A \gets A_\varepsilon = R_\varepsilon U_\varepsilon \to RU$.
+\end{proof}
+
+\begin{remark}
+If $A$ is invertible, then $R, U$ are uniquely determined. If $A$ is not invertible, then $U$ is not unique.
+\end{remark}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Suppose $A = R_1U_1 = R_2 U_2$, where $R_1, R_2 > 0$, $U_1^* U_1 = U_2^* U_2 = I$. Also,
+    \begin{align*}
+        R_1 U_1 \left(R_1 U_1\right)^* = R_1 R_1^* = R_2 U_2 \left(R_2 U_2\right)^* = R_2 R_2^*.
+    \end{align*}
+    Then $R_1^2 = R_2^2$, and hence $R_1 = R_2$. Indeed, for any $x$, 
+    \begin{align*}
+        & \left(x, (R_1 + R_2)(R_1 - R_2)x\right) \\
+        = & (x, R_1^2x) - (x, R_1 R_2 x) + (x, R_2 R_1 x) - (x, R_2^2x) \\
+        = & (R_2 x, R_1 x) - (R_1 x, R_2 x),
+    \end{align*}
+    which implies $\Re\left(x, (R_1 + R_2)(R_1 - R_2)x\right) = 0$. 
+    
+    For any $x \neq 0$ and $\mu \in \sigma(R_1 - R_2), \mu \neq 0$ such that $(R_1 - R_2)x = \mu x$, we have
+    \begin{align*}
+        \Re\left(x, \mu (R_1 + R_2) x\right) = 0,
+    \end{align*}
+    and then $(R_1 + R_2) x = 0$. Therefore, $R_1 x = R_2 x = 0$, and then $(R_1 - R_2)x = 0$, which implies $\mu = 0$. Contradiction. Thus, $R_1 = R_2$.
+    
+    \item If $A$ is not invertible, WLOG, we could assume $A = 0$. Then, $R = 0$, and $U$ can be any unitary matrix.
+\end{enumerate}
+\end{proof}
+
+\section{Singular Value Decomposition}
+
+According to the spectral representation theorem \ref{hermitian_diagonal}, the self-adjoint map $R$ can be expressed as $R = WDW^*$, where $D$ is diagonal and $W$ is unitary. Substituting this into (\ref{polar_decomposition}) gives $A = WDW^* U$. Denote $W^*U$ by $V$, then 
+\begin{align}\label{singular_value_decomposition}
+    A = WDV,
+\end{align}
+where $W$ and $V$ are unitary and $D$ is diagonal, with nonnegative entries. Equation (\ref{singular_value_decomposition}) is called the {\em singular value decomposition} (SVD) of the mapping $A$. The diagonal entries of $D$ are called the {\em singular values} of $A$, which are the nonnegative square roots of the eigenvlaues of $AA^*$. 
+
+\medskip
+
+\begin{theorem}
+Let $A$ be $m\times n$ matrix. Then there exists $m \times m$ unitary matrix $U$ and $n \times n$ unitary matrix $V$ such that
+\begin{align*}
+    A = U \Sigma V^*,
+\end{align*}
+where $\Sigma$ is $m \times n$ rectangular diagonal matrix with nonnegative real entries on diagonal.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If $m = n$, then it holds.
+    
+    \item Suppose $m > n$. Since $A^*A \geq 0$, then there exists $n \times n$ unitary matrix $V$ such that $A^*A = V D V^*$, where $D$ is $n \times n$ diagonal matrix and $D \geq 0$. For any $x \in \mathbb{C}^n$, 
+    \begin{align*}
+        \Vert AV x \Vert^2 & = (AVx, AVx) = (Vx, A^*AV x) = (Vx, V D V^* V x) \\
+        & = (Vx, VDx) = (x, Dx) = \Vert D^{1/2} x \Vert^2.
+    \end{align*}
+    Let $U: \mathbb{C}^m \to \mathbb{C}^m$ maps $\begin{pmatrix}
+        D^{1/2} \\
+        0
+    \end{pmatrix}_{m\times n}x$ to $AVx \in \mathbb{C}^m$, and $U$ is unitary, i.e., $U \begin{pmatrix} D^{1/2} \\ 0 \end{pmatrix}x = AVx$. Then, 
+    \begin{align*}
+        U \begin{pmatrix} D^{1/2} \\ 0 \end{pmatrix} = AV.
+    \end{align*}
+    Define $\Sigma = \begin{pmatrix} D^{1/2} \\ 0 \end{pmatrix}$, then $AV = U\Sigma$, and hence $A = U\Sigma V^*$.
+\end{enumerate}
+\end{proof}
+
+\begin{remark}
+The singular values of $A$, and hence $\Sigma$ is uniquely determined. 
+\end{remark}
+
+\begin{remark}
+~\begin{enumerate}[label=(\alph*)]
+    \item $A^* A = V\Sigma^* U^* U\Sigma V^* = V\Sigma^* \Sigma V^*$, and the columns of $V$ are eigenvectors of $A^* A$, called the right singular vector of $A$.
+    
+    \item $A A^* = U\Sigma V^* V\Sigma^* U^* = U\Sigma \Sigma^* U^*$, and the columns of $U$ are eigenvectors of $A A^*$, called the left singular vector of $A$.
+\end{enumerate}
+\end{remark}
+
+\medskip
+
+To construct singular value decomposition, first compute for eigenvalues $\sigma_1^2, \sigma_2^2, \cdots, \sigma_n^2$ of $A^*A$. Let $v_1, v_2, \cdots, v_n$ be an orthogonal basis of eigenvectors of $A^*A$, since $AA^* \geq 0$. Then we have following theorem.
+
+\begin{theorem}{\bf \cite{28}}
+Let $\sigma_1^2, \sigma_2^2, \cdots, \sigma_r^2$ be nonzero singular value of $AA^*$. Then the system 
+\begin{align*}
+    u_k = \frac{1}{\sigma_k} Av_k, k = 1,2,\cdots,r
+\end{align*}
+is an orthogonal system.
+\end{theorem}
+\begin{proof}
+\begin{align*}
+    (Av_i, Av_j) = (A^*A v_i, v_j) = \sigma_i^2 (v_i, v_j) = \begin{cases}
+        0, & i \neq j, \\
+        \sigma_i^2, & i = j,
+    \end{cases}
+\end{align*}
+since $v_1, v_2, \cdots, v_n$ is an orthogonal basis.
+\end{proof}
+
+\medskip
+
+Let $A$ be $m \times n$ real matrix. Define $\sigma(u,v) = (u, Av)$ for $u \in \mathbb{R}^m, v \in \mathbb{R}^n$.
+
+\medskip
+
+\begin{theorem}\label{eigenvalue_singular_value}
+Let 
+$$\lambda_1 = \max_{\|u\| = \|v\| = 1} \sigma(u,v) = \sigma(u_1, v_1).$$ 
+Then, $\lambda_1$ is the largest singular value and $u_1, v_1$ are left and right singular vectors with respect to $\lambda_1$. Moreover,
+\begin{align*}
+    A v_1 = \lambda_1 u_1,\quad A^* u_1 = \lambda_1 v_1.
+\end{align*}
+\end{theorem}
+\begin{proof}
+By definition of $u_1, v_1$, then for any vector $g, h$, 
+\begin{align*}
+    f(s,t) = \frac{\sigma(u_1+sg, v_1+th)}{\|u_1+sg\| \cdot \|v_1+th\|}
+\end{align*}
+attains maximum at $(0,0)$. Then,
+\begin{align*}
+    0 = \frac{\partial f}{\partial s}\Bigg|_{(0,0)} & = \frac{\sigma(g,v_1+th)\|u_1+sg\| \cdot \|v_1+th\| - \sigma(u_1+sg, v_1+th)\frac{\|v_1+th\|}{\|u_1+sg\|}[(u_1,g) + (sg,g)]}{\|u_1+sg\|^2 \cdot \|v_1+th\|^2}\Bigg|_{(0,0)} \\
+    & = \sigma(g,v_1) - \sigma(U_1,v_1)(u_1,g) \\
+    & = (g, Av_1) - \lambda_1 (g, u_1), \\
+    0 = \frac{\partial f}{\partial t}\Bigg|_{(0,0)} & = \sigma(u_1,h) + \sigma(U_1,v_1)[-(v_1,h)] \\
+    & = \sigma(u_1,Ah) - \lambda_1(v_1,h),
+\end{align*}
+and hence $Av_1 = \lambda_1 u_1$ and $A^* u_1 = \lambda_1 v_1$.
+\end{proof}
+
+\medskip
+
+Moreover, we can generalize this result to other eigenvalus.
+
+\medskip
+
+\begin{theorem}{\bf \cite{29}}
+For any $A \in \mathbb{C}^{m\times n}$,
+\begin{align*}
+    \lambda_k = \max_{\substack{\|u\| = \|v\| = 1\\
+                  (u,u_j) = 0, j=1, \cdots,k-1\\
+                  (v,v_j) = 0, j=1, \cdots,k-1}} \sigma(u,v).
+\end{align*}
+\end{theorem}
+
+\medskip
+
+\section{Sylvester's Criterion}
+\begin{definition}
+Let $A$ be $n \times n$ positive matrix, then the $k$-th order principal submatrix of $A$ is obtained by deleting any $n - k$ columns and the same $n - k$ rows of $A$. The determinant of a $k \times k$ principal submatrix is called the principal minor of $A$.
+
+The $k$-th order leading principal submatrix of $A$ is obtained by deleting the last $n - k$ rows and column of $A$. The determinant of a leading principal submatrix is called the leading principal minor of $A$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}\label{positive_principal_submatrix}
+Any principal submatrix of a positive definite matrix $A$ is positive definite.
+\end{theorem}
+\begin{proof}
+Denote by $B$ the $(n-k) \times (n-k)$ order principal submatrix of $A$, where $i$ to $i+k$ columns and rows are deleted. Now, let $x \in \mathbb{C}^n$ be any vector, and let $$\widetilde{x} = (x_1,\cdots,x_{i-1}, 0, \cdots, 0, x_{i+k+1}, \cdots, x_n),$$
+where we insert $k$ zero between $x_{i-1}$ and $x_{i+k+1}$. Then,
+\begin{align*}
+    (x, Bx) = (\widetilde{x}, A\widetilde{x}) > 0,
+\end{align*}
+and thus $B$ is positive definite.
+\end{proof}
+
+\medskip
+
+\begin{theorem}[Sylvester's Criterion]\label{Sylvester's_Criterion}
+$A$ is positive definite if and only if all $n$ leading principal minors are strictly positive.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item ($\Rightarrow$) If $A > 0$, the rest follows naturally by Theorem \ref{positive_principal_submatrix}.
+    
+    \item ($\Leftarrow$) Prove by induction and denote by $A_k$ the $k$-th order leading principal submatrix. 
+    \begin{enumerate}[label=\arabic*)]
+        \item For $A_1$, it is trivial. Indeed, the eigenvalues of $A$ are positive, so is $A_1 = \lambda_1$. 
+        
+        \item Suppose true for $n = k$, then $A_k > 0$. Since $A_k$ separates eigenvalues of $A_{k+1}$, then we claim $A$ has at most one none positive eigenvalues. 
+        
+        Indeed, suppose not and $A$ has two negative eigenvalues\cite{30}. Then their eigenvectors $x = (x_1, \cdots, x_n)$ and $y = (y_1, \cdots, y_n)$ are two independent vectors such that $(x, Ax) < 0$ and $(y, Ay) < 0$. Also, the spectral theorem means that they are orthogonal, i.e., $(x, y) = 0$. Let $(w_1, \cdots, w_n) = w = y_n u - x_n v$, then $w_n = 0$. Now let $\widetilde{w} = (w_1, \cdots, w_{n-1})$, then by assumption that $n-1$ order leading principal submatrix is positive, we have
+        \begin{align*}
+            (w, Aw) = (\widetilde{w}, A_{n-1}\widetilde{w}) > 0.
+        \end{align*}
+        On the other hand,
+        \begin{align*}
+            (w, Aw) & = (y_n u - x_n v, A(y_n u - x_n v)) \\
+            & = y_n^2 (x, Ax) + x_n^2(y, Ay) < 0,
+        \end{align*}
+        which is a conctradiction. Thus, $A$ can have at most one none positive eigenvalue. 
+        
+        Also, suppose $A$ has one none positive eigenvalue, say $\widetilde{\lambda}$. Then $\det A = \widetilde{\lambda} \prod^{n-1}_{i=1}\lambda_i < 0$. On the other hand, $\det A = \det A_n > 0$. Thus, $A$ has all positive eigenvalues. Hence, $A > 0$.
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Second Proof of Theorem \ref{Sylvester's_Criterion} (a)]
+If $A > 0$, let $A_{n-1}$ be the $n-1$ order leading principal matrix, then the eigenvalues of $A_{n-1}$ separate that of $A$. Thus, $A_{n-1} > 0$.
+\end{proof}
+
+\medskip
+
+\begin{theorem}\label{block_matrix_inequality}
+Let $A$ be $n \times n$ positive matrix, and suppose $A = \begin{pmatrix} B & C \\ C^* & D \end{pmatrix}$, where $B$ is $k \times k$ leading principal matrix. Then $\det A < \det B \det D$.
+\end{theorem}
+
+First we need a lemma, and then we provide a proof to the theorem.
+
+\begin{lemma}
+If $A$ and $B$ are positive semipositive, i.e., $A \geq 0, B \geq 0$, then $\det(A + B) \geq \det A + \det B$.
+\end{lemma}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If $A = I$, and suppose $\sigma(B) = \{\lambda_1, \cdots, \lambda_n\}$. Then,
+    \begin{align*}
+        \det(I + B) = \prod^n_{i=1} (1 + \lambda_i) \geq 1 + \prod^n_{i=1} \lambda_i = \det I + \det B.
+    \end{align*}
+    Thus, $\det(A + B) \geq \det A + \det B$.
+    
+    \item 
+    \begin{enumerate}[label=\arabic*)]
+        \item If $A \neq I$, and $A$ is invertible, then
+        \begin{align*}
+            \det (A + B) & = \det A^{1/2} \left(I + A^{-1/2} B A^{-1/2}\right) A^{1/2} \\
+            & \geq \det A^{1/2} \left(1 + \det A^{-1/2} B A^{-1/2} \right) \det A^{1/2} \\
+            & = \det A + \det B.
+        \end{align*}
+        
+        \item If $A$ is not invertible, then for any $\varepsilon > 0$, let $A_\varepsilon = A + \varepsilon I > 0$ be invertible. Thus, 
+        \begin{align*}
+            \det (A_\varepsilon + B) \geq \det A_\varepsilon + \det B,
+        \end{align*}
+        and letting $\varepsilon$ to $0$ gives the result.
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{block_matrix_inequality}]
+Since $B$ is $k$-th order leading principal submatrix of $A$ and $A > 0$, then $B > 0$ and hence invertible. Let $Q = \begin{pmatrix} I_k & -B^{-1}C \\ 0 & I_l \end{pmatrix}$, where $k + l = n$. Then,
+\begin{align*}
+    Q^* A Q = \begin{pmatrix} I_k & 0 \\ -B^{-1}C & I_l \end{pmatrix} \begin{pmatrix} B & C \\ C^* & D \end{pmatrix} \begin{pmatrix} I_k & -B^{-1}C \\ 0 & I_l \end{pmatrix} = \begin{pmatrix} B & 0 \\ 0 & D - C^*B^{-1}C \end{pmatrix}.
+\end{align*}
+And then $\det A = \det Q^* A Q = \det B \det (D - C^*B^{-1}C)$. Also, with $C^*B^{-1}C \geq 0$, we have
+\begin{align*}
+    \det A & = \det B \det (D - C^*B^{-1}C) \\
+    & \leq \det B \det D.
+\end{align*}
+\end{proof}
+
+\begin{subappendices}
+\section{Idempotent and Nilpotent}
+
+\begin{definition}
+$N$ is $n \times n$ matrix, which is called nilpotent if for some $k \geq 0$, $N^k = 0$. The smallest value of such $k$ is called the degree of $N$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}\label{theorem_nilpotent}
+Let $N$ be a $n \times n$ matrix. Then the following statements are equivalent.
+\begin{enumerate}[label=(\alph*)]
+    \item $N$ is nilpotent.
+    
+    \item The eigenvalues of $N$ are all zeros.
+    
+    \item The characteristic polynomial of $N$ is $\lambda^n$.
+    
+    \item The minimal polynomial of $N$ is $\lambda^k$ for some $1 \leq k \leq n$.
+    
+    \item $\tr(N^k) = 0$ for any $k \geq 1$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+$(a) \Leftrightarrow (b) \Leftrightarrow (c) \Leftrightarrow (d)$ is trivial. It suffices to show that $(e) \Rightarrow (b)$. 
+
+Suppose $A$ is not nilpotent and $N$ has some nonzero eigenvalues $\lambda_1, \cdots, \lambda_r$ with miltiplicity $n_i$. Then the eigenvalues of $N^k$ are $\lambda_1^k, \cdots, \lambda_r^k$, and then
+\begin{align*}
+    n_1 \lambda_1 + & \cdots + n_r \lambda_r = 0, \\
+    & \vdots \\
+    n_1 \lambda_1^r + & \cdots + n_r \lambda_r^r = 0,
+\end{align*}
+which is equivalent to the system
+\begin{align*}
+    \begin{pmatrix}
+        \lambda_1 & \lambda_2 & \cdots & \lambda_r \\
+        \lambda_1^2 & \lambda_2^2 & \cdots & \lambda_r^2 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \lambda_1^r & \lambda_2^r & \cdots & \lambda_r^r
+    \end{pmatrix} 
+    \begin{pmatrix}
+        n_1 \\
+        n_2 \\
+        \vdots \\
+        n_r
+    \end{pmatrix} = \begin{pmatrix}
+        0 \\
+        0 \\
+        \vdots \\
+        0
+    \end{pmatrix}.
+\end{align*}
+Since 
+\begin{align*}
+    \det \begin{pmatrix}
+        \lambda_1 & \lambda_2 & \cdots & \lambda_r \\
+        \lambda_1^2 & \lambda_2^2 & \cdots & \lambda_r^2 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \lambda_1^r & \lambda_2^r & \cdots & \lambda_r^r
+    \end{pmatrix} = \det \begin{pmatrix}
+        1 & 1 & \cdots & 1 \\
+        \lambda_1 & \lambda_2 & \cdots & \lambda_r \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \lambda_1^{r-1} & \lambda_2^{r-1} & \cdots & \lambda_r^{r-1}
+    \end{pmatrix} \prod^r_{i=1} \lambda_i \neq 0,
+\end{align*}
+then the system has a unique solution which is $n_1 = \cdots = n_r = 0$, which is a contradiction\cite{31}. Thus, the eigenvalues of $A$ are all zeros.
+\end{proof}
+
+\begin{proof}[Second Proof of Theorem \ref{theorem_nilpotent}]
+Suppose $\lambda_1, \cdots, \lambda_n$ are eigenvalues of $A$, then for all $k \geq 1$,
+\begin{align*}
+    \lambda_1^k + & \cdots + \lambda_n^k = 0.
+\end{align*}
+Using Newton's identities to express the elementary symmetric functions of $\lambda_i$'s in terms of their power sum, we see that all the coefficients of the characteristic polynomial of $A$ are zero. Thus, $A$ is nilpoten\cite{32}.
+\end{proof}
+
+\medskip
+
+\begin{theorem}[Jordan–Chevalley Decomposition]
+Any $n \times n$ matrix $A$ can be decomposed into sum of a diagonal matrix and a nilpotent matrix.
+\end{theorem}
+\begin{proof}
+$A$ is similar to its Jordan Canonical form $J_A$, i.e., there exists invertible matrix $P$ such that $A = PJ_A P^{-1}$. Denote by $\lambda_1, \cdots, \lambda_n$ the eigenvalues of $A$, and let $$N = J - \begin{pmatrix} 
+    \lambda_1 &  &  \\
+    & \ddots & \\
+    &  & \lambda_n
+\end{pmatrix},$$
+then 
+\begin{align*}
+    A = P \begin{pmatrix} 
+        \lambda_1 &  &  \\
+        & \ddots & \\
+        &  & \lambda_n
+    \end{pmatrix} P^{-1} + P N P^{-1},
+\end{align*}
+where $P \begin{pmatrix} 
+    \lambda_1 &  &  \\
+    & \ddots & \\
+    &  & \lambda_n
+\end{pmatrix} P^{-1}$ is diagonal and $P N P^{-1}$ is nilpotent.
+\end{proof}
+
+\medskip
+
+\begin{definition}
+The matrix $A$ is idempotent if and only if $A^2 = A$. 
+\end{definition}
+
+\begin{remark}
+Recall that a projection is a linear transformation $P$ from a vector space to itself, i.e., $P: V \to V$ such that $P^2 = P$.
+\end{remark}
+
+The minimal polynomial for $P$ is one of three possibilities:
+\begin{align*}
+    \lambda, \quad \lambda - 1, \quad \lambda(\lambda - 1),
+\end{align*}
+$p_\lambda = \lambda$ implies $P = 0$, $p_\lambda = \lambda - 1$ implies that $P = I$ and $p_\lambda = \lambda(\lambda - 1)$ implies that $P$ can be arbitrary. 
+
+\medskip
+
+\begin{corollary}{\bf \cite{33}}
+Projection $P$ is diaginalizable.
+\end{corollary}
+\begin{proof}
+Suppose $P$ is a projection, then there is a subspace $W = R_P$ of $V$ onto which it projects. $P$ maps every vector in $W$ to itself. Therefore, every vector in $W$ is eigenvector corresponding to eigenvalue $\lambda = 1$. For any vector $v \in V$, 
+$$v = Pv + (v - Pv),$$ 
+where $Pv \in W$ and $v - Pv \in N_P$. Indeed, $P(v - Pv) = Pv - P^2 v = 0$, then $v - Pv \in N_P$. Then, every vector can be written as the sum of a vector in $W$, which is eigenvector corresponding to eigenvalue $1$ and a vector in $N_P$, which is eigenvector corresponding to eigenvalue $0$. So the union of basis for $W$ and $N_P$ form a basis of the whole space. Thus, the matrix $P$ under this basis is diagonal.
+\end{proof}
+
+
+
+\end{subappendices}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Exercises}
