@@ -19,7 +19,8 @@
 \usepackage{breqn}
 \usepackage{physics}
 \usepackage{afterpage}
-\usepackage{enumitem}
+%\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \usepackage{mathrsfs}
 \usepackage{scalerel}
 \usepackage{stackengine,wasysym}
@@ -33,6 +34,10 @@
 \usepackage{appendix}
 \usepackage{chngcntr}
 \usepackage{etoolbox}
+\usepackage{framed}
+\usepackage{mdframed}
+\usepackage{blindtext}
+\usepackage{xcolor}
 \graphicspath{{images/}}
 
 \usepackage{hyperref}
@@ -76,12 +81,24 @@
 \newtheorem{example}{Example}[section]
 \numberwithin{equation}{chapter}
 
+
 \AtBeginEnvironment{subappendices}{%
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendices}
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 }
+
+\newmdenv[
+  linewidth=1.5pt, 
+  topline=false, 
+  bottomline=false, 
+  rightline=false,
+  innerleftmargin=15pt,
+  leftmargin=10pt,
+  rightmargin=0pt,
+  innerrightmargin=0pt, 
+]{claim}
 
 \def\dsp{\def\baselinestretch{1.35}\large
 \normalsize}
@@ -615,14 +632,14 @@ Congruent $\bmod Y$ is an equivalence relation, i.e., it satisfies
 \end{enumerate}
 Thus, we can divide elements of $X$ into congruence classes $\bmod Y$ . The congruence class containing the vector $x$ is the set of all vectors congruent with $X$, denoted by $\{x\}$.
 
-The set of congruence classes can be made into a linear space by deﬁning addition and multiplication by scalars in $K$, as follows:
+The set of congruence classes can be made into a linear space by defining addition and multiplication by scalars in $K$, as follows:
 \begin{align*}
     \{x\} + \{y\}& = \{x+y\}\\
     a\{x\} &= \{ax\}
 \end{align*}
 That is, the sum of the congruence class containing $x$ and the congruence class containing $y$ is the class containing $x + y$. Similarly for multiplication by scalars.
 
-The linear space of congruence classes deﬁned above is called the quotient space of $X \bmod Y$ and is denoted as $X/Y$. 
+The linear space of congruence classes defined above is called the quotient space of $X \bmod Y$ and is denoted as $X/Y$. 
 
 \medskip
 
@@ -670,6 +687,7 @@ Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set c
 \end{enumerate}
 \end{proof}
 
+
 \begin{corollary}
 A subspace $Y$ of a finite-dimensional linear space $X$ whose dimension is the same as the dimension of $X$ is all of $X$.
 \end{corollary}
@@ -689,9 +707,8 @@ Suppose $X$ is a finite-dimensional linear space, $U$ and $V$ two subspaces of $
 \end{theorem}
 \begin{proof}
 If $U\cap V = \{0\}$, then $U+V$ is a direct sum and hence 
-$${\rm dim}(U+V) = {\rm dim}U + {\rm dim}V $$
-
-In general, let $W = U\cap V$, we claim that $U/W+V/W = (U+V)/W$, which is a direct sum. It suffices to prove that $U/W\cap V/W = \{0\}$. Let $\{x\}\subset U/W\cap V/W$, then $x = u+w_1$ for some $u\in U$ and $w_1\in W$, also, $x = v+w_2$ for some $v\in V$ and $w_2\in W$. Then we have $u+w_1 = v+w_2$, and hence $u+w_1 = v+w_2\in U\cap V = W$. Thus, we have $x\in W$, which gives $\{x\} = \{0\}$.
+$${\rm dim}(U+V) = {\rm dim}U + {\rm dim}V.$$
+In general, let $W = U\cap V$. Claim that $U/W+V/W = (U+V)/W$, which is a direct sum. It suffices to prove that $U/W\cap V/W = \{0\}$. Let $\{x\}\subset U/W\cap V/W$, then $x = u+w_1$ for some $u\in U$ and $w_1\in W$, also, $x = v+w_2$ for some $v\in V$ and $w_2\in W$. Then we have $u+w_1 = v+w_2$, and hence $u+w_1 = v+w_2\in U\cap V = W$. Thus, we have $x\in W$, which gives $\{x\} = \{0\}$.
 
 Now we proved $U/W+V/W = (U+V)/W$, then we have 
 \begin{align*}
@@ -720,12 +737,12 @@ form a basis for $X_1\oplus X_2$ by verifying this is indeed a basis.
 
 Also, we can prove it in another way by defining
 \begin{align*}
-    Y_1 = \{(x,0): x\in X_1, 0\in X_2\} \\
-    Y_2 = \{(0,x): 0\in X_1, x\in X_2\}
+    Y_1 = \{(x,0): x\in X_1, 0\in X_2\}, \\
+    Y_2 = \{(0,x): 0\in X_1, x\in X_2\},
 \end{align*}
 and it is easy to see that $Y_1$ is isomorphic to $X_1$ and $Y_2$ isomorphic to $X_2$. Also, we have $Y_1\cap Y_2 = \{0\}$, then we have 
 \begin{align*}
-    {\rm dim}X_1\oplus X_2 = {\rm dim}Y_1 + {\rm dim}Y_2 - {\rm dim}X_1(Y_1\cap Y_2) = {\rm dim}X_1 + {\rm dim}X_2
+    {\rm dim}X_1\oplus X_2 = {\rm dim}Y_1 + {\rm dim}Y_2 - {\rm dim}X_1(Y_1\cap Y_2) = {\rm dim}X_1 + {\rm dim}X_2.
 \end{align*}
 \end{proof}
 
@@ -917,15 +934,12 @@ holds for all polynomials $p$ of degree less than $n$.
 \end{theorem}
 \begin{proof}
 Denote by $X$ the space of all polynomials $P(t) = a_0 + a_1 t +\cdots+ a_{n-1}t^{n-1}$ of degree less than $n$. Since $X$ is isomorphic to the space $\mathbb{R}^n = (a_0,a_1,\cdots,a_{n-1})$, then ${\rm dim}X = n$. We define $l_j\in X'$ as the linear function 
-\begin{align*}
-    l_j(p) = p(t_j)
-\end{align*}
+$$l_j(p) = p(t_j).$$
 
-We claim that $l_j, 1\leq j \leq n$ are linearly independent. Indeed, assume $\sum^n_{k=1}c_k l_k = 0$, then we have 
-$$\sum^n_{k=1}c_k l_k(p) = \sum^n_{k=1}c_k p(t_k) = 0$$
+Claim that $l_j, 1\leq j \leq n$ are linearly independent. Indeed, assume $\sum^n_{k=1}c_k l_k = 0$, then we have 
+$$\sum^n_{k=1}c_k l_k(p) = \sum^n_{k=1}c_k p(t_k) = 0,$$
 and for $k$, pick $p(t) = \prod_{j\neq k}(t - t_j)$, then we have $c_k = 0, 1\leq k\leq n$. Then $\{l_j\}^n_{j=1}$ form a basis of $X'$, since ${\rm dim}X' = {\rm dim}X = n$. Then any linear function $l$ on $X$ can be represented as below
 $$l = m_1 l_1 + \cdots + m_n l_n.$$
-
 The integral of $p$ over $I$ is a linear function, therefore it can be represented as above.
 \end{proof}
 
@@ -991,7 +1005,7 @@ ${\rm dim}\,R_T$ is called the rank of the mapping $T$ and ${\rm dim}\,N_T$ is c
 Let $T:X\to U$ be a linear map. Then $${\rm dim}\,R_T + {\rm dim}\,N_T = {\rm dim}\, X.$$
 \end{theorem}
 \begin{proof}
-We can define $\Tilde{T}:X/N_T\to R_T$ as $\Tilde{T}(\{x\}) = Tx \in R_T$, for $\forall x\in X$. We claim that $\Tilde{T}$ is an isomorphism. Indeed, if $\{x\} = \{y\}$, then $x-y\in N_T$, then we have $T(x-y) = 0$, which implies $Tx = Ty$. Thus, $\Tilde{T}(\{x\}) = \Tilde{T}(\{y\})$. Also, $\Tilde{T}$ is linear, since $\Tilde{T}(a\{x\} + b\{y\}) = a\Tilde{T}(\{x\}) + b\Tilde{T}(\{y\})$. 
+We can define $\Tilde{T}:X/N_T\to R_T$ as $\Tilde{T}(\{x\}) = Tx \in R_T$, for $\forall x\in X$. Claim that $\Tilde{T}$ is an isomorphism. Indeed, if $\{x\} = \{y\}$, then $x-y\in N_T$, then we have $T(x-y) = 0$, which implies $Tx = Ty$. Thus, $\Tilde{T}(\{x\}) = \Tilde{T}(\{y\})$. Also, $\Tilde{T}$ is linear, since $\Tilde{T}(a\{x\} + b\{y\}) = a\Tilde{T}(\{x\}) + b\Tilde{T}(\{y\})$. 
 
 Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With Theorem \ref{theorem_quotient_dim}, we have ${\rm dim}\,X - {\rm dim}\,N_T = {\rm dim}\, R_T$.
 \end{proof}
@@ -2056,8 +2070,8 @@ The inverse matrix $A^{-1}$ of an invertible matrix $A$ has the form
 
 \medskip
 
-\section{Trace of A Matrix}
-\begin{definition}
+\section{Trace of a Matrix}
+\begin{definition}\label{definition_trace}
 The trace of a square matrix $A$, denoted by $\tr A$, is the sum of all diagonal entries:
 \begin{align*}
     \tr A = \sum^n_{i=1} a_{ii}.
@@ -2090,7 +2104,7 @@ and the Euclidean norm (or Hilbert-Schmidt norm) of matrix $A$ is defined by \be
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{trace_property}
 Similar matrices have the same trace and determinant.
 \end{theorem}
 \begin{proof}
@@ -3162,7 +3176,7 @@ Since $\lambda \neq \mu$, we have $u^T v = 0$.
 
 \medskip
 
-\chapter{Euclidean Structure}
+\chapter{Euclidean Structure}\label{chapter_7}
 \section{Scalar Product and Distance}
 \begin{definition}
 An Euclidean structure in a linear space $X$ over $\mathbb{R}$ is furnished by a real-valued function of two vector arguments called a scalar product and denoted by $(x,y)$, which has the following properties:
@@ -3508,7 +3522,7 @@ A mapping of a Euclidean space into itself is called an isometry if it preserves
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{isometry_properties}
 Let $M$ be an isometry from $X$ into itself and $M(0) = 0$. Then:
 \begin{enumerate}[label=(\roman*)]
     \item $M$ is linear.
@@ -4442,7 +4456,7 @@ $N$ is a normal matrix if and only if $N$ can be unitarily diagonalized.
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{isometry_property}
 Let $U$ be a unitary map of a complex Euclidean space into itself, that is an isometry linear map. Then,
 \begin{enumerate}[label=(\roman*)]
     \item There is an orthogonal basis consisting of genuine eigenvectors of $U$.
@@ -4748,7 +4762,7 @@ where $\lambda_j\in\sigma(A), \mu_j\in\sigma(B)$. Thus we have
 
 \medskip
 
-\chapter{Calculus of Vector and Matrix valued Functions}
+\chapter{Calculus of Vector and Matrix Valued Functions}
 
 \section{Convergence in Norm}
 
@@ -6140,7 +6154,7 @@ $A^2 = I$ if and only if $\left(\frac{1}{2} (A + I) \right)^2 = \frac{1}{2} (A +
 
 \medskip
 
-\section{Reflection}
+\section{Reflection and Cartan–Dieudonné Theorem}\label{appendix_reflection}
 
 Given a unit vector $v \in \mathbb{R}^n, n \geq 2$, a reflection of the hyperplane which is orthogonal to $v$ is defined as 
 \begin{align*}
@@ -6177,7 +6191,7 @@ For vector $x$, its reflection about the hyperplane $Q$ which is orthogonal to v
 Thus, it is clear that $R_v = I - 2 v v^T$ when $v$ is unit vector. 
 
 \begin{remark}
-~\begin{enumerate}[label=(\alph*)]
+~\begin{enumerate}[label=(\arabic*)]
     \item $R_v(kv) = k R_v(v) = k (v - 2 v v^T v) = -kv$.
     
     \item If $u \bot v$, then $R_v(u) = u - 2 v v^T u = u$.
@@ -6188,19 +6202,169 @@ Thus, it is clear that $R_v = I - 2 v v^T$ when $v$ is unit vector.
 $R_v^2 = I$ and $R_v$ is symmetric, then $R_v$ is orthogonal.
 \end{remark}
 
+\begin{remark}\label{eigenvalue_of_reflection}
+$R_v$ has one eigenvalue $-1$ and $n-1$ eigenvalues $1$.
+\end{remark}
+\begin{proof}
+From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ is a reflection about the hyperplane $Q$ in $\mathbb{R}^n$ which is orthogonal to $u$, let $W = {\rm  span}\{u\}$, then every vector in $\mathbb{R}^n\setminus W$ is orthogonal to $u$. And $\dim \mathbb{R}^n\setminus W = n - 1$, then we can choose $n - 1$ vectors which form a basis for $\mathbb{R}^n\setminus W$, say $\{w_1, \cdots, w_{n-1}\}$. For $u$, $R_v u = - u$, then the corresponding eigenvalue is $-1$. For $w_1, \cdots, w_{n-1}$, $R_V w_i = w_i, i = 1, \cdots, n-1$, then the corresponding eigenvalue is $1$.
+\end{proof}
+
+\medskip
+
+\begin{lemma}{\bf \cite{35}}
+Let $u, v$ be two vectors such that $u \neq v, \|u\| = \|v\|$, then there exists a unique reflection $R$ such that $Ru = v$.
+\end{lemma}
+\begin{proof}
+Let $w = \frac{u-v}{\|u-v\|}$ and $R = R_w = I - 2 ww^T$, then
+\begin{align*}
+    R(u) & = u - 2 \frac{(u-v)(u-v)^T}{\|u-v\|^2}u \\
+    & = u - 2 \frac{uu^Tu - uv^Tu - vu^Tu + vv^Tu}{\|u-v\|^2} \\
+    & = u - 2 \frac{u(u,u) - u(v,u) - v(u,u) + v(v,u)}{\|u-v\|^2} \\
+    & = u - 2 \frac{(u-v)(u,u) - (u-v)(u,v)}{\|u-v\|^2} \\
+    & = u - 2 \frac{(u-v)(u,u-v)}{\|u-v\|^2} \\
+    & = \frac{(u-v,u-v)u - (u-v)(u,u-v)}{\|u-v\|^2} \\
+    & = \frac{(u-v,u-v)u - 2(u,u-v) + 2(u,u-v)v}{\|u-v\|^2} \\
+    & = \frac{2(u,u-v)v}{\|u-v\|^2} \\
+    & = \frac{2(\|u\|^2 - (u,v))v}{\|u-v\|^2} \\
+    & = v.
+\end{align*}
+
+It remains to show that $R$ is unique. Suppose $R_1 u = v$, $R_2 u = v$. And $R_1 v = R_1^2 u = u$, then 
+\begin{align*}
+    R_1 (u-v) & = - (u-v), \\
+    R_2 (u-v) & = - (u-v).
+\end{align*}
+which implies that $R_1, R_2$ has same eigenvector $u - v$ corresponding to the same eigenvalue $-1$. By Remark \ref{eigenvalue_of_reflection}, let $W = {\rm span}\{u-v\}$, then we could choose basis $\{w_1, \cdots, w_{n-1}\}$ for $\mathbb{R}^n \setminus W$. Under basis $\mathcal{B} = \{w_1, \cdots, w_{n-1}, u-v\}$, $[R_1]_{\mathcal{B}} = [R_2]_{\mathcal{B}}$, and thus $R_1 = R_2$.
+\end{proof}
+
+\medskip
+
+\begin{theorem}[Cartan–Dieudonné Theorem]{\bf \cite{35}} \label{Cartan_Dieudonne}
+Every orthogonal mapping on $\mathbb{R}^n, n \geq 1$, that is not identity is the composition of at most $n$ reflection.
+\end{theorem}
+\begin{proof}
+We prove by induction on $n$. When $n = 1$, the reflection $R$ is either identity or $-$id. Indeed, $R$ is $-1$ for $x \in \mathbb{R} \setminus \{0\}$, which is a reflection about $\{0\}$ and $1$ for $x = 0$. When $n \geq 2$, we have $R \circ R = I$ for every reflection $R$. Consider the case $n \geq 2$ and $R$ is not the identity. There are two subcases.
+\begin{enumerate}[label=(\alph*)]
+    \item $R$ admits $1$ as an eigenvalue, then there exists a nonzero unit vector $w$, such that $Rw = w$. Let $H$ be the hyperplane orthogonal to $w$, so that $\mathbb{R}^n = H \oplus {\rm span}\{w\}$. We claim $R(H) \subset H$. Indeed, if $(x, w) = 0$, for any $x \in H$, then we have 
+    \begin{align*}
+        (R(x), R(w)) = (x, R^* R(w)) = (x, R^2 w) = (x, w) = 0,
+    \end{align*}
+    since $R$ is self-adjoint, and thus $R(x) \in H$. Since $\dim H = n - 1$, by the induction hypothesis applied to $H$, there are at most $k \leq n - 1$ reflections $R_1, \cdots, R_k$ about some hyperplane $H_1, \cdots, H_k$ in $H$, such that $R|_H = R_k \circ \cdots \circ R_1$. Each $R_i$ can be extended to a reflection in $\mathbb{R}^n$ as follows: If $H = H_i \oplus L_i$ (where $L_i = H_i^\bot$, the orthogonal complement of $H_i$ in $H$), $L = {\rm span}\{w\}$ and $F_i = H_i \oplus L$, since $H$ and $L$ are orthogonal, $F_i$ is indeed a hyperplane. Also, $\mathbb{R}^n = F_i \oplus L_i = H_i \oplus L \oplus L_i$, and for every $u = h + \lambda w \in H \oplus L$, with the fact that
+    \begin{align}\label{reflection_as_projection}
+        R_i(h) = p_{H_i}(h) - p_{L_i}(h),
+    \end{align}
+    where $p_{V}$ is the orthogonal projection onto $V$, we can define $R_i$ on $\mathbb{R}^n$ such that 
+    \begin{align*}
+        R_i(h + \lambda h) = p_{H_i}(h) - p_{L_i}(h) + \lambda w.
+    \end{align*}
+    Indeed, to see (\ref{reflection_as_projection}), we could consider it in case $H = \mathbb{R}^2$:\\
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \draw[thick,->] (-2,-1.2)--(2,1.2) node[below right]{$L_i$};
+            \draw[thick,->] (0.6,-1)--(-1.2,2) node[above left]{$H_i$};
+            \draw[->] (0,0)node[below]{$O$}--(0,2) node[above right]{$h$};
+            \draw[dotted,-] (0,2)--(-0.88,1.47)node[pos=.7,above left]{$B$};
+            \draw[dotted,-] (-0.88,1.47)--(-1.76,0.94)node[above left]{$A$};
+            \draw[dotted,-] (0,0)--(-0.88,1.47);
+            \draw[->] (0,0)--(-1.76,0.94);
+            \end{tikzpicture}
+        \caption{Reflection $R_i$ about the hyperplane $H_i$}
+        \label{fig:plot_2}
+    \end{figure}\\
+    As we can see, $- p_{L_i}(h) = \overrightarrow{AB}$, $p_{H_i}(h) = \overrightarrow{OB}$, and then $R_i(h) = \overrightarrow{OA} = \overrightarrow{OB} + \overrightarrow{BA} = p_{H_i}(h) - p_{L_i}(h)$.
+    
+    Since $h \in H, w \in L, F_i = H_i \oplus L$ and $H = H_i \oplus L_i$, then
+    \begin{align*}
+        R_i(h + \lambda w) = p_{F_i}(h + \lambda w) - p_{L_i}(h + \lambda w), 
+    \end{align*}
+    which defines a reflection about the hyperplane $F_i$. Since $R$ is identity on $L$ and $R_i$ is also identity on $L$ since $R_i(\lambda w) = \lambda w$, thus $R = R_k \circ \cdots \circ R_1, k \leq n - 1$.
+    
+    \item $R$ does not admit $1$ as an eigenvalue, i.e., $R(x) \neq x$ for all $x \neq 0$. Pick any $w \neq 0$ in $\mathbb{R}^n$, and let $H$ be the hyperplane that is orthogonal to $v = R(w) - w$. Now define 
+    $$R_v = I - 2 \frac{vv^T}{\|v\|^2},$$ 
+    then $R_v R (w) = w$. From (a), there exists reflections $R_1, \cdots, R_k, k \leq n - 1$ such that $R_v R = R_k \circ \cdots \circ R_1$, and thus $R = R_v^T \circ R_k \circ \cdots \circ R_1$. 
+\end{enumerate}
+\end{proof}
+
+
+\begin{remark}
+For case (a), we could also define $R_i$ on $\mathbb{R}^n$ as simple as $R_i(\lambda w) = \lambda w$.
+\end{remark}
+
+\begin{remark}
+~\begin{enumerate}[label=(\arabic*)]
+    \item The proof of Theorem \ref{Cartan_Dieudonne} shows that if $1$ is an eigenvalue of a reflection $R$ with its corresponding eigenvector $w \neq 0$, then $R$ is the composition of $k \neq n - 1$ reflections about hyperplanes $F_i = H_i \oplus L$, where $L = {\rm span}\{w\}$ and $H_i$ are subspaces of dimension $n - 2$ that are orthogonal to $L$. 
+    
+    If $1$ is not an  eigenvalue of $R$, then $R$ is the composition of $k \leq n$ reflections about hyperplanes $H, F_1, \cdots, F_{k-1}$, such that $F_i = H \oplus L$, where $L$ is a line intersecting $H$ and  $H_i$ are subspaces of dimension $n - 2$ that are orthogonal to $L$. 
+    
+    \item Every orthogonal mapping $Q$ is the composition of $k$ hyperplane reflections when $k = n - \dim N_{Q-I}$, and this number is minimal. 
+\end{enumerate}
+\end{remark}
+
+\medskip
+
+Consider a reflection in $\mathbb{R}^n$, when $n = 2$, a reflection is is a reflection about a line and Theorem \ref{Cartan_Dieudonne} shows that every orthogonal mapping is either a reflection about a line or rotation, and that every rotation $Q$ is the composition of two reflections. By Remark \ref{eigenvalue_of_reflection}, $\det (R) = -1$ for a reflection $R$, when $n \geq 3$ is odd, every rotation is the composition of an even number $k \leq n - 1$ reflections, and when $n$ is even, every {\em improper rotation}\footnote{{\em Proper rotation} is a rotation by angle $2\pi/n$, $n \in \mathbb{N}$. To perform an {\em improper rotation} requires mirrors. That is, the most general improper rotation matrix is a product of a proper rotation by an angle $\theta$ about some axis $\vec{n}$ and a reflection through a plane that passes through the origin and is perpendicular to $\vec{n}$ \cite{36}.} is the composition of an odd number $k \leq n - 1$ reflections.
+
+In particular, for $n = 3$, every rotation is the composition of two reflections about planes. When $n$ is odd, we can say more about {\em improper isometry}. Indeed, when $n$ is odd, every {\em improper isometry} admits the eigenvalue $-1$. Indeed, let $A: X \to X$ be an isometry, then $\Vert Ax \Vert = \Vert x \Vert$ for all $x \in X$. If $\lambda$ is an eigenvalue of $A$ with corresponding eigenvector $u$ such that $Au - \lambda u$, then by Theorem \ref{isometry_property}, eigenvalues of an isometry are either $1$ or $-1$. However, polynomials of odd degree always has some real root, then the the characteristic polynomial $\det (A - \lambda I)$ of $A$ has real root, which is either $1$ or $-1$. If $A$ is an {\em improper isometry}, then $\det (A) = -1$, and then $-1$ must be an eigenvalue of $A$, which implies there exists nonzero vector $w$ such that $Aw = - w$. By the second part of the proof, the hyperplane $H$ orthogonal to $Aw - w = -2w$ is in fact orthogonal to $w$, and thus $A$ is the composition of $k \leq n$ reflections about $H, F_1, \cdots, F_{k-1}$ such that $F_i = H_i \oplus L$, where $L = {\rm span}\{w\}$ that is orthogonal to $H$ and the $H_i$ are hyperplanes in $H$. However, $k$ must be odd, and so $k - 1$ is even, and thus the composition of the reflections $F_1, \cdots, F_{k-1}$ is a rotation.  Thus, when $n$ is odd, an {\em improper isometry} is the composition of a reflection about a hyperplane $H$ and a rotation consisting of reflections about hyperplanes $F_1, \cdots, F_{k-1}$ containing a line $L$, orthogonal to $H$. In particular, when $n = 3$, every improper orthogonal transformation is the composition of a rotation and a reflection about a plane orthogonal to the axis of rotation{\bf \cite{35}}.
+
 \end{subappendices}
 
 
+\chapter{Kinematics and Dynamics}
+\section{Axis and Angle of Rotation}
 
+An {\em isometry} was defined in Chapter \ref{chapter_7} as a mapping of a Euclidean space into itself that preserves distances. When the {\em isometry} relates the positions of a mechanical system in three-dimensional real space at two different times, it is called a {\em rigid body motion}. 
 
+By Theorem \ref{isometry_properties}, an ismoetry $M$ that preserves the original is linear and satisfies $M^*M = I$. Also, the determinant of an isometry is either $1$ or $-1$, its value for all rigid body motions is $1$. Now we talk the following theorem, which is exactly what we discussed in Appendix \ref{appendix_reflection}.
 
+\begin{theorem}[Euler]{\bf \cite{18}}
+An isometry $M$ of three-dimensional real Euclidean space with determinant $1$ that is nontrivial, that is not equal to $I$, is a rotation; it has a uniquely defined axis of rotation and angle of rotation $\theta$.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If eigenvalues of $M$ are all real, then eigenvalues of $M$ only have two possibilities: \begin{enumerate*}[label=\roman*)]
+        \item $\lambda 1$ with multiplicity $3$,
+        \item $\lambda_1 = -1$ with multiplicity $2$ and $\lambda_2 = 1$ with multiplicity $1$
+    \end{enumerate*}. i) implies that $M = I$, then this condition can be ignored. ii) implies that there exists orthogonal eigenvectors $v_1, v_2, v_3$ corresponding to eigenvalues $-1, -1, 1$. For any $x\in \mathbb{R}^3$, $x$ can be expressed as $x = \sum^3_{i=1} c_i v_i$, and then 
+    \begin{align*}
+        M(c_1v_1 + c_2v_2 + c_3v_3) = -c_1v_1 - c_2v_2 + c_3v_3,
+    \end{align*}
+    which implies the axis of rotation is $v_3$, and the angle of rotation $\theta = \pi$.
+    
+    \item If $M$ has complex eigenvalues, then $M$ has one eigenvalue $\lambda_1 = 1$ and two conjugate eigenvalues $\lambda_2 = \overline{\lambda_3}$. Let $v_1$ be unit eigenvector with respect to $\lambda_1 = 1$ and $v_1 = (1,0,0)^T$. We complete $v_1$ into orthogonal basis $\mathcal{B} = \{v_1, v_2, v_3\}$, and the first entries of $V_2, v_3$ are zero. Under this basis, $M$ has the form
+    \begin{align*}
+        [M]_{\mathcal{B}} = \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & \alpha & -\beta \\
+            0 & \beta  & \alpha 
+        \end{pmatrix},
+    \end{align*}
+    where $\alpha^2 + \beta^2 = 1$. Let $\alpha = \cos \theta$, $\beta = \sin \theta$ for some $\theta \in [0,,2\pi]$. Clearly, $[M]_{\mathcal{B}}$ is a rotation around the first axis $v_1$ by angle $\theta$.
+\end{enumerate}
+\end{proof}
 
+\begin{remark}
+The rotation angle is easily calculated without introducing a new basis that brings $M$ into form $[M]_{\mathcal{B}}$. By the Definition \ref{definition_trace} of trace and Theorem \ref{trace_property}, according to which similar matrices have the same trace. Therefore, $\tr(M) = \tr([M]_{\mathcal{B}})$, then $\tr(M) = 1 + \cos \theta$, hence,
+\begin{align*}
+    \cos \theta  = \frac{\tr(M) - 1}{2}.
+\end{align*}
+\end{remark}
 
+\begin{remark}{\bf \cite{37}}
+There are basically two kinds linear isometry of $\mathbb{R}^3$ rotations (including the identity which is a rotation by angle $\theta = 0$) and improper rotation (including reflection across a plane which is an improper rotation by angle $\theta = 0$, and reflection through the origin which is an improper rotation by angle $\theta = \pi$). A rotation of $\mathbb{R}^3$ by angle $\theta$ has eigenvalues $1, e^{i\theta}$ and $e^{-i\theta}$, so its trace is $1 + 2\cos \theta$. An improper rotation by angle $\theta$ has eigenvalues $-1, e^{i\theta}$ and $e^{i\theta}$ so its trace is $-1 + 2\cos \theta$.
+\end{remark}
 
+\medskip
 
+\subsection{Rigid Motion}
 
+Now we discuss {\em rigid motions} which keep the original fixed and depends on time $t$, that is, function $M(t)$ whose values are rotations. We take $M(t)$ to be rotation that brings the configuration at time $0$ into the configuration at time $t$. Thus, $M(0) = I$. 
 
-
+Since $MM^* = I$, $M^*$ is left inverse of $M$ and it is also right inverse. We assume that $M(t)$ is differentiable with respect to $t$, which implies 
+\begin{align*}
+    M_t M^* + MM^*_t = 0.
+\end{align*}
+Denote $M_t M^* = A$, then $A^* = MM^*_t$, therefore 
 
 
 
