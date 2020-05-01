@@ -4796,7 +4796,7 @@ Continuity and differentiability is equivalent to those of every element of $A(t
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{derivative_inverss}
 Suppose $A(t)$ is differentiable square matrix valued function and $A(t)$ is invertible, then
 \begin{align*}
     \dv{}{t}A^{-1}(t) = - A^{-1} \dot{A} A^{-1}.
@@ -6358,13 +6358,44 @@ There are basically two kinds linear isometry of $\mathbb{R}^3$ rotations (inclu
 
 \subsection{Rigid Motion}
 
-Now we discuss {\em rigid motions} which keep the original fixed and depends on time $t$, that is, function $M(t)$ whose values are rotations. We take $M(t)$ to be rotation that brings the configuration at time $0$ into the configuration at time $t$. Thus, $M(0) = I$. 
+Now we discuss {\em rigid motions} which keep the original fixed and depends on time $t$, that is, function $M(t)$ whose values are rotations. We take $M(t)$ to be rotation that brings the configuration at time $0$ into the configuration at time $t$. Thus, $M(0) = I$. If we change the reference time from $0$ to $t_1$, the function $M$, describing the motion
+from $t_1$ to $t$ is
+\begin{align}\label{rigid_motion_reference_time}
+    M_1(t) = M(t) M(t_1)^{-1}.
+\end{align}
 
 Since $MM^* = I$, $M^*$ is left inverse of $M$ and it is also right inverse. We assume that $M(t)$ is differentiable with respect to $t$, which implies 
 \begin{align*}
     M_t M^* + MM^*_t = 0.
 \end{align*}
-Denote $M_t M^* = A$, then $A^* = MM^*_t$, therefore 
+Denote $M_t M^* = A$, then $A^* = MM^*_t$, therefore $A + A^* = 0$. This shows that $A(t)$ is antisymmetric. Also, equation $M_t M^* = A$ itself can be rewritten by multiplying by $M$ on the right and using $M M^* = I$ as 
+\begin{align}\label{dreivative_rigid_motion}
+    M_t = AM.
+\end{align}
+Differentiating (\ref{rigid_motion_reference_time}) gives $M_1'(t) = M'(t) M(t_1)^{-1}$ and by (\ref{dreivative_rigid_motion}), we have the same equation
+\begin{align*}
+    \dv{}{t}M_1(t) = AM_1.
+\end{align*}
+This shows the significance of $A(t)$, for the motion is independent of the reference time, $A(t)$ is called the {\em infinitesimal generator} of the motion.
+
+\medskip
+
+\begin{remark}
+On the other hand, if $A^*(t) = -A(t)$, and $M(t)$ solves system $\begin{cases}
+M_t = A(t) M \\
+M(0) = I
+\end{cases}$, then $M M^* = I$ for any $t$.
+\end{remark}
+\begin{proof}
+By the first equation, $A = M^{-1} M_t$, and since $A$ is antisymmetric, we have 
+$$M_t M^{-1} + \left(M\right)^{-1} M_t^* = 0.$$
+Multiplying $M^*$ on the left side and $M$ on the right side gives $M^* M_t + M^*_t M = 0$, which is equivalent to $\dv{}{t}\left(M M^* \right) = 0$. Then, $M(t) M^*(t) = M(0) M^*(0) = I$.
+\end{proof}
+
+
+
+
+
 
 
 
