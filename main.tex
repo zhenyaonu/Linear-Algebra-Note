@@ -40,6 +40,7 @@
 \usepackage{xcolor}
 \graphicspath{{images/}}
 
+
 \usepackage{hyperref}
 \hypersetup{
     colorlinks = true,
@@ -263,7 +264,7 @@ $0x = x, (-1)\cdot x = -x$.
 \medskip
 
 \begin{example}[Examples of Linear Spaces]\label{example_1}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\arabic*)]
     \item $\mathbb{R}^n, \mathbb{C}^n$.
     \item Set of all row vectors: $(a_1,\cdots, a_n)$ in $K$, this space is denoted as $K^n$.
     \item Set of all real-valued functions $f(x)$ defined on the real line, $K=\mathbb{R}$.
@@ -365,8 +366,8 @@ If $(X,\cdot)$ is an associative and $K$-algebra having a multiplicaiton identit
     & = (x\cdot e)\cdot x^{-1} = e
 \end{align*}
 similarly, $\left(y^{-1}\cdot x^{-1}\right)\cdot(x\cdot y) = e$. 
-\begin{remark}
-Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which the inverses exist, since the proof relies only on associativity of addition and multiplication and distributivity of multiplication over addition{\rm \cite{2}}.
+\begin{remark}{\rm \cite{2}}
+Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which the inverses exist, since the proof relies only on associativity of addition and multiplication and distributivity of multiplication over addition.
 \end{remark}
 
 \medskip
@@ -575,7 +576,7 @@ Let $x_1, \cdots, x_n$ be a basis of $X$. For any $x\in X$, we have $x = \sum^n_
 \end{enumerate}
 \end{proof}
 \begin{remark}
-~\begin{enumerate}[label=(\alph*)]
+~\begin{enumerate}[label=(\arabic*)]
     \item $Y\cap Z = \{0\}$.
     \item $X$ is said to be direct sum of $Y$ and $Z$, if $X = Y+Z$ and $Y\cap Z = \{0\}$. Then we write $X = Y \oplus Z$.
 \end{enumerate}
@@ -665,8 +666,8 @@ If $Y$ is a subspace of a finite-dimensional linear space $X$, then
 \end{align*}
 \end{theorem}
 \begin{proof}
-Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set can be completed into a basis for $X$ by adding $x_{m+1}, \cdots, x_n, n = {\rm dim}X$. We claim that $\{x_{m+1}\}, \cdots, \{x_n\}$ form a basis for $X/Y$ by  verifying that they span the whole space $X/Y$ and they are linearly independent as below
-\begin{enumerate}[label=(\arabic*)]
+Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set can be completed into a basis for $X$ by adding $x_{m+1}, \cdots, x_n, n = {\rm dim}X$. We claim that $\{x_{m+1}\}, \cdots, \{x_n\}$ form a basis for $X/Y$ by  verifying that they span the whole space $X/Y$ and they are linearly independent. Indeed,
+\begin{enumerate}[label=(\alph*)]
     \item For any $x\in X$, we can write it as 
     \begin{align*}
         x = \sum^m_{k=1}a_k x_k + \sum^{n}_{k=m+1}a_k x_k
@@ -755,6 +756,8 @@ Moreover, we can define the Cartesian sum $\oplus^m_{k=1}X_k$ of $m$ linear spac
 
 Next we present an important theorem.
 
+\medskip
+
 \begin{theorem}
 Let $K$ be a field such that it has infinite number of elements and let $X$ be a finite dimensional linear space over $K$. Prove that $X$ cannot be written as a finite union of its proper subspaces.
 \end{theorem}
@@ -764,7 +767,7 @@ Suppose by contrary that there exist $W_1, W_2,\cdots, W_n$, which are proper su
 If for any $1\leq j\leq n$, $W_j\subset \bigcup^n_{i\neq j}W_i$, then we can remove such $W_j$. Thus, without losing generality, we can assume that no $W_j$ is contained in the union of other $W_i$'s. Note that since $W_i$'s are proper subspaces of $X$, then $X$ must have ${\rm dim}X = n \geq 2$. Since $W_1\not\subset \bigcup^n_{i\neq 1}W_i$, then there exists $u\in W_1$ such that $u\notin W_i, i\geq 2$. Also, $W_1$ is a proper subspace, then there exists $v\notin W_1$. 
 
 Now consider $v + \lambda u$ for $\lambda\in K$. We claim that $v + \lambda u\in W_j$ for at most one $\lambda\in K$. Now we prove this:
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item Consider the case $j=1$. If $v + \lambda u\in W_1$ for some $\lambda\in K$, then $(v + \lambda u) - \lambda u\in W_1$, since $u\in W_1$ and $W_1$ is a subspace. Thus, we have $v\in W_1$, which is a contradiction.
     \item Now consider the case $j\geq 2$. If there exist $\lambda_1, \lambda_2\in K, \lambda_1\neq\lambda_2$ such that $v+\lambda_1 u\in W_j$ and $v+\lambda_2 u\in W_j$, then $(v+\lambda_1 u) - (v+\lambda_2 u) = (\lambda_1 - \lambda_2)u \in W_j$. Then, since $\lambda_1\neq\lambda_2$, we have $u\in W_j$, which is a contradiction.
 \end{enumerate}
@@ -823,7 +826,7 @@ ${\rm dim}X = {\rm dim}X'$.
 \end{theorem}
 \begin{proof}
 Suppose ${\rm dim}X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\leq j\leq n$ form a basis of $X'$. Indeed, we have
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item For any $l\in X'$, we have $l(x) = \sum^n_{k=1}c_k a_k = \sum^n_{k=1}a_k l_k(x)$. Thus, $l = \sum^n_{k=1}a_k l_k$, which implies that $\{l_j, 1\leq j\leq n\}$ span the space $X'$.
     \item We claim $l_j, 1\leq j\leq n$ are linearly independent. If $\sum^n_{k=1}b_k l_k = 0$, then we have 
     \begin{align*}
@@ -848,7 +851,7 @@ $(l,x)$ is a bilinear form, which gives a natural identification of $X$ with $X'
 \end{theorem}
 \begin{proof}
 $\varphi(x)$ is a subspace of $X''$.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item If $\varphi(x_1) = \varphi(x_2)$, then $(l,x_1) = (l,x_2)$ for any $l\in X'$. Then we have $(l,x_1 - x_2) = 0$. Now we can set $x_1 - x_2 = (c_1,\cdots,c_n)$, and pick $l = (\overline{c_1},\cdots,\overline{c_n})$, then we have $\sum^n_{k=1}|c_k|^2 = 0$. Then, $c_k = 0$, which implies $x_1 = x_2$. Thus, $\varphi$ is noe-to-one.
     \item We claim that $\varphi(x) = X''$. It suffices to prove that ${\rm dim}\varphi(x) = {\rm dim}X''$.
     
@@ -874,11 +877,11 @@ ${\rm dim}Y^\bot + {\rm dim}Y = {\rm dim}X$.
 \begin{proof}
 We can establish a natural isomorphism $T:Y^\bot\to (X/Y)'$ as follows $$T(l)(\{x\}) = l(x)$$
 for any $l\in Y^\bot$ and $\{x\}\in X/Y$. It suffices to prove that $T$ is well-defined.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item If $\{x_1\} = \{x_2\}$, then $x_1 = x_2 + y$ for some $y\in Y$. Then $l(x_1) = l(x_2) + l(y) = l(x_2)$. Then $T(l)$ is well defined.
     \item Also, $T(l)$ is linear. Indeed, for $l_1, l_2\in Y^\bot$ and $a,b \in K$, we have $T(al_1 + bl_2)(\{x\}) = (al_1 + bl_2)(x) = a l_1(x) + bl_2(x) = a T(l_1)(\{x\}) + b T(l_2)(\{x\})$.
     \item $T(l)$ is an isomorphism. 
-    \begin{enumerate}
+    \begin{enumerate}[label=\arabic*)]
         \item $T$ is one-to-one. Indeed, if $T(l) = 0$, then $T(l)(\{x\}) = l(x) = 0$, for all $x\in X$. Then we have $l = 0$.
         \item $T$ is onto. For $\forall \Tilde{l}\in (X/Y)'$, define $l\in X'$ such that $l(x) = \Tilde{l}(\{x\})$. If $x\in Y$, then $l(x) = \Tilde{l}(\{0\}) = 0$, it follows $l\in Y^\bot$. Thus, $T(l) = \Tilde{l}$ is onto.
     \end{enumerate}
@@ -915,7 +918,7 @@ Let $X$ be a finite-dimensional linear space, and let $S$ be a subset of $X$. Th
 Denote by $Y$ the smallest subspace containing $S$, then $S^\bot = Y^\bot$.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $S\subset Y$, then $Y^\bot\subset S^\bot$. Indeed, if $l\in Y^\bot$, then $l(y) = 0$ for all $y\in Y$. Since $S\subset Y$, then for $\forall s\in S$, we have $l(s) = 0$. Thus, $Y^\bot\subset S^\bot$. 
     \item Now we prove $S^\bot\subset Y^\bot$. Suppose $x_1,\cdots,x_j$ be the basis of $S$, then ${\rm span}\{x_1,\cdots,x_j\} = Y$. Then for any $y\in Y$, it can be written as $y = \sum^j_{k=1}c_k x_k$. For $l\in S^\bot$, we have $l(x_k) = 0, 1\leq k \leq j$, then $l(y) = \sum^j_{k=1}c_k l(x_k) = 0$. Thus, $l\in Y^\bot$, which implies $S^\bot\subset Y^\bot$. 
 \end{enumerate}
@@ -974,7 +977,7 @@ For simplicity, we write $T(x) = T x$.
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item The image of a subspace of $X$ under a linear map $T$ is a subspace of $U$.
     \item The inverse image of a subspace of $U$, that is the set of all vectors in $X$ mapped by $T$ into the subspace, is the subspace of $X$.
 \end{enumerate}
@@ -1159,13 +1162,13 @@ A linear map is called invertible if it is one-to-one and onto, that is, if it i
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item The inverse of invertible map is linear.
     \item If $S$ and $T$ are both invertible, then $ST$ is also invertible and $(ST)^{-1} = T^{-1} S^{-1}$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Let $T\in \mathscr{L}(X,U)$ be invertible, it suffices to prove that 
     \begin{align*}
         T^{-1}(k_1 u_1+k_2 u_2) = k_1 T^{-1}(u_1) + k_2 T^{-1}(u_2)
@@ -1196,14 +1199,14 @@ for any $l\in U'$ and $x\in X$. We could use the dual notation to represent the 
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $(ST)' = T'S'$.
     \item $(T+R)' = T' + R'$.
     \item $(T^{-1})' = (T')^{-1}$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Let $T:X\to U, S:U\to V$. Then we have 
     \begin{align*}
         \left((ST)'l, x\right) = (l, ST x) = (S' l, T x) = (T'S' l, x).
@@ -1244,7 +1247,7 @@ Thus, $T'' = T$.
 Let $T\in \mathscr{L}(X,U)$, then we have $R_T^\bot = N_{T'}$ and $R_T = N_{T'}^\bot$.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For $l\in R_T^\bot$, then for any $u\in R_T$, $(l,u) = 0$. Since $u\in R_T$, then $u = T x$ for some $x\in X$. Thus, we have
     \begin{align*}
         (l, T x) = 0 \Rightarrow (T' l, x) = 0
@@ -1321,14 +1324,14 @@ The assignment $M\mapsto M_S$ is called similarity transformation, $M$ is said t
 
 \begin{theorem}
 Similarity is an equivalence relation, i.e., it is:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item Reflexive. $M$ is similar to itself.
     \item Symmetric. If $M$ is similar to $K$, then $K$ is similar to $M$.
     \item Transitive. If $M$ is similar to $K$, $K$ is similar to $L$, then $M$ is similar to $L$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item It is true if we choose $S=I$ in Definition \ref{similarity}.
     \item We have $K = SMS^{-1}$, then we have $S^{-1}KS = S^{-1} S M S^{-1} S = M$. Then $K$ is similar to $M$.
     \item We have $K = SMS^{-1}$ and $L=TKT^{-1}$, then we have $$L = TSMS^{-1}T^{-1} = (TS)M(TS)^{-1}$$ which is similar to $M$.
@@ -1499,7 +1502,7 @@ Now we can consider $T^T$ in the similar argument, and it will give us ${\rm dim
 Next, we discuss some properties of rank of a matrix.
 \begin{proposition}
 Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ by $f(x) = Tx$, then
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item ${\rm rank}\,(T)\leq \min(m,n)$. A matrix that has rank equal to $\min(m, n)$ is called full rank; otherwise, the matrix is rank deficient.
     \item Only a zero matrix has rank zero.
     \item $f$ is injective(or one-to-one) if and only if $T$ has rank $n$, i.e. full column rank.
@@ -1528,7 +1531,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $T:\mathbb{R}^n\to\mathbb{R}^m$, then the image of $T$ is a subspace of $\mathbb{R}^m$, and it is easy to see that ${\rm rank}\,(T) \leq m$. Also, with Rank-Nullity theorem, we have ${\rm rank}\,(T) \leq n$. Thus, ${\rm rank}\,(T)\leq \min(m,n)$.
     \item $T$ is $m\times n$ matrix and has rank $0$, then the nullity of $T$ is $n$, which implies that all columns of $T$ are zero vectors.
     \item ($\Rightarrow$) If $f$ is injective, then there exists only one element $x'$ in $\mathbb{R}^n$ such that $Tx' = 0\in\mathbb{R}^m$. Also, we claim $x' = 0\in\mathbb{R}^n$. Indeed, we have $T0 = T(0 - 0) = T(0) - T(0) = 0$. Thus, we have $N_T = \{0\}$, implying that $T$ is full column rank.
@@ -1637,7 +1640,7 @@ And the \emph{signed volume} of an ordered simplex $S$ is defined as
     \sum (S) = \mathcal{O}(S){\rm Vol}(S).
 \end{align*}
 Since $S$ is described by its vertices, $\sum (S)$ is a function of $a_1,\cdots,a_n$. Obviously, when two vertices are equal, $S$ is degenerate. Thus, we have following properties:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\arabic*)]
     \item $\sum (S) = 0$ if $a_j = a_k, i\neq k$.
     \item $\sum (S)$ is a linear function of $a_j$ when $a_k, k\neq j$ are fixed.
     \item $\sum (0,e_1,\cdots,e_n) = \frac{1}{n!}$.
@@ -1667,7 +1670,7 @@ where $S = (0,a_1,\cdots,a_n)$.
 \medskip
 
 \begin{theorem}\label{determinant}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $D(a_1,\cdots,a_n) = 0$ if $a_j = a_k$ for some $j\neq k$.
     \item $D(a_1,\cdots,a_n)$ is a multilinear function of its arguments.
     \item Normalization: $D(e_1,\cdots,e_n) = 1$.
@@ -1677,7 +1680,7 @@ where $S = (0,a_1,\cdots,a_n)$.
 \end{theorem}
 \begin{proof}
 The first three statements are obvious. We only prove $(iv)$ and $(v)$.
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \setcounter{enumi}{3}
     \item Let $D(a,b) = (\cdots,a_i,\cdots,a_j,\cdots)$ and $D(b,a) = (\cdots,a_j,\cdots,a_i,\cdots)$. Then we have
     \begin{align*}
@@ -1760,7 +1763,7 @@ Given any pair of indices, $j\neq k$, we can define a permutation $p$ such that
     \end{cases}
 \end{align*}
 Such a permutation is called \emph{transposition}. And we claim that transposition has following properties:
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item The signature of a transposition $t$ is $-1$, i.e., $\sigma(t) = -1$.
     \item Every permutation $p$ can be written as a composition of transpositions, i.e., 
     \begin{align}\label{transposition}
@@ -1768,7 +1771,7 @@ Such a permutation is called \emph{transposition}. And we claim that transpositi
     \end{align}
 \end{enumerate}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Assume $t$ interchanges $i_0$ and $j_0$, with $i_0<j_0$, then we have
     \begin{align*}
         P\left(t(x_1,\cdots,x_n)\right) & = P(x_1,\cdots,x_{j_0},\cdots,x_{i_0},\cdots,x_n) \\
@@ -1864,9 +1867,9 @@ Let $A,B$ be two $n\times n$ matrices, then $\det (BA) = \det A\cdot \det B$.
 \end{theorem}
 \begin{proof}
 Assume $A = D(a_1,\cdots,a_n)$, then $BA = (Ba_1,\cdots,Ba_n)$, which implies $$\det BA = D(Ba_1,\cdots,Ba_n).$$
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item Define for $\det B\neq 0$, that $C(a_1,\cdots,a_n) = \frac{\det BA}{\det B}$. It suffices to show that $C$ satisfies:
-    \begin{enumerate}[label=(\roman*)]
+    \begin{enumerate}[label=\arabic*)]
         \item If $a_i = a_j$ for some $i\neq j$, then $C = 0$. Indeed, if $a_i = a_j$ for some $i\neq j$, then $Ba_i = Ba_j$. Thus, $D(Ba_1,\cdots,Ba_n) = 0$.
         \item $C$ is linear in $a_k, 1\leq k \leq n$. This is obvious.
         \item $C(e_1,\cdots,c_n) = 1$. Indeed, setting $a_i = e_i, 1\leq i\leq n$. And we get 
@@ -1939,7 +1942,7 @@ Define
     \right)
 \end{align*}
 then it suffices to verify $C$ satisfies all three properties:
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item If $a_i, a_j\in A_{11}$ such that $a_i = a_j, i\neq j$, then we have $\left(
     \begin{matrix}
         0\\
@@ -2081,7 +2084,7 @@ The trace of a square matrix $A$, denoted by $\tr A$, is the sum of all diagonal
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Trace is a linear functional on matrices.
     \item Trace is commutative: $\tr AB = \tr BA$.
 \end{enumerate}
@@ -2109,7 +2112,7 @@ Similar matrices have the same trace and determinant.
 \end{theorem}
 \begin{proof}
 Assume $A$ and $B$ are similar, then there exists an invertible matrix $S$ such that $A = SBS^{-1}$.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item $\tr A = \tr SBS^{-1} =\tr SS^{-1}B = \tr B$.
     \item $\det A = \det SBS^{-1} = \det S\cdot \det B \cdot \det S^{-1} = \det I\cdot \det B = \det B$.
 \end{enumerate}
@@ -2147,7 +2150,7 @@ Let $A,B,C,D$ be $n\times n$ matrices and $AC=CA$, then
 \end{align*}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $\det A \neq 0$, then we have
     \begin{align*}
     \left(\begin{matrix}
@@ -2204,7 +2207,7 @@ Similar to the theorem above, we can have following results, that:
 Let $A,B$ be $n\times n$ matrices, then $\det (I-AB) = \det (I-BA)$.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $\det A \neq 0$, then we have
     \begin{align*}
         \det (I-AB) & = \det A \left(A^{-1} - B\right) \\
@@ -2317,7 +2320,7 @@ are linearly independent.
 \end{theorem}
 \begin{proof}
 Let $\lambda_k, 1\leq k \leq n$ be $n$ distinct eigenvalues and $v_k, 1\leq k \leq n$ be corresponding eigenvectors. Now we prove it by induction.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item When $k = 1$, the theorem holds.
     \item Suppose it holds for $k = N$. When $k = N+1$, suppose 
     \begin{align*}
@@ -2376,8 +2379,8 @@ We claim that $\lambda_1,\lambda_n,\cdots,\lambda_n$ are $n$ roots of polynomial
     & = \sum_p \sigma(p) \prod^n_{k=1} \left(\lambda \delta_{p_k k} - a_{p_k k}\right) \\
     & = \lambda^n - \left(\tr A \right)\lambda^{n-1} +\cdots + (-1)^n \prod^n_{k=1}\lambda_k.
 \end{align*}
-Then we have
-\begin{enumerate}[label=(\arabic*)]
+Then we have,
+\begin{enumerate}[label=(\alph*)]
     \item Let $\lambda = 0$, then we have $\det (-A) = (-1)^n \prod^n_{k=1}\lambda_k$, which implies $\det A = \prod^n_{k=1}\lambda_k$.
     \item According to elementary algebra, the polynomial $p_A$ can be written as 
     \begin{align*}
@@ -2490,7 +2493,7 @@ If this is true, then $x = \sum^J_{i=1}x_i, x_i\in N_{p_j(A)}$. Then we need a l
 
 \begin{lemma}
 Let $p, q$ be a pair of polynomials, with complex coefficients, and $p,q$ have no common zeros. Then, we have
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item There exist two polynomials $a,b$, such that $ap+bq = 1$.
     \item Let $A$ be a square matrix, then 
     $$N_{p(A)q(A)} = N_{p(A)} \oplus N_{q(A)}.$$
@@ -2499,7 +2502,7 @@ Let $p, q$ be a pair of polynomials, with complex coefficients, and $p,q$ have n
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Let $\mathcal{P} = \{ap+bq\}$, where $a,b$ are two polynomials, and let $d$ be a nonzero polynomial in $P$ with lowest degree. 
     
     First, we claim that $d$ divides both $p$ and $q$.Indeed, if not, then the division algorithm yields a remainder, i.e.,
@@ -2557,13 +2560,13 @@ If $v\in N_d$, then $(A - \lambda I)^d v = 0$. Then, we have $(A - \lambda I)^d 
 
 \begin{theorem}
 Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is $d\left(\lambda_j\right) = d_j, 1\leq j \leq k$. Then,
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item $\mathbb{C}^n = \oplus^k_{j=1}N_{d_j}(\lambda_j).$
     \item The minimal polynomial is $m_A = \prod^k_{j=1}\left(\lambda - \lambda_j \right)^{d_j}$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $\mathbb{C}^n$ is the span of generalized eigenvectors and others follows from spectral theorem.
     \item For any $x\in\mathbb{C}^n$, we have $x = \sum^k_{j=1}x_j, x_j\in N_{d_j}(\lambda_j)$. Then, we have 
     \begin{align*}
@@ -2595,7 +2598,7 @@ If $v\in N_{(A-\lambda_j I)^m}$, then we have $S^{-1}v\in N_{(B-\lambda_j I)^m}$
 \end{proof}
 
 \begin{remark}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $A - \lambda I$ maps $N_{i+1}(\lambda)$ into $N_{i}(\lambda)$, where $N_{j}(\lambda) = N_{(A - \lambda I)^j}$.
     \item $A - \lambda I$ defines a map from $N_{i+1}/N_i$ to $N_i/N_{i-1}$, for $i\geq 1$, and $N_0 = \{0\}$.
     \begin{proof}
@@ -2733,7 +2736,7 @@ Next, we show that every nilpotent operator $N\in\mathcal{L}(X,X)$ behaves simil
 
 \begin{theorem}
 Suppose $N\in \mathcal{L}(X,X)$ is nilpotent. Then there exist vectors $v_1, \cdots, v_n\in X$ and nonnegative integers $m_1, \cdots, m_n$ such that 
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item $N^{m_1}v_1, \cdots, Nv_1, v_1, \cdots, N^{m_n}v_n, \cdots, N v_n, v_n$ is a basis of $X$.
     \item $N^{m_1+1}v_1 = N^{m_2+1}v_2 = \cdots = N^{m_n+1}v_n = 0$.
 \end{enumerate}
@@ -3180,7 +3183,7 @@ Since $\lambda \neq \mu$, we have $u^T v = 0$.
 \section{Scalar Product and Distance}
 \begin{definition}
 An Euclidean structure in a linear space $X$ over $\mathbb{R}$ is furnished by a real-valued function of two vector arguments called a scalar product and denoted by $(x,y)$, which has the following properties:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\arabic*)]
     \item $(x,y)$ is a bilinear function.
     \item Symmetricity: $(x,y) = (y,x)$.
     \item Positivity: $(x,x) > 0$ except for $x = 0$. 
@@ -3414,7 +3417,7 @@ $$(A^* y, x) = (y, Ax).$$
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $A,B$ are two linear maps of $X$ into $U$, then $(A+B)^* = A^* + B^*$.
     \item If $A:X\to U, C:U\to V$, then $(CA)^* = A^* C^*$.
     \item If $A$ is a bijection from $X$ onto $U$, then $\left(A^{-1}\right)^* = \left(A^*\right)^{-1}$.
@@ -3422,7 +3425,7 @@ $$(A^* y, x) = (y, Ax).$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For $\forall x\in X, \forall y\in U$, we have
     \begin{align*}
         \left((A+B)^*y, x\right) & = (y, (A+B)x) \\
@@ -3524,14 +3527,14 @@ A mapping of a Euclidean space into itself is called an isometry if it preserves
 
 \begin{theorem}\label{isometry_properties}
 Let $M$ be an isometry from $X$ into itself and $M(0) = 0$. Then:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item $M$ is linear.
     \item $M^* M = I$ and $\det M = \pm 1$.
     \item $M$ is invertible and its inverse is an isometry.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For all $x\in X$, write $Mx = x'$, and then $\|x\| = \|x'\|$. And for any $x,y\in X$, we have $\|x' - y'\|^2 = \|x - y\|^2$. Then we have
     \begin{align*}
         \|x'\|^2 - 2(x', y') + \|y'\|^2 & = \|x\|^2 - 2(x, y) + \|y\|^2 \\
@@ -3613,13 +3616,13 @@ The norm of a linear map $A:X\to U$ is defined by
 \begin{theorem}
 Let $A$ be a linear mapping from the Euclidean space $X$ into the
 Euclidean space $U$, where $\|A\|$ is its norm. Then, 
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item For any $z\in X$, $\|Az\|\leq \|A\|\cdot \|z\|$.
     \item $\|A\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $z = 0$, then it holds. If $z\neq 0$, then we have 
     \begin{align*}
         \|Az\| = \left\|A \frac{z}{\|z\|}\|z\|\right\| = \|z\|\cdot \left\|A \frac{z}{\|z\|}\right\| \leq \|A\|\cdot \|z\|.
@@ -3654,7 +3657,7 @@ With the second argument in the previous theorem, $a_{ij} = (e_i,Ae_j) \leq \|A\
 \medskip
 
 \begin{theorem}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For all $k\in\mathbb{R}$, $\|kA\| = |k|\cdot \|A\|$.
     \item $A,B:X\to U$, then $\|A + B\|\leq \|A\| + \|B\|$.
     \item $A:X\to U, B:U\to V$, then $\|BA\| \leq \|B\|\cdot \|A\|$.
@@ -3662,7 +3665,7 @@ With the second argument in the previous theorem, $a_{ij} = (e_i,Ae_j) \leq \|A\
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $k = 0$, then it holds. If $k\neq 0$, then $\|kAx\| = |k| \cdot \|Ax\|$, which implies
     \begin{align*}
         \|kA\| = \sup_{\|x\|=1} \|kAx\| = \sup_{\|x\|=1} |k| \cdot \|Ax\| = |k|\cdot \|A\|.
@@ -3721,13 +3724,13 @@ A sequence of vectors $\{x_n\}$ in Euclidean space $X$ converges to $x\in X$ if 
 
 \begin{theorem}
 A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilon > 0$, there exists $N > 0$,  such that for all $k, j \geq N$, $\|x_k - x_j\| < \varepsilon$. 
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item Completeness: every Cauchy sequence in a finite-dimensional Euclidean space is convergent.
     \item Locally compactness: any bounded sequence in a finite-dimensional Euclidean space contains a convergent subsequence. 
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Let $x,y$ be two vectors in $X$, and $a_j, b_j$ are their $j$th component respectively, then 
     \begin{align*}
         |a_j - b_j| \leq \|x - y\|.
@@ -3999,7 +4002,7 @@ Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. A
 
 \medskip
 
-\begin{theorem}[Gelfand's Formula]
+\begin{theorem}[Gelfand's Formula]\label{Gelfand_Formula}
 $$r(A) = \lim_{k\to\infty} \left(\left\|A^k\right\|\right)^{1/k}. $$
 \end{theorem}
 \begin{proof}
@@ -4036,7 +4039,7 @@ We claim $\lim_{k\to\infty}\binom{k}{j}\lambda^{k-j} = 0, 0\leq j\leq n_s-1$ for
 \end{proof}
 
 Now we complete the proof of the theorem.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item Since $\|A\|\geq r(A)$, then we have $\left\|A^k\right\| \geq \left(r\left(A^k\right) \right)^{\frac{1}{k}} = \left(r(A)^k \right)^{\frac{1}{k}}  = r(A)$. Then,
     \begin{align*}
         \liminf_{k\to\infty} \left(\left\|A^k\right\|\right)^{1/k} \geq r(A).
@@ -4075,7 +4078,7 @@ A linear mapping $A$ of a linear or complex Euclidean space into itself is said 
 \end{definition}
 \begin{remark}
 If we pick an orthogonal basis of Euclidean space, we can view $A$ as a matrix $A = (a_{ij})_{n\times n}$, then 
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\arabic*)]
     \item In real case, $A^* = A \iff A^T = A \iff A$ is real symmetric, i.e., $a_{ij} = a_{ji}$. 
     \item In complex case, $A^* = A \iff \overline{A^T} = A$, i.e., $a_{ij} = \overline{a_{ji}}$. We say $A$ is Hermitian matrix.
 \end{enumerate}
@@ -4097,7 +4100,7 @@ A self-adjoint map $H$ of complex Euclidean space $X$ into itself has real eigen
 \end{theorem}
 \begin{proof}
 We can view $H$ as a matrix. Then, we need to show that $H$ has following properties:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item $H$ has only real eigenvalues.
     
     \item $H$ has no generalized eigenvalues, only genuine ones.
@@ -4105,7 +4108,7 @@ We can view $H$ as a matrix. Then, we need to show that $H$ has following proper
     \item Eigenvectors of $H$ corresponding to different eigenvalues are orthogonal.
 \end{enumerate}
 Then, 
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item All eigenvalues are real. Assume $\lambda$ is eigenvalue, such that $Hx = \lambda x$. Then we have
     \begin{align*}
         (Hx, x) & = (x, Hx) \\
@@ -4278,7 +4281,7 @@ Let $p_+, p_-$ and $p_0$ be the numbers of positive, negative and zero terms of 
 We claim that $$p_+ = \max_{q > 0\,\, {\rm on}\,\, S} \dim S. $$
 Let $S = L^{-1}\left({\rm span}\{e_i, d_i > 0\} \right)$, then $
 \dim S = p_+, q > 0\,\, {\rm on}\,\, S$. 
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item For $y\in S$, $y = L^{-1}x$, where $x = \sum_{d_i > 0} d_i c_i^2$, then 
     \begin{align*}
         q(y) = q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2 = \sum_{d_i > 0} d_i c_i^2 \geq 0.
@@ -4334,13 +4337,13 @@ which follows $x = \sum^k_{j=1}x_j$ and hence
 
 \begin{theorem}
 The operators $P_j$ have the following properties:
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item $P_j P_k = 0$ for $j\neq k, P_j^2 = P_j$.
     \item Each $P_j$ is self-adjoint, i.e., $P_j^* = P_j$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For any $x\in X$, $x = \sum^k_{j=1}x_j$, where $x_j\in N(\lambda_j)$, we have $P_j P_k x = P_j x_k = 0$. Thus, $P_j P_k = 0$ for $j\neq k$.
     \item For any $x = \sum^k_{j=1}x_j \in X$ and $y = \sum^k_{j=1}y_j \in X$, where $x_j, y_j \in N(\lambda_j)$, we have
     \begin{align*}
@@ -4458,13 +4461,13 @@ $N$ is a normal matrix if and only if $N$ can be unitarily diagonalized.
 
 \begin{theorem}\label{isometry_property}
 Let $U$ be a unitary map of a complex Euclidean space into itself, that is an isometry linear map. Then,
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item There is an orthogonal basis consisting of genuine eigenvectors of $U$.
     \item The eigenvalues of $U$ are complex numbers with absolute value $1$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $U$ is unitray, i.e., $UU^* = U^*U = I$, then $U$ is self-adjoint, which implies $U$ is normal. Thus,  the previous theorem indicates the argument.
     \item Isometry preserves the distance, then 
     \begin{align*}
@@ -4623,7 +4626,7 @@ We recall that $\|A\| = \max \|Ax\|, \|x\|=1$ or $\|A\| = \sup\frac{\|Ax\|}{\|x\
 Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N\| \leq r(A)$.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $r(N)\leq \|N\|$. Indeed, for any eigenvalue $\lambda_j$ and its corresponding eigenvector $x_j$, we have \begin{align*}
         \|Nx_j\| = |\lambda_j|\cdot \|x_j\|\leq \|N\|\cdot \|x_j\|
     \end{align*}
@@ -4645,7 +4648,7 @@ Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N
 Let $A:X\to Y$, then $\|A\| = \sqrt{r(A^*A)}$.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $A^*A$ is normal and we have
     \begin{align*}
         \|Ax\|^2 & = (Ax, Ax) \\
@@ -4787,7 +4790,7 @@ Continuity and differentiability is equivalent to those of every element of $A(t
 \medskip
 
 \begin{theorem}[Basic Rules of Differentiation]
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $\dv{}{t}(A(t)+B(t)) = \dv{}{t}A(t) + \dv{}{t}B(t)$.
     \item $\dv{}{t} A(t)B(t) = \left(\dv{}{t} A(t)\right) B(t) + A(t) \dv{}{t} B(t)$.
     \item For $x(t),y(t) \in \mathbb{C}^n$, $\dv{}{t}(x(t), y(t)) = \left(\dv{}{t}x(t), y(t)\right) + \left(x(t), \dv{}{t} y(t) \right)$.
@@ -4823,14 +4826,14 @@ If $A\dot{A} = \dot{A}A$, then
 
 \begin{theorem}
 Let $p$ be any polynomial, and $A$ be a square matrix valued function that is differentiable. 
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item If for a particular value of $t$, $A(t)\dot{A}(t) = \dot{A}(t)A(t)$, then $$\dv{}{t}p(A) = p'(A)\dot{A}.$$
     \item Even if $A(t)$ and $\dot{A}(t)$ do not commute, chain rule of the trace remains,
     $$\dv{}{t}\tr p(A) = \tr \left(p'(A)\dot{A}\right).$$
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Suppose $A(t)\dot{A}(t) = \dot{A}(t)A(t)$, then we have
     \begin{align*}
         \dv{}{t}A^k(t) = k A^{k-1}(t)\dot{A}.
@@ -4904,8 +4907,8 @@ We claim that the Taylor series also holds to define $e^A$ for any square matrix
 
 \medskip
 
-\begin{theorem}
-~\begin{enumerate}[label=(\roman*)]
+\begin{theorem}\label{matrix_exponential}
+~\begin{enumerate}[label=(\alph*)]
     \item If $A,B$ are square matrices and $AB = BA$, then $$e^{A+B} = e^A e^B.$$
     \item If $A$ and $B$ do not commute, then in general $$e^{A+B} \neq e^A e^B.$$
     \item If $A(t)$ depends differentiable on $t$, then $e^{A(t)}$ is also differentiable.
@@ -4917,7 +4920,7 @@ We claim that the Taylor series also holds to define $e^A$ for any square matrix
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $AB = BA$, we have
     \begin{align*}
         e^{A+B} & = \sum^\infty_{k=0} \frac{(A+B)^k}{k!} \\
@@ -5092,7 +5095,7 @@ Now we discuss some basic properties of positive mapping.
 \medskip
 
 \begin{theorem}\label{unique_square_root}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item The identity $I > 0$.
     \item If $A, B > 0$, then $A + B > 0$.
     \item If $A > 0, k > 0$, then $k A > 0$.
@@ -5103,7 +5106,7 @@ Now we discuss some basic properties of positive mapping.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \setcounter{enumi}{3}
     \item $(x, Q^* H Q x) = (Qx, HQx) > 0$.
     \setcounter{enumi}{6}
@@ -5138,7 +5141,7 @@ Now we discuss some basic properties of positive mapping.
 \medskip
 
 \begin{proposition}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item $M_1 < N_1, M_2 < N_2$, then $M_1 + M_2 < N_1 + N_2$.
     \item $L < M, M < N$, then $L < M$.
 \end{enumerate}
@@ -5273,7 +5276,7 @@ is called the Gram matrix of the set of vectors.
 \medskip
 
 \begin{theorem}\label{gram_matrix_theorem}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Every Gram matrix is nonnegative.
     
     \item The Gram matrix of a set of linearly independent vectors is positive.
@@ -5282,7 +5285,7 @@ is called the Gram matrix of the set of vectors.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item For any $x = \sum x_i e_i \in X$, 
     \begin{align*}
         (x,Gx) & = \sum_{i} x_i\left(\sum_{j}G_{ij}x_j\right) \\
@@ -5785,7 +5788,7 @@ The singular values of $A$, and hence $\Sigma$ is uniquely determined.
 \end{remark}
 
 \begin{remark}
-~\begin{enumerate}[label=(\alph*)]
+~\begin{enumerate}[label=(\arabic*)]
     \item $A^* A = V\Sigma^* U^* U\Sigma V^* = V\Sigma^* \Sigma V^*$, and the columns of $V$ are eigenvectors of $A^* A$, called the right singular vector of $A$.
     
     \item $A A^* = U\Sigma V^* V\Sigma^* U^* = U\Sigma \Sigma^* U^*$, and the columns of $U$ are eigenvectors of $A A^*$, called the left singular vector of $A$.
@@ -5796,7 +5799,7 @@ The singular values of $A$, and hence $\Sigma$ is uniquely determined.
 
 To construct singular value decomposition, first compute for eigenvalues $\sigma_1^2, \sigma_2^2, \cdots, \sigma_n^2$ of $A^*A$. Let $v_1, v_2, \cdots, v_n$ be an orthogonal basis of eigenvectors of $A^*A$, since $AA^* \geq 0$. Then we have following theorem.
 
-\begin{theorem}{\bf \cite{28}}
+\begin{theorem}{\rm \cite{28}}
 Let $\sigma_1^2, \sigma_2^2, \cdots, \sigma_r^2$ be nonzero singular value of $AA^*$. Then the system 
 \begin{align*}
     u_k = \frac{1}{\sigma_k} Av_k, k = 1,2,\cdots,r
@@ -5849,7 +5852,7 @@ Moreover, we can generalize this result to other eigenvalus.
 
 \medskip
 
-\begin{theorem}{\bf \cite{29}}
+\begin{theorem}{\rm \cite{29}}
 For any $A \in \mathbb{C}^{m\times n}$,
 \begin{align*}
     \lambda_k = \max_{\substack{\|u\| = \|v\| = 1\\
@@ -5887,7 +5890,7 @@ and thus $B$ is positive definite.
 $A$ is positive definite if and only if all $n$ leading principal minors are strictly positive.
 \end{theorem}
 \begin{proof}
-~\begin{enumerate}[label=(\alph*)]
+~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) If $A > 0$, the rest follows naturally by Theorem \ref{positive_principal_submatrix}.
     
     \item ($\Leftarrow$) Prove by induction and denote by $A_k$ the $k$-th order leading principal submatrix. 
@@ -6086,7 +6089,7 @@ $p_\lambda = \lambda$ implies $P = 0$, $p_\lambda = \lambda - 1$ implies that $P
 
 \medskip
 
-\begin{corollary}{\bf \cite{33}}
+\begin{corollary}{\rm \cite{33}}
 Projection $P$ is diaginalizable.
 \end{corollary}
 \begin{proof}
@@ -6211,7 +6214,7 @@ From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ i
 
 \medskip
 
-\begin{lemma}{\bf \cite{35}}
+\begin{lemma}{\rm \cite{35}}
 Let $u, v$ be two vectors such that $u \neq v, \|u\| = \|v\|$, then there exists a unique reflection $R$ such that $Ru = v$.
 \end{lemma}
 \begin{proof}
@@ -6268,7 +6271,7 @@ We prove by induction on $n$. When $n = 1$, the reflection $R$ is either identit
             \draw[dotted,-] (-0.88,1.47)--(-1.76,0.94)node[above left]{$A$};
             \draw[dotted,-] (0,0)--(-0.88,1.47);
             \draw[->] (0,0)--(-1.76,0.94);
-            \end{tikzpicture}
+        \end{tikzpicture}
         \caption{Reflection $R_i$ about the hyperplane $H_i$}
         \label{fig:plot_2}
     \end{figure}\\
@@ -6313,11 +6316,21 @@ In particular, for $n = 3$, every rotation is the composition of two reflections
 \chapter{Kinematics and Dynamics}
 \section{Axis and Angle of Rotation}
 
-An {\em isometry} was defined in Chapter \ref{chapter_7} as a mapping of a Euclidean space into itself that preserves distances. When the {\em isometry} relates the positions of a mechanical system in three-dimensional real space at two different times, it is called a {\em rigid body motion}. 
+An {\em isometry} was defined in Chapter \ref{chapter_7} as a mapping of a Euclidean space into itself that preserves distances. When the {\em isometry} relates the positions of a mechanical system in three-dimensional real space at two different times, it is called a {\em rigid body motion}.
+
+\medskip
+
+\begin{definition}{\rm \cite{33}}
+If $V$ is an inner product space, a rigid motion is any function $T$ from $V$ into $V$ (not necessarily linear) such that $\|T\alpha - T\beta\| = \|\alpha - \beta\|$ for all $\alpha, \beta \in V$. One example of a rigid motion is a linear isometry, also a linear unitary operator in complex case. 
+\end{definition}
+
+\medskip
 
 By Theorem \ref{isometry_properties}, an ismoetry $M$ that preserves the original is linear and satisfies $M^*M = I$. Also, the determinant of an isometry is either $1$ or $-1$, its value for all rigid body motions is $1$. Now we talk the following theorem, which is exactly what we discussed in Appendix \ref{appendix_reflection}.
 
-\begin{theorem}[Euler]{\bf \cite{18}}
+\medskip
+
+\begin{theorem}[Euler]{\rm \cite{18}}
 An isometry $M$ of three-dimensional real Euclidean space with determinant $1$ that is nontrivial, that is not equal to $I$, is a rotation; it has a uniquely defined axis of rotation and angle of rotation $\theta$.
 \end{theorem}
 \begin{proof}
@@ -6350,13 +6363,13 @@ The rotation angle is easily calculated without introducing a new basis that bri
 \end{align*}
 \end{remark}
 
-\begin{remark}{\bf \cite{37}}
+\begin{remark}{\rm \cite{37}}
 There are basically two kinds linear isometry of $\mathbb{R}^3$ rotations (including the identity which is a rotation by angle $\theta = 0$) and improper rotation (including reflection across a plane which is an improper rotation by angle $\theta = 0$, and reflection through the origin which is an improper rotation by angle $\theta = \pi$). A rotation of $\mathbb{R}^3$ by angle $\theta$ has eigenvalues $1, e^{i\theta}$ and $e^{-i\theta}$, so its trace is $1 + 2\cos \theta$. An improper rotation by angle $\theta$ has eigenvalues $-1, e^{i\theta}$ and $e^{i\theta}$ so its trace is $-1 + 2\cos \theta$.
 \end{remark}
 
 \medskip
 
-\subsection{Rigid Motion}
+\section{Rigid Motion}
 
 Now we discuss {\em rigid motions} which keep the original fixed and depends on time $t$, that is, function $M(t)$ whose values are rotations. We take $M(t)$ to be rotation that brings the configuration at time $0$ into the configuration at time $t$. Thus, $M(0) = I$. If we change the reference time from $0$ to $t_1$, the function $M$, describing the motion
 from $t_1$ to $t$ is
@@ -6384,7 +6397,7 @@ This shows the significance of $A(t)$, for the motion is independent of the refe
 On the other hand, if $A^*(t) = -A(t)$, and $M(t)$ solves system $\begin{cases}
 M_t = A(t) M \\
 M(0) = I
-\end{cases}$, then $M M^* = I$ for any $t$.
+\end{cases}$, then $M M^* = I$ for any $t$, i.e., $M(t)$ is a rotation for every $t$.
 \end{remark}
 \begin{proof}
 By the first equation, $A = M^{-1} M_t$, and since $A$ is antisymmetric, we have 
@@ -6392,7 +6405,139 @@ $$M_t M^{-1} + \left(M\right)^{-1} M_t^* = 0.$$
 Multiplying $M^*$ on the left side and $M$ on the right side gives $M^* M_t + M^*_t M = 0$, which is equivalent to $\dv{}{t}\left(M M^* \right) = 0$. Then, $M(t) M^*(t) = M(0) M^*(0) = I$.
 \end{proof}
 
+\medskip
 
+\begin{remark}
+If $A$ depends on $t$, equation (\ref{dreivative_rigid_motion}) is not solved by 
+\begin{align*}
+    M(t) = e^{\int^t_0 A(s)\, ds},
+\end{align*}
+unless $A(t)$ and $A(s)$ commute for all $s$ and $t$.
+\end{remark}
+\begin{proof}
+By definition of the derivative of $M(t)$ \cite{26}, we have
+\begin{align*}
+    \frac{M(t + h) - M(t)}{h} & = \frac{1}{h} \left(e^{\int^{t+h}_0 A(s)\, ds} - e^{\int^t_0 A(s)\, ds} \right) \\
+    & = \frac{1}{h} e^{\int^t_0 A(s)\, ds} \left(e^{\int^{t+h}_t A(s)\, ds} - I\right)
+\end{align*}
+where, by Theorem \ref{matrix_exponential}, the last step cannot hold if $\int^t_0 A(s)\, ds$ does not commute with $\int^{t+h}_t A(s)\, ds$. So when the commutativity holds, 
+\begin{align*}
+    M'(t) & = \lim_{h\to 0}  \frac{M(t + h) - M(t)}{h} \\
+    & = \lim_{h\to 0} M(t) \frac{e^{\int^{t+h}_t A(s)\, ds} - I}{h} \\
+    & = \lim_{h\to 0} M(t) \frac{e^{\int^{t+h}_t A(s)\, ds} A(t)}{1} \\
+    & = A(t) M(t).
+\end{align*}
+\end{proof}
+
+\medskip
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Convexity}
+
+\section{Convex Sets}
+
+Let $X$ be a linear space over the fields. For any pair of vectors $x, y \in X$, the {\em line segment} with endpoints $x$ and $y$ is defined as the set of points in $X$ of the form 
+\begin{align}
+    ax + (1-a)y, 0 \leq a \leq 1.
+\end{align}
+
+\medskip
+
+\begin{definition}
+A set $K$ in $X$ is called convex if, whenever $x$ and $y$ belong to $K$, all points of the line segment with endpoints $x, y$ also belong to $K$.
+\end{definition}
+
+\medskip
+
+\begin{example}[Example of Convex Sets]
+~\begin{enumerate}[label=(\arabic*)]
+    \item $K$ is the whole space $X$.
+    
+    \item $K = \varnothing0$.
+    
+    \item $K = \{x\}$, a single point.
+    
+    \item $K$ is any line segment.
+    
+    \item Let $l$ be a linear function in $X$, then then sets 
+    \begin{align*}
+        l(x) & = c, \,\,\text{called a {\em hyperplane}}, \\
+        l(x) & < c, \,\,\text{called an {\em open half-space}}, \\
+        l(x) & \leq c, \,\,\text{called a {\em closed half-space}},
+    \end{align*}
+    are all convex sets.
+    
+    \item $X$ the space of all polynomials with real coefficients, $K$ then subset of all polynomials that are positive at every point of the interval $(0,1)$.
+    
+    \item $X$ the space of real, self-adjoint matrices, $K$ the subset of positive matrices.
+\end{enumerate}
+\end{example}
+
+\medskip
+
+\begin{theorem}
+~\begin{enumerate}[label=(\alph*)]
+    \item The intersection of any collection of convex sets is convex.
+    
+    \item The sum of two convex sets is convex, where the sum of two sets $K$ and $H$ is defined as the set of all sums $x + y$, $x \in K, y \in H$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Let $K_\alpha, \alpha \in \Lambda$ be convex sets, and $K = \bigcap_{\alpha \in \Lambda} K_\alpha$. For any $x, y \in K$, we have for all $\alpha \in \Lambda$, $x, y\in K_\alpha$. Then, $tx + (1-t)y \in K_\alpha, t\in[0,1]$ for all $\alpha$. Thus, $tx + (1-t)y \in \bigcap_{\alpha \in \Lambda} K_\alpha = K$, which implies $K$ is convex.
+    
+    \item Let $K_1, K_2$ be convex sets, and let $K = K_1 + K_2 = \{x + y | x \in K_1, y \in K_2 \}$. For $z_1, z_2 \in K$, there exists $x_1, x_2 \in K_1$ and $y_1, y_2 \in K_2$ such that $z_1 = x_1 + y_1$ and $z_2 = x_2 + y_2$. Thus,
+    \begin{align*}
+        tz_1 + (1-t)z_2 & = t(x_1 + y_1) + (1-t)(x_2 + y_2) \\
+        & = tx_1 + (1-t)x_2 + ty_1 + (1-t)y_2 \in K_1 + K_2
+    \end{align*}
+    and hence $K$ is convex.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\section{Gauge Function}
+
+\begin{definition}
+A point $x$ is called an interior point of a set $K$ in $X$ if for every $y$ in $X$, $x + yt$ belongs to $K$ for all sufficiently small positive $t$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+A convex set $K$ in $X$ is called open if every point in it is an interior point.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+Let $K$ be an open convex set that contains the vector $0$. We define its gauge function $p_K = p$ as follows: For every $x$ in $X$, 
+\begin{align*}
+    p(x) = \inf \left\{r > 0 : \frac{x}{r} \in K\right\}
+\end{align*}
+\end{definition}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale = 1.5]
+        \filldraw[black] (0,0) circle (0.5pt) node[below left] {$O$};
+        \draw (0,0) circle (1);
+        \draw[dotted,-] (0,0)--(0.707,0.707);
+        \draw[thick,->] (0.707,0.707)--(1.5,1.5)node[below right] {$x$};
+        \filldraw[black] (0.707,0.707) circle (0.5pt) node[anchor=west] {$x/p(x)$};
+    \end{tikzpicture}
+    \caption{Gauge function}
+    \label{fig:plot_3}
+\end{figure}
 
 
 
@@ -6449,7 +6594,7 @@ Let $U, V$, and $W$ be subspaces of a finite dimensional linear space $X$. Show 
 $$U\cup (V + W) = U\cup V + W$$
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item We set $u_1 \in U \cap (V+W)$, then there exist some $v_1 \in V$ and $w_1 \in W$ such that $u_1 = v_1 + w_1$ since $u_1 \in U$ and also $u_1 \in (V+W)$. Also, $u_1 \in U$ and $W \subset U$ which means $w_1 \in U$, then we have $v_1 \in U$ since $U$ is a subspace which is closed under addition. Then from $v_1 \in U$, we have $v_1 \in (U \cap V)$. Based on the fact that $u_1 = v_1 + w_1$ and $w_1 \in W$, we have $u_1 \in (U \cap V + W)$. This implies that $U \cap (V+W) \subset (U \cap V + W)$.
     \item Now we set $u_2 \in (U \cap V + W)$, then there exist some $\lambda \in U \cap V$ and $w_2 \in W$ such that $u_2 = \lambda + w_2$. And we have $\lambda + w_2 \in V+W$, since $\lambda \in U \cap V$ and $w_2 \in W$. Also, we know that $W \subset U$, then we have $\lambda + w_2 \in U$. Thus we can have $\lambda + w_2 \in U \cap (V+W)$. Hence, $u_2 \in U \cap (V+W)$, which implies $(U \cap V + W) \subset U \cap (V+W)$.
 \end{enumerate}
@@ -6459,14 +6604,14 @@ $$U\cup (V + W) = U\cup V + W$$
 
 \begin{exercise}\label{ex_4}
 Denote by $X$ the linear space of all polynomials $p(t)$ of degree less than $n$, and denote by $Y$ the subset of $X$ containing polynomials that are zero at distinct $t_1,t_2,\cdots,t_m\in K$, where $m < n$.
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item Show that $Y$ is a subspace of $X$.
     \item Determine ${\rm dim}Y$ and find a basis of $Y$.
     \item Determine ${\rm dim}X = Y$ and find a basis of $X/Y$.
 \end{enumerate}
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Set $P_1, P_2 \in Y$ of form $P_i = (t-t_1)(t-t_2) \cdots (t-t_m)q_i(t)$ that are zero at distinct $t_1, t_2, \cdots, t_m\in K$. Then we have 
     \begin{align*}
         P_1 + P_2 &= \sum^2_{i=1}(t-t_1)(t-t_2) \cdots (t-t_m)q_i(t) \\
@@ -6609,7 +6754,7 @@ Suppose $\{x_1, x_2,\cdots, x_n\}$ is a basis for the vector space $X$. Show tha
 Show that $\{e_1, e_2,\cdots, e_n\}$ is a basis of $X'$, called the dual basis.
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item First, we check that $\{e_1, e_2, \cdots, e_n\}$ are linearly independent. Suppose that there exist  $a_1, a_2, \cdots, a_n \in K$ such that 
     \begin{align*}
         a_1 e_1 + a_2 e_2 + \cdots + a_n e_n = 0
@@ -6633,7 +6778,7 @@ Show that $\{e_1, e_2,\cdots, e_n\}$ is a basis of $X'$, called the dual basis.
 Let $X$ be a finite dimensional linear space. Show that two nonzero linear functionals $T,S\in X'$ have the same null space if and only if there is a nonzero scalar $\lambda$ such that $S = \lambda T$.
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $T: X \rightarrow R$, then there $\exists x_1 \in X$ such that $T x \neq 0$. And we let $x_2  = \frac{x_1}{T(x_1)}$, then we have $T(x_2) = 1$. And for $\forall x \in X$we can know
     \begin{align*}
         T(x - T(x)\cdot x_2) = T(x) - T(x) = 0
@@ -6702,7 +6847,7 @@ If $Y$ and $Z$ are subspaces of a finite dimensional linear space, prove that
 \end{align*}
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Assume $l \in (Y+Z)^\bot$. Then we have $l(m) = 0$, for all $m \in Y+Z$. Also, we know $Y\subset Y+Z$, so $l(y) = 0, \forall y \in Y$. Similarly, we have $l(z) = 0, \forall z \in Z$. Then we have $l \in Y^\bot \cap Z^\bot$, which implies $(Y+Z)^\bot \subset Y^\bot \cap Z^\bot$.
     
     Now assume $l \in Y^\bot \cap Z^\bot$, then we have $l(y) = 0$ and $l(z) = 0$, for $\forall y \in Y, \forall z \in Z$. Then, for $\forall m \in Y+Z$ we have $l(m) = 0$, since $m = y + z$ for some $y \in Y$ and $z \in Z$. Thus, we have $l \in (Y+Z)^\bot$, which implies $Y^\bot \cap Z^\bot \subset (Y+Z)^\bot$. Now we proved that $(Y+Z)^\bot = Y^\bot \cap Z^\bot$.
@@ -7052,7 +7197,7 @@ $$
 $$
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item If $B$ is invertible, since $AB=BA$, then we have $A=B^{-1}AB$. Then we have
     \begin{align*}
         \det (A+BC) &= \det (B^{-1}(A+BC)B) \\
@@ -7163,7 +7308,7 @@ Then it is obvious that $\det(A)=y_n \prod_{k=1}^{n-1} (y_k-x_k)$.
 
 \begin{exercise}{\bf (April 2001 Prelim)}
 Let $M_n(\mathbb{F})$ denote the vector space of $n \times n$ matrices over a field $\mathbb{F}$, with the usual matrix addition and scalar multiplication, and for $A = \left(a_{ij}\right) \in M_n(\mathbb{F})$, let ${\rm tr}(A) = \sum_i a_{ii}$.
-\begin{enumerate}[label=(\roman*)]
+\begin{enumerate}[label=(\alph*)]
     \item Show that $A \mapsto {\rm tr}(A)$ defines a linear function on $M_n(\mathbb{F})$ and ${\rm tr}(AB) = {\rm tr}(BA)$ for all $A, B \in M_n(\mathbb{F})$.
     
     \item Show also that for any $B = \left(b_{ij}\right) \in M_n(\mathbb{F})$, the formula $f_B(A) = {\rm tr}\left(B^T A\right)$ defines a linear functional on $M_n(\mathbb{F})$ such that $f_B(E_{ij}) = b_{ij}$, where $E_{ij}$ is the matrix with a $1$ in the $(i,j)$ position and $0$ elsewhere.
@@ -7172,8 +7317,8 @@ Let $M_n(\mathbb{F})$ denote the vector space of $n \times n$ matrices over a fi
 \end{enumerate}
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\roman*)]
-    \item \begin{enumerate}[label=\alph*)]
+~\begin{enumerate}[label=(\alph*)]
+    \item \begin{enumerate}[label=\arabic*)]
         \item Let $c \in \mathbb{F}$, $A, B \in M_n(\mathbb{F})$, 
         \begin{align*}
             {\rm tr}(cA + B) & = \sum^n_{i=1} (cA + B)_{ii} \\
@@ -7189,7 +7334,7 @@ Let $M_n(\mathbb{F})$ denote the vector space of $n \times n$ matrices over a fi
         \end{align*}
     \end{enumerate}
     
-    \item \begin{enumerate}[label=\alph*)]
+    \item \begin{enumerate}[label=\arabic*)]
         \item Let $c \in \mathbb{F}$ and $A_1, A_2 \in  M_n(\mathbb{F})$, then
         \begin{align*}
             f_B(cA_1 + A_2) & = {\rm tr}\left(B^T (cA_1 + A_2)\right) \\
@@ -7593,14 +7738,14 @@ The characteristic polynomial for $A$ is that $P(\lambda)=(\lambda-1)(\lambda-2)
 \begin{exercise}
 Let $A$ be an $n\times n$ matrix where $n\geq2$ satisfying
 $\operatorname*{rank}A=1$.
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item Show that there exists two column vectors $a,b$ such that $A=ab^{T}$.
     \item Show that the minimal polynomial
     $$m_{A}=\lambda^{2}-\left(  a^{T}b\right)  \lambda.$$
 \end{enumerate}
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Since $\text{rank}A=1$, then the image of $A$ is one-dimensional. Thus, there exist $u,v\in \mathbb{R}^n$ such that $Au=kv$ for a fixed $v$. It also holds for a basis for $\mathbb{R}^n$, then every column of $A$ is a multiple of $v$. Then there exists $(w_1, w_2,\cdots,w_n)\in\mathbb{R}^n$, such that
     \begin{align*}
         A=v(w_1, w_2,\cdots,w_n)
@@ -7645,7 +7790,7 @@ For $A_1$, we have
     \mathbb{C}^l = \bigoplus^m_{j=1}N_{\lambda_j}(A_1)
 \end{align*}
 since $A_1A_i = A_iA_1, 2 \leq i \leq k+1$, we have $A_i:N_{\lambda_j}(A_1)\rightarrow N_{\lambda_j}(A_1), \forall j = 1,\cdots, m$ and $\forall i = 1,2,\cdots, k+1$. 
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item If $m = 1$, then there exists a basis $B$ of $\mathbb{C}^1$ consisting of generalized eigenvectors for $A_2, \cdots, A_k,A_{k+1}$. Any vectors in $\mathbb{C}^l$ is a generalized eigenvectors for $A_1$ because $\mathbb{C}^l = N_{\lambda_1}(A_1)$, then any vectors in $B$ is a a generalized eigenvectors for $A_1, A_2, \cdots, A_{k+1}$.
     \item If $m > 1$, then $N_{\lambda_j}(A_1)\neq \mathbb{C}^l, \forall j = 1,\cdots, k+1$. On $N_{\lambda_j}(A_1)$, we have $$A_1|_{N_{\lambda_j}(A_1)}, A_2|_N_{\lambda_j}(A_1), \cdots, A_{k+1}|_N_{\lambda_j}(A_1).$$ By induction, there exists a basis $\beta_j, j=1,2,\cdots, m$ of $N_{\lambda_j}(A_1)$, which are generalized eigenvectors for $A_1|_{N_{\lambda_j}(A_1)}, \cdots, A_{k+1}|_N_{\lambda_j}(A_1)$. Take 
     \begin{align*}
@@ -7887,13 +8032,13 @@ equipped with the scalar product%
 $$
 \left(  f,g\right)  =\int_{0}^{1}f\left(  x\right)  g\left(  x\right)  dx.
 $$
-\begin{enumerate}[label=(\arabic*)]
+\begin{enumerate}[label=(\alph*)]
     \item Using Gram-Schmidt process to generate an orthonormal basis of the span of vectors $\left\{  1,x^{2}\right\}$.
     \item Find the projection of polynomial $x$ on the span of vectors $\left\{  1,x^{2}\right\}$.
 \end{enumerate}
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Set $y_1 = 1$ and $y_2 = x^2$, using Gram-Schmidt process, we can have 
     \begin{align*}
         x_1 & = \frac{y_1}{\left \|y_1\right \|} = \frac{1}{\sqrt{\int^1_0 1dx}} = 1 \\
@@ -8535,8 +8680,8 @@ symmetric matrices.
 \end{exercise}
 \begin{proof}
 We denote the relation of congruence by $\sim$.
-\begin{enumerate}[label=(\arabic*)]
-    \item \begin{enumerate}[label=\alph*).]
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{enumerate}[label=\arabic*).]
         \item For $A$ is a symmetric matrix, then we have $A\sim A$, since $A = I^TAI$, where $I$ is identity matrix.
         \item For $A,B$ are symmetric matrices, we have if $A\sim B$ , then $B\sim A$. Since if $A = S^TBS$, where $S$ is invertible, then we have $B = (S^T)^{-1}AS^{-1}$, which means $B\sim A$.
         \item For $A,B$ and $C$ are symmetric matrices, we have if $A\sim B,B\sim C$, then $A\sim C$. Since if we have $A = S^TBS$ and $B = P^TCP$, then we have $A = S^TP^TCPS = (PS)^TCPS$, which implies $A\sim C$. Then we proved the congruence is an equivalence relation.
@@ -8576,7 +8721,7 @@ Here $r(\cdot)$ is the spectral radius of a matrix. Find a counter example if
 $A$ or $B$ is not normal.
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have 
     \begin{align*}
         AB x & = \lambda x \\
