@@ -6523,21 +6523,148 @@ A convex set $K$ in $X$ is called open if every point in it is an interior point
 \begin{definition}
 Let $K$ be an open convex set that contains the vector $0$. We define its gauge function $p_K = p$ as follows: For every $x$ in $X$, 
 \begin{align*}
-    p(x) = \inf \left\{r > 0 : \frac{x}{r} \in K\right\}
+    p(x) = \inf \left\{r > 0 : \frac{x}{r} \in K\right\}.
 \end{align*}
 \end{definition}
+The relation between point $x$ and gauge function can be shown in $\mathbb{R}^2$ by the following figure: \\
 \begin{figure}[h]
     \centering
-    \begin{tikzpicture}[scale = 1.5]
+    \begin{tikzpicture}[scale = 1]
         \filldraw[black] (0,0) circle (0.5pt) node[below left] {$O$};
         \draw (0,0) circle (1);
         \draw[dotted,-] (0,0)--(0.707,0.707);
         \draw[thick,->] (0.707,0.707)--(1.5,1.5)node[below right] {$x$};
         \filldraw[black] (0.707,0.707) circle (0.5pt) node[anchor=west] {$x/p(x)$};
+        \filldraw[black] (0.707,-0.707) circle (0pt) node[below right] {$K$};
     \end{tikzpicture}
     \caption{Gauge function}
     \label{fig:plot_3}
 \end{figure}
+
+\medskip
+
+\begin{example}
+Let $X$ be a Euclidean space, and let $K$ be the open ball of radius $a$ centered at the origin: $\|x\| < a$.
+\begin{enumerate}[label=(\arabic*)]
+    \item Show that $K$ is a convex set.
+    
+    \item Show that the gauge function of $K$ is $p(x) = \|x\|/a$.
+\end{enumerate}
+\end{example}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item That $K$ is a convex set is trivial.
+    
+    \item It suffices to show that $p(x) = \|x\|/a$ is the smallest function such that $x/p(x) \in K$. Suppose $p_1(x) = \|x\|/a - \varepsilon$, $\varepsilon > 0$ is gauge function, then $x/p_1(x) \in K$. On the other hand,
+    \begin{align*}
+        \left\|\frac{x}{p_1(x) \varepsilon} \right\| = \left\|\frac{ax}{\|x\| - a \varepsilon} \right\| = a \frac{\|x\|}{\|x\| - a \varepsilon} > a,
+    \end{align*}
+    which implies that $x/p_1(x) \notin K$. Contradiction. 
+    Also, for any function $p_2(x) = \|x\|/a + \varepsilon > p(x)$, we have $x/p_2(x) \in K$. Thus, $p(x) = \|x\|/a$ is gauge function.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $K$ be an open convex set in $X$ and $0 \in K$, then
+\begin{enumerate}[label=(\alph*)]
+    \item The gauge function $p(x)$ is well-defined for every $x$.
+    
+    \item $p$ is positive homogeneous: $p(ax) = ap(x)$ for $a > 0$.
+    
+    \item $p$ is subadditive: $p(x + y) \leq p(x) + p(y)$.
+    
+    \item $p(x) < 1$ if and only if $x \in K$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item It suffices to show that $\left\{ r > 0 : x/r \in K\right\}$ is nonempty. For any $x \in X$, $x/r \in K$ for $r$ large enough, since $K$ is open and $0 \in K$. Then $\left\{ r > 0 : x/r \in K\right\}$ is not empty. Thus, $\inf \left\{ r > 0 : x/r \in K\right\}$ is well-defined and finite.
+    
+    \item $p(ax) = \inf \left\{ r > 0 : ax/r \in K\right\} = \inf a\left\{ r > 0 : x/r \in K\right\} = a p(x)$.
+    
+    \item For any $\varepsilon > 0$, let $s = p(x) + \varepsilon$ and $t = p(y) + \varepsilon$, then $x/s, y/t \in K$. Then, by convexity of $K$, we have
+    \begin{align*}
+        \frac{x + y}{s + t} = \frac{s}{s + t} \frac{x}{s} + \frac{t}{s + t} \frac{y}{t} \in K.
+    \end{align*}
+    Then, $p(x + y) \leq s + t = p(x) + p(y) + 2 \varepsilon$, and letting $\varepsilon \to 0$ implies $p(x + y) \leq p(x) + p(y)$.
+    
+    \item \begin{enumerate}[label=\arabic*)]
+        \item If $x \in K$, then $x/(1 - \varepsilon) \in K$ for some $\varepsilon > 0$, and hence $p(x) \leq 1 - \varepsilon < 1$.
+        
+        \item If $p(x) < 1$, then there exists $r < 1$ such that $x/r \in K$, then $x$ can be written as $x = r(x/r) + (1-r)0$. Thus, $x \in K$.
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $p$ be a positive homogeneous subadditive function. Then the set $K = \{x\in X: p(x) < 1\}$ is a convex and open set. 
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item For any $x, y \in K$, $s \in [0,1]$, since $p(x) < 1, p(y) < 1$, then
+    \begin{align*}
+        p\left(sx + (1-s)y\right) \leq p(sx) + p((1-s)x) = sp(x) + (1-s)p(y) < 1.
+    \end{align*}
+    Thus, $sx + (1-s)y \in K$ and hence $K$ is convex.
+    
+    \item For any $x \in K$, let $y$ be such that $\|y\| = 1$, and then there exists $\varepsilon > 0$ such that
+    \begin{align*}
+        p(x + \varepsilon y) \leq p(x) + \varepsilon p(y) < 1.
+    \end{align*}
+    Thus, $K$ is open.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}\label{theorem_half_space}
+Let $K$ be an open convex set, and let $y$ be a point not in $K$. Then there is an open half-space containing $K$ but not $y$.
+\end{theorem}
+To prove this theorem, we need next theorem.
+
+\medskip
+
+\section{Hahn-Banach Theorem}
+
+\begin{theorem}[Hahn-Banach Theorem]\label{Hahn_Banach_Theorem}
+Let $p$ be a real-valued positive homogeneous subadditive function defined on a linear space $X$ over $\mathbb{R}$. Let $U$ be a subspace of $X$ on which a linear function is defined, saying, for all $u$ in $U$,
+\begin{align}\label{subadditive_function}
+    l(u) \leq p(u).
+\end{align}
+Then, $l$ can be extended to all of $X$ such that (\ref{subadditive_function}) is satisfied for all $x$.
+\end{theorem}
+\begin{proof}
+We prove it by induction, we can show that $l$ can be extended to a subspace $V$ spanned by $U$ and any vector $z \notin U$. Need to define $l(z) = a$, such that (\ref{subadditive_function}) is satisfies for $U \oplus {\rm span}\{z\}$, i.e., for $y = u + z, u \in U$, $l(y) \leq p(y)$.
+
+Then, for $u, v \in U$, we need 
+\begin{align*}
+    l(u + z) & = l(u) + a \leq p(u + z), \\
+    l(v - z) & = l(v) - a \leq p(v - z),
+\end{align*}
+which are equivalent to
+\begin{align*}
+    l(v) - p(v - z) \leq a \leq p(u + z) -l(u),
+\end{align*}
+and we need $l(v) - p(v - z) \leq p(u + z) -l(u)$. This holds since $p(v - z) + p(u + z) \geq p(u + v) \geq l(u + v) = l(u) + l(v)$. Then, such $a$ exists and $l$ can be extended to $U \oplus {\rm span}\{z\}$. By induction, $l$ can be extended to $X'$.
+\end{proof}
+
+\medskip
+
+Now we can turn to the proof of previous theorem.
+
+\medskip
+
+\begin{proof}[Proof of Theorem \ref{theorem_half_space}]
+We assume $0 \in K$, otherwise, shift $K$. We define $l$ on ${\rm span}\{y\}$ such that $l(y) = 1$. Let $p$ be the gauge function of $K$, and points of $K$ are characterized by $p(x) < 1$. Then, it can be stated as: $l(x) \leq p(x)$ for all $x \in X$.
+
+So Theorem \ref{theorem_half_space} is a consequence of the following: there exists a linear function $l$ which satisfies $l(x) \leq p(x)$ for all $x \in K$ and $l(y) = 1$. The remaining task is to extend $l$ from the line through $y$ to all of $X$ so that $l(x) \leq p(x)$ is satisfied. Theorem \ref{Hahn_Banach_Theorem} asserts that this can be done.
+\end{proof}
+
+
 
 
 
