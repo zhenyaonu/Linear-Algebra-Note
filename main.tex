@@ -6520,7 +6520,7 @@ A convex set $K$ in $X$ is called open if every point in it is an interior point
 
 \medskip
 
-\begin{definition}
+\begin{definition}\label{gauge_function_def}
 Let $K$ be an open convex set that contains the vector $0$. We define its gauge function $p_K = p$ as follows: For every $x$ in $X$, 
 \begin{align*}
     p(x) = \inf \left\{r > 0 : \frac{x}{r} \in K\right\}.
@@ -6533,7 +6533,7 @@ The relation between point $x$ and gauge function can be shown in $\mathbb{R}^2$
         \filldraw[black] (0,0) circle (0.5pt) node[below left] {$O$};
         \draw (0,0) circle (1);
         \draw[dotted,-] (0,0)--(0.707,0.707);
-        \draw[thick,->] (0.707,0.707)--(1.5,1.5)node[below right] {$x$};
+        \draw[thick,->] (0.707,0.707)--(1.5,1.5)node[above right] {$x$};
         \filldraw[black] (0.707,0.707) circle (0.5pt) node[anchor=west] {$x/p(x)$};
         \filldraw[black] (0.707,-0.707) circle (0pt) node[below right] {$K$};
     \end{tikzpicture}
@@ -6624,7 +6624,7 @@ Let $p$ be a positive homogeneous subadditive function. Then the set $K = \{x\in
 \begin{theorem}\label{theorem_half_space}
 Let $K$ be an open convex set, and let $y$ be a point not in $K$. Then there is an open half-space containing $K$ but not $y$.
 \end{theorem}
-To prove this theorem, we need next theorem.
+To prove this theorem, we need Hahn-Banach theorem and we present it in next section.
 
 \medskip
 
@@ -6663,6 +6663,195 @@ We assume $0 \in K$, otherwise, shift $K$. We define $l$ on ${\rm span}\{y\}$ su
 
 So Theorem \ref{theorem_half_space} is a consequence of the following: there exists a linear function $l$ which satisfies $l(x) \leq p(x)$ for all $x \in K$ and $l(y) = 1$. The remaining task is to extend $l$ from the line through $y$ to all of $X$ so that $l(x) \leq p(x)$ is satisfied. Theorem \ref{Hahn_Banach_Theorem} asserts that this can be done.
 \end{proof}
+
+\medskip
+
+The following result is an extension of Theorem \ref{theorem_half_space}.
+
+\medskip
+
+\begin{theorem}
+Let $K$ and $H$ be open convex sets that are disjoint. Then there is a hyperplane that separates them, i.e., there is a linear function $l$ and a constant $d$ such that 
+\begin{align*}
+    l(x) < d\,\,{\rm on}\,\, K, \quad l(x) > d\,\,{\rm on}\,\, H.
+\end{align*}
+\end{theorem}
+\begin{proof}
+Define the difference $K - H$ to consist of all differences $x - y, x \in K, y \in H$. Then it is easy to see that $K - H$ is open and convex. Since $K$ and $H$ are disjoint, then $0 \notin K - H$. By Theorem \ref{theorem_half_space}, there exists $l \in X'$ such that $l(x - y) < 0$ for $x \in K, y \in H$, which implies $l(x) < l(y)$. It follows from the completeness of real numbers that there is a number $d$ such that for $x \in K, y \in H$, 
+\begin{align*}
+    l(x) \leq d \leq l(y).
+\end{align*}
+Since both $K$ and $H$ are open, the sign of equality cannot hold, then the proof is complete.
+\end{proof}
+
+\medskip
+
+\section{Support Function}
+
+Now we show how to use Theorem \ref{theorem_half_space} to give a dual description of open convex sets.
+
+\medskip
+
+\begin{definition}\label{support_function_def}
+Let $S$ be any set in $X$. We define its support function $q_S$ on $X'$ as follows: 
+\begin{align*}
+    q_S(l) = \sup_{x\in S} l(x).
+\end{align*}
+\end{definition}
+
+\medskip
+
+\begin{proposition}
+~\begin{enumerate}[label=(\alph*)]
+    \item $q_S$ is subadditive.
+    
+    \item $q_{S+T}(l) = q_S(l) + q_T(l)$.
+    
+    \item $q_{S\cup T}(l) = \max \{q_S(l),q_T(l)\}$.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item $\sup_{x \in S} (l+m)x \leq \sup_{x \in S} l(x) + \sup_{x \in S} m(x)$.
+    
+    \item $q_{S+T}(l) = \sup_{x\in S, y\in T}l(x+y) = \sup_{x\in S, y\in T}(l(x) + l(y)) = \sup_{x \in S} l(x) + \sup_{y \in T} l(y)$.
+    
+    \item $q_{S\cup T}(l) = \sup_{x\in S \cup T}l(x) = \max \{q_S(l),q_T(l)\}$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $K$ be an open convex set, $q_K$ its support function. Then $x \in K$ if and only if 
+$$l(x) < q_K(l)$$ 
+for all $l \in X'$.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item ($\Rightarrow$) For all $x \in K$, by Definition \ref{support_function_def}, $l(x) \leq \sup_{y \in K}l(y) = q_K(l)$. Therefore, $l(x) < q_K(l)$ since $K$ is open. 
+    
+    \item ($\Leftarrow$) Suppose that $y \notin K$, then exists an $l$ such that $l(x) < d$ for all $x \in K$ and $l(x) = d$. Thus, 
+    \begin{align*}
+        q_K(l) = \sup_{x \in K} l(x) \leq l(y) = d,
+    \end{align*}
+    which implies that $y \notin K$ fails to satisfy $l(y) < q_K(l)$.
+\end{enumerate}
+\end{proof}
+
+\begin{remark}
+Let $K$ be an open convex set, then $K = \bigcap_{l \in X'}\{x: l(x) < q_K(x)\}$.
+\end{remark}
+
+\medskip
+
+\begin{definition}
+A convex set $K$ in $X$ is called closed if every open segment $tx + (1 - t)y, 0 < t < 1$ that belongs to $K$ has its endpoints $x$ and $y$ in $K$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}
+Let $K$ be a closed, convex set and $y$ a point not in $K$. Then there exists a closed half-space that contains $K$ but not $y$.
+\end{theorem}
+\begin{proof}\cite{26}
+Suppose $K$ has an interior point $x_0$. If a linear function $l$ and a real $c$ determined a closed half-space that contains $K - x_0$ but not $y - x_0$, i.e., $l(x - x_0) < c$ for all $x \in K$ and $l(y - x_0) > c$, then $l$ and $c + l(x_0)$ determine a closed half-space that contains $K$ but not $y$, i,e., $l(x) < c + l(x_0)$ and $l(y) > c + l(x_0)$. So without loss of generality, we can assume $x_0 = 0$. Note that the convexity and closedness
+are preserved under this translation.
+
+Define gauge function $p_K$ as in Definition \ref{gauge_function_def}. Then we can show that $p_K \leq 1$ if and only if $x \in K$. Indeed, 
+\begin{enumerate}[label=\arabic*)]
+    \item if $x \in K$, then there exists some $\varepsilon > 0$ such that $x/(1 - \varepsilon) \in K$, then $p_K(x) \leq 1$. 
+    
+    \item Conversely, if $p_K(x) \leq 1$, then for any $\varepsilon > 0$, there exists $r_\varepsilon < 1 + \varepsilon$ such that $x/r_\varepsilon \in K$. We choose $r_\varepsilon > 1$ and also $x/r_\varepsilon = t \cdot 0 + (1 - t)\cdot x$, where $t = 1 - 1/r_\varepsilon$. Letting $\varepsilon \to 0$, then $x/r_\varepsilon \to x$, and by $K$ being closed, $x \in K$.
+\end{enumerate}
+The rest of the proof is completely analogous to that of Theorem \ref{theorem_half_space}, with $p(x) < 1$ replaced by $p(x) \leq 1$.
+\end{proof}
+
+\medskip
+
+\begin{theorem}\label{closed_convex_set_and_support}
+Let $K$ be a closed, convex set, $q_K$ its support function. Then $x$ belongs to $K$ if and only if
+\begin{align*}
+    l(x) \leq q_K(l),
+\end{align*}
+for all $l \in X'$.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item ($\Rightarrow$) By definition \ref{support_function_def}, if $x \in K$, then $l(x) \leq q_K(l)$.
+    
+    \item ($\Leftarrow$) Conversely, suppose $y \notin K$, there exists $l \in X'$ and a real number $c$ such that $l(x) \leq c$ for all $x \in K$ and $l(y) > c$. Thus, $l(y) > q_K(l)$, which proves the other direction. 
+\end{enumerate}
+
+\end{proof}
+\begin{remark}
+Let $K$ be a closed convex set, then $K = \bigcap_{l \in X'}\{x: l(x) \leq q_K(x)\}$.
+\end{remark}
+
+\medskip
+
+\begin{definition}
+Let $S$ be an arbitrary set in $X$. The closed convex hull of $S$ is defined as the intersection of all closed convex sets containing $S$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}
+Let $S \subset X$. The closed convex hull of any set $S$ is the set of points $x$ satisfying 
+$$l(x) \leq q_S(l)$$ 
+for all $l \in X'$.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Let $\hat{S}$ be the closed convex hull of $S$, then $\hat{S} \subset \{x \in X: l(x) \leq q_S(l)\} = \Gamma_l, \forall l \in X'$. Indeed, $\{x \in X: l(x) \leq q_S(l)\}$ is a closed convex set containing $S$. Thus, $\hat{S} \subset \bigcap_{l \in X'} \Gamma_l$.
+    
+    \item For the other direction, if $K$ is a closed convex set containing $S$, and $\forall l \in X'$, then 
+    \begin{align*}
+        q_S(l) \leq q_K(l),
+    \end{align*}
+    which implies
+    \begin{align*}
+        \{x \in X: l(x) \leq q_S(l)\} \subset \{x \in X: l(x) \leq q_K(l)\}.
+    \end{align*}
+    Taking intersection on both sides gives
+    \begin{align*}
+        \bigcap_{l \in X'} \{x \in X: l(x) \leq q_S(l)\} \subset K.
+    \end{align*}
+    Thus, we have
+    \begin{align*}
+        \bigcap_{l \in X'} \{x \in X: l(x) \leq q_S(l)\} \subset \bigcap_{S \subset K} K = \hat{S}.
+    \end{align*}
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Second Proof for Part (b)] \cite{26}
+For the other direction, suppose $\bigcap_{l \in X'} \Gamma_l \setminus \hat{S} \neq \varnothing$ and we choose $x \in \bigcap_{l \in X'} \Gamma_l \setminus \hat{S}$. By Theorem \ref{closed_convex_set_and_support}, there exists $l_0 \in X'$ such that $l_0(x) \geq q_{\hat{S}}(l_0) \geq q_S(l_0)$. Then, $x \notin \Gamma_{l_0}$, which is a contradiction. Thus, $\bigcap_{l \in X'} \Gamma_l \subset \hat{S}$.
+\end{proof}
+
+\begin{remark}
+Let $x_1, \cdots, x_m \in K$ and $p_1, \cdots, p_m$ be $m$ nonnegative numbers whose sum is $1$, then 
+$$x = \sum^m_{j=1} p_j x_j$$ 
+is called a convex combination of $x_1, \cdots, x_m$. If $x_1, \cdots, x_m$ belong to a convex set, then so does any convex combination of them.
+\end{remark}
+\begin{proof}
+Prove it by induction.
+\end{proof}
+
+\medskip
+
+\begin{definition}
+A point of a convex set $K$ that is not an interior point is called a boundary point of $K$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+Let $K$ be a closed, convex set. A point $e$ of $K$ is called an extreme point of $K$ if it is not the interior point of a line segment in $K$. That is, $x$ is not an
+extreme point of $K$ if
+$$x = \frac{y + z}{2},$$
+where $y, z \in K, y \neq z$. 
+\end{definition}
+
 
 
 
