@@ -3377,7 +3377,7 @@ and $x_{L^\bot} = x - x_L$.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\textwidth]{Orthogonal_projection_1}
-    \caption{Orthogonal projection onto a line}
+    \caption{orthogonal projection onto a line}
     \label{fig:plot_1}
 \end{figure}
 The vector $x_L$ is a multiple of $u$, say $x_L = cu$. This multiple is chosen so that 
@@ -6184,7 +6184,7 @@ In order to see this, we could consider it in $\mathbb{R}^3$ like below:\\
         \draw[dotted,-] (0,0)--(0.403,1.329);
         \draw[thick,->] (0.42,1.4)--(0.74,2.44) node[pos=.4, below right]{$x_R$};
     \end{tikzpicture}
-    \caption{Reflection about the hyperplane $Q$}
+    \caption{reflection about the hyperplane $Q$}
     \label{fig:plot_2}
 \end{figure}\\
 For vector $x$, its reflection about the hyperplane $Q$ which is orthogonal to vector $v$ is $x_R$. It is obvious that $x_R = x - 2 x_L$, where $x_L$ is the orthogonal projection of $x$ onto the line $L$, by Example \ref{Orthogonal projection onto a line}, $x_L = \frac{(uv,x)}{(v,v)}v$, and then the reflection $R_v$ satisfies
@@ -6272,7 +6272,7 @@ We prove by induction on $n$. When $n = 1$, the reflection $R$ is either identit
             \draw[dotted,-] (0,0)--(-0.88,1.47);
             \draw[->] (0,0)--(-1.76,0.94);
         \end{tikzpicture}
-        \caption{Reflection $R_i$ about the hyperplane $H_i$}
+        \caption{reflection $R_i$ about the hyperplane $H_i$}
         \label{fig:plot_2}
     \end{figure}\\
     As we can see, $- p_{L_i}(h) = \overrightarrow{AB}$, $p_{H_i}(h) = \overrightarrow{OB}$, and then $R_i(h) = \overrightarrow{OA} = \overrightarrow{OB} + \overrightarrow{BA} = p_{H_i}(h) - p_{L_i}(h)$.
@@ -6537,7 +6537,7 @@ The relation between point $x$ and gauge function can be shown in $\mathbb{R}^2$
         \filldraw[black] (0.707,0.707) circle (0.5pt) node[anchor=west] {$x/p(x)$};
         \filldraw[black] (0.707,-0.707) circle (0pt) node[below right] {$K$};
     \end{tikzpicture}
-    \caption{Gauge function}
+    \caption{gauge function}
     \label{fig:plot_3}
 \end{figure}
 
@@ -6839,6 +6839,7 @@ Prove it by induction.
 
 \medskip
 
+\section{Carathéodory's theorem}
 \begin{definition}
 A point of a convex set $K$ that is not an interior point is called a boundary point of $K$.
 \end{definition}
@@ -6851,6 +6852,158 @@ extreme point of $K$ if
 $$x = \frac{y + z}{2},$$
 where $y, z \in K, y \neq z$. 
 \end{definition}
+
+\medskip
+
+\begin{definition}
+A convex set $K$ is called bounded if it does not contain a ray, that is, a set of points of the form $x + ty, 0 < t$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}[Carathéodory's theorem]
+Let $K$ be a nonempty closed bounded convex set in $X$, $\dim X = n$. Then every point of $K$ can be represented as a convex combination of at most $n + 1$ extreme points of $K$.
+\end{theorem}
+\begin{proof}
+Prove it by induction on the dimension of $X$.
+\begin{enumerate}[label=(\alph*)]
+    \item $n = 1$ is trivial.
+    
+    \item Suppose it holds for $\dim K \leq n - 1$. We distinguish two cases:
+    \begin{enumerate}[label = \arabic*)]
+        \item {\em $K$ has no interior points}. Suppose $0 \in K$, which can always be done by shifting $K$. We claim that $K$ does not contain $n$ linearly independent vectors. Indeed, if it does, the convex combination of these $n$ vectors and the origin would also belong to $K$. However, these points form an $n$-dimensional simplex, full of interior points. Let $m$ be the largest number of linearly independent vectors in $K$, and let $x_1, \cdots, x_m$ be $m$ linearly independent vectors. Then, $m \leq n - 1$, and being maximal implies every other vector in $K$  is a linear combination of $x_1, \cdots, x_m$. This proves that $K$ is contained in an $m$-dimensional subspace of $X$. Thus, when adding one more dimension to $K$ such that $\dim K = n$, for any $x \in K$, $x$ can be a convex combination of at most $m + 1 \leq n + 1$ extreme points. 
+        
+        \item {\em $K$ has interior points}. Let $K_0$ be the set of all interior points of $K$. Then $K_0$ is open and convex. We claim that $K$ has boundary points since $K$ is closed\footnote{Let $S \subset \mathbb{R}^n$, $S$ is called closed if it contains all of its boundary points\cite{38}.}. Indeed, any ray starting from an interior point of $K$ intersects $K$ in an interval and since $K$ is closed, the other endpoint is a boundary point $y$ of $K$.
+        
+        Let $y$ be a boundary point of $K$. Applying Theorem \ref{theorem_half_space} to $K_0$ and $y$, then there is a linear functional $l$ such that 
+        \begin{align*}
+            l(y) = 1, \quad l(x) < 1, \forall x \in K_0.
+        \end{align*}
+        We claim that $l(x) \leq 1$ for all $x \in K_0$. Indeed, pick any interior point $x_0 \in K$, then for $t \in (0,1)$,
+        $$\Bar{x} = t x_0 + (1 - t)x \in K_0,$$
+        which implies $l(\Bar{x}) < 1$, then at the endpoint, $l(\Bar{x}) \leq 1$.
+        
+        Let $K_1 = \{x \in K: l(x) = 1\}$. Being the intersection of two closed convex sets, $K_1$ is closed and convex, and since $K$ is bounded, so is $K_1$. Also, $l(y) = 1$ shows that $K_1$ is not empty.
+        
+        We claim that every extreme point $e$ of $K_1$ is also an extreme point of $K$. Indeed, if $e = \frac{z + w}{2}$ for some $z, w \in K$ and $z \neq w$, then $l(e) = \frac{l(z) + l(w)}{2} = 1$. Also, by previous claim, $l(z) = l(w) = 1$. Then, $z, w \in K_1$ and since $e$ is an extreme point of $K_1$, $z = w$. This proves that extreme points of $K_1$ are also extreme points of $K$.
+        
+        Let $x_0 \in K_0$, pick $e$ being extreme point. Then the line through $x_0$ and $e$ intersects $K$ at $y$, where $y$ is a boundary point.
+        \begin{figure}[h]
+            \centering
+            \begin{tikzpicture}[scale = 1]
+            \draw[-] (0,0)--(2,0);
+            \draw[-] (2,0)--(2,2);
+            \draw[-] (2,2)--(0,2);
+            \draw[-] (0,2)--(0,0);
+            \filldraw[black] (2,2) circle (0.5pt) node[above] {$e$};
+            \filldraw[black] (1,1.5) circle (0.5pt) node[below right] {$x_0$};
+            \filldraw[black] (0,1) circle (0.5pt) node[above left] {$y$};
+            \draw[-] (2.5,2.25)--(-1,0.5);
+            \end{tikzpicture}
+            \caption{line through $e$ and $x_0$}
+            \label{fig:plot_4}
+        \end{figure}
+        
+        Then $x_0$ is a convex combination of $e$ and $y$. Since $y$ is a convex combination of at most $n$ extreme points, then $x_0$ is a convex combination of at most $n + 1$ extreme points.
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\section{Kőnig-Birkhoff Theorem}
+
+\begin{definition}\label{doubly_stochastic_def}
+An $n \times n$ matrix $S = (s_{ij})$ is called doubly stochastic if 
+\begin{align*}
+    s_{ij} \geq 0, \quad \sum^n_i s_{ij} = 1, \quad \sum^n_j s_{ij} = 1,
+\end{align*}
+for all $i, j$. 
+\end{definition}
+
+\begin{remark}
+All doubly stochastic matrices form a bounded, closed convex set in the space of all $n \times n$ matrices.
+\end{remark}
+
+\medskip
+
+\begin{definition}
+Given a permutation $p$ of the integers $(1, 2, \cdots, n)$, the permutation matrix $P$ associated with $p$ is $P = (P_{ij})_{n \times n}$, where 
+\begin{align*}
+    P_{ij} = \begin{cases}
+        1, & {\rm if}\,\, j = p(i), \\
+        0, & {\rm otherwise}.
+    \end{cases}
+\end{align*}
+\end{definition}
+
+\begin{remark}
+Every permutation matrix is a doubly stochastic matrix.
+\end{remark}
+
+\medskip
+
+\begin{theorem}[Kőnig-Birkhoff Theorem]
+The permutation matrices are the extreme points of the set of doubly stochastic matrices.
+\end{theorem}
+\begin{proof}
+By Definition \ref{doubly_stochastic_def}, no entry of a doubly stochastic matrix cannot be greater than $1$. Thus, $0 \leq s_{ij} \leq 1$. Then,
+\begin{enumerate}[label=(\alph*)]
+    \item Every permutation matrix $P$ is an extreme point. Suppose
+    \begin{align*}
+        P = \frac{S_1 + S_2}{2},
+    \end{align*}
+    where $S_1$ and $S_2$ are doubly stochastic. It is easy to see that $S_1 = S_2 = P$. Indeed, $P_{ij} = \frac{(S_1)_{ij} + (S_2)_{ij}}{2}$. 
+    
+    \item Now we show the converse. Suppose $S$ is not a permutation matrix, and we need to show $S$ is not an extreme point. Then there exists $(i_0, j_0)$ such that $0 < S_{i_0 j_0} < 1$. 
+    
+    We construct a sequence of entries, all of which lie between $0$ and $1$, and which lie alternatively on the same row or on the same column, i.e., there exists $j_1 \neq j_0$ such that 
+    $$0 < S_{i_0 j_1} < 1,$$ 
+    since $\sum^n_{j=1}S_{i_0 j} = 1$, also there exists $i_1 \neq i_0$, such that 
+    $$0 < S_{i_1 j_0} < 1,$$ 
+    since $\sum^n_{i=1}S_{i j_0} = 1$. We can continue this process, until the same position is traversed twice. Thus a closed chain has been constructed: 
+    \begin{align*}
+        S_{i_k j_k} \to S_{i_k j_{k+1}} \to \cdots \to S_{i_m j_m} \to S_{i_k j_k}.
+    \end{align*}
+    
+    We claim that there exists a minimal closed chain, and every row or column contains $0$ or $2$ entries in the minimal closed chain. We show an example in the following figure:
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale = 1]
+        \draw[-] (0,0)--(2,0);
+        \draw[-] (2,0)--(2,1);
+        \draw[-] (2,1)--(1,1);
+        \draw[-] (1,1)--(1,2);
+        \draw[-] (1,2)--(0,2);
+        \draw[-] (0,2)--(0,0);
+        \filldraw[black] (2,2) circle (0pt) node[above] {$j_1$};
+        \filldraw[black] (1,2) circle (0.5pt) node[above] {$j_0$};
+        \filldraw[black] (0,2) circle (0.5pt) node[above] {$j_m$};
+        \filldraw[black] (0,2) circle (0.5pt) node[left] {$i_k$};
+        \filldraw[black] (0,1) circle (0pt) node[left] {$i_0$};
+        \filldraw[black] (0,0) circle (0.5pt) node[left] {$i_1$};
+        \filldraw[black] (1,1) circle (0.5pt);
+        \filldraw[black] (2,1) circle (0.5pt);
+        \filldraw[black] (2,0) circle (0.5pt);
+        \end{tikzpicture}
+        \caption{minimal closed chain starting from $(i_0, j_0)$}
+        \label{fig:plot_5}
+    \end{figure}
+    
+    Now define a matrix $N$ as $N_{ij} = 1$ or $-1$ when $(i,j)$ are on the chain, and $N_{ij} = 0$ otherwise. Then the row sums and column sums of $N$ are zero. Also, define $S_1 = S + \varepsilon N$ and $B = S - \varepsilon N$. Then row sums and columns sums of $S_1$ and $S_2$ are both $1$. Therefore, $\varepsilon$ can be chosen small enough such that both $S_1$ and $S_2$ are doubly stochastic. Since, $S_1 \neq S_2$, and 
+    \begin{align*}
+        S = \frac{S_1 + S_2}{2},
+    \end{align*}
+    then $S$ is not an extreme point.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+
+
+
+
 
 
 
@@ -8809,7 +8962,7 @@ And the charasteristic polynomial is $\lambda^2 - 14\lambda + 9 = 0$, which give
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\bf *}
 Show that two vectors in a complex Euclidean space are orthogonal if and only if 
 \begin{align*}
     \|ax + y\|^2 = |a|^2 \|x\|^2 + \|y\|^2,
@@ -8830,7 +8983,7 @@ for all complex numbers $a$.
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\bf *}
 Suppose $v_1, v_2, \cdots, v_n$ are vectors in $\mathbb{R}^{n-1}$ such that $v_i \cdot v_j < 0$ for all $i \neq j$. Prove that there exist nonnegative real numbers $c_1, c_2, \cdots, c_n$, not all zero, such that 
 \begin{align*}
     \sum^n_{k=1} c_k v_k = 0.
@@ -8855,7 +9008,7 @@ where in the last step we used $\left(v_j, v_k\right) < 0$ for $j \neq k$. Since
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\bf *}
 Suppose $v_1, v_2, \cdots, v_k$ are nonzero vectors in $\mathbb{R}^n$ such that $v_i \cdot v_j < 0$ for all $i \neq j$. Determine, with proof, the maximal possible $k$ for $n = 2$, and also for arbitrary $n$.
 \end{exercise}
 \begin{proof}
@@ -8876,7 +9029,7 @@ We proof by induction. For $n = 1$, it is trivial. Just pick $v_1 = 1$ and $v_2 
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\bf *}
 Suppose $v_1, v_2, \cdots, v_k$ are nonzero vectors in $\mathbb{R}^n$ such that $v_i \cdot v_j \leq 0$ for all $i \neq j$. Determine the maximal possible $k$ for $n = 3$, and also for arbitrary $n$.
 \end{exercise}
 \begin{proof}
@@ -8904,6 +9057,67 @@ Then,
 \end{align*}
 which is a contradiction. Hence, we constructed $k - 2$ vectors in $\mathbb{R}^{n-1}$. 
 \end{proof}
+
+\medskip
+
+\begin{exercise}{\bf *}
+Let $V$ be a complex inner product space and $T$ a linear map on $V$ such that $(Tx, Ty) = 0$ if $(x,y) = 0$. Show that $T = kU$, where $U$ is a unitary map on $V$.
+\end{exercise}
+\begin{proof}
+Let $e_1, \cdots, e_n$ be an orthogonal basis for $V$, and let $t_k = Te_k$. Then 
+\begin{align*}
+    (t_i, t_j) = (T e_i, T e_j) = 0.
+\end{align*}
+Assume $|t_i| = a_i$, since for $i \neq j$, 
+\begin{align*}
+    (e_i + e_j, e_i - e_j) = 0,
+\end{align*}
+then,
+\begin{align*}
+    (t_i + t_j, t_i - t_j) = (T(e_i + e_j), T(e_i - e_j)) = 0.
+\end{align*}
+Hence, $|t_i|^2 = |t_j|^2$. Then, $Te_1, \cdots, Te_n$ are orthogonal vectors with $|T e_j| = k, 1 \leq j \leq n$. Thus, $T = kU$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}{\rm *}
+Suppose $A$ and $B$ are orthogonal projections in a finite-dimensional complex inner product space $V$. Suppose for some vector $x \in V$, we have
+$ABx = x$. Prove that $Ax = Bx = x$.
+\end{exercise}
+\begin{proof}
+Since $ABx = x$ and $A$ is an orthogonal projection, then $x \in R_A$ and hence $Ax = x$. 
+
+We claim that for any orthogonal projection $P$ and any $x \in V$, 
+$$\|Px\| \leq \|x\|,$$ 
+and the equality holds if and only if $x \in R_P$. Indeed, since $V = R_P \oplus N_P$, $x$ can be written as $x = x_P + x_{P^\bot}$, where $x_P \in R_P$ and $x_{P^\bot} \in N_P$. Then,
+\begin{align*}
+    \|Px\| = \|x_P\| \leq \|x\| = \sqrt{\|x_P\|^2 + \|x_{P^\bot}\|^2}.
+\end{align*}
+
+Then, since 
+$$\|x\| = \|ABx\| \leq \|Bx\| \leq \|x\|, $$
+we have $\|Bx\| = \|x\|$. Then by the claim above, $x \in R_B$, which implies $Bx = x$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $V$ be a finite-dimensional complex Euclidean space with scalar product $(\cdot, \cdot)$. A linear map $T$ is said to be a reflection with respect to a plane
+\begin{align*}
+    S_u = \{x \in V: (x,u) = 0\},
+\end{align*}
+if $Tu = -u$, and $Tw = w$ for all $w \in S_u$
+\end{exercise}
+
+
+
+
+
+
+
+
+
 
 
 \section{Spectral Theory of Self-Adjoint Mappings}
