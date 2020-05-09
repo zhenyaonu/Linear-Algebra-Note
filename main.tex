@@ -3604,11 +3604,32 @@ $V = (v_1,\cdots,v_n) = M (u_1,\cdots,u_n) = MU$. Thus we have $M = VU^{-1}$. He
 
 \section{Norm of a Linear Map}
 
-\begin{definition}
+\begin{definition}{\rm \cite{39}}\label{matrix_norm_def}
+A function $\|\cdot \|: \mathbb{C}^{n^2} \to \mathbb{R}$ is a matrix norm if for any $n \times n$ matrices $A, B \in \mathbb{C}^{n^2}$, it satisfies the following five axioms:
+\begin{enumerate}[label=(\arabic*)]
+    \item Nonnegative, i.e., $\|A\| \geq 0$.
+    
+    \item Positive definite, i.e., $\|A\| = 0$ if and only if $A = 0$.
+    
+    \item Homogeneous, i.e., $\|\alpha A\| = |\alpha| \cdot \|A\|$ for all $\alpha \in \mathbb{C}$.
+    
+    \item Triangle inequality or sub-additive, i.e., $\|A + B\| \leq \|A\| + \|B\|$.
+    
+    \item Submultiplicativity, i.e., $\|A B\| \leq \|A\| \cdot \|B\|$. \label{Submultiplicativity}
+\end{enumerate}
+\end{definition}
+
+The first four properties of a matrix norm are identical to the axioms for a norm. A norm on matrices that does not
+satisfy property \ref{Submultiplicativity} for all $A$ and $B$ is a {\em vector norm on matrices}, also called a {\em generalized matrix norm}, which is given by the following definition.
+
+\medskip
+
+\begin{definition}\label{vector_norm_matrix_def}
 The norm of a linear map $A:X\to U$ is defined by
 \begin{align*}
     \|A\| = \sup_{\|x\| = 1} \|Ax\| = \sup_{\|x\| \leq 1} \|Ax\|.
 \end{align*}
+This norm is a matrix norm induced by vector norms.
 \end{definition}
 
 \medskip
@@ -4007,7 +4028,7 @@ $$r(A) = \lim_{k\to\infty} \left(\left\|A^k\right\|\right)^{1/k}. $$
 \end{theorem}
 \begin{proof}
 First, we need a lemma.
-\begin{lemma}
+\begin{lemma}\label{Gelfand_Formula_lemma}
 If $r(A) < 1$, then $\lim_{k\to\infty}A^k = 0$.
 \end{lemma}
 \begin{proof}
@@ -9107,8 +9128,141 @@ Let $V$ be a finite-dimensional complex Euclidean space with scalar product $(\c
 \begin{align*}
     S_u = \{x \in V: (x,u) = 0\},
 \end{align*}
-if $Tu = -u$, and $Tw = w$ for all $w \in S_u$
+if $Tu = -u$, and $Tw = w$ for all $w \in S_u$. Show that $T$ is given by 
+\begin{align*}
+    Tx = x - 2 \frac{(x,u)}{(u,u)}x,
+\end{align*}
+and it is an isometry.
 \end{exercise}
+\begin{proof}
+The reflection about the plane $S_u$ is 
+\begin{align*}
+    T = I - 2\frac{uu^T}{(u,u)},
+\end{align*}
+and also we have $T^* = T$ and $T^*T = I$. Thus, $T$ is an isometry.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A, B$ be two $n \times n$ real orthogonal matrices. Show that
+\begin{align*}
+    \det A + \det B = 0
+\end{align*}
+implies that 
+\begin{align*}
+    \det (A + B) = 0.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Let $C = A^{-1}B$, and it is easy to see that $C$ is also orthogonal and $\det C = -1$. Indeed, $\det A = - \det B$, and $\det A = \pm 1$, and then $\det C = -1$. Then, $-1$ is an eigenvalue of $C$, and under Jordan form, we can know that $\det (I + C) = 0$. Thus, $\det (A + B) & = \det A \det (I + A^{-1}B) = 0$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ and $B$ are normal complex $n \times n$ matrices. Prove that
+$$r(AB) \leq r(A) r(B),$$
+where $r(\cdot)$ is the spectral radius of a matrix.
+\end{exercise}
+\begin{proof}
+Since $A$ and $B$ are normal matrices, then $r(A) = \|A\|$ and $r(B) = \|B\|$. Thus, 
+$$r(AB) = \|AB\| \leq \|A\| \cdot \|B\| = r(A) r(B).$$
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose that $V$ and $W$ are complex inner product spaces. Let $A: V \to W$ and $B:V \to W$ are linear maps. Suppose 
+\begin{align*}
+    \|A + B\| = \|A\| + \|B\|.
+\end{align*}
+Prove that
+\begin{align*}
+    \|A + 3B\| = \|A\| + 3\|B\|.
+\end{align*}
+\end{exercise}
+\begin{proof}
+There exists a $x \in V$ such that $\|A + B\| = \|Ax + Bx\|$. Also,
+\begin{align*}
+    |Ax + Bx| \leq \|Ax\| + \|Bx\| \leq \|A\| + \|B\|,
+\end{align*}
+and then $\|A\| = \|Ax\|, \|B\| = \|Bx\|$. Then we can have $(Ax, Bx) + (Bx, Ax) = 0$. Then,
+\begin{align*}
+    \|A + 3B\| = \sup_{\|y\| = 1}\|Ay + 3By\| \geq \|Ax + 3Bx\| = \|Ax\| + 3\|Bx\| = \|A\| + 3 \|B\|.
+\end{align*}
+Also, we have $\|A + 3B\| \leq \|A\| + 3 \|B\|$, which proves the equality.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Prove that if $\lim_{n\to\infty} A^n = 0$, then the spectral radius $r(A)$ of $A$ satisfies $r(A) < 1$.
+\end{exercise}
+\begin{proof}
+Consider the Jordan canonical form $J$ of $A$, then there exists invertible matrix $U$ such that 
+\begin{align*}
+    \lim_{n \to \infty} A^n = \lim_{n \to \infty} U J^n U^{-1} = 0,
+\end{align*}
+which implies that $\lim_{n \to \infty} \lambda_i^n = 0$, for $i = 1, \cdots, n$. Thus, $\lambda_i < 1$ and hence $r(A) < 1$.
+\end{proof}
+
+\begin{remark}
+This exercise is inverse of Lemma \ref{Gelfand_Formula_lemma}.
+\end{remark}
+
+\medskip
+
+\begin{exercise}
+Let $|\cdot|$ be a norm on $\mathbb{C}^n$. Show that the following function on $n \times n$ complex matrix
+\begin{align*}
+    \|A\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|},
+\end{align*}
+is a {\bf matrix norm} (i.e., submultiplicative norm) for any invertible matrix $D$ which satisfies 
+\begin{align*}
+    \|D\| = \|D\|_I = \max_{x\neq 0} \frac{\|Dx\|}{\|x\|} \leq 1.
+\end{align*}
+\end{exercise}
+\begin{proof}
+By Definition \ref{matrix_norm_def}, need to show that $\|\cdot \|_D$ is a norm and satisfies
+\begin{align*}
+    \|AB\|_D \leq \|A\|_D \|B\|_D.
+\end{align*}
+Then,
+\begin{enumerate}[label=(\alph*)]
+    \item $\|A\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|} = \max_{\|y\|=1} \frac{\|AD^{-1}y\|}{\|y\|} = \|AD^{-1}\| \geq 0$.
+    
+    \item $\|A + B\|_D = \left\|AD^{-1} + BD^{-1}\right\| \leq \left\|AD^{-1}\right\| + \left\|BD^{-1}\right\| = \|A\|_D + \|B\|_D$.
+    
+    \item $\|AB\|_D = \left\|ABD^{-1}\right\| = \left\|AD^{-1}DBD^{-1}\right\| \leq \left\|AD^{-1}\right\| \|D\| \left\|BD^{-1}\right\| \leq \|A\|_D \|B\|_D$, since $\|D\| \leq 1$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $\|\cdot \|$ be a norm on $\mathbb{R}^n$ and let $P$ be an $n \times n$ invertible, real matrix. Define the new norm 
+\begin{align*}
+    \|x\|_P = \left\|P^{-1}x\right\|.
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item Show that the induced matrix norm is $\|A\|_P = \left\|P^{-1}AP\right\|$.
+    
+    \item Show that if $A$ is a real $n \times n$ matrix that is diagonalizable, then there exists a norm $\|\cdot \|_*$ under which $\|A\|_* = r(A)$, where $r(A)$ denotes the spectral radius of $A$.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item \begin{align*}
+        \|A\|_P = \max_{x \neq 0} \frac{\|Ax\|_P}{\|x\|_P} = \max_{x \neq 0} \frac{\left\|P^{-1}Ax\right\|}{\left\|P^{-1}x\right\|} = \max_{y \neq 0} \frac{\left\|P^{-1}APy\right\|}{\left\|y\right\|} = \left\|P^{-1}APy\right\|.
+    \end{align*}
+    
+    \item 
+\end{enumerate}
+\end{proof}
+
+
+
 
 
 
@@ -9125,7 +9279,7 @@ if $Tu = -u$, and $Tw = w$ for all $w \in S_u$
 \begin{exercise}
 Let%
 $$
-q\left(  x\right)  =2x_{1}x_{2}-6x_{2}x_{3}+2x_{1}x_{3}.
+q\left(x\right) = 2x_{1}x_{2}-6x_{2}x_{3}+2x_{1}x_{3}.
 $$
 Find an invertible matrix $L$, such that%
 $$
