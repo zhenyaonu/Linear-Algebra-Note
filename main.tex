@@ -2348,6 +2348,12 @@ If the characteristic polynomial $p_A$ of an $n\times n$ matrix $A$ has $n$ dist
 
 \medskip
 
+\begin{definition}{\rm \cite{27}}
+Let $A$ be an $n \times n$ matrix on a $n$-dimensional spade $V$, then $A$ is diagonalizable if there is a basis for $V$ such that each vector of which is a eigenvector of $A$, i.e., there exists a basis $S$ such that $AS = S\Lambda$, where $\Lambda$ is diagonal with all diagonal entries being eigenvalues of $A$.
+\end{definition}
+
+\medskip
+
 \begin{corollary}
 If $A$ has $n$ distinct eigenvalues, then $A$ is diagonalizable in the sense that $A$ is similar to a diagonal matrix.
 \end{corollary}
@@ -2389,6 +2395,25 @@ Then we have,
     which implies the coefficient of $\lambda^{n-1}$ is $ - \sum^n_{k=1}\lambda_k$. Thus, we have $\tr A = \sum^n_{k=1}\lambda_k$.
 \end{enumerate}
 \end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $\lambda_1, \cdots, \lambda_k$ be distinct eigenvalues of $A$. Then the following are equivalent.
+\begin{enumerate}[label=(\alph*)]
+    \item $A$ is diagonalizable. 
+    
+    \item The characteristic polynomial for $A$ is 
+    \begin{align*}
+        p_A(\lambda) = (\lambda - \lambda_1)^{d_1} \cdots (\lambda - \lambda_k)^{d_k},
+    \end{align*}
+    and $\dim N_{A - \lambda_i I} = d_i, i = 1, \cdots, k$.
+    
+    \item $\dim N_{A - \lambda_1 I} + \cdots + N_{A - \lambda_k I} = n$.
+\end{enumerate}
+\end{theorem}
+
+
 
 \medskip
 \section{Spectral Mapping Theorem}
@@ -2484,8 +2509,7 @@ Let $x$ be any vector, then $p_A(A)x = 0$. We factor polynomial as $$p_A(\lambda
     p_A(A) = \prod^J_{j=1}\left(A - \lambda_j\right)^{m_j} = 0 \\
     \Rightarrow \prod^J_{j=1}\left(A - \lambda_j\right)^{m_j}x = 0.
 \end{align*}
-
-Let $p_j = \left(\lambda - \lambda_j\right)^{m_j}$, then $x\in N_{p_1(A)p_2(A)\cdots p_J(A)}$, i.e., $x$ belongs to the null space of $p_1p_2\cdots p_J(A)$. We claim: 
+Let $p_j = \left(\lambda - \lambda_j\right)^{m_j}$, then $x\in N_{p_1(A)p_2(A)\cdots p_J(A)}$, i.e., $x$ belongs to the null space of $p_1 p_2 \cdots p_J(A)$. We claim: 
 \begin{align*}
     N_{p_1p_2\cdots p_J(A)} = \oplus^J_{i=1} N_{p_i(A)}.
 \end{align*}
@@ -2510,7 +2534,7 @@ Let $p, q$ be a pair of polynomials, with complex coefficients, and $p,q$ have n
     where the degree of $r$ is less than that of $d$. Since $p$ and $d$ belong to $\mathcal{P}$, then $r\in \mathcal{P}$, which is a contradiction. 
     
     Second, we claim that $d$ has degree zero. Suppose not, then by the fundamental theorem of algebra, $d$ would have a root. Since $d$ divides $p$ and $q$, and $p$ and $q$ have no common zeros, $d$ is a nonzero constant. Thus, $1\in \mathcal{P}$.
-    \item From (1), there are two polynomials $a$ and $b$ such that 
+    \item From (a), there are two polynomials $a$ and $b$ such that 
     $$a(A)p(A) + b(A)q(A) = I.$$
     For any $x$, we have
     $$x = a(A)p(A)x + b(A)q(A)x \overset{\Delta}{=} x_1 + x_2 $$
@@ -2586,8 +2610,20 @@ Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is 
 
 \medskip
 
+Let $A$ be a diagonalizable matrix and $\lambda_1, \cdots, \lambda_k$ be the distinct eigenvalues of $A$. Then it is easy to see that the minimal polynomial of $A$ is 
+\begin{align*}
+    p_A(\lambda) = (\lambda - \lambda_1) \cdots (\lambda - \lambda_k).
+\end{align*}
+Indeed, if $v$ is an eigenvector of $A$, then one of $A - \lambda_1 I, \cdots, A - \lambda_k I$ sends $v$ into $0$. Then,
+\begin{align*}
+    (A - \lambda_1) \cdots (A - \lambda_k) v = 0
+\end{align*}
+for every eigenvector $v$. Since there is a basis consisting of all eigenvectors of $A$, then for any vector $x$, $p_A(A)x = 0$, which implies $p_A(A) = (A - \lambda_1) \cdots (A - \lambda_k) = 0$.
+
+\medskip
+
 \begin{theorem}
-Suppose $A$ and $B$ similar, then $A, B$ has the same distinct eigenvalues $\lambda_1, \cdots, \lambda_k$. Furthermore, the null space $N_{(A-\lambda_j I)^m}$ and $N_{(B-\lambda_j I)^m}$ has the same dimension for $1\leq j \leq k, m \geq 1$.
+Suppose $A$ and $B$ are similar, then $A, B$ has the same distinct eigenvalues $\lambda_1, \cdots, \lambda_k$. Furthermore, the null space $N_{(A-\lambda_j I)^m}$ and $N_{(B-\lambda_j I)^m}$ has the same dimension for $1\leq j \leq k, m \geq 1$.
 \end{theorem}
 \begin{proof}
 Since $A$ and $B$ similar, then there exists nonsingular $S$ such that $A = SBS^{-1}$. Then we have 
@@ -3416,7 +3452,7 @@ $$(A^* y, x) = (y, Ax).$$
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{transpose_linear_map_theorem}
 ~\begin{enumerate}[label=(\alph*)]
     \item If $A,B$ are two linear maps of $X$ into $U$, then $(A+B)^* = A^* + B^*$.
     \item If $A:X\to U, C:U\to V$, then $(CA)^* = A^* C^*$.
@@ -4095,15 +4131,21 @@ which implies $r(A_1 A_2) \leq r(A_1) r(A_2)$.
 \chapter{Spectral Theory of Self-Adjoint Mappings}
 \section{Self-Adjoint Mapping}
 \begin{definition}
-A linear mapping $A$ of a linear or complex Euclidean space into itself is said to be self-adjoint if $A^* = A$. 
+A linear mapping $A$ of a linear or complex Euclidean space into itself is said to be self-adjoint if $A^* = A$.
 \end{definition}
-\begin{remark}
+
+\begin{definition}
 If we pick an orthogonal basis of Euclidean space, we can view $A$ as a matrix $A = (a_{ij})_{n\times n}$, then 
 \begin{enumerate}[label=(\arabic*)]
-    \item In real case, $A^* = A \iff A^T = A \iff A$ is real symmetric, i.e., $a_{ij} = a_{ji}$. 
-    \item In complex case, $A^* = A \iff \overline{A^T} = A$, i.e., $a_{ij} = \overline{a_{ji}}$. We say $A$ is Hermitian matrix.
+    \item In real case, $A$ is symmetric if and only if $A^T = A$, i.e., $a_{ij} = a_{ji}$.
+    
+    $A$ is skew symmetric (or anti-symmetric) if and only if $A^T = -A$, i.e., $a_{ij} = -a_{ji}$.
+    
+    \item In complex case, $A$ is Hermitian if and only if $A = \overline{A^T} = A^*$ (conjugate transpose of $A$), i.e., $a_{ij} = \overline{a_{ji}}$.
+    
+    $A$ is skew Hermitian (or anti-Hermitian) if and only if $A = - \overline{A^T} = - A^*$, i.e., $a_{ij} = - \overline{a_{ji}}$.
 \end{enumerate}
-\end{remark}
+\end{definition}
 
 \medskip
 
@@ -4116,7 +4158,7 @@ Let $M$ be an arbitrary linear mapping in a Euclidean space, we define its self-
 
 \medskip
 
-\begin{theorem}\label{hermitian_eigenvalue}
+\begin{theorem}\label{hermitian_eigenvalue_theorem}
 A self-adjoint map $H$ of complex Euclidean space $X$ into itself has real eigenvalues and the set of eigenvectors which is formed by orthogonal basis of $X$.
 \end{theorem}
 \begin{proof}
@@ -4221,7 +4263,7 @@ With the theorem abovem, $X = \oplus_{\lambda_i}N_{(H-\lambda_i I)}$. We can pic
 A self-adjoint map $H$ of real Euclidean space $X$ into itself has real eigenvalues and a set of eigenvectors which is formed by orthogonal basis of $X$.
 \end{theorem}
 \begin{proof}
-We pick an orthogonal basis of $X$ and $H$ can be represented by a matrix $A$ if we identify $X$ as $\mathbb{R}^n$, then we have $A^T = A$. We can extend $A$ to a map from $\mathbb{C}^n$ to $\mathbb{C}^n$, denoted by $\widetilde{A}$, then $\widetilde{A}^* = \widetilde{A}$. Then $\widetilde{A}$ is Hermitian matrix and we can apply the Theorem \ref{theorem_hermitian}.
+We pick an orthogonal basis of $X$ and $H$ can be represented by a matrix $A$ if we identify $X$ as $\mathbb{R}^n$, then we have $A^T = A$. We can extend $A$ to a map from $\mathbb{C}^n$ to $\mathbb{C}^n$, denoted by $\widetilde{A}$, then $\widetilde{A}^* = \widetilde{A}$. Then $\widetilde{A}$ is Hermitian matrix and we can apply the Theorem \ref{hermitian_eigenvalue_theorem}.
 
 We claim $\sigma(A) = \sigma \left(\widetilde{A}\right)$ and $$N_{(A - \lambda I)} = \Re N_{\left(\widetilde{A} - \lambda I\right)}.$$
 Indeed, $\widetilde{A}$ can be diagonalized by a unitary matrix $U$ such that $A = U\Lambda U^{-1}$, where $\Lambda$ is a real diagonal matrix. Then, $A$ can be diagonalized by a real matrix $M$ such that $A = M\Lambda M^{-1}$. Thus, the eigenvalues of $A$ are all real. Ans since
@@ -4438,6 +4480,15 @@ If $A$ is anti-self adjoint, then $(iA)^* = iA$. Thus $A$ can be unitary diagona
 
 \medskip
 
+\begin{theorem}\label{anti_symmetric_eigenvalue}
+An anti-symmetric map $A$ has all purely imaginary eigenvalues.
+\end{theorem}
+\begin{proof}
+Assume $\lambda$ is eigenvaule, such that $Ax = \lambda x$. Since $(Ax, x) = (x, A^*x)$, then $(Ax, x) = - (x, Ax)$, which implies $(\lambda x, x) = - (x, \lambda x)$. Thus, $\lambda = - \Bar{\lambda}$ and hence $\lambda$ is purely imaginary. 
+\end{proof}
+
+\medskip
+
 \begin{definition}
 A mapping $A$ from a compact Euclidean space into itself is normal if it commutes with its adjoint operator, i.e., $AA^* = A^* A$.
 \end{definition}
@@ -4459,13 +4510,13 @@ Then there exists a basis consisting of eigenvectors for both $A$ and $H$. Then 
 
 \medskip
 
-\begin{corollary}
+\begin{corollary}\label{normal_matrix_unitary_diagonal}
 $N$ is a normal matrix if and only if $N$ can be unitarily diagonalized.
 \end{corollary}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) We need three steps to show this direction\cite{25}.
-    \begin{enumerate}[label=(\alph*)]
+    \begin{enumerate}[label=\alph*)]
         \item If a normal matrix is upper triangular, then it is diagonal.
         
         \item By Schur decomposition\footnote{Schur decomposition theorem is talked later in Theorem \ref{Schur_Decomposition}.}, every matrix is unitary similar to an upper triangular matrix.
@@ -4644,7 +4695,7 @@ If $M,H$ are self-adjoint, all the eigenvalues of $M^{-1}H$ are real and $M^{-1}
 We recall that $\|A\| = \max \|Ax\|, \|x\|=1$ or $\|A\| = \sup\frac{\|Ax\|}{\|x\|}$. Then we have the following theorem.
 
 \begin{theorem}
-Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N\| \leq r(A)$.
+Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N\| = r(A)$.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -9240,7 +9291,7 @@ Then,
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\rm *}
 Let $\|\cdot \|$ be a norm on $\mathbb{R}^n$ and let $P$ be an $n \times n$ invertible, real matrix. Define the new norm 
 \begin{align*}
     \|x\|_P = \left\|P^{-1}x\right\|.
@@ -9257,21 +9308,12 @@ Let $\|\cdot \|$ be a norm on $\mathbb{R}^n$ and let $P$ be an $n \times n$ inve
         \|A\|_P = \max_{x \neq 0} \frac{\|Ax\|_P}{\|x\|_P} = \max_{x \neq 0} \frac{\left\|P^{-1}Ax\right\|}{\left\|P^{-1}x\right\|} = \max_{y \neq 0} \frac{\left\|P^{-1}APy\right\|}{\left\|y\right\|} = \left\|P^{-1}APy\right\|.
     \end{align*}
     
-    \item 
+    \item Since $A$ is diagonalizable, then there exists invertible matrix $P$ such that $A = P\Lambda P^{-1}$, where $\Lambda$ is diagonal. Then,
+    \begin{align*}
+        \|A\|_P = \left\|P^{-1} A P\right\| = \|\Lambda \| = r(\Lambda) = r(A).
+    \end{align*}
 \end{enumerate}
 \end{proof}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section{Spectral Theory of Self-Adjoint Mappings}
@@ -9487,6 +9529,154 @@ $$
 \begin{proof}
 Since $A$ is normal matrix, then we have $\|A\| = r(A)$. Also, we have known that for all $a_{ij}$, $\left|a_{ij}\right|\leq \|A\|$. Thus, we have $r(A)\geq \max_{1\leq i\leq n}\left|a_{ii}\right|$.
 \end{proof}
+
+\medskip
+
+\begin{exercise}{\rm *}
+Let $A$ be an invertible real symmetric matrix and $B$ a real anti-symmetric matrix such that $AB = BA$. Show that $A + B$ is invertible.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If $A, B$ are diagonal matrices, then it is trivial. Indeed, by Theorem \ref{theorem_symmetric}, all eigenvalues of $A$ are real and nonzero, and $B = 0$. Thus, $A + B$ is invertible.
+    
+    \item If $A, B$ are not diagonal matrices, by Theorem \ref{anti_symmetric_eigenvalue}, all eigenvalues of $B$ are purely imaginary. Also, by Corollary \ref{normal_matrix_unitary_diagonal}, $A, B$ are unitarily diagonalized, and since $AB = BA$, $A, B$ can be unitarily diagonalized at the same time, i.e., there exists unitary matrix $U$ such that $A = U \Lambda_1 U^*$ and $B = U \Lambda_2 U^*$. Then, eigenvalue of $A + B$ is the form
+    \begin{align*}
+        \lambda + \mu,
+    \end{align*}
+    where $\lambda \in \sigma(A), \mu \in \sigma(B)$, and then $\Re (\lambda + \mu) = \Re \lambda \neq 0$. Thus, all eigenvalues of $A + B$ are nonzero, and hence $A + B$ is invertible.
+    \end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}{\rm *}
+Prove or disprove: Complex square matrices $AA^*$ and $A^*A$ are always unitarily similar.
+\end{exercise}
+\begin{proof}
+Let $M = AA^*$ and $N = A^* A$, then $M = M^*$ and $N = N^*$. Then, $M, N$ can be unitarily diagonalized. Also, $M$ and $N$ has same eigenvalues\footnote{Suppose $\lambda \neq 0$ is an eigenvalue of $AB$, such that $ABx = \lambda x$, then $B(AB)x = (BA)Bx = \lambda Bx$. Thus, $AB$ and $BA$ has same eigenvalues \cite{40}.}, then there exists unitary matrices $U$ and $V$ such that $M = U \Lambda U^*$ and $N = V \Lambda V^*$, where $\Lambda$ is diagonal. Thus, $\Lambda = U^* M U = V^* N V$, and hence $M, N$ are unitarily similar.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Show that if $A$ is a linear map on a $2$-dimensional complex Euclidean space and $\left\|A^2\right\| = \|A\|^2$, then $A$ is normal.
+\end{exercise}
+\begin{proof}
+Since $\left\|A^2\right\| = \|A\|^2$ and
+\begin{align*}
+    \left\|A^2\right\| = \max_{\|x\| = 1} \|AAx\| \leq \|A\| \max_{\|x\| = 1} \|Ax\| = \|A\|^2,
+\end{align*}
+then for any $x \neq 0$, $\|Ax\| = \|A\| \|x\|$. Then for eigenvector $x$ of $A$ such that $Ax = \lambda x$, we have
+\begin{align*}
+    \|Ax\| = \|\lambda x\| = |\lambda| \|x\|,
+\end{align*}
+and hence $\|A\| = |\lambda|$. Thus, $A$ is normal.
+
+Indeed, we could assume
+\begin{align*}
+    A = \begin{pmatrix}
+        \lambda_1 & t \\
+        0 & \lambda_2
+    \end{pmatrix},
+    A^* = \begin{pmatrix}
+        \overline{\lambda}_1 & 0 \\
+        \overline{t} & \overline{\lambda}_2
+    \end{pmatrix},
+\end{align*}
+since $A$ can be unitarily similar to an upper triangular matrix. Then,
+\begin{align*}
+    A A^* = \begin{pmatrix}
+        \left|\lambda_1\right|^2 + |t|^2 & t \overline{\lambda}_2 \\
+        \overline{t} \lambda_2 & \left|\lambda_2\right|^2
+    \end{pmatrix},
+\end{align*}
+and 
+\begin{align*}
+    \|A\|^2 = r\left(A A^*\right) = \max \left\{ \left|\lambda_1\right|^2 + |t|^2, \left|\lambda_2\right|^2 \right\}.
+\end{align*}
+Since $\|A\| = |\lambda|$, then $t = 0$ and hence $A$ is normal.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ and $B$ are $n \times n$ matrices. Suppose $A$ is normal, $B$ is nilpotent, and $A + B = I$. Prove that $A = I$.
+\end{exercise}
+\begin{proof}
+$B = I - A$ and $A A^* = A^* A$ implies
+\begin{align*}
+    BB^* = I - A - A^* + A A^* = I - A - A^* + A^* A = B^*B,
+\end{align*}
+and hence $B$ is normal. By Corollary \ref{normal_matrix_unitary_diagonal}, $B$ is unitarily diagonalized with all eigenvalues being zero. Thus, $B = 0$ and then $A = I$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ is a Hermitian matrix, and $B$ is some matrix. Suppose $A^3B = BA^3$. Prove that $AB = BA$.
+\end{exercise}
+\begin{proof}
+Since $A$ is Hermitian, so is $A^3$, and then $A$ can be unitarily diagonalized, i.e., there exists unitary matrix $U$ such that $A = U \Lambda U^*$, where $\Lambda$ is diagonal. Then $U \Lambda^3 U^*B = B U \Lambda^3 U^*$, which implies
+\begin{align*}
+    \Lambda^3 U^*B U = U^* B U \Lambda^3.
+\end{align*}
+Since $\Lambda^3$ is also diagonal, then $U^*B U$ commutes with $\Lambda$\footnote{This statement could fail in the case $A^2B = BA^2$, i.e., $A^2 B = B A^2$ does not imply $AB = BA$ in general, since square root is not unique but the real cube roots is unique {\rm \cite{41}}.}, and hence $\Lambda U^*B U = U^* B U \Lambda$. Thus, $AB = U \Lambda U^*B = B U \Lambda U^* = BA$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $\big\langle \cdot, \cdot\big\rangle$ be non-degenerate, symmetric bilinear form on $\mathbb{R}^n$. We represent all vectors in the standard basis.
+\begin{enumerate}[label=(\alph*)]
+    \item Show that there exists a symmetric, invertible matrix $A$ such that 
+    \begin{align*}
+        \big\langle x, y\big\rangle = x^T Ay,
+    \end{align*}
+    for all vectors $x$ and $y$.
+    
+    \item Is $A^{-1}$ symmetric?
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Let $a_{ij} = \big\langle e_i, e_j\big\rangle$. Then $A = \left(a_{ij}\right)_{n \times n}$ is symmetric and $\big\langle x, y\big\rangle = x^T Ay$. Indeed, for any $x = \sum^n_{i=1} x_i e_i$ and $y = \sum^n_{i=1} y_i e_i$,
+    \begin{align*}
+        \big\langle x, y\big\rangle = \sum_{i,j} x_i y_j \big\langle e_i, e_j\big\rangle = x^T Ay.
+    \end{align*}
+    
+    If $A$ is not invertible, then there exists $y \neq 0$ such that $Ay = 0$ and hence $\big\langle x, y\big\rangle = 0$ for any $x$, which is a contradiction to the fact that $\big\langle \cdot, \cdot\big\rangle$ is non-degenerate.
+    
+    \item This is trivial. Indeed, by Theorem \ref{transpose_linear_map_theorem}, $\left(A^{-1}\right)^T = \left(A^T\right)^{-1} = A^{-1}$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}{\rm *}
+Let $S$ be the space of all $n \times n$ real skew symmetric matrices and let $A$ be a real invertible matrix, consider the linear map $T_A: S \to S$ defined by 
+\begin{align*}
+    T_A(S) = ASA^T.
+\end{align*}
+Find $\det \left(T_A\right)$. \\
+{\bf Hint.} First consider the cases when $A$ is orthogonal and when $A$ is symmetric.
+\end{exercise}
+\begin{proof}
+First, $\dim S = n(n-1)/2$. Second, 
+\begin{align*}
+    T_A T_B (S) = A B S B^T A^T = T_{AB}(S),
+\end{align*}
+implies $\det \left(T_{AB}\right) = \det \left(T_A\right) \det \left(T_B\right)$. With these properties, we have
+\begin{align*}
+    \det \left(T_{A^{-1}}\right) \det \left(T_{A}\right) = \det \left(T_{I}\right) = 1,
+\end{align*}
+and if $A = P B P^{-1}$, then 
+\begin{align*}
+    \det \left(T_{A}\right) = \det \left(T_{B}\right).
+\end{align*}
+
+\end{proof}
+
+
 
 
 
