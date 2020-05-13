@@ -4988,7 +4988,7 @@ We claim that the Taylor series also holds to define $e^A$ for any square matrix
     \begin{align*}
         \dv{}{t}e^{A(t)} = e^{A(t)} \dot{A}(t).
     \end{align*}
-    \item If $A$ is anti-self adjoint, i.e., $A^* = -A$, then $e^A$ is unitary.
+    \item If $A$ is anti-self adjoint, i.e., $A^* = -A$, then $e^A$ is unitary.\label{matrix_exponential_e}
 \end{enumerate}
 \end{theorem}
 \begin{proof}
@@ -5054,7 +5054,7 @@ where the summation only goes to $l-1$ since we can calculate
 
 \medskip
 
-\begin{corollary}
+\begin{corollary}\label{exponential_trace_corollary}
 $\det e^A = e^{\tr A}$.
 \end{corollary}
 \begin{proof}
@@ -9673,8 +9673,108 @@ and if $A = P B P^{-1}$, then
 \begin{align*}
     \det \left(T_{A}\right) = \det \left(T_{B}\right).
 \end{align*}
-
+Using QR decomposition, $A$ can be written as a product of one orthogonal matrix and one real symmetric matrix.
 \end{proof}
+
+
+\medskip
+
+\section{Calculus of Vector and Matrix Valued Functions}
+
+\begin{exercise}\label{exercise_13_9_1}
+For a complex $n \times n$ matrix, the matrix $e^A$ is defined as follows
+\begin{align*}
+    e^A = \sum^\infty_{k=0} \frac{A^k}{k!}.
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that $e^A$ is well-defined for any $A$.
+    
+    \item Prove that if $A$ is skew Hermitian, then $e^A$ is unitary.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item It suffice to show that $\sum^\infty_{k=0} \frac{A^k}{k!}$ converges absolutely for any $A$. Since
+    \begin{align*}
+        \left\| \frac{A^k}{k!} \right\| \leq \frac{\|A\|^k}{k!},
+    \end{align*}
+    then $\left\|e^A\right\| \leq e^{\|A\|}$. 
+    
+    \item This is proved in Theorem \ref{matrix_exponential} (e).
+\end{enumerate}
+\end{proof}
+
+\begin{proof}[Second Proof of Exercise \ref{exercise_13_9_1} (a)] \cite{42}
+Let $n^{\rm th}$ partial sum be 
+\begin{align*}
+    S_n = \sum^n_{k=0} \frac{A^k}{k!}.
+\end{align*}
+Then, with $\left\| \frac{A^k}{k!} \right\| \leq \frac{\|A\|^k}{k!}$,
+\begin{align*}
+    \left\| e^A - S_n \right\| & = \left\| \sum^\infty_{k=0} \frac{A^k}{k!} - \sum^n_{k=0} \frac{A^k}{k!} \right\| \\
+    & = \left\| \sum^\infty_{k=n+1} \frac{A^k}{k!} \right\| \\
+    & \leq \sum^\infty_{k=n+1} \frac{\left\|A^k\right\|}{k!} \\
+    & \leq \sum^\infty_{k=n+1} \frac{\left\|A\right\|^k}{k!}.
+\end{align*}
+Since $\|A\|$ is a real number and right hand side is a part of a convergent series $e^{\|A\|} = \sum^\infty_{k=0} \frac{\left\|A\right\|^k}{k!}$. Then, for any $\varepsilon > 0$, there is an $N > 0$ such that for all $n > N$,
+\begin{align*}
+    \sum^\infty_{k=n+1} \frac{\left\|A\right\|^k}{k!} < \varepsilon.
+\end{align*}
+Thus, $e^A$ defined above is convergent.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A$ be a complex anti-self adjoint matrix and let $B = e^A$. Show that
+\begin{enumerate}[label=(\alph*)]
+    \item $\det B = e^{\tr(A)}$.
+    
+    \item $B^* = e^{-A}$.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item This is proved in Corollary \ref{exponential_trace_corollary}.
+    
+    \item It is easy to see when we define $e^A = \sum^\infty_{k=0} A^k/k!$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $D$ be a real $n \times n$ diagonal matrix, $D = {\rm diag}(d_1, d_2, \cdots, d_n)$ and let $P$ a real $n \times n$ matrix with $|P_{ij}| \leq 1$ for all $i$ and $j$. Let
+\begin{align*}
+    A = D + \varepsilon P, 0 \leq \varepsilon \leq 1.
+\end{align*}
+Show that for every eigenvalue $\lambda$ of $A$, there exists $d_i$ such that 
+\begin{align*}
+    \left|\lambda - d_i \right| \leq \varepsilon n.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Let $x$ be the eigenvector of $A$, then 
+\begin{align*}
+    (D + \varepsilon P)x = \lambda x,
+\end{align*}
+which implies, for all $1\leq i \leq n$,
+\begin{align*}
+    d_i x_i + \varepsilon \sum^n_j P_{ij}x_j = \lambda x_i.
+\end{align*}
+Thus, letting $|x_i| = 1$ gives
+\begin{align*}
+    |\lambda - d_i| \leq \varepsilon \sum^n_j P_{ij}
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
 
 
 
