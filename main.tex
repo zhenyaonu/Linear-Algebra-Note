@@ -3186,9 +3186,9 @@ where $N_j = N_{(A - \lambda_j I)^{d(\lambda_j)}}$. For any $x\in\mathbb{C}^n$, 
 If $x\in N_j$, then $ (A - \lambda_j I)^{d(\lambda_j)} x = 0$, which implies $Bx\in N_j$. Then, $B$ is a map from $N_j$ into $N_j$. Applying Spectral Theorem \ref{spectral_theorem} to $B|_{N_j}$, then we obtain a spectral decomposition of each $N_j$, i.e., $N_j$ has a basis consisting of eigenvectors and generalized eigenvectors of $B$. Thus, we obtain a basis of $\mathbb{C}^n$. 
 \end{proof}
 
-\begin{remark}\label{diagonalized_same_time}
+\begin{corollary}\label{diagonalized_same_time}{\rm \cite{43}}
 If $A,B$ are both diagonalizable and $AB = BA$, then $A,B$ can be diagonalized at the same time, i.e., there exists nonsingular matrix $S$ such that $S^{-1}AS$ and $S^{-1}BS$ are both diagonal.
-\end{remark}
+\end{corollary}
 
 \medskip
 
@@ -3201,7 +3201,7 @@ Since $\dim N_A = \dim N_{A^T}$, then $\dim N_{(A-\lambda I)^m} = \dim N_{(A^T-\
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{eigenvector_transpose_theorem}
 Let $\lambda, \mu$ be distinct eigenvalues of $A$. Suppose $u$ is an eigenvector with respect to $\lambda$ and $v$ is an eigenvector with respect to $\mu$, i.e., $Au = \lambda u, Av = \mu v$. Then $u^Tv = 0$.
 \end{theorem}
 \begin{proof}
@@ -4863,9 +4863,9 @@ Continuity and differentiability is equivalent to those of every element of $A(t
 
 \begin{theorem}[Basic Rules of Differentiation]
 ~\begin{enumerate}[label=(\alph*)]
-    \item $\dv{}{t}(A(t)+B(t)) = \dv{}{t}A(t) + \dv{}{t}B(t)$.
+    \item $\dv{}{t} \left(A(t)+B(t)\right) = \dv{}{t}A(t) + \dv{}{t}B(t)$.
     \item $\dv{}{t} A(t)B(t) = \left(\dv{}{t} A(t)\right) B(t) + A(t) \dv{}{t} B(t)$.
-    \item For $x(t),y(t) \in \mathbb{C}^n$, $\dv{}{t}(x(t), y(t)) = \left(\dv{}{t}x(t), y(t)\right) + \left(x(t), \dv{}{t} y(t) \right)$.
+    \item For $x(t),y(t) \in \mathbb{C}^n$, $\dv{}{t} \left(x(t), y(t)\right) = \left(\dv{}{t}x(t), y(t)\right) + \left(x(t), \dv{}{t} y(t) \right)$.
 \end{enumerate}
 \end{theorem}
 
@@ -5148,7 +5148,7 @@ which implies there exists $w\neq 0$, such that $(A - \lambda I)w = v$. Then $w$
 \medskip
 
 
-\chapter{Matrix Inequalities}
+\chapter{Matrix Inequalities}\label{matrix_inequalities}
 
 \section{Positive Self-adjoint Matrix}
 
@@ -7072,9 +7072,172 @@ By Definition \ref{doubly_stochastic_def}, no entry of a doubly stochastic matri
 
 \medskip
 
+\chapter{Positive Matrices}
 
+\section{Perron's Theorem}
 
+\begin{definition}
+A real $n \times n$ matrix $P$ is called entrywise positive if all its entries $p_{ij}$ are positive real numbers.
+\end{definition}
+\begin{remark}
+This notion of positivity, used only in this chapter, is not to be confused with self-adjoint matrices that are positive in the sense of Chapter \ref{matrix_inequalities}.
+\end{remark}
 
+\medskip
+
+\begin{theorem}[Perron's Theorem]\label{Perron_Theorem}
+Every positive matrix $P$ has a dominant eigenvalue, denoted by $\lambda(P)$, which has the following properties:
+\begin{enumerate}[label=(\alph*)]
+    \item $\lambda(P) > 0$ and there exists eigenvector $x$ with positive entries, i.e., $x_i > 0$.
+    
+    \item $\lambda(P)$ is a simple eigenvalue.
+    
+    \item Every other eigenvalue $\mu$ of $P$ is less than $\lambda(P)$ in absolute value, i.e., $|\mu| < \lambda(P)$.
+    
+    \item $P$ has no other eigenvector with nonnegative entries.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Let $\sigma(P)$ be the set of all nonnegative number $\lambda$ for which there exists a nonnegative vector $x \neq 0$ such that
+    \begin{align}\label{entrywise_positive_inequality}
+        Px \geq \lambda x, x \geq 0.
+    \end{align}
+    
+    \begin{lemma}
+    For $P$ positive, 
+    \begin{enumerate}[label=(\roman*)]
+        \item $\sigma(P)$ is nonempty, and contains a positive number,
+        
+        \item $\sigma(P)$ is bounded,
+        
+        \item $\sigma(P)$ is closed.
+    \end{enumerate}
+    \end{lemma}
+    \begin{proof}
+    ~\begin{enumerate}[label=(\roman*)]
+        \item Take any positive vector $x$, since $P$ is positive, $Px$ is also a positive vector. Then, $Px \geq \lambda x$ for $\lambda$ small enough.
+        
+        \item Normalize $x$ so that $\xi x = \sum x_i = 1$. Multiplying $\xi$ on both sides of (\ref{entrywise_positive_inequality}) implies
+        \begin{align*}
+            \xi Px \geq \lambda \xi x = \lambda.
+        \end{align*}
+        Denote the largest component of $\xi P$ by $b$, then $b \xi \geq \xi P$. Substituting this into above gives $b \geq \lambda$, this proves part (ii).
+        
+        \item Consider a sequence of $\lambda_k$ in $\sigma(P)$, and $\lim_{k\to\infty} \lambda_k = \lambda^*$. Then,
+        \begin{align*}
+            Px_k \geq \lambda_k x_k, x_k \geq 0,
+        \end{align*}
+        and we normalize $x_k$ so that $\|x_k\| = 1$. The set of nonnegative $x_k$ normalized by $\xi$ is a closed bounded set in $\mathbb{R}^n$ and therefore compact. Then there exists a subsequence $\left\{x_{n_k}\right\}^\infty_{k=1}$ such that $\lim_{k\to\infty} x_{n_k} = x^*, x^* \geq 0, \|x^*\| = 1$. Then,
+        \begin{align*}
+            P x^* \geq \lambda^* x^*,
+        \end{align*}
+        which implies $\lambda^* \in \sigma(P)$. Thus, $\sigma(P)$ is closed.
+     \end{enumerate}
+    \end{proof}
+    
+    Since $\sigma(P)$ is closed and bounded, then it has a maximum $\lambda^*$, and $\lambda^* > 0$. We now show that $\lambda^*$ is the dominant eigenvalue.
+    
+    First, we need to show that $\lambda^*$ is an eigenvalue. Indeed, there exists $x \geq 0$, such that $Px \geq \lambda^* x, x \neq 0$. If $Px \neq \lambda^* x$, then for some $i$, $(Px)_i > \lambda^* x_i$, and $(Px)_j \geq \lambda^* x_j$ for $j \neq i$. Now we consider $h = x + \varepsilon e_i$, then for $\varepsilon$ small enough, $Ph > \lambda^* h$. Then, $Px \geq (\lambda^* + \delta) h$ for some small $\delta$, which is a contradiction. Thus, $\lambda^*$ is an eigenvalue.
+    
+    Since $P$ is entrywise positive and for $x^*$ being eigenvector corresponding to $\lambda^*$, we have $x^* \geq 0$ by the definition of $\sigma(P)$, then $Px^* > 0$. Also, since $Px^* = \lambda^* x^*, x^* \neq 0$. Thus, $x^* > 0$, which proves part (a).
+    
+    \item Now we show that $\lambda^*$ is simple. All eigenvector of $P$ corresponding to eigenvalue $\lambda^*$ must to a multiple of $x$. Indeed, if not, we can assume $\widetilde{x}$ being another eigenvector, which is linearly independent to eigenvector $x > 0$. Pick $t$ such that 
+    $$x + t \widetilde{x} \geq 0,$$
+    but one of the component of $x + t \widetilde{x}$ is zero. This contradicts the statement (a).
+    
+    Next we show that $P$ has no generalized eigenvectors for the eigenvalue $\lambda^*$. Suppose not, then there exists $y$ such that 
+    \begin{align*}
+        (P - \lambda^* I)y = x,
+    \end{align*}
+    which implies $Py = \lambda^* y + x$. Then, pick some $k$ large enough, such that $y + kx > 0$, and then
+    \begin{align*}
+        P(y + kx) = \lambda^*(y + kx) + x > \lambda^* (y + kx).
+    \end{align*}
+    Then, there exists $\delta > 0$ small enough such that $Px > \left(\lambda^* + \delta\right)x$, which is a contradiction.
+    
+    \item Let $\mu \neq \lambda^*$ be another eigenvalue with eigenvector $y \neq 0$, such that $Py = \mu y$. Then, for each $i$,
+    \begin{align*}
+        \sum^n_{j=1} P_{ij} y_j = \mu y_i,
+    \end{align*}
+    using the triangle inequality for complex numbers and their absolute values gives
+    \begin{align*}
+        \sum^n_{j=1} P_{ij} |y_j| > \left|\sum^n_{j=1} P_{ij} y_j \right| = |\mu| |y_i|.
+    \end{align*}
+    Then, $|\mu| \in \sigma(P)$ with $x = \begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$. If $|\mu| = \lambda^*$, then $\begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$ would be an eigenvector of $P$ with eigenvalue $\lambda^*$, and thus a multiple of $x$, $|y_i| = c x_i > 0$. Then the above inequality holds. It is well known about complex numbers that this is the case only if all the $y_i$ have the same complex argument:
+    \begin{align*}
+        y_i = e^{i\theta} |y_i|, i = 1, \cdots, n.
+    \end{align*}
+    and then
+    \begin{align*}
+        y_i = c e^{i\theta} x_i.
+    \end{align*}
+    Then, $y = c e^{i\theta}x$ for some $\theta$, and hence $Px = \mu x$. Thus, $\mu = \lambda^*$, which is a contradiction.
+    
+    \item Now we show that $P$ has no other eigenvector $\widetilde{x} > 0$. Also, $P^T$ is entrywise positive and $\lambda^*$ is also the dominant eigenvalue of $P^T$, with eigenvector $z$. By Theorem \ref{eigenvector_transpose_theorem}, the product of eigenvectors of $P$ and $P^T$ corresponding to different eigenvalues is different, i.e., for $\widetilde{x}$ being eigenvector of $P$ corresponding to eigenvelus $\mu \neq \lambda^*$, $(\widetilde{x}, z) = 0$. Since a positive vector $\widetilde{x}$ does not annihilate a positive vector $z$, then $\widetilde{x}$ is vector with negative entries.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\section{Stochastic Matrix}
+
+\begin{definition}
+A stochastic matrix is an $n \times n$ matrix $S = \left(s_{ij}\right)_{n \times n}$ whose entries are nonnegative and column sums are equal to $1$, i.e., $s_{ij}\geq 0$ for all $i,j$ and $\sum^n_{i = 1} s_{ij} = 1$ for all $j$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}
+Let $S$ be an entrywise positive stochastic matrix. Then,
+\begin{enumerate}[label=(\alph*)]
+    \item The dominant eigenvalue $\lambda(S) = 1$.
+    
+    \item Let $x$ be any nonnegative vector, then 
+    \begin{align*}
+        \lim_{N \to \infty} S^N x = ch,
+    \end{align*}
+    for some positive constant $c$, where $h$ is the dominant eigenvector.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item $S^T$ is also entrywise positive matrix and 
+    \begin{align*}
+        S^T \begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix} = \begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix},
+    \end{align*}
+    then by part (d) in Theorem \ref{Perron_Theorem}, $1$ is dominant eigenvalue of $S^T$. All other eigenvalues of $S^T$ has absolute value strictly smaller than $1$. Also, $S$ and $S^T$ have the same eigenvalues. Thus, $\lambda(S) = 1$ is the dominant eigenvalue of $S$.
+    
+    \item Let $\lambda_1 = \lambda(S) = 1$, and $\lambda_2, \cdots, \lambda_k$ be other distinct eigenvalues. Then, $\mathbb{C}^n = \oplus^k_{i=1} N_i(\lambda_i)$, where $N_i(\lambda_i) = N_{S - \lambda_i I}$. Then, $x$ can be expanded as a sum of eigenvector $h_j$ of $S$:
+    \begin{align*}
+        x = \sum^k_{i=1} x_i,
+    \end{align*}
+    where $x_i = c_i h_i \in N_i(\lambda_i)$. Note that $\lambda_1 = 1$ with dominant eigenvector $h$. Then, with $\lambda_1 = 1, |\lambda_j| < 1$ for $j \neq 1$, we have
+    \begin{align*}
+        S^N x = \sum^k_{i=1} S^N x_i = \sum^k_{i=1} c_j \lambda_j^N h_j \xrightarrow[]{N\to\infty} c_1 h_1.
+    \end{align*}
+    Taking $c = c_1$ and $h = h_1$ the dominant eigenvector gives $\lim_{N \to \infty} S^N x = ch$.
+    
+    To show that $c > 0$, let $\xi = \begin{pmatrix} 1 \\ \vdots \\ 1 \end{pmatrix}$. Then for $x \neq 0, x \geq 0$, 
+    \begin{align*}
+        \left(S^Nx, \xi\right) = \left(x, \left(S^T\right)^N \xi\right) = (x, \xi) \to c(h, \xi).
+    \end{align*}
+    Therefore $c$ is positive. 
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $F$ be $n \times n$ entrywise nonnegative matrix, then there exists an eigenvalue $\lambda(F)$ satisfying the following statements:
+\begin{enumerate}[label=(\alph*)]
+    \item $\lambda(F) \geq 0$ and there exists eigenvector $x$ with nonnegative entries, such that $Fx = \lambda(F) x$, $x \geq 0$.
+    
+    \item If $\mu$ is any other eigenvalue, then $|\mu| < \lambda(F)$.
+    
+    \item If $|\mu| = \lambda(F)$, then $\mu = e^{i2k\pi} \lambda(F)$ for some positive integer $m$ and $m \leq n$.
+\end{enumerate}
+\end{theorem}
 
 
 
@@ -9754,7 +9917,7 @@ Show that for every eigenvalue $\lambda$ of $A$, there exists $d_i$ such that
 \end{align*}
 \end{exercise}
 \begin{proof}
-Let $x$ be the eigenvector of $A$, then 
+Let $x = \left(x_1, \cdots, x_n\right)$ be the eigenvector of $A$, then 
 \begin{align*}
     (D + \varepsilon P)x = \lambda x,
 \end{align*}
@@ -9762,15 +9925,167 @@ which implies, for all $1\leq i \leq n$,
 \begin{align*}
     d_i x_i + \varepsilon \sum^n_j P_{ij}x_j = \lambda x_i.
 \end{align*}
-Thus, letting $|x_i| = 1$ gives
+Thus, letting $x_i = \max\{x_j\}^n_{j=1}$ and $|x_i| = 1$ gives
 \begin{align*}
-    |\lambda - d_i| \leq \varepsilon \sum^n_j P_{ij}
+    |\lambda - d_i| \leq \varepsilon \sum^n_j P_{ij} \leq \varepsilon n.
 \end{align*}
 \end{proof}
 
+\medskip
+
+\section{Matrix Inequalities}
+
+\begin{exercise}
+Let $A, B$ be self-adjoint, and $\lambda_k, \mu_k$ are eigenvalues of $A$ and $B$. Prove that $\lambda_k < \mu_k$ may not imply $A < B$. 
+\end{exercise}
+\begin{proof}
+Take $A = \begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix}$, and then $B - A$ is not positive. 
+\end{proof}
+
+\begin{remark}
+If eigenvalues of $A$ and $B$ are arranged in decreasinig order and $\lambda_k < \mu_k$, then $A < B$.
+\end{remark}
 
 
 
+
+\begin{exercise}
+Let $V$ be a finitely dimensional real Euclidean space and let $B$ be a positive semidefinite linear map on $V$.
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $(Bx, x) = 0$ implies $(Bx, y) + (x, By) = 0$ for all $y \in V$. {\bf Hint:} Consider the map $t \mapsto (B(x+ty), x+ty), t \in \mathbb{R}$.
+    
+    \item Deduce from (a) that the nullspace of $B$ equals the nullspace of $B^*$ and that the nullspace and range of $B$ are orthogonal.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Consider $f(t) = (B(x+ty), x+ty)$, then $f(t) \geq 0$ and $\min f(t) = f(0)$. Then, 
+    \begin{align*}
+        \dv{}{t} f(t) = \left(By, x+ty\right) + \left(B(x+ty), y\right),
+    \end{align*}
+    and thus $\dv{}{t} f(t)|_{t=0}$ implies $(Bx, y) + (x, By) = 0$.
+    
+    \item Since $B$ is also symmetric, then for any $x \in V$, $Bx = B^*x$, which implies $N_B = N_{B^*}$.
+    
+    Also, for any $x \in N_B$, $y \in R_B$, there exists a $z \in V$ such that $Bz = y$. Then, 
+    \begin{align*}
+        (x,y) = (x, Bz) = (B^*x, z) = 0,
+    \end{align*}
+    and hence $x, y$ are orthogonal. Thus, $N_B$ and $R_B$ are orthogonal.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Given $m$ positive numbers $r_j, 1\leq j \leq m$. Show that 
+\begin{align*}
+    G = \left(\frac{1}{r_i + r_j + 1}\right)_{m\times m}
+\end{align*}
+is positive definite.
+\end{exercise}
+\begin{proof}
+Let $f_j = x^{r_j}, 1\leq j \leq m$, and we define $(f,g) = \int^1_0 f(x)g(x)dx$, then we have 
+\begin{align*}
+    (f_i, f_j) = \int^1_0 x^{r_i}x^{r_j}dx = \frac{1}{r_i + r_j + 1}.
+\end{align*}
+Thus, $G$ is a Gram matrix, then $G$ is positive definite.
+\end{proof}
+
+\medskip
+
+\begin{exercise}\label{exercise_13104}
+ Let $A,B$ be two real positive matrices. Suppose that $AB = BA$, show that $AB > 0$.
+\end{exercise}
+\begin{proof}
+Since $AB = BA$, we can know that by Corollary \ref{diagonalized_same_time}, $A,B$ have the same eigensystem, i.e., if $x_j$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda_j$, then $x_j$ is also an eigenvector of $B$, since by Corollary \ref{self-adjoint-diagonal}, $A$ and $B$ are both diagonalizable. 
+
+Let $x_1, \cdots, x_n$ be a basis consisting of eigenvectors of $B$ corresponding to eigenvalues $\mu_1,\cdots,\mu_n$. Then we have
+\begin{align*}
+    \left(x_j, ABx_j\right) = \left(x_j, A\mu_j x_j\right) = \left(x_j, \mu_j Ax_j\right)
+\end{align*}
+also, since $A,B > 0$, then all $\mu_j > 0$, which imlpies $\left(x_j, \mu_j Ax_j\right) > 0$ for all $x_j$. Thus, $AB > 0$.
+\end{proof}
+
+\begin{proof}[Second Proof of Exercise \ref{exercise_13104}]
+Since $A$ and $B$ are both diagonalizable, then there exists unitary matrix $U$ such that
+\begin{align*}
+    A = U \Lambda_A U^{-1}, B = U \Lambda_B U^{-1},
+\end{align*}
+and then $AB = U \Lambda_A \Lambda_B U^{-1}$. Thus, $AB > 0$ since all eigenvalues of $A$ and $B$ are all positive.
+\end{proof}
+
+\begin{remark}
+$AB > 0$ may not hold if $AB \neq BA$, since $AB$ may not be self-adjoint.
+\end{remark}
+
+\medskip
+
+\begin{exercise}
+Let $A, B$ be self-adjoint, and $AB = BA$. Prove that
+\begin{align*}
+    A^2 + B^2 \geq 2AB.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Since $(A - B)^2 > 0$, then $A^2 - AB - BA + B^2 > 0$. With $AB = BA$, we have the results we want.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $n \geq 2$, and $A$ a real symmetric matrix such that $a_{ii} = 0$ for all $1 \leq i \leq n$. Suppose that $I + A$ is positive definite and $\lambda$ is an eigenvalue of $A$. Prove that $-1 < \lambda < n - 1$.
+\end{exercise}
+\begin{proof}
+Since $\tr(I + A) = n$ and $I + A$ is positive definite, then $0 < 1 + \lambda < n$, and hence $-1 < \lambda < n - 1$.
+\end{proof}
+
+\medskip
+
+\section{Kinematics and Dynamics}
+
+
+\medskip
+
+\section{Convexity}
+
+\begin{exercise}
+Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ is convex in the $n^2$ dimensional linear space of $n\times n$ real matrices. Find all extreme points of $K$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item Suppose $A = \left(a_{ij}\right)_{n\times n}$ and $B = \left(b_{ij}\right)_{n\times n}$ are stochastic matrices. Then for any $t\in (0,1)$, we can have 
+    \begin{align*}
+        \sum^n_{i=1} t a_{ij} + (1-t)b_{ij} = t \sum^n_{i=1} a_{ij} + (1-t) \sum^n_{i=1} b_{ij} = 1.
+    \end{align*}
+    Then, $tA + (1-t) B$ is also stochastic matrix. Hence, $K$ is a convex set.
+    
+    \item The permutation matrices are extreme points of $K$. Suppose permutation matrix $P = \frac{A + B}{2}$, where $A$ and $B$ are stochastic matrices. Since $a_{ij}, b_{ij} \in [0,1]$ and $P_{ij} = \frac{a_{ij} + b_{ij}}{2}$, then we have $A = B = P$. Thus, $P$ is an extreme point. 
+    
+    Also, for any matrix $M = \left(m_{ij}\right)_{n\times n}$ that is not a permutation matrix, it is not an extreme point. Indeed, there exist $i, j$ such that $m_{ij} \in (0,1)$. Then there exist stochastic matrices $A, B$ where $m_{ij} = \frac{a_{ij} + b_{ij}}{2}$. Thus, $M$ is not an extreme point.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\section{Positive Matrices}
+
+\begin{exercise}
+Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ is convex in the $n^2$ dimensional linear space of $n\times n$ real matrices. Find all extreme points of $K$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\arabic*)]
+    \item Suppose $A = \left(a_{ij}\right)_{n\times n}$ and $B = \left(b_{ij}\right)_{n\times n}$ are stochastic matrices. Then for any $t\in (0,1)$, we can have 
+    \begin{align*}
+        \sum^n_{i=1} t a_{ij} + (1-t)b_{ij} = t \sum^n_{i=1} a_{ij} + (1-t) \sum^n_{i=1} b_{ij} = 1.
+    \end{align*}
+    Then, $tA + (1-t) B$ is also stochastic matrix. Hence, $K$ is a convex set.
+    
+    \item The permutation matrices are extreme points of $K$. Suppose permutation matrix $P = \frac{A + B}{2}$, where $A$ and $B$ are stochastic matrices. Since $a_{ij}, b_{ij} \in [0,1]$ and $P_{ij} = \frac{a_{ij} + b_{ij}}{2}$, then we have $A = B = P$. Thus, $P$ is an extreme point. 
+    
+    Also, for any matrix $M = \left(m_{ij}\right)_{n\times n}$ that is not a permutation matrix, it is not an extreme point. Indeed, there exist $i, j$ such that $m_{ij} \in (0,1)$. Then there exist stochastic matrices $A, B$ where $m_{ij} = \frac{a_{ij} + b_{ij}}{2}$. Thus, $M$ is not an extreme point.
+\end{enumerate}
+\end{proof}
 
 
 
