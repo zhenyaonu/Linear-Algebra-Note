@@ -4690,7 +4690,7 @@ If $M,H$ are self-adjoint, all the eigenvalues of $M^{-1}H$ are real and $M^{-1}
 
 \medskip
 
-\section{Norm and eigenvalues}
+\section{Norm and Eigenvalues}
 
 We recall that $\|A\| = \max \|Ax\|, \|x\|=1$ or $\|A\| = \sup\frac{\|Ax\|}{\|x\|}$. Then we have the following theorem.
 
@@ -6382,8 +6382,104 @@ Consider a reflection in $\mathbb{R}^n$, when $n = 2$, a reflection is is a refl
 
 In particular, for $n = 3$, every rotation is the composition of two reflections about planes. When $n$ is odd, we can say more about {\em improper isometry}. Indeed, when $n$ is odd, every {\em improper isometry} admits the eigenvalue $-1$. Indeed, let $A: X \to X$ be an isometry, then $\Vert Ax \Vert = \Vert x \Vert$ for all $x \in X$. If $\lambda$ is an eigenvalue of $A$ with corresponding eigenvector $u$ such that $Au - \lambda u$, then by Theorem \ref{isometry_property}, eigenvalues of an isometry are either $1$ or $-1$. However, polynomials of odd degree always has some real root, then the the characteristic polynomial $\det (A - \lambda I)$ of $A$ has real root, which is either $1$ or $-1$. If $A$ is an {\em improper isometry}, then $\det (A) = -1$, and then $-1$ must be an eigenvalue of $A$, which implies there exists nonzero vector $w$ such that $Aw = - w$. By the second part of the proof, the hyperplane $H$ orthogonal to $Aw - w = -2w$ is in fact orthogonal to $w$, and thus $A$ is the composition of $k \leq n$ reflections about $H, F_1, \cdots, F_{k-1}$ such that $F_i = H_i \oplus L$, where $L = {\rm span}\{w\}$ that is orthogonal to $H$ and the $H_i$ are hyperplanes in $H$. However, $k$ must be odd, and so $k - 1$ is even, and thus the composition of the reflections $F_1, \cdots, F_{k-1}$ is a rotation.  Thus, when $n$ is odd, an {\em improper isometry} is the composition of a reflection about a hyperplane $H$ and a rotation consisting of reflections about hyperplanes $F_1, \cdots, F_{k-1}$ containing a line $L$, orthogonal to $H$. In particular, when $n = 3$, every improper orthogonal transformation is the composition of a rotation and a reflection about a plane orthogonal to the axis of rotation{\bf \cite{35}}.
 
-\end{subappendices}
+\medskip
 
+\section{Tensor Product}
+
+We can think of the tensor product of two linear spaces is to take one space as the space of polynomials in $x$ of degree less than $n$, denoted by $P_m(x)$, the other as polynomials in $y$ of degree less than $m$, denoted by $P_n(xy)$. The {\em tensor product} $P_n(x) \otimes P_m(y)$ is the space of polynomials in $x$ and $y$ of degree less than $n$ in $x$, less than $m$ in $y$. A natural basis for polynomials are the powers $1, x, \cdots, x^{n-1}$ and $1, y, \cdots, y^{m-1}$, then a basis for polynomials in $x$ and $y$ is $x^iy^j, 0 \leq i < n, 0 \leq j < m$.
+
+\medskip
+
+\begin{definition}
+Let $\{e_i\}$ be a basis of the linear space $U$, $\{f_j\}$ be a basis of the linear space $V$. Then the tensor product $U \otimes V$ can be defined as a space with basis $\{e_i \otimes f_j\}$.
+\end{definition}
+
+\medskip
+
+Now, we can define $U \otimes V$ in an invariant manner. Take the collection of all formal finite sums
+\begin{align}\label{formal_sums}
+    \sum u_i \otimes v_i,
+\end{align}
+where $u_i \in U$ and $v_i \in V$ are arbitrary vectors. These sums form a linear space, denoted by $F(U \times V)$. Consider the space $Z$ spanned by sums of the forms
+\begin{subequations}\label{null_sums}
+    \begin{align}
+        & (u_1 + u_2) \otimes v - u_1 \otimes v - u_2 \otimes v, \\
+        & u \otimes (v_1 + v_2) - u \otimes v_1 - u \otimes v_2, \\
+        & (\alpha u) \otimes v - \alpha u \otimes v, \\
+        & u \otimes (\alpha v) - \alpha u \otimes v.
+    \end{align}
+\end{subequations}
+These, and all their linear combinations, are called {\em null space}. Using these concepts, we can give a basis-free definition of tensor product.
+
+\medskip
+
+\begin{definition}
+The tensor product $U \otimes V$ of two finite-dimensional linear spaces $U$ and $V$ is the quotient space of the space of all formal sums (\ref{formal_sums}) module the space $Z$ of all null forms (\ref{null_sums}), i.e., $U \otimes V = F(U \times V)/Z$.
+\end{definition}
+
+
+\begin{theorem}
+Let $\{e_i\}^n_{i=1}$ and $\{f_j\}^m_{j=1}$ be basis of $U$ and $V$ respectively, then $e_i \otimes f_j, 1 \leq i \leq n, 1 \leq j \leq m$ form a basis of $U \otimes V$.
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item $\{e_i \otimes f_j\}, 1 \leq i \leq n, 1 \leq j \leq m$ span the space $U \otimes V$. Indeed, let $u_i = \sum^n_{k=1} \beta_{ik} e_k$ and $v_i = \sum^m_{k=1} \gamma_{ik} f_k$, then 
+    \begin{align*}
+        \sum \alpha_{i} u_i \otimes v_i = \sum_{i,j,k} \alpha_i \beta_{ik} \gamma_{ij} e_k \otimes f_j,
+    \end{align*}
+    and thus $\{e_i \otimes f_j\}$ form a basis.
+    
+    \item It remains to prove that $\{e_i \otimes f_j\}, 1 \leq i \leq n, 1 \leq j \leq m$ are linearly independent. Let $\{e_i^*\}^n_{i=1}$ and $\{f_j^*\}^m_{j=1}$ be the basis of dual space $U'$ and $V'$, such that 
+    \begin{align*}
+        e_i^*(e_j) = \delta_{ij}, \quad f_j^*(f_k) = \delta_{jk}.
+    \end{align*}
+    We define, for each $1 \leq k \leq n, 1 \leq l \leq m$, a map $\phi_{kl} \in (F(U \times V))'$, such that
+    \begin{align*}
+        \phi_{kl} \left(\sum \alpha_{i} u_i \otimes v_i \right) = \sum \alpha_i e_k^*(u_i) \cdot f_l^*(v_j).
+    \end{align*}
+    We claim that $Z \subset N_{\phi_{kl}}$. Then $\phi_{kl}$ induces a map $\widetilde{\phi}_{kl} \in U \otimes V$. Suppose $\sum c_{ij} e_i \otimes f_j = 0$, then
+    \begin{align*}
+        \widetilde{\phi}_{kl} \left(\sum c_{ij} e_i \otimes f_j \right) & = \phi_{kl} \left(\sum c_{ij} e_i \otimes f_j \right) \\
+        & =\sum c_{ij} e_k^*(e_i) \otimes f_l^*(f_j) \\
+        & = c_{ij} = 0.
+    \end{align*}
+    Thus, $\{e_i \otimes f_j\}, 1 \leq i \leq n, 1 \leq j \leq m$ are linearly independent.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+When $U$ and $V$ are equipped with real Euclidean structure, there is a natural way to equip $U \otimes V$ with Euclidean structure. One way is choose {\em orthonormal basis} $\{e_i\}, \{f_j\}$  for $U$ and $V$ respectively, and declare $\{e_i \otimes f_j\}$ to be an orthonormal basis for $U \otimes V$.  It remains to be shown that this Euclidean structure is independent of the choice of the orthonormal bases, ans this is based on the following lemma.
+
+\medskip
+
+\begin{lemma}
+Let $u_1, U_2$ be a pair of vectors in $U$, $v_1, v_2$ a pair of vectors in $V$. Then,
+\begin{align*}
+    (u_1 \otimes v_1, u_2 \otimes v_2) = (u_1, u_2)_U \cdot (v_1, v_2)_V.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Let
+\begin{align*}
+    u_1 = \sum \alpha_{1i} e_i, u_2 = \sum \alpha_{2i} e_i, \\
+    v_1 = \sum \beta_{1j} f_j, v_2 = \sum \beta_{2j} f_j.
+\end{align*}
+Then, 
+\begin{align*}
+    (u_1 \otimes v_1, u_2 \otimes v_2) & = \left(\sum \alpha_{1i} \beta_{ij} e_i \otimes f_j, \sum \alpha_{2i} \beta_{2j} e_i \otimes f_j \right) \\
+    & = \sum_{i,j} \alpha_{1i} \beta_{1j} \alpha_{2i} \beta_{2j} \\
+    & = (u_1, u_2)_U \cdot (v_1, v_2)_V.
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+\end{subappendices}
 
 \chapter{Kinematics and Dynamics}
 \section{Axis and Angle of Rotation}
@@ -7770,6 +7866,71 @@ Now we have
 
 \medskip
 
+\begin{exercise}
+Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $T: V \to V$ be linear. Show that for any subspace $W$ of $V$, 
+\begin{align*}
+    \dim T^{-1}(W) \leq \dim N_T + \dim W.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Suppose $U \subset V$ such that $T(U) = W$, then for $T|_U:U \to W$, we have
+\begin{align*}
+    \dim T(U) + \dim N_{T|_U} = \dim U = \dim T^{-1}(W).
+\end{align*}
+Also, with $\dim N_{T|_U} \leq \dim N_T$, we have 
+\begin{align*}
+    \dim T^{-1}(W) \leq \dim N_T + \dim T(U) = \dim N_T + \dim W.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ and $B$ are $n \times n$ matrices, and $A + B$ is invertible. Prove that 
+\begin{align*}
+    \rank A + \rank B \geq n.
+\end{align*}
+Also, show that 
+\begin{align*}
+    \rank A + \rank B = n
+\end{align*}
+if and only if
+\begin{align*}
+    R_A \cap R_B = \{0\}.
+\end{align*}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Since $A + B$ is invertible, then $A + B$ is full rank, which implies $\rank (A+B) = n$ and $N_{A+B} = \{0\}$. Then, $\dim N_{A+B} = 0$, and we have 
+    \begin{align*}
+        \dim (N_A + N_B) = \dim N_A + \dim N_B - \dim (N_A \cap N_B).
+    \end{align*}
+    Also, for $x\in N_A \cap N_B$, then $(A + B)x = 0$, hence $N_A \cap N_B \subset N_{A+B}$. Then we have $\dim (N_A \cap N_B) = 0$, which yields
+    \begin{align*}
+        \dim N_A + \dim N_B = \dim (N_A + N_B) \leq n.
+    \end{align*}
+    With rank-nullity theorem, we have
+    \begin{align*}
+        \rank A + \rank B = n - \dim N_A + n - \dim N_B \geq n.
+    \end{align*}
+    
+    \item \begin{enumerate}[label=\arabic*)]
+        \item If $\rank A + \rank B = n$, with the fact that $R_{A+B} \subset R_A + R_B$, then, $\dim (R_A + R_B) = n$,
+        \begin{align*}
+            n = \dim (R_A + R_B) = \rank A + \rank B - \dim (R_A \cap R_B),
+        \end{align*}
+        which implies $\dim (R_A \cap R_B)$. Hence, $R_A \cap R_B = \{0\}$.
+        
+        \item If $R_A \cap R_B = \{0\}$, then $\dim (R_A \cap R_B)$. Thus,
+        \begin{align*}
+            \rank A + \rank B = \dim (R_A + R_B) - \dim (R_A \cap R_B) = n - 0 = n.
+        \end{align*}
+    \end{enumerate}
+\end{enumerate}
+\end{proof}
+
+\medskip
+
 \section{Matrix}
 \begin{exercise}{\bf (April 2010 Prelim)}
 Suppose $A$ and $B$ are $n \times n$ matrices and $AB = 0$. Prove that $\rank A + \rank B \leq n$.
@@ -7889,6 +8050,168 @@ Suppose $A$ is not diagonalizable, then there exists an eigenvalue $\lambda$ and
     (A - \lambda I)x \neq 0, (A - \lambda I)^2 x = 0.
 \end{align*}
 Then, $(A - \lambda I)x \in N_{A - \lambda I} \cap R_{A - \lambda I} \neq \{0\}$, which is a contradiction. 
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A$ be an $n\times n$ matrix. Suppose that for any $1 \leq i \leq n$,
+\begin{align*}
+    |a_{ii}| > \sum_{1\leq j\leq n, j\neq i} |a_{ij}|.
+\end{align*}
+Show that $A$ is invertible.
+\end{exercise}
+\begin{proof}
+Suppose there exists $x = (x_1,\cdots, x_n) \neq 0$ such that $Ax = 0$, then we have $\sum^n_{j=1} a_{ij}x_j = 0, i = 1,2,\cdots,n$. Let $x_k = \max_{j}|x_j|$, and we have
+\begin{align*}
+    a_{kk}x_k & = - \sum_{j\neq k}a_{kj} x_j \\
+    \Rightarrow a_{kk} & = - \sum_{j\neq k}a_{kj} \frac{x_k}{x_j} 
+\end{align*}
+which implies 
+\begin{align*}
+    |a_{kk}| = \left|\sum_{j\neq k}a_{kj} \frac{x_k}{x_j}\right| \leq \sum_{j\neq k} |a_{kj}| \left|\frac{x_k}{x_j}\right| < \sum_{j\neq k} |a_{kj}|,
+\end{align*}
+where we used the fact that $\left|\frac{x_k}{x_j}\right| \leq 1$. Then this is a contradiction to the assumption. Then $0$ is not an eigenvalue of $A$, hence $A$ is invertible.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $A, B, C, D$ are $n \times n$ matrices satisfying
+\begin{align*}
+    AB = DB, AC = 2 DC.
+\end{align*}
+Show that 
+\begin{align*}
+    \rank A + \rank B + \rank C \leq 2n.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Since $AB = DB$, then we have $(A - D)B = 0$ and thus $R_B \subset N_{A-D}$. Similarly, we have $R_C \subset N_{A-2D}$. Then, 
+\begin{align*}
+    \rank B & \leq \dim N_{A - D} = n -  \rank (A - D), \\
+    \rank C & \leq \dim N_{A - 2D} = n - \rank (A - 2D).
+\end{align*}
+Then, we want to prove that $\rank A \leq \rank (A - D) + \rank (A - 2D)$. Also, $2(A - D) + (-(A - 2D)) = A$, and
+\begin{align*}
+    \rank 2(A - D) & = \rank (A - D), \\
+    \rank -(A - 2D) & = \rank (A - 2D).
+\end{align*}
+Thus, we have
+\begin{align*}
+    \rank A \leq \rank 2(A - D) + \rank -(A - 2D) = \rank (A - D) + \rank (A - 2D).
+\end{align*}
+Hence, we have $\rank A + \rank B + \rank C \leq 2n$.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose that $A_{n\times n}, B_{n\times m}, C_{m\times n}$ and $D_{m\times m}$ are matrices such that $\det A \neq 0$. Show that
+\begin{align*}
+    \det \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix} = \det A \det \left( D - C A^{-1} B\right).
+\end{align*}
+\end{exercise}
+\begin{proof}
+With elementary row operation, multiplying $- C A^{-1}$ with the first row and adding it to the second row yields
+\begin{align*}
+    \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix} = \begin{pmatrix}
+        A & B \\
+        0 & D - C A^{-1} B,
+    \end{pmatrix}
+\end{align*}
+since $\det A \neq 0$, and hence $A^{-1}$ exists. And it is obviously that 
+\begin{align*}
+    \det \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix} = \det A \det \left( D - C A^{-1} B\right).
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A, B, C, D$ be $n \times n$ matrices and 
+\begin{align*}
+    E = \begin{pmatrix}
+        A & B \\
+        C & D
+    \end{pmatrix}.
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that 
+    \begin{align*}
+        \det E = \det (AD - BC)
+    \end{align*}
+    when all matrices $A, B, C, D$ are diagonal.
+    
+    \item Prove that 
+    \begin{align*}
+        \det E = \det (AD - BC)
+    \end{align*}
+    when all matrices $A, B, C, D$ are upper triangular. 
+    
+    \item Prove that
+    \begin{align*}
+        \det E = \det (AD - BC)
+    \end{align*}
+    when all matrices $A, B, C, D$ commute. 
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item
+    \begin{enumerate}[label=\arabic*)]
+        \item If $A$ is invertible, then, with Problem 4, we have 
+        \begin{align*}
+            \det E & = det A \det \left( D - C A^{-1} B\right) \\
+            & = \det \left(AD - A C A^{-1} B\right) \\
+            & = \det \left(AD - C A A^{-1} B\right) \\
+            & = \det \left(AD - CB\right)\\
+            & = \det \left(AD - BC\right),
+        \end{align*}
+        where in the last two step we used the fact that $AC = CA$ and $BC = CB$ since $A,C,B$ are diagonal.
+        \item If $A$ is not invertible, then there exist $\varepsilon_k \to 0$ such that 
+        \begin{align*}
+            \det A_k = \det (A + \varepsilon_k I) \neq 0.
+        \end{align*}
+        Then, we have $A_k C = CA_k$. Thus, with similar argument in $1)$, 
+        \begin{align*}
+            \det E = \lim_{k\to \infty} \begin{pmatrix}
+            A_k & B \\
+            C & D
+        \end{pmatrix} = \lim_{k\to\infty} \det \left(A_k D - BC\right) = \det \left(AD - BC\right).
+        \end{align*}
+    \end{enumerate}
+    
+    \item If $D$ is invertible, then similar to Problem 4, we have $\det E = \det (A-BD^{-1}C)\det(D)$. Since $D$ is upper triangular, then so is $D^{-1}$. Then, 
+    \begin{align*}
+        \det (A-BD^{-1}C) & = \prod \left(A_{ii} - B_{ii} D^{-1}_{ii} C_{ii}\right) \\
+        & = \prod \left(A_{ii} - B_{ii} C_{ii} D^{-1}_{ii} \right) \\
+        & = \det (A-BCD^{-1}).
+    \end{align*}
+    It follows that
+    \begin{align*}
+        \det E = \det (A-BCD^{-1})\det(D) = \det (AD - BC).
+    \end{align*}
+    If $D$ is not invertible, with the similar argument in $(a)\,\,2)$, the result follows easily.
+    
+    \item If $D$ is invertible, and $A, B, C, D$ commute, then 
+    \begin{align*}
+        \det E & = \det (A-BD^{-1}C) \det(D) \\
+        & = \det (A-BD^{-1}CD) \\
+        & = \det (A-BD^{-1}DC) \\
+        & = \det (A-BC).
+    \end{align*}
+    If $D$ is not invertible, with the similar argument in $(a)\,\,2)$, the result follows easily.
+\end{enumerate}
 \end{proof}
 
 \medskip
@@ -8382,6 +8705,47 @@ In general, ${\rm tr} (AB - BA)^{2k+1} = 0$.
 
 
 \section{Spectral Theory}
+
+\begin{exercise}
+Let
+\begin{align*}
+    A = \begin{pmatrix} 
+        3 & 1 \\ 
+        -2 & 0 
+    \end{pmatrix}.
+\end{align*}
+Calculate 
+\begin{align*}
+    \sin A = \sum^\infty_{k=0} \frac{(-1)^k}{(2k+1)!}A^{2k+1}.
+\end{align*}
+\end{exercise}
+\begin{proof}
+The characteristic polynomial of $A$ is $\lambda^2 - 3\lambda + 3 = 0$. Then the eigenvalues are $\lambda = 1$, and $\lambda = 2$. Also, the eigenvectors are $\begin{pmatrix} -1 \\ 2 \end{pmatrix}$ and $\begin{pmatrix} -1 \\ 1 \end{pmatrix}$ respectively. Denote by 
+\begin{align*}
+    S = \begin{pmatrix} 
+        -1 & -1 \\ 
+        2 & 1 
+    \end{pmatrix}, \quad \Lambda = \begin{pmatrix} 
+        1 & 0 \\ 
+        0 & 2 
+    \end{pmatrix},
+\end{align*}
+then $A = S \Lambda S^{-1}$. Then,
+\begin{align*}
+    \sin A & = S \left(\sum^\infty_{k=0}  \frac{(-1)^k}{(2k+1)!} \Lambda^{2k+1} \right) S^{-1} \\
+    & = S \begin{pmatrix} 
+        \sin 1 & 0 \\ 
+        0 & \sin 2 
+    \end{pmatrix} S^{-1} \\
+    & = \begin{pmatrix} 
+        -\sin 1 - 2\sin 2 & -\sin 1 - \sin 2 \\ 
+        -2\sin 1 - 2\sin 2 & -2\sin 1 - \sin 2
+    \end{pmatrix}.
+\end{align*}
+\end{proof}
+
+\medskip
+
 \begin{exercise}
 Let $A$ be an invertible $n\times n$ matrix, show that there exists a
 polynomial $g$ such that
@@ -9013,6 +9377,24 @@ $V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\
 \medskip
 
 \begin{exercise}
+Suppose $V$ is the space of complex polynomials in $x$ and $y$ of total degree at most $3$, i.e.
+\begin{align*}
+    V = \left\{\sum_{i,j \geq 0,\,i+j \leq 3} a_{ij} x^i y^j \Bigg| a_{ij} \in \mathbb{C} \right\}.
+\end{align*}
+Consider $T: V \to V$ defined by 
+\begin{align*}
+    T: p \mapsto y \frac{\partial p}{\partial y}.
+\end{align*}
+Find the Jordan canonical form of $T$.
+\end{exercise}
+\begin{proof}
+$V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\}$, then $\dim V = 10$. And under operator $T$, the polynomial will become $\left\{0, 0, 0, 0, y, 2y^2, 3y^3, xy, x^2y, 2xy^2\right\}$. Then the matrix representing $T$ is diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$. So it the Jordan of $T$, which is also diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$.
+\end{proof}
+
+
+\medskip
+
+\begin{exercise}
 Let $N$ be a $3 \times 3$ nonzero matrix such that $N^2 = 0$. Show that $N$ is similar to
 \begin{align*}
     \begin{pmatrix}
@@ -9047,6 +9429,77 @@ Suppose $A^3$ is a unitary matrix. Prove that $A$ is diagonalizable.
 \end{exercise}
 \begin{proof}
 Since $A^3$ is unitary matrix, then of course $A^3$ is normal matrix, thus diagonalizable. Suppose $A^3 = S \Lambda_1 S^*$, where $S$ is unitary and $\Lambda_1$ is diagonal with diagonal entries $\lambda_1, \cdots, \lambda_m$. Then, consider diagonal matrix $\Lambda_2$ with diagonal entries $\sqrt[3]{\lambda_1}, \cdots, \sqrt[3]{\lambda_m}$, and it follows that $A = S \Lambda_2 S^*$. Hence, $A$ is also diagonalizable since $\lambda_i^3 \neq \lambda_j^3$ implies $\lambda_i \neq \lambda_j$ \cite{22}.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A$ be an $n \times n$ complex matrix with $\det A \neq 0$. Suppose $A^3$ is diagonalizable. Prove that $A^2$ is diagonalizable. Provide a counter example if $\det A = 0$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If $\det A \neq 0$, then $\det A^3 \neq 0$. Also, $A^3$ is diagonalizable, then $A^3$ has $n$ nonzero distinct eigenvalues. Then the Jordan canonical form $J_{A^3}$ of $A^3$ has $n$ size one blocks, each corresponding to its eigenvalues $\lambda_j, 1\leq j \leq n$. 
+    
+    Now consider the Jordan canonical form $J_{A}$ of $A$, then there exists $P$ such that $A = P J_{A} P^{-1}$ and 
+    \begin{align*}
+        P J_A^3 P^{-1} = P J_{A^3} P^{-1} = A^3,
+    \end{align*}
+    which implies each block in $J_{A^3}$ is power to the block in $J_A$, making each block in $J_A$ a size one block\cite{1}. Indeed, for each $\lambda_j$, if the multiplicity of $\lambda_j$ is greater than one, then its corresponding Jordan block satisfies\cite{2}
+    \begin{align*}
+        \begin{pmatrix}
+            \lambda_j & 1         & \cdots & \cdots & 0 \\
+                      & \lambda_j & \cdots & \cdots & 0 \\
+                      &           & \ddots &        & \vdots \\
+                      &           &        & \ddots & 1 \\
+                      &           &        &        & \lambda_j
+        \end{pmatrix}^n = 
+        \begin{pmatrix}
+            \begin{array}{cc}\lambda_j & \\ & \ddots \end{array} & * \\
+            0 & \lambda_j
+        \end{pmatrix}.
+    \end{align*}
+    This shows that each Jordan block of $A$ is size one. And so is $A^2$, then $A^2$ also has $n$ nonzero eigenvalues. Hence $A^2$ is also diagonalizable. 
+    
+    \item Take $A = \begin{pmatrix} 1 & 1 \\ 1 & -1  \end{pmatrix}$, and then $\det A = 0$. Then, $A^2 = \begin{pmatrix} 2 & 0 \\ 0 & 2  \end{pmatrix}$, and hence $A^2$ is not diagonalizable since it has repeated eigenvalues $\lambda = 2$. Also, $A^3 = \begin{pmatrix} 2 & 2 \\ 2 & -2  \end{pmatrix}$, and its eigenvalues are $\lambda = 2\sqrt{2}, - 2 \sqrt{2}$, which implies $A^3$ is diagonalizable.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrices, hence $\dim V = 4$. Let $E = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$. We define a linear map $T: V \to V$ such that 
+\begin{align*}
+    T(V) = VE - EV.
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item Find all eigenvalues of the linear map $T$.
+    
+     \item Find the Jordan canonical form the linear map $T$.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item For any $A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in V$, we have $T(A) = \begin{pmatrix} -c & a-d \\ 0 & c \end{pmatrix}$. We can write $A$ as $A = \begin{pmatrix} a & b & c & d \end{pmatrix}^T$, and then $T$ can be expressed as
+    \begin{align*}
+        T = \begin{pmatrix}
+            0 & 0 & -1 & 0 \\
+            1 & 0 & 0 & -1 \\
+            0 & 0 & 0 & 0  \\
+            0 & 0 & 1 & 0
+        \end{pmatrix}.
+    \end{align*}
+    Then the eigenvalue of $T$ is $0$ with multiplicity $4$.
+    
+    \item Also, $\dim N_{T-0I} = 3$, then there are three Jordan blocks in its Jordan canonical form, which is
+    \begin{align*}
+        J_T = \begin{pmatrix}
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0  \\
+            0 & 0 & 0 & 0
+        \end{pmatrix}.
+    \end{align*}
+\end{enumerate}
 \end{proof}
 
 \medskip
@@ -9570,7 +10023,7 @@ symmetric matrices.
 \begin{proof}
 We denote the relation of congruence by $\sim$.
 \begin{enumerate}[label=(\alph*)]
-    \item \begin{enumerate}[label=\arabic*).]
+    \item \begin{enumerate}[label=\arabic*)]
         \item For $A$ is a symmetric matrix, then we have $A\sim A$, since $A = I^TAI$, where $I$ is identity matrix.
         \item For $A,B$ are symmetric matrices, we have if $A\sim B$ , then $B\sim A$. Since if $A = S^TBS$, where $S$ is invertible, then we have $B = (S^T)^{-1}AS^{-1}$, which means $B\sim A$.
         \item For $A,B$ and $C$ are symmetric matrices, we have if $A\sim B,B\sim C$, then $A\sim C$. Since if we have $A = S^TBS$ and $B = P^TCP$, then we have $A = S^TP^TCPS = (PS)^TCPS$, which implies $A\sim C$. Then we proved the congruence is an equivalence relation.
@@ -9839,6 +10292,65 @@ and if $A = P B P^{-1}$, then
 Using QR decomposition, $A$ can be written as a product of one orthogonal matrix and one real symmetric matrix.
 \end{proof}
 
+\medskip
+
+\begin{exercise}
+Let $A$ be a $2\times 2$ complex matrix. Show that $\|A\| = r(A)$ if and only if $A$ is normal. Show that the statement is not true if $A$ is an $n\times n$ matrix with $n \geq 3$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Suppose $A_{2\times 2}$ is complex matrix and $AA^* = A^* A$.
+    \begin{enumerate}[label=\arabic*)]
+        \item $r(A) \leq \|A\|$. Indeed, for eigenvalue $\lambda_j$ and the corresponding eigenvector $x_j$, we have $Ax_j = \lambda_j x_j$ and 
+        \begin{align*}
+            \|Ax_j\| = \left|\lambda_j\right| \|x_j\| \leq \|A\| \|x_j\|.
+        \end{align*}
+        Hence, $\max|\lambda_j| = r(A) \leq \|A\|$.
+        
+        \item $A$ is normal, then there exists orthogonal basis of $X$ consisting of eigenvectors of $A$. For any $x\in X$, $x = \sum^n_{i=1} c_j x_j$, applying $A$ to $x$ gives
+        \begin{align*}
+            Ax = \sum^n_{i=1} c_j \lambda_j x_j.
+        \end{align*}
+        Then we have
+        \begin{align*}
+            \frac{\|Ax\|}{\|x\|} = \left(\frac{\sum^n_{i=1} c_j^2 \lambda_j^2 }{\sum^n_{i=1} c_j^2}\right)^{\frac{1}{2}} \leq \max \lambda_j = r(A).
+        \end{align*}
+        Hence, $\|A\| = \frac{\|Ax\|}{\|x\|} \leq r(A)$.
+    \end{enumerate}
+    Thus, $\|A\| = r(A)$.
+    
+    \item If $\|A\| = r(A)$, then we set $A = \begin{pmatrix}  
+        a & b \\
+        c & d
+    \end{pmatrix}$. Also, we have $\|A\| = \sqrt{A^*A}$. Then after computing, we have $b = c$, which implies $A$ is normal.
+    
+    \item Now take $A = \begin{pmatrix} 
+        1 & 1 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 2
+    \end{pmatrix}$, then $\|A\| = 2 = \sqrt{r(A^* A)}$. However, $AA^* - A^* A \neq 0$, which implies $A$ is not normal. 
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A,B$ be $n \times n$ matrices. Suppose $A$ is a Hermitian matrix.
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $A^{2015}B = B A^{2015}$ implies that $A^{2014}B = B A^{2014}$.
+    
+    \item Is it true that $A^{2014}B = B A^{2014}$ implies that $A^{2015}B = B A^{2015}$?
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Since $A$ is a Hermitian matrix, then there exists invertible matrix $P$ such that $A = P \Lambda P^{-1}$, where
+    $\Lambda = \left[\lambda_1, \cdots, \lambda_n\right]$ is a diagonal matrix. Let $\widetilde{B} = P^{-1}\Lambda P$, then $$\Lambda^{2015} \widetilde{B} = \widetilde{B} \Lambda^{2015}.$$
+    Then for $ij$-th entry, we have $\lambda_i^{2015} b_{ij} = b_{ij} \lambda_j^{2015}$. Then $\lambda_i = \lambda_j$, and hence $\lambda_i^{2014} b_{ij} = b_{ij} \lambda_j^{2014}$. Hence, $A^{2014}B = B A^{2014}$.
+    
+    \item It is not true. Since similarly to argument in $(a)$, we have $\lambda_i^{2014} b_{ij} = b_{ij} \lambda_j^{2014}$, and then $\lambda_i = \lambda_j$ or $\lambda_i = - \lambda_j$. In the case $\lambda_i = - \lambda_j$, we have $\lambda_i^{2015} b_{ij} = - b_{ij} \lambda_j^{2015}$. Thus, $A^{2015}B \neq B A^{2015}$.
+\end{enumerate}
+\end{proof}
 
 \medskip
 
@@ -10042,12 +10554,120 @@ Since $\tr(I + A) = n$ and $I + A$ is positive definite, then $0 < 1 + \lambda <
 
 \medskip
 
+\begin{exercise}
+Let $A$ be a complex $n \times n$ matrix which commutes with all reflection matrices of the form
+\begin{align*}
+    R = I - 2 v v^T,
+\end{align*}
+where $v \in \mathbb{R}^n$ is a unit vector. Is it true that $A = kI$ for some scalar $k$?
+\end{exercise}
+\begin{proof}
+For any $R$, we have $A \left(I - 2 v v^T\right) = \left(I - 2 v v^T\right) A$, then we have $A v v^T = v v^T A$. Then, $A$ maps $N_{v v^T - \lambda I} \to N_{v v^T - \lambda I}$, for some eigenvalue $\lambda$ of $v v^T$. Indeed, for any $x \in N_{v v^T - \lambda I}$, we have $A v v^T x - \lambda Ax = 0$, with $A v v^T = v v^T A$, we have $v v^T(Ax) = \lambda (Ax)$.
+
+Then for all $x\in N_{v v^T - \lambda I}$, there exists $\lambda \in \mathbb{C}$, we have $Ax = \lambda x$. Then, $A = kI$, otherwise, it cannot have above property.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $\Pi$ be the plane in $\mathbb{R}^3$ defined by
+\begin{align*}
+    x + 2y + 3z = 0.
+\end{align*}
+Let $T$ be the reflection in $\mathbb{R}^3$ about the plane $\Pi$. Find the matrix representation of $T$.
+\end{exercise}
+\begin{proof}
+The normal vector, which perpendicular to the plane $\Pi$, is $n = (1,2,3)$. For any vector $r = (x,y,z)$ and its reflection $r' = (x',y',z')$, then the normal component of $r_n'$ with respect to the plane is\cite{44}:
+\begin{align*}
+    r_n' = \frac{r \cdot n}{n \cdot n} n,
+\end{align*}
+and then the reflected vector is
+\begin{align*}
+    r' & = r - 2 \frac{r \cdot n}{n \cdot n} n \\
+    & = \left(x - \frac{x + 2y + 3z}{7}, y - 2\frac{x + 2y + 3z}{7}, z - 3 \frac{x + 2y + 3z}{7} \right).
+\end{align*}
+Thus the matrix reperesentation is 
+\begin{align*}
+    T = \begin{pmatrix}
+        \frac{6}{7}  & -\frac{2}{7} & -\frac{3}{7} \\
+        -\frac{2}{7} & \frac{3}{7}  & -\frac{6}{7} \\
+        -\frac{3}{7} & -\frac{6}{7} & -\frac{2}{7}
+    \end{pmatrix}.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $U$ and $V$ be two real linear spaces with $\dim U, \dim V \geq 2$. Suppose $u_1, u_2$ are linearly independent in $U$ and $u_1, u_2$ are linearly independent in $V$. Show that the four vectors $u_1\otimes v_1, u_1\otimes v_2, u_2\otimes v_1$ and $u_2\otimes v_2$ are linearly independent.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item If $\dim U = \dim V = 2$, then we are done, since $\{u_1,u_2\}$ and $\{v_1,v_2\}$ are basis for $U$ and $V$ respectively. 
+    \item Otherwise, we assume $\dim U = m$ and $\dim V = n$. Then we can extend $\{u_1,u_2\}$ and $\{v_1,v_2\}$ into $\{u_1,\cdots,u_m\}$ and $\{v_1,\cdots,v_n\}$, which are basis for $U$ and $V$ respectively. Then it is obvious that $\{u_j\otimes v_j\}$ are linearly independent.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
 \section{Kinematics and Dynamics}
 
+\begin{exercise}
+Construct a continuous matrix function $A(t)$ where $A(t)$ is an anti-symmetric real $3\times 3$ matrix for each $t$ such that the unique solution to
+\begin{align*}
+    \left\{ 
+    \begin{aligned}
+        & M_t = A(t)M,\\
+        & M(0) = I,
+    \end{aligned}
+    \right.
+\end{align*}
+is not give by $\exp\left(\int^t_0 A(s)\, ds \right)$.
+\end{exercise}
+\begin{proof}
+We can set $A$ as 
+\begin{align*}
+    A = \begin{pmatrix}
+        0 & t & 0 \\
+        -t & 0 & 0 \\
+        0 & 0 & 0 
+    \end{pmatrix},
+\end{align*}
+and we can solve for $M$, which is
+\begin{align*}
+    M = \begin{pmatrix}
+        \sin \frac{t^2}{2} + \cos \frac{t^2}{2} &  \sin \frac{t^2}{2} & 0 \\
+        \cos \frac{t^2}{2} - \sin \frac{t^2}{2} &  \cos \frac{t^2}{2} & 0 \\
+        0 & 0 & 1 
+    \end{pmatrix}.
+\end{align*}
+Also, we have 
+\begin{align*}
+    e^{\int^t_0 A(s)\, ds} = \begin{pmatrix}
+        1 & \frac{1}{2} t^2 & 0 \\
+        -\frac{1}{2} t^2 & 1 & 0 \\
+        0 & 0 & 1 
+    \end{pmatrix}.
+\end{align*}
+Then when $A$ depends on $t$ and $A(t)$ does not commute with $\int^t_0 A(s)\, ds$, the solution cannot be represented by $e^{\int^t_0 A(s)\, ds}$.
+\end{proof}
 
 \medskip
 
 \section{Convexity}
+
+\begin{exercise}
+Let $K$ be a bounded nonempty closed convex set of a finite dimensional linear space $X$. Show there exists at least one extreme point of $K$.
+\end{exercise}
+\begin{proof}
+Since $K$ is a bounded and closed convex set in finite dimensional space $X$, then we can find $x\in K$ such that $\|x\|$ is maximized. We prove by contradiction and suppose that there is a $y\neq 0$ such that $x+y \in K$, then 
+\begin{align*}
+    2\|x\|^2 \geq \|x+y\|^2 + \|x-y\|^2 = 2\|x\|^2 + 2\|y\|^2 > 2\|x\|^2,
+\end{align*}
+which is a contradiction. Thus, $K$ has at least one extreme point.
+\end{proof}
+
+\medskip
 
 \begin{exercise}
 Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ is convex in the $n^2$ dimensional linear space of $n\times n$ real matrices. Find all extreme points of $K$.
@@ -10064,6 +10684,69 @@ Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ 
     
     Also, for any matrix $M = \left(m_{ij}\right)_{n\times n}$ that is not a permutation matrix, it is not an extreme point. Indeed, there exist $i, j$ such that $m_{ij} \in (0,1)$. Then there exist stochastic matrices $A, B$ where $m_{ij} = \frac{a_{ij} + b_{ij}}{2}$. Thus, $M$ is not an extreme point.
 \end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let 
+\begin{align*}
+    K = \left\{(x,y)\in \mathbb{R}^2: |x| < 1, |y| < 2\right\}.
+\end{align*}
+Find its support function $q_K$. Here you can identify any $l\in \left(\mathbb{R}^2\right)'$ as $(l_1,l_2)\in \mathbb{R}^2$ such that
+\begin{align*}
+    l(x+y) = l_1 x + l_2 y.
+\end{align*}
+\end{exercise}
+\begin{proof}
+First we consider the region $x > 0, y > 0$ and split it into two regions $R_1 = \{x > 0, y < 2x\}$ and $R_2 = \{x > 0, y \geq 2x\}$. In $R_1$, for any point $(x,y) \in \mathbb{R}^2$, we have \begin{align*}
+    (x,y)\cdot\left(1, \frac{y}{x}\right) & = x + \frac{y^2}{x} \\
+    & \leq x + \frac{2y^2}{y} \\
+    & = x + 2y = (x,y)\cdot(1,2),
+\end{align*}
+which implies $q_K(l) = x + 2y$, where $l_1 = 1$ and $l_2 = 2$. Similarly, we can have for region $R_2$, $q_K(l) = x + 2y$. With the same argument, we can have
+\begin{align*}
+    q_K(l) = \left\{
+    \begin{aligned}
+        & x + 2y, & x > 0, y > 0 \\
+        & -x - 2y, & x \leq 0, y < 0 \\
+        & -a, & x < 0, b = 0 \\
+        & a, & x > 0, b = 0 \\
+        & x - 2y, & x > 0, b < 0 \\
+        & -x + 2y, & x \leq 0, y > 0.
+    \end{aligned}
+    \right.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let 
+\begin{align*}
+    K = \left\{(x,y)\in\mathbb{R}^2: |x| < 1, |y| < 1 \right\}.
+\end{align*}
+Show that $K$ is convex and find its gauge function $p_K$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item For any $x = (x_1, x_2), y = (y_1, y_2) \in K$ and $t\in (0,1)$, we define $z = (tx_1 + (1-t)y_1,tx_2 + (1-t)y_2)$. And we have
+    \begin{align*}
+        |tx_1 + (1-t)y_1| \leq t|x_1| + (1-t)|x_2| \leq \max \{x_1, x_2\} < 1,
+    \end{align*}
+    similarly, $|tx_2 + (1-t)y_2| < 1$. Thus we have $z\in K$, and hence $K$ is convex.
+    
+    \item $p_K = \max \{x,y\}$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $K$ be a bounded nonempty closed convex set of a linear space $X$ with $\dim X = n$. Suppose in addition that $K$ contains at least one interior point. Show that $K$ has at least $n+1$ extreme points. 
+\end{exercise}
+\begin{proof}
+With Caratheodory theorem, we can know that every point in $K$ can be represented by at most $n+1$ extreme points, then we can know that $K$ at least $n+1$ extreme points.
 \end{proof}
 
 \medskip
@@ -10074,7 +10757,7 @@ Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ 
 Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ is convex in the $n^2$ dimensional linear space of $n\times n$ real matrices. Find all extreme points of $K$.
 \end{exercise}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item Suppose $A = \left(a_{ij}\right)_{n\times n}$ and $B = \left(b_{ij}\right)_{n\times n}$ are stochastic matrices. Then for any $t\in (0,1)$, we can have 
     \begin{align*}
         \sum^n_{i=1} t a_{ij} + (1-t)b_{ij} = t \sum^n_{i=1} a_{ij} + (1-t) \sum^n_{i=1} b_{ij} = 1.
@@ -10087,10 +10770,86 @@ Let $K$ be the collection of all $n\times n$ stochastic matrices. Show that $K$ 
 \end{enumerate}
 \end{proof}
 
+\medskip
 
+\begin{exercise}
+Let $P = \left(P_{ij}\right)_{n\times n}$ be an entrywise positive matrix and $\lambda$ be its dominant eigenvalue. Show that 
+\begin{align*}
+    \min_{i} \sum^n_{j=1} P_{ij} \leq \lambda(P) \leq \max_{i} \sum^n_{j=1} P_{ij}.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Suppose $\lambda$ be its dominant eigenvalue, then $\lambda > 0$ and there exists eigenvector $x$ with $x_i > 0$. Then, we have $Px = \lambda x$ and 
+\begin{align*}
+    \sum^n_{i=1}\sum^n_{j=1} P_{ij} x_j = \sum^n_{i=1} \lambda x_j.
+\end{align*}
+Then, with the change of order of the summation, we have 
+\begin{align*}
+    \left(\min_{i} \sum^n_{j=1} P_{ij} \right) \left(\sum^n_{j=1}x_j\right) \leq \lambda \sum^n_{j=1}x_j \leq \left(\max_{i} \sum^n_{j=1} P_{ij} \right) \left(\sum^n_{j=1}x_j\right),
+\end{align*}
+and hence
+\begin{align*}
+    \min_{i} \sum^n_{j=1} P_{ij} \leq \lambda(P) \leq \max_{i} \sum^n_{j=1} P_{ij}.
+\end{align*}
+\end{proof}
 
+\medskip
 
+\begin{exercise}
+Let $P = \left(P_{ij}\right)_{n\times n}$ be an entrywise positive matrix and $\lambda$ be its dominant eigenvalue. Suppose $u,v\in \mathbb{R}^n$ are two positive vector such that
+\begin{align*}
+    Pu = \lambda u, P^T v = \lambda v.
+\end{align*}
+Show that
+\begin{align*}
+    \lim_{k\to\infty} \frac{1}{\lambda^k} P^k = \frac{1}{(u,v)} u v^T.
+\end{align*}
+\end{exercise}
+\begin{proof}
+For matrix $P/\lambda$, it has dominant eigenvalue $1$. Now suppose $w$ is a generalized eigenvector of $P$ with eigenvalue $\beta$. With Perron theorem, we have $|\beta| < \lambda$, then 
+\begin{align*}
+    \lim_{k\to\infty} \left(\frac{P}{\lambda}\right)^k w = 0.
+\end{align*}
+Then $\left(P/\lambda \right)^k$ converges to a matrix $M$ which fixes $u$ and $v$. We claim $M = \frac{1}{(u,v)} u v^T$. 
 
+First we note that $v^T M = \frac{1}{(u,v)} (v^T u) v^T = v^T$ and $Mu = u$. Then any other generalized eigenvector $w$ for eigenvalue $\beta \neq \lambda$, we have $Mw = 0$. If not, $Mw = \frac{1}{(u,v)} u v^T w \neq 0$, which implies $v^T w \neq 0$, and then for all $k > 0$, 
+\begin{align*}
+    \lambda^k v^T w = v^T P^k w = v^T \left(P^k w\right),
+\end{align*}
+and hence 
+\begin{align*}
+    v^T w = \frac{1}{\lambda^k} v^T \left(P^k w\right),
+\end{align*}
+which is a contradiction, since 
+\begin{align*}
+    \lim_{k\to\infty} \frac{1}{\lambda^k} P^k w = 0.
+\end{align*}
+Thus, we have
+\begin{align*}
+    \lim_{k\to\infty} \frac{1}{\lambda^k} P^k = \frac{1}{(u,v)} u v^T.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A = \left(a_{ij}\right)_{n\times n}$ be a matrix such that
+\begin{align*}
+    |a_{ij}| \leq 1, \quad \mbox{for all $1\leq i,j \leq n$.}
+\end{align*}
+Show that there exists a constant $\Lambda > 0$ such that
+\begin{align*}
+    |\lambda| \leq \Lambda
+\end{align*}
+holds for any eigenvalue $\lambda$ of $A$. Find the smallest such $\Lambda$ and justify your answer.
+\end{exercise}
+\begin{proof}
+With the norm of $A$ and the spectral radius $r(A)$, we have
+\begin{align*}
+    |\lambda| \leq |r(A)| \leq \|A\| \leq \|A\|_{HS} = \left(\sum_{i,j}|a_{ij}|^2\right)^{\frac{1}{2}} \leq n,
+\end{align*}
+which implies that there exists a constant $\Lambda > 0$ such that $|\lambda| \leq \Lambda$.  
+\end{proof}
 
 
 
