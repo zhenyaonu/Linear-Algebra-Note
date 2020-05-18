@@ -5402,7 +5402,7 @@ Let $A, B$ be two $m \times n$ matrices. The Hadamard product of $A, B$ is defin
 
 \medskip
 
-\begin{theorem}[Schur's Theorem]
+\begin{theorem}[Schur's Theorem]\label{schur_theorem}
 Let $A = \left(a_{ij}\right)_{n\times n}, B = \left(b_{ij}\right)_{n\times n}$ denote positive matrices. Then $A \odot B$ is also positive.
 \end{theorem}
 \begin{proof}
@@ -6473,6 +6473,55 @@ Then,
 \end{align*}
 \end{proof}
 
+\medskip
+
+\begin{proof}[Second Proof of Schur's Theorem \ref{schur_theorem}]
+Since $A, B > 0$, then there exist $\{u_i\}^n_{i=1} \subset U$ and $\{v_i\}^n_{i=1} \subset U$, which are linearly independent such that
+\begin{align*}
+    a_{ij} = (u_i, u_j), \quad b_{ij} = (v_i, v_j).
+\end{align*}
+Then, 
+\begin{align*}
+    (A \odot B)_{ij} = \left(u_i \otimes v_i, u_j \otimes v_j \right),
+\end{align*}
+and $\{u_i \otimes v_i\}^n_{i=1}$ are linearly independent in $U \otimes V$. Thus, $A \odot B$ is also positive.
+\end{proof}
+
+\section{Gershgorin's Theorem}
+
+\begin{theorem}[Gershgorin Circle Theorem]
+Let $A$ be an $n \times n$ matrix with complex entries. Decompose it as 
+\begin{align*}
+    A = D + F,
+\end{align*}
+where $D = \left[d_1, \cdots, d_n\right]$ is the diagonal matrix equal to the diagonal of $A$, i.e., $d_i = a_{ii}, 1 \leq i \leq n$, and $F$ has zero diagonal entries. Denote by $f_i$ the $i$th row of $F$. Then every eigenvalue of $A$ is contained in one of the circles
+\begin{align*}
+    C_i = \left\{z \in \mathbb{C}: |z - d_i| \leq \|f_i\|_1 \right\},
+\end{align*}
+where $\|u\|_1 = \sum^n_{i=1} |u_i|$.
+\end{theorem}
+\begin{proof}
+Let $u$ be an eigenvector of $A$ such that
+\begin{align*}
+    Au = \lambda u,
+\end{align*}
+and $\|u\|_\infty = \max_{1\leq i \leq n}|u_i| = 1$. Then, $|u_j| \leq 1$ for each $j$ and $|u_i| = 1$ for some $i$. Writing $A = D + F$, the $i$th entry of $Au = \lambda u$ can be written as 
+\begin{align*}
+    (d_i e_i + f_i)u = \lambda u_i.
+\end{align*}
+Then, we have $(\lambda - d_i)u_i = f_i u$, and thus
+\begin{align*}
+    |\lambda - d_i| = \|f_i u\| \leq \|f_i\|_1.
+\end{align*}
+\end{proof}
+
+\begin{remark}
+If $C_i$ is disjoint from all other Gershgorin discs, then $C_i$ contains exactly one eigenvalue of $A$.
+\end{remark}
+\begin{proof}
+Let $B(t) = D + tF, t \in [0,1]$. The eigenvalues of $B(t)$ are continuous functions of $t$. For $t = 0$, the eigenvalues of $B(0)$ are the diagonal entries of $A$. As $t$ foes from $0$ to $1$, the radius of Gershgorin circles corresponding to $B(t)$ become bigger while the centers remain the same. So we can find for each $d_i$ a continuous path $\gamma_i(t)$ such that $\gamma_i(0) = d_i$ and $\gamma_i(t)$ is an eigenvalue of $B(t), 0 \leq t \leq 1, i = 1, \cdots, n$. Moreover, by Gershgorin Circle Theorem, each path $\gamma_i(t), 0 \leq t \leq 1$ is contained in a disc $C_i = \left\{z \in \mathbb{C}: |z - d_i| \leq \|f_i\|_1 \right\}$. If for some $i_1$ and $i_2$ with $i_1 \neq i_2$, $\gamma_{i_2}(0)$ falls into $C_{i_1}$, then it is necessary that $C_i \cap C_2 \neq \varnothing$. This implies that for any Gershgorin disc that is disjoint from all the other Gershgorin discs, there is only one eigenvalue of $A$ falls within it.
+\end{proof}
+
 
 
 
@@ -7334,9 +7383,6 @@ Let $F$ be $n \times n$ entrywise nonnegative matrix, then there exists an eigen
     \item If $|\mu| = \lambda(F)$, then $\mu = e^{i2k\pi} \lambda(F)$ for some positive integer $m$ and $m \leq n$.
 \end{enumerate}
 \end{theorem}
-
-
-
 
 
 
