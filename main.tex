@@ -73,7 +73,7 @@
 
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[section]
+\newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{exercise}{Exercise}[section]
@@ -3779,7 +3779,7 @@ A sequence of vectors $\{x_n\}$ in Euclidean space $X$ converges to $x\in X$ if 
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{cauchy_sequence_eclidean_theorem}
 A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilon > 0$, there exists $N > 0$,  such that for all $k, j \geq N$, $\|x_k - x_j\| < \varepsilon$. 
 \begin{enumerate}[label=(\alph*)]
     \item Completeness: every Cauchy sequence in a finite-dimensional Euclidean space is convergent.
@@ -3905,7 +3905,7 @@ The norm of $x\in X$ is defined as: $\|x\| = \sqrt{(x,x)}$.
 
 \medskip
 
-\begin{theorem}[Schwarz Inequality]
+\begin{theorem}[Schwarz Inequality]\label{schwarz_inequality}
 $$|(x,y)|\leq \|x\|\cdot \|y\|.$$
 \end{theorem}
 \begin{proof}
@@ -6658,7 +6658,7 @@ where, by Theorem \ref{matrix_exponential}, the last step cannot hold if $\int^t
 
 
 
-\chapter{Convexity}
+\chapter{Convexity}\label{convexity}
 
 \section{Convex Sets}
 
@@ -7383,6 +7383,314 @@ Let $F$ be $n \times n$ entrywise nonnegative matrix, then there exists an eigen
     \item If $|\mu| = \lambda(F)$, then $\mu = e^{i2k\pi} \lambda(F)$ for some positive integer $m$ and $m \leq n$.
 \end{enumerate}
 \end{theorem}
+
+
+
+\chapter{Normed Linear Spaces}
+
+\section{Norm}
+
+In Chapter \ref{convexity}, we saw that every open, convex set $K$ in a linear space $X$ over $\mathbb{R}$ containing the origin can be described as the set of vectors $x$ satisfying $p(x) < 1$, where $p$, the gauge function of $K$, is subadditive, positive homogeneous and positive except at the origin. Now we consider such functions with one additional property: evennss, i.e., $p(-x) = p(x)$. Such function is called a {\em norm}, and is denoted by $\|x\|$. Then a {\em norm} should satisfies the following properties:
+\begin{enumerate}[label=(\roman*)]
+    \item Positivity: $\|x\| > 0$ for $x \neq 0$, $|0| = 0$.
+    
+    \item Subadditivity: $\|x + y\| \leq \|x\| + \|y\|$.
+    
+    \item Homogeneity: $\|kx\| = |k| \cdot\|x\|$ for any real number $k$.
+\end{enumerate}
+A linear space with a norm is called a {\em normed linear space}.
+
+\medskip
+
+\begin{definition}
+The set of points $x$ in $X$ satisfying $\|x\| < 1$ is called the open unit ball around the origin, the set $\|x\| \leq 1$ is called the closed unit ball.
+\end{definition}
+
+\medskip
+
+\begin{corollary}
+The open unit ball $B(0,1) = \{x \in X: \|x\| < 1\}$ is convex.
+\end{corollary}
+\begin{proof}
+For $x_, x_2 \in B(0,1)$ and $t \in [0,1]$, we have
+\begin{align*}
+    \|tx_1 + (1-t)x_2\| & \leq t\|x_1\| + (1-t)\|x_2\| < 1.
+\end{align*}
+Thus, $tx_1 + (1-t)x_2 \in B(0,1)$ and hence $B(0,1)$ is convex.
+\end{proof}
+
+\begin{remark}
+The closed unit ball $\{x \in X: \|x\| \leq 1\}$ is also convex.
+\end{remark}
+
+\medskip
+
+\begin{definition}
+For $p$ any real number, $1 \leq p$, we define $L^p$ norm by 
+\begin{align*}
+    \|x\|_p = \left(\sum^n_{i=1} |x_i|^p \right)^{1/p}.
+\end{align*}
+\end{definition}
+
+\medskip
+
+\begin{theorem}[Hölder's Inequality]
+Let $p$ and $q$ be positive numbers such that 
+\begin{align*}
+    \frac{1}{p} + \frac{1}{q} = 1.
+\end{align*}
+Let $x = (x_1, \cdots, x_n)$ and $y = (y_1, \cdots, y_n)$ be two vectors, then 
+\begin{align*}
+    \|xy\|_1 = \sum^n_{i=1} \left|x_i y_i\right| \leq \|x\|_p \|y\|_q.
+\end{align*}
+\end{theorem}
+\begin{proof}
+Note that $f(x) = \ln x$ is a concave function on $(0, \infty)$, then for $x, y > 0, x \neq y$ and $t \in [0,1]$, 
+\begin{align*}
+    t f(x) + (1-t) f(y) \leq f(tx + (1-t)y),
+\end{align*}
+which is equivalent to $x^t y^{1-t} \leq tx + (1-t)y$. Let $x_i = \frac{|x_i|^p}{\|x\|^p_p}$ and $y_i = \frac{|y_i|^q}{\|x\|^q_q}$, then for $t = \frac{1}{p}$, we have
+\begin{align*}
+    \frac{|x_i y_i|}{\|x\|_p \|y\|_q} \leq \frac{1}{p} \frac{|x_i|^p}{\|x\|^p_p} + \frac{1}{q} \frac{|y_i|^q}{\|x\|^q_q},
+\end{align*}
+taking summation on both sides gives
+\begin{align*}
+    \sum^n_{i=1} |x_i y_i| \leq \|x\|_p \|y\|_q.
+\end{align*}
+\end{proof}
+
+\begin{remark}
+For $p = q = 2$, Hölder's inequality is the Schwarz inequality in Theorem \ref{schwarz_inequality}.
+\end{remark}
+
+\medskip
+
+\begin{corollary}\label{norm_limit_corollary}
+\begin{align*}
+    \|x\|_\infty = \lim_{p\to\infty} \|x\|_p,
+\end{align*}
+where $\|x\|_\infty = \max_{i}|x_i|$.
+\end{corollary}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Suppose $\|x\|_\infty = |x_k|$ for some $k = 1,2,\cdots, n$, then
+    \begin{align*}
+        \|x\|_p = \left(\sum^n_{i=1}|x_i|^p\right)^{1/p} \leq \left(n |x_k|^p\right)^{1/p} = n^{1/p} |x_k| \xrightarrow[]{p\to\infty} |x_k|.
+    \end{align*}
+    
+    \item On the other hand, we have
+    \begin{align*}
+        \|x\|_\infty = |x_k| = \left(|x_k|^p\right)^{1/p} \leq \left(|x_k|^p + \sum^n_{i\neq k} |x_i|^p \right)^{1/p} = \|x\|_p.
+    \end{align*}
+\end{enumerate}
+Combining these gives $\|x\|_\infty = \lim_{p\to\infty} \|x\|_p$.
+\end{proof}
+
+\begin{proof}[Second Proof of Corollary \ref{norm_limit_corollary}]
+Similar to part (b) in Corollary \ref{norm_limit_corollary}, for given $x$, we have
+\begin{align*}
+    \|x\|_p = |x_k| \left(\sum^n_{i=1} \frac{|x_i|^p}{|x_k|} \right)^{1/p},
+\end{align*}
+and with part (a),
+\begin{align*}
+    1 \leq \left(\sum^n_{i=1} \frac{|x_i|^p}{|x_k|} \right)^{1/p} \leq n^{1/p} \xrightarrow[]{p\to\infty} 1.
+\end{align*}
+Thus, $\|x\|_\infty = \lim_{p\to\infty} \|x\|_p$.
+\end{proof}
+
+\medskip
+
+\section{Equivalence of Norms}
+
+Now we return to arbitrary norms.
+
+\begin{definition}
+Two norms in a finite-dimensional linear space $X$, $\|\cdot\|_1$ and $\|\cdot\|_2$ are called equivalent if there is a constant $c$ such that for all $x$ in $X$,
+\begin{align}\label{norm_equivalent}
+    \|x\|_1 \leq c\|x\|_2, \quad \|x\|_2 \leq c \|x\|_1.
+\end{align}
+\end{definition}
+
+\medskip
+
+\begin{theorem}\label{norm_equivalent_theorem}
+In a finite-dimensional linear space, all norms are equivalent.
+\end{theorem}
+\begin{proof}
+Any finite-dimensional linear space $X$ over $\mathbb{R}$ is isomorphism to $\mathbb{R}^n$, $\dim X = n$, so we can take $x \in \mathbb{R}^n$. Let $\|\cdot\|_2$ be the Euclidean norm, then for $x = (x_1, x_2, \cdots, x_n)$,
+\begin{align*}
+    \|x\|_2 = \left(\sum^n_{i=1} x_i^2 \right)^{1/2},
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item Also, with standard basis, $x$ can be written as $x = \sum^n_{i=1}x_i e_i$. Let $\|\cdot\|$ be another norm in $\mathbb{R}^n$, then
+    \begin{align*}
+        \|x\| = \left\|\sum^n_{i=1}x_i e_i \right\| \leq \sum^n_{i=1} |x_i| \|e_i\| \leq \left(\sum^n_{i=1} |x_i|^2 \right)^{1/2} \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} = \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} \|x\|_2,
+    \end{align*}
+    and we take $c = \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2}$, which proves the one half of inequalities \ref{norm_equivalent}.
+    
+    \item We claim that $\|\cdot \|$ is a continuous function with respect to the Euclidean distance. Indeed, suppose $\lim_{k\to\infty} x_k = x$, then
+    \begin{align*}
+        \left|\left\|x_k\right\| - \|x\| \right| \leq \left\|x_k - x\right\| \leq \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} \left\|x_k - x\right\|_2 \xrightarrow[]{k \to \infty} 0,
+    \end{align*}
+    which implies that $\|\cdot\|$ is continuous.
+    
+    Now $\|\cdot \|_2$ is positive on the compact set of the unit sphere $S = \{x: \|x\|_2 = 1\}$, and then the continuous function $\|\cdot \|$ attains minimum $m > 0$ on $S$. Thus, when $\|x\|_2 = 1$,
+    \begin{align*}
+        0 < m = m \|x\|_2 \leq \|x\|,
+    \end{align*}
+    which proves the second half of the inequalities \ref{norm_equivalent}.
+\end{enumerate}
+The notion of equivalence is {\em transitive}\cite{18}, if two norms are both equivalent to the Euclidean norms, then they are equivalent to each other.
+\end{proof}
+
+\medskip
+
+\section{Completeness and Local Compactness}
+
+\begin{definition}
+A sequence $\{x_n\}$ in a normed linear space is called convergent to the limit $x$, denoted as $\lim_{n \to \infty} x_n = x$ if $\lim_{n \to \infty} \|x - x_n\| = 0$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+A set $S$ is a normed linear space is called closed if it contains the limits of all convergent sequences $\{x_n\}$ in $S$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+A set $S$ in a normed linear space is called bounded if it is contained in some ball, i.e., if there is an $R$ such that for all points $z$ in $S$, $|z| \leq R$. Clearly, if a set is bounded in the sense of one norm, then it is bounded in the sense of any equivalent norm, and so for all norms.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+A sequence of vectors $\{x_n\}$ in a normed linear space is called a Cauchy sequence if $\lim |x_i - x_j| = 0$ as $i$ and $j$ tend to infinity.
+\end{definition}
+
+\medskip
+
+\begin{theorem}\label{complete_compact_theorem}
+~\begin{enumerate}[label=(\alph*)]
+    \item In a finite-dimensional normed linear space $X$, every Cauchy sequence converges to a limit.
+    
+    \item Every bounded infinite sequence $\{x_n\}$ in a finite-dimensional normed linear space $X$ has a convergent subsequence.
+\end{enumerate}
+\end{theorem}
+
+\medskip
+
+\begin{definition}
+Property (a) of Theorem \ref{complete_compact_theorem} is called completeness, and property (b) is called local compactness.
+\end{definition}
+
+\medskip
+
+\begin{proof}[Proof of Theorem \ref{complete_compact_theorem}]
+~\begin{enumerate}[label=(\alph*)]
+    \item Introduce a Euclidean structure in $X$. According to Theorem \ref{norm_equivalent_theorem}, the Euclidean norm and the norm in $X$ are equivalent. Therefore a Cauchy sequence in the norm of $X$ is also a Cauchy sequence in the Euclidean norm.  According to Theorem \ref{cauchy_sequence_eclidean_theorem}, a Cauchy sequence in a finite-dimensional Euclidean space converges. Thus the sequence also converges in the norm of $X$.
+    
+    \item A sequence $\{x_n\}$ that is bounded in the norm of $X$ is also bounded in the Euclidean norm imposed on $X$. According to Theorem \ref{cauchy_sequence_eclidean_theorem}, it contains a subsequence that converges in the Euclidean norm. Thus the subsequence also converges in the norm of $X$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{theorem}[F. Riesz Theorem]\label{riesz_theorem_finite_dim}
+Let $X$ be a normed linear space that is locally compact, that is, in which every bounded sequence has a convergent subsequence. Then $X$ id finite-dimensional.
+\end{theorem}
+\begin{proof}
+We need the following lemma.
+
+\begin{lemma}\label{finite_dimensional_distance_lemma}
+Let $Y$ be a finite-dimensional subspace of a normed linear space $X$. Let $x$ be a vector in $X$ that does not belong to $Y$, then 
+$$d = \inf_{y\in Y} \|x - y\| $$
+is positive. 
+\end{lemma}
+\begin{proof}
+Suppose not and then these exists a sequence $\{y_n\}$ in $Y$ such that $\lim_{n\to\infty} \|x - y_n\| = 0$. It follows that $\{y_n\}$ is a Cauchy sequence, and according to part (a) in Theorem \ref{complete_compact_theorem}, $y_n$ converges to a limit in $Y$. Thus, $x \in Y$, which is a contradiction.
+\end{proof}
+
+Suppose $X$ is infinite-dimensional, we shall construct a sequence $\{y_k\}$ in $X$ satisfying the following properties:
+\begin{align*}
+    \|y_n\| < 2, \quad \|y_k - y_l\| > 1, k \neq l.
+\end{align*}
+Clearly, such a sequence is bounded and contains no convergent subsequence.
+
+We can construct a bounded sequence $\{y_k\}$ in $X$ recursively. Suppose $y_1, \cdots, y_n$ have been cosen, denote by $Y$ the space spanned by $y_1, \cdots, y_n$. Since $X$ is infinite-dimensional, then there exists $x \in X$ and $x \notin Y$. Now by Lemma \ref{finite_dimensional_distance_lemma}, 
+\begin{align*}
+    d = \inf_{y \in Y} \|x - y\| > 0.
+\end{align*}
+Then there exists a vector $y_0 \in Y$ such that
+\begin{align*}
+    \|x - y_0\| < 2d.
+\end{align*}
+Define $y_{n+1} = \frac{x - y_0}{d}$, then $y_{n+1} \notin Y$ and $\|y_{n+1}\| < 2$. For any $y \in Y$, $y_0 + dy \in Y$, therefore, 
+\begin{align*}
+    \|x - y_0 - dy\| \geq d.
+\end{align*}
+Dividing both sides by $d$ gives $\|y_{n+1} - y\| \geq 1$. Since every $y_i \in Y, i = 1, 2, \cdots, n$, then $\|y_{n+1} - y_i\| \geq 1$ for $i = 1, 2, \cdots, n$. This complete the recursive construction of the sequence $\{y_n\}$. Thus, this is a contradiction with the fact that every bounded sequence has a convergent subsequence.
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $X$ be a finite-dimensional normed linear space, and let $l$ be a linear function defined on $X$. Then there is a constant $c$ such that for all $x \in X$,
+\begin{align}\label{dual_norm_inequality}
+    \|l(x)\| \leq c \|x\|.
+\end{align}
+\end{theorem}
+\begin{proof}
+For any $T \in X'$, there exists $y \in X$ such that $Tx = (x, y)$ for all $x \in X$. Then,
+\begin{align*}
+    \|Tx\| = \|(x,y)\| \leq \|x\|_2 \|y\|_2 \leq c \|y\|_2 \|x\|.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{corollary}
+Every linear function on a finite-dimensional normed linear space is continuous.
+\end{corollary}
+\begin{proof}
+For any $x, y \in X$, $\|Tx - Ty\| \leq \|T(x - y)\| \leq c \|x - y\|$.
+\end{proof}
+
+\medskip
+
+\section{Dual Norm}
+
+\begin{definition}
+Denote by $c_0$ the infimum of all numbers $c$ for which (\ref{dual_norm_inequality}) holds for all $x \in X$. Clearly, (\ref{dual_norm_inequality}) holds for $c = c_0$, and $c_0$ is the smallest number for which (\ref{dual_norm_inequality}) holds. $c_0$ is called the norm of the linear function $l$, denoted by $\|l\|$.
+\end{definition}
+
+\medskip
+
+\begin{theorem}
+Let $X$ be a finite-dimensional normed linear space. Then $X'$ is a normed linear space with the norm
+\begin{align*}
+    \|T\| = \sup_{\|x\|=1} \|Tx\|,
+\end{align*}
+where $T \in X'$.
+\end{theorem}
+\begin{proof}
+It suffices to show subadditivity. For $T, S \in X'$, we have
+\begin{align*}
+    \|T + S\| & = \sup_{\|x\| = 1} \|(T + S)x\| \\
+    & \leq \sup_{\|x\| = 1} \left(\|Tx\| + \|Sx\| \right) \\
+    & \leq \sup_{\|x\| = 1} \|Tx\| + \sup_{\|x\| = 1} \|Sx\| \\
+    & = \|T\| + \|S\|.
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
 
 
 
