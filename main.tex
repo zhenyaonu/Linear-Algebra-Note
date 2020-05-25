@@ -785,7 +785,7 @@ Since $K$ has infinitely many elements, then we can choose $\lambda_0\in K$ such
 
 
 
-\chapter{Duality}
+\chapter{Duality}\label{chapter_Duality}
 \section{Linear Functions and Dual Space}
 
 Let $X$ be a linear space over a field $K$. A scalar valued function $l:X\to K$ is called \emph{linear} if 
@@ -846,8 +846,8 @@ which is a bilinear function of $l$ and $x$.
 
 The dual of $X'$ is $X''$, consisting of all linear functions on $X'$. Also, $(l,x)$ defines an element in $X''$.
 
-\begin{theorem}
-$(l,x)$ is a bilinear form, which gives a natural identification of $X$ with $X''$. The map $\varphi:X\ni x \to x^{**}\in X''$ is an isomorphism, where $(x^{**},l) = (l,x)$ or any $l\in X'$.
+\begin{theorem}\label{dual_identification_theorem}
+$(l,x)$ is a bilinear form, which gives a natural identification of $X$ with $X''$. The map $\varphi:X\ni x \to x^{**}\in X''$ is an isomorphism, where $(x^{**},l) = (l,x)$ for any $l\in X'$.
 \end{theorem}
 \begin{proof}
 $\varphi(x)$ is a subspace of $X''$.
@@ -7650,7 +7650,7 @@ For any $T \in X'$, there exists $y \in X$ such that $Tx = (x, y)$ for all $x \i
 
 \medskip
 
-\begin{corollary}
+\begin{corollary}\label{linear_function_continuous}
 Every linear function on a finite-dimensional normed linear space is continuous.
 \end{corollary}
 \begin{proof}
@@ -7662,29 +7662,147 @@ For any $x, y \in X$, $\|Tx - Ty\| \leq \|T(x - y)\| \leq c \|x - y\|$.
 \section{Dual Norm}
 
 \begin{definition}
-Denote by $c_0$ the infimum of all numbers $c$ for which (\ref{dual_norm_inequality}) holds for all $x \in X$. Clearly, (\ref{dual_norm_inequality}) holds for $c = c_0$, and $c_0$ is the smallest number for which (\ref{dual_norm_inequality}) holds. $c_0$ is called the norm of the linear function $l$, denoted by $\|l\|$.
+Denote by $c_0$ the infimum of all numbers $c$ for which (\ref{dual_norm_inequality}) holds for all $x \in X$. Clearly, (\ref{dual_norm_inequality}) holds for $c = c_0$, and $c_0$ is the smallest number for which (\ref{dual_norm_inequality}) holds. $c_0$ is called the norm of the linear function $l$, denoted by $\|l\|'$.
 \end{definition}
+
+\begin{remark}
+The norm of $T$ can also be characterized as
+\begin{align}\label{linear_function_norm}
+    \|l\|' = \sup_{x \neq 0} \frac{\|l(x)\|}{\|x\|},
+\end{align}
+and it follows that for all $x \in X$ and $T \in X'$,
+\begin{align}\label{equ_14_5}
+    \|lx\| \leq \|l\|' \|x\|.
+\end{align}
+\end{remark}
+
+\medskip
+
+\begin{theorem}\label{equality_hold_theorem}
+$X$ is a finite-dimensional normed linear space.
+\begin{enumerate}[label=(\alph*)]
+    \item Given a linear function $l$ defined on $X$, there is an $x \in X$, $x \neq 0$, for which equality holds in (\ref{equ_14_5}).
+    
+    \item Given a vector $x \in X$, there is a linear function $l$ defined on $X$, $l \neq 0$, for which equality holds in (\ref{equ_14_5}).
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item It suffices to show that the supremum definition (\ref{linear_function_norm}) of $\|l\|'$ is a maximum. Note that the ratio $\|l(x)\|/\|x\|$ does not change if $x$ is multiplied by any $k \in \mathbb{R}$. Therefore it suffices to take the supremum (\ref{linear_function_norm}) over the nuit sphere $S^1 = \{x: \|x\| = 1\}$.
+    
+    According to Corollary \ref{linear_function_continuous}, $l(x)$ is a continuous function, then so is $\|l(x)\|$. Since the space $X$ is locally compact, then the continuous function $\|l(x)\|$ attains its maximum at some point $\widetilde{x} \in S^1$. And at this point, equality holds.
+    
+    \item If $x = 0$, then any $l$ will do. For $x \neq 0$, we define $l(x) = \|x\|$. Since $l$ is linear, then we set for any scalar $k$, 
+    \begin{align}\label{equ_14_6}
+        l(kx) = k \|x\|.
+    \end{align}
+    We choose the positive, homogeneous, subadditive function $p(x)$ to be $\|x\|$, and the subspace $U$ on which $l$ is defined consists of all multiples of $x$. It follows from (\ref{equ_14_6}) that for all $u \in U$, $l(u) \leq \|u\|$. According to Hahn-Banach Theorem, $l$ can be extended to all $y$ of $X$ so that $l(y) < \|y\|$ for all $y$.  Setting $-y$ for $y$, we deduce that $\|l(y)\| \leq \|y\|$ as well. So by definition of the norm of $l$, it follows that $\|l\|' \leq 1$. Since $l(x) = \|x\|$, it follows that $\|l\|' = 1$, so equality holds.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+In Chapter \ref{chapter_Duality} we have defined the dual of a finite-dimensional linear space $X$ as the set of all linear functions $l$ defined on $X$. These functions form a linear space, denoted as $X'$. By Theorem \ref{dual_identification_theorem}, the dual of $X'$ can be identified with $X$ itself: $X'' = X$. For each $x \in X$, we define a linear function $f$ over $X'$ by 
+\begin{align*}
+    f(l) = l(x).
+\end{align*}
+We have shown that these are all the linear functions on $X$. 
+
+When $X$ is a finite-dimensional normed linear space, there is an {\em induced norm} $\|l\|'$ in $X'$, defined by formula (\ref{linear_function_norm}). This, in turn, induces a norm in the dual $X''$ of $X'$.
+
+\medskip
+
+\begin{theorem}
+The norm induced in $X''$ by the induced norm in $X'$ is the same as the original norm in $X$.
+\end{theorem}
+\begin{proof}
+The norm of a linear function $f$ on $X'$ is, 
+\begin{align}\label{double_dual_norm}
+    \|f\|'' = \sup_{l \neq 0} \frac{\|f(l)\|}{\|l\|'}.
+\end{align}
+Substituting $f(l) = l(x)$ into (\ref{double_dual_norm}) gives
+\begin{align*}
+    \|f\|'' = \sup_{l \neq 0} \frac{\|l(x)\|}{\|l\|'},
+\end{align*}
+and since $\|lx\| \leq \|l\|' \|x\|$, we have $\|lx\|/\|l\|' \leq \|x\|$ for all $l \neq 0$. Also, given $x \in X$, by Theorem \ref{equality_hold_theorem}, there exists $\tilde{l} \neq 0$ such that $\|\tilde{l}x\| = \|\tilde{l}\|' \|x\|$. This proves that $\|f\|'' = \|x\|$.
+\end{proof}
+
+\medskip
+
+\begin{theorem}
+Let $Z$ be a subspace of $X$, and $y$ be any vector in $X$. The distance $d(y,Z)$ of $y$ to $Z$ is defined to be
+\begin{align*}
+    d(y,z) = \inf_{z \in Z} \|y - z\|.
+\end{align*}
+Then, $d(y,Z) = \max l(y)$ over all $l \in X'$ satisfying 
+\begin{align*}
+    \|l\|' \leq 1, \quad l(z) = 0, z \in Z.
+\end{align*}
+\end{theorem}
+
+
+
+
+
+
+
+
+\chapter{Linear Mappings Between Normed Linear Spaces}
+
+\section{Norm of a Mapping}
+
+\begin{lemma}
+Let $X, Y$ be finite-dimensional normed linear spaces and $T: X \to Y$ be a linear map. Then there is a constant $c$ such that for all $x \in X$,
+\begin{align*}
+    \|Tx\|_Y \leq c \|x\|_X.
+\end{align*}
+\end{lemma}
+\begin{proof}
+We could identify $X$ and $Y$ as Euclidean spaces $\mathbb{R}^m$ and $\mathbb{R}^n$, and $x$ can be expressed as $x = \sum^m_{j=1} x_j e_j$. Also, $T$ can be expressed as a $n \times m$ matrix as $T = \left(t_{ij}\right)_{n \times m}$. Then,
+\begin{align*}
+    \|Tx\|_2^2 & = \sum^n_{i=1} \left\|\sum^m_{j=1} t_{ij} x_j \right\| \\
+    & \leq \sum^n_{i=1} \left(\sum^m_{j=1} t_{ij}^2 \right) \left(\sum^m_{j=1} x_j^2 \right) \\
+    & = \sum_{i,j} t_{ij}^2 \|x\|^2_2.
+\end{align*}
+\end{proof}
 
 \medskip
 
 \begin{theorem}
 Let $X$ be a finite-dimensional normed linear space. Then $X'$ is a normed linear space with the norm
-\begin{align*}
-    \|T\| = \sup_{\|x\|=1} \|Tx\|,
-\end{align*}
+\begin{align}
+    \|T\|' = \sup_{\|x\|=1} \|Tx\|,
+\end{align}
 where $T \in X'$.
 \end{theorem}
 \begin{proof}
 It suffices to show subadditivity. For $T, S \in X'$, we have
 \begin{align*}
-    \|T + S\| & = \sup_{\|x\| = 1} \|(T + S)x\| \\
+    \|T + S\|' & = \sup_{\|x\| = 1} \|(T + S)x\| \\
     & \leq \sup_{\|x\| = 1} \left(\|Tx\| + \|Sx\| \right) \\
     & \leq \sup_{\|x\| = 1} \|Tx\| + \sup_{\|x\| = 1} \|Sx\| \\
-    & = \|T\| + \|S\|.
+    & = \|T\|' + \|S\|'.
 \end{align*}
 \end{proof}
 
+\medskip
 
+\begin{theorem}
+Let $T \in \mathscr{L}(X, Y)$ and $T' \in \mathscr{L}(Y', X')$ its transpose, then $\|T\| = \left\|T'\right\|$.
+\end{theorem}
+\begin{proof}
+For $l \in Y'$ and let $m = T'l \in X'$, then
+\begin{align*}
+    \|m\| = \left\|T'l\right\|_{X'} = \sup_{\|x\|=1} \left(T'l, x\right)_{Y} =  \sup_{\|x\|=1} \left(l, Tx\right)_{Y} \leq \|l\|_{Y'} \|T\|, 
+\end{align*}
+which gives $\left\|T'\right\| \leq \|T\|$. 
+
+Now replace $T$ by $T'$, we have
+\begin{align*}
+    \|T\| = \left\|T''\right\| \leq \left\|T'\right\|.
+\end{align*}
+Combined and we have $\left\|T'\right\| = \|T\|$.
+\end{proof}
 
 
 
