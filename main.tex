@@ -1015,7 +1015,7 @@ Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With Theorem \ref{theorem_q
 
 \medskip
 
-\begin{theorem}
+\begin{theorem}\label{one_to_one_theorem}
 Let $T:X\to U$ be a linear map, then
 \begin{enumerate}[label=(\alph*)]
     \item Suppose ${\rm dim}\,U < {\rm dim}\, X$, then there exists $x\neq 0$, such that $T x = 0$.
@@ -7789,25 +7789,84 @@ It suffices to show subadditivity. For $T, S \in X'$, we have
 
 \medskip
 
+\section{Norm of Transpose}
 \begin{theorem}
 Let $T \in \mathscr{L}(X, Y)$ and $T' \in \mathscr{L}(Y', X')$ its transpose, then $\|T\| = \left\|T'\right\|$.
 \end{theorem}
 \begin{proof}
-For $l \in Y'$ and let $m = T'l \in X'$, then
-\begin{align*}
-    \|m\| = \left\|T'l\right\|_{X'} = \sup_{\|x\|=1} \left(T'l, x\right)_{Y} =  \sup_{\|x\|=1} \left(l, Tx\right)_{Y} \leq \|l\|_{Y'} \|T\|, 
-\end{align*}
-which gives $\left\|T'\right\| \leq \|T\|$. 
-
-Now replace $T$ by $T'$, we have
-\begin{align*}
-    \|T\| = \left\|T''\right\| \leq \left\|T'\right\|.
-\end{align*}
+~\begin{enumerate}[label=(\alph*)]
+    \item For $l \in Y'$ and let $m = T'l \in X'$, then
+    \begin{align*}
+        \|m\| = \left\|T'l\right\|_{X'} = \sup_{\|x\|=1} \left(T'l, x\right)_{Y} =  \sup_{\|x\|=1} \left(l, Tx\right)_{Y} \leq \|l\|_{Y'} \|T\|, 
+    \end{align*}
+    which gives $\left\|T'\right\| \leq \|T\|$.
+    
+    \item Now replace $T$ by $T'$, we have
+    \begin{align*}
+        \|T\| = \left\|T''\right\| \leq \left\|T'\right\|.
+    \end{align*}
+\end{enumerate}
 Combined and we have $\left\|T'\right\| = \|T\|$.
 \end{proof}
 
+\medskip
 
+\section{Normed Algebra of Maps}
 
+Let $T \in \mathscr{L}(X, Y)$ and $S \in \mathscr{L}(Y, Z)$. Then, we can define the {\em product} $ST$ as the {\em composite} of $T$ followed by $S$.
+
+\medskip
+
+\begin{theorem}
+Suppose $X, Y$ and $Z$ are above normed linear space, then 
+\begin{align*}
+    \|ST\| \leq \|S\| \|T\|.
+\end{align*}
+\end{theorem}
+\begin{proof}
+By definition of norm: $\|T\| = \sup_{x \neq 0} \frac{\|Tx\|}{\|x\|}$, for any $y \in Y$ and $x \in X$, 
+\begin{align*}
+    \|Sy\| \leq \|S\| \|y\|, \quad \|Tx\| \leq \|T\| \|x\|.
+\end{align*}
+Then,
+\begin{align*}
+    \|STx\| \leq \|S\| \|Tx\| \leq \|S\| \|T\| \|x\|,
+\end{align*}
+using the definition of norm gives $\|ST\| \leq \|S\| \|T\|$.
+\end{proof}
+
+\begin{remark}
+We recall that a mapping $T$ of one linear space $X$ into another is called invertible if it is onto and one-to-one. In this case $T$ has an inverse, denoted as $T^{-1}$.
+\end{remark}
+
+\medskip
+
+\begin{theorem}
+Let $X$ and $Y$ be finite-dimensional normed linear spaces of the same dimension, and let $T$ be a linear mapping of $X$ into $Y$ that is invertible. Let $S$ be another linear map of $X$ into $Y$ that does not differ too much from $T$ in the sense that
+\begin{align*}
+    \|S - T\| < \frac{1}{\left\|T^{-1}\right\|},
+\end{align*}
+then $S$ is invertible.
+\end{theorem}
+\begin{proof}
+For $T \in \mathscr{L}(X, Y)$ and $T$ is invertible, then $\dim X = \dim Y$. To show that $S$ is invertible, it suffices to show that $S$ is one-to-one.
+
+Suppose $Sx_0 = 0, x_0 \in X$ for some $x_0 \neq 0$. Then. $Tx_0 = (T - S)x_0 + Sx_0 = (T - S)x_0$, and then $x_0 = T^{-1} (T - S)x_0$. Then we have
+\begin{align*}
+    \|x_0\|_X = \left\|T^{-1}(T - S)x_0\right\|_X \leq \left\|T^{-1}\right\| \left\|T - S\right\| \left\| x_0\right\|_X < \left\| x_0\right\|_X,
+\end{align*}
+which is a contradiction and hence $x_0 = 0$. Thus, $S \in \mathscr{L}(X,Y)$ is one-to-one and $\dim X = \dim Y$, hence by Theorem \ref{one_to_one_theorem}, $S$ is invertible.
+\end{proof}
+
+\medskip
+
+\begin{definition}
+Let $X, Y$ be a pair of finite-dimensional normed linear spaces. A sequence $\{T_n\}$ of linear maps of $X$ onto $Y$ is said to converge to a linear map $T$ if 
+\begin{align*}
+    \lim_{n \to \infty} \left\|T_n - T\right\| = 0,
+\end{align*}
+denoted as $\lim_{n \to \infty} T_n = T$.
+\end{definition}
 
 
 
@@ -10808,7 +10867,7 @@ Let $A$ be a $2\times 2$ complex matrix. Show that $\|A\| = r(A)$ if and only if
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}{\rm *}
 Let $A,B$ be $n \times n$ matrices. Suppose $A$ is a Hermitian matrix.
 \begin{enumerate}[label=(\alph*)]
     \item Show that $A^{2015}B = B A^{2015}$ implies that $A^{2014}B = B A^{2014}$.
@@ -10823,6 +10882,181 @@ Let $A,B$ be $n \times n$ matrices. Suppose $A$ is a Hermitian matrix.
     Then for $ij$-th entry, we have $\lambda_i^{2015} b_{ij} = b_{ij} \lambda_j^{2015}$. Then $\lambda_i = \lambda_j$, and hence $\lambda_i^{2014} b_{ij} = b_{ij} \lambda_j^{2014}$. Hence, $A^{2014}B = B A^{2014}$.
     
     \item It is not true. Since similarly to argument in $(a)$, we have $\lambda_i^{2014} b_{ij} = b_{ij} \lambda_j^{2014}$, and then $\lambda_i = \lambda_j$ or $\lambda_i = - \lambda_j$. In the case $\lambda_i = - \lambda_j$, we have $\lambda_i^{2015} b_{ij} = - b_{ij} \lambda_j^{2015}$. Thus, $A^{2015}B \neq B A^{2015}$.
+\end{enumerate}
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $S$ be the space of all $n \times n$ real skew symmetric matrices and let $A$ be a real invertible matrix, consider the linear map $T_A: S \to S$ defined by 
+\begin{align*}
+    T_A(S) = ASA^T.
+\end{align*}
+Find $\det \left(T_A\right)$. \\
+{\bf Hint:} First consider the cases when $A$ is orthogonal and when $A$ is symmetric.
+\end{exercise}
+\begin{proof}
+Denote by $S(n)$ the space of all $n \times n$ real skew symmetric matrices, and note that $\dim S(n) = n(n-1)/2$. Also, since
+\begin{align*}
+    T_A T_B(S) = A B S B^T A^T = T_{AB}(S),
+\end{align*}
+then $\det T_{AB} = \det T_A \det T_B$ and 
+\begin{align*}
+    \det T_{A^{-1}} \det T_A = \det T_I = 1.
+\end{align*}
+Also, if $A = P B P^{-1}$, then
+\begin{align*}
+    \det T_A = \det T_P \det T_B \det T_{P^{-1}} = \det T_B.
+\end{align*}
+
+Using QR decomposition, $A$ is a product of one orthogonal and one upper triangular matrix, and both of them are diagonalizabble. So we could consider
+\begin{align*}
+    A = \begin{pmatrix}
+        \lambda_1 & & & \\
+        & \lambda_2 & & \\
+        & & \ddots & \\
+        & & & \lambda_n
+    \end{pmatrix} = \begin{pmatrix}
+        \lambda_1 & & & \\
+        & 1 & & \\
+        & & \ddots & \\
+        & & & 1
+    \end{pmatrix} \cdots \begin{pmatrix}
+        1 & & & \\
+        & 1 & & \\
+        & & \ddots & \\
+        & & & \lambda_n
+    \end{pmatrix}.
+\end{align*}
+Each matrix in the product is similar to a matrix of the form
+\begin{align*}
+    \widetilde{A} = \begin{pmatrix}
+        \lambda & & & \\
+        & 1 & & \\
+        & & \ddots & \\
+        & & & 1
+    \end{pmatrix}.
+\end{align*}
+Let $S = \begin{pmatrix}
+    a & v^T \\
+    v & \widetilde{S} 
+\end{pmatrix}$, and then
+\begin{align*}
+    T_{\widetilde{A}} = \widetilde{A} S \widetilde{A}^T = \begin{pmatrix}
+        \lambda^2 a & -\lambda v^T \\
+        \lambda v & \widetilde{S} 
+    \end{pmatrix}.
+\end{align*}
+Consider eigenvalue $\mu$ of $T_{\widetilde{A}}$, then
+\begin{align*}
+    T_{\widetilde{A}}(S) = \begin{pmatrix}
+        \lambda^2 a & -\lambda v^T \\
+        \lambda v & \widetilde{S} 
+    \end{pmatrix} = \mu S = \begin{pmatrix}
+        \mu a & -\mu v^T \\
+        \mu v & \mu \widetilde{S} 
+    \end{pmatrix}.
+\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item If $\lambda \neq 1, \mu = 1$, then $a = 0$ and $v = 0$. Thus, the eigenspace corresponding to $\mu = 1$ is of dimension $(n-1)(n-2)/2$, the same dimension of the space of $\widetilde{S}$.
+    
+    \item If $\lambda = \mu$, then $a = 0$ and $\widetilde{S} = 0$. Thus, the eigenspace corresponding to $\mu = 1$ is of dimension $n - 1$, the same dimension of the space of $v$. 
+\end{enumerate}
+Since $(n-1)(n-2)/2 + (n-1) = n(n-1)/2 = \dim S$, then we find all the eigenvalues. Then, $\det T_{\widetilde{A}} = \lambda^n$. Thus, 
+\begin{align*}
+    \det T_A = \lambda_1^{n-1} \cdots \lambda_n^{n-1} = (\det A)^{n-1}.
+\end{align*}
+\end{proof}
+
+\medskip
+
+\begin{exercise}{\bf (August 2018 Prelim)}{\rm *}
+For an invertible matrix $P \in \mathbb{R}^{n \times n}$, let $T_P: \mathbb{R}^{n \times n} \to \mathbb{R}^{n \times n}$ be the linear map defined by $T_P(M):= PMP^{-1}$ for any $M \in \mathbb{R}^{n \times n}$.
+\begin{enumerate}[label=(\alph*)]
+    \item For an orthogonal matrix $O$, show that the space $S(n) \subset \mathbb{R}^{n \times n}$ of symmetric $n \times n$ matrices is invariant under $T_O$.
+    
+    \item Now let $O$ be the $3 \times 3$ rotation matrix:
+    \begin{align*}
+        O = \begin{pmatrix}
+            0 & -1 & 0 \\
+            1 & 0  & 0 \\
+            0 & 0  & 1
+        \end{pmatrix}.
+    \end{align*}
+    Compute the minimal and characteristic polynomials of $T_O$ on $S(3)$.
+\end{enumerate}
+{\bf Hint:} Note that $O^4 = I$.
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item Since $O$ is orthogonal matrix, then for any $S \in S(n)$, $T_O = OSO^{-1} = OSO^T$. Then, $\left(OSO^T\right)^T = OS^TO^T = OSO^T$, since $S$ is symmetric. Thus, $T_O$ is also a symmetric matrix, and hence $S(n)$ is invariant under $T_O$.
+    
+    \item* Note that 
+    \begin{align*}
+        T_{O_1}T_{O_2}(S) = O_1 O_2 S O_2^T O_1^T = T_{O_1 O_2}(S),
+    \end{align*}
+    then by $O^4 = I$, we have $T_{O^4}(S) = T_{O}^4(S) = S$. Then we have $T_{O}^4 = I$, which gives eigenvalues of $T_O$, $\lambda = \{1, -1, i, -i\}$.
+    
+    Let $S = \begin{pmatrix}
+        a & b & c \\
+        b & d & e \\
+        c & e & f
+    \end{pmatrix}$, and for $\lambda = 1$, we have
+    \begin{align*}
+        T_O(S) = \begin{pmatrix}
+        d & -b & -e \\
+        -b & a & c \\
+        -e & c & f
+    \end{pmatrix} = \begin{pmatrix}
+        a & b & c \\
+        b & d & e \\
+        c & e & f
+    \end{pmatrix} = S,
+    \end{align*}
+    which gives the eigenspace
+    \begin{align*}
+        \left\{\begin{pmatrix}
+        1 & &  \\
+        & 1 &  \\
+        & & 0
+    \end{pmatrix}, \begin{pmatrix}
+        0 & &  \\
+        & 0 &  \\
+        & & 1
+    \end{pmatrix}\right\}.
+    \end{align*}
+    For $\lambda = -1$, we have
+    \begin{align*}
+        T_O(S) = \begin{pmatrix}
+        d & -b & -e \\
+        -b & a & c \\
+        -e & c & f
+    \end{pmatrix} = \begin{pmatrix}
+        -a & -b & -c \\
+        -b & -d & -e \\
+        -c & -e & -f
+    \end{pmatrix} = -S,
+    \end{align*}
+    which gives the eigenspace
+    \begin{align*}
+        \left\{\begin{pmatrix}
+        1 & &  \\
+        & -1 &  \\
+        & & 0
+    \end{pmatrix}, \begin{pmatrix}
+        1 & 1  & 0 \\
+        1 & -1 & 0 \\
+        0 & 0  & 0
+    \end{pmatrix}\right\}.
+    \end{align*}
+    Also, since $\dim S(3) = 6$, then the characteristic polynomials of $T_O$ on $S(3)$ is 
+    \begin{align*}
+        p_\lambda = (\lambda - 1)^2 (\lambda + 1)^2 \left(\lambda^2 + 1\right).
+    \end{align*}
+    And the minimal polynomial of $T_O$ on $S(3)$ is
+    \begin{align*}
+        m(\lambda) = (\lambda - 1) (\lambda + 1) (\lambda^2 + 1).
+    \end{align*}
 \end{enumerate}
 \end{proof}
 
