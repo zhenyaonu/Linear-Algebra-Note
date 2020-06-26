@@ -1998,12 +1998,12 @@ Now we present another approach to prove this lemma.
 
 \medskip
 
-\begin{theorem}[Laplace expansion]
+\begin{theorem}[Laplace Expansion]\label{Laplace_Expansion_Theorem}
 For any $j = 1,\cdots,n$, 
 \begin{align*}
-    \det A = \sum^n_{i=1}(-1)^{i+j} a_{ij}c\det A_{ij}
+    \det A = \sum^n_{i=1}(-1)^{i+j} a_{ij} \det A_{ij}
 \end{align*}
-where $A_{ij}$ is the $(ij)$th minor of $A$.
+where $A_{ij}$ is the $ij$-th minor of $A$.
 \end{theorem}
 \begin{proof}
 The $j$th column $a_j = \sum a_{ij} e_i$. Hence,
@@ -2282,6 +2282,67 @@ where $c_{ij} = \frac{1}{a_i + b_j}$. Then, the determinant of $C$ is
     \det C = \frac{\prod_{j>i}(a_j - a_i)\prod_{j>i}(b_j - b_i)}{\prod_{i,j}(a_i + b_j)}.
 \end{align*}
 \end{example}
+
+\medskip
+
+\section{Additional Properties of Determinants}
+By Laplace expansion theorem \ref{Laplace_Expansion_Theorem}, then for any $j = 1, \cdots, n$, we have
+\begin{align*}
+    \det A = \sum^n_{i=1} (-1)^{i+j} a_{ij} \det A_{ij},
+\end{align*}
+where $A_{ij}$ is the $ij$-th minor of $A$.
+
+\medskip
+
+\begin{definition}
+The scalar $(-1)^{i+j} \det A_{ij}$ is usually called the $i,j$ cofactor of $A$ or the cofactor of the $i,j$ entry of $A$, denoted by $C_{ij}$. And the cofactor $C_{ij}$ is $(-1)^{i+j}$ times the determinant of the $(n-1) \times (n-1)$ matrix obtained by deleting the $i$th row and $j$th column of $A$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+The cofactor matrix $\operatorname{cof}(A)$ of $A$ is the matrix $\operatorname{cof}(A) = \left(C_{ij}\right)_{n \times n}$.
+\end{definition}
+
+\medskip
+
+\begin{definition}
+The $n \times n$ matrix $\operatorname{adj}(A)$ is the transpose of the cofactor matrix of $A$, it is also called the classical adjoint of $A$. Thus, 
+\begin{align*}
+    \operatorname{adj}(A)_{ij} = C_{ij} = (-1)^{i+j} \det A_{ji}.
+\end{align*}
+\end{definition}
+
+\medskip
+
+If $j \neq k$, then $\sum^n_{i=1} a_{ik} C_{ij} = 0$, since this is equal to the determinant of the matrix obtained by replacing $j$th column with $i$th column of $A$. Thus,
+\begin{align*}
+    \sum^n_{i=1} a_{ik} C_{ij} = \delta_{jk} \det A.
+\end{align*}
+This equation can be summarized in the matrix form
+\begin{align*}
+    \operatorname{adj}(A) A = (\det A) I.
+\end{align*}
+Then we can have the following result.
+
+\medskip
+
+\begin{theorem}
+If $A$ is invertible, then the unique inverse of $A$ is
+\begin{align*}
+    A^{-1} = \frac{1}{\det A} \operatorname{adj}(A).
+\end{align*}
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4228,7 +4289,7 @@ The eigenvectors $v$ of $H$ satisfies
 \begin{align}\label{equ_eigenvalue}
     Hv = \lambda v.
 \end{align}
-$H$ is a real self-adjoint matrix, then with part (i) in Theorem \ref{hermitian_eigenvalue}, the eigenvalues of $H$ are real. It follows from (\ref{equ_eigenvalue}) that the real and imaginary parts of $v$ are also eigenvectors. Then we can choose an orthogonal basis consisting of real eigenvectors in each eigenapsce $N_\alpha$. Since by part (iii) in Theorem \ref{hermitian_eigenvalue}, eigenvectors corresponding to disctint eigenvalues are orthogonal, we have an orthogonal basis of $X$ consisting of real eivenvectors $v_j$ of $H$. Every vector $y$ in $X$ can be expressed as
+$H$ is a real self-adjoint matrix, then with part (a) in Theorem \ref{hermitian_eigenvalue_theorem}, the eigenvalues of $H$ are real. It follows from (\ref{equ_eigenvalue}) that the real and imaginary parts of $v$ are also eigenvectors. Then we can choose an orthogonal basis consisting of real eigenvectors in each eigenapsce $N_\alpha$. Since by part (iii) in Theorem \ref{hermitian_eigenvalue}, eigenvectors corresponding to disctint eigenvalues are orthogonal, we have an orthogonal basis of $X$ consisting of real eivenvectors $v_j$ of $H$. Every vector $y$ in $X$ can be expressed as
 \begin{align}\label{orthogonal_basis_express}
     y = \sum^n_{j=1} z_i v_i.
 \end{align}
