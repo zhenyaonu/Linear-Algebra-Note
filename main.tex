@@ -4863,7 +4863,7 @@ Continue this process and we can obtain an upper triangular matrix.
 Let $AB = BA$, then $A$ and $B$ can be simultaneously upper diagonalized by a unitary matrix.
 \end{theorem}
 \begin{proof}
-Let $\lambda_1\in\sigma(A), N_1 = N_{(A - \lambda_1 I)}$, then we can know $B$ is invariant under $N_1$, i.e., $B:N_1\to N_1$. Then we have 
+Let $\lambda_1\in\sigma(A), N_1 = N_{(A - \lambda_1 I)}$, then we can know $N_1$ is invariant under $B$, i.e., $B:N_1\to N_1$. Then we have 
 \begin{align*}
     A & = U_1 \begin{pmatrix}
     \lambda_1 I_{k_1} & A_{12} \\
@@ -5849,6 +5849,12 @@ where $R$ is a nonnegative self-adjoint mapping, and $U$ is unitary. When $A$ is
     $A^* x$ and then $V$ is isometry, therefore it can be extended to the whole space as a unitary mapping. By definition, $A^* = VR$, and then $A = RV^*$.
 \end{enumerate}
 \end{proof}
+
+\begin{remark}
+The polar decomposition can also be defined as $A = UR$, where $U$ is unitary and $R$ is a nonnegative self-adjoint mapping.
+\end{remark}
+
+\medskip
 
 \begin{proof}[Second Proof of Theorem \ref{polar_decomposition_theorem}(b)]
 When $A$ is not invertible, let $A_\varepsilon = A + \varepsilon I$ be invertible, where $\varepsilon$ is arbitrary and positive. Let $R_\varepsilon = \sqrt{A_\varepsilon A_\varepsilon^*}$, and similarly, $R_\varepsilon$ is unique and positive. Define $U_\varepsilon = R_\varepsilon^{-1} A_\varepsilon$, then $A_\varepsilon = R_\varepsilon U_\varepsilon$. And $A_\varepsilon, R_\varepsilon, U_\varepsilon$ have convergent subsequences, meaning $A \gets A_\varepsilon = R_\varepsilon U_\varepsilon \to RU$.
