@@ -4669,7 +4669,7 @@ Every eigenvector $x$ of $H$ is a critical point of $R_H$, that is, the first de
 \begin{theorem}\label{minimax_principle}
 Let $H$ be a self-adjoint map of a Euclidean space $X$ of finite dimension. Denote the eigenvalues of $H$, arranged in increasing order by $\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$. Then,
 \begin{align*}
-    \lambda_j = \min_{\dim S=j} \max_{x\in S, x\neq 0} R_H(x),
+    \lambda_j = \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\},
 \end{align*}
 where $S$ is a linear subspace of $X$.
 \end{theorem}
@@ -4684,7 +4684,7 @@ Let $S_j = {\rm span} \{x_1,\cdots,x_j\}$, then
 \end{align*}
 which implies 
 \begin{align*}
-    \min_{\dim S=j} \max_{x\in S, x\neq 0} R_H(x) \leq \lambda_j.
+    \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \leq \lambda_j.
 \end{align*}
 
 Next, given any $S$ with $\dim S = j$, we need to show $\max_{x\in S, x\neq 0} R_H(x) \geq \lambda_j$. It suffices to show that there exists $x\in S$, such that the projection of $x$ on $S_{j-1}$ is zero. Denote the projection by $P:S_j\to S_{j-1}$, with Rank-Nullity theorem, there exists $x^* = \sum_{k\geq j}c_k x_k \in S, x^*\neq 0$ such that $Px^* = 0$. Hence, we have
@@ -4693,10 +4693,21 @@ Next, given any $S$ with $\dim S = j$, we need to show $\max_{x\in S, x\neq 0} R
 \end{align*}
 since $S$ is arbitrary subspace of dimension $j$, then we have
 \begin{align*}
-    \min_{\dim S=j} \max_{x\in S, x\neq 0} R_H(x) \geq \lambda_j.
+    \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \geq \lambda_j.
 \end{align*}
 Thus we complete the theorem.
 \end{proof}
+
+\begin{remark}
+Eigenvalues $\lambda_1 \leq \cdots \leq \lambda_n$ of a self-adjoint map $H$ can also be characterized as 
+\begin{align*}
+    \lambda_k = \max_{\dim S = n - k + 1} \left\{ \min_{x\in S, x\neq 0} R_H(x) \right\}.
+\end{align*}
+In particular, the simpler formula for the maximal and minimal eigenvalues can be given by
+\begin{align*}
+    \lambda_n = \max_{x \neq 0} R_H(x), \quad \lambda_1 = \min_{x \neq 0} R_H(x).
+\end{align*}
+\end{remark}
 
 \medskip
 
