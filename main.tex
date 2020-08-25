@@ -190,7 +190,7 @@ If $q = 2$, then $K = {\rm GF}(2)$ and $a = 1$. Then the result is obvious.
 
 If $q > 2$, let $B = \{a_1, \cdots, a_{q-1}\}$ be nonzero elements of $K$. Then $aa_i\neq aa_k$ for $i\neq k$. If not, we would have $a_i = a^{-1}(aa_k) = a_k$. Therefore, $B = \{a a_1, \cdots, a a_{q-1}\}$ and we have 
 \begin{align*}
-    \prod^{q-1}_{i=1}a_i = \prod^{q-1}_{i=1}aa_i = a^{q-1}\prod^{q-1}_{i=1}a_i 
+    \prod^{q-1}_{i=1}a_i = \prod^{q-1}_{i=1}aa_i = a^{q-1}\prod^{q-1}_{i=1}a_i.
 \end{align*}
 Then we have $a^{q-1} = 1 = a a^{-1}$, which implies $a^{-1} = a^{q-2}$.
 \end{proof}
@@ -214,15 +214,15 @@ Suppose by contrary that $p = xy, 0<x,y<p$. Therefore $a = x$ nd $b = y$ are non
 \begin{theorem}[Loo-Keng Hua's Identity]
 If $a$ and $b$ are nonzero elements of a field $K$ satisfying $a\neq b^{-1}$, then
 \begin{align*}
-    a - aba = \left(a^{-} + (b^{-1} - a)^{-1}\right)^{-1}
+    a - aba = \left(a^{-} + (b^{-1} - a)^{-1}\right)^{-1}.
 \end{align*}
 \end{theorem}
 \begin{proof}
 We have
 \begin{align*}
     a^{-} + (b^{-1} - a)^{-1} & = a^{-1}\left((b^{-1} - a) + a \right)(b^{-1} - a)^{-1}\\
-    & = a^{-1}b^{-1}(b^{-1} - a)^{-1} \\
-    \Rightarrow \left(a^{-} + (b^{-1} - a)^{-1}\right)^{-} & = (b^{-1} - a)ba = a - aba
+    & = a^{-1}b^{-1}(b^{-1} - a)^{-1}, \\
+    \Rightarrow \left(a^{-} + (b^{-1} - a)^{-1}\right)^{-1} & = (b^{-1} - a)ba = a - aba.
 \end{align*}
 \end{proof}
 
@@ -322,11 +322,11 @@ A subset $Y$ of a linear space $X$ is said to be subspace if sums and scalar mul
 \begin{definition}
 The sum of two subsets $Y$ and $Z$ of a linear space $X$, is the set defined by 
 \begin{align*}
-    Y+Z = \{y+z\in X: y\in Y, z\in Z\}
+    Y+Z = \{y+z\in X: y\in Y, z\in Z\}.
 \end{align*}
 The intersection of two subsets $Y$ and $Z$ of a linear space $X$, is the set defined by
 \begin{align*}
-    Y\cap Z = \{x\in X: x\in Y, x\in Z\}
+    Y\cap Z = \{x\in X: x\in Y, x\in Z\}.
 \end{align*}
 \end{definition}
 
@@ -363,9 +363,9 @@ If $x\cdot y = y\cdot x$ for all $x,y\in X$ in some $K$-algebra $(X,\cdot)$, the
 If $(X,\cdot)$ is an associative and $K$-algebra having a multiplicaiton identity $e$, and if $x\in X$ satisfies the condition that there exists an element $y\in X$ such that $x\cdot y = y\cdot x = e$, then we say that $x$ is a \emph{unit} of $X$. If such element $y$ exists, then it is unique and denoted by $x^{-1}$. Also, if $x,y$ are units of $X$, then so is $x\cdot y$. Indeed,
 \begin{align*}
     (x\cdot y)\cdot \left(y^{-1}\cdot x^{-1}\right) & = \left(x\cdot \left(y\cdot y^{-1}\right)\right)\cdot x^{-1} \\
-    & = (x\cdot e)\cdot x^{-1} = e
+    & = (x\cdot e)\cdot x^{-1} = e.
 \end{align*}
-similarly, $\left(y^{-1}\cdot x^{-1}\right)\cdot(x\cdot y) = e$. 
+Similarly, $\left(y^{-1}\cdot x^{-1}\right)\cdot(x\cdot y) = e$. 
 \begin{remark}{\rm \cite{2}}
 Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which the inverses exist, since the proof relies only on associativity of addition and multiplication and distributivity of multiplication over addition.
 \end{remark}
@@ -384,7 +384,7 @@ Loo-Keng Hua’s identity holds in any associative unital $F$-algebra in which t
 \begin{definition}
 Let $K$ be a field. An anticommutative $K$-algebra $(X,\cdot)$ is a Lie algebra over $K$ if and only if it satisfies Jacobi identity:
 \begin{align*}
-    x\cdot (y\cdot z) + y\cdot (z\cdot x) + z\cdot (x\cdot y) = 0
+    x\cdot (y\cdot z) + y\cdot (z\cdot x) + z\cdot (x\cdot y) = 0,
 \end{align*}
 for all $x,y,z\in X$. This algebra is not associative unless $x\cdot y = 0$ for all $x,y\in X$.
 \end{definition}
@@ -463,7 +463,7 @@ Let $\mathbb{C},\mathbb{R}$, and $\mathbb{Q}$ be the fields of complex, real, an
 \begin{definition}
 A linear combination of $m$ vectors $x_1,\cdots, x_m$ of a linear space is a vector of the form
 \begin{align*}
-    \sum^m_{j=1} c_j x_j, {\rm where}\, c_j \in K
+    \sum^m_{j=1} c_j x_j, \,\,{\rm where}\,\, c_j \in K.
 \end{align*}
 Given $m$ vectors $x_1,\cdots, x_m$ of a linear space $X$, the set of all linear combinations of $x_1,\cdots, x_m$ is a subspace of $X$, and it is the smallest subspace of $X$
 containing $x_1,\cdots, x_m$. This is called the subspace spanned by $x_1,\cdots, x_m$.
@@ -476,10 +476,12 @@ A set of vectors $x_1,\cdots, x_m$ in $X$ spans the whole space $X$ if every $x$
 \begin{definition}
 The vectors $x_1,\cdots, x_m$ are called linearly dependent if there exist scalars $c_1,\cdots, c_m$, not all of them are zero, such that
 \begin{align*}
-    \sum^m_{j=1} c_j x_j = 0
+    \sum^m_{j=1} c_j x_j = 0,
 \end{align*}
 The vectors $x_1,\cdots, x_m$ are called linearly independent if they are not dependent. 
 \end{definition}
+
+\medskip
 
 \begin{definition}
 A finite set of vectors which span $X$ and are linearly independent is called a basis for $X$.
@@ -493,12 +495,12 @@ A linear space which is spanned by a finite set of vectors has a basis.
 \begin{proof}
 Let $m$ be the smallest number such that there exist $x_1,\cdots,x_m \in X$, and $X = {\rm span}\{x_1,\cdots,x_m\}$. If $x_1,\cdots,x_m$ are linearly dependent, then there exist $c_1,\cdots,c_m\in K$, not all of them are zero, such that
 \begin{align*}
-    \sum^m_{j=1}c_j x_j = 0
+    \sum^m_{j=1}c_j x_j = 0.
 \end{align*}
 Suppose without losing generality that $c_1 \neq 0$, then 
 \begin{align*}
-    c_1 x_1 + c_2 x_2 + \cdots + c_m x_m = 0\\
-    \Rightarrow x_1 = -\frac{c_2}{c_1}x_2 - \cdots - \frac{c_m}{c_1}x_m
+    c_1 x_1 + c_2 x_2 + \cdots + c_m x_m = 0,\\
+    \Rightarrow x_1 = -\frac{c_2}{c_1}x_2 - \cdots - \frac{c_m}{c_1}x_m,
 \end{align*}
 then $\{x_2,\cdots,x_m\}$ is also a span of $X$, which is a contradiction.
 \end{proof}
@@ -513,6 +515,8 @@ same number of vectors. This number is called the dimension of $X$ and is denote
 The theorem follows from the lemma below.
 \end{proof}
 
+\medskip
+
 \begin{lemma}
 Suppose that the vectors $\{x_1,\cdots,x_n\}$ span a linear space $X$ and that
 the vectors $\{y_1,\cdots,y_m\}$ in $X$ are linear independent. Then $m \leq n$.
@@ -520,8 +524,8 @@ the vectors $\{y_1,\cdots,y_m\}$ in $X$ are linear independent. Then $m \leq n$.
 \begin{proof}
 Since ${\rm span}\{x_1,\cdots,x_m\} = X$, then for $y_1$, we have $y_1 = \sum^n_{j=1}c_j x_j \neq 0$. Then, for some $k$ such that $c_k\neq 0$, we have
 \begin{align*}
-    c_k x_k & = y_1 - \sum^n_{j=1, j\neq k} c_j x_j \\
-    x_k & = \frac{y_1}{c_k} - \sum^n_{j=1, j\neq k} \frac{c_j}{c_k} x_j
+    c_k x_k & = y_1 - \sum^n_{j=1, j\neq k} c_j x_j, \\
+    x_k & = \frac{y_1}{c_k} - \sum^n_{j=1, j\neq k} \frac{c_j}{c_k} x_j.
 \end{align*}
 Then we have $\{y_1\}\cup\{x_1,\cdots,x_{j-1},x_{j+1},\cdots, x_n\}$ can span $X$. Then, $y_2$ can be written as a linear combination of $y_1$ and $\{x_j\}_{j\neq k}$. Some coefficients for $x_j, j\neq k$ must be nonzero, since $y_1$ and $y_2$ are linearly independent. Then we can replace $x_j$ by $y_2$, and continue this process until it spans $X$. If $m \geq n$, then $n$ steps total yields that $y_1,\cdots,y_m$ span $X$. If $m > n$, this contradicts the linear independence of the vectors $y_1,\cdots,y_m$.
 \end{proof}
@@ -566,11 +570,11 @@ Let $x_1, \cdots, x_n$ be a basis of $X$. For any $x\in X$, we have $x = \sum^n_
     \item Let $\{y_1, \cdots, y_m\}$ be a basis of $Y$ and ${\rm dim}Y = m$. Then we can complete it into a basis of $X$, saying ${\rm span}\{y_1, \cdots, y_m, y_{m+1},\cdots, y_n\} = X$. 
     
     We define $Z = {\rm span}\{y_{m+1},\cdots, y_n\}$, and then ${\rm dim}Z = n - m$. For any $x\in X$, we have 
-    $$x = \sum^n_{k=1}c_k x_k, y = \sum^m_{k=1}c_k x_k, z = \sum^m_{k=m+1}c_k x_k$$ 
+    $$x = \sum^n_{k=1}c_k x_k, y = \sum^m_{k=1}c_k x_k, z = \sum^m_{k=m+1}c_k x_k,$$ 
     then we have $x = y+z$. If $x = \Tilde{y} + \Tilde{z}, \Tilde{y}\in Y, \Tilde{z}\in Z$, then we have $\Tilde{y} + \Tilde{z} = y + z$, which implies $\Tilde{y} - y = z - \Tilde{z}$. Since $Y,Z$ are subspaces of $X$, then we can have 
     \begin{align*}
-        \Tilde{y} - y = \sum^m_{k=1}a_ky_k & = \sum^m_{k=m+1}b_ky_k = z - \Tilde{z} \\
-        \Rightarrow \sum^m_{k=1}a_ky_k & - \sum^m_{k=m+1}b_ky_k = 0
+        \Tilde{y} - y = \sum^m_{k=1}a_ky_k & = \sum^m_{k=m+1}b_ky_k = z - \Tilde{z}, \\
+        \Rightarrow \sum^m_{k=1}a_ky_k & - \sum^m_{k=m+1}b_ky_k = 0.
     \end{align*}
     Since $y_1,\cdots, y_n$ are linearly independent, then $a_k = b_k = 0$, which implies that $\Tilde{y}=y, \Tilde{z}=z$.
 \end{enumerate}
@@ -587,7 +591,7 @@ Let $x_1, \cdots, x_n$ be a basis of $X$. For any $x\in X$, we have $x = \sum^n_
 \begin{definition}
 $X$ is said to be a direct sum of its subspaces $Y_1, \cdots, Y_m$ if every $x\in X$ can be uniquely expressed as
 \begin{align*}
-    x = \sum^m_{j=1}y_j, y_j\in Y_j
+    x = \sum^m_{j=1}y_j, y_j\in Y_j.
 \end{align*}
 We write $X = Y_1 \oplus \cdots \oplus Y_m$. Furthermore, ${\rm dim}X = {\rm dim}Y_1 +\cdots + {\rm dim}Y_m$.
 \end{definition}
@@ -600,7 +604,7 @@ Prove that if $X = Y_1 \oplus \cdots \oplus Y_m$, then ${\rm dim}X = {\rm dim}Y_
 \begin{proof}
 Suppose $y_{i1}, \cdots, y_{in_i}$ form a basis for $Y_i, 1\leq i\leq m$. Then for any $x\in X$, we have $x = x_1 +\cdots +x_m$, where $x_i\in Y_i$. Also, we can express $x_i$ as $x_i = \sum^{n_i}_{k=1}c_{i k} y_{i k}$. Then we have 
 \begin{align*}
-    x = \sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k}
+    x = \sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k}.
 \end{align*}
 If $\sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k} = 0$ for some $c_{ik}\neq 0$, then it contradicts with the definition of then direct sum.
 \end{proof}
@@ -620,7 +624,7 @@ Suppose $x_1,\cdots, x_n$ form a basis for $X$. Then for any $x\in X$, it can be
 \begin{definition}
 For $X$ being a linear space, and $Y$ being a subspace of $X$, we say that two vectors $x_1, x_2\in X$ are congruent modulo $Y$, denoted by
 \begin{align*}
-    x_1 \equiv x_2 \bmod Y
+    x_1 \equiv x_2 \bmod Y,
 \end{align*}
 if $x_1-x_2\in Y$.
 \end{definition}
@@ -635,8 +639,8 @@ Thus, we can divide elements of $X$ into congruence classes $\bmod Y$ . The cong
 
 The set of congruence classes can be made into a linear space by defining addition and multiplication by scalars in $K$, as follows:
 \begin{align*}
-    \{x\} + \{y\}& = \{x+y\}\\
-    a\{x\} &= \{ax\}
+    \{x\} + \{y\}& = \{x+y\},\\
+    a\{x\} &= \{ax\}.
 \end{align*}
 That is, the sum of the congruence class containing $x$ and the congruence class containing $y$ is the class containing $x + y$. Similarly for multiplication by scalars.
 
@@ -670,19 +674,19 @@ Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set c
 \begin{enumerate}[label=(\alph*)]
     \item For any $x\in X$, we can write it as 
     \begin{align*}
-        x = \sum^m_{k=1}a_k x_k + \sum^{n}_{k=m+1}a_k x_k
+        x = \sum^m_{k=1}a_k x_k + \sum^{n}_{k=m+1}a_k x_k,
     \end{align*}
-    Then we have 
+    Then, we have 
     \begin{align*}
         \{x\} = \sum^{n}_{k=m+1}a_k \{x_k\}.
     \end{align*}
     \item Suppose that $\sum^{n}_{k=m+1}a_k \{x_k\} = 0$, then we have 
     \begin{align*}
-        \sum^{n}_{k=m+1}a_k x_k = y, y\in Y
+        \sum^{n}_{k=m+1}a_k x_k = y, y\in Y.
     \end{align*}
     And $y$ can be expressed as $\sum^{m}_{k=1}a_k x_k$, then we have 
     \begin{align*}
-        \sum^{n}_{k=m+1}a_k x_k - \sum^{m}_{k=1}a_k x_k = 0
+        \sum^{n}_{k=m+1}a_k x_k - \sum^{m}_{k=1}a_k x_k = 0,
     \end{align*}
     which implies $a_k = 0$ for all $k$, since $x_1, \cdots, x_n$ form a basis for $X$.
 \end{enumerate}
@@ -713,9 +717,9 @@ In general, let $W = U\cap V$. Claim that $U/W+V/W = (U+V)/W$, which is a direct
 
 Now we proved $U/W+V/W = (U+V)/W$, then we have 
 \begin{align*}
-    {\rm dim}U/W + {\rm dim}V/W & = {\rm dim}(U+V)/W \\
-    \Rightarrow {\rm dim}U - {\rm dim} W + {\rm dim} V - {\rm dim}W & = {\rm dim}(U+V) - {\rm dim}W\\ 
-    \Rightarrow {\rm dim}U + {\rm dim} V - {\rm dim}(U\cap V) & = {\rm dim}(U+V)
+    {\rm dim}U/W + {\rm dim}V/W & = {\rm dim}(U+V)/W,\\
+    \Rightarrow {\rm dim}U - {\rm dim} W + {\rm dim} V - {\rm dim}W & = {\rm dim}(U+V) - {\rm dim}W,\\ 
+    \Rightarrow {\rm dim}U + {\rm dim} V - {\rm dim}(U\cap V) & = {\rm dim}(U+V).
 \end{align*}
 The proof is complete.
 \end{proof}
@@ -729,7 +733,7 @@ The Cartesian sum $X_1\oplus X_2$ of two linear spaces $X_1, X_2$ over the same 
 \medskip
 
 \begin{theorem}
-$${\rm dim}X_1\oplus X_2 = {\rm dim}X_1 + {\rm dim}X_2$$
+$${\rm dim}X_1\oplus X_2 = {\rm dim}X_1 + {\rm dim}X_2.$$
 \end{theorem}
 \begin{proof}
 Let $x_1, \cdots, x_n$ be a basis of $X_1$ and $y_1, \cdots, y_m$ be a basis of $X_2$. We claim that 
@@ -749,7 +753,7 @@ and it is easy to see that $Y_1$ is isomorphic to $X_1$ and $Y_2$ isomorphic to 
 
 Moreover, we can define the Cartesian sum $\oplus^m_{k=1}X_k$ of $m$ linear spaces and we have 
 \begin{align*}
-    {\rm dim}\oplus^m_{k=1}X_k = \sum^m_{k=1}{\rm dim}X_k.
+    \dim \oplus^m_{k=1}X_k = \sum^m_{k=1}\dim X_k.
 \end{align*}
 
 \medskip
@@ -774,7 +778,7 @@ Now consider $v + \lambda u$ for $\lambda\in K$. We claim that $v + \lambda u\in
 
 This claim implies that there are only finitely many $\lambda\in K$, saying $\lambda_1, \cdots, \lambda_s$ such that 
 \begin{align*}
-    v+\lambda_i u \in \bigcup^n_{i=1}W_i = X
+    v+\lambda_i u \in \bigcup^n_{i=1}W_i = X.
 \end{align*}
 Since $K$ has infinitely many elements, then we can choose $\lambda_0\in K$ such that $\lambda_0\notin \{\lambda_1, \cdots, \lambda_s\}$, then $v+\lambda_0 u\notin \bigcup^n_{i=1}W_i = X$, which is a contradiction.
 \end{proof}
@@ -790,22 +794,22 @@ Since $K$ has infinitely many elements, then we can choose $\lambda_0\in K$ such
 
 Let $X$ be a linear space over a field $K$. A scalar valued function $l:X\to K$ is called \emph{linear} if 
 \begin{align*}
-    l(x+y) &= l(x) + l(y) \\
-    l(kx) &= k l(x)
+    l(x+y) &= l(x) + l(y), \\
+    l(kx) &= k l(x),
 \end{align*}
 for all $x,y\in X$, and for all $k\in K$.
 
 The set of linear functions on a linear space $X$ forms a linear space $X'$, the \emph{dual space} of $X$, if we define 
 \begin{align*}
-    (l+m)(x) &= l(x) + m(x) \\
-    (kl)(x) &= k(l(x))
+    (l+m)(x) &= l(x) + m(x), \\
+    (kl)(x) &= k(l(x)).
 \end{align*}
 
 \medskip
 
 \begin{theorem}\label{theorem_dual}
 Let $X$ be a linear space of dimension $n$. Under a chosen basis $x_1,\cdots,x_n$, the elements of $X$ can be represented as arrays of $n$ scalars:
-$$x = (c_1,\cdots,c_n) = \sum^n_{k=1}c_k x_k$$
+$$x = (c_1,\cdots,c_n) = \sum^n_{k=1}c_k x_k.$$
 Let $a_1,\cdots,a_n$ be any array of $n$ scalars, the function $l$ defined by
 \begin{align*}
     l(x) = \sum^n_{k=1} a_k c_k
@@ -830,7 +834,7 @@ Suppose ${\rm dim}X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\
     \item For any $l\in X'$, we have $l(x) = \sum^n_{k=1}c_k a_k = \sum^n_{k=1}a_k l_k(x)$. Thus, $l = \sum^n_{k=1}a_k l_k$, which implies that $\{l_j, 1\leq j\leq n\}$ span the space $X'$.
     \item We claim $l_j, 1\leq j\leq n$ are linearly independent. If $\sum^n_{k=1}b_k l_k = 0$, then we have 
     \begin{align*}
-        \sum^n_{k=1}b_k l_k(x_k) = \sum^n_{k=1}b_k c_k = 0
+        \sum^n_{k=1}b_k l_k(x_k) = \sum^n_{k=1}b_k c_k = 0,
     \end{align*}
     for all $x_k\in X$. Then we have $b_k = 0, 1\leq k \leq n$.
 \end{enumerate}
@@ -840,7 +844,7 @@ Suppose ${\rm dim}X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\
 
 We defined $l(x) = \sum^n_{k=1} a_k c_k$ in Theorem \ref{theorem_dual}, the right-hand side depends symmetrically on $l$ and $x$, then we can write left-hand side also symmetrically, we introduce the \emph{scalar product} notation
 \begin{align*}
-    (l,x) \equiv l(x)
+    (l,x) \equiv l(x),
 \end{align*}
 which is a bilinear function of $l$ and $x$. 
 
@@ -875,7 +879,7 @@ $Y^\bot$ is a subspace of $X'$.
 ${\rm dim}Y^\bot + {\rm dim}Y = {\rm dim}X$.
 \end{theorem}
 \begin{proof}
-We can establish a natural isomorphism $T:Y^\bot\to (X/Y)'$ as follows $$T(l)(\{x\}) = l(x)$$
+We can establish a natural isomorphism $T:Y^\bot\to (X/Y)'$ as follows $$T(l)(\{x\}) = l(x),$$
 for any $l\in Y^\bot$ and $\{x\}\in X/Y$. It suffices to prove that $T$ is well-defined.
 \begin{enumerate}[label=(\alph*)]
     \item If $\{x_1\} = \{x_2\}$, then $x_1 = x_2 + y$ for some $y\in Y$. Then $l(x_1) = l(x_2) + l(y) = l(x_2)$. Then $T(l)$ is well defined.
@@ -954,8 +958,8 @@ The integral of $p$ over $I$ is a linear function, therefore it can be represent
 
 Let $X,U$ be linear spaces over the same field $K$. A mapping $T:X\to Y$ is called linear if it is additive and homogeneous, i.e.,
 \begin{align*}
-    T(x+y) &= T(x)+T(y), \forall x,y \in X\\
-    T(k x) &= k T(x), \forall x\in X, \forall k\in K
+    T(x+y) &= T(x)+T(y), \forall x,y \in X,\\
+    T(k x) &= k T(x), \forall x\in X, \forall k\in K.
 \end{align*}
 For simplicity, we write $T(x) = T x$.
 
@@ -968,7 +972,7 @@ For simplicity, we write $T(x) = T x$.
     \item Linear functionals.
     \item $X=\mathbb{R}^n, U=\mathbb{R}^m, u = TX$ defined by
     \begin{align*}
-        u_i = \sum^n_{j=1}t_{ij}x_j, i = 1,2,\cdots,m
+        u_i = \sum^n_{j=1}t_{ij}x_j, i = 1,2,\cdots,m.
     \end{align*}
     Hence, $u = (u_1,\cdots,u_m), x = (x_1,\cdots,x_n)$.
 \end{enumerate}
@@ -1065,8 +1069,7 @@ Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim X > \di
 Let $T:\mathscr{L}(X,U)$, then with Rank-Nullity theorem, we have
 \begin{align*}
     \dim N_T & = \dim X - \dim R_T \\
-    & \geq \dim X - \dim U \\
-    & > 0
+    & \geq \dim X - \dim U > 0.
 \end{align*}
 Thus, $T$ is not injective.
 \end{proof}
@@ -1080,8 +1083,7 @@ Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim X < \di
 Let $T:\mathscr{L}(X,U)$, then with Rank-Nullity theorem, we have
 \begin{align*}
     \dim R_T & = \dim X - \dim R_T \\
-    & \leq \dim X \\
-    & < \dim U
+    & \leq \dim X < \dim U.
 \end{align*}
 Thus, $T$ is not surjective.
 \end{proof}
@@ -1099,7 +1101,7 @@ has a nontrivial solution.
 \begin{proof}
 Define $T:\mathbb{R}^n\to\mathbb{R}^m$ as
 \begin{align*}
-    T(x_1,\cdots,x_n) = \left(\sum^n_{j=1}t_{1j} x_j, \cdots, \sum^n_{j=1}t_{nj} x_j\right)
+    T(x_1,\cdots,x_n) = \left(\sum^n_{j=1}t_{1j} x_j, \cdots, \sum^n_{j=1}t_{nj} x_j\right).
 \end{align*}
 Then $T$ is linear, and with previous theorem, there exists $x\in\mathbb{R}^n, x\neq 0$ such that $T x = 0$. Thus, $x = (x_1,\cdots,x_n)$ is an nontrivial solution.
 \end{proof}
@@ -1121,7 +1123,7 @@ has only the trivial solution.
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) Set $u_i = 0$ and it is trivial.
     \item ($\Leftarrow$) Define $T:\mathbb{R}^n\to\mathbb{R}^n$ as 
-    $$T(x_1,\cdots,x_n) = \left(\sum^n_{j=1}t_{1j} x_j, \cdots, \sum^n_{j=1}t_{nj} x_j\right)$$
+    $$T(x_1,\cdots,x_n) = \left(\sum^n_{j=1}t_{1j} x_j, \cdots, \sum^n_{j=1}t_{nj} x_j\right).$$
     If homogeneous system has only trivial solution, then $N_T = \{0\}$, which implies $R_T = \mathbb{R}^n$. Thus, $T$ is an isomoorphism. 
 \end{enumerate}
 \end{proof}
@@ -1131,8 +1133,8 @@ has only the trivial solution.
 \section{Algebra of Linear Mappings}
 Let $X,U$ be linear spaces and let $\mathscr{L}(X,U)$ be the collection of all linear maps from $X$ to $U$. $\mathscr{L}(X,U)$ is a linear space if we define
 \begin{align*}
-    (T+S)(x) & = Tx + Sx \\
-    (kT)(x) & = k T x
+    (T+S)(x) & = Tx + Sx, \\
+    (kT)(x) & = k T x,
 \end{align*}
 for $\forall x\in X, \forall k\in K, \forall T,S\in \mathscr{L}(X,U)$.
 
@@ -1141,7 +1143,7 @@ for $\forall x\in X, \forall k\in K, \forall T,S\in \mathscr{L}(X,U)$.
 \begin{definition}
 Let $T\in \mathscr{L}(X,U)$ and $S\in \mathscr{L}(U,V)$, where $X,U$ and $V$ are linear spaces. The composition of $S$ and $T$ is defined by 
 \begin{align*}
-    S \circ T(x) = S\left(T(x)\right)
+    S \circ T(x) = S\left(T(x)\right),
 \end{align*}
 denoted by $ST$, called the multipilication of $S$ and $T$. In general, $ST\neq TS$.
 \end{definition}
@@ -1171,12 +1173,12 @@ A linear map is called invertible if it is one-to-one and onto, that is, if it i
 ~\begin{enumerate}[label=(\alph*)]
     \item Let $T\in \mathscr{L}(X,U)$ be invertible, it suffices to prove that 
     \begin{align*}
-        T^{-1}(k_1 u_1+k_2 u_2) = k_1 T^{-1}(u_1) + k_2 T^{-1}(u_2)
+        T^{-1}(k_1 u_1+k_2 u_2) = k_1 T^{-1}(u_1) + k_2 T^{-1}(u_2),
     \end{align*}
     for all $k_1,k_2\in K$ and $u_1,u_2\in U$. We have
     \begin{align*}
         T \left(T^{-1}(k_1 u_1+k_2 u_2)\right) & = k_1 TT^{-1}(u_1) + k_2 TT^{-1}(u_2) \\
-        & = k_1 u_1 + k_2 u_2
+        & = k_1 u_1 + k_2 u_2,
     \end{align*}
     which implies the above indication.
     \item Let $T:U\to V, S:V\to W$ and then $ST:U\to W$, then $ST$ is also an isomorphism, which implies it is invertible. For any $w\in W$, there exists a $u\in U$ such that $(ST)^{-1}(w) = u$. It suffices to prove that $T^{-1} S^{-1}(w) = u$.
@@ -1191,7 +1193,7 @@ A linear map is called invertible if it is one-to-one and onto, that is, if it i
 \begin{definition}
 Let $T\in \mathscr{L}(X,U)$ the transpose $T'\in \mathscr{L}(U',X')$ of $T$ is defined by 
 \begin{align*}
-    \left(T'(l)\right)(x) = l(T(x))
+    \left(T'(l)\right)(x) = l(T(x)),
 \end{align*}
 for any $l\in U'$ and $x\in X$. We could use the dual notation to represent the identity as $(T' l,x) = (l, Tx)$.
 \end{definition}
@@ -1250,7 +1252,7 @@ Let $T\in \mathscr{L}(X,U)$, then we have $R_T^\bot = N_{T'}$ and $R_T = N_{T'}^
 ~\begin{enumerate}[label=(\alph*)]
     \item For $l\in R_T^\bot$, then for any $u\in R_T$, $(l,u) = 0$. Since $u\in R_T$, then $u = T x$ for some $x\in X$. Thus, we have
     \begin{align*}
-        (l, T x) = 0 \Rightarrow (T' l, x) = 0
+        (l, T x) = 0 \Rightarrow (T' l, x) = 0,
     \end{align*}
     for $\forall x\in X$. Then $T' l = 0$, which implies $l\in N_{T'}$.
     \item Since $R_T^\bot = N_{T'}$, then we have $R_T^{\bot\bot} = N_{T'}^\bot = R_T$.
@@ -1263,8 +1265,8 @@ Let $T\in \mathscr{L}(X,U)$, then we have $R_T^\bot = N_{T'}$ and $R_T = N_{T'}^
 Let $T\in \mathscr{L}(X,U)$, then ${\rm dim}R_T = {\rm dim}R_{T'}$.
 \end{theorem}
 \begin{proof}
-First, we have ${\rm dim}R_T + {\rm dim}R_T^\bot = {\rm dim}U$, then we have $${\rm dim}R_T + {\rm dim}N_{T'} = {\rm dim}U$$
-With Rank-Nullity theorem, we have $${\rm dim}R_{T'} + {\rm dim}N_{T'} = {\rm dim}U' = {\rm dim}U$$ 
+First, we have ${\rm dim}R_T + {\rm dim}R_T^\bot = {\rm dim}U$, then we have $${\rm dim}R_T + {\rm dim}N_{T'} = {\rm dim}U.$$
+By Rank-Nullity theorem, we have $${\rm dim}R_{T'} + {\rm dim}N_{T'} = {\rm dim}U' = {\rm dim}U.$$ 
 Thus, ${\rm dim}R_{T'} = {\rm dim}R_{T}$.
 \end{proof}
 
@@ -1276,8 +1278,8 @@ Suppose $T\in \mathscr{L}(X,U)$ and ${\rm dim} X = {\rm dim} U$. Then, ${\rm dim
 \begin{proof}
 From Rank-Nullity theorem, we have 
 \begin{align*}
-    {\rm dim}R_T + {\rm dim}N_T & = {\rm dim}U \\
-    {\rm dim}R_{T'} + {\rm dim}N_{T'} & = {\rm dim}U' = {\rm dim}U = {\rm dim}X
+    {\rm dim}R_T + {\rm dim}N_T & = {\rm dim}U, \\
+    {\rm dim}R_{T'} + {\rm dim}N_{T'} & = {\rm dim}U' = {\rm dim}U = {\rm dim}X.
 \end{align*}
 Then it is easy to see that ${\rm dim}N_T = {\rm dim}N_{T'}$.
 \end{proof}
@@ -1288,7 +1290,7 @@ Then it is easy to see that ${\rm dim}N_T = {\rm dim}N_{T'}$.
 \begin{definition}\label{similarity}
 Given an invertible element $S\in \mathscr{L}(X, X)$, we assign to each $M\in \mathscr{L}(X,X)$ the element
 \begin{align*}
-    M_S = SMS^{-1}
+    M_S = SMS^{-1}.
 \end{align*}
 The assignment $M\mapsto M_S$ is called similarity transformation, $M$ is said to be similar to $M_S$.
 \end{definition}
@@ -1299,9 +1301,9 @@ The assignment $M\mapsto M_S$ is called similarity transformation, $M$ is said t
 ~\begin{enumerate}[label=(\alph*)]
     \item Every similarity transformation is an automorphism of $\mathscr{L}(X,X)$:
     \begin{align*}
-        (kM)_S & = kM_S\\
-        (M+K)_S & = M_S + K_S\\
-        (MK)_S & = M_S K_S
+        (kM)_S & = kM_S,\\
+        (M+K)_S & = M_S + K_S,\\
+        (MK)_S & = M_S K_S.
     \end{align*}
     \item The similarity transformations form a group with $$(M_S)_T = M_{TS}.$$
 \end{enumerate}
@@ -1334,7 +1336,7 @@ Similarity is an equivalence relation, i.e., it is:
 ~\begin{enumerate}[label=(\alph*)]
     \item It is true if we choose $S=I$ in Definition \ref{similarity}.
     \item We have $K = SMS^{-1}$, then we have $S^{-1}KS = S^{-1} S M S^{-1} S = M$. Then $K$ is similar to $M$.
-    \item We have $K = SMS^{-1}$ and $L=TKT^{-1}$, then we have $$L = TSMS^{-1}T^{-1} = (TS)M(TS)^{-1}$$ which is similar to $M$.
+    \item We have $K = SMS^{-1}$ and $L=TKT^{-1}$, then we have $$L = TSMS^{-1}T^{-1} = (TS)M(TS)^{-1},$$ which is similar to $M$.
 \end{enumerate}
 \end{proof}
 
@@ -1368,8 +1370,8 @@ For any $x\in R_P$, we have $x = P y$ for some $y\in X$. Then we have $Px = P^2 
 \begin{remark}
 The opposite direction of the theorem above is also true. Indeed, for any $x\in X$, we can write $x = y+z$, where $y\in N_P, z\in R_P$. Then we have
 \begin{align*}
-    Px & = Py + Pz = Pz\\
-    P^2 x & = P^2 y + P^2 z = Pz = Px
+    Px & = Py + Pz = Pz, \\
+    P^2 x & = P^2 y + P^2 z = Pz = Px.
 \end{align*}
 Then we have $P^2=P$.
 \end{remark}
@@ -1396,7 +1398,7 @@ Then $T$ is a linear map. On the other hand, every map $T\in \mathscr{L}(\mathbb
         t_{21} & t_{22} & \cdots & t_{2n}\\
         \vdots & \vdots & \ddots & \vdots\\
         t_{m1} & t_{m2} & \cdots & t_{mn}
-        \end{matrix}
+        \end{matrix},
     \right)
 \end{align*}
 which is called an $m$ by $n$ ($m\times n$) matrix, where $t_{ij}$ is called the \emph{entries} of the matrix $T$. A matrix is called a \emph{square matrix} if $m=n$. 
@@ -1418,18 +1420,18 @@ where $c_j = T e_j$, $e_j\in\mathbb{R}^n$ is defined as above.
 \section{Matrix Multiplication and Transposition}
 Since matrices represent linear mappings, the algebra of linear mappings induces a corresponding algebra of matrices, i.e., if $T,S\in \mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, then
 \begin{align*}
-    T+S &= (t_{ij} + s_{ij})_{m\times n}\\
-    k T &= (kt_{ij})_{m\times n}
+    T+S &= (t_{ij} + s_{ij})_{m\times n},\\
+    k T &= (kt_{ij})_{m\times n}.
 \end{align*}
 If $T\in \mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$ and $S\in \mathscr{L}(\mathbb{R}^m,\mathbb{R}^l)$, then the product $St = S\circ T \in \mathscr{L}(\mathbb{R}^n,\mathbb{R}^l)$. For $e_j\in\mathbb{R}^n$,
 \begin{align*}
     (ST)(e_j^n) & = S(Te_j^n) = S\left(\sum^m_{i=1}t_{ij}e^m_i\right) = \sum^m_{i=1}t_{ij} S(e^m_i) \\
     & = \sum^m_{i=1}t_{ij} \left(\sum^l_{k=1}s_{ki}e^l_k\right) = \sum^l_{k=1}\left(\sum^m_{i=1}t_{ij}s_{ki}\right)e^l_k \\
-    & = \sum^l_{k=1}(ST)_{kj} e^l_k
+    & = \sum^l_{k=1}(ST)_{kj} e^l_k,
 \end{align*}
 where $e_j^m\in\mathbb{R}^m,e_j^l\in\mathbb{R}^l$. Hence, we have 
 \begin{align*}
-    (ST)_{kj} = \sum^m_{i=1}t_{ij}s_{ki}
+    (ST)_{kj} = \sum^m_{i=1}t_{ij}s_{ki},
 \end{align*}
 which is the product of $k$th row of $S$ and $j$th column of $T$.
 
@@ -1440,17 +1442,17 @@ We can write any $n\times n$ matrix $A$ in $2\times 2$ block form
         A_{11} & A_{12} \\
         A_{21} & A_{22} 
         \end{matrix}
-    \right)
+    \right),
 \end{align*}
 where $A_{11}$ is $k\times k$ matrix, and $A_{22}$ is $(n-k)\times(n-k)$ matrix. 
 
 We shall identify the dual of the space $\mathbb{R}^n$ of all column vectors with $n$ components as the space $(\mathbb{R}^n)'$ of all row vectors with $n$ components. For $l\in (\mathbb{R}^n)'$ and $x\in\mathbb{R}^n$, 
-$$l x = \sum^n_{i=1}l_ix_i$$
+$$l x = \sum^n_{i=1}l_ix_i.$$
 
 Let $x\in\mathscr{L}(\mathbb{R},\mathbb{R}^n), T \in \mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and $l \in \mathscr{L}(\mathbb{R}^m,\mathbb{R})$ be linear mappings, according to associative law, we have
-$$(lT)x = l(Tx)$$
+$$(lT)x = l(Tx).$$
 We identity $l$ as an element of $(\mathbb{R}^m)'$, and $lT$ as an element of $(\mathbb{R}^n)'$, and we can rewrite is into form
-$$(lT, x) = (l, Tx)$$
+$$(lT, x) = (l, Tx),$$
 and we recall the definition of transpose $T'$ of $T$, defined by $(T'l, x) = (l, Tx)$. Now we can define the transpose $T^T$ of the matrix $T$ as 
 $$\left(T^T\right)_{ij} = T_{ji}.$$
 
@@ -1478,7 +1480,7 @@ We can apply elementary row operations and elementary column operations to make 
         I_{k} &  \\
          & 0_{(m-k)\times (n-k)}
         \end{matrix}
-    \right)
+    \right).
 \end{align*}
 Since $P$ and $Q$ are invertible, then the maximum number of linearly independent rows in $A$ is equal to the maximum number of linearly independent rows in $E$. Also, it is similar for the column rank. Then it is obvious that ${\rm dim}\,R_T = {\rm dim}\, R_{T^T}$.
 \end{proof}
@@ -1488,7 +1490,7 @@ Now we present another different approach to prove this theorem.
 \begin{proof}
 Let $T$ be $m\times n$ matrix and it has row rank $k$. Therefore, the dimension of the row space of $T$ is $k$. Let $x_1,\cdots,x_k$ be a basis of row space of $T$ and we claim that $Tx_1,\cdots, Tx_k$ are linearly independent. Indeed, we choose coefficients $c_1,\cdots,c_k$ and then 
 \begin{align*}
-    c_1 Tx_1 + \cdots + c_k Tx_k = T(c_1x_1 +\cdots + c_kx_k) = Tx = 0
+    c_1 Tx_1 + \cdots + c_k Tx_k = T(c_1x_1 +\cdots + c_kx_k) = Tx = 0.
 \end{align*}
 Then $x$ is a linear combination of basis of row space of $T$, which implies that $x$ belongs to row space of $T$. Also, $TX = 0$ implies that $x$ is orthogonal to every vector of row space of $T$, then $x$ is orthogonal to itself, giving us $x^2 = c_1^2 x_1^2 + \cdots + c_k^2 x_k^2 = 0$. Then it is obvious that $c_1 = \cdots = c_k = 0$.
 
@@ -1518,7 +1520,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
         I_{k} & 0 \\
         0 & 0
         \end{matrix}
-    \right)$$
+    \right),$$
     where $I_{k\times k}$ is $k\times k$ identity matrix.
     \item Sylvester’s rank inequality: if $A$ is an $m\times n$ matrix and $B$ is $n\times k$, then
     $${\rm rank}\,(A) + {\rm rank}\,B - n \leq {\rm rank}\,(AB).$$
@@ -1527,7 +1529,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
     \item Subadditivity:
     $${\rm rank}\, (A+B)\leq {\rm rank}\, (A)+{\rm rank}\, (B).$$
     when $A$ and $B$ are of the same dimension. As a consequence, a rank-$k$ matrix can be written as the sum of $k$ rank-$1$ matrices, but not fewer.
-    \item Rank–Nullity theorem: The rank of a matrix plus the nullity of the matrix equals the number of columns of the matrix, i.e., for $T$ being a $m\times n$ matrix, then $${\rm Rank}\, T + {\rm Nullity}\, T = n.$$
+    \item Rank–Nullity theorem: The rank of a matrix plus the nullity of the matrix equals the number of columns of the matrix, i.e., for $T$ being a $m\times n$ matrix, then $$\rank T + \dim N_T = n.$$
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -1549,32 +1551,30 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
     \item For any $x\in\mathbb{R}^n$, we denote $T x$ by $y\in\mathbb{R}^m$. And since $K$ is full column rank, then the rank of $Ky$ is equal to the rank of $y$, which implies that ${\rm rank}\,(KT) = {\rm rank}\,(T)$.
     \item With Rank-Nullity theorem and $T:\mathbb{R}^n\to\mathbb{R}^m$, we have $\dim R_T + \dim N_T = n$. Then we can find a basis $(x_1,\cdots,x_{k},x_{k+1},\cdots,x_n)$ for $\mathbb{R}^n$, where $(x_{k+1},\cdots,x_n)$ is a basis for null space $N_T$ of $T$.
     
-    Now we define $f_j = T(e_j), 1\leq j\leq k$, then it is easy to see that $(f_1, \cdots, f_k)$ is linearly independent. Then we can complete this basis into a basis $(f_1, \cdots, f_k,f_{k+1},\cdots,f_m)$ of $\mathbb{R}^m$. Relative to this basis, we can choose $$f_1 = (1,0,\cdots, 0)^T, \cdots, f_j = (0,\cdots,\underbrace{1}_{j {\rm th}}, \cdots, 0)^T, \cdots, f_k = (0,\cdots,\underbrace{1}_{k {\rm th}}, \cdots, 0)^T$$
-    which gives us $I_K$, along with all zeros below for the first $k$ columns of $T$, which is \cite{3}
-    \begin{align*}
-        \left(
+    Now we define $f_j = T(e_j), 1\leq j\leq k$, then it is easy to see that $(f_1, \cdots, f_k)$ is linearly independent. Then we can complete this basis into a basis $(f_1, \cdots, f_k,f_{k+1},\cdots,f_m)$ of $\mathbb{R}^m$. Relative to this basis, we can choose $$f_1 = (1,0,\cdots, 0)^T, \cdots, f_j = (0,\cdots,\underbrace{1}_{j {\rm th}}, \cdots, 0)^T, \cdots, f_k = (0,\cdots,\underbrace{1}_{k {\rm th}}, \cdots, 0)^T,$$
+    which gives us $I_K$, along with all zeros below for the first $k$ columns of $T$, which is $\left(
         \begin{matrix}
         I_{k} \\
         0
         \end{matrix}
-        \right).
-    \end{align*}
+        \right)$\cite{3}.
+    
     \item Suppose $A$ is an $m\times n$ matrix and $B$ is an $n\times k$ matrix, then we have $AB$ is an $m\times k$ matrix. With Rank-Nullity theorem, we have 
     \begin{align*}
-        \dim R_A + \dim N_A & = n \\
-        \dim R_B + \dim N_B & = k \\
-        \dim R_{AB} + \dim N_{AB} & = k
+        \dim R_A + \dim N_A & = n, \\
+        \dim R_B + \dim N_B & = k, \\
+        \dim R_{AB} + \dim N_{AB} & = k.
     \end{align*}
     Then, we have
     \begin{align*}
-        \dim N_A + \dim R_B + \dim N_A + \dim N_B = n + \dim R_{AB} + \dim N_{AB} \\
-        \Rightarrow \dim R_{AB} - \dim R_A - \dim R_B + n = \dim N_A + \dim N_B - \dim N_{AB} \geq \dim N_A \geq 0
+        \dim N_A + \dim R_B + \dim N_A + \dim N_B = n + \dim R_{AB} + \dim N_{AB}, \\
+        \Rightarrow \dim R_{AB} - \dim R_A - \dim R_B + n = \dim N_A + \dim N_B - \dim N_{AB} \geq \dim N_A \geq 0.
     \end{align*}
     since $\dim N_B - \dim N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $BV = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
     \item Consider $A_{m\times n}$ and $B_{n\times k}$ and $B$ is of rank $r$. Using full-rank factorization of $B$, we have $B = U_{n\times r}V_{r\times k}$, where both $U$ and $V$ are of rank $r$\cite{7,5}. With Sylvester’s rank inequality, we have
     \begin{align*}
         {\rm rank}\, (ABC) & \geq {\rm rank}\, (AU) + {\rm rank}\, (VC) - r\\
-        & = {\rm rank}\, (AB) + {\rm rank}\, (BC) - {\rm rank}\, (B)
+        & = {\rm rank}\, (AB) + {\rm rank}\, (BC) - {\rm rank}\, (B).
     \end{align*}
     Then the inequality follows\cite{6}.
     \item It is easy to see that $C(A+B)\subset C(A)+C(B)$, where $C(A)$ denote the column space of $A$. Indeed, for any $y\in C(A+B)$, we can find $x$ such that $y = (A+B)x = Ax + Bx\in C(A)+C(B)$. Thus, ${\rm rank}\, (A+B)\leq {\rm rank}\, (A)+{\rm rank}\, (B)$.
@@ -1591,7 +1591,7 @@ A linear mapping $T\in\mathscr{L}(X,U)$ can be represented by a matrix if the ba
 
 If $T\in\mathscr{L}(X,X)$, and $B:X\to\mathbb{R}^n$ is an isomorphism, then we have $M = BTB^{-1}\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^n)$ is a square matrix. Let $C:X\to\mathbb{R}^n$ be another isomorphism, then $N = CTC^{-1}$ is another square matrix. Also, we have 
 \begin{align*}
-    N = C B^{-1} M B C^{-1}
+    N = C B^{-1} M B C^{-1},
 \end{align*}
 then $M$ and $N$ are similar. Thus, similar matrices represent the same linear mapping under different choices of bases.
 
@@ -1631,7 +1631,7 @@ Otherwise, we say it \emph{negatively oriented}.
 
 For a nondegenerate simplex $S$, we define $\mathcal{O}(S) = +1(-1)$ if it is positivelt (negatively) oriented. For a degenerate simplex $S$, we set $\mathcal{O}(S) = 0$. The \emph{volume} of a simplex $S$ is given by elementary formula
 \begin{align*}
-    {\rm Vol}(S) = \frac{1}{n} {\rm Vol}_{n-1}({\rm base}) \times {\rm Altitude}
+    {\rm Vol}(S) = \frac{1}{n} {\rm Vol}_{n-1}({\rm base}) \times {\rm Altitude},
 \end{align*}
 by base we mean any of the $(n-1)$-dimensional surfaces of $S$, and by altitude we mean the distance from the opposite vertices to the hyperplane that contains the base. 
 
@@ -1648,7 +1648,7 @@ Since $S$ is described by its vertices, $\sum (S)$ is a function of $a_1,\cdots,
 
 Now we consider the signed volume as
 \begin{align*}
-    \sum (S) =\frac{1}{n}{\rm Vol}_{n-1}({\rm base})
+    \sum (S) =\frac{1}{n}{\rm Vol}_{n-1}({\rm base}),
 \end{align*}
 where $k = \mathcal{O}(S) {\rm Altitude}$. The altitude is the \emph{distance} of the vertex $a_j$, also $k$ is called \emph{signed distance} of the vertex from the hyperplane containing the base. 
 
@@ -1662,7 +1662,7 @@ Determinant are related to the signed volume of ordered simplices by formula
 \begin{definition}
 Let $A = (a_1,\cdots, a_n)$ be a square matrix, where $a_j\in\mathbb{R}^n, 1\leq j\leq n$ are column vectors. Its determinant is defined by 
 \begin{align*}
-    \det A = D(a_1,\cdots,a_n) = n! \sum (S) 
+    \det A = D(a_1,\cdots,a_n) = n! \sum (S),
 \end{align*}
 where $S = (0,a_1,\cdots,a_n)$.
 \end{definition}
@@ -1692,7 +1692,7 @@ The first three statements are obvious. We only prove $(iv)$ and $(v)$.
     \end{align*}
     \item Suppose $a_1,\cdots,a_n$ are linearly dependent, then there exist $c_1,\cdots,c_n$ not all zero, such that $\sum^n_{j=1}c_j a_k = 0$. Without losing generality, assume $c_1\neq 0$, then we have
     \begin{align*}
-        a_1 & = -\sum^n_{j=2}\frac{c_k}{c_1}a_k \\
+        a_1 & = -\sum^n_{j=2}\frac{c_k}{c_1}a_k, \\
         \Rightarrow D(a_1,\cdots,a_n) & = D\left(-\sum^n_{j=2}\frac{c_k}{c_1}a_k, a_2,\cdots,a_n\right) \\
         & = -\frac{c_k}{c_1} \sum^n_{j=2} D(a_k, a_2, \cdots, a_n) = 0.
     \end{align*}
@@ -1712,7 +1712,7 @@ and they form a group with compositions. These groups, except for $n = 2$, are n
 \begin{example}
 Let $p = \frac{1234}{2413}$. Then
 \begin{align*}
-    p^2 & = \frac{1234}{4321},\quad p^{-1} = \frac{1234}{3142} \\
+    p^2 & = \frac{1234}{4321},\quad p^{-1} = \frac{1234}{3142}, \\
     p^3 & = \frac{1234}{3142},\quad p^{4} = \frac{1234}{1234}.
 \end{align*}
 \end{example}
@@ -1757,9 +1757,9 @@ $\sigma(p_1\circ p_2) = \sigma(p_1) \sigma(p_2)$.
 Given any pair of indices, $j\neq k$, we can define a permutation $p$ such that
 \begin{align*}
     p(i) = \begin{cases}
-    i, i\neq j\, {\rm or}\,\, k \\
-    k, i = j \\
-    j, i = k
+    i, i\neq j\, {\rm or}\,\, k, \\
+    k, i = j, \\
+    j, i = k.
     \end{cases}
 \end{align*}
 Such a permutation is called \emph{transposition}. And we claim that transposition has following properties:
@@ -1767,7 +1767,7 @@ Such a permutation is called \emph{transposition}. And we claim that transpositi
     \item The signature of a transposition $t$ is $-1$, i.e., $\sigma(t) = -1$.
     \item Every permutation $p$ can be written as a composition of transpositions, i.e., 
     \begin{align}\label{transposition}
-        p = t_k\circ \cdots \circ t_1
+        p = t_k\circ \cdots \circ t_1.
     \end{align}
 \end{enumerate}
 \begin{proof}
@@ -1777,7 +1777,7 @@ Such a permutation is called \emph{transposition}. And we claim that transpositi
         P\left(t(x_1,\cdots,x_n)\right) & = P(x_1,\cdots,x_{j_0},\cdots,x_{i_0},\cdots,x_n) \\
         & = (x_{j_0} - x_{i_0})\prod_{i<j,(i,j)\neq(i_0,j_0)} (x_i - x_j) \\
         & = - \prod_{i<j}(x_i - x_j) \\
-        & = - P(x_1,\cdots,x_n)
+        & = - P(x_1,\cdots,x_n).
     \end{align*}
     Hence, $\sigma(t) = -1$.
     \item It is easy to see that $p = t_k\circ \cdots \circ t_1$ is equivalent to $I = p = t_k\circ \cdots \circ t_1 \circ p^{-1}$. Consider $(1,\cdots, n) = t_k\circ \cdots \circ t_1 \circ p^{-1}(1,\cdots,n)$. Then we claim a sequence of transposition can sort an array of numbers into ascending order.
@@ -1786,7 +1786,7 @@ Such a permutation is called \emph{transposition}. And we claim that transpositi
 
 With the results above, we have
 \begin{align*}
-    \sigma(p) = (-1)^{k}
+    \sigma(p) = (-1)^{k},
 \end{align*}
 where $k$ is the number of transpositions in the decomposition (\ref{transposition}) of $p$.
 
@@ -1811,21 +1811,21 @@ This is the same as
 with multilinearity, we can write
 \begin{align*}
     D(a_1,\cdots,a_n) & = D(a_{11}e_1 + \cdots + a_{n1}e_n, a_2,\cdots,a_n) \\
-    & = a_{11}D(e_1,a_2,\cdots,a_n) + \cdots + a_{n1}D(e_n,a_2,\cdots,a_n)
+    & = a_{11}D(e_1,a_2,\cdots,a_n) + \cdots + a_{n1}D(e_n,a_2,\cdots,a_n).
 \end{align*}
 Next we can express $a_2$ as a linear combination of $e_1,\cdots,e_n$, and obtain a equation like above, with $n^2$ terms. Repeating this process, we have
 \begin{align*}
-    D(a_1,\cdots,a_n) = \sum_f a_{f_1 1}a_{f_2 2}\cdots a_{f_n n} D(e_{f_1}, e_{f_2},\cdots, e_{f_n})
+    D(a_1,\cdots,a_n) = \sum_f a_{f_1 1}a_{f_2 2}\cdots a_{f_n n} D(e_{f_1}, e_{f_2},\cdots, e_{f_n}).
 \end{align*}
 where the summation is over all functions $f$ mapping $\{1,\cdots,n\}$ into $\{1,\cdots,n\}$. If $f$ is not a permutation, then $f_i = f_j$ for some $i\neq j$. Then we have $D(e_{f_1}, e_{f_2},\cdots, e_{f_n}) = 0$. This shows that we only need to sum over permutations.
 
 Since each permutation can be decomposed into k transpositions, thus we have 
 \begin{align*}
-    D(e_{f_1}, e_{f_2},\cdots, e_{f_n}) = \sigma(p) D(e_1, e_2,\cdots, e_n)
+    D(e_{f_1}, e_{f_2},\cdots, e_{f_n}) = \sigma(p) D(e_1, e_2,\cdots, e_n).
 \end{align*}
 for any permutation. Then the determinant can be represented as
 \begin{align*}
-    D(a_1,\cdots,a_n) = \sum_p \sigma(p) a_{p(1)1} a_{p(2)2} \cdots a_{p(n)n}
+    D(a_1,\cdots,a_n) = \sum_p \sigma(p) a_{p(1)1} a_{p(2)2} \cdots a_{p(n)n}.
 \end{align*}
 where the summation is over all permutations.
 \end{theorem}
@@ -1852,7 +1852,7 @@ Assume $A = (a_{ij})_{n\times n}$, then $A^T = (b_{ij})_{n\times n}, b_{ij} = a_
 \begin{align*}
     \det A^T & = \sum_p \sigma(p) b_{p(1)1} b_{p(2)2} \cdots b_{p(n)n} \\
     & = \sum_p \sigma(p) a_{1 p(1)} a_{2 p(2)} \cdots a_{n p(n)} \\
-    & = \sum_p \sigma(p) a_{p^{-1}(1)} a_{p^{-1}(2) 2} \cdots a_{p^{-1}(n) n}
+    & = \sum_p \sigma(p) a_{p^{-1}(1)} a_{p^{-1}(2) 2} \cdots a_{p^{-1}(n) n},
 \end{align*}
 we denote $p^{-1}$ by $\Tilde{p}$, then we have
 \begin{align*}
@@ -1939,7 +1939,7 @@ Define
         1 & 0\\
         0 & A_{11}
     \end{matrix}
-    \right)
+    \right),
 \end{align*}
 then it suffices to verify $C$ satisfies all three properties:
 \begin{enumerate}[label=(\alph*)]
@@ -2001,7 +2001,7 @@ Now we present another approach to prove this lemma.
 \begin{theorem}[Laplace Expansion]\label{Laplace_Expansion_Theorem}
 For any $j = 1,\cdots,n$, 
 \begin{align*}
-    \det A = \sum^n_{i=1}(-1)^{i+j} a_{ij} \det A_{ij}
+    \det A = \sum^n_{i=1}(-1)^{i+j} a_{ij} \det A_{ij},
 \end{align*}
 where $A_{ij}$ is the $ij$-th minor of $A$.
 \end{theorem}
@@ -2009,7 +2009,7 @@ where $A_{ij}$ is the $ij$-th minor of $A$.
 The $j$th column $a_j = \sum a_{ij} e_i$. Hence,
 \begin{align*}
     \det A & = \sum^N_{i=1} a_{ij} D(a_1,\cdots,a_{j-1},e_i, a_{j+1},\cdots,a_n) \\
-    & = \sum^n_{i=1} (-1)^{i+j} a_{ij} \det A_{ij}
+    & = \sum^n_{i=1} (-1)^{i+j} a_{ij} \det A_{ij},
 \end{align*}
 where we need the lemma below.
 \end{proof}
@@ -2054,7 +2054,7 @@ hence, we have
 $$x_k = \frac{\det A_k}{\det A}.$$
 And since 
 \begin{align*}
-    \det A_k = \sum^n_{j=1} (-1)^{j+k} u_j \det A_{jk}
+    \det A_k = \sum^n_{j=1} (-1)^{j+k} u_j \det A_{jk},
 \end{align*}
 we have 
 \begin{align*}
@@ -2098,7 +2098,7 @@ The proof is obvious.
 \begin{definition}
 Let $A$ be an $n\times n$ matrix, then we have 
 \begin{align*}
-    \tr AA^T = \sum^n_{i=1}(a_{ii})^2
+    \tr AA^T = \sum^n_{i=1}(a_{ii})^2,
 \end{align*}
 and the Euclidean norm (or Hilbert-Schmidt norm) of matrix $A$ is defined by \begin{align*}
     \|A\| = \sqrt{\tr AA^T} = \sqrt{\sum^n_{i=1}(a_{ii})^2}.
@@ -2126,7 +2126,7 @@ Let $A,B,C,D$ be $n\times n$ matrices, in general, the following equations do no
         A & B\\
         C & D
     \end{matrix}
-    \right) & = \det A \det D - \det C \det B \\
+    \right) & = \det A \det D - \det C \det B, \\
     \det \left(
     \begin{matrix}
         A & B\\
@@ -2242,9 +2242,9 @@ Let $A,B$ be real matrices. Then $A,B$ are similar as real matrices is equivalen
     \item ($\Rightarrow$) This is trivial.
     \item ($\Leftarrow$) If $A \overset{\mathbb{C}}{\sim} B$, then there exists a matrix $M = P + iQ$, where $P,Q$ are real matrices, such that $B = MAM^{-1}$. Then we have
     \begin{align*}
-        BM & = MA \\
-        \Rightarrow B(P + iQ) & = (P + iQ)A \\
-        \Rightarrow BP + i BQ & = PA + i QA
+        BM & = MA, \\
+        \Rightarrow B(P + iQ) & = (P + iQ)A, \\
+        \Rightarrow BP + i BQ & = PA + i QA,
     \end{align*}
     which implies $BP=PA$ and $BQ = QA$. If either $P,Q$ are nonsingular, then we have $A \overset{\mathbb{R}}{\sim} B$.
     
@@ -2265,7 +2265,7 @@ Let $n\geq 2$, and $a_1, \cdots, a_n$ are scalars, $n\times n$ Vandermonde matri
         a_1^2 & a_2^2 & \cdots & a_n^2 \\
         \vdots & \vdots & \ddots & \vdots \\
         a_1^{n-1} & a_2^{n-1} & \cdots & a_n^{n-1}
-    \end{matrix}\right)
+    \end{matrix}\right).
 \end{align*}
 Then, $\det V(a_1,\cdots,a_n) = \prod_{i < j}(a_j - a_i)$.
 \end{example}
@@ -2276,7 +2276,7 @@ Then, $\det V(a_1,\cdots,a_n) = \prod_{i < j}(a_j - a_i)$.
 Given $2n$ numbers, $a_k, b_k, 1\leq k\leq n$, such that $a_i + b_i \neq 0$ for all $i,j$. The Cauchy matrix is defined as following
 \begin{align*}
     C(a_1,\cdots,a_n, b_1,\cdots,b_n) = \left(\frac{1}{a_i + b_j}\right)_{n\times n}
-\end{align*}
+,\end{align*}
 where $c_{ij} = \frac{1}{a_i + b_j}$. Then, the determinant of $C$ is 
 \begin{align*}
     \det C = \frac{\prod_{j>i}(a_j - a_i)\prod_{j>i}(b_j - b_i)}{\prod_{i,j}(a_i + b_j)}.
@@ -2355,7 +2355,7 @@ If $A$ is invertible, then the unique inverse of $A$ is
 \begin{definition}
 Let $A$ be an $n\times n$ matrix. Suppose that for a nonzero vector $v$ and a scalar number $\lambda$, such that 
 \begin{align*}
-    Av = \lambda v
+    Av = \lambda v,
 \end{align*}
 then $\lambda$ is called an eigenvalue of $A$ and $v$ an eigenvector of $A$ corresponding to $\lambda$.
 \end{definition}
@@ -2393,9 +2393,9 @@ Let $\lambda_k, 1\leq k \leq n$ be $n$ distinct eigenvalues and $v_k, 1\leq k \l
     \end{align*}
     Applying $A$ to both sides of the first equation above, then we have
     \begin{align*}
-        & \sum^{N+1}_{k=1}c_k \lambda_k v_k = 0 = \sum^{N+1}_{k=1}c_k \lambda_{N+1} v_k \\
-        \Rightarrow & \sum^{N+1}_{k=1}c_k (\lambda_k  - \lambda_{N+1}) v_k = 0 \\
-        \Rightarrow & c_k (\lambda_k  - \lambda_{N+1}) = 0
+        & \sum^{N+1}_{k=1}c_k \lambda_k v_k = 0 = \sum^{N+1}_{k=1}c_k \lambda_{N+1} v_k, \\
+        \Rightarrow & \sum^{N+1}_{k=1}c_k (\lambda_k  - \lambda_{N+1}) v_k = 0, \\
+        \Rightarrow & c_k (\lambda_k  - \lambda_{N+1}) = 0,
     \end{align*}
     and since $c_k = 0, 1\leq k\leq n$, we have $c_{N+1} = 0$. Thus, the theorem holds for $N+1$. 
 \end{enumerate}
@@ -2426,7 +2426,7 @@ Let $\lambda_k,1\leq k\leq n$ be $n$ distinct eigenvalues of $A$, with correspon
      & \lambda_2 &  & \\
      &   & \ddots &  \\
      &  &  & \lambda_n
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 which implies $A = S\Lambda S^{-1}$.
 \end{proof}
@@ -2508,14 +2508,14 @@ $$p_A(A) = 0.$$
 \end{theorem}
 \begin{proof}
 Let $Q(s) = sI - A$ and $P(s)$ defined as the matrix of cofactors of $Q(s)$, i.e., 
-$$P_{ij}(s) = (-1)^{i+j}D_{ji}(s)$$
+$$P_{ij}(s) = (-1)^{i+j}D_{ji}(s),$$
 where $D_{ij}(s)$ is the determinant of $(j,i)$th minor of $Q(s)$. Then we have 
 $$P(s)Q(s) = \det (Q(s)) I = p_A(s)I.$$
 Since the coefficients of $Q$ commutes with $A$, we have 
 \begin{align*}
-    P(A)Q(A) = p_A(A)I = 0
+    P(A)Q(A) = p_A(A)I = 0.
 \end{align*}
-hence, $p_A(A) = 0$.
+Thus, $p_A(A) = 0$.
 \end{proof}
 
 \medskip
@@ -2523,7 +2523,7 @@ hence, $p_A(A) = 0$.
 \begin{lemma}
 Let $P(s), Q(s)$ and $R(s)$ be polynomials in $s$ with $n\times n$ matrices $P_k, Q_k, R_s$ as coefficients. Suppose
 \begin{align*}
-    P(s) = \sum P_k s^k, Q(s) = \sum Q_k s^k, R(s) = \sum R_k s^k
+    P(s) = \sum P_k s^k, Q(s) = \sum Q_k s^k, R(s) = \sum R_k s^k,
 \end{align*}
 and 
 $$P(s)Q(s) = R(s).$$
@@ -2533,7 +2533,7 @@ $$P(A)Q(A) = R(A).$$
 \begin{proof}
 Since $P(s)Q(s) = R(s)$, we have
 \begin{align*}
-    \sum P_k s^k \sum Q_k s^k = \sum R_k s^k
+    \sum P_k s^k \sum Q_k s^k = \sum R_k s^k,
 \end{align*}
 which implies 
 \begin{align*}
@@ -2565,9 +2565,9 @@ for some $m\in\mathbb{N}$ {\rm \cite{15}}.
 Every vector in $\mathbb{C}^n$ can be written as a sum of eigenvectors of $A$, genuine or generalized.
 \end{theorem}
 \begin{proof}
-Let $x$ be any vector, then $p_A(A)x = 0$. We factor polynomial as $$p_A(\lambda) = \prod^J_{j=1}\left(\lambda - \lambda_j\right)^{m_j}$$ where $\lambda_j$ are distinct eigenvalues of $A$. Then we have
+Let $x$ be any vector, then $p_A(A)x = 0$. We factor polynomial as $$p_A(\lambda) = \prod^J_{j=1}\left(\lambda - \lambda_j\right)^{m_j},$$ where $\lambda_j$ are distinct eigenvalues of $A$. Then we have
 \begin{align*}
-    p_A(A) = \prod^J_{j=1}\left(A - \lambda_j\right)^{m_j} = 0 \\
+    p_A(A) = \prod^J_{j=1}\left(A - \lambda_j\right)^{m_j} = 0, \\
     \Rightarrow \prod^J_{j=1}\left(A - \lambda_j\right)^{m_j}x = 0.
 \end{align*}
 Let $p_j = \left(\lambda - \lambda_j\right)^{m_j}$, then $x\in N_{p_1(A)p_2(A)\cdots p_J(A)}$, i.e., $x$ belongs to the null space of $p_1 p_2 \cdots p_J(A)$. We claim: 
@@ -2598,7 +2598,7 @@ Let $p, q$ be a pair of polynomials, with complex coefficients, and $p,q$ have n
     \item From (a), there are two polynomials $a$ and $b$ such that 
     $$a(A)p(A) + b(A)q(A) = I.$$
     For any $x$, we have
-    $$x = a(A)p(A)x + b(A)q(A)x \overset{\Delta}{=} x_1 + x_2 $$
+    $$x = a(A)p(A)x + b(A)q(A)x \overset{\Delta}{=} x_1 + x_2, $$
     and it is easy to see that if $x\in N_{p(A)q(A)}$, then $x\in N_{p(A)}$ and $x\in N_{q(A)}$. Also, suppose $x\in N_{p(A)}\cap N_{q(A)}$, the above equation implies 
     $$x = a(A)p(A)x + b(A)q(A)x = 0,$$
     Hence, $N_{p(A)q(A)} = N_{p(A)} \oplus N_{q(A)}$.
@@ -2616,9 +2616,9 @@ We denote by $\mathcal{P}_A$ the set of all polynomials such that $p(A) = 0$. It
 
 Now we claim that any $p\in\mathcal{P}_A$ is a multiple of $m$. Indeed, we can write $p = qm +r$, where the degree of $r$ is less that that of $m$. Then we have 
 \begin{align*}
-    r(A) = p(A) - q(A)m(A) = 0
+    r(A) = p(A) - q(A)m(A) = 0,
 \end{align*}
-then $r\in\mathcal{P}_A$, hence, $r = 0$, which proved the argument. And this polynomial $m$ is called the \emph{minimal polynomial} of $A$.
+and then $r\in\mathcal{P}_A$, hence, $r = 0$, which proved the argument. And this polynomial $m$ is called the \emph{minimal polynomial} of $A$.
 
 Now we consider generalized eigenvector. We denote by $N_m = N_m(\lambda)$ the null space of $(A - \lambda I)^m$. The subspaces
 $N_m$, consist of generalized eigenvectors; they are indexed increasingly, i.e.,
@@ -2627,8 +2627,8 @@ $N_m$, consist of generalized eigenvectors; they are indexed increasingly, i.e.,
 \end{align*}
 We denote by $d = d(\lambda)$ the smallest index such that
 \begin{align*}
-    N_d & = N_{d+k}, k\geq 1 \\
-    N_d & \neq N_{d-1}
+    N_d & = N_{d+k}, k\geq 1, \\
+    N_d & \neq N_{d-1},
 \end{align*}
 and $d$ is called the \emph{index} of the eigenvalue $\lambda$.
 
@@ -2655,7 +2655,7 @@ Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is 
     \item $\mathbb{C}^n$ is the span of generalized eigenvectors and others follows from spectral theorem.
     \item For any $x\in\mathbb{C}^n$, we have $x = \sum^k_{j=1}x_j, x_j\in N_{d_j}(\lambda_j)$. Then, we have 
     \begin{align*}
-        \prod^k_{j=1} \left(A - \lambda_j I\right)^{d_j}x = \sum^k_{j=1}\left(\prod^k_{j=1} \left(A - \lambda_j I\right)^{d_j} \right)x_j = 0
+        \prod^k_{j=1} \left(A - \lambda_j I\right)^{d_j}x = \sum^k_{j=1}\left(\prod^k_{j=1} \left(A - \lambda_j I\right)^{d_j} \right)x_j = 0.
     \end{align*}
     Hence, we have 
     \begin{align*}
@@ -2663,7 +2663,7 @@ Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is 
     \end{align*}
     Thus, we have $m(\lambda) = \prod^k_{j=1} \left(\lambda - \lambda_j I\right)^{d_j} = 0$. Since $m(A) = 0$, then $m\in \mathcal{P}_A$. Then we can have that $m$ is a multiple of $m_A$. Suppose $m_A = \prod^k_{j=1} \left(\lambda - \lambda_j I\right)^{e_j}, e_j\leq d_j$. Then, we have 
     \begin{align*}
-        \mathbb{C}^n = N_{m_A(A)} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{e_j}} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{d_j}}
+        \mathbb{C}^n = N_{m_A(A)} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{e_j}} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{d_j}},
     \end{align*}
     which implies $e_j = d_j, 1\leq j \leq k$.
 \end{enumerate}
@@ -2677,7 +2677,7 @@ Let $A$ be a diagonalizable matrix and $\lambda_1, \cdots, \lambda_k$ be the dis
 \end{align*}
 Indeed, if $v$ is an eigenvector of $A$, then one of $A - \lambda_1 I, \cdots, A - \lambda_k I$ sends $v$ into $0$. Then,
 \begin{align*}
-    (A - \lambda_1) \cdots (A - \lambda_k) v = 0
+    (A - \lambda_1) \cdots (A - \lambda_k) v = 0,
 \end{align*}
 for every eigenvector $v$. Since there is a basis consisting of all eigenvectors of $A$, then for any vector $x$, $p_A(A)x = 0$, which implies $p_A(A) = (A - \lambda_1) \cdots (A - \lambda_k) = 0$.
 
@@ -2755,7 +2755,7 @@ where $M_k$ is the span of vectors in the $k$th row. Under the basis of $M_k$, $
      &\ddots & \ddots & \\
      &   & \ddots & 1 \\
      &  &  & 0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 which is called a \emph{Jordan block} where $J_m(i,j) = 1$ for $j = i+1$ and $J_m(i,j) = 0$ otherwise.
 
@@ -2769,7 +2769,7 @@ Any matrix $A$ is similar to its Jordan canonical form which consists diagonal b
      &\ddots & \ddots & \\
      &   & \ddots & 1 \\
      &  &  & \lambda
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 where $\lambda$ is the eigenvalue of $A$.
 \end{theorem}
@@ -2855,9 +2855,9 @@ Since $v_j\in R_N, 1\leq j \leq n$, then for any $j$, there exists a $u_j\in X$ 
 
 We claim 
 \begin{equation}\label{basis_2}
-    N^{m_1+1}u_1, \cdots, Nu_1, u_1, \cdots, N^{m_n+1}u_n, \cdots, N u_n, u_n
+    N^{m_1+1}u_1, \cdots, Nu_1, u_1, \cdots, N^{m_n+1}u_n, \cdots, N u_n, u_n,
 \end{equation}
-is linearly independent in $X$. Indeed, suppose $$\sum^n_{j=1}\sum^{m_j+1}_{i=0}N^{i}u_j = 0$$
+is linearly independent in $X$. Indeed, suppose $$\sum^n_{j=1}\sum^{m_j+1}_{i=0}N^{i}u_j = 0,$$
 then we apply $N$ to both sides and we have
 \begin{align*}
     \sum^n_{j=1}\sum^{m_j+1}_{i=0}c_{ij}N^{i+1}u_j = \sum^n_{j=1}\sum^{m_j+1}_{i=0}c_{ij}N^{i}v_j = 0
@@ -2869,7 +2869,7 @@ Now we extend (\ref{basis_2}) into a basis
     N^{m_1+1}u_1, \cdots, Nu_1, u_1, \cdots, N^{m_n+1}u_n, \cdots, N u_n, u_n, w_1,\cdots, w_p
 \end{equation}
 of $X$. Also, each $Nw_j$ is in the range of $N$ and hence $Nw_j$ is in the span of (\ref{basis_1}), and for each $1\leq j\leq p$, there exists $x_j$ in the span of (\ref{basis_2}) such that $Nx_j = Nw_j$. And we define 
-$$u_{n+j} = w_j - x_j$$
+$$u_{n+j} = w_j - x_j,$$
 then we have $Nu_{n+j} = 0$. Furthermore, 
 \begin{equation}\label{basis_4}
     N^{m_1+1}u_1, \cdots, Nu_1, u_1, \cdots, N^{m_n+1}u_n, \cdots, N u_n, u_n, u_{n+1},\cdots, u_{n+p}
@@ -2919,7 +2919,7 @@ Thus, the theorem holds for nilpotent operators.
 
 Now suppose $T\in\mathcal{L}(X,X)$, and let $\lambda_1,\cdots,\lambda_m$ be distinct eigenvalues of $T$. Then we have the generalized eigenspace decompisition
 \begin{align*}
-    X = G(\lambda_1, T)\oplus \cdots \oplus G(\lambda_m, T)
+    X = G(\lambda_1, T)\oplus \cdots \oplus G(\lambda_m, T),
 \end{align*}
 where each $(T-\lambda_j I)|_{G(\lambda_j, T)}$ is nilpotent. Thus, some basis of each $G(\lambda_j,T)$ is a Jordan basis for $(T-\lambda_j I)|_{G(\lambda_j, T)}$. Putting these bases together gives a basis of $X$ that is a Jordan basis for $T$.
 \end{proof}
@@ -2936,7 +2936,7 @@ Consider
     \end{pmatrix}.
 \end{align*}
 The characteristic polynomial of $A$ is 
-$$\lambda(\lambda-1)^2$$
+$$\lambda(\lambda-1)^2,$$
 and the generalized eigenspace corresponding to $0$ is just the ordinary eigenspace, so there will be only one single Jordan block corresponding to $0$ in the Jordan form of $A$. Moreover, this block has size $1$ since $1$ is the exponent of $\lambda$ in the characteristic (and hence in the minimal polynomial as well) polynomial of $A$.
 
 Now we determine the dimension of the eigenspace corresponding to $\lambda = 1$, which is the dimension of the null space of
@@ -2982,7 +2982,7 @@ Consider
     \end{pmatrix}.
 \end{align*}
 The characteristic polynomial of $A$ is 
-$$(\lambda - 2)^2(\lambda - 3)(\lambda - 1)$$
+$$(\lambda - 2)^2(\lambda - 3)(\lambda - 1).$$
 From the multiplicities, the generalized eigenspaces corresponding to $\lambda = 3$ and $\lambda = 1$ are the ordinary eigenspaces, so each of these give blocks of size $1$ in the Jordan form.
 
 The eigenspace corresponding to $\lambda = 2$ is the null space of 
@@ -2992,7 +2992,7 @@ The eigenspace corresponding to $\lambda = 2$ is the null space of
     9 & -3 & 0 & 0 \\
     0 & 0 & 5 & -2 \\
     0 & 0 & 12 & -5
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and row-reducing gives
 \begin{align*}
@@ -3040,7 +3040,7 @@ Then we can find a eigenvector for $\lambda = 2$, which is
     3 \\
     0 \\
     0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and we need to find the final vector in the Jordan chain for $\lambda = 2$. And the Jordan chain has the form of $(v, (A-2I)v)$. Then we can pick 
 \begin{align*}
@@ -3054,7 +3054,7 @@ and we need to find the final vector in the Jordan chain for $\lambda = 2$. And 
     3 \\
     0 \\
     0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 which implies 
 \begin{align*}
@@ -3105,7 +3105,7 @@ Consider
     \end{pmatrix}.
 \end{align*}
 The characteristic polynomial of $A$ is 
-$$(\lambda - 1)^4$$
+$$(\lambda - 1)^4,$$
 and we need to determine the dimension of the eigenspace corresponding to $1$. And, $A - I$ can reduce as following
 \begin{align*}
     \begin{pmatrix}
@@ -3118,7 +3118,7 @@ and we need to determine the dimension of the eigenspace corresponding to $1$. A
     0 & 0 & -2 & 2 \\
     0 & 0 & 0 & 0 \\
     0 & 0 & 0 & 0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 which implies there are two Jordan blocks corresponding to $1$ in the Jordan form of $A$. Then, there are two possibilities:
 \begin{align*}
@@ -3132,7 +3132,7 @@ which implies there are two Jordan blocks corresponding to $1$ in the Jordan for
     0 & 1 & 1 & 0 \\
     0 & 0 & 1 & 0 \\
     0 & 0 & 0 & 1
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 with corresponding minimal polynomial $(\lambda - 1)^2$ or $(\lambda - 1)^3$.
 
@@ -3148,7 +3148,7 @@ To determine which it is, we need to determine the length of the Jordan chains. 
     1 \\
     1 \\
     1
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and each will give a Jordan chain. Consider $v$ such that
 \begin{align*}
@@ -3157,7 +3157,7 @@ and each will give a Jordan chain. Consider $v$ such that
     0 \\
     0 \\
     0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and we cannot find a solution for $v$, which implies this eigenvector is its own Jordan chain. Now we consider $w$ such that
 \begin{align*}
@@ -3166,7 +3166,7 @@ and we cannot find a solution for $v$, which implies this eigenvector is its own
     1 \\
     1 \\
     1
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and it gives us 
 \begin{align*}
@@ -3184,7 +3184,7 @@ Then we try to find $u$ such that
     1 \\
     -1 \\
     0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 and it gives us
 \begin{align*}
@@ -3238,7 +3238,7 @@ Suppose $A, B$ are $n\times n$ matrices, such that $AB = BA$, then there is a ba
 \begin{proof}
 Let $\{\lambda_j\}^K_{j=1}$ be $K$ distinct eigenvalues of $A$, then 
 \begin{align*}
-    \mathbb{C}^n = \oplus^K_{j=1} N_j
+    \mathbb{C}^n = \oplus^K_{j=1} N_j,
 \end{align*}
 where $N_j = N_{(A - \lambda_j I)^{d(\lambda_j)}}$. For any $x\in\mathbb{C}^n$, since $AB = BA$, then we have
 \begin{align*}
@@ -3268,7 +3268,7 @@ Let $\lambda, \mu$ be distinct eigenvalues of $A$. Suppose $u$ is an eigenvector
 \begin{proof}
 We have 
 \begin{align*}
-    v^T A u & = u^T A^T v \\
+    v^T A u & = u^T A^T v, \\
     \Rightarrow \lambda v^T u & = \mu u^T v.
 \end{align*}
 Since $\lambda \neq \mu$, we have $u^T v = 0$.
@@ -3311,11 +3311,11 @@ Consider, for all $t$, we have
     q(t) & = \|x+ty\|^2 \\
     & = (x+ty,x+ty) \\
     & = (x,x) + (x,ty) + (ty,x) + (ty,ty) \\
-    & = \|x\|^2 + 2t (x,y) + t^2 \|y\|^2  \geq 0
+    & = \|x\|^2 + 2t (x,y) + t^2 \|y\|^2  \geq 0.
 \end{align*}
 Thus, we have 
 \begin{align*}
-    4\left|(x,y)\right|^2 - & 4 \|x\|^2 \|y\|^2 \leq 0 \\
+    4\left|(x,y)\right|^2 - & 4 \|x\|^2 \|y\|^2 \leq 0, \\
     \Rightarrow \left|(x,y)\right| & \leq \|x\| \|y\|.
 \end{align*}
 \end{proof}
@@ -3332,16 +3332,16 @@ Suppose $x,y\neq 0$, we define the angle $\theta$ between $x$ and $y$ by
 \medskip
 
 \begin{corollary}
-$$\|x\| = \max_{\|y\| = 1} (x,y).$$
+$$\left\|x\right\| = \max_{\|y\| = 1} (x,y).$$
 \end{corollary}
 \begin{proof}
-Let $y = \frac{x}{\|x\|}$, then $\|x\| = \left(x, \frac{x}{\|x\|}\right) \leq \max_{\|y\| = 1} (x,y)$. With Schwarz inequality, we have $\max_{\|y\| = 1} (x,y) \leq \|x\|$. Thus, we have the desired result.
+Let $y = x/\|x\|$, then $\|x\| = \left(x, x/\|x\|\right) \leq \max_{\|y\| = 1} (x,y)$. With Schwarz inequality, we have $\max_{\|y\| = 1} (x,y) \leq \|x\|$. Thus, we have the desired result.
 \end{proof}
 
 \medskip
 
 \begin{theorem}[Triangle Inequality]
-$$\|x+y\|\leq \|x\| + \|y\|.$$
+$$\left\|x + y\right\|\leq \|x\| + \|y\|.$$
 \end{theorem}
 \begin{proof}
 $$\|x+y\|^2 = (x+y, x+y) = \|x\|^2 + 2(x,y) + \|y\|^2 \leq (\|x\| + \|y\|)^2.$$
@@ -3374,8 +3374,8 @@ Given a basis $y_1,\cdots,y_n$ of a finite-dimensional linear space $X$, then th
 \begin{proof}
 Define
 \begin{align*}
-    x_1 & = \frac{y_1}{\|y_1\|} \\
-    x_2 & = \frac{y_2 - (y_2,x_1)x_1}{\|y_2 - (y_2,x_1)x_1\|} \\
+    x_1 & = \frac{y_1}{\|y_1\|}, \\
+    x_2 & = \frac{y_2 - (y_2,x_1)x_1}{\|y_2 - (y_2,x_1)x_1\|}, \\
     & \vdots \\
     x_k & = \frac{y_{k+1} - \sum^k_{j=1}(y_{k+1},x_j)x_j}{\|y_{k+1} - \sum^k_{j=1}(y_{k+1},x_j)x_j\|}.
 \end{align*}
@@ -3392,7 +3392,7 @@ then $(x,y) = \sum^n_{j=1} a_jb_j$ and $\|x\|^2 = \sum^n_{j=1} a_j^2$.  The mapp
 
 Consider inner product $(x,y)$, for $\forall x\in X$, we fix $y$, then $(x,y)$ is a linear functional on $X$. We can write it as 
 \begin{align*}
-    y \mapsto l_y \in X'
+    y \mapsto l_y \in X',
 \end{align*}
 then $y$ is in dual space of $X$.
 
@@ -3426,7 +3426,7 @@ For any subspace $Y\subset X$, we have
 \end{align*}
 \end{theorem}
 \begin{proof}
-Let $y_1,\cdots,y_k$ be an orthogonal basis of $Y$. We can expend it to a basis of $X$: $y_1,\cdots,y_k, \widetilde{y_{k+1}}, \cdots, \widetilde{y_{n}}$. With Gram-Schmidt theorem, we obtain an orthonormal basis $y_1,\cdots,y_k,y_{k+1},\cdots,y_n$ of $X$. 
+Let $y_1,\cdots,y_k$ be an orthogonal basis of $Y$. We can expend it to a basis of $X$: $y_1,\cdots,y_k$, $\widetilde{y_{k+1}}, \cdots, \widetilde{y_{n}}$. With Gram-Schmidt theorem, we obtain an orthonormal basis $y_1,\cdots,y_k,y_{k+1},\cdots,y_n$ of $X$. 
 
 We claim that $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Indeed, ${\rm span}\{y_{k+1},\cdots,y_n\}\subset Y^\perp$ and $\dim Y^\perp = n-k$, and then they are equal.
 \end{proof}
@@ -3455,13 +3455,13 @@ Thus, $P_Y^2 = P_Y$ follows naturally.
 \begin{theorem}
 Let $Y$ be a linear subspace of Euclidean space $X$, and $x\in X$, then 
 \begin{align*}
-    \|x - P_Y x\| = \min_{z\in Y} \|x - z\|.
+    \left\|x - P_Y x \right\| = \min_{z\in Y} \|x - z\|.
 \end{align*}
 \end{theorem}
 \begin{proof}
 For any $x\in X$, we can write $x = x_1 + x_2$, where $x_1\in P_Y x, x_2\in Y^\perp$. Then, for any $z\in Y$, we have
 \begin{align*}
-    \|z - x\| = \|z - x_1\|^2 + \|x_2\| \geq \|x_2\|^2
+    \left\|z - x\right\| = \|z - x_1\|^2 +  \left\|x_2\right\| \geq \|x_2\|^2,
 \end{align*}
 and the equation obtain equal sign only when $z = x_1 = P_Y x$.
 \end{proof}
@@ -3469,7 +3469,7 @@ and the equation obtain equal sign only when $z = x_1 = P_Y x$.
 \medskip
 
 \begin{example}[Orthogonal projection onto a line]\label{Orthogonal projection onto a line}
-Let $L = {\rm span}\{u\}$ be a line in $\mathbb{R}^n$ and let $x$ be a vector in $\mathbb{R}^n$, then the orthogonal projection $x_L$ of $x$ is $$x_L = \frac{(u,x)}{(u,u)}u$$
+Let $L = {\rm span}\{u\}$ be a line in $\mathbb{R}^n$ and let $x$ be a vector in $\mathbb{R}^n$, then the orthogonal projection $x_L$ of $x$ is $$x_L = \frac{(u,x)}{(u,u)}u,$$
 and $x_{L^\bot} = x - x_L$.
 \begin{figure}[H]
     \centering
@@ -3544,15 +3544,12 @@ $$(A^* y, x) = (y, Ax).$$
     \end{align*}
     Then we have 
     \begin{align*}
-        \left(A^{-1}A\right)^* & = A^* \left(A^{-1}\right)^* = I \\
+        \left(A^{-1}A\right)^* & = A^* \left(A^{-1}\right)^* = I, \\
         \Rightarrow \left(A^*\right)^{-1} & = \left(A^{-1}\right)^*. 
     \end{align*}
     \item For $\forall x\in X$, we have
     \begin{align*}
-        \left(A^{**}x, y\right) & = (x, A^*y) \\
-        & = (A^*y, x) \\
-        & = (y, Ax) \\
-        & = (Ax, y).
+        \left(A^{**}x, y\right) & = (x, A^*y) = (A^*y, x) = (y, Ax) = (Ax, y).
     \end{align*}
 \end{enumerate}
 \end{proof}
@@ -3579,8 +3576,8 @@ $$A^* A z = A^* p.$$
 \begin{proof}
 The equation $A^* A z = A^* p$ has a unique solution if and only if $A^* A$ is invertible. Indeed, suppose $A^* Ay = 0$ for some $y \in \mathbb{R}^n$, then 
 \begin{align*}
-    (A^* A y, y) & = 0 \\
-    \Rightarrow (Ay, Ay) & = 0 \\
+    (A^* A y, y) & = 0, \\
+    \Rightarrow (Ay, Ay) & = 0, \\
     \Rightarrow Ay & = 0.
 \end{align*}
 Since $A$ has only trivial nullvector, then $y = 0$, then the solution is unique.
@@ -3616,7 +3613,7 @@ which implies $P_Y^* = P_Y$.
 \begin{definition}
 A mapping of a Euclidean space into itself is called an isometry if it preserves the distance of any paired points, i.e., for any $x, y\in X$, then 
 \begin{align*}
-    \|M(x) - M(y)\| = \|x - y\|.
+    \left\|M(x) - M(y)\right\|= \|x - y\|.
 \end{align*}
 \end{definition}
 
@@ -3632,24 +3629,24 @@ Let $M$ be an isometry from $X$ into itself and $M(0) = 0$. Then:
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item For all $x\in X$, write $Mx = x'$, and then $\|x\| = \|x'\|$. And for any $x,y\in X$, we have $\|x' - y'\|^2 = \|x - y\|^2$. Then we have
+    \item For all $x\in X$, write $Mx = x'$, and then $\left\|x\right\|= \|x'\|$. And for any $x,y\in X$, we have $\|x' - y'\|^2 = \|x - y\|^2$. Then we have
     \begin{align*}
-        \|x'\|^2 - 2(x', y') + \|y'\|^2 & = \|x\|^2 - 2(x, y) + \|y\|^2 \\
+        \|x'\|^2 - 2(x', y') + \|y'\|^2 & = \|x\|^2 - 2(x, y) + \|y\|^2, \\
         \Rightarrow (x', y') & = (x, y).
     \end{align*}
     
-    Let $z = x + y$, then we have $\|z'-(x'+y')\| - \|z-(x+y)\| = 0$, which implies $z' = x' + y'$. Also, let $z = cy$, then we have
+    Let $z = x + y$, then we have $\left\|z'-(x'+y')\right\| - \left\z-(x+y)|\right\| = 0$, which implies $z' = x' + y'$. Also, let $z = cy$, then we have
     \begin{align*}
         \|z' - cy'\|^2 & = (z' - cy', z' - cy') \\
         & = \|z'\|^2 - 2c (z', y') + c^2 \|y'\|^2 \\
         & = \|z\|^2 - 2c (z, y) + c^2 \|y\|^2 \\
-        & = \|z - cy\| = 0
+        & = \left\|z - cy\right\|= 0,
     \end{align*}
     then $z' = cy$. Combined, we have $M$ is linear.
     \item For all $x,y\in X$, $(x,y) = (Mx, My) = (M^* M x, y)$, which implies $M^* M = I$.
     \item $M$ is an isometry, implying $M$ is invertible. And since it one-to-one, also it is onto. Then $M^{-1}$ is also isometry. Indeed, 
     \begin{align*}
-        \|M^{-1}x - M^{-1}y\| = \|M M^{-1}x - M M^{-1}y\| = \|x - y\|.
+        \left\|M^{-1}x - M^{-1}y\right\| = \left\|M M^{-1}x - M M^{-1}y\right\| = \|x - y\|.
     \end{align*}
 \end{enumerate}
 \end{proof}
@@ -3674,7 +3671,7 @@ A matrix $M$ is orthogonal if and only if its columns are pairwise orthogonal un
 \end{proposition}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
-    \item ($\Rightarrow$) If $M$ is orthogonal, then $M$ preserves the product $$(Me_i, Me_j) = (c_i, c_j) = (e_i,e_j) = \delta_{ij}$$ 
+    \item ($\Rightarrow$) If $M$ is orthogonal, then $M$ preserves the product $$(Me_i, Me_j) = (c_i, c_j) = (e_i,e_j) = \delta_{ij},$$ 
     where $M = (c_1,\cdots,c_n)$. Then $(c_i, c_j) = \delta_{ij}$ implies its columns are pairwise orthogonal unit vectors.
     \item ($\Leftarrow$) If $(c_i, c_j) = \delta_{ij}$ for all $1\leq i, j\leq n$, then we have $M^* M = I$ naturally. Thus, $M$ is isometry.
 \end{enumerate}
@@ -3704,15 +3701,15 @@ $V = (v_1,\cdots,v_n) = M (u_1,\cdots,u_n) = MU$. Thus we have $M = VU^{-1}$. He
 \begin{definition}{\rm \cite{39}}\label{matrix_norm_def}
 A function $\|\cdot \|: \mathbb{C}^{n^2} \to \mathbb{R}$ is a matrix norm if for any $n \times n$ matrices $A, B \in \mathbb{C}^{n^2}$, it satisfies the following five axioms:
 \begin{enumerate}[label=(\arabic*)]
-    \item Nonnegative, i.e., $\|A\| \geq 0$.
+    \item Nonnegative, i.e., $\left\|A\right\| \geq 0$.
     
-    \item Positive definite, i.e., $\|A\| = 0$ if and only if $A = 0$.
+    \item Positive definite, i.e., $\left\|A\right\| = 0$ if and only if $A = 0$.
     
-    \item Homogeneous, i.e., $\|\alpha A\| = |\alpha| \cdot \|A\|$ for all $\alpha \in \mathbb{C}$.
+    \item Homogeneous, i.e., $\left\|\alpha A\right\|= |\alpha| \cdot \|A\|$ for all $\alpha \in \mathbb{C}$.
     
-    \item Triangle inequality or sub-additive, i.e., $\|A + B\| \leq \|A\| + \|B\|$.
+    \item Triangle inequality or sub-additive, i.e., $\left\|A + B\right\| \leq \|A\| + \|B\|$.
     
-    \item Submultiplicativity, i.e., $\|A B\| \leq \|A\| \cdot \|B\|$. \label{Submultiplicativity}
+    \item Submultiplicativity, i.e., $\left\|A B\right\| \leq \|A\| \cdot \|B\|$. \label{Submultiplicativity}
 \end{enumerate}
 \end{definition}
 
@@ -3724,7 +3721,7 @@ satisfy property \ref{Submultiplicativity} for all $A$ and $B$ is a {\em vector 
 \begin{definition}\label{vector_norm_matrix_def}
 The norm of a linear map $A:X\to U$ is defined by
 \begin{align*}
-    \|A\| = \sup_{\|x\| = 1} \|Ax\| = \sup_{\|x\| \leq 1} \|Ax\|.
+    \left\|A\right\| = \sup_{\|x\| = 1} \left\|Ax\right\| = \sup_{\|x\| \leq 1} \|Ax\|.
 \end{align*}
 This norm is a matrix norm induced by vector norms.
 \end{definition}
@@ -3735,25 +3732,25 @@ This norm is a matrix norm induced by vector norms.
 Let $A$ be a linear mapping from the Euclidean space $X$ into the
 Euclidean space $U$, where $\|A\|$ is its norm. Then, 
 \begin{enumerate}[label=(\alph*)]
-    \item For any $z\in X$, $\|Az\|\leq \|A\|\cdot \|z\|$.
-    \item $\|A\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
+    \item For any $z\in X$, $\|Az\|\leq \left\|Az\right\|\cdot \|z\|$.
+    \item $\left\|A\right\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item If $z = 0$, then it holds. If $z\neq 0$, then we have 
     \begin{align*}
-        \|Az\| = \left\|A \frac{z}{\|z\|}\|z\|\right\| = \|z\|\cdot \left\|A \frac{z}{\|z\|}\right\| \leq \|A\|\cdot \|z\|.
+        \left\|Az\right\| = \left\|A \frac{z}{\|z\|}\|z\|\right\| = \|z\|\cdot \left\|A \frac{z}{\|z\|}\right\| \leq \|A\|\cdot \|z\|.
     \end{align*}
     \item For any $x,z\in X$, and $\|x\| = \|z\| = 1$, then 
     \begin{align*}
-        (x, Az) \leq \|x\| \cdot \|Az\| \leq \|Az\| \\
+        (x, Az) \leq \|x\| \cdot \left\|Az\right\| \leq \|Az\|, \\
         \Rightarrow \sup_{\|x\| = \|z\| = 1} (x, Az) \leq \|Az\|.
     \end{align*}
     
-    If $\|A\| = 0$, then $\sup (x, Az) = 0$, which implies $\|A\| \leq \sup (x, Az)$. If $\|A\| \neq 0$, then for all $\varepsilon > 0$, there exists $z \in X$ and $\|z\| = 1$ such that 
+    If $\left\|A\right\| = 0$, then $\sup (x, Az) = 0$, which implies $\left\|A\right\| \leq \sup (x, Az)$. If $\left\|A\right\| \neq 0$, then for all $\varepsilon > 0$, there exists $z \in X$ and $\left\|z\right\| = 1$ such that 
     \begin{align*}
-        \|Az\| \geq \|A\| - \varepsilon.
+        \left\|Az\right\| \geq \|A\| - \varepsilon.
     \end{align*}
     Take $x = \frac{Az}{\|Az\|}$, then we have 
     \begin{align*}
@@ -3761,7 +3758,7 @@ Euclidean space $U$, where $\|A\|$ is its norm. Then,
         \Rightarrow \|A\| - \varepsilon & \leq \sup_{\|x\| = \|z\| = 1} (x, Az) \\
         \xrightarrow{\varepsilon \to 0} \|A\| & \leq \sup_{\|x\| = \|z\| = 1} (x, Az).
     \end{align*}
-    Thus, we have $\|A\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
+    Thus, we have $\left\|A\right\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
 \end{enumerate}
 \end{proof}
 
@@ -3776,25 +3773,25 @@ With the second argument in the previous theorem, $a_{ij} = (e_i,Ae_j) \leq \|A\
 
 \begin{theorem}
 ~\begin{enumerate}[label=(\alph*)]
-    \item For all $k\in\mathbb{R}$, $\|kA\| = |k|\cdot \|A\|$.
-    \item $A,B:X\to U$, then $\|A + B\|\leq \|A\| + \|B\|$.
-    \item $A:X\to U, B:U\to V$, then $\|BA\| \leq \|B\|\cdot \|A\|$.
+    \item For all $k\in\mathbb{R}$, $\left\|kA\right\| = |k|\cdot \|A\|$.
+    \item $A,B:X\to U$, then $\left\|A + B\right\| \leq \left\|A\right\| + \left\|B\right\|$.
+    \item $A:X\to U, B:U\to V$, then $\left\|BA\right\| \leq \|B\|\cdot \|A\|$.
     \item $\left\|A^*\right\| = \|A\|$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item If $k = 0$, then it holds. If $k\neq 0$, then $\|kAx\| = |k| \cdot \|Ax\|$, which implies
+    \item If $k = 0$, then it holds. If $k\neq 0$, then $\left\|kAx\right\| = |k| \cdot \|Ax\|$, which implies
     \begin{align*}
-        \|kA\| = \sup_{\|x\|=1} \|kAx\| = \sup_{\|x\|=1} |k| \cdot \|Ax\| = |k|\cdot \|A\|.
+        \left\|kA\right\| = \sup_{\|x\|=1} \left\|kAx\right\| = \sup_{\|x\|=1} |k| \cdot \left\|Ax\right\| = |k|\cdot \|A\|.
+    \end{align*}
+    \item For any $x\in X$, and $\left\|x\right\| = 1$, we have 
+    \begin{align*}
+        \left\|A + B\right\| \leq \sup \left\|(A+b)x\right\| = \sup \left\|Ax + Bx\right\| \leq \sup \left\|Ax\right\| + \sup \left\|Bx\right\| = \left\|A\right\| + \left\|B\right\|.
     \end{align*}
     \item For any $x\in X$, and $\|x\| = 1$, we have 
     \begin{align*}
-        \|A + B\| \leq \sup \|(A+b)x\|  = \sup \|Ax + Bx\| \leq \sup  \|Ax\| + \sup \|Bx\| = \|A\| + \|B\|.
-    \end{align*}
-    \item For any $x\in X$, and $\|x\| = 1$, we have 
-    \begin{align*}
-        \|BA\| \leq \sup\|BAx\|\leq \|B\|\cdot \|Ax\| \leq \|B\|\cdot \|A\|.
+        \left\|BA\right\| \leq \sup \left\|BAx\right\| \leq \|B\|\cdot \left\|Ax\right\| \leq \|B\|\cdot \|A\|.
     \end{align*}
     \item $A^*:U\to X$, for all $x\in X$ and all $u\in U$, we have $(A^* u, x) = (u, Ax) = (Ax, u)$. Thus, 
     \begin{align*}
@@ -3808,7 +3805,7 @@ With the second argument in the previous theorem, $a_{ij} = (e_i,Ae_j) \leq \|A\
 \begin{theorem}
 Let $X$ be a finite-dimensional Euclidean space and $A:X\to X$ is an invertible linear map. Let $B:X\to X$ be linear map such that 
 \begin{align*}
-    \|B - A\| \leq \frac{1}{\|A^{-1}\|}
+    \left\|B - A\right\| \leq \frac{1}{\|A^{-1}\|},
 \end{align*}
 then $B$ is invertible.
 \end{theorem}
@@ -3817,11 +3814,9 @@ Let $C = A - B$, then $B = A - C = A\left(I - A^{-1}C\right)$.
 
 It suffices to show that $I - A^{-1}C$ is invertible. Suppose by contradiction that for some $x\neq 0$, $\left(I - A^{-1}C\right)x = 0$. Then we have
 \begin{align*}
-    \|x\| & = \|A^{-1}C x\| \\
-    & \leq \|A^{-1}C\| \|x\| \\
-    & \leq \|A^{-1}\| \|C\| \|x\|.
+    \left\|x\right\| = \left\|A^{-1}C x\right\| \leq \left\|A^{-1}C\right\| \left\|x\right\| \leq \left\|A^{-1}\right\| \|C\| \|x\|.
 \end{align*}
-Since $\|C\| \leq \frac{1}{\|A^{-1}\|}$, then we have $\|x\| < \|x\|$, which is a contradiction. 
+Since $\left\|C\right\| \leq 1 / \|A^{-1}\|$, then we have $\left\|x\right\| < \left\|x\right\|$, which is a contradiction. 
 
 Then, $I - A^{-1}C$ is invertible, so is $B$.
 \end{proof}
@@ -3841,7 +3836,7 @@ A sequence of vectors $\{x_n\}$ in Euclidean space $X$ converges to $x\in X$ if 
 \medskip
 
 \begin{theorem}\label{cauchy_sequence_eclidean_theorem}
-A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilon > 0$, there exists $N > 0$,  such that for all $k, j \geq N$, $\|x_k - x_j\| < \varepsilon$. 
+A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilon > 0$, there exists $N > 0$,  such that for all $k, j \geq N$, $\left\|x_k - x_j\right\| < \varepsilon$. 
 \begin{enumerate}[label=(\alph*)]
     \item Completeness: every Cauchy sequence in a finite-dimensional Euclidean space is convergent.
     \item Locally compactness: any bounded sequence in a finite-dimensional Euclidean space contains a convergent subsequence. 
@@ -3851,14 +3846,14 @@ A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilo
 ~\begin{enumerate}[label=(\alph*)]
     \item Let $x,y$ be two vectors in $X$, and $a_j, b_j$ are their $j$th component respectively, then 
     \begin{align*}
-        |a_j - b_j| \leq \|x - y\|.
+        \left|a_j - b_j\right| \leq \|x - y\|.
     \end{align*}
     Denote by $a_{k,j}$ the $j$th component of $x_k$. Since $\{x_k\}$ is Cauchy sequence, then the sequence $\{a_{k,j}\}$ is also a Cauchy sequence. Then $\{a_{k,j}\}$ converges to a real number $a_j$. Denote $x = (a_1, \cdots, a_n)$, then we have 
     \begin{align*}
-        \|x_k - x\| = \sum^n_{j=1} |a_{k,j} - a_j|^2
+        \left\|x_k - x\right\| = \sum^n_{j=1} \left|a_{k,j} - a_j\right|^2,
     \end{align*}
     it foolows that $\lim_{k\to\infty} x_k = x$.
-    \item Since $|a_{k,j}| \leq \|x_k\|$, then $|a_{k,j}| \leq M \in\mathbb{R}$ for all $k$. Since real numbers are locally compactness, then the theorem follows.
+    \item Since $\left|a_{k,j}\right| \leq \|x_k\|$, then $\left|a_{k,j}\right| \leq M \in\mathbb{R}$ for all $k$. Since real numbers are locally compactness, then the theorem follows.
 \end{enumerate}
 
 \end{proof}
@@ -3866,18 +3861,18 @@ A sequence $\{x_n\}\subset X$ is called a Cauchy sequence if $\forall \varepsilo
 \medskip
 
 \begin{corollary}
-$$\|A\| = \max_{\|x\| = 1} \|Ax\|.$$
+$$\left\|A\right\| = \max_{\|x\| = 1} \|Ax\|.$$
 \end{corollary}
 \begin{proof}
-We know that $\|A\| = \sup_{\|x\| = 1} \|Ax\|$, then there exists a sequence $\{x_k\}$ such that $\|x_k\| = 1$ and $\lim_{k\to\infty} \|Ax_k\| = \|A\|$. Also there exists convergent subsequence $\|x_{n_k}\|$ of $\{x_k\}$, and denote by $\lim_{k\to\infty} x_{n_k} = x$. Then, we have $\|x\| = \lim_{k\to\infty} \|x_{n_k}\| = 1$. 
+We know that $\left\|A\right\| = \sup_{\|x\| = 1} \|Ax\|$, then there exists a sequence $\{x_k\}$ such that $\left\|x_k\right\| = 1$ and $\lim_{k\to\infty} \left\|Ax_k\right\| = \|A\|$. Also there exists convergent subsequence $\|x_{n_k}\|$ of $\{x_k\}$, and denote by $\lim_{k\to\infty} x_{n_k} = x$. Then, we have $\left\|x\right\| = \lim_{k\to\infty} \left\|x_{n_k}\right\| = 1$. 
 
 Since $\lim_{k\to\infty} Ax_{n_k} = Ax$, indeed, we have
 \begin{align*}
-    \|Ax_{n_k} - Ax\| \leq \|A\| \cdot \|x_{n_k} - x\| \to 0,
+    \left\|Ax_{n_k} - Ax\right\| \leq \|A\| \cdot \left\|x_{n_k} - x\right\| \to 0,
 \end{align*}
 then we have 
 \begin{align*}
-    \|A\| = \lim_{k\to\infty} \|Ax_{n_k}\| = \|Ax\|.
+    \left\|A\right\| = \lim_{k\to\infty} \left\|Ax_{n_k}\right\| = \|Ax\|.
 \end{align*}
 \end{proof}
 
@@ -3895,7 +3890,7 @@ Thus, $\{e_k\}^\infty_{k=1}$ has no convergent subsequence, which is a contradic
 \medskip
 
 \begin{definition}
-A sequence of linear mappings $\{A_n\}$ from $X$ to $Y$ converges to $A:X\to Y$ if $\lim_{n\to\infty} \|A_n - A\| = 0$.
+A sequence of linear mappings $\{A_n\}$ from $X$ to $Y$ converges to $A:X\to Y$ if $\lim_{n\to\infty} \left\|A_n - A\right\| = 0$.
 \end{definition}
 
 \medskip
@@ -3907,7 +3902,7 @@ In finite-dimensional spaces, then $\lim_{n\to\infty}A_n = A$ if and only if, fo
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) If $\lim_{n\to\infty}A_n = A$, then 
     \begin{align*}
-        \|A_n x - Ax\| \leq \|A_n - A\|\cdot \|x\| \xrightarrow{n \to 0} 0.
+        \left\|A_n x - Ax\right\| \leq \left\|A_n - A\right\|\cdot \left\|x\right\| \xrightarrow{n \to 0} 0.
     \end{align*}
     \item ($\Leftarrow$) 
     \begin{enumerate}[label=(\alph*)]
@@ -3915,21 +3910,21 @@ In finite-dimensional spaces, then $\lim_{n\to\infty}A_n = A$ if and only if, fo
         \begin{align*}
             \lim_{n\to\infty} A_n e_i = A e_i,
         \end{align*}
-        then $\|A_n e_i\| \leq a_i$ for all $n$ and some $a_i \geq 0$. For any $x\in X$, $x = \sum^N_{i=1}x_i e_i$, then
+        then $\left\|A_n e_i\right\| \leq a_i$ for all $n$ and some $a_i \geq 0$. For any $x\in X$, $x = \sum^N_{i=1}x_i e_i$, then
         \begin{align*}
             \|A_n x\| & = \left\|\sum^N_{i=1}x_i A_n e_i\right\| \\
             & \leq \sum^N_{i=1}a_i \|x_i\| \\
             & \leq \left(\sum^N_{i=1}a_i^2\right)^{\frac{1}{2}} \cdot \left(\sum^N_{i=1}\|x_i\|^2\right)^{\frac{1}{2}} \\
             &  = \left(\sum^N_{i=1}a_i^2\right)^{\frac{1}{2}} \|x\|.
         \end{align*}
-        Thus, $\|A_n\| \leq \left(\sum^N_{i=1}a_i^2\right)^{\frac{1}{2}}$, which implies $\{A_n\}$ is bounded.
+        Thus, $\left\|A_n\right\|\leq \left(\sum^N_{i=1}a_i^2\right)^{1/2}$, which implies $\{A_n\}$ is bounded.
         \item Second, we prove the convergence.
         
-        Let $A:X\to Y$ be defined as $Ax = \lim_{n\to\infty}A_n x$. We claim $A$ is linear. For any $x\in X, \|x\| = 1$ and $\forall \varepsilon > 0$, there exists a sequence $\{x_k\}^{N_\varepsilon}_{k=1}$ such that $\|x_k\| = 1$ and for $1\leq k \leq N_\varepsilon$, $\|x_k - x\| \leq \varepsilon$. Thus, we have
+        Let $A:X\to Y$ be defined as $Ax = \lim_{n\to\infty}A_n x$. We claim $A$ is linear. For any $x\in X, \left\|x\right\| = 1$ and $\forall \varepsilon > 0$, there exists a sequence $\{x_k\}^{N_\varepsilon}_{k=1}$ such that $\left\|x_k\right\| = 1$ and for $1\leq k \leq N_\varepsilon$, $\left\|x_k - x\right\| \leq \varepsilon$. Thus, we have
         \begin{align*}
-            \|A_n x_k  - Ax_k\| & \leq \|A_n x - A_n x_k\| + \|A_n x - A x\| + \|Ax_k - Ax\| \\
-            & \leq a\|x - x_k\| + \|A_n x - A x\| + \|A\|\cdot \|x_k - x\| \\
-            & \leq (a + \|A\|)\|x_k - x\| + \|A_n x - A x\| \xrightarrow{n\to\infty} 0. 
+            \left\|A_n x_k  - Ax_k\right\| & \leq \left\|A_n x - A_n x_k\right\| + \left\|A_n x - A x\right\| + \left\|Ax_k - Ax\right\| \\
+            & \leq a \left\|x - x_k\right\| + \left\|A_n x - A x\right\| + \|A\|\cdot \left\|x_k - x\right\| \\
+            & \leq (a + \|A\|)\left\|x_k - x\right\| + \left\|A_n x - A x\right\| \xrightarrow{n\to\infty} 0. 
         \end{align*}
         Hence, $\lim_{n\to\infty}A_n = A$.
     \end{enumerate}
@@ -3961,19 +3956,19 @@ For $x$ fixed, $(x, y)$ is a skew linear function of $y$, i.e.,
 \medskip
 
 \begin{definition}
-The norm of $x\in X$ is defined as: $\|x\| = \sqrt{(x,x)}$.
+The norm of $x\in X$ is defined as: $\left\|x\right\| = \sqrt{(x,x)}$.
 \end{definition}
 
 \medskip
 
 \begin{theorem}[Schwarz Inequality]\label{schwarz_inequality}
-$$|(x,y)|\leq \|x\|\cdot \|y\|.$$
+$$\left|(x,y)\right|\leq \|x\|\cdot \|y\|.$$
 \end{theorem}
 \begin{proof}
 We have 
 \begin{align*}
-    \|x+y\|^2 & = \|x\| + (x,y) + (y,x) + \|y\|^2 \\
-    & = \|x\| + 2\Re (x,y) + \|y\|^2.
+    \|x+y\|^2 & = \left\|x\right\| + (x,y) + (y,x) + \left\|y\right\|^2 \\
+    & = \left\|x\right\| + 2\Re (x,y) + \left\|y\right\|^2.
 \end{align*}
 For any $\lambda$, $\|\lambda x + y\|^2 = \lambda^2 \|x\|^2 + 2\lambda \Re (x,y) + \|y\|^2 \geq 0$, then we have
 \begin{align*}
@@ -3989,15 +3984,15 @@ Since $\left(e^{i\theta}x,y\right) = e^{i\theta}(x,y)$, then we pick $\theta$ su
 \medskip
 
 \begin{theorem}[Triangle Inequality]
-$$\|x+y\| \leq \|x\| + \|y\|.$$
+$$\left\|x+y\right\| \leq \left\|x\right\| + \left\|y\right\|.$$
 \end{theorem}
 \begin{proof}
 We have
 \begin{align*}
-    \|x+y\|^2 & = \|x\| + 2 \Re(x,y) + \|y\|^2 \\
-    & \leq \|x\| + 2\left|(x,y)\right| + \|y\|^2 \\
-    & \leq \|x\| + 2 \|x\| \cdot \|y\| + \|y\|^2 \\
-    & = (\|x\| + \|y\|)^2.
+    \left\|x+y\right\|^2 & = \left\|x\right\| + 2 \Re(x,y) + \left\|y\right\|^2 \\
+    & \leq \left\|x\right\| + 2\left|(x,y)\right| + \left\|y\right\|^2 \\
+    & \leq \left\|x\right\| + 2 \left\|x\right\| \cdot \left\|y\right\| + \left\|y\right\|^2 \\
+    & = (\left\|x\right\| + \left\|y\right\|)^2.
 \end{align*}
 \end{proof}
 
@@ -4005,7 +4000,7 @@ We have
 
 Let $X, Y$ be two complex Euclidean spaces and $AX\to Y$. The adjoint $A^*$ of $A$ is defined as follows 
 \begin{align*}
-    (x, A^* y) = (Ax, y)
+    (x, A^* y) = (Ax, y),
 \end{align*}
 then $A^* = \overline{A^T}$ as matrix. Fix $y$, $(Ax, y)$ is linear in $X$. We claim that there exists $z\in X$ such that $(x,z) = (Ax, y)$, then $A^* y = z$. Indeed, we define in $\mathbb{C}^n$:
 \begin{align*}
@@ -4027,7 +4022,7 @@ A linear mapping of a complex Euclidean space into itself is called unitary if i
 \medskip
 
 \begin{theorem}
-$M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$|\det M| = 1.$$
+$M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$\left|\det M\right| = 1.$$
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
@@ -4047,7 +4042,7 @@ $M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$|\det 
 \begin{theorem}
 Let $A:\mathbb{R}^n \to \mathbb{R}^n$ or $A:\mathbb{C}^n \to \mathbb{C}^n$, then 
 \begin{align*}
-    \|A\| = \left(\sum_{1\leq i,j\leq n} \left|a_{ij}\right|^2\right)^{\frac{1}{2}}.
+    \left\|A\right\| = \left(\sum_{1\leq i,j\leq n} \left|a_{ij}\right|^2\right)^{\frac{1}{2}}.
 \end{align*}
 \end{theorem}
 \begin{proof}
@@ -4057,11 +4052,11 @@ For any $x\in \mathbb{C}^n$, we have
     & \leq \sum^n_{i=1} \left(\sum^n_{j=1}\left|a_{ij}\right|^2 \right) \left(\sum^n_{j=1} x_j^2 \right) \\
     & = \|x\| \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right),
 \end{align*}
-then we have $\|A\|\leq \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right)$.
+then we have $\left\|A\right\|\leq \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right)$.
 \end{proof}
 
 \begin{definition}
-The quantity $\left(\sum^n_{i,j=1}\left|a_{ij}\right|^2 \right)^{\frac{1}{2}}$ is called the Hilbert-Schmidt norm of the matrix $A$, denoted by $\|A\|_{HS}$. 
+The quantity $\left(\sum^n_{i,j=1}\left|a_{ij}\right|^2 \right)^{1/2}$ is called the Hilbert-Schmidt norm of the matrix $A$, denoted by $\|A\|_{HS}$. 
 \end{definition}
 
 \begin{remark}
@@ -4087,10 +4082,10 @@ $r(A), \|A\|, \|A\|_{HS}$ are measures of the sign of $A$.
 \medskip
 
 \begin{proposition}
-$\|A\| \geq r(A)$.
+$\left\|A\right\| \geq r(A)$.
 \end{proposition}
 \begin{proof}
-Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. Assume $x\neq 0$, $Ax = \lambda x$, then we have $\|A\|\cdot \|x\| \geq \|Ax\| = |\lambda|\cdot \|x\|$. Thus, $\|A\| \geq r(A)$.
+Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. Assume $x\neq 0$, $Ax = \lambda x$, then we have $\left\|A\right\|\cdot \left\|x\right\| \geq \left\|Ax\right\| = |\lambda|\cdot \left\|x\right\|$. Thus, $\left\|A\right\| \geq r(A)$.
 \end{proof}
 
 \begin{remark}
@@ -4098,8 +4093,8 @@ Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. A
     \item Take $A = \begin{pmatrix}
     0 & 1  \\
     0 & 0  
-    \end{pmatrix}$, then $r(A) = 0$ and $\|A\| \neq 0$. Then we can have strictly inequality.
-    \item If there exists orthogonal basis formed by eigenvectors, then $\|A\| = r(A)$.
+    \end{pmatrix}$, then $r(A) = 0$ and $\left\|A\right\| \neq 0$. Then we can have strictly inequality.
+    \item If there exists orthogonal basis formed by eigenvectors, then $\left\|A\right\| = r(A)$.
     \begin{proof}
     Suppose $\{x_k\}$ is the orthogonal basis and $Ax_k = \lambda_k x_k$. And for any $x\in X$, $x = \sum^n_{k=1}x_k e_k$, then 
     \begin{align*}
@@ -4113,7 +4108,7 @@ Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. A
     \begin{align*}
         \frac{\|Ax\|}{\|x\|} = \left\|A \frac{x}{\|x\|}\right\| \leq r(A).
     \end{align*}
-    Since this is true for any $x$, and $\|A\| = \max_{\|x\|=1}\|Ax\|$, therefore $\|A\|\leq r(A)$. With previous proposition, we have $\|A\| = r(A)$.
+    Since this is true for any $x$, and $\left\|A\right\| = \max_{\|x\|=1}\|Ax\|$, therefore $\left\|A\right\| \leq r(A)$. With previous proposition, we have $\left\|A\right\| = r(A)$.
     \end{proof}
 \end{enumerate}
 \end{remark}
@@ -4135,7 +4130,7 @@ Let $J$ be the Jordan canonical form of $A$, then $r(A) = r(J) < 1$. And we have
     J_1 &  &  \\
      & \ddots  &  \\
      &   & J_l
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 where $$J_s = \left(\begin{smallmatrix}
     \lambda & 1 &  & \\
@@ -4158,7 +4153,7 @@ We claim $\lim_{k\to\infty}\binom{k}{j}\lambda^{k-j} = 0, 0\leq j\leq n_s-1$ for
 
 Now we complete the proof of the theorem.
 \begin{enumerate}[label=(\alph*)]
-    \item Since $\|A\|\geq r(A)$, then we have $\left\|A^k\right\| \geq \left(r\left(A^k\right) \right)^{\frac{1}{k}} = \left(r(A)^k \right)^{\frac{1}{k}}  = r(A)$. Then,
+    \item Since $\left\|A\right\| \geq r(A)$, then we have $\left\|A^k\right\| \geq \left(r\left(A^k\right) \right)^{\frac{1}{k}} = \left(r(A)^k \right)^{\frac{1}{k}}  = r(A)$. Then,
     \begin{align*}
         \liminf_{k\to\infty} \left(\left\|A^k\right\|\right)^{1/k} \geq r(A).
     \end{align*}
@@ -4181,7 +4176,7 @@ Suppose $A_1 A_2 = A_2 A_1$, then $r(A_1 A_2) \leq r(A_1) r(A_2)$.
 \begin{proof}
 We can have $r(A_1 A_2) = \lim_{k\to\infty} \left\|(A_1 A_2)^k\right\|^{1/k}$, and $(A_1 A_2)^k = A_1^k A_2^k$ since they commute. Thus, 
 \begin{align*}
-    \left\|(A_1 A_2)^k\right\|^{1/k} \leq \left(\left\|A_1^k\right\|^{1/k} \right) \left(\left\|A_2^k\right\|^{1/k} \right)
+    \left\|(A_1 A_2)^k\right\|^{1/k} \leq \left(\left\|A_1^k\right\|^{1/k} \right) \left(\left\|A_2^k\right\|^{1/k} \right),
 \end{align*}
 which implies $r(A_1 A_2) \leq r(A_1) r(A_2)$.
 \end{proof}
@@ -4235,23 +4230,23 @@ Then,
 \begin{enumerate}[label=(\alph*)]
     \item All eigenvalues are real. Assume $\lambda$ is eigenvalue, such that $Hx = \lambda x$. Then we have
     \begin{align*}
-        (Hx, x) & = (x, Hx) \\
-        \Rightarrow (\lambda x, x) & = (x, \lambda x) \\
-        \Rightarrow \lambda (x, x) & = \overline{\lambda} (x, x)
+        (Hx, x) & = (x, Hx), \\
+        \Rightarrow (\lambda x, x) & = (x, \lambda x), \\
+        \Rightarrow \lambda (x, x) & = \overline{\lambda} (x, x),
     \end{align*}
     and since $\|x\|\neq 0$, we have $\lambda = \overline{\lambda}$. Thus, $\Im \lambda = 0$, which implies $\lambda$ is real.
     \item There are no generalized eigenvectors. Suppose $x\in N_{(N - \lambda_i I)^2}$ and $\lambda = 0$ for simplicity, then $H^2 x = 0$, which implies
     \begin{align*}
-        (H^2 x, x) & = 0 \\
-        \Rightarrow (Hx, Hx) & = 0 \\
-        \Rightarrow \|Hx\|^2 & = 0 \\
+        (H^2 x, x) & = 0, \\
+        \Rightarrow (Hx, Hx) & = 0, \\
+        \Rightarrow \|Hx\|^2 & = 0, \\
         \Rightarrow Hx & = 0.
     \end{align*}
     Hence, $x\in N_{(N - \lambda_i I)}$, and the index of $\lambda_i$ is $1$. Thus, there are no generalized eigenvectors.
     \item Eigenvectors of $H$ are orthogonal. Suppose $\lambda \neq \mu$ are two eigenvalues such that $Hx = \lambda x, Hy = \mu y$. Then we have
     \begin{align*}
-        (Hx, y) & = (x, Hy) \\
-        \Rightarrow (\lambda x, y) & = (x, \mu y) \\
+        (Hx, y) & = (x, Hy), \\
+        \Rightarrow (\lambda x, y) & = (x, \mu y), \\
         \Rightarrow \lambda(x, y) & = \overline{\mu} (x, y) = \mu (x, y),
     \end{align*}
     which implies $(x,y) = 0$. 
@@ -4289,7 +4284,7 @@ The eigenvectors $v$ of $H$ satisfies
 \begin{align}\label{equ_eigenvalue}
     Hv = \lambda v.
 \end{align}
-$H$ is a real self-adjoint matrix, then with part (a) in Theorem \ref{hermitian_eigenvalue_theorem}, the eigenvalues of $H$ are real. It follows from (\ref{equ_eigenvalue}) that the real and imaginary parts of $v$ are also eigenvectors. Then we can choose an orthogonal basis consisting of real eigenvectors in each eigenapsce $N_\alpha$. Since by part (iii) in Theorem \ref{hermitian_eigenvalue}, eigenvectors corresponding to disctint eigenvalues are orthogonal, we have an orthogonal basis of $X$ consisting of real eivenvectors $v_j$ of $H$. Every vector $y$ in $X$ can be expressed as
+$H$ is a real self-adjoint matrix, then with part (a) in Theorem \ref{hermitian_eigenvalue_theorem}, the eigenvalues of $H$ are real. It follows from (\ref{equ_eigenvalue}) that the real and imaginary parts of $v$ are also eigenvectors. Then we can choose an orthogonal basis consisting of real eigenvectors in each eigenapsce $N_\alpha$. Since by part (iii) in Theorem \ref{hermitian_eigenvalue_theorem}, eigenvectors corresponding to disctint eigenvalues are orthogonal, we have an orthogonal basis of $X$ consisting of real eivenvectors $v_j$ of $H$. Every vector $y$ in $X$ can be expressed as
 \begin{align}\label{orthogonal_basis_express}
     y = \sum^n_{j=1} z_i v_i.
 \end{align}
@@ -4364,7 +4359,7 @@ Two symmetric matrices $A$ and $B$ are called congruent if there exists an inver
 \begin{theorem}
 Given $q(x) = (x, Ax)$, there exists an invertible matrix $L$, such that
 \begin{align*}
-    q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2
+    q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2,
 \end{align*}
 for some constants $d_i$, and we can make $d_i = 0$ or $d_i = \pm 1$.
 \end{theorem}
@@ -4379,12 +4374,8 @@ Since $A$ is self-adjoint, then there exists a unitary matrix $Q$ such that $A =
 \end{align*}
 where $\lambda_k, 1\leq k \leq n$ are real eigenvalues of $A$. Then, we have
 \begin{align*}
-    q(x) & = (x, Ax) \\
-    & = (x, Q\Lambda Q^* x) \\
-    & = (Q^* x, \Lambda Q^* x) \\
-    \Rightarrow q(Qx) & = (Q^* Q x, \Lambda Q^* Q x) \\
-    & = (Ix, \Lambda I x) \\
-    & = (x, \Lambda x) = \sum^n_{i=1} \lambda_i x_i^2
+    q(x) & = (x, Ax) = (x, Q\Lambda Q^* x) = (Q^* x, \Lambda Q^* x), \\
+    \Rightarrow q(Qx) & = (Q^* Q x, \Lambda Q^* Q x) = (Ix, \Lambda I x) = (x, \Lambda x) = \sum^n_{i=1} \lambda_i x_i^2,
 \end{align*}
 and we can pick $L = Q^{-1} = Q^*$. Thus the proof is complete.
 \end{proof}
@@ -4395,7 +4386,7 @@ and we can pick $L = Q^{-1} = Q^*$. Thus the proof is complete.
 \begin{theorem}[Sylvester’s Law of Inertia]\label{Law_of_Inertia}
 Let $H$ be symmetric, $q(x) = (x, Hx)$ and $L$ be an invertible matrix such that
 \begin{align*}
-    q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2
+    q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2,
 \end{align*}
 for some constants $d_i$. Then the numbers of positive, negative and zero terms of $d_i$ equal to the numbers of positive, negative and zero eigenvalues of $H$.
 \end{theorem}
@@ -4471,7 +4462,7 @@ The operators $P_j$ have the following properties:
     \item For any $x\in X$, $x = \sum^k_{j=1}x_j$, where $x_j\in N(\lambda_j)$, we have $P_j P_k x = P_j x_k = 0$. Thus, $P_j P_k = 0$ for $j\neq k$.
     \item For any $x = \sum^k_{j=1}x_j \in X$ and $y = \sum^k_{j=1}y_j \in X$, where $x_j, y_j \in N(\lambda_j)$, we have
     \begin{align*}
-        \left(P_j x, y\right) = \left(x_j, y\right) = \left(x_j, \sum^k_{j=1}y_j\right) = \left(x_j, y_j\right)
+        \left(P_j x, y\right) = \left(x_j, y\right) = \left(x_j, \sum^k_{j=1}y_j\right) = \left(x_j, y_j\right),
     \end{align*}
     where in the last step we used the fact that $N_i$ is orthogonal to $x_j$ for $i\neq j$. Similarly, we have
     \begin{align*}
@@ -4486,7 +4477,7 @@ The operators $P_j$ have the following properties:
 \begin{definition}
 A decomposition of the form:
 \begin{align*}
-    I = \sum^k_{j=1} P_j
+    I = \sum^k_{j=1} P_j,
 \end{align*}
 where $P_j$ is a projection, i.e., satisfies $P_j P_k = 0$ for $j\neq k, P_j^2 = P_j$ and $P_j^* = P_j$, is called a resolution of the identity. Any self-adjoint map $H$ defineds a resolution of identity.
 \end{definition}
@@ -4604,9 +4595,9 @@ Let $U$ be a unitary map of a complex Euclidean space into itself, that is an is
     \item Since $U$ is unitray, i.e., $UU^* = U^*U = I$, then $U$ is self-adjoint, which implies $U$ is normal. Thus,  the previous theorem indicates the argument.
     \item Isometry preserves the distance, then 
     \begin{align*}
-        \|Ux\| = |\lambda| \|x\| = \|x\|.
+        \left\|Ux\right\| = |\lambda| \left\|x\right\| = \left\|x\right\|.
     \end{align*}
-    Thus, $|\lambda| = 1$.
+    Thus, $\left|\lambda\right| = 1$.
 \end{enumerate}
 \end{proof}
 
@@ -4635,7 +4626,7 @@ is called the Rayleigh quotient of $H$.
 Maximum and minimum of $R_H(x)$ are eigenvalues of $H$.
 \end{theorem}
 \begin{proof}
-We can view $R_H$ as a real continuous map on the unit sphere. Hence, $R_H$ has a maximum and a minimum. Let $\|x\|=1$, then for any $y$, we have 
+We can view $R_H$ as a real continuous map on the unit sphere. Hence, $R_H$ has a maximum and a minimum. Let $\left\|x\right\| =1$, then for any $y$, we have 
 \begin{align*}
     R_H(x) = \max_{\|y\|=1} \frac{(y,Hy)}{(y,y)}.
 \end{align*}
@@ -4646,7 +4637,7 @@ then we have $\dv{R_H(x+ty)}{t}\bigg|_{t = 0} = 0$. Also, we have
     & = 2\Re (x,Hy) - (x,Hx) 2 \Re (x,y) \\
     \Rightarrow \Re (Hx,y) & =  \Re ((x,Hx)x,y)
 \end{align*}
-which implies $Hx = (x,Hx)x$. Thus, $x$ is an eigenvector, and $(x,Hx) = R_H(x), \|x\|=1$ is an eigenvalue.
+which implies $Hx = (x,Hx)x$. Thus, $x$ is an eigenvector, and $(x,Hx) = R_H(x), \left\|x\right\| = 1$ is an eigenvalue.
 \end{proof}
 
 \medskip
@@ -4764,17 +4755,17 @@ If $M,H$ are self-adjoint, all the eigenvalues of $M^{-1}H$ are real and $M^{-1}
 
 \section{Norm and Eigenvalues}
 
-We recall that $\|A\| = \max \|Ax\|, \|x\|=1$ or $\|A\| = \sup\frac{\|Ax\|}{\|x\|}$. Then we have the following theorem.
+We recall that $\left\|A\right\| = \max \left\|Ax\right\|, \left\|x\right\|=1$ or $\left\|A\right\| = \sup\frac{\|Ax\|}{\|x\|}$. Then we have the following theorem.
 
 \medskip
 
 \begin{theorem}
-Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N\| = r(A)$.
+Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\left\|N\right\| = r(A)$.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item $r(N)\leq \|N\|$. Indeed, for any eigenvalue $\lambda_j$ and its corresponding eigenvector $x_j$, we have \begin{align*}
-        \|Nx_j\| = |\lambda_j|\cdot \|x_j\|\leq \|N\|\cdot \|x_j\|
+        \left\|Nx_j\right\| = |\lambda_j|\cdot \left\|x_j\right\|\leq \|N\|\cdot \|x_j\|,
     \end{align*}
     which implies $\max \lambda_j = r(N) \leq \|N\|$.
     \item Now we prove the other direction. If $N$ is normal, then there exists orthogonal basis $\{x_1,\cdots, x_n\}$ of $X$ consisting of eigenvectors of $N$, such that $Nx_j = \lambda_j x_j, 1\leq j\leq n$. For any $x\in X$, $x = \sum^n_{j=1}c_j x_j$, then we have
@@ -4791,7 +4782,7 @@ Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\|N
 \medskip
 
 \begin{theorem}
-Let $A:X\to Y$, then $\|A\| = \sqrt{r(A^*A)}$.
+Let $A:X\to Y$, then $\left\|A\right\| = \sqrt{r(A^*A)}$.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -4801,7 +4792,7 @@ Let $A:X\to Y$, then $\|A\| = \sqrt{r(A^*A)}$.
         & = (x, A^*Ax) \\
         & \leq \|A^*A\|\cdot \|x\|^2 = r(A^*A) \|x\|^2
     \end{align*}
-    which implies $\|A\| \leq \sqrt{r(A^*A)}$.
+    which implies $\left\|A\right\| \leq \sqrt{r(A^*A)}$.
     \item Let $\lambda$ be an eigenvalue of $A^*A$ such that $\lambda = r(A^*A) \geq 0$ and $A^*Ax = \lambda x, x\neq 0$. Then, for eigenvector $x$, we have
     \begin{align*}
         \|Ax\|^2 & = (Ax,Ax) \\
@@ -4809,7 +4800,7 @@ Let $A:X\to Y$, then $\|A\| = \sqrt{r(A^*A)}$.
         & = \lambda \|x\|^2 \\
         & = r(A^*A) \|x\|^2 
     \end{align*}
-    which implies $\|A\| \geq r(A^*A)$. Indeed, 
+    which implies $\left\|A\right\| \geq r(A^*A)$. Indeed, 
     \begin{align*}
         \sqrt{r(A^*A)} = \frac{\|Ax\|}{\|x\|} \leq \|A\| = \max \frac{\|Ay\|}{\|y\|}.
     \end{align*}
@@ -5155,8 +5146,8 @@ Let $A(t)$ be differentiable. Suppose $A(0)$ has an eigenvalue $\lambda_0$ of mu
 \begin{proof}
 Let $p(\lambda, t) = \det (\lambda I - A(t))$. The assumption that $\lambda_0$ is a simple root of $p(s,0)$ implies 
 \begin{align*}
-    p(\lambda_0,0) & = 0 \\
-    \frac{\partial}{\partial \lambda}p(\lambda_0,0) & \neq 0
+    p(\lambda_0,0) & = 0, \\
+    \frac{\partial}{\partial \lambda}p(\lambda_0,0) & \neq 0,
 \end{align*}
 and from the implicit function theorem, the equation $p(\lambda,t) = 0$ has a solution $\lambda = \lambda(t)$ in a neighborhood of $t=0$ that depends differentiably on $t$.
 \end{proof}
@@ -5181,7 +5172,7 @@ Without losing generality, and assume $\lambda = 0$. Hence $p(0) = 0, p'(0) \neq
 Hence, we have
 \begin{align*}
     p'(0) & = \sum^n_{j=1} \det (-c_1, \cdots, -c_{j-1}, e_j, -c_{j+1},\cdots, -c_n) \\
-    & = (-1)^{n-1} \sum^n_{j=1} \det A_j
+    & = (-1)^{n-1} \sum^n_{j=1} \det A_j,
 \end{align*}
 where $A_j$ is $j$-th principle minor of $A$. Since $p'(0) \neq 0$, then at least one of $\det A_j$ is nonzero.
 
@@ -5264,23 +5255,24 @@ Now we discuss some basic properties of positive mapping.
             &  & \lambda_n
         \end{pmatrix}.
     \end{align*}
-    Define $S = U \begin{pmatrix}
-            \sqrt{\lambda_1} &  &  \\
-            & \ddots &  \\
-            &  & \sqrt{\lambda_n}
-        \end{pmatrix} U^*$, then $S^2  = H$. 
+    Define $$S = U \begin{pmatrix}
+        \sqrt{\lambda_1} &  &  \\
+        & \ddots &  \\
+        &  & \sqrt{\lambda_n}
+    \end{pmatrix} U^*,$$ 
+    then $S^2  = H$. 
         
-        Now we need to prove that $S$ is unique. Suppose there exists $T$ such that $T^2 = H, T > 0$, then we have
-        \begin{align*}
-            (x, (S+T)(S-T)x) & = (x, (TS - ST)x) \\
-            & = (x, TS x) - (x, STx) \\
-            & = (Tx, Sx) - (Sx, Tx).
-        \end{align*}
-        Then $\Re (x, (S+T)(S-T)x) = 0$. Pick $x$ to be eigenvector of $S-T$ such that $(S-T)x = \mu x$, then we have 
-        \begin{align*}
-            \Re \mu (x, (S+T)x) = 0,
-        \end{align*}
-        which implies $\mu = 0$. Thus, all eigenvalues of $S-T$ are zero, hence $S = T$.
+    Now we need to prove that $S$ is unique. Suppose there exists $T$ such that $T^2 = H, T > 0$, then we have
+    \begin{align*}
+        (x, (S+T)(S-T)x) & = (x, (TS - ST)x) \\
+        & = (x, TS x) - (x, STx) \\
+        & = (Tx, Sx) - (Sx, Tx).
+    \end{align*}
+    Then $\Re (x, (S+T)(S-T)x) = 0$. Pick $x$ to be eigenvector of $S-T$ such that $(S-T)x = \mu x$, then we have 
+    \begin{align*}
+        \Re \mu (x, (S+T)x) = 0,
+    \end{align*}
+    which implies $\mu = 0$. Thus, all eigenvalues of $S-T$ are zero, hence $S = T$.
 \end{enumerate}
 \end{proof}
 
@@ -5301,9 +5293,9 @@ If $M > N > 0$, then $0 < M^{-1} < N^{-1}$.
 \begin{proof}
 If $N = I, M > I$, then $M^{-1} < I$. Now turn to any matrix $N$. Let $R = \sqrt{N} > 0$, then we have $M > R^2$. Then
 \begin{align*}
-    R^{-1} M R & > I \\
-    \Rightarrow \left(R^{-1} M R\right)^{-1} & < I \\
-    \Rightarrow R M^{-1} R^{-1} & < I \\
+    R^{-1} M R & > I, \\
+    \Rightarrow \left(R^{-1} M R\right)^{-1} & < I, \\
+    \Rightarrow R M^{-1} R^{-1} & < I, \\
     \Rightarrow M^{-1} & < \left(R^2\right)^{-1} = N^{-1}.
 \end{align*}
 \end{proof}
@@ -5315,9 +5307,9 @@ Define $A(t) = tM + (1-t)M$, and for any $t\in [0,1]$, $A(t) > 0$. And we have
 \end{align*}
 Also, $A^{-1}(0) = N^{-1}$  and $A^{-1}(1) = M^{-1}$. For any $x\in \mathbb{C}^n, x\neq 0$, we have 
 \begin{align*}
-    \left(x, \dv{}{t}A^{-1}(t)x \right) & = \dv{}{t} \left(x, A^{-1}(t)x \right) < 0 \\
-    \left(x, A^{-1}(0)x \right) & = \left(x, N^{-1}x \right) \\
-    \left(x, A^{-1}(1)x \right) & = \left(x, M^{-1}x \right)
+    \left(x, \dv{}{t}A^{-1}(t)x \right) & = \dv{}{t} \left(x, A^{-1}(t)x \right) < 0, \\
+    \left(x, A^{-1}(0)x \right) & = \left(x, N^{-1}x \right), \\
+    \left(x, A^{-1}(1)x \right) & = \left(x, M^{-1}x \right),
 \end{align*}
 then we have $\left(x, N^{-1}x \right) > \left(x, M^{-1}x \right)$. Thus, $\left(x, (N^{-1} - M^{-1})x \right) > 0$, which implies $M^{-1} < N^{-1}$.
 \end{proof}
@@ -5370,12 +5362,11 @@ For any $A > 0$, $$\log A = \lim_{m\to\infty} m \left(A^{\frac{1}{m}} - 1\right)
 \begin{proof}
 We need to check $\log \lambda = \lim_{m\to\infty} m \left(\lambda^{1/m} - 1\right)$ for any $\lambda > 0$. Indeed, 
 \begin{align*}
-    \lim_{m\to\infty} m \left(\lambda^{\frac{1}{m}} - 1\right) = \lim_{x\to 0^+} \frac{\lambda^x - 1}{x} = \lim_{x\to 0^+} \frac{\log \lambda \lambda^x}{1} = \log \lambda. 
+    \lim_{m\to\infty} m \left(\lambda^{\frac{1}{m}} - 1\right) = \lim_{x\to 0^+} \frac{\lambda^x - 1}{x} = \lim_{x\to 0^+} \frac{\lambda^x \ln \lambda }{1} = \log \lambda. 
 \end{align*}
 Then we have
 \begin{align*}
-    m \left(A^{\frac{1}{m}} - 1\right) & = m \left( U \Lambda^{\frac{1}{m}} U^* - 1 \right) \\
-    & = U \left[m \left(\Lambda^{\frac{1}{m}} - 1\right)\right] U^* \\
+    m \left(A^{\frac{1}{m}} - 1\right) & = m \left( U \Lambda^{\frac{1}{m}} U^* - 1 \right) = U \left[m \left(\Lambda^{\frac{1}{m}} - 1\right)\right] U^* \\
     & = U \begin{pmatrix}
         m \left(\lambda_1^{\frac{1}{m}} - 1\right) &  & \\
         & \ddots & \\
@@ -5568,7 +5559,7 @@ and hence the theorem follows.
 \begin{theorem}
 Let $H$ be an $n \times n$ real, symmetric, positive matrix. Then,
 \begin{align*}
-    \frac{\pi^{n/2}}{\sqrt{\det H}} = \int_{\mathbb{R}^n} e^{-(x,Hx)}\, dx.
+    \frac{\pi^{\frac{n}{2}}}{\sqrt{\det H}} = \int_{\mathbb{R}^n} e^{-(x,Hx)}\, dx.
 \end{align*}
 \end{theorem}
 \begin{proof}
@@ -5803,7 +5794,7 @@ Let $a$ denote any complex number with positive real part, define
 \begin{align*}
     w = \frac{1 - az}{1+\overline{a}z},
 \end{align*}
-and then $z \mapsto w$ maps the right half plane $\Re z > 0$ onto the unit disc $|w| < 1$. 
+and then $z \mapsto w$ maps the right half plane $\Re z > 0$ onto the unit disc $\left|w\right| < 1$. 
 
 \medskip
 
@@ -5812,7 +5803,7 @@ Let $a \in \mathbb{C}$ with $\Re a > 0$. Let $Z$ be a mapping whose self-adjoint
 \begin{align*}
     W = \frac{1 - aZ}{1+\overline{a}Z}
 \end{align*}
-is a mapping of norm less than $1$. Conversely, $\|W\| < 1$ implies that $Z + Z^* > 0$.
+is a mapping of norm less than $1$. Conversely, $\left\|w\right\| < 1$ implies that $Z + Z^* > 0$.
 \end{theorem}
 \begin{proof}
 Suppose $Z + Z^* > 0$, then $\Re \lambda > 0$ for any eigenvalue $\lambda$ of $Z$. It follows that eigenvalues of $I + \overline{a} Z$ and $1 + aZ$ are not zero, therefore $I + \overline{a} Z$ is invertible. For any vector $x$, denote $(I + \overline{a} Z)^{-1}x = y$, then \begin{align*}
@@ -5824,8 +5815,8 @@ and then
 \end{align*}
 Thus,
 \begin{align*}
-    \|W\| \leq 1 & \Leftrightarrow \|Wx\| \leq \|x\| \\
-    & \Leftrightarrow \|(1 - aZ)y\| \leq \|(I + \overline{a} Z)y\| \\
+    \left\|W\right\| \leq 1 & \Leftrightarrow \left\|Wx\right\| \leq \left\|x\right\|, \\
+    & \Leftrightarrow \left\|(1 - aZ)y\right\| \leq \left\|(I + \overline{a} Z)y\right\| \\
     & \Leftrightarrow (a+\overline{a})(y,Zy) + (a+\overline{a})(Zy,y) > 0 \\
     & \Leftrightarrow (y, (Z+Z^*)y) > 0 \\
     & \Leftrightarrow Z+Z^* > 0.
@@ -5844,7 +5835,7 @@ where $R$ is a nonnegative self-adjoint mapping, and $U$ is unitary. When $A$ is
 ~\begin{enumerate}[label=(\alph*)]
     \item When $A$ is invertible, then so is $A^*$. For any $x \neq 0$,
     \begin{align*}
-        (A A^* x, x) = (A^* x, A^* x) = \Vert A^* x \Vert > 0.
+        (A A^* x, x) = (A^* x, A^* x) = \left\|A^* x\right\| > 0.
     \end{align*}
     This proves that $A A^*$ is a positive mapping. According to Theorem \ref{unique_square_root}, $A A^*$ has a unique positive square root $R$, i.e., $A A^* = R^2$. Define $U = R^{-1}A$, then $U^* = A^* R^{-1}$. Indeed, $R^{-1}$ is self-adjoint\footnote{According to Theorem \ref{gram_matrix_theorem}, every positive matrix can be represented as a Gram matrix, so it is self-adjoint.}. Then,
     \begin{align*}
@@ -5856,7 +5847,7 @@ where $R$ is a nonnegative self-adjoint mapping, and $U$ is unitary. When $A$ is
     \begin{align}\label{equ_square_norm}
         \Vert R x \Vert^2 = (Rx, Rx) = (x, R^2 x) = (x, AA^*x) = (A^*x, A^*x) = \Vert A^*x \Vert^2.
     \end{align}
-    Suppose $Rx = Ry$, then $\Vert R (x - y) \Vert = 0$, and according to (\ref{equ_square_norm}), $\Vert A^* (x - y) \Vert = 0$, therefore $A^* x = A^* y$. This shows that for any $u$ in the range of $R$, $u = Rx$, we can define $Vu$ as 
+    Suppose $Rx = Ry$, then $\left\|R (x - y)\right\| = 0$, and according to (\ref{equ_square_norm}), $\left\|A^* (x - y)\right\| = 0$, therefore $A^* x = A^* y$. This shows that for any $u$ in the range of $R$, $u = Rx$, we can define $Vu$ as 
     $A^* x$ and then $V$ is isometry, therefore it can be extended to the whole space as a unitary mapping. By definition, $A^* = VR$, and then $A = RV^*$.
 \end{enumerate}
 \end{proof}
@@ -5921,8 +5912,8 @@ where $\Sigma$ is $m \times n$ rectangular diagonal matrix with nonnegative real
     
     \item Suppose $m > n$. Since $A^*A \geq 0$, then there exists $n \times n$ unitary matrix $V$ such that $A^*A = V D V^*$, where $D$ is $n \times n$ diagonal matrix and $D \geq 0$. For any $x \in \mathbb{C}^n$, 
     \begin{align*}
-        \Vert AV x \Vert^2 & = (AVx, AVx) = (Vx, A^*AV x) = (Vx, V D V^* V x) \\
-        & = (Vx, VDx) = (x, Dx) = \Vert D^{1/2} x \Vert^2.
+        \left\|AV x\right\|^2 & = (AVx, AVx) = (Vx, A^*AV x) = (Vx, V D V^* V x) \\
+        & = (Vx, VDx) = (x, Dx) = \left\|D^{\frac{1}{2}} x\right\|^2.
     \end{align*}
     Let $U: \mathbb{C}^m \to \mathbb{C}^m$ maps $\begin{pmatrix}
         D^{1/2} \\
@@ -6094,8 +6085,8 @@ If $A$ and $B$ are positive semipositive, i.e., $A \geq 0, B \geq 0$, then $\det
     \begin{enumerate}[label=\arabic*)]
         \item If $A \neq I$, and $A$ is invertible, then
         \begin{align*}
-            \det (A + B) & = \det A^{1/2} \left(I + A^{-1/2} B A^{-1/2}\right) A^{1/2} \\
-            & \geq \det A^{1/2} \left(1 + \det A^{-1/2} B A^{-1/2} \right) \det A^{1/2} \\
+            \det (A + B) & = \det A^{\frac{1}{2}} \\
+            & \geq \det A^{\frac{1}{2}} \left(1 + \det A^{-\frac{1}{2}} B A^{-\frac{1}{2}} \right) \det A^{\frac{1}{2}} \\
             & = \det A + \det B.
         \end{align*}
         
@@ -6115,8 +6106,7 @@ Since $B$ is $k$-th order leading principal submatrix of $A$ and $A > 0$, then $
 \end{align*}
 And then $\det A = \det Q^* A Q = \det B \det (D - C^*B^{-1}C)$. Also, with $C^*B^{-1}C \geq 0$, we have
 \begin{align*}
-    \det A & = \det B \det (D - C^*B^{-1}C) \\
-    & \leq \det B \det D.
+    \det A & = \det B \det (D - C^*B^{-1}C) \leq \det B \det D.
 \end{align*}
 \end{proof}
 
@@ -6367,10 +6357,10 @@ From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ i
 \medskip
 
 \begin{lemma}{\rm \cite{35}}
-Let $u, v$ be two vectors such that $u \neq v, \|u\| = \|v\|$, then there exists a unique reflection $R$ such that $Ru = v$.
+Let $u, v$ be two vectors such that $u \neq v, \left\|u\right\| = \left\|v\right\|$, then there exists a unique reflection $R$ such that $Ru = v$.
 \end{lemma}
 \begin{proof}
-Let $w = \frac{u-v}{\|u-v\|}$ and $R = R_w = I - 2 ww^T$, then
+Let $w = (u-v) /\|u-v\|$ and $R = R_w = I - 2 ww^T$, then
 \begin{align*}
     R(u) & = u - 2 \frac{(u-v)(u-v)^T}{\|u-v\|^2}u \\
     & = u - 2 \frac{uu^Tu - uv^Tu - vu^Tu + vv^Tu}{\|u-v\|^2} \\
@@ -6618,7 +6608,7 @@ An {\em isometry} was defined in Chapter \ref{chapter_7} as a mapping of a Eucli
 \medskip
 
 \begin{definition}{\rm \cite{33}}
-If $V$ is an inner product space, a rigid motion is any function $T$ from $V$ into $V$ (not necessarily linear) such that $\|T\alpha - T\beta\| = \|\alpha - \beta\|$ for all $\alpha, \beta \in V$. One example of a rigid motion is a linear isometry, also a linear unitary operator in complex case. 
+If $V$ is an inner product space, a rigid motion is any function $T$ from $V$ into $V$ (not necessarily linear) such that $\left\|T\alpha - T\beta\right\| = \left\|\alpha - \beta\right\|$ for all $\alpha, \beta \in V$. One example of a rigid motion is a linear isometry, also a linear unitary operator in complex case. 
 \end{definition}
 
 \medskip
@@ -6841,7 +6831,7 @@ The relation between point $x$ and gauge function can be shown in $\mathbb{R}^2$
 \medskip
 
 \begin{example}
-Let $X$ be a Euclidean space, and let $K$ be the open ball of radius $a$ centered at the origin: $\|x\| < a$.
+Let $X$ be a Euclidean space, and let $K$ be the open ball of radius $a$ centered at the origin: $\left\|x\right\| < a$.
 \begin{enumerate}[label=(\arabic*)]
     \item Show that $K$ is a convex set.
     
@@ -7317,7 +7307,7 @@ Every positive matrix $P$ has a dominant eigenvalue, denoted by $\lambda(P)$, wh
     
     \item $\lambda(P)$ is a simple eigenvalue.
     
-    \item Every other eigenvalue $\mu$ of $P$ is less than $\lambda(P)$ in absolute value, i.e., $|\mu| < \lambda(P)$.
+    \item Every other eigenvalue $\mu$ of $P$ is less than $\lambda(P)$ in absolute value, i.e., $\left|\mu\right| < \lambda(P)$.
     
     \item $P$ has no other eigenvector with nonnegative entries.
 \end{enumerate}
@@ -7353,7 +7343,7 @@ Every positive matrix $P$ has a dominant eigenvalue, denoted by $\lambda(P)$, wh
         \begin{align*}
             Px_k \geq \lambda_k x_k, x_k \geq 0,
         \end{align*}
-        and we normalize $x_k$ so that $\|x_k\| = 1$. The set of nonnegative $x_k$ normalized by $\xi$ is a closed bounded set in $\mathbb{R}^n$ and therefore compact. Then there exists a subsequence $\left\{x_{n_k}\right\}^\infty_{k=1}$ such that $\lim_{k\to\infty} x_{n_k} = x^*, x^* \geq 0, \|x^*\| = 1$. Then,
+        and we normalize $x_k$ so that $\left\|x_k\right\| = 1$. The set of nonnegative $x_k$ normalized by $\xi$ is a closed bounded set in $\mathbb{R}^n$ and therefore compact. Then there exists a subsequence $\left\{x_{n_k}\right\}^\infty_{k=1}$ such that $\lim_{k\to\infty} x_{n_k} = x^*, x^* \geq 0, \left\|x^*\right\| = 1$. Then,
         \begin{align*}
             P x^* \geq \lambda^* x^*,
         \end{align*}
@@ -7387,9 +7377,9 @@ Every positive matrix $P$ has a dominant eigenvalue, denoted by $\lambda(P)$, wh
     \end{align*}
     using the triangle inequality for complex numbers and their absolute values gives
     \begin{align*}
-        \sum^n_{j=1} P_{ij} |y_j| > \left|\sum^n_{j=1} P_{ij} y_j \right| = |\mu| |y_i|.
+        \sum^n_{j=1} P_{ij} \left|y_j\right| > \left|\sum^n_{j=1} P_{ij} y_j \right| = |\mu| |y_i|.
     \end{align*}
-    Then, $|\mu| \in \sigma(P)$ with $x = \begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$. If $|\mu| = \lambda^*$, then $\begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$ would be an eigenvector of $P$ with eigenvalue $\lambda^*$, and thus a multiple of $x$, $|y_i| = c x_i > 0$. Then the above inequality holds. It is well known about complex numbers that this is the case only if all the $y_i$ have the same complex argument:
+    Then, $\left|\mu\right| \in \sigma(P)$ with $x = \begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$. If $\left|\mu\right| = \lambda^*$, then $\begin{pmatrix} |y_1| \\ \vdots \\ |y_n| \end{pmatrix}$ would be an eigenvector of $P$ with eigenvalue $\lambda^*$, and thus a multiple of $x$, $|y_i| = c x_i > 0$. Then the above inequality holds. It is well known about complex numbers that this is the case only if all the $y_i$ have the same complex argument:
     \begin{align*}
         y_i = e^{i\theta} |y_i|, i = 1, \cdots, n.
     \end{align*}
@@ -7458,9 +7448,9 @@ Let $F$ be $n \times n$ entrywise nonnegative matrix, then there exists an eigen
 \begin{enumerate}[label=(\alph*)]
     \item $\lambda(F) \geq 0$ and there exists eigenvector $x$ with nonnegative entries, such that $Fx = \lambda(F) x$, $x \geq 0$.
     
-    \item If $\mu$ is any other eigenvalue, then $|\mu| < \lambda(F)$.
+    \item If $\mu$ is any other eigenvalue, then $\left|\mu\right| < \lambda(F)$.
     
-    \item If $|\mu| = \lambda(F)$, then $\mu = e^{i2k\pi} \lambda(F)$ for some positive integer $m$ and $m \leq n$.
+    \item If $\left|\mu\right| = \lambda(F)$, then $\mu = e^{i2k\pi} \lambda(F)$ for some positive integer $m$ and $m \leq n$.
 \end{enumerate}
 \end{theorem}
 
@@ -7472,18 +7462,18 @@ Let $F$ be $n \times n$ entrywise nonnegative matrix, then there exists an eigen
 
 In Chapter \ref{convexity}, we saw that every open, convex set $K$ in a linear space $X$ over $\mathbb{R}$ containing the origin can be described as the set of vectors $x$ satisfying $p(x) < 1$, where $p$, the gauge function of $K$, is subadditive, positive homogeneous and positive except at the origin. Now we consider such functions with one additional property: evennss, i.e., $p(-x) = p(x)$. Such function is called a {\em norm}, and is denoted by $\|x\|$. Then a {\em norm} should satisfies the following properties:
 \begin{enumerate}[label=(\roman*)]
-    \item Positivity: $\|x\| > 0$ for $x \neq 0$, $|0| = 0$.
+    \item Positivity: $\left\|x\right\| > 0$ for $x \neq 0$, $\left|0\right| = 0$.
     
-    \item Subadditivity: $\|x + y\| \leq \|x\| + \|y\|$.
+    \item Subadditivity: $\left\|x+y\right\| \leq \left\|x\right\| + \left\|y\right\|$.
     
-    \item Homogeneity: $\|kx\| = |k| \cdot\|x\|$ for any real number $k$.
+    \item Homogeneity: $\left\|kx\right\| = |k| \cdot \left\|x\right\|$ for any real number $k$.
 \end{enumerate}
 A linear space with a norm is called a {\em normed linear space}.
 
 \medskip
 
 \begin{definition}
-The set of points $x$ in $X$ satisfying $\|x\| < 1$ is called the open unit ball around the origin, the set $\|x\| \leq 1$ is called the closed unit ball.
+The set of points $x$ in $X$ satisfying $\left\|x\right\| < 1$ is called the open unit ball around the origin, the set $\left\|x\right\| \leq 1$ is called the closed unit ball.
 \end{definition}
 
 \medskip
@@ -7500,7 +7490,7 @@ Thus, $tx_1 + (1-t)x_2 \in B(0,1)$ and hence $B(0,1)$ is convex.
 \end{proof}
 
 \begin{remark}
-The closed unit ball $\{x \in X: \|x\| \leq 1\}$ is also convex.
+The closed unit ball $\{x \in X: \left\|x\right\| \leq 1\}$ is also convex.
 \end{remark}
 
 \medskip
@@ -7508,7 +7498,7 @@ The closed unit ball $\{x \in X: \|x\| \leq 1\}$ is also convex.
 \begin{definition}
 For $p$ any real number, $1 \leq p$, we define $L^p$ norm by 
 \begin{align*}
-    \|x\|_p = \left(\sum^n_{i=1} |x_i|^p \right)^{1/p}.
+    \left\|x\right\|_p = \left(\sum^n_{i=1} |x_i|^p \right)^{1/p}.
 \end{align*}
 \end{definition}
 
@@ -7521,7 +7511,7 @@ Let $p$ and $q$ be positive numbers such that
 \end{align*}
 Let $x = (x_1, \cdots, x_n)$ and $y = (y_1, \cdots, y_n)$ be two vectors, then 
 \begin{align*}
-    \|xy\|_1 = \sum^n_{i=1} \left|x_i y_i\right| \leq \|x\|_p \|y\|_q.
+    \left\|xy\right\|_1 = \sum^n_{i=1} \left|x_i y_i\right| \leq \|x\|_p \|y\|_q.
 \end{align*}
 \end{theorem}
 \begin{proof}
@@ -7529,13 +7519,13 @@ Note that $f(x) = \ln x$ is a concave function on $(0, \infty)$, then for $x, y 
 \begin{align*}
     t f(x) + (1-t) f(y) \leq f(tx + (1-t)y),
 \end{align*}
-which is equivalent to $x^t y^{1-t} \leq tx + (1-t)y$. Let $x_i = \frac{|x_i|^p}{\|x\|^p_p}$ and $y_i = \frac{|y_i|^q}{\|x\|^q_q}$, then for $t = \frac{1}{p}$, we have
+which is equivalent to $x^t y^{1-t} \leq tx + (1-t)y$. Let $x_i =|x_i|^p/\|x\|^p_p$ and $y_i = |y_i|^q/\|x\|^q_q$, then for $t = \frac{1}{p}$, we have
 \begin{align*}
     \frac{|x_i y_i|}{\|x\|_p \|y\|_q} \leq \frac{1}{p} \frac{|x_i|^p}{\|x\|^p_p} + \frac{1}{q} \frac{|y_i|^q}{\|x\|^q_q},
 \end{align*}
 taking summation on both sides gives
 \begin{align*}
-    \sum^n_{i=1} |x_i y_i| \leq \|x\|_p \|y\|_q.
+    \sum^n_{i=1} \left|x_i y_i\right| \leq \|x\|_p \|y\|_q.
 \end{align*}
 \end{proof}
 
@@ -7547,15 +7537,15 @@ For $p = q = 2$, Hölder's inequality is the Schwarz inequality in Theorem \ref{
 
 \begin{corollary}\label{norm_limit_corollary}
 \begin{align*}
-    \|x\|_\infty = \lim_{p\to\infty} \|x\|_p,
+    \left\|x\right\|_\infty = \lim_{p\to\infty} \|x\|_p,
 \end{align*}
-where $\|x\|_\infty = \max_{i}|x_i|$.
+where $\left\|x\right\|_\infty = \max_{i}|x_i|$.
 \end{corollary}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Suppose $\|x\|_\infty = |x_k|$ for some $k = 1,2,\cdots, n$, then
+    \item Suppose $\left\|x\right\|_\infty = |x_k|$ for some $k = 1,2,\cdots, n$, then
     \begin{align*}
-        \|x\|_p = \left(\sum^n_{i=1}|x_i|^p\right)^{1/p} \leq \left(n |x_k|^p\right)^{1/p} = n^{1/p} |x_k| \xrightarrow[]{p\to\infty} |x_k|.
+        \left\|x\right\|_p = \left(\sum^n_{i=1}|x_i|^p\right)^{1/p} \leq \left(n |x_k|^p\right)^{1/p} = n^{1/p} |x_k| \xrightarrow[]{p\to\infty} |x_k|.
     \end{align*}
     
     \item On the other hand, we have
@@ -7563,7 +7553,7 @@ where $\|x\|_\infty = \max_{i}|x_i|$.
         \|x\|_\infty = |x_k| = \left(|x_k|^p\right)^{1/p} \leq \left(|x_k|^p + \sum^n_{i\neq k} |x_i|^p \right)^{1/p} = \|x\|_p.
     \end{align*}
 \end{enumerate}
-Combining these gives $\|x\|_\infty = \lim_{p\to\infty} \|x\|_p$.
+Combining these gives $\left\|x\right\|_\infty = \lim_{p\to\infty} \|x\|_p$.
 \end{proof}
 
 \begin{proof}[Second Proof of Corollary \ref{norm_limit_corollary}]
@@ -7604,7 +7594,7 @@ Any finite-dimensional linear space $X$ over $\mathbb{R}$ is isomorphism to $\ma
 \begin{enumerate}[label=(\alph*)]
     \item Also, with standard basis, $x$ can be written as $x = \sum^n_{i=1}x_i e_i$. Let $\|\cdot\|$ be another norm in $\mathbb{R}^n$, then
     \begin{align*}
-        \|x\| = \left\|\sum^n_{i=1}x_i e_i \right\| \leq \sum^n_{i=1} |x_i| \|e_i\| \leq \left(\sum^n_{i=1} |x_i|^2 \right)^{1/2} \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} = \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} \|x\|_2,
+        \left\|x\right\| = \left\|\sum^n_{i=1}x_i e_i \right\| \leq \sum^n_{i=1} |x_i| \left\|e_i\right\| \leq \left(\sum^n_{i=1} |x_i|^2 \right)^{1/2} \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} = \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2} \|x\|_2,
     \end{align*}
     and we take $c = \left(\sum^n_{i=1} \|e_i\|^2 \right)^{1/2}$, which proves the one half of inequalities \ref{norm_equivalent}.
     
@@ -7628,7 +7618,7 @@ The notion of equivalence is {\em transitive}\cite{18}, if two norms are both eq
 \section{Completeness and Local Compactness}
 
 \begin{definition}
-A sequence $\{x_n\}$ in a normed linear space is called convergent to the limit $x$, denoted as $\lim_{n \to \infty} x_n = x$ if $\lim_{n \to \infty} \|x - x_n\| = 0$.
+A sequence $\{x_n\}$ in a normed linear space is called convergent to the limit $x$, denoted as $\lim_{n \to \infty} x_n = x$ if $\lim_{n \to \infty} \left\|x - x_n\right\| = 0$.
 \end{definition}
 
 \medskip
@@ -7640,13 +7630,13 @@ A set $S$ is a normed linear space is called closed if it contains the limits of
 \medskip
 
 \begin{definition}
-A set $S$ in a normed linear space is called bounded if it is contained in some ball, i.e., if there is an $R$ such that for all points $z$ in $S$, $|z| \leq R$. Clearly, if a set is bounded in the sense of one norm, then it is bounded in the sense of any equivalent norm, and so for all norms.
+A set $S$ in a normed linear space is called bounded if it is contained in some ball, i.e., if there is an $R$ such that for all points $z$ in $S$, $\left|z\right| \leq R$. Clearly, if a set is bounded in the sense of one norm, then it is bounded in the sense of any equivalent norm, and so for all norms.
 \end{definition}
 
 \medskip
 
 \begin{definition}
-A sequence of vectors $\{x_n\}$ in a normed linear space is called a Cauchy sequence if $\lim |x_i - x_j| = 0$ as $i$ and $j$ tend to infinity.
+A sequence of vectors $\{x_n\}$ in a normed linear space is called a Cauchy sequence if $\lim \left|x_i - x_j\right| = 0$ as $i$ and $j$ tend to infinity.
 \end{definition}
 
 \medskip
@@ -7689,28 +7679,28 @@ $$d = \inf_{y\in Y} \|x - y\| $$
 is positive. 
 \end{lemma}
 \begin{proof}
-Suppose not and then these exists a sequence $\{y_n\}$ in $Y$ such that $\lim_{n\to\infty} \|x - y_n\| = 0$. It follows that $\{y_n\}$ is a Cauchy sequence, and according to part (a) in Theorem \ref{complete_compact_theorem}, $y_n$ converges to a limit in $Y$. Thus, $x \in Y$, which is a contradiction.
+Suppose not and then these exists a sequence $\{y_n\}$ in $Y$ such that $\lim_{n\to\infty} \left\|x - y_n\right\| = 0$. It follows that $\{y_n\}$ is a Cauchy sequence, and according to part (a) in Theorem \ref{complete_compact_theorem}, $y_n$ converges to a limit in $Y$. Thus, $x \in Y$, which is a contradiction.
 \end{proof}
 
 Suppose $X$ is infinite-dimensional, we shall construct a sequence $\{y_k\}$ in $X$ satisfying the following properties:
 \begin{align*}
-    \|y_n\| < 2, \quad \|y_k - y_l\| > 1, k \neq l.
+    \left\|y_n\right\| < 2, \quad \left\|y_k - y_l\right\| > 1, k \neq l.
 \end{align*}
 Clearly, such a sequence is bounded and contains no convergent subsequence.
 
 We can construct a bounded sequence $\{y_k\}$ in $X$ recursively. Suppose $y_1, \cdots, y_n$ have been cosen, denote by $Y$ the space spanned by $y_1, \cdots, y_n$. Since $X$ is infinite-dimensional, then there exists $x \in X$ and $x \notin Y$. Now by Lemma \ref{finite_dimensional_distance_lemma}, 
 \begin{align*}
-    d = \inf_{y \in Y} \|x - y\| > 0.
+    d = \inf_{y \in Y} \left\|x - y\right\| > 0.
 \end{align*}
 Then there exists a vector $y_0 \in Y$ such that
 \begin{align*}
-    \|x - y_0\| < 2d.
+    \left\|x - y_0\right\| < 2d.
 \end{align*}
-Define $y_{n+1} = \frac{x - y_0}{d}$, then $y_{n+1} \notin Y$ and $\|y_{n+1}\| < 2$. For any $y \in Y$, $y_0 + dy \in Y$, therefore, 
+Define $y_{n+1} = \frac{x - y_0}{d}$, then $y_{n+1} \notin Y$ and $\left\|y_{n+1}\right\| < 2$. For any $y \in Y$, $y_0 + dy \in Y$, therefore, 
 \begin{align*}
-    \|x - y_0 - dy\| \geq d.
+    \left\|x - y_0 - dy\right\| \geq d.
 \end{align*}
-Dividing both sides by $d$ gives $\|y_{n+1} - y\| \geq 1$. Since every $y_i \in Y, i = 1, 2, \cdots, n$, then $\|y_{n+1} - y_i\| \geq 1$ for $i = 1, 2, \cdots, n$. This complete the recursive construction of the sequence $\{y_n\}$. Thus, this is a contradiction with the fact that every bounded sequence has a convergent subsequence.
+Dividing both sides by $d$ gives $\left\|y_{n+1} - y\right\| \geq 1$. Since every $y_i \in Y, i = 1, 2, \cdots, n$, then $\left\|y_{n+1} - y_i\right\| \geq 1$ for $i = 1, 2, \cdots, n$. This complete the recursive construction of the sequence $\{y_n\}$. Thus, this is a contradiction with the fact that every bounded sequence has a convergent subsequence.
 \end{proof}
 
 \medskip
@@ -7734,7 +7724,7 @@ For any $T \in X'$, there exists $y \in X$ such that $Tx = (x, y)$ for all $x \i
 Every linear function on a finite-dimensional normed linear space is continuous.
 \end{corollary}
 \begin{proof}
-For any $x, y \in X$, $\|Tx - Ty\| \leq \|T(x - y)\| \leq c \|x - y\|$.
+For any $x, y \in X$, $\left\|Tx - Ty\right\| \leq \left\|T(x - y)\right\| \leq c \left\|x - y\right\|$.
 \end{proof}
 
 \medskip
@@ -7748,11 +7738,11 @@ Denote by $c_0$ the infimum of all numbers $c$ for which (\ref{dual_norm_inequal
 \begin{remark}
 The norm of $T$ can also be characterized as
 \begin{align}\label{linear_function_norm}
-    \|l\|' = \sup_{x \neq 0} \frac{\|l(x)\|}{\|x\|},
+    \left\|l\right\|' = \sup_{x \neq 0} \frac{\|l(x)\|}{\|x\|},
 \end{align}
 and it follows that for all $x \in X$ and $T \in X'$,
 \begin{align}\label{equ_14_5}
-    \|lx\| \leq \|l\|' \|x\|.
+    \left\|lx\right\| \leq \|l\|' \|x\|.
 \end{align}
 \end{remark}
 
@@ -7768,7 +7758,7 @@ $X$ is a finite-dimensional normed linear space.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item It suffices to show that the supremum definition (\ref{linear_function_norm}) of $\|l\|'$ is a maximum. Note that the ratio $\|l(x)\|/\|x\|$ does not change if $x$ is multiplied by any $k \in \mathbb{R}$. Therefore it suffices to take the supremum (\ref{linear_function_norm}) over the nuit sphere $S^1 = \{x: \|x\| = 1\}$.
+    \item It suffices to show that the supremum definition (\ref{linear_function_norm}) of $\|l\|'$ is a maximum. Note that the ratio $\|l(x)\|/\|x\|$ does not change if $x$ is multiplied by any $k \in \mathbb{R}$. Therefore it suffices to take the supremum (\ref{linear_function_norm}) over the nuit sphere $S^1 = \{x: \left\|x\right\| = 1\}$.
     
     According to Corollary \ref{linear_function_continuous}, $l(x)$ is a continuous function, then so is $\|l(x)\|$. Since the space $X$ is locally compact, then the continuous function $\|l(x)\|$ attains its maximum at some point $\widetilde{x} \in S^1$. And at this point, equality holds.
     
@@ -7776,7 +7766,7 @@ $X$ is a finite-dimensional normed linear space.
     \begin{align}\label{equ_14_6}
         l(kx) = k \|x\|.
     \end{align}
-    We choose the positive, homogeneous, subadditive function $p(x)$ to be $\|x\|$, and the subspace $U$ on which $l$ is defined consists of all multiples of $x$. It follows from (\ref{equ_14_6}) that for all $u \in U$, $l(u) \leq \|u\|$. According to Hahn-Banach Theorem, $l$ can be extended to all $y$ of $X$ so that $l(y) < \|y\|$ for all $y$.  Setting $-y$ for $y$, we deduce that $\|l(y)\| \leq \|y\|$ as well. So by definition of the norm of $l$, it follows that $\|l\|' \leq 1$. Since $l(x) = \|x\|$, it follows that $\|l\|' = 1$, so equality holds.
+    We choose the positive, homogeneous, subadditive function $p(x)$ to be $\|x\|$, and the subspace $U$ on which $l$ is defined consists of all multiples of $x$. It follows from (\ref{equ_14_6}) that for all $u \in U$, $l(u) \leq \|u\|$. According to Hahn-Banach Theorem, $l$ can be extended to all $y$ of $X$ so that $l(y) < \|y\|$ for all $y$.  Setting $-y$ for $y$, we deduce that $\left\|l(y)\right\| \leq \|y\|$ as well. So by definition of the norm of $l$, it follows that $\|l\|' \leq 1$. Since $l(x) = \|x\|$, it follows that $\|l\|' = 1$, so equality holds.
 \end{enumerate}
 \end{proof}
 
@@ -7804,7 +7794,7 @@ Substituting $f(l) = l(x)$ into (\ref{double_dual_norm}) gives
 \begin{align*}
     \|f\|'' = \sup_{l \neq 0} \frac{\|l(x)\|}{\|l\|'},
 \end{align*}
-and since $\|lx\| \leq \|l\|' \|x\|$, we have $\|lx\|/\|l\|' \leq \|x\|$ for all $l \neq 0$. Also, given $x \in X$, by Theorem \ref{equality_hold_theorem}, there exists $\tilde{l} \neq 0$ such that $\|\tilde{l}x\| = \|\tilde{l}\|' \|x\|$. This proves that $\|f\|'' = \|x\|$.
+and since $\left\|lx\right\| \leq \|l\|' \|x\|$, we have $\|lx\|/\|l\|' \leq \|x\|$ for all $l \neq 0$. Also, given $x \in X$, by Theorem \ref{equality_hold_theorem}, there exists $\tilde{l} \neq 0$ such that $\left\|\tilde{l}x\right\| = \|\tilde{l}\|' \|x\|$. This proves that $\|f\|'' = \|x\|$.
 \end{proof}
 
 \medskip
@@ -7869,19 +7859,19 @@ It suffices to show subadditivity. For $T, S \in X'$, we have
 
 \section{Norm of Transpose}
 \begin{theorem}
-Let $T \in \mathscr{L}(X, Y)$ and $T' \in \mathscr{L}(Y', X')$ its transpose, then $\|T\| = \left\|T'\right\|$.
+Let $T \in \mathscr{L}(X, Y)$ and $T' \in \mathscr{L}(Y', X')$ its transpose, then $\left\|T\right\| = \left\|T'\right\|$.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item For $l \in Y'$ and let $m = T'l \in X'$, then
     \begin{align*}
-        \|m\| = \left\|T'l\right\|_{X'} = \sup_{\|x\|=1} \left(T'l, x\right)_{Y} =  \sup_{\|x\|=1} \left(l, Tx\right)_{Y} \leq \|l\|_{Y'} \|T\|, 
+        \left\|m\right\| = \left\|T'l\right\|_{X'} = \sup_{\|x\|=1} \left(T'l, x\right)_{Y} =  \sup_{\|x\|=1} \left(l, Tx\right)_{Y} \leq \|l\|_{Y'} \|T\|, 
     \end{align*}
     which gives $\left\|T'\right\| \leq \|T\|$.
     
     \item Now replace $T$ by $T'$, we have
     \begin{align*}
-        \|T\| = \left\|T''\right\| \leq \left\|T'\right\|.
+        \left\|T\right\| = \left\|T''\right\| \leq \left\|T'\right\|.
     \end{align*}
 \end{enumerate}
 Combined and we have $\left\|T'\right\| = \|T\|$.
@@ -7898,19 +7888,19 @@ Let $T \in \mathscr{L}(X, Y)$ and $S \in \mathscr{L}(Y, Z)$. Then, we can define
 \begin{theorem}
 Suppose $X, Y$ and $Z$ are above normed linear space, then 
 \begin{align*}
-    \|ST\| \leq \|S\| \|T\|.
+    \left\|ST\right\| \leq \|S\| \|T\|.
 \end{align*}
 \end{theorem}
 \begin{proof}
-By definition of norm: $\|T\| = \sup_{x \neq 0} \frac{\|Tx\|}{\|x\|}$, for any $y \in Y$ and $x \in X$, 
+By definition of norm: $\left\|T\right\| = \sup_{x \neq 0} \|Tx\|/\|x\|$, for any $y \in Y$ and $x \in X$, 
 \begin{align*}
-    \|Sy\| \leq \|S\| \|y\|, \quad \|Tx\| \leq \|T\| \|x\|.
+    \left\|Sy\right\| \leq \|S\| \|y\|, \quad \left\|Tx\right\| \leq \|T\| \|x\|.
 \end{align*}
 Then,
 \begin{align*}
-    \|STx\| \leq \|S\| \|Tx\| \leq \|S\| \|T\| \|x\|,
+    \left\|STx\right\| \leq \|S\| \left\|Tx\right\| \leq \|S\| \|T\| \|x\|,
 \end{align*}
-using the definition of norm gives $\|ST\| \leq \|S\| \|T\|$.
+using the definition of norm gives $\left\|ST\right\| \leq \|S\| \|T\|$.
 \end{proof}
 
 \begin{remark}
@@ -7922,7 +7912,7 @@ We recall that a mapping $T$ of one linear space $X$ into another is called inve
 \begin{theorem}
 Let $X$ and $Y$ be finite-dimensional normed linear spaces of the same dimension, and let $T$ be a linear mapping of $X$ into $Y$ that is invertible. Let $S$ be another linear map of $X$ into $Y$ that does not differ too much from $T$ in the sense that
 \begin{align*}
-    \|S - T\| < \frac{1}{\left\|T^{-1}\right\|},
+    \left\|S - T\right\| < \frac{1}{\left\|T^{-1}\right\|},
 \end{align*}
 then $S$ is invertible.
 \end{theorem}
@@ -8190,7 +8180,7 @@ Let $X$ be a finite dimensional linear space. Show that two nonzero linear funct
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Since $T: X \rightarrow R$, then there $\exists x_1 \in X$ such that $T x \neq 0$. And we let $x_2  = \frac{x_1}{T(x_1)}$, then we have $T(x_2) = 1$. And for $\forall x \in X$we can know
+    \item Since $T: X \rightarrow R$, then there $\exists x_1 \in X$ such that $T x \neq 0$. And we let $x_2  = x_1 / T(x_1)$, then we have $T(x_2) = 1$. And for $\forall x \in X$we can know
     \begin{align*}
         T(x - T(x)\cdot x_2) = T(x) - T(x) = 0
     \end{align*}
@@ -8201,7 +8191,7 @@ Let $X$ be a finite dimensional linear space. Show that two nonzero linear funct
         & = 0 + S(x_2) T(x)
     \end{align*}
     \item Let $\lambda = S(x_2)$, then we proved that $S = \lambda T$.
-    If $S = \lambda T$, then for $\forall x \in N_P$, we have $T(x) = \frac{1}{\lambda} S(x) = 0$, which means $N_P \subset N_T$. And for $\forall x \in N_T$, $S(x) = 0$, which means $N_T \subset N_P$. So $N_T = N_P$. The proof is complete.
+    If $S = \lambda T$, then for $\forall x \in N_P$, we have $T(x) = S(x) / \lambda = 0$, which means $N_P \subset N_T$. And for $\forall x \in N_T$, $S(x) = 0$, which means $N_T \subset N_P$. So $N_T = N_P$. The proof is complete.
 \end{enumerate}
 \end{proof}
 
@@ -8321,8 +8311,8 @@ Assume $u\in U$, such that $ST(u) = 0$. Then we have two possibilities, that is 
 
 With Rank-Nullity theorem, we have 
 \begin{align*}
-    {\rm dim}\, N_{ST} & \leq {\rm dim}\, U = {\rm dim}\, N_T + {\rm dim}\, R_T \\
-    {\rm dim}\, R_T & \leq {\rm dim}\, V = {\rm dim}\, N_S + {\rm dim}\, R_S\\
+    {\rm dim}\, N_{ST} & \leq {\rm dim}\, U = {\rm dim}\, N_T + {\rm dim}\, R_T, \\
+    {\rm dim}\, R_T & \leq {\rm dim}\, V = {\rm dim}\, N_S + {\rm dim}\, R_S,\\
     \Rightarrow {\rm dim}\, N_{ST} & \leq {\rm dim}\, N_T + {\rm dim}\, N_S + {\rm dim}\, R_S.
 \end{align*}
 Now we assume $Z = N_{ST}\subset U$, then we have $ST(z) = 0$  for $z\in Z$, and 
@@ -8427,15 +8417,14 @@ Suppose $P_1, P_2$ and $P_1 + P_2$ are projections. Prove that $P_1 P_2 = 0$.
 \begin{proof}
 Since $P_1, P_2$ and $P_1 + P_2$ are projections, then $P_1^2 = P_1, P_2^2 = P_2$ and 
 \begin{align*}
-    \left(P_1 + P_2\right)^2 = & P_1 + P_2 = P_1^2 + P_1 P_2 + P_2 P_1 + P_2^2 \\
+    \left(P_1 + P_2\right)^2 & = P_1 + P_2 = P_1^2 + P_1 P_2 + P_2 P_1 + P_2^2 \\
     & = P_1 + P_1 P_2 + P_2 P_1 + P_2,
 \end{align*}
 which implies $P_1 P_2 + P_2 P_1 = 0$. 
 
 Now we need to show that $R_{P_2} \subset N_{P_1}$. Let $x \in R_{P_2}$, then there exists $y \in V$ such that $P_2 y = x$. Then, $P_2 x = P_2^2 x = P_2 y = x$. Also,
 \begin{align*}
-    0 & = P_1 P_2 x + P_2 P_1 x \\
-      & = P_1 x + P_2 P_1 x,
+    0 & = P_1 P_2 x + P_2 P_1 x = P_1 x + P_2 P_1 x,
 \end{align*}
 which implies $P_2 P_1 x = - P_1 x$. It follows naturally that $P_1 x$ is eigenvector of $P_2$ corresponding to eigenvalue $\lambda  = -1$. Since $P_2$ is a projection and it can only have eigenvalues $0$ or $1$, then $P_1 x$ can only be zero. Thus, $R_{P_2} \subset N_{P_1}$, and hence $P_1 P_2 = 0$.
 \end{proof}
@@ -8658,7 +8647,7 @@ Show that $A$ is diagonalizable.
 \begin{proof}
 Suppose $A$ is not diagonalizable, then there exists an eigenvalue $\lambda$ and a generalized eigenvector $x \neq 0$ such that \cite{15}
 \begin{align*}
-    (A - \lambda I)x \neq 0, (A - \lambda I)^2 x = 0.
+    (A - \lambda I)x \neq 0, \quad (A - \lambda I)^2 x = 0.
 \end{align*}
 Then, $(A - \lambda I)x \in N_{A - \lambda I} \cap R_{A - \lambda I} \neq \{0\}$, which is a contradiction. 
 \end{proof}
@@ -8668,21 +8657,21 @@ Then, $(A - \lambda I)x \in N_{A - \lambda I} \cap R_{A - \lambda I} \neq \{0\}$
 \begin{exercise}
 Let $A$ be an $n\times n$ matrix. Suppose that for any $1 \leq i \leq n$,
 \begin{align*}
-    |a_{ii}| > \sum_{1\leq j\leq n, j\neq i} |a_{ij}|.
+    \left|a_{ii}\right| > \sum_{1\leq j\leq n, j\neq i} |a_{ij}|.
 \end{align*}
 Show that $A$ is invertible.
 \end{exercise}
 \begin{proof}
 Suppose there exists $x = (x_1,\cdots, x_n) \neq 0$ such that $Ax = 0$, then we have $\sum^n_{j=1} a_{ij}x_j = 0, i = 1,2,\cdots,n$. Let $x_k = \max_{j}|x_j|$, and we have
 \begin{align*}
-    a_{kk}x_k & = - \sum_{j\neq k}a_{kj} x_j \\
-    \Rightarrow a_{kk} & = - \sum_{j\neq k}a_{kj} \frac{x_k}{x_j} 
+    a_{kk}x_k & = - \sum_{j\neq k}a_{kj} x_j, \\
+    \Rightarrow a_{kk} & = - \sum_{j\neq k}a_{kj} \frac{x_k}{x_j},
 \end{align*}
 which implies 
 \begin{align*}
-    |a_{kk}| = \left|\sum_{j\neq k}a_{kj} \frac{x_k}{x_j}\right| \leq \sum_{j\neq k} |a_{kj}| \left|\frac{x_k}{x_j}\right| < \sum_{j\neq k} |a_{kj}|,
+    \left|a_{kk}\right| = \left|\sum_{j\neq k}a_{kj} \frac{x_k}{x_j}\right| \leq \sum_{j\neq k} |a_{kj}| \left|\frac{x_k}{x_j}\right| < \sum_{j\neq k} |a_{kj}|,
 \end{align*}
-where we used the fact that $\left|\frac{x_k}{x_j}\right| \leq 1$. Then this is a contradiction to the assumption. Then $0$ is not an eigenvalue of $A$, hence $A$ is invertible.
+where we used the fact that $\left|x_k / x_j\right| \leq 1$. Then this is a contradiction to the assumption. Then $0$ is not an eigenvalue of $A$, hence $A$ is invertible.
 \end{proof}
 
 \medskip
@@ -8907,8 +8896,8 @@ Let $n\geq2$. Given $\left(  2n-1\right)  $ scalars $x_{1}%
 ,\cdots,x_{n-1}$ and $y_{1},\cdots,y_{n}$, we can define an $n\times n$ matrix
 $A=\left(  a_{ij}\right)  $ such that%
 \begin{align*}
-a_{ij} &  =x_{j}\text{ if }i>j,\\
-a_{ij} &  =y_{j}\text{ if }i\leq j.
+    a_{ij}, &  =x_{j}\text{ if }i>j,\\
+    a_{ij}, &  =y_{j}\text{ if }i\leq j.
 \end{align*}
 Show that%
 $$
@@ -8928,7 +8917,7 @@ We can know that $A$ has the form
     x_1 & y_2 & y_3 & \cdots & y_n \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     x_1 & x_2 & x_3 & \cdots & y_n
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{align*}
 We can do elementary row operations that starting from the first row, and then apply $\text{row}_i=\text{row}_i+(-1)\text{row}_{i+1}$. Then we get new matrix
 \begin{align*}
@@ -8937,7 +8926,7 @@ We can do elementary row operations that starting from the first row, and then a
     0 & y_2-x_2 & 0 & \cdots & 0 \\
     \vdots & \vdots & \vdots & \ddots & \vdots \\
     x_1 & x_2 & x_3 & \cdots & y_n
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{align*}
 Then it is obvious that $\det(A)=y_n \prod_{k=1}^{n-1} (y_k-x_k)$.
 \end{proof}
@@ -9000,8 +8989,7 @@ Let $M_n(\mathbb{F})$ denote the vector space of $n \times n$ matrices over a fi
                   &        & \vdots   &        & \\
                   & \cdots & b_{ij}   & \cdots & \\
                   &        & \vdots   &        &
-            \end{pmatrix} \\
-            & = b_{ij}.
+            \end{pmatrix} = b_{ij}.
         \end{align*}
     \end{enumerate}
     
@@ -9471,7 +9459,7 @@ For $A_1$, we have
 since $A_1A_i = A_iA_1, 2 \leq i \leq k+1$, we have $A_i:N_{\lambda_j}(A_1)\rightarrow N_{\lambda_j}(A_1), \forall j = 1,\cdots, m$ and $\forall i = 1,2,\cdots, k+1$. 
 \begin{enumerate}[label=(\alph*)]
     \item If $m = 1$, then there exists a basis $B$ of $\mathbb{C}^1$ consisting of generalized eigenvectors for $A_2, \cdots, A_k,A_{k+1}$. Any vectors in $\mathbb{C}^l$ is a generalized eigenvectors for $A_1$ because $\mathbb{C}^l = N_{\lambda_1}(A_1)$, then any vectors in $B$ is a a generalized eigenvectors for $A_1, A_2, \cdots, A_{k+1}$.
-    \item If $m > 1$, then $N_{\lambda_j}(A_1)\neq \mathbb{C}^l, \forall j = 1,\cdots, k+1$. On $N_{\lambda_j}(A_1)$, we have $$A_1|_{N_{\lambda_j}(A_1)}, A_2|_N_{\lambda_j}(A_1), \cdots, A_{k+1}|_N_{\lambda_j}(A_1).$$ By induction, there exists a basis $\beta_j, j=1,2,\cdots, m$ of $N_{\lambda_j}(A_1)$, which are generalized eigenvectors for $A_1|_{N_{\lambda_j}(A_1)}, \cdots, A_{k+1}|_N_{\lambda_j}(A_1)$. Take 
+    \item If $m > 1$, then $N_{\lambda_j}(A_1)\neq \mathbb{C}^l, \forall j = 1,\cdots, k+1$. On $N_{\lambda_j}(A_1)$, we have $$A_1|_{N_{\lambda_j}(A_1)}, A_2|_{N_{\lambda_j}}(A_1), \cdots, A_{k+1}|_{N_{\lambda_j}}(A_1).$$ By induction, there exists a basis $\beta_j, j=1,2,\cdots, m$ of $N_{\lambda_j}(A_1)$, which are generalized eigenvectors for $A_1|_{N_{\lambda_j}(A_1)}, \cdots, A_{k+1}|_{N_{\lambda_j}}(A_1)$. Take 
     \begin{align*}
         \beta = \bigcup^m_{j=1}\beta_j
     \end{align*}
@@ -9511,7 +9499,7 @@ We can verify that this is the Jordan blocks we want. We can compute $N_{(J-\lam
     0 & 0 & 0 & 0 & 0\\
     0 & 0 & 0 & 0 & 1\\
     0 & 0 & 0 & 0 & 0
-    \end{array}\right)
+    \end{array}\right),
 \end{align*}
 and it is obvious that $\dim N_{(J-\lambda I)} = 2$, since there are two $0$ column vectors. Similarly, we have 
 \begin{align*}
@@ -9728,7 +9716,7 @@ $$
         (1,x-(a+bx^2)) & = 0 \\
         (x^2,x-(a+bx^2)) & = 0 
     \end{align*}
-    which gives us $b = \frac{15}{16}, a = \frac{3}{16}$. Thus, the projection is $\left(\frac{3}{16},\frac{15}{16}\right)$.
+    which gives us $b = 15/16, a = 3/16$. Thus, the projection is $\left(3/16,15/16\right)$.
 \end{enumerate}
 \end{proof}
 
@@ -9964,23 +9952,31 @@ Suppose $V$ is the space of complex polynomials in $x$ and $y$ of total degree a
 Suppose $D_x: V \to V$ is the partial derivative with respect to $x$. Find the Jordan canonical form of $D_x$.
 \end{exercise}
 \begin{proof}
-$V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\}$, then $\dim V = 10$. And under operator $D_x$, the polynomial will become $\left\{0, 1, 2x, 3x^2, 0, 0, 0, y, 2xy, y^2\right\}$. And $D_x^4 = 0. D_x^3 \neq 0$. Also, $\dim D_x = 4, \dim D_x^2 = 6$, then we have the Jordan form of $D_x$ is
+Let $\{1,x,y,x^2,y^2,xy,x^2y,xy^2,x^3,y^3\}$ be a basis for $V$, then we have $D_x^4 = 0$, and hence the eigenvalue of $D_x$ is $0$. And since
 \begin{align*}
-    J = \begin{pmatrix}
-        \begin{bmatrix}
-            0 & 1 &   & \\
-              & 0 & 1 & \\
-              &   & 0 & 1 \\
-              &   &   & 0
-        \end{bmatrix} &  &  &  &  & \\
-        & \begin{bmatrix}
-            0 & 1 \\
-              & 0
-        \end{bmatrix} &  &  &  & \\
-        &  & [0] &  &  & \\
-        &  &  & [0] &  & \\
-        &  &  &  & [0] & \\
-        &  &  &  &  & [0]
+    D_x(V) = \operatorname{span}\{0,1,0,2x,0,y,2xy,y^2,3x^2,0\},
+\end{align*}
+then $\dim N_{D_x} = 4$, which implies there are $4$ Jordan blocks in Jordan form. Now, 
+\begin{align*}
+    D_x^2(V) = \operatorname{span}\{0,0,0,2,0,0,2y,0,6x,0\},
+\end{align*}
+and then $\dim N_{D_x^2} = 7$, which implies that there are $3$ $k \times k$ Jordan blocks, where $k > 1$. Again,
+\begin{align*}
+    D_x^3(V) = \operatorname{span}\{0,0,0,0,0,0,0,0,6,0\},
+\end{align*}
+and then $\dim N_{D_x^3} = 9$, which implies that there are $2$ $l \times l$ Jordan blocks, where $l > 2$. Since $\dim N_{D_x^4} = 10$, then there is only $1$ $m \times m$ Jordan blocks, where $m > 3$. Thus, we obtain the Jordan canonical form of $D_x$
+\begin{align*}
+    J_{D_x} = \begin{pmatrix}
+        0 & 1 & & & & & & & & \\
+          & 0 & 1 & & & & & & & \\
+          &   & 0 & 1 & & & & & & \\
+          &   &   & 0 & 0 & & & & & \\
+          &   &   &   & 0 & 1 & & & & \\
+          &   &   &   &   & 0 & 1 & & & \\
+          &   &   &   &   &   & 0 & 0 & & \\
+          &   &   &   &   &   &   & 0 & 1 & \\
+          &   &   &   &   &   &   &   & 0 & 0 \\
+          &   &   &   &   &   &   &   &   & 0
     \end{pmatrix}.
 \end{align*}
 \end{proof}
@@ -10198,7 +10194,7 @@ Since $(x_i,x_j) = \delta_{ij}, 1\leq i,j\leq n$, then we can arrange $x_1, x_2,
 
 Now we pick a vector $z = (1,0,\cdots,0)^T \in \mathbb{R}^{n}$. Then we have $A^*z = (a_1, a_2, \cdots, a_n)^T$, and therefore the first component of the vector $AA^*z$ is $\sum_{j=1}^{k}a_{j}^{2}$, which means $AA^*z = \left(\sum_{j=1}^{k}a_{j}^{2}, \cdots \right)^T$. Also, we have $\left\|AA^*z \right\| \leq \left\| I z \right\| = 1$. We denote other components of $AA^*z$ as $w_2, w_3, \cdots, w_n$, then we have 
 \begin{align*}
-    \sum_{j=1}^{k}a_{j}^{2} \leq \left\|AA^*z \right\|^{1/2} & = \sqrt{\sum_{j=1}^{k}a_{j}^{2} + w_2^2 + \cdots + w_n^2} = 1 \\
+    \sum_{j=1}^{k}a_{j}^{2} \leq \left\|AA^*z \right\|^{1/2} & = \sqrt{\sum_{j=1}^{k}a_{j}^{2} + w_2^2 + \cdots + w_n^2} = 1, \\
     \Rightarrow \sum_{j=1}^{k}a_{j}^{2} & \leq 1.
 \end{align*}
 \end{proof}
@@ -10218,15 +10214,15 @@ Here we view $A$ as a linear map from $\mathbb{R}^{n}$ to $\mathbb{R}^{m}$.
 \begin{proof}
 For $j$th column $c_j$ of $A$, we pick a unit vector $e_j = (0,\cdots, 0,1,0,\cdots,0)^T \in \mathbb{R}^n$, where $j$th entry is $1$, others are all zero. Then we can have $Ae_j = c_j$. Thus, we have 
 \begin{align*}
-    \left\|c_j \right\| \leq \left\|A \right\| \left\|e_j  \right\| = \left\|A \right\|
+    \left\|c_j \right\| \leq \left\|A \right\| \left\|e_j  \right\| = \left\|A \right\|,
 \end{align*}
 since this is true for all $1\leq j \leq n$, then we have $\max_{1\leq j \leq n}\left\|c_j \right\| \leq \left\|A \right\|$. 
 
 For $i$th row $r_i$ of $A$, we can consider $A^* = (r_1, r_2,\cdots, r_m)$. And still, we pick a vector $e_i' = (0,\cdots, 0,1,0,\cdots,0)^T \in \mathbb{R}^m$, where $i$th entry is $1$, others are all zero. And then we take $A^* e_i' = r_i$, which gives us 
 \begin{align*}
-    \left\|r_i \right\| \leq \left\|A^* \right\| \left\|e_i'  \right\| = \left\|A^* \right\| = \left\|A \right\|
+    \left\|r_i \right\| \leq \left\|A^* \right\| \left\|e_i'  \right\| = \left\|A^* \right\| = \left\|A \right\|,
 \end{align*}
-in the last step we used the fact that $\left\|A^* \right\| = \left\|A \right\|$ . This is true for all $1\leq i \leq m$, then we have $\max_{1\leq i \leq m}\left\|r_i \right\| \leq \left\|A \right\|$. The proof is complete.
+where in the last step we used the fact that $\left\|A^* \right\| = \left\|A \right\|$ . This is true for all $1\leq i \leq m$, then we have $\max_{1\leq i \leq m}\left\|r_i \right\| \leq \left\|A \right\|$. The proof is complete.
 \end{proof}
 
 \medskip
@@ -10272,7 +10268,7 @@ for all complex numbers $a$.
 ~\begin{enumerate}[label=(\alph*)]
     \item If $\|ax + y\|^2 = |a|^2 \|x\|^2 + \|y\|^2$, then $(ax,y) + (y, ax) = 0$. Pick $a = \overline{(x,y)}$, then 
     \begin{align*}
-        2 \left\Re(x,y)\right (x,y) = 0,
+        2 \Re(x,y) (x,y) = 0,
     \end{align*}
     and hence $(x,y) = 0$.
     
@@ -10323,7 +10319,7 @@ and then
 \end{align*}
 which is a contradiction. 
 
-We proof by induction. For $n = 1$, it is trivial. Just pick $v_1 = 1$ and $v_2 = -1$. Suppose true for $n = N - 1$, then there exist $N+1$ nonzero vectors $v_1, v_2, \cdots, v_{N}$ in $\mathbb{R}^{N-1}$ such that $v_i \ctot v_j \leq 0$ for all $i \neq j$. Now for $\mathbb{R}^N = \mathbb{R}^{N-1} \times \mathbb{R}$, we could assume $v_1, v_2, \cdots, v_{N} \in \mathbb{R}^{N-1} \times \{0\}$. Let $v_{N+1} = e_N$ and define $\widetilde{v}_k = v_k - \varepsilon e_N, 1 \leq k \leq N$. For $\varepsilon$ small enough, $\left(\tilde{v_i}, \tilde{v_j}\right) < 0, 1 \leq i,j \leq N$ and $\left(\tilde{v}_i, v_{N+1} \right) = - \varepsilon, 1 \leq i \leq N$. Thus, it holds for $n = N$.
+We proof by induction. For $n = 1$, it is trivial. Just pick $v_1 = 1$ and $v_2 = -1$. Suppose true for $n = N - 1$, then there exist $N+1$ nonzero vectors $v_1, v_2, \cdots, v_{N}$ in $\mathbb{R}^{N-1}$ such that $v_i \cdot v_j \leq 0$ for all $i \neq j$. Now for $\mathbb{R}^N = \mathbb{R}^{N-1} \times \mathbb{R}$, we could assume $v_1, v_2, \cdots, v_{N} \in \mathbb{R}^{N-1} \times \{0\}$. Let $v_{N+1} = e_N$ and define $\widetilde{v}_k = v_k - \varepsilon e_N, 1 \leq k \leq N$. For $\varepsilon$ small enough, $\left(\tilde{v_i}, \tilde{v_j}\right) < 0, 1 \leq i,j \leq N$ and $\left(\tilde{v}_i, v_{N+1} \right) = - \varepsilon, 1 \leq i \leq N$. Thus, it holds for $n = N$.
 \end{proof}
 
 \medskip
@@ -10367,7 +10363,7 @@ Let $e_1, \cdots, e_n$ be an orthogonal basis for $V$, and let $t_k = Te_k$. The
 \begin{align*}
     (t_i, t_j) = (T e_i, T e_j) = 0.
 \end{align*}
-Assume $|t_i| = a_i$, since for $i \neq j$, 
+Assume $\left|t_i\right| = a_i$, since for $i \neq j$, 
 \begin{align*}
     (e_i + e_j, e_i - e_j) = 0,
 \end{align*}
@@ -10375,7 +10371,7 @@ then,
 \begin{align*}
     (t_i + t_j, t_i - t_j) = (T(e_i + e_j), T(e_i - e_j)) = 0.
 \end{align*}
-Hence, $|t_i|^2 = |t_j|^2$. Then, $Te_1, \cdots, Te_n$ are orthogonal vectors with $|T e_j| = k, 1 \leq j \leq n$. Thus, $T = kU$.
+Hence, $|t_i|^2 = |t_j|^2$. Then, $Te_1, \cdots, Te_n$ are orthogonal vectors with $\left|T e_j\right| = k, 1 \leq j \leq n$. Thus, $T = kU$.
 \end{proof}
 
 \medskip
@@ -10388,15 +10384,15 @@ $ABx = x$. Prove that $Ax = Bx = x$.
 Since $ABx = x$ and $A$ is an orthogonal projection, then $x \in R_A$ and hence $Ax = x$. 
 
 We claim that for any orthogonal projection $P$ and any $x \in V$, 
-$$\|Px\| \leq \|x\|,$$ 
+$$\left\|Px\right\| \leq \|x\|,$$ 
 and the equality holds if and only if $x \in R_P$. Indeed, since $V = R_P \oplus N_P$, $x$ can be written as $x = x_P + x_{P^\bot}$, where $x_P \in R_P$ and $x_{P^\bot} \in N_P$. Then,
 \begin{align*}
-    \|Px\| = \|x_P\| \leq \|x\| = \sqrt{\|x_P\|^2 + \|x_{P^\bot}\|^2}.
+    \left\|Px\right\| = \left\|x_P\right\| \leq \left\|x\right\| = \sqrt{\|x_P\|^2 + \|x_{P^\bot}\|^2}.
 \end{align*}
 
 Then, since 
 $$\|x\| = \|ABx\| \leq \|Bx\| \leq \|x\|, $$
-we have $\|Bx\| = \|x\|$. Then by the claim above, $x \in R_B$, which implies $Bx = x$.
+we have $\left\|Bx\right\| = \left\|x\right\|$. Then by the claim above, $x \in R_B$, which implies $Bx = x$.
 \end{proof}
 
 \medskip
@@ -10433,7 +10429,7 @@ implies that
 \end{align*}
 \end{exercise}
 \begin{proof}
-Let $C = A^{-1}B$, and it is easy to see that $C$ is also orthogonal and $\det C = -1$. Indeed, $\det A = - \det B$, and $\det A = \pm 1$, and then $\det C = -1$. Then, $-1$ is an eigenvalue of $C$, and under Jordan form, we can know that $\det (I + C) = 0$. Thus, $\det (A + B) & = \det A \det (I + A^{-1}B) = 0$.
+Let $C = A^{-1}B$, and it is easy to see that $C$ is also orthogonal and $\det C = -1$. Indeed, $\det A = - \det B$, and $\det A = \pm 1$, and then $\det C = -1$. Then, $-1$ is an eigenvalue of $C$, and under Jordan form, we can know that $\det (I + C) = 0$. Thus, $\det (A + B) = \det A \det (I + A^{-1}B) = 0$.
 \end{proof}
 
 \medskip
@@ -10445,7 +10441,7 @@ where $r(\cdot)$ is the spectral radius of a matrix.
 \end{exercise}
 \begin{proof}
 Since $A$ and $B$ are normal matrices, then $r(A) = \|A\|$ and $r(B) = \|B\|$. Thus, 
-$$r(AB) = \|AB\| \leq \|A\| \cdot \|B\| = r(A) r(B).$$
+$$r(AB) = \left\|AB\right\| \leq \left\|A\right\| \cdot \left\|B\right\| = r(A) r(B).$$
 \end{proof}
 
 \medskip
@@ -10453,23 +10449,23 @@ $$r(AB) = \|AB\| \leq \|A\| \cdot \|B\| = r(A) r(B).$$
 \begin{exercise}
 Suppose that $V$ and $W$ are complex inner product spaces. Let $A: V \to W$ and $B:V \to W$ are linear maps. Suppose 
 \begin{align*}
-    \|A + B\| = \|A\| + \|B\|.
+    \left\|A + B\right\| = \left\|A\right\| + \left\|B\right\|.
 \end{align*}
 Prove that
 \begin{align*}
-    \|A + 3B\| = \|A\| + 3\|B\|.
+    \left\|A + 3B\right\| = \left\|A\right\| + 3\left\|B\right\|.
 \end{align*}
 \end{exercise}
 \begin{proof}
-There exists a $x \in V$ such that $\|A + B\| = \|Ax + Bx\|$. Also,
+There exists a $x \in V$ such that $\left\|A + B\right\| = \left\|Ax + Bx\right\|$. Also,
 \begin{align*}
-    |Ax + Bx| \leq \|Ax\| + \|Bx\| \leq \|A\| + \|B\|,
+    \left|Ax + Bx\right| \leq \left\|Ax\right\| + \left\|Bx\right\| \leq \left\|A\right\| + \left\|B\right\|,
 \end{align*}
-and then $\|A\| = \|Ax\|, \|B\| = \|Bx\|$. Then we can have $(Ax, Bx) + (Bx, Ax) = 0$. Then,
+and then $\left\|A\right\| = \left\|Ax\right\|, \left\|B\right\| = \left\|Bx\right\|$. Then we can have $(Ax, Bx) + (Bx, Ax) = 0$. Then,
 \begin{align*}
-    \|A + 3B\| = \sup_{\|y\| = 1}\|Ay + 3By\| \geq \|Ax + 3Bx\| = \|Ax\| + 3\|Bx\| = \|A\| + 3 \|B\|.
+    \left\|A + 3B\right\| = \sup_{\|y\| = 1} \left\|Ay + 3By\right\| \geq \left\|Ax + 3Bx\right\| = \left\|Ax\right\| + 3\left\|Bx\right\| = \left\|A\right\| + 3 \left\|B\right\|.
 \end{align*}
-Also, we have $\|A + 3B\| \leq \|A\| + 3 \|B\|$, which proves the equality.
+Also, we have $\left\|A + 3B\right\| \leq \left\|A\right\| + 3 \left\|B\right\|$, which proves the equality.
 \end{proof}
 
 \medskip
@@ -10498,21 +10494,22 @@ Let $|\cdot|$ be a norm on $\mathbb{C}^n$. Show that the following function on $
 \end{align*}
 is a {\bf matrix norm} (i.e., submultiplicative norm) for any invertible matrix $D$ which satisfies 
 \begin{align*}
-    \|D\| = \|D\|_I = \max_{x\neq 0} \frac{\|Dx\|}{\|x\|} \leq 1.
+    \left\|D\right\| = \|D\|_I = \max_{x\neq 0} \frac{\|Dx\|}{\|x\|} \leq 1.
 \end{align*}
 \end{exercise}
 \begin{proof}
 By Definition \ref{matrix_norm_def}, need to show that $\|\cdot \|_D$ is a norm and satisfies
 \begin{align*}
-    \|AB\|_D \leq \|A\|_D \|B\|_D.
+    \left\|AB\right\|_D \leq \left\|A\right\|_D \left\|B\right\|_D.
 \end{align*}
 Then,
 \begin{enumerate}[label=(\alph*)]
-    \item $\|A\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|} = \max_{\|y\|=1} \frac{\|AD^{-1}y\|}{\|y\|} = \|AD^{-1}\| \geq 0$.
+    \item $$\left\|A\right\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|} = \max_{\|y\|=1} \frac{\|AD^{-1}y\|}{\|y\|} = \left\|AD^{-1}\right\| \geq 0.$$
     
-    \item $\|A + B\|_D = \left\|AD^{-1} + BD^{-1}\right\| \leq \left\|AD^{-1}\right\| + \left\|BD^{-1}\right\| = \|A\|_D + \|B\|_D$.
+    \item $$\left\|A + B\right\|_D = \left\|AD^{-1} + BD^{-1}\right\| \leq \left\|AD^{-1}\right\| + \left\|BD^{-1}\right\| = \left\|A\right\|_D + \left\|B\right\|_D.$$
     
-    \item $\|AB\|_D = \left\|ABD^{-1}\right\| = \left\|AD^{-1}DBD^{-1}\right\| \leq \left\|AD^{-1}\right\| \|D\| \left\|BD^{-1}\right\| \leq \|A\|_D \|B\|_D$, since $\|D\| \leq 1$.
+    \item $$\left\|AB\right\|_D = \left\|ABD^{-1}\right\| = \left\|AD^{-1}DBD^{-1}\right\| \leq \left\|AD^{-1}\right\| \|D\| \left\|BD^{-1}\right\| \leq \|A\|_D \|B\|_D,$$ 
+    since $\left\|D\right\| \leq 1$.
 \end{enumerate}
 \end{proof}
 
@@ -10565,7 +10562,7 @@ H = \left(
 1 & 0 & -3\\
 1 & -3 & 0
 \end{matrix}
-\right)
+\right),
 $$
 and we need to normalize the matrix $H$, then we can compute for its eigenvalues, which are $\lambda = 3, \frac{3-\sqrt{17}}{2}, \frac{3+\sqrt{17}}{2}$, with eigenvectors 
 \begin{align*}
@@ -10601,15 +10598,13 @@ We can verify that $C^*HC = \left(
 \end{matrix}
 \right)$. Now we denote $z = Cx = (z_1, z_2, z_3)$, where 
 \begin{align*}
-    z_1 & = -\sqrt{\frac{17-3\sqrt{17}}{34}}x_2 + \sqrt{\frac{17+3\sqrt{17}}{34}}x_3\\
-    z_2 & = - \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3 \\
-    z_3 & = \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3
+    z_1 & = -\sqrt{\frac{17-3\sqrt{17}}{34}}x_2 + \sqrt{\frac{17+3\sqrt{17}}{34}}x_3,\\
+    z_2 & = - \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3, \\
+    z_3 & = \frac{1}{\sqrt{2}}x_1 + \frac{2}{\sqrt{17-3\sqrt{17}}}x_2 + \frac{2}{\sqrt{17+3\sqrt{17}}}x_3,
 \end{align*}
 and we need to change variable to get the quadratic form $q\left(  L^{-1}y\right)  =d_{1}y_{1}^{2}+d_{2}y_{2}^{2}+d_{3}y_{3}^{2}$. We make the change of variable
 \begin{align*}
-    y_1 & = \frac{1}{\sqrt{3}}z_1 \\
-    y_2 & = \sqrt{\frac{2}{3-\sqrt{17}}} z_2\\
-    y_3 & = \sqrt{\frac{2}{3+\sqrt{17}}} z_3
+    y_1 = \frac{1}{\sqrt{3}}z_1,\quad y_2 = \sqrt{\frac{2}{3-\sqrt{17}}} z_2,\quad y_3  = \sqrt{\frac{2}{3+\sqrt{17}}} z_3,
 \end{align*}
 and we can denote this transform by matrix $E$, where 
 \begin{align*}
@@ -10619,7 +10614,7 @@ and we can denote this transform by matrix $E$, where
     0 & \sqrt{\frac{2}{3-\sqrt{17}}} & 0\\
     0 & 0 & \sqrt{\frac{2}{3+\sqrt{17}}}
     \end{matrix}
-    \right)
+    \right),
 \end{align*}
 then we can know that $L^{-1} = CE$, which are defined above. And finally, $L = (CE)^{-1}$.
 \end{proof}
@@ -10660,7 +10655,7 @@ Since $A$ and $B$ are orthogonal matrices, then we have $\det A = \det B = \pm 1
     & = - \det(A+B)^T  \\
     &= - \det(A+B).
 \end{align*}
-Then we have $\det(A+B) = 0$, which means $A+B$ is not full rank. Then we can find a vector $y\in N_{A+B}$ such that $(A+B)y = 0$. Now we pick $x = \frac{y}{\|y\|}$, this is the unit vector we need.
+Then we have $\det(A+B) = 0$, which means $A+B$ is not full rank. Then we can find a vector $y\in N_{A+B}$ such that $(A+B)y = 0$. Now we pick $x = y / \|y\|$, this is the unit vector we need.
 \end{proof}
 
 \medskip
@@ -10678,12 +10673,12 @@ $A$ or $B$ is not normal.
     \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have 
     \begin{align*}
         AB x & = \lambda x \\
-        \Rightarrow \|AB\|\|x\| & \geq \|AB x\| = |\lambda|\|x\| \\
+        \Rightarrow \|AB\|\|x\| & \geq \left\|ABx\right\| = |\lambda|\|x\| \\
         \Rightarrow \|AB\| & \geq |\lambda|.
     \end{align*}
-    Also, we have $\|AB\|\leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\|A\| = r(A)$ and $\|B\| = r(B)$. Thus, with all the results above, we have 
+    Also, we have $\left\|AB\right\| \leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\left\|A\right\| = r(A)$ and $\left\|B\right\| = r(B)$. Thus, with all the results above, we have 
     \begin{align*}
-        r(AB)\leq \|AB\|\leq \|A\| \|B\| = r(A)r(B).
+        r(AB)\leq \left\|AB\right\| \leq \left\|A\right\| \left\|B\right\| = r(A)r(B).
     \end{align*}
     The proof is complete. 
     \item Take $A = \left(
@@ -10754,7 +10749,7 @@ r\left(  A\right)  \geq\max_{1\leq i\leq n}\left\vert a_{ii}\right\vert .
 $$
 \end{exercise}
 \begin{proof}
-Since $A$ is normal matrix, then we have $\|A\| = r(A)$. Also, we have known that for all $a_{ij}$, $\left|a_{ij}\right|\leq \|A\|$. Thus, we have $r(A)\geq \max_{1\leq i\leq n}\left|a_{ii}\right|$.
+Since $A$ is normal matrix, then we have $\left\|A\right\| = r(A)$. Also, we have known that for all $a_{ij}$, $\left|a_{ij}\right|\leq \left\|A\right\|$. Thus, we have $r(A)\geq \max_{1\leq i\leq n}\left|a_{ii}\right|$.
 \end{proof}
 
 \medskip
@@ -10791,13 +10786,13 @@ Show that if $A$ is a linear map on a $2$-dimensional complex Euclidean space an
 \begin{proof}
 Since $\left\|A^2\right\| = \|A\|^2$ and
 \begin{align*}
-    \left\|A^2\right\| = \max_{\|x\| = 1} \|AAx\| \leq \|A\| \max_{\|x\| = 1} \|Ax\| = \|A\|^2,
+    \left\|A^2\right\| = \max_{\|x\| = 1} \left\|AAx\right\| \leq \|A\| \max_{\|x\| = 1} \left\|Ax\right\| = \|A\|^2,
 \end{align*}
-then for any $x \neq 0$, $\|Ax\| = \|A\| \|x\|$. Then for eigenvector $x$ of $A$ such that $Ax = \lambda x$, we have
+then for any $x \neq 0$, $\left\|Ax\right\| = \|A\| \|x\|$. Then for eigenvector $x$ of $A$ such that $Ax = \lambda x$, we have
 \begin{align*}
-    \|Ax\| = \|\lambda x\| = |\lambda| \|x\|,
+    \left\|Ax\right\| = \left\|\lambda x\right\| = |\lambda| \|x\|,
 \end{align*}
-and hence $\|A\| = |\lambda|$. Thus, $A$ is normal.
+and hence $\left\|A\right\| = |\lambda|$. Thus, $A$ is normal.
 
 Indeed, we could assume
 \begin{align*}
@@ -10819,9 +10814,9 @@ since $A$ can be unitarily similar to an upper triangular matrix. Then,
 \end{align*}
 and 
 \begin{align*}
-    \|A\|^2 = r\left(A A^*\right) = \max \left\{ \left|\lambda_1\right|^2 + |t|^2, \left|\lambda_2\right|^2 \right\}.
+    \left\|A\right\|^2 = r\left(A A^*\right) = \max \left\{ \left|\lambda_1\right|^2 + |t|^2, \left|\lambda_2\right|^2 \right\}.
 \end{align*}
-Since $\|A\| = |\lambda|$, then $t = 0$ and hence $A$ is normal.
+Since $\left\|A\right\| = |\lambda|$, then $t = 0$ and hence $A$ is normal.
 \end{proof}
 
 \medskip
@@ -10906,7 +10901,7 @@ Using QR decomposition, $A$ can be written as a product of one orthogonal matrix
 \medskip
 
 \begin{exercise}
-Let $A$ be a $2\times 2$ complex matrix. Show that $\|A\| = r(A)$ if and only if $A$ is normal. Show that the statement is not true if $A$ is an $n\times n$ matrix with $n \geq 3$.
+Let $A$ be a $2\times 2$ complex matrix. Show that $\left\|A\right\| = r(A)$ if and only if $A$ is normal. Show that the statement is not true if $A$ is an $n\times n$ matrix with $n \geq 3$.
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -10914,9 +10909,9 @@ Let $A$ be a $2\times 2$ complex matrix. Show that $\|A\| = r(A)$ if and only if
     \begin{enumerate}[label=\arabic*)]
         \item $r(A) \leq \|A\|$. Indeed, for eigenvalue $\lambda_j$ and the corresponding eigenvector $x_j$, we have $Ax_j = \lambda_j x_j$ and 
         \begin{align*}
-            \|Ax_j\| = \left|\lambda_j\right| \|x_j\| \leq \|A\| \|x_j\|.
+            \left\|Ax_j\right\| = \left|\lambda_j\right| \left\|x_j\right\| \leq \|A\| \|x_j\|.
         \end{align*}
-        Hence, $\max|\lambda_j| = r(A) \leq \|A\|$.
+        Hence, $\max \left|\lambda_j\right| = r(A) \leq \|A\|$.
         
         \item $A$ is normal, then there exists orthogonal basis of $X$ consisting of eigenvectors of $A$. For any $x\in X$, $x = \sum^n_{i=1} c_j x_j$, applying $A$ to $x$ gives
         \begin{align*}
@@ -10926,20 +10921,20 @@ Let $A$ be a $2\times 2$ complex matrix. Show that $\|A\| = r(A)$ if and only if
         \begin{align*}
             \frac{\|Ax\|}{\|x\|} = \left(\frac{\sum^n_{i=1} c_j^2 \lambda_j^2 }{\sum^n_{i=1} c_j^2}\right)^{\frac{1}{2}} \leq \max \lambda_j = r(A).
         \end{align*}
-        Hence, $\|A\| = \frac{\|Ax\|}{\|x\|} \leq r(A)$.
+        and hence $\left\|A\right\| = \frac{\|Ax\|}{\|x\|} \leq r(A)$.
     \end{enumerate}
-    Thus, $\|A\| = r(A)$.
+    Thus, $\left\|A\right\| = r(A)$.
     
-    \item If $\|A\| = r(A)$, then we set $A = \begin{pmatrix}  
+    \item If $\left\|A\right\| = r(A)$, then we set $A = \begin{pmatrix}  
         a & b \\
         c & d
-    \end{pmatrix}$. Also, we have $\|A\| = \sqrt{A^*A}$. Then after computing, we have $b = c$, which implies $A$ is normal.
+    \end{pmatrix}$. Also, we have $\left\|A\right\| = \sqrt{A^*A}$. Then after computing, we have $b = c$, which implies $A$ is normal.
     
     \item Now take $A = \begin{pmatrix} 
         1 & 1 & 0 \\
         0 & 1 & 0 \\
         0 & 0 & 2
-    \end{pmatrix}$, then $\|A\| = 2 = \sqrt{r(A^* A)}$. However, $AA^* - A^* A \neq 0$, which implies $A$ is not normal. 
+    \end{pmatrix}$, then $\left\|A\right\| = 2 = \sqrt{r(A^* A)}$. However, $AA^* - A^* A \neq 0$, which implies $A$ is not normal. 
 \end{enumerate}
 \end{proof}
 
@@ -11170,7 +11165,7 @@ Let $n^{\rm th}$ partial sum be
 \begin{align*}
     S_n = \sum^n_{k=0} \frac{A^k}{k!}.
 \end{align*}
-Then, with $\left\| \frac{A^k}{k!} \right\| \leq \frac{\|A\|^k}{k!}$,
+Then, with $\left\| A^k / k! \right\| \leq \|A\|^k / k!$,
 \begin{align*}
     \left\| e^A - S_n \right\| & = \left\| \sum^\infty_{k=0} \frac{A^k}{k!} - \sum^n_{k=0} \frac{A^k}{k!} \right\| \\
     & = \left\| \sum^\infty_{k=n+1} \frac{A^k}{k!} \right\| \\
@@ -11223,9 +11218,9 @@ which implies, for all $1\leq i \leq n$,
 \begin{align*}
     d_i x_i + \varepsilon \sum^n_j P_{ij}x_j = \lambda x_i.
 \end{align*}
-Thus, letting $x_i = \max\{x_j\}^n_{j=1}$ and $|x_i| = 1$ gives
+Thus, letting $x_i = \max\{x_j\}^n_{j=1}$ and $\left|x_i\right| = 1$ gives
 \begin{align*}
-    |\lambda - d_i| \leq \varepsilon \sum^n_j P_{ij} \leq \varepsilon n.
+    \left|\lambda - d_i\right| \leq \varepsilon \sum^n_j P_{ij} \leq \varepsilon n.
 \end{align*}
 \end{proof}
 
@@ -11304,6 +11299,8 @@ Let $x_1, \cdots, x_n$ be a basis consisting of eigenvectors of $B$ correspondin
 \end{align*}
 also, since $A,B > 0$, then all $\mu_j > 0$, which imlpies $\left(x_j, \mu_j Ax_j\right) > 0$ for all $x_j$. Thus, $AB > 0$.
 \end{proof}
+
+\medskip
 
 \begin{proof}[Second Proof of Exercise \ref{exercise_13104}]
 Since $A$ and $B$ are both diagonalizable, then there exists unitary matrix $U$ such that
@@ -11518,9 +11515,9 @@ Show that $K$ is convex and find its gauge function $p_K$.
 ~\begin{enumerate}[label=(\alph*)]
     \item For any $x = (x_1, x_2), y = (y_1, y_2) \in K$ and $t\in (0,1)$, we define $z = (tx_1 + (1-t)y_1,tx_2 + (1-t)y_2)$. And we have
     \begin{align*}
-        |tx_1 + (1-t)y_1| \leq t|x_1| + (1-t)|x_2| \leq \max \{x_1, x_2\} < 1,
+        \left|tx_1 + (1-t)y_1\right| \leq t\left|x_1\right| + (1-t)\left|x_2\right| \leq \max \{x_1, x_2\} < 1,
     \end{align*}
-    similarly, $|tx_2 + (1-t)y_2| < 1$. Thus we have $z\in K$, and hence $K$ is convex.
+    similarly, $\left|tx_2 + (1-t)y_2\right| < 1$. Thus we have $z\in K$, and hence $K$ is convex.
     
     \item $p_K = \max \{x,y\}$.
 \end{enumerate}
@@ -11592,7 +11589,7 @@ Show that
 \end{align*}
 \end{exercise}
 \begin{proof}
-For matrix $P/\lambda$, it has dominant eigenvalue $1$. Now suppose $w$ is a generalized eigenvector of $P$ with eigenvalue $\beta$. With Perron theorem, we have $|\beta| < \lambda$, then 
+For matrix $P/\lambda$, it has dominant eigenvalue $1$. Now suppose $w$ is a generalized eigenvector of $P$ with eigenvalue $\beta$. With Perron theorem, we have $\left|\beta\right| < \lambda$, then 
 \begin{align*}
     \lim_{k\to\infty} \left(\frac{P}{\lambda}\right)^k w = 0.
 \end{align*}
@@ -11621,20 +11618,16 @@ Thus, we have
 \begin{exercise}
 Let $A = \left(a_{ij}\right)_{n\times n}$ be a matrix such that
 \begin{align*}
-    |a_{ij}| \leq 1, \quad \mbox{for all $1\leq i,j \leq n$.}
+    \left|a_{ij}\right| \leq 1, \quad \mbox{for all $1\leq i,j \leq n$.}
 \end{align*}
-Show that there exists a constant $\Lambda > 0$ such that
-\begin{align*}
-    |\lambda| \leq \Lambda
-\end{align*}
-holds for any eigenvalue $\lambda$ of $A$. Find the smallest such $\Lambda$ and justify your answer.
+Show that there exists a constant $\Lambda > 0$ such that $\left|\lambda\right| \leq \Lambda$ holds for any eigenvalue $\lambda$ of $A$. Find the smallest such $\Lambda$ and justify your answer.
 \end{exercise}
 \begin{proof}
 With the norm of $A$ and the spectral radius $r(A)$, we have
 \begin{align*}
-    |\lambda| \leq |r(A)| \leq \|A\| \leq \|A\|_{HS} = \left(\sum_{i,j}|a_{ij}|^2\right)^{\frac{1}{2}} \leq n,
+    \left|\lambda\right| \leq |r(A)| \leq \left\|A\right\| \leq \left\|A\right\|_{HS} = \left(\sum_{i,j}|a_{ij}|^2\right)^{\frac{1}{2}} \leq n,
 \end{align*}
-which implies that there exists a constant $\Lambda > 0$ such that $|\lambda| \leq \Lambda$.  
+which implies that there exists a constant $\Lambda > 0$ such that $\left|\lambda\right| \leq \Lambda$.  
 \end{proof}
 
 
