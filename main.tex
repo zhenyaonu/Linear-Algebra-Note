@@ -540,7 +540,7 @@ The dimension of the trivial space consisting of the single element $0$ is zero.
 Every linearly independent set of vectors $y_1,\cdots,y_n$ in a finite dimensional linear space $X$ can be completed to a basis of $X$.
 \end{theorem}
 \begin{proof}
-If ${\rm span}\{y_1,\cdots,y_n\} \neq X$, then there exists $y_{n+1}\in X \setminus \{y_1,\cdots,y_n\}$. We can continue this process if ${\rm span}\{y_1,\cdots,y_n, y_{n+1}\}\neq X$. Since ${\rm dim}X \subset \infty$, then the process will stop after finitely many step, which  constructs a basis of $X$.
+If ${\rm span}\{y_1,\cdots,y_n\} \neq X$, then there exists $y_{n+1}\in X \setminus \{y_1,\cdots,y_n\}$. We can continue this process if ${\rm span}\{y_1,\cdots,y_n, y_{n+1}\}\neq X$. Since ${\rm dim}X < \infty$, then the process will stop after finitely many step, which  constructs a basis of $X$.
 \end{proof}
 
 \medskip
@@ -606,7 +606,7 @@ Suppose $y_{i1}, \cdots, y_{in_i}$ form a basis for $Y_i, 1\leq i\leq m$. Then f
 \begin{align*}
     x = \sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k}.
 \end{align*}
-If $\sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k} = 0$ for some $c_{ik}\neq 0$, then it contradicts with the definition of then direct sum.
+If $\sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k} = 0$ for some $c_{ik}\neq 0$, then it contradicts with the definition of direct sum.
 \end{proof}
 
 \medskip
@@ -649,7 +649,7 @@ The linear space of congruence classes defined above is called the quotient spac
 \medskip
 
 \begin{example}
-Taking $X$ to be the linear space of all row vectors $(x_1,\cdots, x_n)$ with n components, and take $Y$ to be all vectors $y = (0, 0, x_3,\cdots, x_n) $ whose first two components are zero. Then two vectors are congruent $\bmod Y$ if and only if their first two components are equal. Each equivalence class can be represented by a vector with two components, the common components of all vectors in the equivalence class. 
+Taking $X$ to be the linear space of all row vectors $(x_1,\cdots, x_n)$ with n components, and take $Y$ to be all vectors $y = (0, 0, x_3,\cdots, x_n) $ whose first two components are zero. Then the vectors are congruent $\bmod Y$ if and only if their first two components are equal. Each equivalence class can be represented by a vector with two components, the common components of all vectors in the equivalence class. 
 \end{example}
 
 \medskip
@@ -856,7 +856,8 @@ $(l,x)$ is a bilinear form, which gives a natural identification of $X$ with $X'
 \begin{proof}
 $\varphi(x)$ is a subspace of $X''$.
 \begin{enumerate}[label=(\alph*)]
-    \item If $\varphi(x_1) = \varphi(x_2)$, then $(l,x_1) = (l,x_2)$ for any $l\in X'$. Then we have $(l,x_1 - x_2) = 0$. Now we can set $x_1 - x_2 = (c_1,\cdots,c_n)$, and pick $l = (\overline{c_1},\cdots,\overline{c_n})$, then we have $\sum^n_{k=1}|c_k|^2 = 0$. Then, $c_k = 0$, which implies $x_1 = x_2$. Thus, $\varphi$ is noe-to-one.
+    \item If $\varphi(x_1) = \varphi(x_2)$, then $(l,x_1) = (l,x_2)$ for any $l\in X'$. Then we have $(l,x_1 - x_2) = 0$. Now we can set $x_1 - x_2 = (c_1,\cdots,c_n)$, and pick $l = (\overline{c_1},\cdots,\overline{c_n})$, then we have $\sum^n_{k=1}|c_k|^2 = 0$. Then, $c_k = 0$, which implies $x_1 = x_2$. Thus, $\varphi$ is one-to-one.
+    
     \item We claim that $\varphi(x) = X''$. It suffices to prove that ${\rm dim}\varphi(x) = {\rm dim}X''$.
     
     Let $x_1,\cdots,x_n$ be a basis of $X$, then $x_1^{**},\cdots,x_n^{**}$ is a basis of $X''$. Thus, $\varphi$ is onto.
@@ -909,12 +910,6 @@ Under the natural identification of $X''$ and $X$, for every subspace $Y$ of a f
 \begin{proof}
 For any $y\in Y$ and $l\in Y^\bot$, $y^{**}(l) = l(y) = 0$, where $y^{**} \in Y^{\bot\bot}$. Thus we have $Y\subset Y^{\bot\bot}$. Also, ${\rm dim}Y^{\bot\bot} = {\rm dim}X' - {\rm dim}Y^\bot = {\rm dim}X - {\rm dim}Y^\bot = {\rm dim}Y$. Thus, $Y = Y^{\bot\bot}$.
 \end{proof}
-
-\medskip
-
-\begin{definition}
-Let $X$ be a finite-dimensional linear space, and let $S$ be a subset of $X$. The annihilator $S^\bot$ of $S$ is the set of linear functions $l$ that are zero at all vectors $s\in S$, that is, $l(s) = 0$. 
-\end{definition}
 
 \medskip
 
@@ -1082,7 +1077,7 @@ Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim X < \di
 \begin{proof}
 Let $T:\mathscr{L}(X,U)$, then with Rank-Nullity theorem, we have
 \begin{align*}
-    \dim R_T & = \dim X - \dim R_T \\
+    \dim R_T & = \dim X - \dim N_T \\
     & \leq \dim X < \dim U.
 \end{align*}
 Thus, $T$ is not surjective.
@@ -1570,7 +1565,8 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
         \dim N_A + \dim R_B + \dim N_A + \dim N_B = n + \dim R_{AB} + \dim N_{AB}, \\
         \Rightarrow \dim R_{AB} - \dim R_A - \dim R_B + n = \dim N_A + \dim N_B - \dim N_{AB} \geq \dim N_A \geq 0.
     \end{align*}
-    since $\dim N_B - \dim N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $BV = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
+    since $\dim N_B - \dim N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $Bv = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
+    
     \item Consider $A_{m\times n}$ and $B_{n\times k}$ and $B$ is of rank $r$. Using full-rank factorization of $B$, we have $B = U_{n\times r}V_{r\times k}$, where both $U$ and $V$ are of rank $r$\cite{7,5}. With Sylvester’s rank inequality, we have
     \begin{align*}
         {\rm rank}\, (ABC) & \geq {\rm rank}\, (AU) + {\rm rank}\, (VC) - r\\
@@ -1679,7 +1675,7 @@ where $S = (0,a_1,\cdots,a_n)$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-The first three statements are obvious. We only prove $(iv)$ and $(v)$.
+The first three statements are obvious. We only prove (d) and (e).
 \begin{enumerate}[label=(\alph*)]
     \setcounter{enumi}{3}
     \item Let $D(a,b) = (\cdots,a_i,\cdots,a_j,\cdots)$ and $D(b,a) = (\cdots,a_j,\cdots,a_i,\cdots)$. Then we have
