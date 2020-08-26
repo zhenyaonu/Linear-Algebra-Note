@@ -1835,7 +1835,7 @@ The proof is within the explanation of the theorem, i.e.,
 \end{proof}
 
 \begin{remark}
-Determinant is defined by properties (i),(ii) and (iii) in Theorem \ref{determinant}.
+Determinant is defined by properties (a),(b) and (c) in Theorem \ref{determinant}.
 \end{remark}
 
 \medskip
@@ -2406,7 +2406,7 @@ If the characteristic polynomial $p_A$ of an $n\times n$ matrix $A$ has $n$ dist
 \medskip
 
 \begin{definition}{\rm \cite{27}}
-Let $A$ be an $n \times n$ matrix on a $n$-dimensional spade $V$, then $A$ is diagonalizable if there is a basis for $V$ such that each vector of which is a eigenvector of $A$, i.e., there exists a basis $S$ such that $AS = S\Lambda$, where $\Lambda$ is diagonal with all diagonal entries being eigenvalues of $A$.
+Let $A$ be an $n \times n$ matrix on a $n$-dimensional space $V$, then $A$ is diagonalizable if there is a basis for $V$ such that each vector of which is a eigenvector of $A$, i.e., there exists a basis $S$ such that $AS = S\Lambda$, where $\Lambda$ is diagonal with all diagonal entries being eigenvalues of $A$.
 \end{definition}
 
 \medskip
@@ -2456,7 +2456,7 @@ Then we have,
 \medskip
 
 \begin{theorem}
-Let $\lambda_1, \cdots, \lambda_k$ be distinct eigenvalues of $A$. Then the following are equivalent.
+Let $\lambda_1, \cdots, \lambda_k$ be distinct eigenvalues of $A$. Then the following statements are equivalent:
 \begin{enumerate}[label=(\alph*)]
     \item $A$ is diagonalizable. 
     
@@ -2959,7 +2959,7 @@ Thus, the dimension of the eigenspace corresponding to $\lambda = 1$ is $1$, sin
 \begin{align*}
     J = \begin{pmatrix}
     0 & 0 &  0 \\
-    0 & 1 & 0 \\
+    0 & 1 & 1 \\
     0 & 0 & 1
     \end{pmatrix}.
 \end{align*}
@@ -3009,7 +3009,7 @@ Thus, the eigenspace is of dimension $1$, which implies there is only one Jordan
 \begin{align*}
     J = \begin{pmatrix}
     2 & 1 & 0 & 0 \\
-    0 & 1 & 0 & 0 \\
+    0 & 2 & 0 & 0 \\
     0 & 0 & 3 & 0 \\
     0 & 0 & 0 & 1
     \end{pmatrix}.
@@ -3215,7 +3215,7 @@ Thus, the Jordan form of $A$ is
 
 \section{Commuting Maps}
 \begin{lemma}
-If $A,B$ have same eigenvalues $\{\lambda_j\}$ and if for each $\lambda_j$, we have
+If $A,B$ have same eigenvalues $\lambda_j$ and if for each $\lambda_j$, we have
 $$\dim N_m(\lambda_j) = \dim M_m(\lambda_j),$$
 where $N_m(\lambda_j) = N_{(A - \lambda_j I)^m}$ and $M_m(\lambda_j) = N_{(B - \lambda_j I)^m}$, then $A, B$ are similar.
 \end{lemma}
