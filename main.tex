@@ -3430,7 +3430,7 @@ We claim that $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Indeed, ${\rm span}\
 \medskip
 
 \begin{definition}
-Given a subspace $Y$ of $X$, $X = Y \oplus Y^\perp$, and for any $x\in X$, $x = y + y^\perp$, where $y\in Y, y^\perp$. The component $y$ is called the orthogonal projection of $x$ into $Y$, denoted by $$y = P_Y x.$$ 
+Given a subspace $Y$ of $X$, $X = Y \oplus Y^\perp$, and for any $x\in X$, $x = y + y^\perp$, where $y\in Y, y^\perp \in Y^\perp$. The component $y$ is called the orthogonal projection of $x$ into $Y$, denoted by $$y = P_Y x.$$ 
 \end{definition}
 
 \medskip
@@ -3439,7 +3439,7 @@ Given a subspace $Y$ of $X$, $X = Y \oplus Y^\perp$, and for any $x\in X$, $x = 
 $P_Y$ is linear and $P_Y^2 = P_Y$, i.e., $P_Y$ is a projection.
 \end{theorem}
 \begin{proof}
-Let $y_1,\cdots,y_n$ be an orthonormal basis of $X$, $Y = {\rm span}\{y_1,\cdots,y_k\}$ and $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Then for any $x\in X$, $x = \sum^n_{j=1}a_j y_j$, and we have
+Let $y_1,\cdots,y_n$ be an orthonormal basis of $X$, $Y = {\rm span}\{y_1,\cdots,y_k\}$ and then $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Then for any $x\in X$, $x = \sum^n_{j=1}a_j y_j$, and we have
 \begin{align*}
     P_Y(x) = \sum^k_{j=1} a_j y_j.
 \end{align*}
@@ -3457,7 +3457,7 @@ Let $Y$ be a linear subspace of Euclidean space $X$, and $x\in X$, then
 \begin{proof}
 For any $x\in X$, we can write $x = x_1 + x_2$, where $x_1\in P_Y x, x_2\in Y^\perp$. Then, for any $z\in Y$, we have
 \begin{align*}
-    \left\|z - x\right\| = \|z - x_1\|^2 +  \left\|x_2\right\| \geq \|x_2\|^2,
+    \left\|z - x\right\| = \|z - x_1\| +  \left\|x_2\right\| \geq \|x_2\|,
 \end{align*}
 and the equation obtain equal sign only when $z = x_1 = P_Y x$.
 \end{proof}
@@ -3631,7 +3631,7 @@ Let $M$ be an isometry from $X$ into itself and $M(0) = 0$. Then:
         \Rightarrow (x', y') & = (x, y).
     \end{align*}
     
-    Let $z = x + y$, then we have $\left\|z'-(x'+y')\right\| - \left\z-(x+y)|\right\| = 0$, which implies $z' = x' + y'$. Also, let $z = cy$, then we have
+    Let $z = x + y$, then we have $\left\|z'-(x'+y')\right\| - \left\|z-(x+y)\right\| = 0$, which implies $z' = x' + y'$. Also, let $z = cy$, then we have
     \begin{align*}
         \|z' - cy'\|^2 & = (z' - cy', z' - cy') \\
         & = \|z'\|^2 - 2c (z', y') + c^2 \|y'\|^2 \\
@@ -7953,11 +7953,11 @@ Consider a polynomial $X(t):\mathbb{C}\to\mathbb{C}$. Let $V$ be vector space fo
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Let $f(t), g(t)\in M$ and $\lambda\in\mathbb{C}$, then we have $f(-t) = f(t)$ and $g(t) = -g(-t)$. Thus, we have $(f+\lambda g)(-t) = f(-t) + \lambda g(-t) = f(t) + \lambda g(t) = (f+\lambda g)(t)$, which implies that $f+\lambda g\in M$. Same argument is similar for $N$.
+    \item Let $f(t), g(t)\in M$ and $\lambda\in\mathbb{C}$, then we have $f(-t) = f(t)$ and $g(t) = g(-t)$. Thus, we have $(f+\lambda g)(-t) = f(-t) + \lambda g(-t) = f(t) + \lambda g(t) = (f+\lambda g)(t)$, which implies that $f+\lambda g\in M$. Same argument is similar for $N$.
     \item Let $f(t)\in V$, then we have 
     \begin{align*}
         f(t) & = \frac{f(t) + f(-t)}{2} + \frac{f(t) - f(-t)}{2} \\
-        & = f_1(t) + f_2(t)
+        & = f_1(t) + f_2(t),
     \end{align*}
     and it is easy to see that $f_1\in M$ and $f_2\in N$. Also, if $f(t)\in M\cap N$, then we have $f(t) = f(-t)$ and $f(t) = -f(-t)$. Thus, $f(t) = 0$, which implies $M\cap N = \{0\}$. Thus, $V = M\oplus N$.
 \end{enumerate}
@@ -7968,18 +7968,18 @@ Consider a polynomial $X(t):\mathbb{C}\to\mathbb{C}$. Let $V$ be vector space fo
 \begin{exercise}\label{ex_2}
 Let $U, V$ and $W$ be subspaces of a finite-dimensional vector space $X$. Is the statement
 \begin{align*}
-    {\rm dim}(U + V + W) = & {\rm dim} U + {\rm dim} V + {\rm dim} W - {\rm dim}(U \cap V) - {\rm dim}(U \cap W) \\
+    {\rm dim}(U + V + W) & = {\rm dim} U + {\rm dim} V + {\rm dim} W - {\rm dim}(U \cap V) - {\rm dim}(U \cap W) \\
     & - {\rm dim}(V \cap W) + {\rm dim}(U \cap V \cap W)
 \end{align*}
 true or false? If true, prove it. If false, provide a counterexample.
 \end{exercise}
 \begin{proof}[Solution]
 The statement is not true. Consider three lines $U,V,W$ in $\mathbb{R}^2$ such that they intersect in one point. So we have
-$$\text{dim} (U+V+W) = 2$$
+$$\text{dim} (U+V+W) = 2,$$
 and
 \begin{align*}
    \text{dim}(U) + \text{dim}(V) & + \text{dim}(W) - \text{dim}(U \cap V) - \text{dim}(U \cap W) - \\
-   & \text{dim}(V \cap W) + \text{dim}(U \cap V \cap W) = 3
+   & \text{dim}(V \cap W) + \text{dim}(U \cap V \cap W) = 3.
 \end{align*}
 the left and right sides are not the same. 
 \end{proof}
@@ -7988,7 +7988,7 @@ the left and right sides are not the same.
 
 \begin{exercise}\label{ex_3}
 Let $U, V$, and $W$ be subspaces of a finite dimensional linear space $X$. Show that if $W\subset U$, then 
-$$U\cup (V + W) = U\cup V + W$$
+$$U\cap (V + W) = U\cap V + W.$$
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -8034,7 +8034,7 @@ Denote by $X$ the linear space of all polynomials $p(t)$ of degree less than $n$
     
     We firstly set $P_1(t) = (t-t_2)\cdots(t-t_m)q(t)$ and the class $\{P_1\}$ of $P_1$ is the space $\left\{P(t)\in X: P(t) - P_1(t) \in Y \right\}$, and then set $P_2(t) = (t-t_1)(t-t_3)\cdots(t-t_m)q(t)$ and the class $\{P_2 \}$ in the same way. And we continue this process where we get rid of $(t-t_i)$ in class $P_i$ until we finally have $P_m(t) = (t-t_1)\cdots(t-t_{m-1})q(t)$ and the class $\{P_m \}$. Then we can check that $( \{P_1\}, \{P_2\}, \cdots, \{P_m\})$ is the span of $X/Y$.
     
-    Better solution for (iii): From (ii) we know the basis of $Y$, and we can know that every $p(t)$ in $X$ can be replaced by a polynomial of degree less than $m$ in $x/Y$, so $1, t, \cdots, t^{m-1}$ form a basis of $X/Y$.
+    Better solution for (c): From (b) we know the basis of $Y$, and we can know that every $p(t)$ in $X$ can be replaced by a polynomial of degree less than $m$ in $x/Y$, so $1, t, \cdots, t^{m-1}$ form a basis of $X/Y$.
 \end{enumerate}
 \end{proof}
 
