@@ -3748,9 +3748,9 @@ Euclidean space $U$, where $\|A\|$ is its norm. Then,
     \begin{align*}
         \left\|Az\right\| \geq \|A\| - \varepsilon.
     \end{align*}
-    Take $x = \frac{Az}{\|Az\|}$, then we have 
+    Take $x = Az/ \|Az\|$, then we have 
     \begin{align*}
-        (x, Az) = \frac{\|Az\|^2}{\|Az\|} & = \|Az\| \geq \|A\| - \varepsilon \\
+        (x, Az) = \frac{\|Az\|^2}{\|Az\|} & = \|Az\| \geq \|A\| - \varepsilon, \\
         \Rightarrow \|A\| - \varepsilon & \leq \sup_{\|x\| = \|z\| = 1} (x, Az) \\
         \xrightarrow{\varepsilon \to 0} \|A\| & \leq \sup_{\|x\| = \|z\| = 1} (x, Az).
     \end{align*}
@@ -3968,13 +3968,32 @@ We have
 \end{align*}
 For any $\lambda$, $\|\lambda x + y\|^2 = \lambda^2 \|x\|^2 + 2\lambda \Re (x,y) + \|y\|^2 \geq 0$, then we have
 \begin{align*}
-    4\left|\Re (x,y)\right|^2 & - a\|x\|^2 \|y\|^2 \leq 0 \\
+    4\left|\Re (x,y)\right|^2 & - 4\|x\|^2 \|y\|^2 \leq 0 \\
     \Rightarrow \left|\Re (x,y)\right| & \leq \|x\|\cdot \|y\|. 
 \end{align*}
 Since $\left(e^{i\theta}x,y\right) = e^{i\theta}(x,y)$, then we pick $\theta$ such that $e^{i\theta}(x,y) > 0$. Thus, we have
 \begin{align*}
     \left|(x,y)\right| = \left|\Re (e^{i\theta}x,y)\right| \leq \|x\|\cdot \|y\|.
 \end{align*}
+\end{proof}
+
+\medskip
+
+\begin{proof}[Second Proof of Theorem \ref{schwarz_inequality}]
+If $y = 0$, then the theorem is trivially true. If $y \neq 0$, let $\lambda = (x,y) / \|y\|^2$, then
+\begin{align*}
+    0 & \leq \left\|x - \lambda y\right\|^2 \\
+    & = \left\|x\right\|^2 - (x,\lambda y) - (\lambda y,x) + \left\|\lambda y\right\|^2 \\
+    & = \left\|x\right\|^2 - \overline{\lambda} (x,y) - \lambda (y,x) + \left\|\lambda y\right\|^2 \\
+    & = \left\|x\right\|^2 - \overline{\lambda} (x,y) - \lambda \overline{(x,y)} +  \lambda \overline{\lambda} \left\|y\right\|^2 \\
+    & = \left\|x\right\|^2 - \frac{\left|(x,y)\right|^2}{\|y\|^2} - \frac{\left|(x,y)\right|^2}{\|y\|^2} + \frac{\left|(x,y)\right|^2}{\|y\|^2} \\
+    & = \left\|x\right\|^2 - \frac{\left|(x,y)\right|^2}{\|y\|^2}.
+\end{align*}
+Therefore, we have
+\begin{align*}
+    0 \leq \left\|x\right\|^2 - \frac{\left|(x,y)\right|^2}{\|y\|^2},
+\end{align*}
+and thus, $\left|(x,y)\right| \leq \left\|x\right\| \left\|y\right\|$.
 \end{proof}
 
 \medskip
@@ -4038,7 +4057,7 @@ $M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$\left|
 \begin{theorem}
 Let $A:\mathbb{R}^n \to \mathbb{R}^n$ or $A:\mathbb{C}^n \to \mathbb{C}^n$, then 
 \begin{align*}
-    \left\|A\right\| = \left(\sum_{1\leq i,j\leq n} \left|a_{ij}\right|^2\right)^{\frac{1}{2}}.
+    \left\|A\right\| \leq \left(\sum_{1\leq i,j\leq n} \left|a_{ij}\right|^2\right)^{\frac{1}{2}}.
 \end{align*}
 \end{theorem}
 \begin{proof}
@@ -4084,8 +4103,10 @@ $\left\|A\right\| \geq r(A)$.
 Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. Assume $x\neq 0$, $Ax = \lambda x$, then we have $\left\|A\right\|\cdot \left\|x\right\| \geq \left\|Ax\right\| = |\lambda|\cdot \left\|x\right\|$. Thus, $\left\|A\right\| \geq r(A)$.
 \end{proof}
 
-\begin{remark}
-~\begin{enumerate}[label=(\arabic*)]
+\medskip
+
+\begin{remark}\label{remark_792}
+~\begin{enumerate}[label=(\alph*)]
     \item Take $A = \begin{pmatrix}
     0 & 1  \\
     0 & 0  
@@ -4108,6 +4129,10 @@ Let $\lambda$ be an eigenvalue of $A$ such that $r(a) = \left|\lambda\right|$. A
     \end{proof}
 \end{enumerate}
 \end{remark}
+
+\medskip
+
+It follows from Remark \ref{remark_792}(b) that if $A$ is diagonalizable, then $\left\|A\right\| = r(A)$.
 
 \medskip
 
@@ -4193,9 +4218,9 @@ If we pick an orthogonal basis of Euclidean space, we can view $A$ as a matrix $
     
     $A$ is skew symmetric (or anti-symmetric) if and only if $A^T = -A$, i.e., $a_{ij} = -a_{ji}$.
     
-    \item In complex case, $A$ is Hermitian if and only if $A = \overline{A^T} = A^*$ (conjugate transpose of $A$), i.e., $a_{ij} = \overline{a_{ji}}$.
+    \item In complex case, $A$ is Hermitian if and only if $A^* = \overline{A^T} = A$ (conjugate transpose of $A$), i.e., $a_{ij} = \overline{a_{ji}}$.
     
-    $A$ is skew Hermitian (or anti-Hermitian) if and only if $A = - \overline{A^T} = - A^*$, i.e., $a_{ij} = - \overline{a_{ji}}$.
+    $A$ is skew Hermitian (or anti-Hermitian) if and only if $- A^* = - \overline{A^T} = A$, i.e., $a_{ij} = - \overline{a_{ji}}$.
 \end{enumerate}
 \end{definition}
 
@@ -4230,7 +4255,7 @@ Then,
         \Rightarrow (\lambda x, x) & = (x, \lambda x), \\
         \Rightarrow \lambda (x, x) & = \overline{\lambda} (x, x),
     \end{align*}
-    and since $\|x\|\neq 0$, we have $\lambda = \overline{\lambda}$. Thus, $\Im \lambda = 0$, which implies $\lambda$ is real.
+    and since $x \neq 0$, we have $\lambda = \overline{\lambda}$. Thus, $\Im \lambda = 0$, which implies $\lambda$ is real.
     \item There are no generalized eigenvectors. Suppose $x\in N_{(N - \lambda_i I)^2}$ and $\lambda = 0$ for simplicity, then $H^2 x = 0$, which implies
     \begin{align*}
         (H^2 x, x) & = 0, \\
@@ -4562,9 +4587,9 @@ Then there exists a basis consisting of eigenvectors for both $A$ and $H$. Then 
 $N$ is a normal matrix if and only if $N$ can be unitarily diagonalized.
 \end{corollary}
 \begin{proof}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item ($\Rightarrow$) We need three steps to show this direction\cite{25}.
-    \begin{enumerate}[label=\alph*)]
+    \begin{enumerate}[label=\arabic**)]
         \item If a normal matrix is upper triangular, then it is diagonal.
         
         \item By Schur decomposition\footnote{Schur decomposition theorem is talked later in Theorem \ref{Schur_Decomposition}.}, every matrix is unitary similar to an upper triangular matrix.
@@ -4756,7 +4781,7 @@ We recall that $\left\|A\right\| = \max \left\|Ax\right\|, \left\|x\right\|=1$ o
 \medskip
 
 \begin{theorem}
-Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\left\|N\right\| = r(A)$.
+Suppose $N$ is a normal mapping of an Euclidean space $X$ into itself, then $\left\|N\right\| = r(N)$.
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
@@ -4988,9 +5013,9 @@ Let $p$ be any polynomial, and $A$ be a square matrix valued function that is di
 \end{proof}
 
 Now we extend the product rule to multilinear function $M(x_1,\cdots, x_k): \left(\mathbb{C}^n\right)^k \to \mathbb{C}$. Suppose $x_j(t), 1\leq j \leq k$ are differentiable, then 
-\begin{align*}
+\begin{align}
     \dv{}{t}M(x_1,\cdots, x_k) = M(\dot{x}_1,\cdots, x_k) + \cdots + M(x_1,\cdots, \dot{x}_k).
-\end{align*}
+\end{align}
 \begin{proof}
 For $k=2$, we have
 \begin{align*}
@@ -5000,10 +5025,14 @@ For $k=2$, we have
 \end{align*}
 \end{proof}
 
-We can apply the above result to the determinant function $D(x_1,\cdots,x_n)$ defined before and we have
-\begin{align*}
-    \dv{}{t}D(x_1,\cdots,x_n) = D(\dot{x}_1,\cdots, x_k) + \cdots + D(x_1,\cdots, \dot{x}_k).
-\end{align*}
+We can apply the above result to the determinant function $A(x_1,\cdots,x_n)$ defined before and we have
+\begin{align}
+    \dv{}{t}A(x_1,\cdots,x_n) = A(\dot{x}_1,\cdots, x_k) + \cdots + A(x_1,\cdots, \dot{x}_k).
+\end{align}
+If $A(t_0) = I$, then $x_i(t_0) = e_i$ for all $0 \leq i \leq n$, and hence
+\begin{align}\label{equ_93}
+    \dv{}{t} \det A(t)\bigg|_{t=t_0} = \tr \dot{A}(t_0).
+\end{align}
 
 \medskip
 
@@ -5022,7 +5051,7 @@ Fix $t_0$, and we have $Y(t) = Y(t_0) Y^{-1}(t_0) Y(t)$, which implies
 \begin{align*}
     \det Y(t) = \det Y(t_0) \det (Y^{-1}(t_0) Y(t)).
 \end{align*}
-Thus, we have
+Thus, since $\det (Y^{-1}(t_0) Y(t_0)) = I$ and by (\ref{equ_93}), we have
 \begin{align*}
     \dv{}{t}\det Y(t)\bigg|_{t=t_0} = \det Y(t_0) \tr \left(Y^{-1}(t_0) \dot{Y}(t) \right)\bigg|_{t=t_0}
 \end{align*}
