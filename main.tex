@@ -71,15 +71,15 @@
 
 \title{Sections and Chapters}
 
-\newtheorem{definition}{Definition}[section]
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{exercise}{Exercise}[section]
-\newtheorem{remark}{Remark}[section]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{remark}{Remark}[chapter]
 \theoremstyle{definition}
-\newtheorem{example}{Example}[section]
+\newtheorem{example}{Example}[chapter]
 \numberwithin{equation}{chapter}
 
 
@@ -1240,7 +1240,7 @@ Thus, $T'' = T$.
 \end{proof}
 
 \section{Dimension of Null-space and Range}
-\begin{theorem}
+\begin{theorem}\label{theorem_371}
 Let $T\in \mathscr{L}(X,U)$, then we have $R_T^\bot = N_{T'}$ and $R_T = N_{T'}^\bot$.
 \end{theorem}
 \begin{proof}
@@ -5228,7 +5228,7 @@ Let $u$ be an eigenvector of $A^T$ such that $A^T u = \lambda u$. If $(u,v)\neq 
 Let $\lambda$ be an eigenvalue of $A$ with multiplicity $1$, such that $Av = \lambda v, A^Tu = \lambda u, uv \neq 0$, then $(u,v)\neq 0$.
 \end{lemma}
 \begin{proof}
-If $(u,v) = 0$, and $u\in N_{\left(A^T - \lambda I\right)}$, then we have 
+If $(u,v) = 0$, and $u\in N_{\left(A^T - \lambda I\right)}$, then by Theorem \ref{theorem_371}, we have 
 \begin{align*}
     v \in N_{\left(A^T - \lambda I\right)}^\perp = R_{\left(A - \lambda I\right)},
 \end{align*}
@@ -6409,7 +6409,7 @@ which implies that $R_1, R_2$ has same eigenvector $u - v$ corresponding to the 
 
 \medskip
 
-\begin{theorem}[Cartan–Dieudonné Theorem]{\bf \cite{35}} \label{Cartan_Dieudonne}
+\begin{theorem}[Cartan–Dieudonné Theorem]{\rm \cite{35}} \label{Cartan_Dieudonne}
 Every orthogonal mapping on $\mathbb{R}^n, n \geq 1$, that is not identity is the composition of at most $n$ reflection.
 \end{theorem}
 \begin{proof}
@@ -8133,7 +8133,7 @@ Show that for each $J$, ${\rm span} \{x_1, x_2, \cdots, x_J\} = {\rm span} \{y_1
 ~\begin{enumerate}[label=(\alph*)]
     \item It is obvious that ${\rm span} \{y_1, y_2, \cdots, y_J\} \subset {\rm span} \{x_1, x_2, \cdots, x_J\}$, since each $y_j, 1 \leq j \leq J$ is a linear combination of $x_1, x_2, \cdots, x_J$.
     
-    \item For another direction, we prove it by induction. $J = 1$ is trivial. Suppose that $${\rm span} \{y_1, \cdots, y_k\} \subset {\rm span} \{x_1, \cdots, x_k\},$$ 
+    \item For another direction, we prove it by induction. $J = 1$ is trivial. Suppose that $${\rm span} \{x_1, \cdots, x_k\} \subset {\rm span} \{y_1, \cdots, y_k\},$$ 
     for some $k > 1$. Now for $J = k + 1$, 
     \begin{align*}
         y_{k+1} = \frac{1}{k+1} \sum^{k+1}_{j=1} x_j,
@@ -8142,7 +8142,7 @@ Show that for each $J$, ${\rm span} \{x_1, x_2, \cdots, x_J\} = {\rm span} \{y_1
     \begin{align*}
         x_{k+1} = (k+1) y_{k+1} - \sum^k_{j=1} x_j \in {\rm span} \{y_1, \cdots, y_k, y_{k+1}\}.
     \end{align*}
-    Then, ${\rm span} \{y_1, \cdots, y_J\} \subset {\rm span} \{x_1, \cdots, x_J\}$.
+    Then, ${\rm span} \{x_1, \cdots, x_J\} \subset {\rm span} \{y_1, \cdots, y_J\}$.
 \end{enumerate}
 Thus, we have ${\rm span} \{y_1, \cdots, y_J\} = {\rm span} \{x_1, \cdots, x_J\}$.
 \end{proof}
@@ -8163,7 +8163,7 @@ Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $A: V \to V$ 
     
     Second, it is trivial $A(R_A) \subset R_A$ since $Ax \in R_A$ for any $x \in R_A$. And it follows that $A(N_A) \subset N_A$, since $A(N_A) = 0 \subset N_A$.
     
-    \item* First, $\dim R_A + \dim N_A = 2$. Since $R_A \cap N_A$, then $\dim R_A = \dim N_A = 1$. Then, $R_A = N_A$.
+    \item* First, $\dim R_A + \dim N_A = 2$. Since $R_A \cap N_A \neq \varnothing$, then $\dim R_A = \dim N_A = 1$. Then, $R_A = N_A$.
     
     Second, we can assume $x \in R_A$ and $x \neq 0$, so there exists $y \in V$ such that $Ay = x$ and $Ax = 0$. Pick $x = e_1$ and $y = e_2$ would yields $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
 \end{enumerate}
@@ -8175,7 +8175,7 @@ Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $A: V \to V$ 
 \begin{exercise}
 Suppose $\{x_1, x_2,\cdots, x_n\}$ is a basis for the vector space $X$. Show that there exists linear functions $\{e_1, e_2,\cdots, e_n\}$ in the dual space $X'$ satisfying 
 \begin{align*}
-    e_i(x_j) = \delta_{ij}
+    e_i(x_j) = \delta_{ij}.
 \end{align*}
 Show that $\{e_1, e_2,\cdots, e_n\}$ is a basis of $X'$, called the dual basis.
 \end{exercise}
@@ -8187,12 +8187,12 @@ Show that $\{e_1, e_2,\cdots, e_n\}$ is a basis of $X'$, called the dual basis.
     \end{align*}
     then for $\forall x_i \in X$, we have
     \begin{align*}
-        (a_1 e_1 + a_2 e_2 + \cdots + a_n e_n)(x_i) = a_1 e_1(x_i) + \cdots + a_n e_n(x_i) = a_i = 0
+        (a_1 e_1 + a_2 e_2 + \cdots + a_n e_n)(x_i) = a_1 e_1(x_i) + \cdots + a_n e_n(x_i) = a_i = 0.
     \end{align*}
     Thus, $a_i = 0$, for $\forall a_i$, which means $\{e_1, e_2, \cdots, e_n\}$ are linearly independent.
-    \item Then, we need to show that span$(e_1, e_2, \cdots, e_n) = X'$. For any $f \in X'$, let $b_i  = f(x_i)$, and $f = b_1 e_1 + b_2 e_2 + \cdots + b_n e_n$. Then, for $\forall x_i$, we have
+    \item Then, we need to show that $\operatorname{span}\{e_1, e_2, \cdots, e_n\} = X'$. For any $f \in X'$, let $b_i  = f(x_i)$, and $f = b_1 e_1 + b_2 e_2 + \cdots + b_n e_n$. Then, for $\forall x_i$, we have
     \begin{align*}
-        f(x_i) = (b_1 e_1 + b_2 e_2 + \cdots + b_n e_n)(x_i) = b_i
+        f(x_i) = (b_1 e_1 + b_2 e_2 + \cdots + b_n e_n)(x_i) = b_i.
     \end{align*}
     Thus, $f$ can be presented by $\{e_1, e_2, \cdots, e_n\}$. The proof is complete.
 \end{enumerate}
@@ -8205,7 +8205,7 @@ Let $X$ be a finite dimensional linear space. Show that two nonzero linear funct
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Since $T: X \rightarrow R$, then there $\exists x_1 \in X$ such that $T x \neq 0$. And we let $x_2  = x_1 / T(x_1)$, then we have $T(x_2) = 1$. And for $\forall x \in X$we can know
+    \item Since $T: X \rightarrow R$, then there $\exists x_1 \in X$ such that $T x \neq 0$. And we let $x_2  = x_1 / T(x_1)$, then we have $T(x_2) = 1$. And for $\forall x \in X$ we can know
     \begin{align*}
         T(x - T(x)\cdot x_2) = T(x) - T(x) = 0
     \end{align*}
@@ -8259,7 +8259,11 @@ Let $X$ be a finite dimensional linear space and $T\in\mathscr{L}(X,X)$. Suppose
 Prove that $R_T\cap N_T = \{0\}$, where $T^2 = T\circ T$.
 \end{exercise}
 \begin{proof}
-We knew that $R_{T^2}\subset R_T$, and since ${\rm dim}\, R_{T^2} = {\rm dim}\, R_T$, we have $R_{T^2} = R_T$, which also implies $N_{T^2}\subset N_T$ by Rank-Nullity theorem.
+We knew that $R_{T^2}\subset R_T$, and since ${\rm dim}\, R_{T^2} = {\rm dim}\, R_T$, we have $R_{T^2} = R_T$. By Rank-Nullity theorem, we have
+\begin{align*}
+    \dim N_T = \dim X - \dim R_T = \dim X - \dim R_{T^2} = \dim N_{T^2}.
+\end{align*}
+Also, since $N_{T^2} \subset N^T$, we have $N_T = N_{T^2}$. Indeed, for any $x \in N^T$, we have $Tx = 0$, and it follows that $T^2x = T(Tx) = 0$.
 
 Assume $y\in N_T\cap R_T$,then there must exists a $x\in X$ such that $y = T x$. Then we have $T(Tx) = Ty = 0$, since $y\in N_T$. Then, $x\in N_{T^2} = N_T$, then $Tx = 0 = y$. Now we concluded that $R_T\cap N_T = \{0\}$.
 \end{proof}
