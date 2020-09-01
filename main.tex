@@ -76,7 +76,7 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{exercise}{Exercise}[chapter]
+\newtheorem{exercise}{Exercise}[section]
 \newtheorem{remark}{Remark}[chapter]
 \theoremstyle{definition}
 \newtheorem{example}{Example}[chapter]
@@ -3719,7 +3719,7 @@ The norm of a linear map $A:X\to U$ is defined by
 \begin{align*}
     \left\|A\right\| = \sup_{\|x\| = 1} \left\|Ax\right\| = \sup_{\|x\| \leq 1} \|Ax\|.
 \end{align*}
-This norm is a matrix norm induced by vector norms.
+This norm is a matrix norm induced by vector norms, also called operator norm. When $A$ is given by a matrix, then $\left\|A\right\|$ is the square root of the largest eigenvalue of the symmetric matrix $A^TA$, all of whose eigenvalues are nonnegative.
 \end{definition}
 
 \medskip
@@ -5321,7 +5321,7 @@ If $N = I, M > I$, then $M^{-1} < I$. Now turn to any matrix $N$. Let $R = \sqrt
     R^{-1} M R & > I, \\
     \Rightarrow \left(R^{-1} M R\right)^{-1} & < I, \\
     \Rightarrow R M^{-1} R^{-1} & < I, \\
-    \Rightarrow M^{-1} & < \left(R^2\right)^{-1} = N^{-1}.
+    \Rightarrow M^{-1} < \left(R^2\right)^{-1} & = N^{-1}.
 \end{align*}
 \end{proof}
 
@@ -5358,7 +5358,7 @@ $M > N > 0$, then $\sqrt{M} > \sqrt{N} > 0$.
 \begin{proof}
 Let $A(t) = tM + (1-t)N > 0$, and $R(t) = \sqrt{A(t)} > 0$. Then we have 
 \begin{align*}
-    \dot{A} = \dot{R}R + R \dot{R} = N - M > 0.
+    \dot{A} = \dot{R}R + R \dot{R} = M - N > 0.
 \end{align*}
 Hence, $\dot{R} > 0$, which implies $R(0) < R(1)$, i.e., $\sqrt{N} < \sqrt{M}$.
 \end{proof}
@@ -5826,13 +5826,13 @@ and then $z \mapsto w$ maps the right half plane $\Re z > 0$ onto the unit disc 
 \begin{theorem}
 Let $a \in \mathbb{C}$ with $\Re a > 0$. Let $Z$ be a mapping whose self-adjoint part $Z + Z^* > 0$. Then
 \begin{align*}
-    W = \frac{1 - aZ}{1+\overline{a}Z}
+    W = \frac{I - aZ}{I + \overline{a}Z}
 \end{align*}
-is a mapping of norm less than $1$. Conversely, $\left\|w\right\| < 1$ implies that $Z + Z^* > 0$.
+is a mapping of norm less than $1$. Conversely, $\left\|W\right\| < 1$ implies that $Z + Z^* > 0$.
 \end{theorem}
 \begin{proof}
-Suppose $Z + Z^* > 0$, then $\Re \lambda > 0$ for any eigenvalue $\lambda$ of $Z$. It follows that eigenvalues of $I + \overline{a} Z$ and $1 + aZ$ are not zero, therefore $I + \overline{a} Z$ is invertible. For any vector $x$, denote $(I + \overline{a} Z)^{-1}x = y$, then \begin{align*}
-    (1 - aZ)y = Wx,
+Suppose $Z + Z^* > 0$, then $\Re \lambda > 0$ for any eigenvalue $\lambda$ of $Z$. It follows that eigenvalues of $I + \overline{a} Z$ and $I + aZ$ are not zero, therefore $I + \overline{a} Z$ is invertible. For any vector $x$, denote $(I + \overline{a} Z)^{-1}x = y$, then \begin{align*}
+    (I - aZ)y = Wx,
 \end{align*}
 and then 
 \begin{align*}
@@ -5840,8 +5840,8 @@ and then
 \end{align*}
 Thus,
 \begin{align*}
-    \left\|W\right\| \leq 1 & \Leftrightarrow \left\|Wx\right\| \leq \left\|x\right\|, \\
-    & \Leftrightarrow \left\|(1 - aZ)y\right\| \leq \left\|(I + \overline{a} Z)y\right\| \\
+    \left\|W\right\| \leq 1 & \Leftrightarrow \left\|Wx\right\| \leq \left\|x\right\| \\
+    & \Leftrightarrow \left\|(I - aZ)y\right\| \leq \left\|(I + \overline{a} Z)y\right\| \\
     & \Leftrightarrow (a+\overline{a})(y,Zy) + (a+\overline{a})(Zy,y) > 0 \\
     & \Leftrightarrow (y, (Z+Z^*)y) > 0 \\
     & \Leftrightarrow Z+Z^* > 0.
@@ -8263,7 +8263,7 @@ We knew that $R_{T^2}\subset R_T$, and since ${\rm dim}\, R_{T^2} = {\rm dim}\, 
 \begin{align*}
     \dim N_T = \dim X - \dim R_T = \dim X - \dim R_{T^2} = \dim N_{T^2}.
 \end{align*}
-Also, since $N_{T^2} \subset N^T$, we have $N_T = N_{T^2}$. Indeed, for any $x \in N^T$, we have $Tx = 0$, and it follows that $T^2x = T(Tx) = 0$.
+Also, since $N_{T^2} \subset N^T$, we have $N_T = N_{T^2}$. Indeed, for any $x \in N^T$, we have $Tx = 0$, and it follows that $T^2x = T(Tx) = 0$. 
 
 Assume $y\in N_T\cap R_T$,then there must exists a $x\in X$ such that $y = T x$. Then we have $T(Tx) = Ty = 0$, since $y\in N_T$. Then, $x\in N_{T^2} = N_T$, then $Tx = 0 = y$. Now we concluded that $R_T\cap N_T = \{0\}$.
 \end{proof}
@@ -8278,16 +8278,21 @@ If $Y$ and $Z$ are subspaces of a finite dimensional linear space, prove that
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Assume $l \in (Y+Z)^\bot$. Then we have $l(m) = 0$, for all $m \in Y+Z$. Also, we know $Y\subset Y+Z$, so $l(y) = 0, \forall y \in Y$. Similarly, we have $l(z) = 0, \forall z \in Z$. Then we have $l \in Y^\bot \cap Z^\bot$, which implies $(Y+Z)^\bot \subset Y^\bot \cap Z^\bot$.
+    \item For $l \in (Y+Z)^\bot$. Then we have $l(m) = 0$, for all $m \in Y+Z$. Also, we know $Y\subset Y+Z$, so $l(y) = 0, \forall y \in Y$. Similarly, we have $l(z) = 0, \forall z \in Z$. Then we have $l \in Y^\bot \cap Z^\bot$, which implies $(Y+Z)^\bot \subset Y^\bot \cap Z^\bot$.
     
-    Now assume $l \in Y^\bot \cap Z^\bot$, then we have $l(y) = 0$ and $l(z) = 0$, for $\forall y \in Y, \forall z \in Z$. Then, for $\forall m \in Y+Z$ we have $l(m) = 0$, since $m = y + z$ for some $y \in Y$ and $z \in Z$. Thus, we have $l \in (Y+Z)^\bot$, which implies $Y^\bot \cap Z^\bot \subset (Y+Z)^\bot$. Now we proved that $(Y+Z)^\bot = Y^\bot \cap Z^\bot$.
+    Now for $l \in Y^\bot \cap Z^\bot$, then we have $l(y) = 0$ and $l(z) = 0$, for $\forall y \in Y, \forall z \in Z$. Then, for $\forall m \in Y+Z$ we have $l(m) = 0$, since $m = y + z$ for some $y \in Y$ and $z \in Z$. Thus, we have $l \in (Y+Z)^\bot$, which implies $Y^\bot \cap Z^\bot \subset (Y+Z)^\bot$. 
+    
+    Then we proved that $(Y+Z)^\bot = Y^\bot \cap Z^\bot$.
+    
     \item It is equivalent to prove that $(Y \cap Z)^{\bot\bot} = Y\cap Z = (Y^\bot + Z^\bot)^\bot$.
     
     
-    If $l \in (Y^\bot + Z^\bot)^\bot$, we have $l(l_1 + l_2) = 0$, for $l_1 \in Y^\bot$ and $l_2 \in Z^\bot$. Also, we have $Y^\bot \subset Y^\bot + Z^\bot$, we have $l(l_1) = 0$ for $\forall l_1 \in Y^\bot$. Similarly, we have $l(l_2) = 0$ for $\forall l_2 \in Z^\bot$. Then $l \in Y^{\bot\bot} = Y$ and $l \in Z^{\bot\bot} = Z$. Thus, $l \in Y\cap Z$, which implies $(Y^\bot + Z^\bot)^\bot \subset Y\cap Z$.
+    For $x \in (Y^\bot + Z^\bot)^\bot$, we have $(x,l) = l(x) = 0$, for all $l \in Y^\bot + Z^\bot$ and $l = l_1 + l_2$, where $l_1 \in Y^\bot, l_2 \in Z^\bot$. Since $Y^\bot \subset Y^\bot + Z^\bot$, then $(x,l_1) = l_1(x) = 0$, which implies $x \in Y^{\bot\bot} = Y$. Similarly, $x \in Z$ and this implies $x \in Y \cap Z$. Hence, $(Y^\bot + Z^\bot)^\bot \subset (Y \cap Z)$.
     
     
-    If $l \in Y\cap Z = (Y\cap Z)^{\bot\bot}$, we have $l \in Y\cap Z$, then $l \in Y = Y^{\bot\bot}$ and $l \in Z = Z^{\bot\bot}$. Then we have $l(l_1) = 0, l_1 \in Y^\bot$ and $l(l_2) = 0, l_2 \in Z^\bot$. Thus, we have $l(l_1 + l_2) = 0, l_1 + l_2 \in Y^\bot + Z^\bot$, which implies $l \in (Y^\bot + Z^\bot)^\bot$. Then we have $Y\cap Z \subset (Y^\bot + Z^\bot)^\bot$.
+    For $x \in Y\cap Z = (Y\cap Z)^{\bot\bot}$, $x \in Y = Y^{\bot\bot}$ and $x \in Z = Z^{\bot\bot}$. Then we have $(x,l_1) = l_1(x) = 0$, for any $l_1 \in Y^\bot$ and $(x,l_2) = l_2(x) = 0$ for any $l_2 \in Z^\bot$. Therefore, we have $(x,l_1 + l_2) = (l_1 + l_2)x = 0, l_1 + l_2 \in Y^\bot + Z^\bot$, which implies $x \in (Y^\bot + Z^\bot)^\bot$. Hence we have $Y\cap Z \subset (Y^\bot + Z^\bot)^\bot$.
+    
+    Thus, we proved $(Y\cap Z)^{\bot\bot} = Y^\bot + Z^\bot$.
 \end{enumerate}
 \end{proof}
 
@@ -8336,35 +8341,12 @@ Prove that if $U,V,W$ are finite dimensional vector spaces, and $T\in\mathscr{L}
 \end{align*}
 \end{exercise}
 \begin{proof}
-Assume $u\in U$, such that $ST(u) = 0$. Then we have two possibilities, that is $u\in N_T$ or $T(u)\in N_S$.
-
-With Rank-Nullity theorem, we have 
+For any $x \in N_{ST}$, $STx = 0$ implies that $Tx \in N_S$. Now $T$ restricted to $N_{ST}$ is a map $\widetilde{T} \coloneqq T|_{N_{ST}}: N_{ST} \to N_S$, thus
 \begin{align*}
-    {\rm dim}\, N_{ST} & \leq {\rm dim}\, U = {\rm dim}\, N_T + {\rm dim}\, R_T, \\
-    {\rm dim}\, R_T & \leq {\rm dim}\, V = {\rm dim}\, N_S + {\rm dim}\, R_S,\\
-    \Rightarrow {\rm dim}\, N_{ST} & \leq {\rm dim}\, N_T + {\rm dim}\, N_S + {\rm dim}\, R_S.
+    \dim N_{ST} & = \dim R_{\widetilde{T}} + \dim N_{\widetilde{T}} \\
+    & \leq \dim N_S + \dim N_T,
 \end{align*}
-Now we assume $Z = N_{ST}\subset U$, then we have $ST(z) = 0$  for $z\in Z$, and 
-\begin{align*}
-    {\rm dim}\, N_{ST} & = {\rm dim}\, Z = {\rm dim}\, N_T + {\rm dim}\, T/Z, \\
-    {\rm dim}\, T/Z & \leq {\rm dim}\, N_S + {\rm dim}\, ST(Z),
-\end{align*}
-combining these, we have ${\rm dim}\, N_{ST} \leq {\rm dim}\, N_S + {\rm dim}\, N_T$.
-\end{proof}
-
-\medskip
-
-\begin{proof}[Second Proof of Exercise \ref{April_2011_p1}]
-~\begin{enumerate}[label=(\alph*)]
-    \item Let $x \in N_T$, then we have $Tx = 0$. And then $STx = 0$, which implies $x \in N_{ST}$. Thus, $N_{T} \subset N_{ST}$ and it follows that $\dim N_T \leq \dim N_{ST}$.
-    
-    \item Let $x \in R_{ST}$, then there exists $y \in U$ such that $STy = x$, where $Ty \in V$. Then, $x \in R_S$. Thus, $R_{ST} \subset R_S$, and with rank-nullity theorem, $\dim N_S \leq \dim N_{ST}$\footnote{Also, we could argue that $\dim N_{ST} = \dim U - \dim R_{ST} \geq \dim U - \dim R_S = \dim N_S$, which is exactly the same with $(b)$\cite{9}.}.
-\end{enumerate}
-Now we have $\dim N_{ST} \geq \max \{\dim N_S, \dim N_T\}$. Also, we know that $T|_{N_{ST}}: N_{ST} \to N_S$. Indeed, for any $x \in N_{ST}$, $STx = 0$ and thus $Tx \in N_S$. Hence,
-\begin{align*}
-    \dim N_{ST} & = \dim N_{T|_{N_{ST}}} + \dim R_{T|_{N_{ST}}} \leq \dim N_T + \dim N_S,
-\end{align*}
-where in the last step we used $R_{T|_{N_{ST}}} \subset N_S$, since $T|_{N_{ST}}: N_{ST} \to N_S$.
+where in the last step we used $R_{\widetilde{T}} \subset N_S$.
 \end{proof}
 
 \medskip
@@ -8377,11 +8359,11 @@ Let $U, V$ and $W$ be finite dimensional subapaces of $X$. Show that
 \end{align*}
 \end{exercise}
 \begin{proof}
-Since $\dim U + \dim V = \dim (U + V) + \dim (U \cap V)$, let $W_1 = U + V$ and $W_2 = W$, then 
+Since $\dim U + \dim V = \dim (U + V) + \dim (U \cap V)$, then 
 \begin{align*}
     \dim (U+V) + \dim W = \dim (U + V + W) + \dim ((U+V) \cap W).
 \end{align*}
-Then,
+Thus, we have
 \begin{align*}
     \dim U + \dim V - \dim (U \cap V) + \dim W = \dim (U + V + W) + \dim ((U+V) \cap W),
 \end{align*}
@@ -8440,7 +8422,7 @@ Thus, $BA - I$ is a projection.
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}\label{exercise_16310}
 Suppose $P_1, P_2$ and $P_1 + P_2$ are projections. Prove that $P_1 P_2 = 0$.
 \end{exercise}
 \begin{proof}
@@ -8455,7 +8437,17 @@ Now we need to show that $R_{P_2} \subset N_{P_1}$. Let $x \in R_{P_2}$, then th
 \begin{align*}
     0 & = P_1 P_2 x + P_2 P_1 x = P_1 x + P_2 P_1 x,
 \end{align*}
-which implies $P_2 P_1 x = - P_1 x$. It follows naturally that $P_1 x$ is eigenvector of $P_2$ corresponding to eigenvalue $\lambda  = -1$. Since $P_2$ is a projection and it can only have eigenvalues $0$ or $1$, then $P_1 x$ can only be zero. Thus, $R_{P_2} \subset N_{P_1}$, and hence $P_1 P_2 = 0$.
+which implies $P_2(P_1x) = - (P_1x)$. It follows naturally that $P_1 x$ is eigenvector of $P_2$ corresponding to eigenvalue $\lambda  = -1$. Since $P_2$ is a projection and it can only have eigenvalues $0$ or $1$, then $P_1 x$ can only be zero. Thus, $R_{P_2} \subset N_{P_1}$, and hence $P_1 P_2 = 0$.
+\end{proof}
+
+\medskip
+
+\begin{proof}[Second Proof of Exercise \ref{exercise_16310}]
+It is equivalent to show that $R_{P_1} \subset N_{P_2}$. For any $x \in R_{P_1}$, then there exists $y \in V$ such that $P_1y = x$. Applying $P_1$ on both sides gives $P_1x = P_1^2y = P_1y = x$. Then,
+\begin{align*}
+    0 = P_1P_2x + P_2P_1x = P_1P_2x + P_2x,
+\end{align*}
+which implies $P_1(P_2x) = - (P_2)x$, and the rest follows.
 \end{proof}
 
 \medskip
@@ -8534,7 +8526,7 @@ if and only if
     \begin{align*}
         \dim (N_A + N_B) = \dim N_A + \dim N_B - \dim (N_A \cap N_B).
     \end{align*}
-    Also, for $x\in N_A \cap N_B$, then $(A + B)x = 0$, hence $N_A \cap N_B \subset N_{A+B}$. Then we have $\dim (N_A \cap N_B) = 0$, which yields
+    Also, for $x\in N_A \cap N_B$, then $(A + B)x = 0$, hence $(N_A \cap N_B) \subset N_{A+B}$. Then we have $\dim (N_A \cap N_B) = 0$, which yields
     \begin{align*}
         \dim N_A + \dim N_B = \dim (N_A + N_B) \leq n.
     \end{align*}
@@ -8550,7 +8542,7 @@ if and only if
         \end{align*}
         which implies $\dim (R_A \cap R_B)$. Hence, $R_A \cap R_B = \{0\}$.
         
-        \item If $R_A \cap R_B = \{0\}$, then $\dim (R_A \cap R_B)$. Thus,
+        \item If $R_A \cap R_B = \{0\}$, then $\dim (R_A \cap R_B) = 0$. Thus,
         \begin{align*}
             \rank A + \rank B = \dim (R_A + R_B) - \dim (R_A \cap R_B) = n - 0 = n.
         \end{align*}
@@ -8577,7 +8569,9 @@ Let $V$ be a finite dimensional vector space over a field $\mathbb{R}$ or $\math
 \end{align*}
 \end{exercise}
 \begin{proof}
-It has been proved in (\ref{April_2011_p1}).
+For any $x \in N_B$, then $Bx = 0$, and it follows that $ABx = 0$, which implies $N_B \subset N_{AB}$. Hence, $\dim N_B \leq \dim N_{AB}$.
+
+For any $y \in R_{AB}$, then there exists $x \in V$ such that $ABx = y$, and then $y \in R_A$. Then, $R_{AB} \subset R_A$ and it implies $\dim R_{AB} \leq \dim R_A$. By the Rank-Nullity theorem, $\dim N_{AB} \geq \dim N_A$.
 \end{proof}
 
 \medskip
@@ -8586,7 +8580,7 @@ It has been proved in (\ref{April_2011_p1}).
 Suppose $A, B, C$ and $D$ are $n \times n$ matrices such that $AC = BC$ and $AD = - BD$. Suppose that $A$ is invetible, prove that $\rank C + \rank D \leq n$.
 \end{exercise}
 \begin{proof}
-Since $A$ is invertible, then
+Since $A$ is invertible, then $AC = BC$ and $AD = - BD$ implies
 \begin{align*}
     C\left(A^{-1} B - I \right) & = 0, \\
     D\left(A^{-1} B + I \right) & = 0.
@@ -8600,15 +8594,11 @@ Also, $N_{A^{-1} B - I}$ and $N_{A^{-1} B + I}$ are eigenspaces of $A^{-1}B$, an
 \begin{align*}
     \dim N_{A^{-1} B - I} + \dim N_{A^{-1} B + I} \leq n.
 \end{align*}
-Then, 
+By the Rank-Nullity theorem, we have $\dim R_{A^{-1} B - I} + \dim R_{A^{-1} B + I} \geq n$. And then 
 \begin{align*}
-    n - \dim R_{A^{-1} B - I} + n - \dim R_{A^{-1} B + I} \leq n, \\
-    \dim N_C + \dim N_D \geq \dim R_{A^{-1} B - I} + \dim R_{A^{-1} B + I} \geq n.
+   \dim N_C + \dim N_D \geq \dim R_{A^{-1} B - I} + \dim R_{A^{-1} B + I} \geq n.
 \end{align*}
-Thus, 
-\begin{align*}
-    \dim R_C + \dim R_D \leq n.
-\end{align*}
+Applying the Rank-Nullity theorem again gives $\dim R_C + \dim R_D \leq n$.
 \end{proof}
 
 \medskip
@@ -8654,11 +8644,11 @@ if and only if for every $1 \leq j \leq m, A_j^2 = A_j$.
     \begin{align}
         \rank A_1 + \rank B_1 \leq \rank A_1 + \sum^m_{j=2} \rank A_j = n,
     \end{align}
-    where we used the fact that for any $A, B$, $\rank A + \rank B \geq \rank (A+B)$. Then, $\rank A_1 + \rank B_1 = n$. With rank-nullity theorem, 
+    where we used the fact that for any $A, B$, $\rank A + \rank B \geq \rank (A+B)$. Then, $\rank A_1 + \rank B_1 = n$. By the Rank-Nullity theorem, 
     \begin{align*}
         n & = \dim N_{A_1} + \dim N_{B_1} \\
-          & = \dim N_{A_1} + \dim N_{I - A_1} \\
-          & = \dim N_{A_1} + \dim N_{A_1 - I}.
+        & = \dim N_{A_1} + \dim N_{I - A_1} \\
+        & = \dim N_{A_1} + \dim N_{A_1 - I}.
     \end{align*}
     Then $A$ has a full set of eigenvectors with eigenvalues $0$ and $1$. Thus, $A_1$ is a projection, and similar argument can apply to each $A_j$.
 \end{enumerate}
@@ -8694,13 +8684,13 @@ Show that $A$ is invertible.
 Suppose there exists $x = (x_1,\cdots, x_n) \neq 0$ such that $Ax = 0$, then we have $\sum^n_{j=1} a_{ij}x_j = 0, i = 1,2,\cdots,n$. Let $x_k = \max_{j}|x_j|$, and we have
 \begin{align*}
     a_{kk}x_k & = - \sum_{j\neq k}a_{kj} x_j, \\
-    \Rightarrow a_{kk} & = - \sum_{j\neq k}a_{kj} \frac{x_k}{x_j},
+    \Rightarrow a_{kk} & = - \sum_{j\neq k}a_{kj} \frac{x_j}{x_k},
 \end{align*}
 which implies 
 \begin{align*}
-    \left|a_{kk}\right| = \left|\sum_{j\neq k}a_{kj} \frac{x_k}{x_j}\right| \leq \sum_{j\neq k} |a_{kj}| \left|\frac{x_k}{x_j}\right| < \sum_{j\neq k} |a_{kj}|,
+    \left|a_{kk}\right| = \left|\sum_{j\neq k}a_{kj} \frac{x_j}{x_k}\right| \leq \sum_{j\neq k} |a_{kj}| \left|\frac{x_j}{x_k}\right| < \sum_{j\neq k} |a_{kj}|,
 \end{align*}
-where we used the fact that $\left|x_k / x_j\right| \leq 1$. Then this is a contradiction to the assumption. Then $0$ is not an eigenvalue of $A$, hence $A$ is invertible.
+where we used the fact that $\left|x_j / x_k\right| \leq 1$. Then this is a contradiction to the assumption. Then $0$ is not an eigenvalue of $A$, hence $A$ is invertible.
 \end{proof}
 
 \medskip
@@ -8735,7 +8725,7 @@ Hence, we have $\rank A + \rank B + \rank C \leq 2n$.
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}\label{exercise_1649}
 Suppose that $A_{n\times n}, B_{n\times m}, C_{m\times n}$ and $D_{m\times m}$ are matrices such that $\det A \neq 0$. Show that
 \begin{align*}
     \det \begin{pmatrix}
@@ -8798,9 +8788,9 @@ Let $A, B, C, D$ be $n \times n$ matrices and
 ~\begin{enumerate}[label=(\alph*)]
     \item
     \begin{enumerate}[label=\arabic*)]
-        \item If $A$ is invertible, then, with Problem 4, we have 
+        \item If $A$ is invertible, then, with Exercise \ref{exercise_1649}, we have 
         \begin{align*}
-            \det E & = det A \det \left( D - C A^{-1} B\right) \\
+            \det E & = \det A \det \left( D - C A^{-1} B\right) \\
             & = \det \left(AD - A C A^{-1} B\right) \\
             & = \det \left(AD - C A A^{-1} B\right) \\
             & = \det \left(AD - CB\right)\\
@@ -8856,9 +8846,10 @@ $$
 ~\begin{enumerate}[label=(\alph*)]
     \item If $B$ is invertible, since $AB=BA$, then we have $A=B^{-1}AB$. Then we have
     \begin{align*}
-        \det (A+BC) &= \det (B^{-1}(A+BC)B) \\
-        & = \det(B^{-1}AB+CB) \\
-        & = \det(A+CB).
+        \det (A+BC) &= \det (B^{-1}(A + BC)B) \\
+        & = \det(B^{-1}AB + CB) \\
+        & = \det(B^{-1}BA + CB)\\
+        & = \det(A + CB).
     \end{align*}
     \item If $B$ is not invertible. We can set a new matrix $M = \begin{pmatrix}
     C & -I \\
@@ -8994,7 +8985,7 @@ Let $M_n(\mathbb{F})$ denote the vector space of $n \times n$ matrices over a fi
         \item Let $c \in \mathbb{F}$ and $A_1, A_2 \in  M_n(\mathbb{F})$, then
         \begin{align*}
             f_B(cA_1 + A_2) & = {\rm tr}\left(B^T (cA_1 + A_2)\right) \\
-            & = {\rm tr}\left(c B^T A_1 + B^T A_2)\right) \\
+            & = {\rm tr}\left(c B^T A_1 + B^T A_2\right) \\
             & = c f_B\left(A_1\right) + f_B\left(A_2\right).
         \end{align*}
         Thus, $f_B$ is linear.
@@ -9070,7 +9061,7 @@ Prove that $F_C$ is non-degenerate if and only if $C$ is invertible. ($F_C$ is n
 ~\begin{enumerate}[label=(\alph*)]
     \item If $F_C$ is non-degeneratem and suppose that $C$ is not invertible. Then there exists $A \neq 0$ such that $CA = 0$, and then $F_C(A,B) = 0$ for any $B$, which is a contradiction.
     
-    \item If $C$ is invertible, then $F_C(A, B) = 0$ for any $B$, then we pick $B = CA$, and it follows that $CA = 0$. Since $C$ is invertible, then $A = 0$. Thus, $F_C$ is non-degenerate.
+    \item If $C$ is invertible, and $F_C(A, B) = 0$ for any $B$, then we pick $B = CA$, and it follows that $CA = 0$. Since $C$ is invertible, then $A = 0$. Thus, $F_C$ is non-degenerate.
 \end{enumerate}
 \end{proof}
 
@@ -9115,7 +9106,7 @@ It is true that ${\rm tr} (ABC) = {\rm tr} (BCA) = {\rm tr} (CAB)$. But in gener
 Is it true that for any three $n \times n$ matrices $A, B, C$, $\det (I - ABC) = \det (I - BAC)$?
 \end{exercise}
 \begin{proof}[Solution]
-No. Consider $A, B, C$ the same as (\ref{trace_ABC}), then we have
+No. Consider $A, B, C$ the same as Exercise \ref{trace_ABC}, then we have
 \begin{align*}
     ABC = \begin{pmatrix}
         2 & -2 \\
@@ -9181,7 +9172,7 @@ Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and
     \begin{align*}
         A x_1 = \lambda_1 x_1, \,\, A x_2 = \lambda_2 x_2.
     \end{align*}
-    Then, $AB = BA, AC = CA$ implies that $x_1, x_2$ are also eigenvectors for $B$ and $C$ by (\ref{commute_eigenspace}). Then, $A, B, C$ can be simultaniously diagonalized. In particular, $BC = CD$., which is a contradiction.
+    Then, $AB = BA, AC = CA$ implies that $x_1, x_2$ are also eigenvectors for $B$ and $C$ by Theorem \ref{commute_eigenspace}. Then, $A, B, C$ can be simultaniously diagonalized. In particular, $BC = CD$., which is a contradiction.
     
     \item Thus, $A$ has repeated eigenvalue $\lambda$, and we could assume $\lambda = 0$ by considering $\widetilde{A} = A - \lambda I$. If $A \neq 0$, then we could assume 
     \begin{align*}
@@ -9215,7 +9206,7 @@ Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and
     \end{align*}
     then 
     \begin{align*}
-        b_1 = b_4 = b, b_3 = 0 \\
+        b_1 = b_4 = b, b_3 = 0, \\
         c_1 = c_4 = b, c_3 = 0.
     \end{align*}
     Also, 
@@ -9426,7 +9417,7 @@ A=\left(
 $$
 \end{exercise}
 \begin{proof}
-The characteristic polynomial for $A$ is that $P(\lambda)=(\lambda-1)(\lambda-2)^2$. Then the minimal polynomial is $m_A=(\lambda-1)(\lambda-2)$.
+The characteristic polynomial for $A$ is that $P(\lambda)=(\lambda-1)(\lambda-2)^2$. Thus, the minimal polynomial is $m_A=(\lambda-1)(\lambda-2)$ since $\dim N_{A - 2I} = 2$. Indeed, we could verify that $(A - I)(A - 2I) = 0$.
 \end{proof}
 
 \medskip
@@ -9499,11 +9490,11 @@ since $A_1A_i = A_iA_1, 2 \leq i \leq k+1$, we have $A_i:N_{\lambda_j}(A_1)\righ
 \medskip
 
 \begin{exercise}
-Let $\lambda$ be an eigenvalue of an $n\times n$ matrix $A$. Suppose
+Let $\lambda$ be an eigenvalue of an $5 \times 5$ matrix $A$. Suppose
 that%
 \begin{align*}
-    \dim N_{1}\left(\lambda\right) & = 2, \dim N_{2}\left(\lambda\right) = 4\\
-    \text{ and }\dim N_{3}\left(\lambda\right) & = \dim N_{4}\left(\lambda\right) = 5,
+    \dim N_{1}\left(\lambda\right) = 2, \dim N_{2}\left(\lambda\right) = 4, 
+    \text{ and } \dim N_{3}\left(\lambda\right) = \dim N_{4}\left(\lambda\right) = 5.
 \end{align*}
 Find the Jordan blocks of $A$ corresponding to $\lambda$.
 \end{exercise}
@@ -9611,7 +9602,7 @@ Since the null space of $A-0I$ has dimension $4$ and one of them is generated by
     0 & 0 & 0 & 0 & 0\\
     0 & 0 & 0 & 0 & 0\\
     0 & 0 & 0 & 0 & 0
-    \end{array}\right), \text{and}
+    \end{array}\right) \text{and}
     \left(\begin{array}
     [c]{ccccc}%
     0 & 1 & 0 & 0 & 0\\
@@ -9644,7 +9635,7 @@ A=SJS^{-1}\text{.}%
 $$
 \end{exercise}
 \begin{proof}
-Taking $A-\lambda I = 0$, we can have characteristic polynomial $p_A(\lambda) = (1-\lambda)^3$, which gives us eigenvalues $1$. Now we determine the null space of $A-1\dots I$
+Taking $A-\lambda I = 0$, we can have characteristic polynomial $p_A(\lambda) = (1-\lambda)^3$, which gives us eigenvalues $1$. Now we determine the null space of $A - I$
 \begin{align*}
     A-I =\left(\begin{array}
     [c]{ccc}%
@@ -9788,7 +9779,7 @@ Writting these equations into $AX=b$, where $A = \left(\begin{array}
 Let $A$ be a $4 \times 4$ real symmetric matrix. Suppose $A^2 + 3A = 0$ and $\rank A = 2$. Find ${\rm tr}(A)$.
 \end{exercise}
 \begin{proof}
-Since $A$ is real symmetric, then $A$ is diagonalizable\footnote{Every normal matrix is diagonalizable\cite{21}.} by (\ref{theorem_symmetric}). And $\rank A$ is equal to the number of nonzero eigenvalues. With $A^2 + 3A = 0$, the eigenvalues of $A$ are $\lambda = 0$ and $\lambda = -3$. Thus, ${\rm tr}(A) = 2(-3) = -6$.
+Since $A$ is real symmetric, then $A$ is diagonalizable\footnote{Every normal matrix is diagonalizable\cite{21}.} by Theorem \ref{theorem_symmetric}. And $\rank A$ is equal to the number of nonzero eigenvalues. With $A^2 + 3A = 0$, the eigenvalues of $A$ are $\lambda = 0$ and $\lambda = -3$. Thus, ${\rm tr}(A) = 2(-3) = -6$.
 \end{proof}
 
 \medskip
@@ -9844,23 +9835,6 @@ With rank-nullity theorem, for each $j$, $\dim N_{A - \lambda_j I} = n - \rank \
 \begin{align*}
     \sum^m_{j=1} \rank \left(\lambda_j I - A\right) \geq n(m - 1).
 \end{align*}
-\end{proof}
-
-\medskip
-
-\begin{exercise}
-Let $A$ be an $n \times n$ real matrix with $\det A \neq 0$. Show that $A^{-1}$ can be written as a polynomial in $A$ with real coefficients.
-\end{exercise}
-\begin{proof}
-Consider characteristic polynomial of $A$
-\begin{align*}
-    p(A) = A^n + a_{n-1}A^{n-1} + \cdots + a_1 A + \det(A)I.
-\end{align*}
-With $\det A \neq 0$, then
-\begin{align*}
-    A^{n-1} + a_{n-1}A^{n-2} + \cdots + a_1 I + \det(A) A^{-1} = 0.
-\end{align*}
-Thus, $A^{-1}$ can be written as a polynomial in $A$.
 \end{proof}
 
 \medskip
@@ -10080,7 +10054,7 @@ Let $A$ be an $n \times n$ complex matrix with $\det A \neq 0$. Suppose $A^3$ is
     \begin{align*}
         P J_A^3 P^{-1} = P J_{A^3} P^{-1} = A^3,
     \end{align*}
-    which implies each block in $J_{A^3}$ is power to the block in $J_A$, making each block in $J_A$ a size one block\cite{1}. Indeed, for each $\lambda_j$, if the multiplicity of $\lambda_j$ is greater than one, then its corresponding Jordan block satisfies\cite{2}
+    which implies each block in $J_{A^3}$ is power $3$ to the block in $J_A$, making each block in $J_A$ a size one block\cite{1}. Indeed, for each $\lambda_j$, if the multiplicity of $\lambda_j$ is greater than one, then its corresponding Jordan block satisfies\cite{2}
     \begin{align*}
         \begin{pmatrix}
             \lambda_j & 1         & \cdots & \cdots & 0 \\
@@ -10096,7 +10070,7 @@ Let $A$ be an $n \times n$ complex matrix with $\det A \neq 0$. Suppose $A^3$ is
     \end{align*}
     This shows that each Jordan block of $A$ is size one. And so is $A^2$, then $A^2$ also has $n$ nonzero eigenvalues. Hence $A^2$ is also diagonalizable. 
     
-    \item Take $A = \begin{pmatrix} 1 & 1 \\ 1 & -1  \end{pmatrix}$, and then $\det A = 0$. Then, $A^2 = \begin{pmatrix} 2 & 0 \\ 0 & 2  \end{pmatrix}$, and hence $A^2$ is not diagonalizable since it has repeated eigenvalues $\lambda = 2$. Also, $A^3 = \begin{pmatrix} 2 & 2 \\ 2 & -2  \end{pmatrix}$, and its eigenvalues are $\lambda = 2\sqrt{2}, - 2 \sqrt{2}$, which implies $A^3$ is diagonalizable.
+    \item I still cannot construct a matrix that satisfies the condition yet.
 \end{enumerate}
 \end{proof}
 
@@ -10126,11 +10100,11 @@ Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrice
     \end{align*}
     Then the eigenvalue of $T$ is $0$ with multiplicity $4$.
     
-    \item Also, $\dim N_{T-0I} = 3$, then there are three Jordan blocks in its Jordan canonical form, which is
+    \item Also, $\dim N_{T-0I} = 2$, then there are two Jordan blocks in its Jordan canonical form, and since $T^3 = 0$, then we have Jordan form of $T$:
     \begin{align*}
         J_T = \begin{pmatrix}
             0 & 1 & 0 & 0 \\
-            0 & 0 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
             0 & 0 & 0 & 0  \\
             0 & 0 & 0 & 0
         \end{pmatrix}.
@@ -10219,13 +10193,13 @@ $$
 $$
 \end{exercise}
 \begin{proof}
-Since $(x_i,x_j) = \delta_{ij}, 1\leq i,j\leq n$, then we can arrange $x_1, x_2,\cdots, x_n$ into a matrix and denote it by $A = (x_1, x_2,\cdots, x_n)$, then we have $A$ is an orthogonal matrix with determinant $1$. Then $\det A^* = 1$. 
+Since $(x_i,x_j) = \delta_{ij}, 1\leq i,j\leq k$, then we can extend it into a basis $\{x_1, \cdots, x_k, x_{k+1}, \cdots, x_n\}$ for $\mathbb{R}^n$, where $a_{k+1}, \cdots, a_n$ are first components of $x_j, k+1 \leq j \leq n$. Now we arrange $x_1, x_2,\cdots, x_n$ into a matrix and denote it by $A = (x_1, x_2,\cdots, x_n)$, then $A$ is an orthogonal matrix with determinant $1$. Then $\det A^* = 1$. 
 
-Now we pick a vector $z = (1,0,\cdots,0)^T \in \mathbb{R}^{n}$. Then we have $A^*z = (a_1, a_2, \cdots, a_n)^T$, and therefore the first component of the vector $AA^*z$ is $\sum_{j=1}^{k}a_{j}^{2}$, which means $AA^*z = \left(\sum_{j=1}^{k}a_{j}^{2}, \cdots \right)^T$. Also, we have $\left\|AA^*z \right\| \leq \left\| I z \right\| = 1$. We denote other components of $AA^*z$ as $w_2, w_3, \cdots, w_n$, then we have 
+Now we pick a vector $z = (1,0,\cdots,0)^T \in \mathbb{R}^{n}$. Then we have $A^*z = (a_1, a_2, \cdots, a_n)^T$, and therefore the first component of the vector $AA^*z$ is $\sum_{j=1}^{k}a_{j}^{2}$, which means $AA^*z = \left(\sum_{j=1}^{k}a_{j}^{2}, \cdots \right)^T$. Also, we have $\left\|AA^*z \right\| = \left\| I z \right\| = 1$. We denote other components of $AA^*z$ by $w_2, w_3, \cdots, w_n$, then we have 
 \begin{align*}
-    \sum_{j=1}^{k}a_{j}^{2} \leq \left\|AA^*z \right\|^{1/2} & = \sqrt{\sum_{j=1}^{k}a_{j}^{2} + w_2^2 + \cdots + w_n^2} = 1, \\
-    \Rightarrow \sum_{j=1}^{k}a_{j}^{2} & \leq 1.
+    \sum_{j=1}^k a_{j}^2 \leq \sum_{j=1}^k a_{j}^2 \leq \left\|AA^*z \right\|^{\frac{1}{2}}= \sqrt{\sum_{j=1}^k a_{j}^{2} + w_2^2 + \cdots + w_n^2} = 1,
 \end{align*}
+and thus, $\sum_{j=1}^{k}a_{j}^{2} & \leq 1$.
 \end{proof}
 
 \medskip
@@ -10251,7 +10225,7 @@ For $i$th row $r_i$ of $A$, we can consider $A^* = (r_1, r_2,\cdots, r_m)$. And 
 \begin{align*}
     \left\|r_i \right\| \leq \left\|A^* \right\| \left\|e_i'  \right\| = \left\|A^* \right\| = \left\|A \right\|,
 \end{align*}
-where in the last step we used the fact that $\left\|A^* \right\| = \left\|A \right\|$ . This is true for all $1\leq i \leq m$, then we have $\max_{1\leq i \leq m}\left\|r_i \right\| \leq \left\|A \right\|$. The proof is complete.
+where in the last step we used the fact that $\left\|A^* \right\| = \left\|A \right\|$ . This is true for all $1\leq i \leq m$, then we have $\max_{1\leq i \leq m}\left\|r_i \right\| \leq \left\|A \right\|$.
 \end{proof}
 
 \medskip
@@ -10271,7 +10245,7 @@ Find the spectral radius, operator norm and Hilbert-Schmidt norm of
 $A:\mathbb{R}^{n}\rightarrow\mathbb{R}^{n}$.
 \end{exercise}
 \begin{proof}[Solution]
-The eigenvalues of $A$ are $1$ and $3$, and then we can know that the spectral radius is $r(a) = \max |\lambda| = 3$. The operator norm of $A$ is  the largest eigenvalues of $AA^T$, which is 
+The eigenvalues of $A$ are $1$ and $3$, and then we can know that the spectral radius is $r(a) = \max \left|\lambda\right| = 3$. The operator norm of $A$ is  the largest eigenvalues of $AA^T$, which is 
 $$
 AA^T=\left(
 \begin{array}
@@ -10327,7 +10301,7 @@ And it follows that
     \left|\sum^K_{k=1} c_k v_k\right|^2 & = \left(\sum^K_{k=1} c_k v_k, \sum^n_{k=K+1} \left|c_k\right| v_k \right) \\
     & = \sum^K_{j=1} \sum^n_{k=K+1} c_j \left|c_k\right| \left(v_j, v_k\right) \leq 0,
 \end{align*}
-where in the last step we used $\left(v_j, v_k\right) < 0$ for $j \neq k$. Since the RHS is greater or equal to zero, then $c_j\left|c_k\right| = 0$ for all $j,k$. And since $c_j > 0$, $c_k = 0, K+1 \leq k \leq n$. Thus, $C_i, 1 \leq i \leq n$ are nonnegative.
+where in the last step we used $\left(v_j, v_k\right) < 0$ for $j \neq k$. Since the right hand side is greater or equal to zero, then $c_j\left|c_k\right| = 0$ for all $j,k$. Since $c_j > 0$, then $c_k = 0, K+1 \leq k \leq n$. Thus, $C_i, 1 \leq i \leq n$ are nonnegative.
 \end{proof}
 
 \medskip
@@ -10486,15 +10460,22 @@ Prove that
 \end{align*}
 \end{exercise}
 \begin{proof}
-There exists a $x \in V$ such that $\left\|A + B\right\| = \left\|Ax + Bx\right\|$. Also,
+There exists a $x^* \in V$ such that $\left\|A + B\right\| = \left\|Ax^* + Bx^*\right\|$. Also,
 \begin{align*}
-    \left|Ax + Bx\right| \leq \left\|Ax\right\| + \left\|Bx\right\| \leq \left\|A\right\| + \left\|B\right\|,
+    \left\|Ax^* + Bx^*\right\| \leq \left\|Ax^*\right\| + \left\|Bx^*\right\| \leq \left\|A\right\| + \left\|B\right\|,
 \end{align*}
-and then $\left\|A\right\| = \left\|Ax\right\|, \left\|B\right\| = \left\|Bx\right\|$. Then we can have $(Ax, Bx) + (Bx, Ax) = 0$. Then,
+and then $\left\|A\right\| = \left\|Ax^*\right\|, \left\|B\right\| = \left\|Bx^*\right\|$. 
+
+Also, since
 \begin{align*}
-    \left\|A + 3B\right\| = \sup_{\|y\| = 1} \left\|Ay + 3By\right\| \geq \left\|Ax + 3Bx\right\| = \left\|Ax\right\| + 3\left\|Bx\right\| = \left\|A\right\| + 3 \left\|B\right\|.
+    \left\|Ax^* + Bx^*\right\|^2 & = \left\|Ax^*\right\|^2 + (Ax^*,Bx^*) + (Bx^*,Ax^*) + \left\|Bx^*\right\| \\
+    & = \left\|A\right\|^2 + \left\|B\right\|^2,
 \end{align*}
-Also, we have $\left\|A + 3B\right\| \leq \left\|A\right\| + 3 \left\|B\right\|$, which proves the equality.
+which implies $(Ax^*, Bx^*) + (Bx^*, Ax^*) = 0$. Then,
+\begin{align*}
+    \left\|A + 3B\right\| = \sup_{\|x\| = 1} \left\|Ax + 3Bx\right\| \geq \left\|Ax^* + 3Bx^*\right\| = \left\|Ax^*\right\| + 3\left\|Bx^*\right\| = \left\|A\right\| + 3 \left\|B\right\|.
+\end{align*}
+Also, the other direction $\left\|A + 3B\right\| \leq \left\|A\right\| + 3 \left\|B\right\|$ holds naturally, which proves the equality.
 \end{proof}
 
 \medskip
@@ -10511,7 +10492,7 @@ which implies that $\lim_{n \to \infty} \lambda_i^n = 0$, for $i = 1, \cdots, n$
 \end{proof}
 
 \begin{remark}
-This exercise is inverse of Lemma \ref{Gelfand_Formula_lemma}.
+This exercise is the inverse of Lemma \ref{Gelfand_Formula_lemma}.
 \end{remark}
 
 \medskip
@@ -10533,7 +10514,7 @@ By Definition \ref{matrix_norm_def}, need to show that $\|\cdot \|_D$ is a norm 
 \end{align*}
 Then,
 \begin{enumerate}[label=(\alph*)]
-    \item $$\left\|A\right\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|} = \max_{\|y\|=1} \frac{\|AD^{-1}y\|}{\|y\|} = \left\|AD^{-1}\right\| \geq 0.$$
+    \item $$\left\|A\right\|_D = \max_{x \neq 0} \frac{\|Ax\|}{\|Dx\|} = \max_{\|y\|\neq 0} \frac{\|AD^{-1}y\|}{\|y\|} = \left\|AD^{-1}\right\| \geq 0.$$
     
     \item $$\left\|A + B\right\|_D = \left\|AD^{-1} + BD^{-1}\right\| \leq \left\|AD^{-1}\right\| + \left\|BD^{-1}\right\| = \left\|A\right\|_D + \left\|B\right\|_D.$$
     
@@ -10558,7 +10539,7 @@ Let $\|\cdot \|$ be a norm on $\mathbb{R}^n$ and let $P$ be an $n \times n$ inve
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item \begin{align*}
-        \|A\|_P = \max_{x \neq 0} \frac{\|Ax\|_P}{\|x\|_P} = \max_{x \neq 0} \frac{\left\|P^{-1}Ax\right\|}{\left\|P^{-1}x\right\|} = \max_{y \neq 0} \frac{\left\|P^{-1}APy\right\|}{\left\|y\right\|} = \left\|P^{-1}APy\right\|.
+        \|A\|_P = \max_{x \neq 0} \frac{\|Ax\|_P}{\|x\|_P} = \max_{x \neq 0} \frac{\left\|P^{-1}Ax\right\|}{\left\|P^{-1}x\right\|} = \max_{y \neq 0} \frac{\left\|P^{-1}APy\right\|}{\left\|y\right\|} = \left\|P^{-1}AP\right\|.
     \end{align*}
     
     \item Since $A$ is diagonalizable, then there exists invertible matrix $P$ such that $A = P\Lambda P^{-1}$, where $\Lambda$ is diagonal. Then,
@@ -10699,13 +10680,11 @@ $A$ or $B$ is not normal.
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have 
+    \item We have $r(AB)\leq \|AB\|$, since if $\lambda$ be an eigenvalue of $AB$, then for $x\in\mathbb{C}^n, x\neq 0$ being corresponding eigenvector, we have $AB x & = \lambda x$, and then
     \begin{align*}
-        AB x & = \lambda x \\
-        \Rightarrow \|AB\|\|x\| & \geq \left\|ABx\right\| = |\lambda|\|x\| \\
-        \Rightarrow \|AB\| & \geq |\lambda|.
+        \|AB\|\|x\| \geq \left\|ABx\right\| = |\lambda|\|x\|
     \end{align*}
-    Also, we have $\left\|AB\right\| \leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\left\|A\right\| = r(A)$ and $\left\|B\right\| = r(B)$. Thus, with all the results above, we have 
+    which implies $\left\|AB\right\| & \geq |\lambda|$. Also, we have $\left\|AB\right\| \leq \|A\| \|B\|$. And with $A, B$ being normal matrices, we know $\left\|A\right\| = r(A)$ and $\left\|B\right\| = r(B)$. Thus, with all the results above, we have 
     \begin{align*}
         r(AB)\leq \left\|AB\right\| \leq \left\|A\right\| \left\|B\right\| = r(A)r(B).
     \end{align*}
