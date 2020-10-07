@@ -31,13 +31,15 @@
 \usepackage{url}
 \usepackage{float}
 \usepackage{lipsum}
-\usepackage{appendix}
+\usepackage[toc]{appendix}
 \usepackage{chngcntr}
 \usepackage{etoolbox}
 \usepackage{framed}
 \usepackage{mdframed}
 \usepackage{blindtext}
 \usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
 \graphicspath{{images/}}
 
 
@@ -123,10 +125,10 @@
 	\begin{center}
 	\textbf{\LARGE{}} \\
 	\vspace{40mm}
-    \textbf{\LARGE{Linear Algebra}} \\
-    \vspace{2mm} %5mm vertical space
-    \large{\textsc{Zhen Yao, Department of Mathematics}}\\
-    \large{\textsc{University of Pittsburgh}}
+    \textbf{\Huge{Linear Algebra}} \\
+    \vspace{10mm} %5mm vertical space
+    \large{\textsc{Zhen Yao}}\\
+    \large{\textsc{}}
     \end{center}
 \end{titlepage}
 
@@ -658,7 +660,7 @@ Taking $X$ to be the linear space of all row vectors $(x_1,\cdots, x_n)$ with n 
 Prove that two congruence classes are either identical or disjoint. 
 \end{exercise}
 \begin{proof}
-For $\{x\}$ and $\{y\}$ are congruence classes $\bmod Y$, if there exists $z\in \{x\}\cap \{y\}$, then $x-z \in Y$ and $y-z\in Y$. Then we have $x-y = x-z-(y-z) \in Y$. So if $\{x\}\cap \{y\}\neq \varnothing$, then $x\equiv y \bmod Y$, which means $\{x\} = \{y\}$. Otherwise, $\{x\}$ and $\{y\}$ are disjoint.
+For $\{x\}$ and $\{y\}$ are congruence classes $\bmod Y$, if there exists $z\in \{x\}\cap \{y\}$, then $x-z \in Y$ and $y-z\in Y$. Then we have $x-y = x-z-(y-z) \in Y$. So if $\{x\}\cap \{y\}\neq \emptyset$, then $x\equiv y \bmod Y$, which means $\{x\} = \{y\}$. Otherwise, $\{x\}$ and $\{y\}$ are disjoint.
 \end{proof}
 
 \medskip
@@ -5877,15 +5879,19 @@ where $R$ is a nonnegative self-adjoint mapping, and $U$ is unitary. When $A$ is
 \end{enumerate}
 \end{proof}
 
-\begin{remark}
-The polar decomposition can also be defined as $A = UR$, where $U$ is unitary and $R$ is a nonnegative self-adjoint mapping.
-\end{remark}
-
 \medskip
 
 \begin{proof}[Second Proof of Theorem \ref{polar_decomposition_theorem}(b)]
 When $A$ is not invertible, let $A_\varepsilon = A + \varepsilon I$ be invertible, where $\varepsilon$ is arbitrary and positive. Let $R_\varepsilon = \sqrt{A_\varepsilon A_\varepsilon^*}$, and similarly, $R_\varepsilon$ is unique and positive. Define $U_\varepsilon = R_\varepsilon^{-1} A_\varepsilon$, then $A_\varepsilon = R_\varepsilon U_\varepsilon$. And $A_\varepsilon, R_\varepsilon, U_\varepsilon$ have convergent subsequences, meaning $A \gets A_\varepsilon = R_\varepsilon U_\varepsilon \to RU$.
 \end{proof}
+
+\medskip
+
+\begin{remark}
+The polar decomposition can also be defined as $A = UR$, where $U$ is unitary and $R$ is a nonnegative self-adjoint mapping.
+\end{remark}
+
+\medskip
 
 \begin{remark}
 If $A$ is invertible, then $R, U$ are uniquely determined. If $A$ is not invertible, then $U$ is not unique.
@@ -5908,9 +5914,9 @@ If $A$ is invertible, then $R, U$ are uniquely determined. If $A$ is not inverti
     \begin{align*}
         \Re\left(x, \mu (R_1 + R_2) x\right) = 0,
     \end{align*}
-    and then $(R_1 + R_2) x = 0$. Therefore, $R_1 x = R_2 x = 0$, and then $(R_1 - R_2)x = 0$, which implies $\mu = 0$. Contradiction. Thus, $R_1 = R_2$.
+    and then $(R_1 + R_2) x = 0$. Therefore, since $R_1, R_2$ are positive, then $R_1 x = R_2 x = 0$, and then $(R_1 - R_2)x = 0$, which implies $\mu = 0$. Contradiction. Thus, $R_1 = R_2$.
     
-    \item If $A$ is not invertible, WLOG, we could assume $A = 0$. Then, $R = 0$, and $U$ can be any unitary matrix.
+    \item If $A$ is not invertible, without loss of generality, we could assume $A = 0$. Then, $R = 0$, and $U$ can be any unitary matrix.
 \end{enumerate}
 \end{proof}
 
@@ -5966,6 +5972,8 @@ The singular values of $A$, and hence $\Sigma$ is uniquely determined.
 \medskip
 
 To construct singular value decomposition, first compute for eigenvalues $\sigma_1^2, \sigma_2^2, \cdots, \sigma_n^2$ of $A^*A$. Let $v_1, v_2, \cdots, v_n$ be an orthogonal basis of eigenvectors of $A^*A$, since $AA^* \geq 0$. Then we have following theorem.
+
+\medskip
 
 \begin{theorem}{\rm \cite{28}}
 Let $\sigma_1^2, \sigma_2^2, \cdots, \sigma_r^2$ be nonzero singular value of $AA^*$. Then the system 
@@ -6101,16 +6109,16 @@ If $A$ and $B$ are positive semipositive, i.e., $A \geq 0, B \geq 0$, then $\det
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item If $A = I$, and suppose $\sigma(B) = \{\lambda_1, \cdots, \lambda_n\}$. Then,
-    \begin{align*}
+    \begin{align}\label{lemma_1030_1}
         \det(I + B) = \prod^n_{i=1} (1 + \lambda_i) \geq 1 + \prod^n_{i=1} \lambda_i = \det I + \det B.
-    \end{align*}
+    \end{align}
     Thus, $\det(A + B) \geq \det A + \det B$.
     
     \item 
     \begin{enumerate}[label=\arabic*)]
-        \item If $A \neq I$, and $A$ is invertible, then
+        \item If $A \neq I$, and $A$ is invertible, then by (\ref{lemma_1030_1}), we have
         \begin{align*}
-            \det (A + B) & = \det A^{\frac{1}{2}} \\
+            \det (A + B) & = \det A^{\frac{1}{2}}\left(I + A^{-\frac{1}{2}}BA^{-\frac{1}{2}}\right) A^{\frac{1}{2}} \\
             & \geq \det A^{\frac{1}{2}} \left(1 + \det A^{-\frac{1}{2}} B A^{-\frac{1}{2}} \right) \det A^{\frac{1}{2}} \\
             & = \det A + \det B.
         \end{align*}
@@ -6257,7 +6265,7 @@ $p_\lambda = \lambda$ implies $P = 0$, $p_\lambda = \lambda - 1$ implies that $P
 \medskip
 
 \begin{corollary}{\rm \cite{33}}
-Projection $P$ is diaginalizable.
+Projection $P: V \to V$ is diaginalizable.
 \end{corollary}
 \begin{proof}
 Suppose $P$ is a projection, then there is a subspace $W = R_P$ of $V$ onto which it projects. $P$ maps every vector in $W$ to itself. Therefore, every vector in $W$ is eigenvector corresponding to eigenvalue $\lambda = 1$. For any vector $v \in V$, 
@@ -6267,14 +6275,16 @@ where $Pv \in W$ and $v - Pv \in N_P$. Indeed, $P(v - Pv) = Pv - P^2 v = 0$, the
 
 \medskip
 
-Consider a projection $P: X \to X$, by Theorem \ref{projection_direct_sum}, $X = R_P \oplus N_P$ and $P|_{R_P} = I$. We say a projection $P$ is an orthogonal projection if $R_P \bot N_P$.
+Consider a projection $P: X \to X$, by Theorem \ref{projection_direct_sum}, $X = R_P \oplus N_P$ and $P|_{R_P} = I$. We say a projection $P$ is an {\em orthogonal projection} if $R_P \bot N_P$.
 
-\begin{corollary}
+\medskip
+
+\begin{corollary}\label{coro_10322}
 $P$ is an orthogonal projection if and only if $P^2 = P$ and $P$ is self-adjoint.
 \end{corollary}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Suppose $R_P \bot N_P$, then let $y_1 \in N_P, x_1 \in R_P$, and hence $(x_1, y_1) = 0$. Also, take $y_2 \in N_P, x_2 \in R_P$, and then $(x_1, y_1) = 0 = (x_2, y_2)$. Then,
+    \item Suppose $R_P \bot N_P$ and $y_1 \in N_P, x_1 \in R_P$, then $(x_1, y_1) = 0$. Also, take $y_2 \in N_P, x_2 \in R_P$, and then $(x_1, y_1) = 0 = (x_2, y_2)$. Then,
     \begin{align*}
         (x_1, y_1) + (x_1, x_2) = (x_2, y_2) + (x_1, x_2),
     \end{align*}
@@ -6292,9 +6302,28 @@ $P$ is an orthogonal projection if and only if $P^2 = P$ and $P$ is self-adjoint
 \end{enumerate}
 \end{proof}
 
+\medskip
+
+\begin{proof}[Simple Proof of Corollary \ref{coro_10322}(a)]
+For any $x, y \in X$ and suppose $x = x_1 + x_2$, $y = y_1 + y_2$, where $x_1, y_1 \in R_P$, $x_2, y_2 \in N_P$. Then,
+\begin{align*}
+    (P^*x,y) = (x,Py) = (x,y_1) = (x_1,y_1) = (x_1,y) = (Px,y),
+\end{align*}
+and hence $P^* = P$.
+\end{proof}
+
+\medskip
+
 \begin{remark}
 In general, if a map $T$ is self-adjoint, then $R_T \bot N_P$.
 \end{remark}
+\begin{proof}
+For any $x \in R_T, y\in N_T$, there exists $\widetilde{x}$ such that $T\widetilde{x} = x$. Then,
+\begin{align*}
+    (x,y) = \left(T\widetilde{x},y\right) = \left(\widetilde{x},T^*y\right) = \left(\widetilde{x},Ty\right) = \left(\widetilde{x},0\right) = 0,
+\end{align*}
+which proves the statement.
+\end{proof}
 
 \medskip
 
@@ -6354,7 +6383,7 @@ In order to see this, we could consider it in $\mathbb{R}^3$ like below:\\
     \caption{reflection about the hyperplane $Q$}
     \label{fig:plot_2}
 \end{figure}\\
-For vector $x$, its reflection about the hyperplane $Q$ which is orthogonal to vector $v$ is $x_R$. It is obvious that $x_R = x - 2 x_L$, where $x_L$ is the orthogonal projection of $x$ onto the line $L$, by Example \ref{Orthogonal projection onto a line}, $x_L = \frac{(uv,x)}{(v,v)}v$, and then the reflection $R_v$ satisfies
+For vector $x$, its reflection about the hyperplane $Q$ which is orthogonal to vector $v$ is $x_R$. It is obvious that $x_R = x - 2 x_L$, where $x_L$ is the orthogonal projection of $x$ onto the line $L$, by Example \ref{Orthogonal projection onto a line}, $x_L = \frac{(v,x)}{(v,v)}v$, and then the reflection $R_v$ satisfies
 \begin{align*}
     R_v x = x_R = x - 2 \frac{(v,x)}{(v,v)}v.
 \end{align*}
@@ -6385,7 +6414,7 @@ From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ i
 Let $u, v$ be two vectors such that $u \neq v, \left\|u\right\| = \left\|v\right\|$, then there exists a unique reflection $R$ such that $Ru = v$.
 \end{lemma}
 \begin{proof}
-Let $w = (u-v) /\|u-v\|$ and $R = R_w = I - 2 ww^T$, then
+Let $w = \frac{(u-v)}{\|u-v\|}$ and $R = R_w = I - 2 ww^T$, then
 \begin{align*}
     R(u) & = u - 2 \frac{(u-v)(u-v)^T}{\|u-v\|^2}u \\
     & = u - 2 \frac{uu^Tu - uv^Tu - vu^Tu + vv^Tu}{\|u-v\|^2} \\
@@ -6395,8 +6424,7 @@ Let $w = (u-v) /\|u-v\|$ and $R = R_w = I - 2 ww^T$, then
     & = \frac{(u-v,u-v)u - (u-v)(u,u-v)}{\|u-v\|^2} \\
     & = \frac{(u-v,u-v)u - 2(u,u-v) + 2(u,u-v)v}{\|u-v\|^2} \\
     & = \frac{2(u,u-v)v}{\|u-v\|^2} \\
-    & = \frac{2(\|u\|^2 - (u,v))v}{\|u-v\|^2} \\
-    & = v.
+    & = \frac{2(\|u\|^2 - (u,v))v}{\|u-v\|^2} = v.
 \end{align*}
 
 It remains to show that $R$ is unique. Suppose $R_1 u = v$, $R_2 u = v$. And $R_1 v = R_1^2 u = u$, then 
@@ -6462,7 +6490,7 @@ For case (a), we could also define $R_i$ on $\mathbb{R}^n$ as simple as $R_i(\la
 \end{remark}
 
 \begin{remark}
-~\begin{enumerate}[label=(\arabic*)]
+~\begin{enumerate}[label=(\alph*)]
     \item The proof of Theorem \ref{Cartan_Dieudonne} shows that if $1$ is an eigenvalue of a reflection $R$ with its corresponding eigenvector $w \neq 0$, then $R$ is the composition of $k \neq n - 1$ reflections about hyperplanes $F_i = H_i \oplus L$, where $L = {\rm span}\{w\}$ and $H_i$ are subspaces of dimension $n - 2$ that are orthogonal to $L$. 
     
     If $1$ is not an  eigenvalue of $R$, then $R$ is the composition of $k \leq n$ reflections about hyperplanes $H, F_1, \cdots, F_{k-1}$, such that $F_i = H \oplus L$, where $L$ is a line intersecting $H$ and  $H_i$ are subspaces of dimension $n - 2$ that are orthogonal to $L$. 
@@ -6614,7 +6642,7 @@ Then, we have $(\lambda - d_i)u_i = f_i u$, and thus
 If $C_i$ is disjoint from all other Gershgorin discs, then $C_i$ contains exactly one eigenvalue of $A$.
 \end{remark}
 \begin{proof}
-Let $B(t) = D + tF, t \in [0,1]$. The eigenvalues of $B(t)$ are continuous functions of $t$. For $t = 0$, the eigenvalues of $B(0)$ are the diagonal entries of $A$. As $t$ foes from $0$ to $1$, the radius of Gershgorin circles corresponding to $B(t)$ become bigger while the centers remain the same. So we can find for each $d_i$ a continuous path $\gamma_i(t)$ such that $\gamma_i(0) = d_i$ and $\gamma_i(t)$ is an eigenvalue of $B(t), 0 \leq t \leq 1, i = 1, \cdots, n$. Moreover, by Gershgorin Circle Theorem, each path $\gamma_i(t), 0 \leq t \leq 1$ is contained in a disc $C_i = \left\{z \in \mathbb{C}: |z - d_i| \leq \|f_i\|_1 \right\}$. If for some $i_1$ and $i_2$ with $i_1 \neq i_2$, $\gamma_{i_2}(0)$ falls into $C_{i_1}$, then it is necessary that $C_i \cap C_2 \neq \varnothing$. This implies that for any Gershgorin disc that is disjoint from all the other Gershgorin discs, there is only one eigenvalue of $A$ falls within it.
+Let $B(t) = D + tF, t \in [0,1]$. The eigenvalues of $B(t)$ are continuous functions of $t$. For $t = 0$, the eigenvalues of $B(0)$ are the diagonal entries of $A$. As $t$ foes from $0$ to $1$, the radius of Gershgorin circles corresponding to $B(t)$ become bigger while the centers remain the same. So we can find for each $d_i$ a continuous path $\gamma_i(t)$ such that $\gamma_i(0) = d_i$ and $\gamma_i(t)$ is an eigenvalue of $B(t), 0 \leq t \leq 1, i = 1, \cdots, n$. Moreover, by Gershgorin Circle Theorem, each path $\gamma_i(t), 0 \leq t \leq 1$ is contained in a disc $C_i = \left\{z \in \mathbb{C}: |z - d_i| \leq \|f_i\|_1 \right\}$. If for some $i_1$ and $i_2$ with $i_1 \neq i_2$, $\gamma_{i_2}(0)$ falls into $C_{i_1}$, then it is necessary that $C_i \cap C_2 \neq \emptyset$. This implies that for any Gershgorin disc that is disjoint from all the other Gershgorin discs, there is only one eigenvalue of $A$ falls within it.
 \end{proof}
 
 
@@ -6648,7 +6676,7 @@ An isometry $M$ of three-dimensional real Euclidean space with determinant $1$ t
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
     \item If eigenvalues of $M$ are all real, then eigenvalues of $M$ only have two possibilities: \begin{enumerate*}[label=\roman*)]
-        \item $\lambda 1$ with multiplicity $3$,
+        \item $\lambda = 1$ with multiplicity $3$,
         \item $\lambda_1 = -1$ with multiplicity $2$ and $\lambda_2 = 1$ with multiplicity $1$
     \end{enumerate*}. i) implies that $M = I$, then this condition can be ignored. ii) implies that there exists orthogonal eigenvectors $v_1, v_2, v_3$ corresponding to eigenvalues $-1, -1, 1$. For any $x\in \mathbb{R}^3$, $x$ can be expressed as $x = \sum^3_{i=1} c_i v_i$, and then 
     \begin{align*}
@@ -6774,7 +6802,7 @@ A set $K$ in $X$ is called convex if, whenever $x$ and $y$ belong to $K$, all po
 ~\begin{enumerate}[label=(\arabic*)]
     \item $K$ is the whole space $X$.
     
-    \item $K = \varnothing0$.
+    \item $K = \emptyset$.
     
     \item $K = \{x\}$, a single point.
     
@@ -7137,7 +7165,7 @@ for all $l \in X'$.
 \end{proof}
 
 \begin{proof}[Second Proof for Part (b)] \cite{26}
-For the other direction, suppose $\bigcap_{l \in X'} \Gamma_l \setminus \hat{S} \neq \varnothing$ and we choose $x \in \bigcap_{l \in X'} \Gamma_l \setminus \hat{S}$. By Theorem \ref{closed_convex_set_and_support}, there exists $l_0 \in X'$ such that $l_0(x) \geq q_{\hat{S}}(l_0) \geq q_S(l_0)$. Then, $x \notin \Gamma_{l_0}$, which is a contradiction. Thus, $\bigcap_{l \in X'} \Gamma_l \subset \hat{S}$.
+For the other direction, suppose $\bigcap_{l \in X'} \Gamma_l \setminus \hat{S} \neq \emptyset$ and we choose $x \in \bigcap_{l \in X'} \Gamma_l \setminus \hat{S}$. By Theorem \ref{closed_convex_set_and_support}, there exists $l_0 \in X'$ such that $l_0(x) \geq q_{\hat{S}}(l_0) \geq q_S(l_0)$. Then, $x \notin \Gamma_{l_0}$, which is a contradiction. Thus, $\bigcap_{l \in X'} \Gamma_l \subset \hat{S}$.
 \end{proof}
 
 \begin{remark}
@@ -8080,7 +8108,7 @@ Then there is a subspace $V$ of $X$ for which
 \end{align*}
 \end{exercise}
 \begin{proof}
-If ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n$, then we can simply take $V = \varnothing$.
+If ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n$, then we can simply take $V = \emptyset$.
 
 If ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n-1$, based on the fact that space $X$ cannot be a finite union of its proper subspace, there exists a $v \notin U_k$ for every $k$, and we can define the complement of $U_1, U_2, \cdots, U_k$ as $U^c = \text{span}(v)$.
 
@@ -8163,7 +8191,7 @@ Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $A: V \to V$ 
     
     Second, it is trivial $A(R_A) \subset R_A$ since $Ax \in R_A$ for any $x \in R_A$. And it follows that $A(N_A) \subset N_A$, since $A(N_A) = 0 \subset N_A$.
     
-    \item* First, $\dim R_A + \dim N_A = 2$. Since $R_A \cap N_A \neq \varnothing$, then $\dim R_A = \dim N_A = 1$. Then, $R_A = N_A$.
+    \item* First, $\dim R_A + \dim N_A = 2$. Since $R_A \cap N_A \neq \emptyset$, then $\dim R_A = \dim N_A = 1$. Then, $R_A = N_A$.
     
     Second, we can assume $x \in R_A$ and $x \neq 0$, so there exists $y \in V$ such that $Ay = x$ and $Ax = 0$. Pick $x = e_1$ and $y = e_2$ would yields $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
 \end{enumerate}
@@ -10735,7 +10763,7 @@ $$
 \begin{proof}
 With Schur decomposition, we cnould know that $A = Q U Q^*$, where $Q$ is unitary and $U$ is upper triangular and its diagonal entries are engenvalues of $A$, since $A$ and $U$ are similar. And we can show that Hilbert-Schwarz norm norm $\|A\|_{HS} = \sqrt{\sum_{i,j=1}^{n} \left|a_{ij}\right|^2}$ is invariant under unitary matrix multiplication:
 \begin{align*}
-    \|QA\|_{HS}^2 = \text{tr} \left((QA)^* (QA)\right) = \text{tr} \left(A^* Q^* QA\right) = \text{tr} \left(A^* A\right) = \|A\|_{HS}^2
+    \|QA\|_{HS}^2 = \text{tr} \left((QA)^* (QA)\right) = \text{tr} \left(A^* Q^* QA\right) = \text{tr} \left(A^* A\right) = \|A\|_{HS}^2,
 \end{align*}
 then we can have 
 \begin{align*}
@@ -10850,7 +10878,7 @@ Since $A$ is Hermitian, so is $A^3$, and then $A$ can be unitarily diagonalized,
 \begin{align*}
     \Lambda^3 U^*B U = U^* B U \Lambda^3.
 \end{align*}
-Since $\Lambda^3$ is also diagonal, then $U^*B U$ commutes with $\Lambda$\footnote{This statement could fail in the case $A^2B = BA^2$, i.e., $A^2 B = B A^2$ does not imply $AB = BA$ in general, since square root is not unique but the real cube roots is unique {\rm \cite{41}}.}, and hence $\Lambda U^*B U = U^* B U \Lambda$. Thus, $AB = U \Lambda U^*B = B U \Lambda U^* = BA$.
+Since $\Lambda^3$ is also diagonal, then $U^*B U$ commutes\footnote{This statement could fail in the case $A^2B = BA^2$, i.e., $A^2 B = B A^2$ does not imply $AB = BA$ in general, since square root is not unique but the real cube roots is unique {\rm \cite{41}}.} with $\Lambda$, and hence $\Lambda U^*B U = U^* B U \Lambda$. Thus, $AB = U \Lambda U^*B = B U \Lambda U^* = BA$.
 \end{proof}
 
 \medskip
