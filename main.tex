@@ -1360,7 +1360,7 @@ A linear mapping $P\in \mathscr{L}(X,X)$ is called a projection if $P^2=P$.
 If $P\in\mathscr{L}(X,X)$ is a projection, then $X = N_P\oplus R_P$, and $P|_{R_P} = I$ is identity.
 \end{theorem}
 \begin{proof}
-Assume $x\in N_P\cap R_P$, then we have $P(x) = 0$. And $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = P y = x = 0$, which implies $N_P\cap R_P = \{0\}$. Moreover, with ${\rm dim}\, N_P + {\rm dim}\, R_P = {\rm dim}\, X$, we have $X = N_P\oplus R_P$.
+Assume $x\in N_P\cap R_P$, then we have $Px = 0$. And $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = P y = x = 0$, which implies $N_P\cap R_P = \{0\}$. Moreover, with ${\rm dim}\, N_P + {\rm dim}\, R_P = {\rm dim}\, X$, we have $X = N_P\oplus R_P$.
 
 For any $x\in R_P$, we have $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = Py = x$, which implies $P|_{R_P}$ is an identity.
 \end{proof}
@@ -1372,6 +1372,15 @@ The opposite direction of the theorem above is also true. Indeed, for any $x\in 
 \end{align*}
 Then we have $P^2=P$.
 \end{remark}
+
+\medskip
+
+\begin{corollary}
+Every projection $P$ is diagonalizable.
+\end{corollary}
+\begin{proof}
+This is obvious since $X = N_P\oplus R_P$. Indeed, for any $x \in X$, $x = Px + (x - Px)$, where $Px \in R_P$ and $x - Px \in N_P$. Now choose any basis of $R_P$ and any basis of $N_P$, the union of these two bases will then be a basis of $X$ which diagonalizes $P$.
+\end{proof}
 
 \medskip
 
