@@ -1,4 +1,4 @@
-\documentclass[11pt]{book}
+\documentclass[10pt]{book}
 \pagestyle{plain}
 %\documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -2316,7 +2316,7 @@ The cofactor matrix $\operatorname{cof}(A)$ of $A$ is the matrix $\operatorname{
 \begin{definition}
 The $n \times n$ matrix $\operatorname{adj}(A)$ is the transpose of the cofactor matrix of $A$, it is also called the classical adjoint of $A$. Thus, 
 \begin{align*}
-    \operatorname{adj}(A)_{ij} = C_{ij} = (-1)^{i+j} \det A_{ji}.
+    \operatorname{adj}(A)_{ij} = C_{ji} = (-1)^{i+j} \det A_{ji}.
 \end{align*}
 \end{definition}
 
@@ -2589,7 +2589,7 @@ Let $p, q$ be a pair of polynomials, with complex coefficients, and $p,q$ have n
     \item There exist two polynomials $a,b$, such that $ap+bq = 1$.
     \item Let $A$ be a square matrix, then 
     $$N_{p(A)q(A)} = N_{p(A)} \oplus N_{q(A)}.$$
-    \item Let $P_k k = 1, \cdots, m$ be polynomials and they have no common zeros, then 
+    \item Let $P_k, k = 1, \cdots, m$ be polynomials and they have no common zeros, then 
     $$N_{p_1(A)\cdots p_m(A)} = N_{p_1(A)} \oplus\cdots\oplus N_{p_m(A)}.$$
 \end{enumerate}
 \end{lemma}
@@ -11027,7 +11027,7 @@ Also, if $A = P B P^{-1}$, then
     \det T_A = \det T_P \det T_B \det T_{P^{-1}} = \det T_B.
 \end{align*}
 
-Using QR decomposition, $A$ is a product of one orthogonal and one upper triangular matrix, and both of them are diagonalizabble. So we could consider
+Using QR decomposition, $A$ is a product of one orthogonal and one upper triangular matrix, and both of them are diagonalizable. So we could consider
 \begin{align*}
     A = \begin{pmatrix}
         \lambda_1 & & & \\
