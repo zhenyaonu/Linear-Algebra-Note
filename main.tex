@@ -866,6 +866,10 @@ $\varphi(x)$ is a subspace of $X''$.
 \end{enumerate}
 \end{proof}
 
+\begin{remark}
+The map $x \mapsto x^{**}$ is still well defined but not onto in infinite dimensional spaces.
+\end{remark}
+
 \medskip
 
 \section{Annihilator and Codimension}
@@ -8619,23 +8623,19 @@ Suppose $A, B, C$ and $D$ are $n \times n$ matrices such that $AC = BC$ and $AD 
 \begin{proof}
 Since $A$ is invertible, then $AC = BC$ and $AD = - BD$ implies
 \begin{align*}
-    C\left(A^{-1} B - I \right) & = 0, \\
-    D\left(A^{-1} B + I \right) & = 0.
+    \left(A^{-1} B - I \right)C & = 0, \\
+    \left(A^{-1} B + I \right)D & = 0.
 \end{align*}
 Then, 
 \begin{align*}
-    R_{A^{-1} B - I} & \subset N_C, \\
-    R_{A^{-1} B + I} & \subset N_D.
+    R_C & \subset N_{A^{-1} B - I}, \\
+    R_D & \subset N_{A^{-1} B + I}.
 \end{align*}
 Also, $N_{A^{-1} B - I}$ and $N_{A^{-1} B + I}$ are eigenspaces of $A^{-1}B$, and then
 \begin{align*}
-    \dim N_{A^{-1} B - I} + \dim N_{A^{-1} B + I} \leq n.
+    \dim N_{A^{-1} B - I} + \dim N_{A^{-1} B + I} \leq n,
 \end{align*}
-By the Rank-Nullity theorem, we have $\dim R_{A^{-1} B - I} + \dim R_{A^{-1} B + I} \geq n$. And then 
-\begin{align*}
-   \dim N_C + \dim N_D \geq \dim R_{A^{-1} B - I} + \dim R_{A^{-1} B + I} \geq n.
-\end{align*}
-Applying the Rank-Nullity theorem again gives $\dim R_C + \dim R_D \leq n$.
+which implies $\dim R_C + \dim R_D \leq n$.
 \end{proof}
 
 \medskip
