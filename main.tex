@@ -8311,7 +8311,7 @@ Assume $y\in N_T\cap R_T$,then there must exists a $x\in X$ such that $y = T x$.
 
 \medskip
 
-\begin{exercise}
+\begin{exercise}\label{ex_1633}
 If $Y$ and $Z$ are subspaces of a finite dimensional linear space, prove that 
 \begin{align*}
     (Y + Z)^\bot = Y^\bot \cap Z^\bot\,\,{\rm and}\,\, (Y \cap Z)^\bot = Y^\bot + Z^\bot.
@@ -8323,7 +8323,7 @@ If $Y$ and $Z$ are subspaces of a finite dimensional linear space, prove that
     
     Now for $l \in Y^\bot \cap Z^\bot$, then we have $l(y) = 0$ and $l(z) = 0$, for $\forall y \in Y, \forall z \in Z$. Then, for $\forall m \in Y+Z$ we have $l(m) = 0$, since $m = y + z$ for some $y \in Y$ and $z \in Z$. Thus, we have $l \in (Y+Z)^\bot$, which implies $Y^\bot \cap Z^\bot \subset (Y+Z)^\bot$. 
     
-    Then we proved that $(Y+Z)^\bot = Y^\bot \cap Z^\bot$.
+    Then we proved that $(Y+Z)^\bot = Y^\bot \cap Z^\bot$. \label{ex_1633_a}
     
     \item It is equivalent to prove that $(Y \cap Z)^{\bot\bot} = Y\cap Z = (Y^\bot + Z^\bot)^\bot$.
     
@@ -8333,8 +8333,34 @@ If $Y$ and $Z$ are subspaces of a finite dimensional linear space, prove that
     
     For $x \in Y\cap Z = (Y\cap Z)^{\bot\bot}$, $x \in Y = Y^{\bot\bot}$ and $x \in Z = Z^{\bot\bot}$. Then we have $(x,l_1) = l_1(x) = 0$, for any $l_1 \in Y^\bot$ and $(x,l_2) = l_2(x) = 0$ for any $l_2 \in Z^\bot$. Therefore, we have $(x,l_1 + l_2) = (l_1 + l_2)x = 0, l_1 + l_2 \in Y^\bot + Z^\bot$, which implies $x \in (Y^\bot + Z^\bot)^\bot$. Hence we have $Y\cap Z \subset (Y^\bot + Z^\bot)^\bot$.
     
-    Thus, we proved $(Y\cap Z)^{\bot\bot} = Y^\bot + Z^\bot$.
+    Thus, we proved $(Y\cap Z)^{\bot\bot} = Y^\bot + Z^\bot$. \label{ex_1633_b}
 \end{enumerate}
+\end{proof}
+
+\begin{proof}[Second Proof of Exercise \ref{ex_1633} \ref{ex_1633_b}]
+By \ref{ex_1633_a}, we have
+\begin{align*}
+    \left(Y^\bot + Z^\bot\right)^\bot = \left(Y^\bot\right)^\bot \cap \left(Z^\bot\right)^\bot = Y \cap Z,
+\end{align*}
+and hence
+\begin{align*}
+    Y^\bot + Z^\bot = \left(Y^\bot + Z^\bot\right)^{\bot\bot} = \left(Y \cap Z\right)^\bot.
+\end{align*}
+\end{proof}
+
+\begin{proof}[Third Proof of Exercise \ref{ex_1633} \ref{ex_1633_b}]
+Since $Y \cap Z \subset Y$, then we have $Y^\bot \subset \left(Y \cap Z\right)^\bot$. Similarly, we have $Z^\bot \subset \left(Y \cap Z\right)^\bot$, and hence
+\begin{align*}
+    Y^\bot + Z^\bot \subset \left(Y \cap Z\right)^\bot.
+\end{align*}
+On the other hand, by \ref{ex_1633_a}, we have
+\begin{align*}
+    \dim \left(Y^\bot + Z^\bot\right) & = \dim Y^\bot + \dim Z^\bot - \dim \left(Y^\bot \cap Z^\bot\right) \\
+    & = n - \dim Y + n - \dim Z - \dim (Y + Z)^\bot \\
+    & = n - \dim Y + n - \dim Z - n + \dim (Y + Z) \\
+    & = n - \dim (Y \cap Z) = \dim (Y \cap Z)^\bot,
+\end{align*}
+and hence $Y^\bot + Z^\bot = (Y \cap Z)^\bot$.
 \end{proof}
 
 \medskip
