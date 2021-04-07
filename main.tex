@@ -9387,6 +9387,30 @@ For any two matrices $A, B$, ${\rm tr}(AB - BA) = 0$\cite{20}. However, ${\rm tr
 
 \medskip
 
+\begin{exercise}
+Suppose $A,B$ are two $n \times n$ matrices and $A^2 = B^2$. Show that $\det (AB - BA) = 0$ if $n$ is odd.
+\end{exercise}
+\begin{proof}
+We have $(A - B)(A + B) = A^2 + AB - BA - B^2 = AB - BA$, and hence
+\begin{align*}
+    \det (AB - BA) = \det (A - B)(A + B) = \det (A - B) \det (A + B).
+\end{align*}
+Let $X = A + B$ and $Y = A - B$. Since $A^2 = B^2$, we have
+\begin{align*}
+    4A^2 = (X + Y)^2 = (X - Y)^2 = 4B^2,
+\end{align*}
+and hence $XY + YX = 0$. Hence $XY = -YX$, and this implies
+\begin{align*}
+    \det XY = (-1)^n \det (YX).
+\end{align*}
+Since $\det XY = \det YX$ and $n$ is odd, we have $\det XY = \det X \cdot \det Y = 0$. Thus,
+\begin{align*}
+    \det (AB - BA) = \det (A - B) \det (A + B) = \det X \cdot \det Y = 0.
+\end{align*}
+\end{proof}
+
+\medskip
+
 \begin{exercise} 
 For a given $n \times n$ matrix $C$, consider a bilinear form $F_C$ on the space of real $n \times n$ matrices, defined by the formula 
 \begin{align*}
