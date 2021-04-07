@@ -1,4 +1,4 @@
-\documentclass[10pt]{book}
+\documentclass[11pt]{book}
 \pagestyle{plain}
 %\documentclass{article}
 \usepackage[utf8]{inputenc}
@@ -511,7 +511,7 @@ then $\{x_2,\cdots,x_m\}$ is also a span of $X$, which is a contradiction.
 
 \begin{theorem}
 All bases for a finite-dimensional linear space $X$ contain the
-same number of vectors. This number is called the dimension of $X$ and is denoted as ${\rm dim} X$.
+same number of vectors. This number is called the dimension of $X$ and is denoted as $ \dim  X$.
 \end{theorem}
 \begin{proof}
 The theorem follows from the lemma below.
@@ -542,13 +542,13 @@ The dimension of the trivial space consisting of the single element $0$ is zero.
 Every linearly independent set of vectors $y_1,\cdots,y_n$ in a finite dimensional linear space $X$ can be completed to a basis of $X$.
 \end{theorem}
 \begin{proof}
-If ${\rm span}\{y_1,\cdots,y_n\} \neq X$, then there exists $y_{n+1}\in X \setminus \{y_1,\cdots,y_n\}$. We can continue this process if ${\rm span}\{y_1,\cdots,y_n, y_{n+1}\}\neq X$. Since ${\rm dim}X < \infty$, then the process will stop after finitely many step, which  constructs a basis of $X$.
+If ${\rm span}\{y_1,\cdots,y_n\} \neq X$, then there exists $y_{n+1}\in X \setminus \{y_1,\cdots,y_n\}$. We can continue this process if ${\rm span}\{y_1,\cdots,y_n, y_{n+1}\}\neq X$. Since $ \dim \,X < \infty$, then the process will stop after finitely many step, which  constructs a basis of $X$.
 \end{proof}
 
 \medskip
 
 \begin{theorem}
-Let $X$ be a finite dimensional space over $K$ with ${\rm dim}X = n$, then $X$ is isomorphic to $K^n$.
+Let $X$ be a finite dimensional space over $K$ with $ \dim \,X = n$, then $X$ is isomorphic to $K^n$.
 \end{theorem}
 \begin{proof}
 Let $x_1, \cdots, x_n$ be a basis of $X$. For any $x\in X$, we have $x = \sum^n_{k=1}c_k x_k$. We can define $\varphi: X\to K^n$ as $\varphi(x) = (c_1, \cdots, c_n) \in K^n$. Then $\varphi$ is an isomorphism.
@@ -563,15 +563,15 @@ Let $x_1, \cdots, x_n$ be a basis of $X$. For any $x\in X$, we have $x = \sum^n_
     \begin{align*}
         x = y + z, y\in Y, z\in Z.
     \end{align*}
-    Furthermore ${\rm dim}X = {\rm dim}Y + {\rm dim}Z$.
+    Furthermore $ \dim \,X =  \dim \,Y +  \dim \,Z$.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Construct a finite basis for $X$ and pick $y_1\in Y, y_1\neq 0$. If ${\rm span}\{y_1\} = Y$, then we are done. Otherwise, we can pick $y_2\in Y\setminus\{y_1\}$ and $y_1, y_2$ are linearly independent. And we can continue this process and this process will stop in finite steps, since we cannot find more than ${\rm dim}X$ linearly independent vectors. 
-    \item Let $\{y_1, \cdots, y_m\}$ be a basis of $Y$ and ${\rm dim}Y = m$. Then we can complete it into a basis of $X$, saying ${\rm span}\{y_1, \cdots, y_m, y_{m+1},\cdots, y_n\} = X$. 
+    \item Construct a finite basis for $X$ and pick $y_1\in Y, y_1\neq 0$. If ${\rm span}\{y_1\} = Y$, then we are done. Otherwise, we can pick $y_2\in Y\setminus\{y_1\}$ and $y_1, y_2$ are linearly independent. And we can continue this process and this process will stop in finite steps, since we cannot find more than $ \dim \,X$ linearly independent vectors. 
+    \item Let $\{y_1, \cdots, y_m\}$ be a basis of $Y$ and $ \dim \,Y = m$. Then we can complete it into a basis of $X$, saying ${\rm span}\{y_1, \cdots, y_m, y_{m+1},\cdots, y_n\} = X$. 
     
-    We define $Z = {\rm span}\{y_{m+1},\cdots, y_n\}$, and then ${\rm dim}Z = n - m$. For any $x\in X$, we have 
+    We define $Z = {\rm span}\{y_{m+1},\cdots, y_n\}$, and then $ \dim \,Z = n - m$. For any $x\in X$, we have 
     $$x = \sum^n_{k=1}c_k x_k, y = \sum^m_{k=1}c_k x_k, z = \sum^m_{k=m+1}c_k x_k,$$ 
     then we have $x = y+z$. If $x = \Tilde{y} + \Tilde{z}, \Tilde{y}\in Y, \Tilde{z}\in Z$, then we have $\Tilde{y} + \Tilde{z} = y + z$, which implies $\Tilde{y} - y = z - \Tilde{z}$. Since $Y,Z$ are subspaces of $X$, then we can have 
     \begin{align*}
@@ -595,13 +595,13 @@ $X$ is said to be a direct sum of its subspaces $Y_1, \cdots, Y_m$ if every $x\i
 \begin{align*}
     x = \sum^m_{j=1}y_j, y_j\in Y_j.
 \end{align*}
-We write $X = Y_1 \oplus \cdots \oplus Y_m$. Furthermore, ${\rm dim}X = {\rm dim}Y_1 +\cdots + {\rm dim}Y_m$.
+We write $X = Y_1 \oplus \cdots \oplus Y_m$. Furthermore, $ \dim \,X =  \dim \,Y_1 +\cdots +  \dim \,Y_m$.
 \end{definition}
 
 \medskip
 
 \begin{exercise}
-Prove that if $X = Y_1 \oplus \cdots \oplus Y_m$, then ${\rm dim}X = {\rm dim}Y_1 +\cdots + {\rm dim}Y_m$.
+Prove that if $X = Y_1 \oplus \cdots \oplus Y_m$, then $ \dim \,X =  \dim \,Y_1 +\cdots +  \dim \,Y_m$.
 \end{exercise}
 \begin{proof}
 Suppose $y_{i1}, \cdots, y_{in_i}$ form a basis for $Y_i, 1\leq i\leq m$. Then for any $x\in X$, we have $x = x_1 +\cdots +x_m$, where $x_i\in Y_i$. Also, we can express $x_i$ as $x_i = \sum^{n_i}_{k=1}c_{i k} y_{i k}$. Then we have 
@@ -614,7 +614,7 @@ If $\sum^m_{i=1}\sum^{n_i}_{k=1}c_{i k} y_{i k} = 0$ for some $c_{ik}\neq 0$, th
 \medskip
 
 \begin{exercise}
-Prove that every finite dimensional space $X$ over field $K$ is isomorphic to $K^n$, where $n = {\rm dim}X$. And this isomorphism is not unique if $n > 1$.
+Prove that every finite dimensional space $X$ over field $K$ is isomorphic to $K^n$, where $n =  \dim \,X$. And this isomorphism is not unique if $n > 1$.
 \end{exercise}
 \begin{proof}
 Suppose $x_1,\cdots, x_n$ form a basis for $X$. Then for any $x\in X$, it can be expressed as $x = \sum^n_{k=1}c_k x_k$. We define $T(x) = (c_1, \cdots, c_n)\in K$, then this is an isomorphism. However, different choice of basis will give different isomorphism.
@@ -668,11 +668,11 @@ For $\{x\}$ and $\{y\}$ are congruence classes $\bmod Y$, if there exists $z\in 
 \begin{theorem}\label{theorem_quotient_dim}
 If $Y$ is a subspace of a finite-dimensional linear space $X$, then
 \begin{align*}
-    {\rm dim}X = {\rm dim}Y + {\rm dim}X/Y.
+     \dim \,X =  \dim \,Y +  \dim \,X/Y.
 \end{align*}
 \end{theorem}
 \begin{proof}
-Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set can be completed into a basis for $X$ by adding $x_{m+1}, \cdots, x_n, n = {\rm dim}X$. We claim that $\{x_{m+1}\}, \cdots, \{x_n\}$ form a basis for $X/Y$ by  verifying that they span the whole space $X/Y$ and they are linearly independent. Indeed,
+Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m =  \dim \,Y$. This set can be completed into a basis for $X$ by adding $x_{m+1}, \cdots, x_n, n =  \dim \,X$. We claim that $\{x_{m+1}\}, \cdots, \{x_n\}$ form a basis for $X/Y$ by  verifying that they span the whole space $X/Y$ and they are linearly independent. Indeed,
 \begin{enumerate}[label=(\alph*)]
     \item For any $x\in X$, we can write it as 
     \begin{align*}
@@ -699,9 +699,9 @@ Let $\{x_1, \cdots, x_m\}$ be a basis of $Y$, where $m = {\rm dim}Y$. This set c
 A subspace $Y$ of a finite-dimensional linear space $X$ whose dimension is the same as the dimension of $X$ is all of $X$.
 \end{corollary}
 \begin{proof}
-Suppose ${\rm dim}X = n$, and a subspace $Y$ of $X$ with dimension $n$. Suppose $y_1,\cdots,y_n$ form a basis for $Y$, then we can complete it into a basis of $X$. If we can find another $x\in X$ that is linearly independent with $y_1,\cdots,y_n$, then we have $\{y_1,\cdots,y_n, x\}$ is the basis of $X$, which is a contradiction. 
+Suppose $ \dim \,X = n$, and a subspace $Y$ of $X$ with dimension $n$. Suppose $y_1,\cdots,y_n$ form a basis for $Y$, then we can complete it into a basis of $X$. If we can find another $x\in X$ that is linearly independent with $y_1,\cdots,y_n$, then we have $\{y_1,\cdots,y_n, x\}$ is the basis of $X$, which is a contradiction. 
 
-Also, we can prove it with ${\rm dim}X/Y = 0$, which implies $X/Y = \{\{0\}\}$.
+Also, we can prove it with $ \dim \,X/Y = 0$, which implies $X/Y = \{\{0\}\}$.
 \end{proof}
 
 \medskip
@@ -709,19 +709,19 @@ Also, we can prove it with ${\rm dim}X/Y = 0$, which implies $X/Y = \{\{0\}\}$.
 \begin{theorem}
 Suppose $X$ is a finite-dimensional linear space, $U$ and $V$ two subspaces of $X$. Then we have
 \begin{align*}
-    {\rm dim}(U+V) = {\rm dim}U + {\rm dim}V - {\rm dim}(U\cap V).
+     \dim \,(U+V) =  \dim \,U +  \dim \,V -  \dim \,(U\cap V).
 \end{align*}
 \end{theorem}
 \begin{proof}
 If $U\cap V = \{0\}$, then $U+V$ is a direct sum and hence 
-$${\rm dim}(U+V) = {\rm dim}U + {\rm dim}V.$$
+$$ \dim \,(U+V) =  \dim \,U +  \dim \,V.$$
 In general, let $W = U\cap V$. Claim that $U/W+V/W = (U+V)/W$, which is a direct sum. It suffices to prove that $U/W\cap V/W = \{0\}$. Let $\{x\}\subset U/W\cap V/W$, then $x = u+w_1$ for some $u\in U$ and $w_1\in W$, also, $x = v+w_2$ for some $v\in V$ and $w_2\in W$. Then we have $u+w_1 = v+w_2$, and hence $u+w_1 = v+w_2\in U\cap V = W$. Thus, we have $x\in W$, which gives $\{x\} = \{0\}$.
 
 Now we proved $U/W+V/W = (U+V)/W$, then we have 
 \begin{align*}
-    {\rm dim}U/W + {\rm dim}V/W & = {\rm dim}(U+V)/W,\\
-    \Rightarrow {\rm dim}U - {\rm dim} W + {\rm dim} V - {\rm dim}W & = {\rm dim}(U+V) - {\rm dim}W,\\ 
-    \Rightarrow {\rm dim}U + {\rm dim} V - {\rm dim}(U\cap V) & = {\rm dim}(U+V).
+     \dim \,U/W +  \dim \,V/W & =  \dim \,(U+V)/W,\\
+    \Rightarrow  \dim \,U -  \dim  W +  \dim  V -  \dim \,W & =  \dim \,(U+V) -  \dim \,W,\\ 
+    \Rightarrow  \dim \,U +  \dim  V -  \dim \,(U\cap V) & =  \dim \,(U+V).
 \end{align*}
 The proof is complete.
 \end{proof}
@@ -735,7 +735,7 @@ The Cartesian sum $X_1\oplus X_2$ of two linear spaces $X_1, X_2$ over the same 
 \medskip
 
 \begin{theorem}
-$${\rm dim}X_1\oplus X_2 = {\rm dim}X_1 + {\rm dim}X_2.$$
+$$ \dim \,(X_1\oplus X_2) =  \dim \,X_1 +  \dim \,X_2.$$
 \end{theorem}
 \begin{proof}
 Let $x_1, \cdots, x_n$ be a basis of $X_1$ and $y_1, \cdots, y_m$ be a basis of $X_2$. We claim that 
@@ -749,13 +749,13 @@ Also, we can prove it in another way by defining
 \end{align*}
 and it is easy to see that $Y_1$ is isomorphic to $X_1$ and $Y_2$ isomorphic to $X_2$. Also, we have $Y_1\cap Y_2 = \{0\}$, then we have 
 \begin{align*}
-    {\rm dim}X_1\oplus X_2 = {\rm dim}Y_1 + {\rm dim}Y_2 - {\rm dim}X_1(Y_1\cap Y_2) = {\rm dim}X_1 + {\rm dim}X_2.
+     \dim \,X_1\oplus X_2 =  \dim \,Y_1 +  \dim \,Y_2 -  \dim \,X_1(Y_1\cap Y_2) =  \dim \,X_1 +  \dim \,X_2.
 \end{align*}
 \end{proof}
 
-Moreover, we can define the Cartesian sum $\oplus^m_{k=1}X_k$ of $m$ linear spaces and we have 
+Moreover, we can define the Cartesian sum $\bigoplus^m_{k=1}X_k$ of $m$ linear spaces and we have 
 \begin{align*}
-    \dim \oplus^m_{k=1}X_k = \sum^m_{k=1}\dim X_k.
+    \dim  \bigoplus^m_{k=1}X_k = \sum^m_{k=1}\dim  X_k.
 \end{align*}
 
 \medskip
@@ -770,7 +770,7 @@ Let $K$ be a field such that it has infinite number of elements and let $X$ be a
 \begin{proof}
 Suppose by contrary that there exist $W_1, W_2,\cdots, W_n$, which are proper subspaces of $X$ such that $X = \bigcup^n_{i=1}W_i$. 
 
-If for any $1\leq j\leq n$, $W_j\subset \bigcup^n_{i\neq j}W_i$, then we can remove such $W_j$. Thus, without losing generality, we can assume that no $W_j$ is contained in the union of other $W_i$'s. Note that since $W_i$'s are proper subspaces of $X$, then $X$ must have ${\rm dim}X = n \geq 2$. Since $W_1\not\subset \bigcup^n_{i\neq 1}W_i$, then there exists $u\in W_1$ such that $u\notin W_i, i\geq 2$. Also, $W_1$ is a proper subspace, then there exists $v\notin W_1$. 
+If for any $1\leq j\leq n$, $W_j\subset \bigcup^n_{i\neq j}W_i$, then we can remove such $W_j$. Thus, without losing generality, we can assume that no $W_j$ is contained in the union of other $W_i$'s. Note that since $W_i$'s are proper subspaces of $X$, then $X$ must have $ \dim \,X = n \geq 2$. Since $W_1\not\subset \bigcup^n_{i\neq 1}W_i$, then there exists $u\in W_1$ such that $u\notin W_i, i\geq 2$. Also, $W_1$ is a proper subspace, then there exists $v\notin W_1$. 
 
 Now consider $v + \lambda u$ for $\lambda\in K$. We claim that $v + \lambda u\in W_j$ for at most one $\lambda\in K$. Now we prove this:
 \begin{enumerate}[label=(\alph*)]
@@ -828,10 +828,10 @@ For any $l\in X'$, define $a_k = l(x_k)$, then we have
 \medskip
 
 \begin{theorem}
-${\rm dim}X = {\rm dim}X'$.
+$ \dim \,X =  \dim \,X'$.
 \end{theorem}
 \begin{proof}
-Suppose ${\rm dim}X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\leq j\leq n$ form a basis of $X'$. Indeed, we have
+Suppose $ \dim \,X = n$. Define $l_j(x) = c_j$, for $x\in X$. We claim $l_j, 1\leq j\leq n$ form a basis of $X'$. Indeed, we have
 \begin{enumerate}[label=(\alph*)]
     \item For any $l\in X'$, we have $l(x) = \sum^n_{k=1}c_k a_k = \sum^n_{k=1}a_k l_k(x)$. Thus, $l = \sum^n_{k=1}a_k l_k$, which implies that $\{l_j, 1\leq j\leq n\}$ span the space $X'$.
     \item We claim $l_j, 1\leq j\leq n$ are linearly independent. If $\sum^n_{k=1}b_k l_k = 0$, then we have 
@@ -860,7 +860,7 @@ $\varphi(x)$ is a subspace of $X''$.
 \begin{enumerate}[label=(\alph*)]
     \item If $\varphi(x_1) = \varphi(x_2)$, then $(l,x_1) = (l,x_2)$ for any $l\in X'$. Then we have $(l,x_1 - x_2) = 0$. Now we can set $x_1 - x_2 = (c_1,\cdots,c_n)$, and pick $l = (\overline{c_1},\cdots,\overline{c_n})$, then we have $\sum^n_{k=1}|c_k|^2 = 0$. Then, $c_k = 0$, which implies $x_1 = x_2$. Thus, $\varphi$ is one-to-one.
     
-    \item We claim that $\varphi(x) = X''$. It suffices to prove that ${\rm dim}\varphi(x) = {\rm dim}X''$.
+    \item We claim that $\varphi(x) = X''$. It suffices to prove that $ \dim \,\varphi(x) =  \dim \,X''$.
     
     Let $x_1,\cdots,x_n$ be a basis of $X$, then $x_1^{**},\cdots,x_n^{**}$ is a basis of $X''$. Thus, $\varphi$ is onto.
 \end{enumerate}
@@ -883,7 +883,7 @@ $Y^\bot$ is a subspace of $X'$.
 \medskip
 
 \begin{theorem}
-${\rm dim}Y^\bot + {\rm dim}Y = {\rm dim}X$.
+$ \dim \,Y^\bot +  \dim \,Y =  \dim \,X$.
 \end{theorem}
 \begin{proof}
 We can establish a natural isomorphism $T:Y^\bot\to (X/Y)'$ as follows $$T(l)(\{x\}) = l(x),$$
@@ -898,9 +898,9 @@ for any $l\in Y^\bot$ and $\{x\}\in X/Y$. It suffices to prove that $T$ is well-
     \end{enumerate}
 \end{enumerate}
 
-Thus, we have ${\rm dim}Y^\bot = {\rm dim}(X/Y)' = {\rm dim}(X/Y)$ and hence 
+Thus, we have $ \dim \,Y^\bot =  \dim \,(X/Y)' =  \dim \,(X/Y)$ and hence 
 \begin{align*}
-    {\rm dim}Y^\bot = {\rm dim}(X/Y) = {\rm dim}X - {\rm dim}Y.
+     \dim \,Y^\bot =  \dim \,(X/Y) =  \dim \,X -  \dim \,Y.
 \end{align*}
 \end{proof}
 
@@ -914,7 +914,7 @@ The dimension of $Y^\bot$ is called the \emph{codimension} of $Y$ as subspace of
 Under the natural identification of $X''$ and $X$, for every subspace $Y$ of a finite-dimensional space $X$, $Y^{\bot\bot} = Y$.
 \end{theorem}
 \begin{proof}
-For any $y\in Y$ and $l\in Y^\bot$, $y^{**}(l) = l(y) = 0$, where $y^{**} \in Y^{\bot\bot}$. Thus we have $Y\subset Y^{\bot\bot}$. Also, ${\rm dim}Y^{\bot\bot} = {\rm dim}X' - {\rm dim}Y^\bot = {\rm dim}X - {\rm dim}Y^\bot = {\rm dim}Y$. Thus, $Y = Y^{\bot\bot}$.
+For any $y\in Y$ and $l\in Y^\bot$, $y^{**}(l) = l(y) = 0$, where $y^{**} \in Y^{\bot\bot}$. Thus we have $Y\subset Y^{\bot\bot}$. Also, $ \dim \,Y^{\bot\bot} =  \dim \,X' -  \dim \,Y^\bot =  \dim \,X -  \dim \,Y^\bot =  \dim \,Y$. Thus, $Y = Y^{\bot\bot}$.
 \end{proof}
 
 \medskip
@@ -941,12 +941,12 @@ Let $I$ be an interval on the real axis, $t_1, \cdots, t_n$ are $n$ distinct poi
 holds for all polynomials $p$ of degree less than $n$.
 \end{theorem}
 \begin{proof}
-Denote by $X$ the space of all polynomials $P(t) = a_0 + a_1 t +\cdots+ a_{n-1}t^{n-1}$ of degree less than $n$. Since $X$ is isomorphic to the space $\mathbb{R}^n = (a_0,a_1,\cdots,a_{n-1})$, then ${\rm dim}X = n$. We define $l_j\in X'$ as the linear function 
+Denote by $X$ the space of all polynomials $P(t) = a_0 + a_1 t +\cdots+ a_{n-1}t^{n-1}$ of degree less than $n$. Since $X$ is isomorphic to the space $\mathbb{R}^n = (a_0,a_1,\cdots,a_{n-1})$, then $ \dim \,X = n$. We define $l_j\in X'$ as the linear function 
 $$l_j(p) = p(t_j).$$
 
 Claim that $l_j, 1\leq j \leq n$ are linearly independent. Indeed, assume $\sum^n_{k=1}c_k l_k = 0$, then we have 
 $$\sum^n_{k=1}c_k l_k(p) = \sum^n_{k=1}c_k p(t_k) = 0,$$
-and for $k$, pick $p(t) = \prod_{j\neq k}(t - t_j)$, then we have $c_k = 0, 1\leq k\leq n$. Then $\{l_j\}^n_{j=1}$ form a basis of $X'$, since ${\rm dim}X' = {\rm dim}X = n$. Then any linear function $l$ on $X$ can be represented as below
+and for $k$, pick $p(t) = \prod_{j\neq k}(t - t_j)$, then we have $c_k = 0, 1\leq k\leq n$. Then $\{l_j\}^n_{j=1}$ form a basis of $X'$, since $ \dim \,X' =  \dim \,X = n$. Then any linear function $l$ on $X$ can be represented as below
 $$l = m_1 l_1 + \cdots + m_n l_n.$$
 The integral of $p$ over $I$ is a linear function, therefore it can be represented as above.
 \end{proof}
@@ -1003,19 +1003,19 @@ If $T:X\to U$, then $R_T\subset U, N_T\subset U$ are subspaces of $U$.
 \medskip
 
 \begin{definition}
-${\rm dim}\,R_T$ is called the rank of the mapping $T$ and ${\rm dim}\,N_T$ is called the nullity of the mapping $T$.
+$ \dim \,\,R_T$ is called the rank of the mapping $T$ and $ \dim \,\,N_T$ is called the nullity of the mapping $T$.
 \end{definition}
 
 \medskip
 
 \section{Rank-Nullity Theorem}
 \begin{theorem}[Rank-Nullity Theorem]
-Let $T:X\to U$ be a linear map. Then $${\rm dim}\,R_T + {\rm dim}\,N_T = {\rm dim}\, X.$$
+Let $T:X\to U$ be a linear map. Then $$ \dim \,\,R_T +  \dim \,\,N_T =  \dim \,\, X.$$
 \end{theorem}
 \begin{proof}
 We can define $\Tilde{T}:X/N_T\to R_T$ as $\Tilde{T}(\{x\}) = Tx \in R_T$, for $\forall x\in X$. Claim that $\Tilde{T}$ is an isomorphism. Indeed, if $\{x\} = \{y\}$, then $x-y\in N_T$, then we have $T(x-y) = 0$, which implies $Tx = Ty$. Thus, $\Tilde{T}(\{x\}) = \Tilde{T}(\{y\})$. Also, $\Tilde{T}$ is linear, since $\Tilde{T}(a\{x\} + b\{y\}) = a\Tilde{T}(\{x\}) + b\Tilde{T}(\{y\})$. 
 
-Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With Theorem \ref{theorem_quotient_dim}, we have ${\rm dim}\,X - {\rm dim}\,N_T = {\rm dim}\, R_T$.
+Thus, we have $ \dim \,\, X/N_T =  \dim \,\, R_T$. With Theorem \ref{theorem_quotient_dim}, we have $ \dim \,\,X -  \dim \,\,N_T =  \dim \,\, R_T$.
 \end{proof}
 
 \medskip
@@ -1023,14 +1023,14 @@ Thus, we have ${\rm dim}\, X/N_T = {\rm dim}\, R_T$. With Theorem \ref{theorem_q
 \begin{theorem}\label{one_to_one_theorem}
 Let $T:X\to U$ be a linear map, then
 \begin{enumerate}[label=(\alph*)]
-    \item Suppose ${\rm dim}\,U < {\rm dim}\, X$, then there exists $x\neq 0$, such that $T x = 0$.
-    \item Suppose ${\rm dim}\,U = {\rm dim}\, X$, the only vector satisfying $T x = 0$ is $x= 0$. Then $R_T = U$ and $T$ is an isomorphism.
+    \item Suppose $ \dim \,\,U <  \dim \,\, X$, then there exists $x\neq 0$, such that $T x = 0$.
+    \item Suppose $ \dim \,\,U =  \dim \,\, X$, the only vector satisfying $T x = 0$ is $x= 0$. Then $R_T = U$ and $T$ is an isomorphism.
 \end{enumerate}
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Since ${\rm dim}\,R_T \leq {\rm dim}\, U < {\rm dim}\, X$, then we have ${\rm dim}\, N_T = {\rm dim}\,X - {\rm dim}\,R_T > 0$. Then there exists $x \neq 0, x\in N_T$ such that $T x = 0$.
-    \item Since ${\rm dim}\,U = {\rm dim}\, X$, we have ${\rm dim}\,N_T = 0$. Then we have ${\rm dim}\,R_T = {\rm dim}\,U$. Thus $R_T = U$ and $T$ is an isomorphism.
+    \item Since $ \dim \,\,R_T \leq  \dim \,\, U <  \dim \,\, X$, then we have $ \dim \,\, N_T =  \dim \,\,X -  \dim \,\,R_T > 0$. Then there exists $x \neq 0, x\in N_T$ such that $T x = 0$.
+    \item Since $ \dim \,\,U =  \dim \,\, X$, we have $ \dim \,\,N_T = 0$. Then we have $ \dim \,\,R_T =  \dim \,\,U$. Thus $R_T = U$ and $T$ is an isomorphism.
 \end{enumerate}
 \end{proof}
 
@@ -1064,13 +1064,13 @@ A linear mapping $T:X\to U$ is called surjective (or onto) if its range equals $
 \medskip
 
 \begin{theorem}
-Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim X > \dim U$, then no linear map from $X$ to $U$ is injective.
+Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim  X > \dim  U$, then no linear map from $X$ to $U$ is injective.
 \end{theorem}
 \begin{proof}
 Let $T:\mathscr{L}(X,U)$, then with Rank-Nullity theorem, we have
 \begin{align*}
-    \dim N_T & = \dim X - \dim R_T \\
-    & \geq \dim X - \dim U > 0.
+    \dim  N_T & = \dim  X - \dim  R_T \\
+    & \geq \dim  X - \dim  U > 0.
 \end{align*}
 Thus, $T$ is not injective.
 \end{proof}
@@ -1078,13 +1078,13 @@ Thus, $T$ is not injective.
 \medskip
 
 \begin{theorem}
-Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim X < \dim U$, then no linear map from $X$ to $U$ is surjective.
+Suppose $X$ and $U$ are finite-dimensional vector spaces such that $\dim  X < \dim  U$, then no linear map from $X$ to $U$ is surjective.
 \end{theorem}
 \begin{proof}
 Let $T:\mathscr{L}(X,U)$, then with Rank-Nullity theorem, we have
 \begin{align*}
-    \dim R_T & = \dim X - \dim N_T \\
-    & \leq \dim X < \dim U.
+    \dim  R_T & = \dim  X - \dim  N_T \\
+    & \leq \dim  X < \dim  U.
 \end{align*}
 Thus, $T$ is not surjective.
 \end{proof}
@@ -1263,26 +1263,26 @@ Let $T\in \mathscr{L}(X,U)$, then we have $R_T^\bot = N_{T'}$ and $R_T = N_{T'}^
 \medskip
 
 \begin{theorem}
-Let $T\in \mathscr{L}(X,U)$, then ${\rm dim}R_T = {\rm dim}R_{T'}$.
+Let $T\in \mathscr{L}(X,U)$, then $ \dim \,R_T =  \dim \,R_{T'}$.
 \end{theorem}
 \begin{proof}
-First, we have ${\rm dim}R_T + {\rm dim}R_T^\bot = {\rm dim}U$, then we have $${\rm dim}R_T + {\rm dim}N_{T'} = {\rm dim}U.$$
-By Rank-Nullity theorem, we have $${\rm dim}R_{T'} + {\rm dim}N_{T'} = {\rm dim}U' = {\rm dim}U.$$ 
-Thus, ${\rm dim}R_{T'} = {\rm dim}R_{T}$.
+First, we have $ \dim \,R_T +  \dim \,R_T^\bot =  \dim \,U$, then we have $$ \dim \,R_T +  \dim \,N_{T'} =  \dim \,U.$$
+By Rank-Nullity theorem, we have $$ \dim \,R_{T'} +  \dim \,N_{T'} =  \dim \,U' =  \dim \,U.$$ 
+Thus, $ \dim \,R_{T'} =  \dim \,R_{T}$.
 \end{proof}
 
 \medskip
 
 \begin{corollary}
-Suppose $T\in \mathscr{L}(X,U)$ and ${\rm dim} X = {\rm dim} U$. Then, ${\rm dim}N_T = {\rm dim}N_{T'}$.
+Suppose $T\in \mathscr{L}(X,U)$ and $ \dim  X =  \dim  U$. Then, $ \dim \,N_T =  \dim \,N_{T'}$.
 \end{corollary}
 \begin{proof}
 From Rank-Nullity theorem, we have 
 \begin{align*}
-    {\rm dim}R_T + {\rm dim}N_T & = {\rm dim}U, \\
-    {\rm dim}R_{T'} + {\rm dim}N_{T'} & = {\rm dim}U' = {\rm dim}U = {\rm dim}X.
+     \dim \,R_T +  \dim \,N_T & =  \dim \,U, \\
+     \dim \,R_{T'} +  \dim \,N_{T'} & =  \dim \,U' =  \dim \,U =  \dim \,X.
 \end{align*}
-Then it is easy to see that ${\rm dim}N_T = {\rm dim}N_{T'}$.
+Then it is easy to see that $ \dim \,N_T =  \dim \,N_{T'}$.
 \end{proof}
 
 \medskip
@@ -1364,7 +1364,7 @@ A linear mapping $P\in \mathscr{L}(X,X)$ is called a projection if $P^2=P$.
 If $P\in\mathscr{L}(X,X)$ is a projection, then $X = N_P\oplus R_P$, and $P|_{R_P} = I$ is identity.
 \end{theorem}
 \begin{proof}
-Assume $x\in N_P\cap R_P$, then we have $Px = 0$. And $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = P y = x = 0$, which implies $N_P\cap R_P = \{0\}$. Moreover, with ${\rm dim}\, N_P + {\rm dim}\, R_P = {\rm dim}\, X$, we have $X = N_P\oplus R_P$.
+Assume $x\in N_P\cap R_P$, then we have $Px = 0$. And $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = P y = x = 0$, which implies $N_P\cap R_P = \{0\}$. Moreover, with $ \dim \,\, N_P +  \dim \,\, R_P =  \dim \,\, X$, we have $X = N_P\oplus R_P$.
 
 For any $x\in R_P$, we have $x = P y$ for some $y\in X$. Then we have $Px = P^2 y = Py = x$, which implies $P|_{R_P}$ is an identity.
 \end{proof}
@@ -1476,11 +1476,11 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, the range of $T$ consists of a
 \medskip
 
 \begin{definition}
-The ${\rm dim}\, R_T$ is called the column rank of $T$, and ${\rm dim}\, R_{T^T}$ is called the row rank of $T$.
+The $ \dim \,\, R_T$ is called the column rank of $T$, and $ \dim \,\, R_{T^T}$ is called the row rank of $T$.
 \end{definition}
 
 \begin{theorem}
-${\rm dim}\,R_T = {\rm dim}\, R_{T^T}$.
+$ \dim \,\,R_T =  \dim \,\, R_{T^T}$.
 \end{theorem}
 \begin{proof}
 We can apply elementary row operations and elementary column operations to make $A$ into a matrix that is in both row and column reduced form, i.e., there exist invertible matrices $P$ and $Q$ (which are products of elementary matrices) such that
@@ -1492,7 +1492,7 @@ We can apply elementary row operations and elementary column operations to make 
         \end{matrix}
     \right).
 \end{align*}
-Since $P$ and $Q$ are invertible, then the maximum number of linearly independent rows in $A$ is equal to the maximum number of linearly independent rows in $E$. Also, it is similar for the column rank. Then it is obvious that ${\rm dim}\,R_T = {\rm dim}\, R_{T^T}$.
+Since $P$ and $Q$ are invertible, then the maximum number of linearly independent rows in $A$ is equal to the maximum number of linearly independent rows in $E$. Also, it is similar for the column rank. Then it is obvious that $ \dim \,\,R_T =  \dim \,\, R_{T^T}$.
 \end{proof}
 
 Now we present another different approach to prove this theorem.
@@ -1504,9 +1504,9 @@ Let $T$ be $m\times n$ matrix and it has row rank $k$. Therefore, the dimension 
 \end{align*}
 Then $x$ is a linear combination of basis of row space of $T$, which implies that $x$ belongs to row space of $T$. Also, $TX = 0$ implies that $x$ is orthogonal to every vector of row space of $T$, then $x$ is orthogonal to itself, giving us $x^2 = c_1^2 x_1^2 + \cdots + c_k^2 x_k^2 = 0$. Then it is obvious that $c_1 = \cdots = c_k = 0$.
 
-Now, each $Tx_i$ is obviously in the column space of $T$, and then $Tx_1,\cdots, Tx_k$ are $k$ linearly independent vectors in the column space of $T$, implying that ${\rm dim}\, R_{T_T}\leq {\rm dim}\,R_T$. 
+Now, each $Tx_i$ is obviously in the column space of $T$, and then $Tx_1,\cdots, Tx_k$ are $k$ linearly independent vectors in the column space of $T$, implying that $ \dim \,\, R_{T_T}\leq  \dim \,\,R_T$. 
 
-Now we can consider $T^T$ in the similar argument, and it will give us ${\rm dim}\, R_{T_T}\geq {\rm dim}\,R_T$. Thus, we have ${\rm dim}\, R_{T_T} = {\rm dim}\,R_T$. 
+Now we can consider $T^T$ in the similar argument, and it will give us $ \dim \,\, R_{T_T}\geq  \dim \,\,R_T$. Thus, we have $ \dim \,\, R_{T_T} =  \dim \,\,R_T$. 
 \end{proof}
 
 \medskip
@@ -1539,7 +1539,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
     \item Subadditivity:
     $${\rm rank}\, (A+B)\leq {\rm rank}\, (A)+{\rm rank}\, (B).$$
     when $A$ and $B$ are of the same dimension. As a consequence, a rank-$k$ matrix can be written as the sum of $k$ rank-$1$ matrices, but not fewer.
-    \item Rank–Nullity theorem: The rank of a matrix plus the nullity of the matrix equals the number of columns of the matrix, i.e., for $T$ being a $m\times n$ matrix, then $$\rank T + \dim N_T = n.$$
+    \item Rank–Nullity theorem: The rank of a matrix plus the nullity of the matrix equals the number of columns of the matrix, i.e., for $T$ being a $m\times n$ matrix, then $$\rank T + \dim  N_T = n.$$
 \end{enumerate}
 \end{proposition}
 \begin{proof}
@@ -1559,7 +1559,7 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
     \item We have $TS$ is a $m\times k$ matrix, and then we have $R_{TS}\subset R_T$, which implies ${\rm rank}\,(TS) \leq {\rm rank}\,(T)$. Similarly, we have $R_{(TS)'}\subset R_{S'}$, which implies ${\rm rank}\,(TS) = {\rm rank}\,(TS)' \leq {\rm rank}\,(S') = {\rm rank}\,S$. Then the result follows.
     \item The rank is the dimension of the column space. The column space of $TS$ is the same as the column space of $T$. Indeed, for any $y\in \mathbb{R}^n$, there is a $x\in\mathbb{R}^k$ such that $y = S x$, since $S$ is of rank $n$, implying that $S$ is onto. Then we have $Ty = TSx$. Thus, ${\rm rank}\, (TS) = {\rm rank}\, (T)$.
     \item For any $x\in\mathbb{R}^n$, we denote $T x$ by $y\in\mathbb{R}^m$. And since $K$ is full column rank, then the rank of $Ky$ is equal to the rank of $y$, which implies that ${\rm rank}\,(KT) = {\rm rank}\,(T)$.
-    \item With Rank-Nullity theorem and $T:\mathbb{R}^n\to\mathbb{R}^m$, we have $\dim R_T + \dim N_T = n$. Then we can find a basis $(x_1,\cdots,x_{k},x_{k+1},\cdots,x_n)$ for $\mathbb{R}^n$, where $(x_{k+1},\cdots,x_n)$ is a basis for null space $N_T$ of $T$.
+    \item With Rank-Nullity theorem and $T:\mathbb{R}^n\to\mathbb{R}^m$, we have $\dim  R_T + \dim  N_T = n$. Then we can find a basis $(x_1,\cdots,x_{k},x_{k+1},\cdots,x_n)$ for $\mathbb{R}^n$, where $(x_{k+1},\cdots,x_n)$ is a basis for null space $N_T$ of $T$.
     
     Now we define $f_j = T(e_j), 1\leq j\leq k$, then it is easy to see that $(f_1, \cdots, f_k)$ is linearly independent. Then we can complete this basis into a basis $(f_1, \cdots, f_k,f_{k+1},\cdots,f_m)$ of $\mathbb{R}^m$. Relative to this basis, we can choose $$f_1 = (1,0,\cdots, 0)^T, \cdots, f_j = (0,\cdots,\underbrace{1}_{j {\rm th}}, \cdots, 0)^T, \cdots, f_k = (0,\cdots,\underbrace{1}_{k {\rm th}}, \cdots, 0)^T,$$
     which gives us $I_K$, along with all zeros below for the first $k$ columns of $T$, which is $\left(
@@ -1571,16 +1571,16 @@ Let $T\in\mathscr{L}(\mathbb{R}^n,\mathbb{R}^m)$, and define the linear map $f$ 
     
     \item Suppose $A$ is an $m\times n$ matrix and $B$ is an $n\times k$ matrix, then we have $AB$ is an $m\times k$ matrix. With Rank-Nullity theorem, we have 
     \begin{align*}
-        \dim R_A + \dim N_A & = n, \\
-        \dim R_B + \dim N_B & = k, \\
-        \dim R_{AB} + \dim N_{AB} & = k.
+        \dim  R_A + \dim  N_A & = n, \\
+        \dim  R_B + \dim  N_B & = k, \\
+        \dim  R_{AB} + \dim  N_{AB} & = k.
     \end{align*}
     Then, we have
     \begin{align*}
-        \dim N_A + \dim R_B + \dim N_A + \dim N_B = n + \dim R_{AB} + \dim N_{AB}, \\
-        \Rightarrow \dim R_{AB} - \dim R_A - \dim R_B + n = \dim N_A + \dim N_B - \dim N_{AB} \geq \dim N_A \geq 0.
+        \dim  N_A + \dim  R_B + \dim  N_A + \dim  N_B = n + \dim  R_{AB} + \dim  N_{AB}, \\
+        \Rightarrow \dim  R_{AB} - \dim  R_A - \dim  R_B + n = \dim  N_A + \dim  N_B - \dim  N_{AB} \geq \dim  N_A \geq 0.
     \end{align*}
-    since $\dim N_B - \dim N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $Bv = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
+    since $\dim  N_B - \dim  N_{AB}\leq 0$. Indeed, for any $v\in N_B$, we have $Bv = 0$, also, we have $ABv = 0$, which implies $N_B\subset N_{AB}$ \cite{4}. 
     
     \item Consider $A_{m\times n}$ and $B_{n\times k}$ and $B$ is of rank $r$. Using full-rank factorization of $B$, we have $B = U_{n\times r}V_{r\times k}$, where both $U$ and $V$ are of rank $r$\cite{7,5}. With Sylvester’s rank inequality, we have
     \begin{align*}
@@ -2238,7 +2238,7 @@ In general, $\det (A - BC) \neq \det (A - CB)$.
 \medskip
 
 \section{Complex Matrix}
-Let $T\in\mathscr{L}(X,X)$, where $X$ is a complex linear space and $\dim X = n$. With chosen basis of $X$, $T$ can be represented by a matrix $A$. For a complex $n\times n$ matrix $A = (a_1,\cdots,a_n)$, we have $\det A = D(a_1,\cdots,a_n)$.
+Let $T\in\mathscr{L}(X,X)$, where $X$ is a complex linear space and $\dim  X = n$. With chosen basis of $X$, $T$ can be represented by a matrix $A$. For a complex $n\times n$ matrix $A = (a_1,\cdots,a_n)$, we have $\det A = D(a_1,\cdots,a_n)$.
 \begin{remark}
 In general, $\det (A+iB)\neq \det A + i \det B$, for $A, B$ being real matrices.
 \end{remark}
@@ -2479,9 +2479,9 @@ Let $\lambda_1, \cdots, \lambda_k$ be distinct eigenvalues of $A$. Then the foll
     \begin{align*}
         p_A(\lambda) = (\lambda - \lambda_1)^{d_1} \cdots (\lambda - \lambda_k)^{d_k},
     \end{align*}
-    and $\dim N_{A - \lambda_i I} = d_i, i = 1, \cdots, k$.
+    and $\dim  N_{A - \lambda_i I} = d_i, i = 1, \cdots, k$.
     
-    \item $\dim N_{A - \lambda_1 I} + \cdots + N_{A - \lambda_k I} = n$.
+    \item $\dim  N_{A - \lambda_1 I} + \cdots + N_{A - \lambda_k I} = n$.
 \end{enumerate}
 \end{theorem}
 
@@ -2583,7 +2583,7 @@ Let $x$ be any vector, then $p_A(A)x = 0$. We factor polynomial as $$p_A(\lambda
 \end{align*}
 Let $p_j = \left(\lambda - \lambda_j\right)^{m_j}$, then $x\in N_{p_1(A)p_2(A)\cdots p_J(A)}$, i.e., $x$ belongs to the null space of $p_1 p_2 \cdots p_J(A)$. We claim: 
 \begin{align*}
-    N_{p_1p_2\cdots p_J(A)} = \oplus^J_{i=1} N_{p_i(A)}.
+    N_{p_1p_2\cdots p_J(A)} = \bigoplus^J_{i=1} N_{p_i(A)}.
 \end{align*}
 If this is true, then $x = \sum^J_{i=1}x_i, x_i\in N_{p_j(A)}$. Then we need a lemma.
 
@@ -2657,7 +2657,7 @@ If $v\in N_d$, then $(A - \lambda I)^d v = 0$. Then, we have $(A - \lambda I)^d 
 \begin{theorem}
 Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is $d\left(\lambda_j\right) = d_j, 1\leq j \leq k$. Then,
 \begin{enumerate}[label=(\alph*)]
-    \item $\mathbb{C}^n = \oplus^k_{j=1}N_{d_j}(\lambda_j).$
+    \item $\mathbb{C}^n = \bigoplus^k_{j=1}N_{d_j}(\lambda_j).$
     \item The minimal polynomial is $m_A = \prod^k_{j=1}\left(\lambda - \lambda_j \right)^{d_j}$.
 \end{enumerate}
 \end{theorem}
@@ -2674,7 +2674,7 @@ Let $\lambda_1,\cdots,\lambda_k$ be distinct eigenvalues of $A$, whose index is 
     \end{align*}
     Thus, we have $m(\lambda) = \prod^k_{j=1} \left(\lambda - \lambda_j I\right)^{d_j} = 0$. Since $m(A) = 0$, then $m\in \mathcal{P}_A$. Then we can have that $m$ is a multiple of $m_A$. Suppose $m_A = \prod^k_{j=1} \left(\lambda - \lambda_j I\right)^{e_j}, e_j\leq d_j$. Then, we have 
     \begin{align*}
-        \mathbb{C}^n = N_{m_A(A)} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{e_j}} = \oplus^k_{j=1}N_{(A-\lambda_j I)^{d_j}},
+        \mathbb{C}^n = N_{m_A(A)} = \bigoplus^k_{j=1}N_{(A-\lambda_j I)^{e_j}} = \bigoplus^k_{j=1}N_{(A-\lambda_j I)^{d_j}},
     \end{align*}
     which implies $e_j = d_j, 1\leq j \leq k$.
 \end{enumerate}
@@ -2702,7 +2702,7 @@ Since $A$ and $B$ similar, then there exists nonsingular $S$ such that $A = SBS^
 \begin{align*}
     (A - \lambda I)^m = S(A - \lambda I)^m S^{-1}.
 \end{align*}
-If $v\in N_{(A-\lambda_j I)^m}$, then we have $S^{-1}v\in N_{(B-\lambda_j I)^m}$. Thus, $\dim N_{(A-\lambda_j I)^m} = \dim N_{(B-\lambda_j I)^m}$.
+If $v\in N_{(A-\lambda_j I)^m}$, then we have $S^{-1}v\in N_{(B-\lambda_j I)^m}$. Thus, $\dim  N_{(A-\lambda_j I)^m} = \dim  N_{(B-\lambda_j I)^m}$.
 \end{proof}
 
 \begin{remark}
@@ -2718,7 +2718,7 @@ If $v\in N_{(A-\lambda_j I)^m}$, then we have $S^{-1}v\in N_{(B-\lambda_j I)^m}$
 \medskip
 
 \begin{lemma}
-The map $$A-\lambda I: N_{i+1}/N_i\to N_i/N_{i-1}$$ is one-to-one. Hence, $$\dim N_{i+1}/N_{i} \leq \dim N_{i}/N_{i-1}.$$
+The map $$A-\lambda I: N_{i+1}/N_i\to N_i/N_{i-1}$$ is one-to-one. Hence, $$\dim  N_{i+1}/N_{i} \leq \dim  N_{i}/N_{i-1}.$$
 \end{lemma}
 \begin{proof}
 Let $B = A - \lambda I$, if $\left\{B\{x\}_{N_{i+1}/N_{i}} \right\}_{N_{i}/N_{i-1}} = \{0\}$, then $Bx \in N_{i-1}$, which implies $\{x\}\in N_i$ and $\{x\}_{N_{i+1}/N_{i}} = \{0\}_{N_{i+1}/N_{i}}$. Thus, $A - \lambda I$ is one-to-one. 
@@ -2731,9 +2731,9 @@ Let $B = A - \lambda I$, if $\left\{B\{x\}_{N_{i+1}/N_{i}} \right\}_{N_{i}/N_{i-
 
 We want to construct a basis for $N_{d_j}(\lambda_j)$. For simplicity, assume $\lambda_j = 0$ and $d_j = 0$. Also, we have $N_1\subset N_2 \subset \cdots \subset N_d$, $A:N_{i+1}\to N_{i}, i\geq 1$ and $A:N_{i+1}/N_{i}\to N_{i}/N_{i-1}$. Now we preset how to construct Jordan Canonical form.
 \begin{enumerate}[label=Step \Roman*:]
-    \item Let $l_0 = \dim (N_d/N_{d-1}) \geq 1$. Let $x_1,\cdots,x_{l_0}$ be vectors such that $\{x_1\}, \cdots \{x_{l_0}\} \in N_d$ form a basis of $N_d/N_{d-1}$.
-    \item Let $l_1  = \dim (N_{d-1}/N_{d-2}) \geq l_0$, then $\{Ax_1\},\cdots, \{Ax_{l_0}\} \in N_{d-1}$ are linearly independent. If $l_1 > l_0$, we can pick $x_{l_0+1}, \cdots, x_{l_1}$ such that $\{Ax_1\},\cdots, \{Ax_{l_0}\}, x_{l_0+1}, \cdots, x_{l_1}$ form a basis of $N_{d-1}/N_{d-2}$.
-    \item Continue this process until $N_1$. Let $l_{d-1} = \dim N_1$ and $A:N_2\to N_1$ and add vectors $x_{l_{d-2}+1},\cdots,x_{l_{d-1}}$, and the rest is the similar. We thus constructed a basis of $N_d$.
+    \item Let $l_0 = \dim  (N_d/N_{d-1}) \geq 1$. Let $x_1,\cdots,x_{l_0}$ be vectors such that $\{x_1\}, \cdots \{x_{l_0}\} \in N_d$ form a basis of $N_d/N_{d-1}$.
+    \item Let $l_1  = \dim  (N_{d-1}/N_{d-2}) \geq l_0$, then $\{Ax_1\},\cdots, \{Ax_{l_0}\} \in N_{d-1}$ are linearly independent. If $l_1 > l_0$, we can pick $x_{l_0+1}, \cdots, x_{l_1}$ such that $\{Ax_1\},\cdots, \{Ax_{l_0}\}, x_{l_0+1}, \cdots, x_{l_1}$ form a basis of $N_{d-1}/N_{d-2}$.
+    \item Continue this process until $N_1$. Let $l_{d-1} = \dim  N_1$ and $A:N_2\to N_1$ and add vectors $x_{l_{d-2}+1},\cdots,x_{l_{d-1}}$, and the rest is the similar. We thus constructed a basis of $N_d$.
     \item We present the vectors in a list as below:
     \begin{align*}
         \begin{matrix}
@@ -2752,12 +2752,12 @@ We want to construct a basis for $N_{d_j}(\lambda_j)$. For simplicity, assume $\
 \end{enumerate}
 Also, we have 
 \begin{align*}
-    \dim N_d & = \dim N_1 + \dim N_2/N_1 + \cdots + \dim N_d/N_{d-1} \\
+    \dim  N_d & = \dim  N_1 + \dim  N_2/N_1 + \cdots + \dim  N_d/N_{d-1} \\
     & = l_{d-1} + l_{d-2} + \cdots + l_0. \\
 \end{align*}
 and we claim that these vectors are linearly independent. Under this basis, we have 
 \begin{align*}
-    N_d = \oplus^{l_{d-1}}_{k=1} M_K
+    N_d = \bigoplus^{l_{d-1}}_{k=1} M_K
 \end{align*}
 where $M_k$ is the span of vectors in the $k$th row. Under the basis of $M_k$, $A$ has the representation
 \begin{align*}
@@ -2850,9 +2850,9 @@ Suppose $N\in \mathcal{L}(X,X)$ is nilpotent. Then there exist vectors $v_1, \cd
 \end{enumerate}
 \end{theorem}
 \begin{proof}
-We prove by induction and the theorem obviously holds for $\dim X = 1$, since the only nilpotent operator is $0$ and we can pick any nonzero vector as $v_1$ and $m_1 = 0$. 
+We prove by induction and the theorem obviously holds for $\dim  X = 1$, since the only nilpotent operator is $0$ and we can pick any nonzero vector as $v_1$ and $m_1 = 0$. 
 
-Because $N$ is nilpotent, then $N$ is not injective. Thus $N$ is not surjective and hence $R_N$ is a subspace of $X$, i.e., $\dim R_N \leq \dim X$. Thus we can apply the induction to the restriction operator $N|_{R_N}\in\mathcal{L}(R_N)$. We can ignore the case where $R_N = \{0\}$, since we can pick $v_1,\cdots,v_n$ be any basis and $m_1 = \cdots = m_n = 0$. 
+Because $N$ is nilpotent, then $N$ is not injective. Thus $N$ is not surjective and hence $R_N$ is a subspace of $X$, i.e., $\dim  R_N \leq \dim  X$. Thus we can apply the induction to the restriction operator $N|_{R_N}\in\mathcal{L}(R_N)$. We can ignore the case where $R_N = \{0\}$, since we can pick $v_1,\cdots,v_n$ be any basis and $m_1 = \cdots = m_n = 0$. 
 
 By induction applied to $N|_{R_N}\in\mathcal{L}(R_N)$, there exist $v_1,\cdots,v_n\in R_N$ and $m_1,\cdots,m_n$ such that 
 \begin{equation}\label{basis_1}
@@ -3231,7 +3231,7 @@ Thus, the Jordan form of $A$ is
 \section{Commuting Maps}
 \begin{lemma}
 If $A,B$ have same eigenvalues $\lambda_j$ and if for each $\lambda_j$, we have
-$$\dim N_m(\lambda_j) = \dim M_m(\lambda_j),$$
+$$\dim  N_m(\lambda_j) = \dim  M_m(\lambda_j),$$
 where $N_m(\lambda_j) = N_{(A - \lambda_j I)^m}$ and $M_m(\lambda_j) = N_{(B - \lambda_j I)^m}$, then $A, B$ are similar.
 \end{lemma}
 \begin{proof}
@@ -3249,7 +3249,7 @@ Suppose $A, B$ are $n\times n$ matrices, such that $AB = BA$, then there is a ba
 \begin{proof}
 Let $\{\lambda_j\}^K_{j=1}$ be $K$ distinct eigenvalues of $A$, then 
 \begin{align*}
-    \mathbb{C}^n = \oplus^K_{j=1} N_j,
+    \mathbb{C}^n = \bigoplus^K_{j=1} N_j,
 \end{align*}
 where $N_j = N_{(A - \lambda_j I)^{d(\lambda_j)}}$. For any $x\in\mathbb{C}^n$, since $AB = BA$, then we have
 \begin{align*}
@@ -3268,7 +3268,7 @@ If $A,B$ are both diagonalizable and $AB = BA$, then $A,B$ can be diagonalized a
 Every square matrix $A$ is similar to its transpose $A^T$.
 \end{theorem}
 \begin{proof}
-Since $\dim N_A = \dim N_{A^T}$, then $\dim N_{(A-\lambda I)^m} = \dim N_{(A^T-\lambda I)^m}$. Then, $A$ and $A^T$ have the same Jordan canonical form. Thus, $A$ and $A^T$ are similar.
+Since $\dim  N_A = \dim  N_{A^T}$, then $\dim  N_{(A-\lambda I)^m} = \dim  N_{(A^T-\lambda I)^m}$. Then, $A$ and $A^T$ have the same Jordan canonical form. Thus, $A$ and $A^T$ are similar.
 \end{proof}
 
 \medskip
@@ -3439,7 +3439,7 @@ For any subspace $Y\subset X$, we have
 \begin{proof}
 Let $y_1,\cdots,y_k$ be an orthogonal basis of $Y$. We can expend it to a basis of $X$: $y_1,\cdots,y_k$, $\widetilde{y_{k+1}}, \cdots, \widetilde{y_{n}}$. With Gram-Schmidt theorem, we obtain an orthonormal basis $y_1,\cdots,y_k,y_{k+1},\cdots,y_n$ of $X$. 
 
-We claim that $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Indeed, ${\rm span}\{y_{k+1},\cdots,y_n\}\subset Y^\perp$ and $\dim Y^\perp = n-k$, and then they are equal.
+We claim that $Y^\perp = {\rm span}\{y_{k+1},\cdots,y_n\}$. Indeed, ${\rm span}\{y_{k+1},\cdots,y_n\}\subset Y^\perp$ and $\dim  Y^\perp = n-k$, and then they are equal.
 \end{proof}
 
 \medskip
@@ -3893,7 +3893,7 @@ then we have
 Let $X$ be an Euclidean space and suppose $X$ is locally compact in the sense that any bounded sequence has a convergent subsequence. Then $X$ is of finite dimension.
 \end{theorem}
 \begin{proof}
-Assume $\dim X = \infty$, then there exists a sequence $\{x_k\}^\infty_{k=1}$ and any finite set of vectors are linearly independent (otherwise $X$ will be finite-dimensional). Then there exists $\{e_k\}^\infty_{k=1}$ such that $(e_i, e_j) = \delta_{ij}$. And for any $i\neq j$, we have $\|e_i - e_j\|^2  = 2$. 
+Assume $\dim  X = \infty$, then there exists a sequence $\{x_k\}^\infty_{k=1}$ and any finite set of vectors are linearly independent (otherwise $X$ will be finite-dimensional). Then there exists $\{e_k\}^\infty_{k=1}$ such that $(e_i, e_j) = \delta_{ij}$. And for any $i\neq j$, we have $\|e_i - e_j\|^2  = 2$. 
 
 Thus, $\{e_k\}^\infty_{k=1}$ has no convergent subsequence, which is a contradiction.
 \end{proof}
@@ -3917,7 +3917,7 @@ In finite-dimensional spaces, then $\lim_{n\to\infty}A_n = A$ if and only if, fo
     \end{align*}
     \item ($\Leftarrow$) 
     \begin{enumerate}[label=(\alph*)]
-        \item First, we show that $\{A_n\}$ is bounded. Let $\{e_i\}$ be an orthogonal basis of $X$. For each $e_i, 1\leq i\leq \dim X = N$, we have
+        \item First, we show that $\{A_n\}$ is bounded. Let $\{e_i\}$ be an orthogonal basis of $X$. For each $e_i, 1\leq i\leq \dim  X = N$, we have
         \begin{align*}
             \lim_{n\to\infty} A_n e_i = A e_i,
         \end{align*}
@@ -4058,7 +4058,7 @@ $M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$\left|
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) Since $M$ is isometric, then we have $(x,y) = (Mx, My) = (M^* M x, y)$, which implies $M^* M = I$.
     
-    Also, $\det M \det M^* = 1$ and $\det M = \det \overline{M}^T = \overline{\dim M}$. Thus, we have $|\det M| = 1$.
+    Also, $\det M \det M^* = 1$ and $\det M = \det \overline{M}^T = \overline{\dim  M}$. Thus, we have $|\det M| = 1$.
     \item ($\Leftarrow$) If $M^*M = 1$, then we have
     \begin{align*}
         (x,y) = (M^* M x, y) = (Mx, My)
@@ -4346,7 +4346,7 @@ Using (\ref{quadrtic_form}), we conclude that $M^*HM = D$.
 
 
 \begin{remark}
-With the theorem abovem, $X = \oplus_{\lambda_i}N_{(H-\lambda_i I)}$. We can pick orthogonal basis for $N_{(H-\lambda_i I)}$ for each $\lambda_i$, then we get orthogonal basis.
+With the theorem above, $X = \bigoplus_{\lambda_i}N_{(H-\lambda_i I)}$. We can pick orthogonal basis for $N_{(H-\lambda_i I)}$ for each $\lambda_i$, then we get orthogonal basis.
 \end{remark}
 
 \medskip
@@ -4360,11 +4360,11 @@ We pick an orthogonal basis of $X$ and $H$ can be represented by a matrix $A$ if
 We claim $\sigma(A) = \sigma \left(\widetilde{A}\right)$ and $$N_{(A - \lambda I)} = \Re N_{\left(\widetilde{A} - \lambda I\right)}.$$
 Indeed, $\widetilde{A}$ can be diagonalized by a unitary matrix $U$ such that $A = U\Lambda U^{-1}$, where $\Lambda$ is a real diagonal matrix. Then, $A$ can be diagonalized by a real matrix $M$ such that $A = M\Lambda M^{-1}$. Thus, the eigenvalues of $A$ are all real. Ans since
 \begin{align*}
-    \dim_{\mathbb{R}} N_{(A - \lambda I)} = \dim_{\mathbb{C}} N_{\left(\widetilde{A} - \lambda I\right)},
+    \dim \,_{\mathbb{R}} N_{(A - \lambda I)} = \dim \,_{\mathbb{C}} N_{\left(\widetilde{A} - \lambda I\right)},
 \end{align*}
 we have 
 \begin{align*}
-    \mathbb{R}^n = \oplus_{\lambda \in \sigma(A)} N_{(A - \lambda I)}.
+    \mathbb{R}^n = \bigoplus_{\lambda \in \sigma(A)} N_{(A - \lambda I)}.
 \end{align*}
 Thus, we can find a set of eigenvectors that form an orthogonal basis of $\mathbb{R}^n$.
 \end{proof}
@@ -4429,20 +4429,20 @@ for some constants $d_i$. Then the numbers of positive, negative and zero terms 
 \begin{proof}
 Let $p_+, p_-$ and $p_0$ be the numbers of positive, negative and zero terms of $d_i$. Let $S$ be a subspace of $\mathbb{R}^n$, we say $q > 0$ on $S$ if for all $u\in S, u\neq 0$, $q(u) > 0$.
 
-We claim that $$p_+ = \max_{q > 0\,\, {\rm on}\,\, S} \dim S. $$
+We claim that $$p_+ = \max_{q > 0\,\, {\rm on}\,\, S} \dim  S. $$
 Let $S = L^{-1}\left({\rm span}\{e_i, d_i > 0\} \right)$, then $
-\dim S = p_+, q > 0\,\, {\rm on}\,\, S$. 
+\dim  S = p_+, q > 0\,\, {\rm on}\,\, S$. 
 \begin{enumerate}[label=(\alph*)]
     \item For $y\in S$, $y = L^{-1}x$, where $x = \sum_{d_i > 0} d_i c_i^2$, then 
     \begin{align*}
         q(y) = q\left(L^{-1}x\right) = \sum^n_{i=1} d_i x_i^2 = \sum_{d_i > 0} d_i c_i^2 \geq 0.
     \end{align*}
-    Thus, we have $p_+ \leq \max \dim S$.
-    \item Let $S$ be any subspace with $\dim S > p_+$, we claim that $q$ cannot be positive on $S$. For all $u\in S$, we have $Lu = \sum^n_{i=1}u_i e_i$. 
+    Thus, we have $p_+ \leq \max \dim  S$.
+    \item Let $S$ be any subspace with $\dim  S > p_+$, we claim that $q$ cannot be positive on $S$. For all $u\in S$, we have $Lu = \sum^n_{i=1}u_i e_i$. 
     
     Define $pu = L^{-1}\left(\sum_{d_i>0}u_i e_i \right)$, which is a projection. Then we have
     \begin{align*}
-        \dim ps \leq p_+ < \dim S.
+        \dim  ps \leq p_+ < \dim  S.
     \end{align*}
     Then there exists $y\in S, y\neq 0$, such that $Lpy = 0$. Assume $L = I$, then $py = 0$, which implies $q(y) = 0$. 
 \end{enumerate}
@@ -4465,7 +4465,7 @@ The set of eigenvalues of $H$ is called the spectral of $H$.
 
 Projections can be used to describe direct-sum decompositions of the space $X$\cite{33}. Let $H$ be a self-adjoint map from $X$ into $X$, then we have 
 \begin{align*}
-    X = \oplus_{\lambda_j \in \sigma(H)}N_{H - \lambda_j I}.
+    X = \bigoplus_{\lambda_j \in \sigma(H)}N_{H - \lambda_j I}.
 \end{align*}
 Hence, $N(\lambda_j) = N_{H - \lambda_j I}$ are orthogonal subspaces. Let $\lambda_j, 1\leq j\leq k$ be distinct eigenvalues. For any $x\in X$, then $x$ can be represented as $x = \sum^k_{j=1}x_j$, where $x_j\in N(\lambda_j)$. We say $x_j$ is orthogonal projection of $X$ to $N(\lambda_j)$, i.e., 
 \begin{align*}
@@ -4551,7 +4551,7 @@ Let $H, K$ be two self-adjoint matrices that commute. Then they have a common re
 where $\lambda_j\in\sigma(H), \mu_j\in\sigma(K)$.
 \end{theorem}
 \begin{proof}
-Since $X = \oplus^l_{j=1} N\left(\lambda_j\right)$, where $\lambda_j, 1\leq j\leq l$ are distinct eigenvalue of $H$. We claim $N\left(\lambda_j\right)$ is invariant under $K$, i.e., $K: N\left(\lambda_j\right) \to N\left(\lambda_j\right)$. 
+Since $X = \bigoplus^l_{j=1} N\left(\lambda_j\right)$, where $\lambda_j, 1\leq j\leq l$ are distinct eigenvalue of $H$. We claim $N\left(\lambda_j\right)$ is invariant under $K$, i.e., $K: N\left(\lambda_j\right) \to N\left(\lambda_j\right)$. 
 
 Indeed, for any $x\in N\left(\lambda_j\right)$, $HKx = KH x = \lambda_j Kx$, which implies $Kx$ is also an eigenvector of $H$. So $k$ maps $N\left(\lambda_j\right)$ into $N\left(\lambda_j\right)$, we now apply spectral resolution of $K$ over $N\left(\lambda_j\right)$, which gives us the theorem.
 \end{proof}
@@ -4696,7 +4696,7 @@ Every eigenvector $x$ of $H$ is a critical point of $R_H$, that is, the first de
 \begin{theorem}\label{minimax_principle}
 Let $H$ be a self-adjoint map of a Euclidean space $X$ of finite dimension. Denote the eigenvalues of $H$, arranged in increasing order by $\lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_n$. Then,
 \begin{align*}
-    \lambda_j = \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\},
+    \lambda_j = \min_{\dim  S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\},
 \end{align*}
 where $S$ is a linear subspace of $X$.
 \end{theorem}
@@ -4711,16 +4711,16 @@ Let $S_j = {\rm span} \{x_1,\cdots,x_j\}$, then
 \end{align*}
 which implies 
 \begin{align*}
-    \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \leq \lambda_j.
+    \min_{\dim  S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \leq \lambda_j.
 \end{align*}
 
-Next, given any $S$ with $\dim S = j$, we need to show $\max_{x\in S, x\neq 0} R_H(x) \geq \lambda_j$. It suffices to show that there exists $x\in S$, such that the projection of $x$ on $S_{j-1}$ is zero. Denote the projection by $P:S_j\to S_{j-1}$, with Rank-Nullity theorem, there exists $x^* = \sum_{k\geq j}c_k x_k \in S, x^*\neq 0$ such that $Px^* = 0$. Hence, we have
+Next, given any $S$ with $\dim  S = j$, we need to show $\max_{x\in S, x\neq 0} R_H(x) \geq \lambda_j$. It suffices to show that there exists $x\in S$, such that the projection of $x$ on $S_{j-1}$ is zero. Denote the projection by $P:S_j\to S_{j-1}$, with Rank-Nullity theorem, there exists $x^* = \sum_{k\geq j}c_k x_k \in S, x^*\neq 0$ such that $Px^* = 0$. Hence, we have
 \begin{align*}
     \max_{x\in S, x\neq 0} \frac{(x,Hx)}{(x,x)} \geq \frac{(x^*, Hx^*)}{(x^*,x^*)} = \frac{\sum_{k\geq j}\lambda_k |c_k|^2}{\sum_{k\geq j} |c_k|^2} \geq \lambda_j.
 \end{align*}
 since $S$ is arbitrary subspace of dimension $j$, then we have
 \begin{align*}
-    \min_{\dim S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \geq \lambda_j.
+    \min_{\dim  S=j} \left\{ \max_{x\in S, x\neq 0} R_H(x) \right\} \geq \lambda_j.
 \end{align*}
 Thus we complete the theorem.
 \end{proof}
@@ -4728,7 +4728,7 @@ Thus we complete the theorem.
 \begin{remark}
 Eigenvalues $\lambda_1 \leq \cdots \leq \lambda_n$ of a self-adjoint map $H$ can also be characterized as 
 \begin{align*}
-    \lambda_k = \max_{\dim S = n - k + 1} \left\{ \min_{x\in S, x\neq 0} R_H(x) \right\}.
+    \lambda_k = \max_{\dim  S = n - k + 1} \left\{ \min_{x\in S, x\neq 0} R_H(x) \right\}.
 \end{align*}
 In particular, the simpler formula for the maximal and minimal eigenvalues can be given by
 \begin{align*}
@@ -4853,7 +4853,7 @@ $$A = UTU^*$$
 for some upper triangular matrix $T$.
 \end{theorem}
 \begin{proof}
-First we pick $\lambda_1\in\sigma(A)$ and let $N_1 = N_{(A - \lambda_1 I)}$. Assume $k_1 = \dim N_1 \geq 1$, then there exists orthogonal basis $\{x_1,\cdots,x_{k_1}\}$ for $N_1$. We can complete this basis to an orthogonal basis $\{x_1,\cdots,x_{k_1},x_{k_1+1},\cdots,x_n\}$ of $\mathbb{C}^n$. Let $U_1 = (x_1,\cdots,x_n)$, where $x_j$ is $j$th column of the matrix $U_1$, and 
+First we pick $\lambda_1\in\sigma(A)$ and let $N_1 = N_{(A - \lambda_1 I)}$. Assume $k_1 = \dim  N_1 \geq 1$, then there exists orthogonal basis $\{x_1,\cdots,x_{k_1}\}$ for $N_1$. We can complete this basis to an orthogonal basis $\{x_1,\cdots,x_{k_1},x_{k_1+1},\cdots,x_n\}$ of $\mathbb{C}^n$. Let $U_1 = (x_1,\cdots,x_n)$, where $x_j$ is $j$th column of the matrix $U_1$, and 
 \begin{align*}
     Ax_j & = \lambda_1 x_j, 1\leq j\leq k_1 \\
     Ax_j & = \sum^n_{k=1}b_{kj} \lambda_k, k_1+1\leq j\leq n. 
@@ -4885,7 +4885,7 @@ Then we have
     \end{pmatrix} U_1^*.
 \end{align*}
 
-Second, let $\lambda_2\in \sigma(B_{22})$, and $k_2 = \dim N_2$, where $N_2 = N_{(B_{22}-\lambda_2 I)}$. Then there exists unitary matrix $U_2$ such that 
+Second, let $\lambda_2\in \sigma(B_{22})$, and $k_2 = \dim  N_2$, where $N_2 = N_{(B_{22}-\lambda_2 I)}$. Then there exists unitary matrix $U_2$ such that 
 \begin{align*}
     B_{22} = U_2 \begin{pmatrix}
     \lambda_2 I_{k_2} & C_{12} \\
@@ -5624,7 +5624,7 @@ It follows from Sylvester’s Law of Inertia \ref{Law_of_Inertia} and minimax pr
 \medskip
 
 \begin{theorem}\label{orthogonal_dimension}
-Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself and $V$ be a subspace of $U$ with $\dim V = \dim U - 1$. Denote by $P$ the orthogonal projection onto $V$. The $PAP$ is a self-adjoint map of $U$ into $U$ that maps $V$ into $V$, we denote by $B$ the restriction of $PAP$ to $V$, i.e. $B = PAP|_V$. Then,
+Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself and $V$ be a subspace of $U$ with $\dim  V = \dim  U - 1$. Denote by $P$ the orthogonal projection onto $V$. The $PAP$ is a self-adjoint map of $U$ into $U$ that maps $V$ into $V$, we denote by $B$ the restriction of $PAP$ to $V$, i.e. $B = PAP|_V$. Then,
 \begin{align*}
     p_+(A) - 1 \leq p_+(B) \leq p_+(A), \\
     p_-(A) - 1 \leq p_-(B) \leq p_-(A).
@@ -5638,13 +5638,13 @@ Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself and $V$ be a 
     \end{align*}
     Then $p_+(B) \leq p_+(A)$.
     
-    \item To estimate $p_+(B)$ from below, let $S$ be a subspace of $U$ of dimension $p_+(A)$ on which $A$ is positive. Let $T = S \cap V$, then we claim $\dim T \geq \dim S - 1$. Indeed, if $S$ is a subspace of $V$, then $T = S$ and $\dim T = \dim S$. If not, choose a basis $\{s_1, \cdots, s_k\}$ in $S$. At least one of these does not belong to $V$, say $s_1$. This means that $s_1$ has a nonzero component orthogonal to $V$. Then we can choose scalars $a_2, \cdots, a_k$ such that
+    \item To estimate $p_+(B)$ from below, let $S$ be a subspace of $U$ of dimension $p_+(A)$ on which $A$ is positive. Let $T = S \cap V$, then we claim $\dim  T \geq \dim  S - 1$. Indeed, if $S$ is a subspace of $V$, then $T = S$ and $\dim  T = \dim  S$. If not, choose a basis $\{s_1, \cdots, s_k\}$ in $S$. At least one of these does not belong to $V$, say $s_1$. This means that $s_1$ has a nonzero component orthogonal to $V$. Then we can choose scalars $a_2, \cdots, a_k$ such that
     \begin{align*}
         s_2 - a_2 s_1, \cdots, s_k - a_k s_1
     \end{align*}
     belong to $V$. They are linearly independent, since $s_1, \cdots, s_k$ are linearly independent. It follows that 
     \begin{align*}
-        \dim S - 1 \leq \dim T.
+        \dim  S - 1 \leq \dim  T.
     \end{align*}
     
     We claim that $B$ is positive on $T$. Take any $v \neq 0$ in $T$, then
@@ -5653,7 +5653,7 @@ Let $A$ be a self-adjoint map of a Euclidean space $U$ into itself and $V$ be a 
     \end{align*}
     since $v$ belongs to $V$. Also, $v$ belongs to $S$, then $(Av, v) > 0$.
     
-    Since $p_+(B)$ is defined as the dimension of the largest subspace on which $B$ is positive, then $\dim T \leq p_+(B)$, and since $\dim T \geq \dim S - 1$, then $p_+(A) - 1 \leq p_+(B)$. The other inequality can be proved similarly. 
+    Since $p_+(B)$ is defined as the dimension of the largest subspace on which $B$ is positive, then $\dim  T \leq p_+(B)$, and since $\dim  T \geq \dim  S - 1$, then $p_+(A) - 1 \leq p_+(B)$. The other inequality can be proved similarly. 
     \end{enumerate}
 \end{proof}
 
@@ -5675,8 +5675,8 @@ Let $M$ and $N$ denote self-adjoint matrix satisfying $M < N$. Denote the eigenv
 \begin{proof}
 With minimax principle,
 \begin{align*}
-    \lambda_j & = \min_{\dim S=j} \max_{x\in S, x\neq 0} \frac{(x, Mx)}{(x,x)}, \\
-    \mu_j & = \min_{\dim S=j} \max_{x\in S, x\neq 0} \frac{(x, Nx)}{(x,x)}.
+    \lambda_j & = \min_{\dim  S=j} \max_{x\in S, x\neq 0} \frac{(x, Mx)}{(x,x)}, \\
+    \mu_j & = \min_{\dim  S=j} \max_{x\in S, x\neq 0} \frac{(x, Nx)}{(x,x)}.
 \end{align*}
 Let $T$ be the subspace of dimension $j$, then
 \begin{align*}
@@ -6418,7 +6418,7 @@ $R_v^2 = I$ and $R_v$ is symmetric, then $R_v$ is orthogonal.
 $R_v$ has one eigenvalue $-1$ and $n-1$ eigenvalues $1$.
 \end{remark}
 \begin{proof}
-From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ is a reflection about the hyperplane $Q$ in $\mathbb{R}^n$ which is orthogonal to $u$, let $W = {\rm  span}\{u\}$, then every vector in $\mathbb{R}^n\setminus W$ is orthogonal to $u$. And $\dim \mathbb{R}^n\setminus W = n - 1$, then we can choose $n - 1$ vectors which form a basis for $\mathbb{R}^n\setminus W$, say $\{w_1, \cdots, w_{n-1}\}$. For $u$, $R_v u = - u$, then the corresponding eigenvalue is $-1$. For $w_1, \cdots, w_{n-1}$, $R_V w_i = w_i, i = 1, \cdots, n-1$, then the corresponding eigenvalue is $1$.
+From $R_v^2 = I$, $R_v$ only has eigenvalues $1$ and $-1$. Also, suppose $R_v$ is a reflection about the hyperplane $Q$ in $\mathbb{R}^n$ which is orthogonal to $u$, let $W = {\rm  span}\{u\}$, then every vector in $\mathbb{R}^n\setminus W$ is orthogonal to $u$. And $\dim  \mathbb{R}^n\setminus W = n - 1$, then we can choose $n - 1$ vectors which form a basis for $\mathbb{R}^n\setminus W$, say $\{w_1, \cdots, w_{n-1}\}$. For $u$, $R_v u = - u$, then the corresponding eigenvalue is $-1$. For $w_1, \cdots, w_{n-1}$, $R_V w_i = w_i, i = 1, \cdots, n-1$, then the corresponding eigenvalue is $1$.
 \end{proof}
 
 \medskip
@@ -6456,11 +6456,11 @@ Every orthogonal mapping on $\mathbb{R}^n, n \geq 1$, that is not identity is th
 \begin{proof}
 We prove by induction on $n$. When $n = 1$, the reflection $R$ is either identity or $-$id. Indeed, $R$ is $-1$ for $x \in \mathbb{R} \setminus \{0\}$, which is a reflection about $\{0\}$ and $1$ for $x = 0$. When $n \geq 2$, we have $R \circ R = I$ for every reflection $R$. Consider the case $n \geq 2$ and $R$ is not the identity. There are two subcases.
 \begin{enumerate}[label=(\alph*)]
-    \item $R$ admits $1$ as an eigenvalue, then there exists a nonzero unit vector $w$, such that $Rw = w$. Let $H$ be the hyperplane orthogonal to $w$, so that $\mathbb{R}^n = H \oplus {\rm span}\{w\}$. We claim $R(H) \subset H$. Indeed, if $(x, w) = 0$, for any $x \in H$, then we have 
+    \item $R$ admits $1$ as an eigenvalue, then there exists a nonzero unit vector $w$, such that $Rw = w$. Let $H$ be the hyperplane orthogonal to $w$, so that $\mathbb{R}^n = H \oplus \,{\rm span}\,\{w\}$. We claim $R(H) \subset H$. Indeed, if $(x, w) = 0$, for any $x \in H$, then we have 
     \begin{align*}
         (R(x), R(w)) = (x, R^* R(w)) = (x, R^2 w) = (x, w) = 0,
     \end{align*}
-    since $R$ is self-adjoint, and thus $R(x) \in H$. Since $\dim H = n - 1$, by the induction hypothesis applied to $H$, there are at most $k \leq n - 1$ reflections $R_1, \cdots, R_k$ about some hyperplane $H_1, \cdots, H_k$ in $H$, such that $R|_H = R_k \circ \cdots \circ R_1$. Each $R_i$ can be extended to a reflection in $\mathbb{R}^n$ as follows: If $H = H_i \oplus L_i$ (where $L_i = H_i^\bot$, the orthogonal complement of $H_i$ in $H$), $L = {\rm span}\{w\}$ and $F_i = H_i \oplus L$, since $H$ and $L$ are orthogonal, $F_i$ is indeed a hyperplane. Also, $\mathbb{R}^n = F_i \oplus L_i = H_i \oplus L \oplus L_i$, and for every $u = h + \lambda w \in H \oplus L$, with the fact that
+    since $R$ is self-adjoint, and thus $R(x) \in H$. Since $\dim  H = n - 1$, by the induction hypothesis applied to $H$, there are at most $k \leq n - 1$ reflections $R_1, \cdots, R_k$ about some hyperplane $H_1, \cdots, H_k$ in $H$, such that $R|_H = R_k \circ \cdots \circ R_1$. Each $R_i$ can be extended to a reflection in $\mathbb{R}^n$ as follows: If $H = H_i \oplus L_i$ (where $L_i = H_i^\bot$, the orthogonal complement of $H_i$ in $H$), $L = {\rm span}\{w\}$ and $F_i = H_i \oplus L$, since $H$ and $L$ are orthogonal, $F_i$ is indeed a hyperplane. Also, $\mathbb{R}^n = F_i \oplus L_i = H_i \oplus L \oplus L_i$, and for every $u = h + \lambda w \in H \oplus L$, with the fact that
     \begin{align}\label{reflection_as_projection}
         R_i(h) = p_{H_i}(h) - p_{L_i}(h),
     \end{align}
@@ -6508,7 +6508,7 @@ For case (a), we could also define $R_i$ on $\mathbb{R}^n$ as simple as $R_i(\la
     
     If $1$ is not an  eigenvalue of $R$, then $R$ is the composition of $k \leq n$ reflections about hyperplanes $H, F_1, \cdots, F_{k-1}$, such that $F_i = H \oplus L$, where $L$ is a line intersecting $H$ and  $H_i$ are subspaces of dimension $n - 2$ that are orthogonal to $L$. 
     
-    \item Every orthogonal mapping $Q$ is the composition of $k$ hyperplane reflections when $k = n - \dim N_{Q-I}$, and this number is minimal. 
+    \item Every orthogonal mapping $Q$ is the composition of $k$ hyperplane reflections when $k = n - \dim  N_{Q-I}$, and this number is minimal. 
 \end{enumerate}
 \end{remark}
 
@@ -6991,7 +6991,7 @@ Let $p$ be a real-valued positive homogeneous subadditive function defined on a 
 Then, $l$ can be extended to all of $X$ such that (\ref{subadditive_function}) is satisfied for all $x$.
 \end{theorem}
 \begin{proof}
-We prove it by induction, we can show that $l$ can be extended to a subspace $V$ spanned by $U$ and any vector $z \notin U$. Need to define $l(z) = a$, such that (\ref{subadditive_function}) is satisfies for $U \oplus {\rm span}\{z\}$, i.e., for $y = u + z, u \in U$, $l(y) \leq p(y)$.
+We prove it by induction, we can show that $l$ can be extended to a subspace $V$ spanned by $U$ and any vector $z \notin U$. Need to define $l(z) = a$, such that (\ref{subadditive_function}) is satisfies for $U \oplus \,{\rm span}\,\{z\}$, i.e., for $y = u + z, u \in U$, $l(y) \leq p(y)$.
 
 Then, for $u, v \in U$, we need 
 \begin{align*}
@@ -7002,7 +7002,7 @@ which are equivalent to
 \begin{align*}
     l(v) - p(v - z) \leq a \leq p(u + z) -l(u),
 \end{align*}
-and we need $l(v) - p(v - z) \leq p(u + z) -l(u)$. This holds since $p(v - z) + p(u + z) \geq p(u + v) \geq l(u + v) = l(u) + l(v)$. Then, such $a$ exists and $l$ can be extended to $U \oplus {\rm span}\{z\}$. By induction, $l$ can be extended to $X'$.
+and we need $l(v) - p(v - z) \leq p(u + z) -l(u)$. This holds since $p(v - z) + p(u + z) \geq p(u + v) \geq l(u + v) = l(u) + l(v)$. Then, such $a$ exists and $l$ can be extended to $U \oplus \,{\rm span}\, \{z\}$. By induction, $l$ can be extended to $X'$.
 \end{proof}
 
 \medskip
@@ -7215,16 +7215,16 @@ A convex set $K$ is called bounded if it does not contain a ray, that is, a set 
 \medskip
 
 \begin{theorem}[Carathéodory's theorem]
-Let $K$ be a nonempty closed bounded convex set in $X$, $\dim X = n$. Then every point of $K$ can be represented as a convex combination of at most $n + 1$ extreme points of $K$.
+Let $K$ be a nonempty closed bounded convex set in $X$, $\dim  X = n$. Then every point of $K$ can be represented as a convex combination of at most $n + 1$ extreme points of $K$.
 \end{theorem}
 \begin{proof}
 Prove it by induction on the dimension of $X$.
 \begin{enumerate}[label=(\alph*)]
     \item $n = 1$ is trivial.
     
-    \item Suppose it holds for $\dim K \leq n - 1$. We distinguish two cases:
+    \item Suppose it holds for $\dim  K \leq n - 1$. We distinguish two cases:
     \begin{enumerate}[label = \arabic*)]
-        \item {\em $K$ has no interior points}. Suppose $0 \in K$, which can always be done by shifting $K$. We claim that $K$ does not contain $n$ linearly independent vectors. Indeed, if it does, the convex combination of these $n$ vectors and the origin would also belong to $K$. However, these points form an $n$-dimensional simplex, full of interior points. Let $m$ be the largest number of linearly independent vectors in $K$, and let $x_1, \cdots, x_m$ be $m$ linearly independent vectors. Then, $m \leq n - 1$, and being maximal implies every other vector in $K$  is a linear combination of $x_1, \cdots, x_m$. This proves that $K$ is contained in an $m$-dimensional subspace of $X$. Thus, when adding one more dimension to $K$ such that $\dim K = n$, for any $x \in K$, $x$ can be a convex combination of at most $m + 1 \leq n + 1$ extreme points. 
+        \item {\em $K$ has no interior points}. Suppose $0 \in K$, which can always be done by shifting $K$. We claim that $K$ does not contain $n$ linearly independent vectors. Indeed, if it does, the convex combination of these $n$ vectors and the origin would also belong to $K$. However, these points form an $n$-dimensional simplex, full of interior points. Let $m$ be the largest number of linearly independent vectors in $K$, and let $x_1, \cdots, x_m$ be $m$ linearly independent vectors. Then, $m \leq n - 1$, and being maximal implies every other vector in $K$  is a linear combination of $x_1, \cdots, x_m$. This proves that $K$ is contained in an $m$-dimensional subspace of $X$. Thus, when adding one more dimension to $K$ such that $\dim  K = n$, for any $x \in K$, $x$ can be a convex combination of at most $m + 1 \leq n + 1$ extreme points. 
         
         \item {\em $K$ has interior points}. Let $K_0$ be the set of all interior points of $K$. Then $K_0$ is open and convex. We claim that $K$ has boundary points since $K$ is closed\footnote{Let $S \subset \mathbb{R}^n$, $S$ is called closed if it contains all of its boundary points\cite{38}.}. Indeed, any ray starting from an interior point of $K$ intersects $K$ in an interval and since $K$ is closed, the other endpoint is a boundary point $y$ of $K$.
         
@@ -7489,7 +7489,7 @@ Let $S$ be an entrywise positive stochastic matrix. Then,
     \end{align*}
     then by part (d) in Theorem \ref{Perron_Theorem}, $1$ is dominant eigenvalue of $S^T$. All other eigenvalues of $S^T$ has absolute value strictly smaller than $1$. Also, $S$ and $S^T$ have the same eigenvalues. Thus, $\lambda(S) = 1$ is the dominant eigenvalue of $S$.
     
-    \item Let $\lambda_1 = \lambda(S) = 1$, and $\lambda_2, \cdots, \lambda_k$ be other distinct eigenvalues. Then, $\mathbb{C}^n = \oplus^k_{i=1} N_i(\lambda_i)$, where $N_i(\lambda_i) = N_{S - \lambda_i I}$. Then, $x$ can be expanded as a sum of eigenvector $h_j$ of $S$:
+    \item Let $\lambda_1 = \lambda(S) = 1$, and $\lambda_2, \cdots, \lambda_k$ be other distinct eigenvalues. Then, $\mathbb{C}^n = \bigoplus^k_{i=1} N_i(\lambda_i)$, where $N_i(\lambda_i) = N_{S - \lambda_i I}$. Then, $x$ can be expanded as a sum of eigenvector $h_j$ of $S$:
     \begin{align*}
         x = \sum^k_{i=1} x_i,
     \end{align*}
@@ -7653,7 +7653,7 @@ Two norms in a finite-dimensional linear space $X$, $\|\cdot\|_1$ and $\|\cdot\|
 In a finite-dimensional linear space, all norms are equivalent.
 \end{theorem}
 \begin{proof}
-Any finite-dimensional linear space $X$ over $\mathbb{R}$ is isomorphism to $\mathbb{R}^n$, $\dim X = n$, so we can take $x \in \mathbb{R}^n$. Let $\|\cdot\|_2$ be the Euclidean norm, then for $x = (x_1, x_2, \cdots, x_n)$,
+Any finite-dimensional linear space $X$ over $\mathbb{R}$ is isomorphism to $\mathbb{R}^n$, $\dim  X = n$, so we can take $x \in \mathbb{R}^n$. Let $\|\cdot\|_2$ be the Euclidean norm, then for $x = (x_1, x_2, \cdots, x_n)$,
 \begin{align*}
     \|x\|_2 = \left(\sum^n_{i=1} x_i^2 \right)^{1/2},
 \end{align*}
@@ -7983,13 +7983,13 @@ Let $X$ and $Y$ be finite-dimensional normed linear spaces of the same dimension
 then $S$ is invertible.
 \end{theorem}
 \begin{proof}
-For $T \in \mathscr{L}(X, Y)$ and $T$ is invertible, then $\dim X = \dim Y$. To show that $S$ is invertible, it suffices to show that $S$ is one-to-one.
+For $T \in \mathscr{L}(X, Y)$ and $T$ is invertible, then $\dim  X = \dim  Y$. To show that $S$ is invertible, it suffices to show that $S$ is one-to-one.
 
 Suppose $Sx_0 = 0, x_0 \in X$ for some $x_0 \neq 0$. Then. $Tx_0 = (T - S)x_0 + Sx_0 = (T - S)x_0$, and then $x_0 = T^{-1} (T - S)x_0$. Then we have
 \begin{align*}
     \|x_0\|_X = \left\|T^{-1}(T - S)x_0\right\|_X \leq \left\|T^{-1}\right\| \left\|T - S\right\| \left\| x_0\right\|_X < \left\| x_0\right\|_X,
 \end{align*}
-which is a contradiction and hence $x_0 = 0$. Thus, $S \in \mathscr{L}(X,Y)$ is one-to-one and $\dim X = \dim Y$, hence by Theorem \ref{one_to_one_theorem}, $S$ is invertible.
+which is a contradiction and hence $x_0 = 0$. Thus, $S \in \mathscr{L}(X,Y)$ is one-to-one and $\dim  X = \dim  Y$, hence by Theorem \ref{one_to_one_theorem}, $S$ is invertible.
 \end{proof}
 
 \medskip
@@ -8134,7 +8134,7 @@ Conversely, by Theorem \ref{th_157}, there is a basis $B$ such that $L \subset B
 \medskip
 
 \begin{theorem}
-Let $X$ be an infinite dimensional space. Then the cardinalities $\left|X'\right| > \left|X\right|$ and the dimensions $\dim X' > \dim X$.
+Let $X$ be an infinite dimensional space. Then the cardinalities $\left|X'\right| > \left|X\right|$ and the dimensions $\dim  X' > \dim  X$.
 \end{theorem}
 
 
@@ -8229,8 +8229,8 @@ Consider a polynomial $X(t):\mathbb{C}\to\mathbb{C}$. Let $V$ be vector space fo
 \begin{exercise}\label{ex_2}
 Let $U, V$ and $W$ be subspaces of a finite-dimensional vector space $X$. Is the statement
 \begin{align*}
-    {\rm dim}(U + V + W) & = {\rm dim} U + {\rm dim} V + {\rm dim} W - {\rm dim}(U \cap V) - {\rm dim}(U \cap W) \\
-    & - {\rm dim}(V \cap W) + {\rm dim}(U \cap V \cap W)
+     \dim \,(U + V + W) & =  \dim  U +  \dim  V +  \dim  W -  \dim \,(U \cap V) -  \dim \,(U \cap W) \\
+    & -  \dim \,(V \cap W) +  \dim \,(U \cap V \cap W)
 \end{align*}
 true or false? If true, prove it. If false, provide a counterexample.
 \end{exercise}
@@ -8264,8 +8264,8 @@ $$U\cap (V + W) = U\cap V + W.$$
 Denote by $X$ the linear space of all polynomials $p(t)$ of degree less than $n$, and denote by $Y$ the subset of $X$ containing polynomials that are zero at distinct $t_1,t_2,\cdots,t_m\in K$, where $m < n$.
 \begin{enumerate}[label=(\alph*)]
     \item Show that $Y$ is a subspace of $X$.
-    \item Determine ${\rm dim}Y$ and find a basis of $Y$.
-    \item Determine ${\rm dim}X = Y$ and find a basis of $X/Y$.
+    \item Determine $ \dim \,Y$ and find a basis of $Y$.
+    \item Determine $ \dim \,X = Y$ and find a basis of $X/Y$.
 \end{enumerate}
 \end{exercise}
 \begin{proof}
@@ -8304,7 +8304,7 @@ Denote by $X$ the linear space of all polynomials $p(t)$ of degree less than $n$
 \begin{exercise}\label{ex_5}
 Let $U_1,U_2,\cdots,U_k$ be subspaces of a finite-dimensional linear space $X$ such that
 \begin{align*}
-    {\rm dim}\,U_1 = {\rm dim}\,U_2 = \cdots = {\rm dim}\,U_k
+     \dim \,\,U_1 =  \dim \,\,U_2 = \cdots =  \dim \,\,U_k
 \end{align*}
 Then there is a subspace $V$ of $X$ for which
 \begin{align*}
@@ -8312,13 +8312,13 @@ Then there is a subspace $V$ of $X$ for which
 \end{align*}
 \end{exercise}
 \begin{proof}
-If ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n$, then we can simply take $V = \emptyset$.
+If $ \dim \,\, U_1 = \cdots =  \dim \,\, U_k = n$, then we can simply take $V = \emptyset$.
 
-If ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n-1$, based on the fact that space $X$ cannot be a finite union of its proper subspace, there exists a $v \notin U_k$ for every $k$, and we can define the complement of $U_1, U_2, \cdots, U_k$ as $U^c = \text{span}(v)$.
+If $ \dim \,\, U_1 = \cdots =  \dim \,\, U_k = n-1$, based on the fact that space $X$ cannot be a finite union of its proper subspace, there exists a $v \notin U_k$ for every $k$, and we can define the complement of $U_1, U_2, \cdots, U_k$ as $U^c = \text{span}(v)$.
 
-Then we consider the case when ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = n-2$, also there exists a $v \notin U_k$ for every $k$. Then we can define a new subspace $\title{\Tilde{U}_i} = \text{span}(u_i,v)$ for $1 \leq i \leq k$, and we can immediately know that ${\rm dim}\, \Tilde{U}_i = n - 1$. Then we can get a complement of $\Tilde{U}_i$, denoted by $U_i^c$ and we have ${\rm dim}\, U_i^c = 1$. In particular, $v \notin U_i^c$, so we can take $\text{span} (U_i^c, v)$, which is dimension $2$ and a complement of $U_1, U_2, \cdots, U_k$.
+Then we consider the case when $ \dim \,\, U_1 = \cdots =  \dim \,\, U_k = n-2$, also there exists a $v \notin U_k$ for every $k$. Then we can define a new subspace $\title{\Tilde{U}_i} = \text{span}(u_i,v)$ for $1 \leq i \leq k$, and we can immediately know that $ \dim \,\, \Tilde{U}_i = n - 1$. Then we can get a complement of $\Tilde{U}_i$, denoted by $U_i^c$ and we have $ \dim \,\, U_i^c = 1$. In particular, $v \notin U_i^c$, so we can take $\text{span} (U_i^c, v)$, which is dimension $2$ and a complement of $U_1, U_2, \cdots, U_k$.
 
-Now we can continue this induction and consider ${\rm dim}\, U_1 = \cdots = {\rm dim}\, U_k = m, m < n$, and we can find $v \notin U_k$ for every $k$. Then we can define $\title{\Tilde{U}_i} = \text{span}(u_i,v)$ for $1 \leq i \leq k$, and we can immediately know that ${\rm dim}\, \Tilde{U}_i = m + 1$. Then we can get a complement of $\Tilde{U}_i$, denoted by $U_i^c$ and we have ${\rm dim}\, U_i^c = n - m - 1$. In particular, $v \notin U_i^c$, so we can take $\text{span} (U_i^c, v)$, which is dimension $n - m$ and a complement of $U_1, U_2, \cdots, U_k$.
+Now we can continue this induction and consider $ \dim \,\, U_1 = \cdots =  \dim \,\, U_k = m, m < n$, and we can find $v \notin U_k$ for every $k$. Then we can define $\title{\Tilde{U}_i} = \text{span}(u_i,v)$ for $1 \leq i \leq k$, and we can immediately know that $ \dim \,\, \Tilde{U}_i = m + 1$. Then we can get a complement of $\Tilde{U}_i$, denoted by $U_i^c$ and we have $ \dim \,\, U_i^c = n - m - 1$. In particular, $v \notin U_i^c$, so we can take $\text{span} (U_i^c, v)$, which is dimension $n - m$ and a complement of $U_1, U_2, \cdots, U_k$.
 \end{proof}
 
 \medskip
@@ -8391,11 +8391,11 @@ Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $A: V \to V$ 
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item First, $V = R_A \oplus N_A$ since $R_A \cap N_A = \{0\}$ and $\dim V = \dim R_A + \dim N_A$.
+    \item First, $V = R_A \oplus N_A$ since $R_A \cap N_A = \{0\}$ and $\dim  V = \dim  R_A + \dim  N_A$.
     
     Second, it is trivial $A(R_A) \subset R_A$ since $Ax \in R_A$ for any $x \in R_A$. And it follows that $A(N_A) \subset N_A$, since $A(N_A) = 0 \subset N_A$.
     
-    \item* First, $\dim R_A + \dim N_A = 2$. Since $R_A \cap N_A \neq \emptyset$, then $\dim R_A = \dim N_A = 1$. Then, $R_A = N_A$.
+    \item* First, $\dim  R_A + \dim  N_A = 2$. Since $R_A \cap N_A \neq \emptyset$, then $\dim  R_A = \dim  N_A = 1$. Then, $R_A = N_A$.
     
     Second, we can assume $x \in R_A$ and $x \neq 0$, so there exists $y \in V$ such that $Ay = x$ and $Ax = 0$. Pick $x = e_1$ and $y = e_2$ would yields $A = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$.
 \end{enumerate}
@@ -8454,7 +8454,7 @@ Let $X$ be a finite dimensional linear space. Show that two nonzero linear funct
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Let $Y$ be a finite dimensional subspace of (not necessarily finite dimensional) linear space $X$. Show that $Y'$ is isomorphism to $X'/Y^\bot${\rm \cite{12}}.
 \end{exercise}
 \begin{proof}
@@ -8473,7 +8473,7 @@ Thus, $\widetilde{T}: X'/Y^\bot \to Y'$ is isomorphism.
 
 \section{Linear Mappings}
 \begin{exercise}
-Let $X,U$ be two linear spaces such that ${\rm dim}\, X = {\rm dim}\, U < \infty$. Prove that a linear mapping $T\in\mathscr{L}(X,U)$ is one-to-one if and only if it is onto.
+Let $X,U$ be two linear spaces such that $ \dim \,\, X =  \dim \,\, U < \infty$. Prove that a linear mapping $T\in\mathscr{L}(X,U)$ is one-to-one if and only if it is onto.
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
@@ -8487,13 +8487,13 @@ Let $X,U$ be two linear spaces such that ${\rm dim}\, X = {\rm dim}\, U < \infty
 \medskip
 
 \begin{exercise}
-Let $X$ be a finite dimensional linear space and $T\in\mathscr{L}(X,X)$. Suppose $${\rm dim}\, R_{T^2} = {\rm dim}\, R_T.$$
+Let $X$ be a finite dimensional linear space and $T\in\mathscr{L}(X,X)$. Suppose $$ \dim \,\, R_{T^2} =  \dim \,\, R_T.$$
 Prove that $R_T\cap N_T = \{0\}$, where $T^2 = T\circ T$.
 \end{exercise}
 \begin{proof}
-We knew that $R_{T^2}\subset R_T$, and since ${\rm dim}\, R_{T^2} = {\rm dim}\, R_T$, we have $R_{T^2} = R_T$. By Rank-Nullity theorem, we have
+We knew that $R_{T^2}\subset R_T$, and since $ \dim \,\, R_{T^2} =  \dim \,\, R_T$, we have $R_{T^2} = R_T$. By Rank-Nullity theorem, we have
 \begin{align*}
-    \dim N_T = \dim X - \dim R_T = \dim X - \dim R_{T^2} = \dim N_{T^2}.
+    \dim  N_T = \dim  X - \dim  R_T = \dim  X - \dim  R_{T^2} = \dim  N_{T^2}.
 \end{align*}
 Also, since $N_{T^2} \subset N^T$, we have $N_T = N_{T^2}$. Indeed, for any $x \in N^T$, we have $Tx = 0$, and it follows that $T^2x = T(Tx) = 0$. 
 
@@ -8546,10 +8546,10 @@ Since $Y \cap Z \subset Y$, then we have $Y^\bot \subset \left(Y \cap Z\right)^\
 \end{align*}
 On the other hand, by \ref{ex_1633_a}, we have
 \begin{align*}
-    \dim \left(Y^\bot + Z^\bot\right) & = \dim Y^\bot + \dim Z^\bot - \dim \left(Y^\bot \cap Z^\bot\right) \\
-    & = n - \dim Y + n - \dim Z - \dim (Y + Z)^\bot \\
-    & = n - \dim Y + n - \dim Z - n + \dim (Y + Z) \\
-    & = n - \dim (Y \cap Z) = \dim (Y \cap Z)^\bot,
+    \dim  \left(Y^\bot + Z^\bot\right) & = \dim  Y^\bot + \dim  Z^\bot - \dim  \left(Y^\bot \cap Z^\bot\right) \\
+    & = n - \dim  Y + n - \dim  Z - \dim  (Y + Z)^\bot \\
+    & = n - \dim  Y + n - \dim  Z - n + \dim  (Y + Z) \\
+    & = n - \dim  (Y \cap Z) = \dim  (Y \cap Z)^\bot,
 \end{align*}
 and hence $Y^\bot + Z^\bot = (Y \cap Z)^\bot$.
 \end{proof}
@@ -8595,14 +8595,14 @@ which is at most degree $n^2$.
 \begin{exercise}{\bf (April 2011/ August 2019 Prelim*)}\label{April_2011_p1}
 Prove that if $U,V,W$ are finite dimensional vector spaces, and $T\in\mathscr{L}(U,V), S\in\mathscr{L}(V,W)$, then
 \begin{align*}
-    {\rm dim}\, N_{ST} \leq {\rm dim}\, N_S + {\rm dim}\, N_T.
+     \dim \,\, N_{ST} \leq  \dim \,\, N_S +  \dim \,\, N_T.
 \end{align*}
 \end{exercise}
 \begin{proof}
 For any $x \in N_{ST}$, $STx = 0$ implies that $Tx \in N_S$. Now $T$ restricted to $N_{ST}$ is a map $\widetilde{T} \coloneqq T|_{N_{ST}}: N_{ST} \to N_S$, thus
 \begin{align*}
-    \dim N_{ST} & = \dim R_{\widetilde{T}} + \dim N_{\widetilde{T}} \\
-    & \leq \dim N_S + \dim N_T,
+    \dim  N_{ST} & = \dim  R_{\widetilde{T}} + \dim  N_{\widetilde{T}} \\
+    & \leq \dim  N_S + \dim  N_T,
 \end{align*}
 where in the last step we used $R_{\widetilde{T}} \subset N_S$.
 \end{proof}
@@ -8612,23 +8612,23 @@ where in the last step we used $R_{\widetilde{T}} \subset N_S$.
 \begin{exercise}{\bf (August 2010 Prelim*)}
 Let $U, V$ and $W$ be finite dimensional subapaces of $X$. Show that
 \begin{align*}
-    \dim U + \dim V + \dim W - \dim (U + V + W) \geq \\
-    \max \{\dim(U \cap V), \dim(V \cap W), \dim(U \cap W)\}.
+    \dim  U + \dim  V + \dim  W - \dim  (U + V + W) \geq \\
+    \max \{\dim \,(U \cap V), \dim \,(V \cap W), \dim \,(U \cap W)\}.
 \end{align*}
 \end{exercise}
 \begin{proof}
-Since $\dim U + \dim V = \dim (U + V) + \dim (U \cap V)$, then 
+Since $\dim  U + \dim  V = \dim  (U + V) + \dim  (U \cap V)$, then 
 \begin{align*}
-    \dim (U+V) + \dim W = \dim (U + V + W) + \dim ((U+V) \cap W).
+    \dim  (U+V) + \dim  W = \dim  (U + V + W) + \dim  ((U+V) \cap W).
 \end{align*}
 Thus, we have
 \begin{align*}
-    \dim U + \dim V - \dim (U \cap V) + \dim W = \dim (U + V + W) + \dim ((U+V) \cap W),
+    \dim  U + \dim  V - \dim  (U \cap V) + \dim  W = \dim  (U + V + W) + \dim  ((U+V) \cap W),
 \end{align*}
 which implies
 \begin{align*}
-    \dim U + \dim V + \dim W - \dim (U + V + W) & = \dim (U \cap V) + \dim ((U+V) \cap W) \\
-    & \geq \dim (U \cap V).
+    \dim  U + \dim  V + \dim  W - \dim  (U + V + W) & = \dim  (U \cap V) + \dim  ((U+V) \cap W) \\
+    & \geq \dim  (U \cap V).
 \end{align*}
 For other two inequalities, it is similar.
 \end{proof}
@@ -8661,7 +8661,7 @@ Let $f$ be a linear functional on a finite dimensional vector space $V$ over a f
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Let $A$ and $B$ be two complex square matrices. Suppose $AB - I$ is a projection. Is it true that $BA - I$ is a projection?
 \end{exercise}
 \begin{proof}[Solution]
@@ -8748,17 +8748,17 @@ Now we have
 \begin{exercise}
 Let $V$ be a finite dimensional vector space over $\mathbb{R}$ and $T: V \to V$ be linear. Show that for any subspace $W$ of $V$, 
 \begin{align*}
-    \dim T^{-1}(W) \leq \dim N_T + \dim W.
+    \dim  T^{-1}(W) \leq \dim  N_T + \dim  W.
 \end{align*}
 \end{exercise}
 \begin{proof}
 Suppose $U \subset V$ such that $T(U) = W$, then for $T|_U:U \to W$, we have
 \begin{align*}
-    \dim T(U) + \dim N_{T|_U} = \dim U = \dim T^{-1}(W).
+    \dim  T(U) + \dim  N_{T|_U} = \dim  U = \dim  T^{-1}(W).
 \end{align*}
-Also, with $\dim N_{T|_U} \leq \dim N_T$, we have 
+Also, with $\dim  N_{T|_U} \leq \dim  N_T$, we have 
 \begin{align*}
-    \dim T^{-1}(W) \leq \dim N_T + \dim T(U) = \dim N_T + \dim W.
+    \dim  T^{-1}(W) \leq \dim  N_T + \dim  T(U) = \dim  N_T + \dim  W.
 \end{align*}
 \end{proof}
 
@@ -8780,29 +8780,29 @@ if and only if
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Since $A + B$ is invertible, then $A + B$ is full rank, which implies $\rank (A+B) = n$ and $N_{A+B} = \{0\}$. Then, $\dim N_{A+B} = 0$, and we have 
+    \item Since $A + B$ is invertible, then $A + B$ is full rank, which implies $\rank (A+B) = n$ and $N_{A+B} = \{0\}$. Then, $\dim  N_{A+B} = 0$, and we have 
     \begin{align*}
-        \dim (N_A + N_B) = \dim N_A + \dim N_B - \dim (N_A \cap N_B).
+        \dim  (N_A + N_B) = \dim  N_A + \dim  N_B - \dim  (N_A \cap N_B).
     \end{align*}
-    Also, for $x\in N_A \cap N_B$, then $(A + B)x = 0$, hence $(N_A \cap N_B) \subset N_{A+B}$. Then we have $\dim (N_A \cap N_B) = 0$, which yields
+    Also, for $x\in N_A \cap N_B$, then $(A + B)x = 0$, hence $(N_A \cap N_B) \subset N_{A+B}$. Then we have $\dim  (N_A \cap N_B) = 0$, which yields
     \begin{align*}
-        \dim N_A + \dim N_B = \dim (N_A + N_B) \leq n.
+        \dim  N_A + \dim  N_B = \dim  (N_A + N_B) \leq n.
     \end{align*}
     With rank-nullity theorem, we have
     \begin{align*}
-        \rank A + \rank B = n - \dim N_A + n - \dim N_B \geq n.
+        \rank A + \rank B = n - \dim  N_A + n - \dim  N_B \geq n.
     \end{align*}
     
     \item \begin{enumerate}[label=\arabic*)]
-        \item If $\rank A + \rank B = n$, with the fact that $R_{A+B} \subset R_A + R_B$, then, $\dim (R_A + R_B) = n$,
+        \item If $\rank A + \rank B = n$, with the fact that $R_{A+B} \subset R_A + R_B$, then, $\dim  (R_A + R_B) = n$,
         \begin{align*}
-            n = \dim (R_A + R_B) = \rank A + \rank B - \dim (R_A \cap R_B),
+            n = \dim  (R_A + R_B) = \rank A + \rank B - \dim  (R_A \cap R_B),
         \end{align*}
-        which implies $\dim (R_A \cap R_B)$. Hence, $R_A \cap R_B = \{0\}$.
+        which implies $\dim  (R_A \cap R_B)$. Hence, $R_A \cap R_B = \{0\}$.
         
-        \item If $R_A \cap R_B = \{0\}$, then $\dim (R_A \cap R_B) = 0$. Thus,
+        \item If $R_A \cap R_B = \{0\}$, then $\dim  (R_A \cap R_B) = 0$. Thus,
         \begin{align*}
-            \rank A + \rank B = \dim (R_A + R_B) - \dim (R_A \cap R_B) = n - 0 = n.
+            \rank A + \rank B = \dim  (R_A + R_B) - \dim  (R_A \cap R_B) = n - 0 = n.
         \end{align*}
     \end{enumerate}
 \end{enumerate}
@@ -8815,7 +8815,7 @@ if and only if
 Suppose $A$ and $B$ are $n \times n$ matrices and $AB = 0$. Prove that $\rank A + \rank B \leq n$.
 \end{exercise}
 \begin{proof}
-Since $AB = 0$, then $R_B \subset N_A$, and it follows that $\rank B \leq \dim N_A$. Since $\rank A + \dim N_A = n$, thus $\rank A + \rank B \leq n$.
+Since $AB = 0$, then $R_B \subset N_A$, and it follows that $\rank B \leq \dim  N_A$. Since $\rank A + \dim  N_A = n$, thus $\rank A + \rank B \leq n$.
 \end{proof}
 
 \medskip
@@ -8823,13 +8823,13 @@ Since $AB = 0$, then $R_B \subset N_A$, and it follows that $\rank B \leq \dim N
 \begin{exercise}
 Let $V$ be a finite dimensional vector space over a field $\mathbb{R}$ or $\mathbb{C}$. Let $A, B: V \to V$ be two linear transformations. Prove that
 \begin{align*}
-    \dim N_{AB} \geq \max\{\dim N_A, \dim N_B\}.
+    \dim  N_{AB} \geq \max\{\dim  N_A, \dim  N_B\}.
 \end{align*}
 \end{exercise}
 \begin{proof}
-For any $x \in N_B$, then $Bx = 0$, and it follows that $ABx = 0$, which implies $N_B \subset N_{AB}$. Hence, $\dim N_B \leq \dim N_{AB}$.
+For any $x \in N_B$, then $Bx = 0$, and it follows that $ABx = 0$, which implies $N_B \subset N_{AB}$. Hence, $\dim  N_B \leq \dim  N_{AB}$.
 
-For any $y \in R_{AB}$, then there exists $x \in V$ such that $ABx = y$, and then $y \in R_A$. Then, $R_{AB} \subset R_A$ and it implies $\dim R_{AB} \leq \dim R_A$. By the Rank-Nullity theorem, $\dim N_{AB} \geq \dim N_A$.
+For any $y \in R_{AB}$, then there exists $x \in V$ such that $ABx = y$, and then $y \in R_A$. Then, $R_{AB} \subset R_A$ and it implies $\dim  R_{AB} \leq \dim  R_A$. By the Rank-Nullity theorem, $\dim  N_{AB} \geq \dim  N_A$.
 \end{proof}
 
 \medskip
@@ -8840,19 +8840,17 @@ Suppose $A, B, C$ and $D$ are $n \times n$ matrices such that $AC = BC$ and $AD 
 \begin{proof}
 Since $A$ is invertible, then $AC = BC$ and $AD = - BD$ implies
 \begin{align*}
-    \left(A^{-1} B - I \right)C & = 0, \\
-    \left(A^{-1} B + I \right)D & = 0.
+    \left(A^{-1} B - I \right)C = 0, \quad \left(A^{-1} B + I \right)D = 0.
 \end{align*}
 Then, 
 \begin{align*}
-    R_C & \subset N_{A^{-1} B - I}, \\
-    R_D & \subset N_{A^{-1} B + I}.
+    R_C \subset N_{A^{-1} B - I}, \quad R_D \subset N_{A^{-1} B + I}.
 \end{align*}
 Also, $N_{A^{-1} B - I}$ and $N_{A^{-1} B + I}$ are eigenspaces of $A^{-1}B$, and then
 \begin{align*}
-    \dim N_{A^{-1} B - I} + \dim N_{A^{-1} B + I} \leq n,
+    \dim  N_{A^{-1} B - I} + \dim  N_{A^{-1} B + I} \leq n,
 \end{align*}
-which implies $\dim R_C + \dim R_D \leq n$.
+which implies $\dim  R_C + \dim  R_D \leq n$.
 \end{proof}
 
 \medskip
@@ -8876,7 +8874,7 @@ Thus, $N_A = N_{A^TA}$.
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise}\label{ex_1645}
 Suppose $\sum^m_{j=1} A_j = I$. Show that 
 \begin{align*}
     \sum^m_{j=1} \rank A_j = n,
@@ -8900,9 +8898,9 @@ if and only if for every $1 \leq j \leq m, A_j^2 = A_j$.
     \end{align}
     where we used the fact that for any $A, B$, $\rank A + \rank B \geq \rank (A+B)$. Then, $\rank A_1 + \rank B_1 = n$. By the Rank-Nullity theorem, 
     \begin{align*}
-        n & = \dim N_{A_1} + \dim N_{B_1} \\
-        & = \dim N_{A_1} + \dim N_{I - A_1} \\
-        & = \dim N_{A_1} + \dim N_{A_1 - I}.
+        n & = \dim  N_{A_1} + \dim  N_{B_1} \\
+        & = \dim  N_{A_1} + \dim  N_{I - A_1} \\
+        & = \dim  N_{A_1} + \dim  N_{A_1 - I}.
     \end{align*}
     Then $A$ has a full set of eigenvectors with eigenvalues $0$ and $1$. Thus, $A_1$ is a projection, and similar argument can apply to each $A_j$.
 \end{enumerate}
@@ -8910,7 +8908,62 @@ if and only if for every $1 \leq j \leq m, A_j^2 = A_j$.
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise}\label{ex_1646}
+Let $X_i, 1 \leq i \leq m$ be subspaces of a finite dimensional space $X$. Suppose 
+\begin{align*}
+    X = \sum^m_{i=1} X_i, \quad \text{and} \quad \dim  X = \sum^m_{i=1} \dim  X_i.
+\end{align*}
+Show that 
+\begin{align*}
+    X = \bigoplus^m_{i=1} X_i.
+\end{align*}
+\end{exercise}
+\begin{proof}
+Let $\widetilde{X}_1 = \sum^m_{i=2} X_i$, then we have
+\begin{align*}
+    \dim  X \leq \dim  X_1 + \dim  \widetilde{X}_1 \leq \dim  X_1 + \sum^m_{i=2} \dim  X_i = \dim  X,
+\end{align*}
+and hence $\dim  X_1 + \dim  \widetilde{X}_1 = \dim  X$. Since
+\begin{align*}
+    \dim  X = \dim  \left(X_1 + \widetilde{X}_1\right) = \dim  X_1 + \dim  \widetilde{X}_1 - \dim  \left(X_1 \cap \widetilde{X}_1\right),
+\end{align*}
+we have $\dim  \left(X_1 \cap \widetilde{X}_1\right) = 0$, and this implies $X = X_1 \oplus \widetilde{X}_1$. Now this exercise can be proven by induction from here.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Suppose $P_i, 1 \leq i \leq m$ are $m$ projections on $\mathbb{C}^n$, and
+\begin{align*}
+    \sum^m_{i=1} P_i = I.
+\end{align*}
+Show that 
+\begin{align*}
+    \mathbb{C}^n = \bigoplus^m_{i=1} R_{P_i},
+\end{align*}
+and moreover, $P_i P_j = 0$ for any $i \neq j$.
+\end{exercise}
+\begin{proof}
+By Exercise \ref{ex_1645}, we have
+\begin{align*}
+    \dim \mathbb{C}^n = \sum^m_{i=1} \dim R_{P_i} = n.
+\end{align*}
+Since for any $x \in \mathbb{C}^n$, we have $x = \sum^m_{i=1} P_ix$, and hence $\mathbb{C}^n = \sum^m_{i=1} R_{P_i}$. By Exercise \ref{ex_1646}, the result follows. 
+
+For the second part, since for any $x \in N_{P_1}$, we have
+\begin{align*}
+    x \in \sum^m_{i=1} P_i x \in  \sum^m_{i=1} R_{P_i} = \bigoplus^m_{i=1} R_{P_i},
+\end{align*}
+and hence $N_{P_1} \subset \bigoplus^m_{i=1} R_{P_i}$. Also, since
+\begin{align*}
+    \dim N_{P_1} = n - \dim R_{P_1} = \sum^m_{i=2} \dim R_{P_i} = \dim \bigoplus^m_{i=1} R_{P_i},
+\end{align*}
+we have $N_{P_1} = \bigoplus^m_{i=1} R_{P_i}$, which implies $P_iP_1 = 0$ for every $i \neq 1$. Similar argument would prove the result. 
+\end{proof}
+
+\medskip
+
+\begin{exercise} 
 Suppose for any $\lambda$, 
 \begin{align*}
     N_{A - \lambda I} \cap R_{A - \lambda I} = \{0\}.
@@ -8962,8 +9015,8 @@ Show that
 \begin{proof}
 Since $AB = DB$, then we have $(A - D)B = 0$ and thus $R_B \subset N_{A-D}$. Similarly, we have $R_C \subset N_{A-2D}$. Then, 
 \begin{align*}
-    \rank B & \leq \dim N_{A - D} = n -  \rank (A - D), \\
-    \rank C & \leq \dim N_{A - 2D} = n - \rank (A - 2D).
+    \rank B & \leq \dim  N_{A - D} = n -  \rank (A - D), \\
+    \rank C & \leq \dim  N_{A - 2D} = n - \rank (A - 2D).
 \end{align*}
 Then, we want to prove that $\rank A \leq \rank (A - D) + \rank (A - 2D)$. Also, $2(A - D) + (-(A - 2D)) = A$, and
 \begin{align*}
@@ -9293,6 +9346,36 @@ Let $A, B$ be two $n \times n$ matrices, show that $\det (I - AB) = \det (I - BA
 \end{enumerate}
 \end{proof}
 
+\begin{remark}
+This result holds even if $A$ and $B$ are not square matrices. Suppose $A$ is a $m \times n$ matrix and $B$ is a $n \times m$ matrix, then $\det(I_m - AB) = \det (I_n - BA)$.
+\end{remark}
+\begin{proof}
+We have
+\begin{align*}
+    \begin{pmatrix}
+        I_n & B \\
+        A & I_m
+    \end{pmatrix} \begin{pmatrix}
+        I_n & -B \\
+        0 & I_m
+    \end{pmatrix} & = \begin{pmatrix}
+        I_n & 0 \\
+        A & I_m - AB
+    \end{pmatrix}, \\
+    \begin{pmatrix}
+        I_n & -B \\
+        0 & I_m
+    \end{pmatrix} \begin{pmatrix}
+        I_n & -B \\
+        A0 & I_m
+    \end{pmatrix} & = \begin{pmatrix}
+        I_n - BA & 0 \\
+        -A & I_m
+    \end{pmatrix},
+\end{align*}
+and hence the result follows easily, since $\det MN = \det NM$ for any matrices $M, N$.
+\end{proof}
+
 \medskip
 
 \begin{exercise}
@@ -9304,7 +9387,7 @@ For any two matrices $A, B$, ${\rm tr}(AB - BA) = 0$\cite{20}. However, ${\rm tr
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 For a given $n \times n$ matrix $C$, consider a bilinear form $F_C$ on the space of real $n \times n$ matrices, defined by the formula 
 \begin{align*}
     F_C(A, B) = {\rm tr} \left(B^T C A\right).
@@ -9384,7 +9467,7 @@ and it follows that
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Let $C$ be an $n \times n$ matrix such that 
 \begin{align*}
     \det (C - AB) = \det (C - BA)
@@ -9417,7 +9500,7 @@ holds for any pair of matrices $A, B$. Show that $C = kI$ for some scalar $k$.
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $A, B$ and $C$ are $2 \times 2$ matrices. Suppose $AB = BA, AC = CA$ and $BC \neq CB$. Prove that $A$ is a scalar matrix.
 \end{exercise}
 \begin{proof}
@@ -9488,12 +9571,12 @@ Let $A$ be a complex square matrix. Suppose that
 Prove that $A$ is a projection.
 \end{exercise}
 \begin{proof}
-We can have $\dim N_A = n-1$, also with Jordan form $J_A$ of $A$, we can have that the only eigenvalue is $1$. Thus, $\dim N_{A-I} = 1$, and hence $A$ is a projection.
+We can have $\dim  N_A = n-1$, also with Jordan form $J_A$ of $A$, we can have that the only eigenvalue is $1$. Thus, $\dim  N_{A-I} = 1$, and hence $A$ is a projection.
 \end{proof}
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Assume that $(A - B)^2 = 0$, show that 
 \begin{align*}
     {\rm tr} (AB - BA)^3 = 0.
@@ -9671,7 +9754,7 @@ A=\left(
 $$
 \end{exercise}
 \begin{proof}
-The characteristic polynomial for $A$ is that $P(\lambda)=(\lambda-1)(\lambda-2)^2$. Thus, the minimal polynomial is $m_A=(\lambda-1)(\lambda-2)$ since $\dim N_{A - 2I} = 2$. Indeed, we could verify that $(A - I)(A - 2I) = 0$.
+The characteristic polynomial for $A$ is that $P(\lambda)=(\lambda-1)(\lambda-2)^2$. Thus, the minimal polynomial is $m_A=(\lambda-1)(\lambda-2)$ since $\dim  N_{A - 2I} = 2$. Indeed, we could verify that $(A - I)(A - 2I) = 0$.
 \end{proof}
 
 \medskip
@@ -9722,9 +9805,9 @@ eigenvectors and generalized eigenvectors of $A_{j}$ for each $1\leq j\leq K$. T
 \medskip
 
 \begin{proof}[Second Proof of Exercise \ref{generalized_eigenvectors}]
-We will prove it by induction on $\dim V$ and $1\leq k\leq K$. And assume we have pairwise commuting operators $A_1, A_2,\cdots, A_K$ on $V$. 
+We will prove it by induction on $\dim  V$ and $1\leq k\leq K$. And assume we have pairwise commuting operators $A_1, A_2,\cdots, A_K$ on $V$. 
 
-When $\dim V = 1$, and in this case, all $A_i$ are scalars. Take $B = \{1\}$, and $k$ be arbitrary. Assume the result is true whenever $\dim V < l$, and $A_1, A_2, \cdots, A_k$ are pairwise commuting operators on $V$ if $\dim V < l$. And we want to show that if $\dim V = l$, and $A_1, \cdots, A_{k+1}$ are pairwise commuting operators on $V$, then there exists a basis of generalized eigenvectors. 
+When $\dim  V = 1$, and in this case, all $A_i$ are scalars. Take $B = \{1\}$, and $k$ be arbitrary. Assume the result is true whenever $\dim  V < l$, and $A_1, A_2, \cdots, A_k$ are pairwise commuting operators on $V$ if $\dim  V < l$. And we want to show that if $\dim  V = l$, and $A_1, \cdots, A_{k+1}$ are pairwise commuting operators on $V$, then there exists a basis of generalized eigenvectors. 
 
 For $A_1$, we have 
 \begin{align*}
@@ -9747,13 +9830,13 @@ since $A_1A_i = A_iA_1, 2 \leq i \leq k+1$, we have $A_i:N_{\lambda_j}(A_1)\righ
 Let $\lambda$ be an eigenvalue of an $5 \times 5$ matrix $A$. Suppose
 that%
 \begin{align*}
-    \dim N_{1}\left(\lambda\right) = 2, \dim N_{2}\left(\lambda\right) = 4, 
-    \text{ and } \dim N_{3}\left(\lambda\right) = \dim N_{4}\left(\lambda\right) = 5.
+    \dim  N_{1}\left(\lambda\right) = 2, \dim  N_{2}\left(\lambda\right) = 4, 
+    \text{ and } \dim  N_{3}\left(\lambda\right) = \dim  N_{4}\left(\lambda\right) = 5.
 \end{align*}
 Find the Jordan blocks of $A$ corresponding to $\lambda$.
 \end{exercise}
 \begin{proof}
-Since $\dim N_{3}\left(\lambda\right) = \dim N_{4}\left(\lambda\right) = 5$, then we can know that the index $d(\lambda) = 3$, then we can know the Jordan blocks of $A$ corresponding to $\lambda$ is 
+Since $\dim  N_{3}\left(\lambda\right) = \dim  N_{4}\left(\lambda\right) = 5$, then we can know that the index $d(\lambda) = 3$, then we can know the Jordan blocks of $A$ corresponding to $\lambda$ is 
 \begin{align*}
     J = \left(\begin{array}
     [c]{ccccc}%
@@ -9775,7 +9858,7 @@ We can verify that this is the Jordan blocks we want. We can compute $N_{(J-\lam
     0 & 0 & 0 & 0 & 0
     \end{array}\right),
 \end{align*}
-and it is obvious that $\dim N_{(J-\lambda I)} = 2$, since there are two $0$ column vectors. Similarly, we have 
+and it is obvious that $\dim  N_{(J-\lambda I)} = 2$, since there are two $0$ column vectors. Similarly, we have 
 \begin{align*}
     (J-\lambda I)^2 = \left(\begin{array}
     [c]{ccccc}%
@@ -9794,7 +9877,7 @@ and it is obvious that $\dim N_{(J-\lambda I)} = 2$, since there are two $0$ col
     0 & 0 & 0 & 0 & 0
     \end{array}\right)
 \end{align*}
-and we can know that $\dim N_{(J-\lambda I)^2} = 4$ and $\dim N_{(J-\lambda I)^3} = \dim N_{(J-\lambda I)^3} = 5$. The proof is complete.
+and we can know that $\dim  N_{(J-\lambda I)^2} = 4$ and $\dim  N_{(J-\lambda I)^3} = \dim  N_{(J-\lambda I)^3} = 5$. The proof is complete.
 \end{proof}
 
 \medskip
@@ -9847,7 +9930,7 @@ and $$
     0 & 0 & 0 & 0 & 0\\
     0 & 0 & 0 & 0 & \alpha
     \end{array}\right).$$
-Since the null space of $A-0I$ has dimension $4$ and one of them is generated by eigenvalue $\alpha$. Thus, $\dim N_{A-0I}=3$, which means that there are $3$ blocks corresponding to eigenvalue $0$. Thus, we can know that all possible Jordan canonical forms of $A$ are
+Since the null space of $A-0I$ has dimension $4$ and one of them is generated by eigenvalue $\alpha$. Thus, $\dim  N_{A-0I}=3$, which means that there are $3$ blocks corresponding to eigenvalue $0$. Thus, we can know that all possible Jordan canonical forms of $A$ are
 \begin{align*}
     \left(\begin{array}
     [c]{ccccc}%
@@ -10029,7 +10112,7 @@ Writting these equations into $AX=b$, where $A = \left(\begin{array}
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Let $A$ be a $4 \times 4$ real symmetric matrix. Suppose $A^2 + 3A = 0$ and $\rank A = 2$. Find ${\rm tr}(A)$.
 \end{exercise}
 \begin{proof}
@@ -10063,7 +10146,7 @@ Let $A$ be a $3 \times 3$ real matrix with characteristic polynomial
 \begin{align*}
     p(\lambda) = \lambda^3 - 2 \lambda^2 + \lambda + 1.
 \end{align*}
-Show that $\dim X \leq 3$ where $X$ denotes the subspace of the vector space of all $3 \times 3$ matrices given by 
+Show that $\dim  X \leq 3$ where $X$ denotes the subspace of the vector space of all $3 \times 3$ matrices given by 
 \begin{align*}
     X = {\rm span} \left\{A^j: j = 0,1,2,\cdots\right\}.
 \end{align*}
@@ -10081,11 +10164,11 @@ Let $\lambda_i, 1 \leq i \leq m$ be $m$ different eigenvalues of $A$. Show that
 \end{align*}
 \end{exercise}
 \begin{proof}
-Since $\mathbb{C}^n = \oplus^m_{j=1} N_{\left(A - \lambda_j I\right)^{d_j}}$, then 
+Since $\mathbb{C}^n = \bigoplus^m_{j=1} N_{\left(A - \lambda_j I\right)^{d_j}}$, then 
 \begin{align*}
-    \sum^m_{j=1} \dim N_{A - \lambda_j I} \leq n.
+    \sum^m_{j=1} \dim  N_{A - \lambda_j I} \leq n.
 \end{align*}
-With rank-nullity theorem, for each $j$, $\dim N_{A - \lambda_j I} = n - \rank \left(A - \lambda_j I\right)$, and then
+With rank-nullity theorem, for each $j$, $\dim  N_{A - \lambda_j I} = n - \rank \left(A - \lambda_j I\right)$, and then
 \begin{align*}
     \sum^m_{j=1} \rank \left(\lambda_j I - A\right) \geq n(m - 1).
 \end{align*}
@@ -10120,7 +10203,7 @@ For $\lambda = 1$, the corresponding eigenvector is
         0
     \end{pmatrix}.
 \end{align*}
-Since $\dim N_{A-I} = 1$, then there is only one Jordan block corresponding to $\lambda = 1$. Thus, the Jordan canonical form of $A$ is
+Since $\dim  N_{A-I} = 1$, then there is only one Jordan block corresponding to $\lambda = 1$. Thus, the Jordan canonical form of $A$ is
 \begin{align*}
     J = \begin{pmatrix}
         1 & 1 & 0 \\
@@ -10213,15 +10296,15 @@ Let $\{1,x,y,x^2,y^2,xy,x^2y,xy^2,x^3,y^3\}$ be a basis for $V$, then we have $D
 \begin{align*}
     D_x(V) = \operatorname{span}\{0,1,0,2x,0,y,2xy,y^2,3x^2,0\},
 \end{align*}
-then $\dim N_{D_x} = 4$, which implies there are $4$ Jordan blocks in Jordan form. Now, 
+then $\dim  N_{D_x} = 4$, which implies there are $4$ Jordan blocks in Jordan form. Now, 
 \begin{align*}
     D_x^2(V) = \operatorname{span}\{0,0,0,2,0,0,2y,0,6x,0\},
 \end{align*}
-and then $\dim N_{D_x^2} = 7$, which implies that there are $3$ $k \times k$ Jordan blocks, where $k > 1$. Again,
+and then $\dim  N_{D_x^2} = 7$, which implies that there are $3$ $k \times k$ Jordan blocks, where $k > 1$. Again,
 \begin{align*}
     D_x^3(V) = \operatorname{span}\{0,0,0,0,0,0,0,0,6,0\},
 \end{align*}
-and then $\dim N_{D_x^3} = 9$, which implies that there are $2$ $l \times l$ Jordan blocks, where $l > 2$. Since $\dim N_{D_x^4} = 10$, then there is only $1$ $m \times m$ Jordan blocks, where $m > 3$. Thus, we obtain the Jordan canonical form of $D_x$
+and then $\dim  N_{D_x^3} = 9$, which implies that there are $2$ $l \times l$ Jordan blocks, where $l > 2$. Since $\dim  N_{D_x^4} = 10$, then there is only $1$ $m \times m$ Jordan blocks, where $m > 3$. Thus, we obtain the Jordan canonical form of $D_x$
 \begin{align*}
     J_{D_x} = \begin{pmatrix}
         0 & 1 & & & & & & & & \\
@@ -10252,7 +10335,7 @@ Consider $T: V \to V$ defined by
 Find the Jordan canonical form of $T$.
 \end{exercise}
 \begin{proof}
-$V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\}$, then $\dim V = 10$. And under operator $T$, the polynomial will become $\left\{0, 0, 0, 0, y, 2y^2, 3y^3, xy, x^2y, 2xy^2\right\}$. Then the matrix representing $T$ is diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$. So it the Jordan of $T$, which is also diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$.
+$V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\}$, then $\dim  V = 10$. And under operator $T$, the polynomial will become $\left\{0, 0, 0, 0, y, 2y^2, 3y^3, xy, x^2y, 2xy^2\right\}$. Then the matrix representing $T$ is diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$. So it the Jordan of $T$, which is also diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$.
 \end{proof}
 
 
@@ -10288,7 +10371,7 @@ Consider Jordan canonical form and each Jordan block.
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $A^3$ is a unitary matrix. Prove that $A$ is diagonalizable.
 \end{exercise}
 \begin{proof}
@@ -10331,7 +10414,7 @@ Let $A$ be an $n \times n$ complex matrix with $\det A \neq 0$. Suppose $A^3$ is
 \medskip
 
 \begin{exercise}
-Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrices, hence $\dim V = 4$. Let $E = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$. We define a linear map $T: V \to V$ such that 
+Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrices, hence $\dim  V = 4$. Let $E = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}$. We define a linear map $T: V \to V$ such that 
 \begin{align*}
     T(V) = VE - EV.
 \end{align*}
@@ -10354,7 +10437,7 @@ Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrice
     \end{align*}
     Then the eigenvalue of $T$ is $0$ with multiplicity $4$.
     
-    \item Also, $\dim N_{T-0I} = 2$, then there are two Jordan blocks in its Jordan canonical form, and since $T^3 = 0$, then we have Jordan form of $T$:
+    \item Also, $\dim  N_{T-0I} = 2$, then there are two Jordan blocks in its Jordan canonical form, and since $T^3 = 0$, then we have Jordan form of $T$:
     \begin{align*}
         J_T = \begin{pmatrix}
             0 & 1 & 0 & 0 \\
@@ -10368,7 +10451,7 @@ Let $V$ be the complex linear space consists of all $2 \times 2$ complex matrice
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diagonalizable.
 \end{exercise}
 \begin{proof}
@@ -10403,7 +10486,7 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 
 \medskip
 
-\begin{exercise}{\bf *}\label{commute_with_all_matrix}
+\begin{exercise} \label{commute_with_all_matrix}
 ~\begin{enumerate}[label=(\alph*)]
     \item Let $A$ be an $n \times n$ complex symmetric matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
     
@@ -10413,7 +10496,7 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 \end{enumerate}
 \end{exercise}
 \begin{proof}
-For any $A, B$, such that $AB = BA$, $A: N_{B - \lambda I} \to N_{B - \lambda I}$, where $\lambda$ is eigenvalue of $B$. If $N_{B - \lambda I} \neq \{0\}$, then there exists an eigenvector of $A$ in $N_{B - \lambda I}$. If $\dim N_{B - \lambda I} = 1$, then for any nonzero $v \in N_{B - \lambda I}$ is an eigenvector of $A$.
+For any $A, B$, such that $AB = BA$, $A: N_{B - \lambda I} \to N_{B - \lambda I}$, where $\lambda$ is eigenvalue of $B$. If $N_{B - \lambda I} \neq \{0\}$, then there exists an eigenvector of $A$ in $N_{B - \lambda I}$. If $\dim  N_{B - \lambda I} = 1$, then for any nonzero $v \in N_{B - \lambda I}$ is an eigenvector of $A$.
 
 Claim: any nonzero vector is an eigenvector for $A$. For any real $v \neq 0$, need to find $Q$, so that $Qv = \mu v$, and $N_{Q-\mu I} = {\rm span}\{v\}$, where $\mu$ is eigenvalue of $Q$. Then, $v$ is an eigenvector of $A$. 
 
@@ -10514,7 +10597,7 @@ And the charasteristic polynomial is $\lambda^2 - 14\lambda + 9 = 0$, which give
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Show that two vectors in a complex Euclidean space are orthogonal if and only if 
 \begin{align*}
     \|ax + y\|^2 = |a|^2 \|x\|^2 + \|y\|^2,
@@ -10535,14 +10618,14 @@ for all complex numbers $a$.
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $v_1, v_2, \cdots, v_n$ are vectors in $\mathbb{R}^{n-1}$ such that $v_i \cdot v_j < 0$ for all $i \neq j$. Prove that there exist nonnegative real numbers $c_1, c_2, \cdots, c_n$, not all zero, such that 
 \begin{align*}
     \sum^n_{k=1} c_k v_k = 0.
 \end{align*}
 \end{exercise}
 \begin{proof}
-Since $\dim \mathbb{R}^{n-1} = n-1$, then there exists $c_1, c_2, \cdots, c_n$, not all zero, such that 
+Since $\dim  \mathbb{R}^{n-1} = n-1$, then there exists $c_1, c_2, \cdots, c_n$, not all zero, such that 
 \begin{align*}
     \sum^n_{k=1} c_k v_k = 0.
 \end{align*}
@@ -10560,7 +10643,7 @@ where in the last step we used $\left(v_j, v_k\right) < 0$ for $j \neq k$. Since
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $v_1, v_2, \cdots, v_k$ are nonzero vectors in $\mathbb{R}^n$ such that $v_i \cdot v_j < 0$ for all $i \neq j$. Determine, with proof, the maximal possible $k$ for $n = 2$, and also for arbitrary $n$.
 \end{exercise}
 \begin{proof}
@@ -10581,7 +10664,7 @@ We proof by induction. For $n = 1$, it is trivial. Just pick $v_1 = 1$ and $v_2 
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Suppose $v_1, v_2, \cdots, v_k$ are nonzero vectors in $\mathbb{R}^n$ such that $v_i \cdot v_j \leq 0$ for all $i \neq j$. Determine the maximal possible $k$ for $n = 3$, and also for arbitrary $n$.
 \end{exercise}
 \begin{proof}
@@ -10612,7 +10695,7 @@ which is a contradiction. Hence, we constructed $k - 2$ vectors in $\mathbb{R}^{
 
 \medskip
 
-\begin{exercise}{\bf *}
+\begin{exercise} 
 Let $V$ be a complex inner product space and $T$ a linear map on $V$ such that $(Tx, Ty) = 0$ if $(x,y) = 0$. Show that $T = kU$, where $U$ is a unitary map on $V$.
 \end{exercise}
 \begin{proof}
@@ -10898,7 +10981,7 @@ We denote the relation of congruence by $\sim$.
         \item For $A,B$ are symmetric matrices, we have if $A\sim B$ , then $B\sim A$. Since if $A = S^TBS$, where $S$ is invertible, then we have $B = (S^T)^{-1}AS^{-1}$, which means $B\sim A$.
         \item For $A,B$ and $C$ are symmetric matrices, we have if $A\sim B,B\sim C$, then $A\sim C$. Since if we have $A = S^TBS$ and $B = P^TCP$, then we have $A = S^TP^TCPS = (PS)^TCPS$, which implies $A\sim C$. Then we proved the congruence is an equivalence relation.
     \end{enumerate}
-    \item Suppose $A = S^TBS$, and $S$ is invetible. Also, we have $R_{BS}\subseteq R_{B}$ with equality when $S$ is invertible, since $S$ is full rank. Then we have, in this case, $\dim B = \dim BS$. Then we have $S^T$ is also full rank and $\dim A = \dim S^TBS = \dim B$. So we can know that for symmetric matrices $A$ and $B$, if they are congruent then they have the same rank, which means there are $n+1$ equivalebce classes, since there are matrix with rank $0,1,2,\cdots,n$, which are $n+1$ possibilities.
+    \item Suppose $A = S^TBS$, and $S$ is invetible. Also, we have $R_{BS}\subseteq R_{B}$ with equality when $S$ is invertible, since $S$ is full rank. Then we have, in this case, $\dim  B = \dim  BS$. Then we have $S^T$ is also full rank and $\dim  A = \dim  S^TBS = \dim  B$. So we can know that for symmetric matrices $A$ and $B$, if they are congruent then they have the same rank, which means there are $n+1$ equivalebce classes, since there are matrix with rank $0,1,2,\cdots,n$, which are $n+1$ possibilities.
 \end{enumerate}
 \end{proof}
 
@@ -11145,7 +11228,7 @@ Find $\det \left(T_A\right)$. \\
 {\bf Hint.} First consider the cases when $A$ is orthogonal and when $A$ is symmetric.
 \end{exercise}
 \begin{proof}
-First, $\dim S = n(n-1)/2$. Second, 
+First, $\dim  S = n(n-1)/2$. Second, 
 \begin{align*}
     T_A T_B (S) = A B S B^T A^T = T_{AB}(S),
 \end{align*}
@@ -11231,7 +11314,7 @@ Find $\det \left(T_A\right)$. \\
 {\bf Hint:} First consider the cases when $A$ is orthogonal and when $A$ is symmetric.
 \end{exercise}
 \begin{proof}
-Denote by $S(n)$ the space of all $n \times n$ real skew symmetric matrices, and note that $\dim S(n) = n(n-1)/2$. Also, since
+Denote by $S(n)$ the space of all $n \times n$ real skew symmetric matrices, and note that $\dim  S(n) = n(n-1)/2$. Also, since
 \begin{align*}
     T_A T_B(S) = A B S B^T A^T = T_{AB}(S),
 \end{align*}
@@ -11297,7 +11380,7 @@ Consider eigenvalue $\mu$ of $T_{\widetilde{A}}$, then
     
     \item If $\lambda = \mu$, then $a = 0$ and $\widetilde{S} = 0$. Thus, the eigenspace corresponding to $\mu = 1$ is of dimension $n - 1$, the same dimension of the space of $v$. 
 \end{enumerate}
-Since $(n-1)(n-2)/2 + (n-1) = n(n-1)/2 = \dim S$, then we find all the eigenvalues. Then, $\det T_{\widetilde{A}} = \lambda^n$. Thus, 
+Since $(n-1)(n-2)/2 + (n-1) = n(n-1)/2 = \dim  S$, then we find all the eigenvalues. Then, $\det T_{\widetilde{A}} = \lambda^n$. Thus, 
 \begin{align*}
     \det T_A = \lambda_1^{n-1} \cdots \lambda_n^{n-1} = (\det A)^{n-1}.
 \end{align*}
@@ -11384,7 +11467,7 @@ For an invertible matrix $P \in \mathbb{R}^{n \times n}$, let $T_P: \mathbb{R}^{
         0 & 0  & 0
     \end{pmatrix}\right\}.
     \end{align*}
-    Also, since $\dim S(3) = 6$, then the characteristic polynomials of $T_O$ on $S(3)$ is 
+    Also, since $\dim  S(3) = 6$, then the characteristic polynomials of $T_O$ on $S(3)$ is 
     \begin{align*}
         p_\lambda = (\lambda - 1)^2 (\lambda + 1)^2 \left(\lambda^2 + 1\right).
     \end{align*}
@@ -11644,12 +11727,12 @@ Thus the matrix reperesentation is
 \medskip
 
 \begin{exercise}
-Let $U$ and $V$ be two real linear spaces with $\dim U, \dim V \geq 2$. Suppose $u_1, u_2$ are linearly independent in $U$ and $u_1, u_2$ are linearly independent in $V$. Show that the four vectors $u_1\otimes v_1, u_1\otimes v_2, u_2\otimes v_1$ and $u_2\otimes v_2$ are linearly independent.
+Let $U$ and $V$ be two real linear spaces with $\dim  U, \dim  V \geq 2$. Suppose $u_1, u_2$ are linearly independent in $U$ and $u_1, u_2$ are linearly independent in $V$. Show that the four vectors $u_1\otimes v_1, u_1\otimes v_2, u_2\otimes v_1$ and $u_2\otimes v_2$ are linearly independent.
 \end{exercise}
 \begin{proof}
 ~\begin{enumerate}[label=(\alph*)]
-    \item If $\dim U = \dim V = 2$, then we are done, since $\{u_1,u_2\}$ and $\{v_1,v_2\}$ are basis for $U$ and $V$ respectively. 
-    \item Otherwise, we assume $\dim U = m$ and $\dim V = n$. Then we can extend $\{u_1,u_2\}$ and $\{v_1,v_2\}$ into $\{u_1,\cdots,u_m\}$ and $\{v_1,\cdots,v_n\}$, which are basis for $U$ and $V$ respectively. Then it is obvious that $\{u_j\otimes v_j\}$ are linearly independent.
+    \item If $\dim  U = \dim  V = 2$, then we are done, since $\{u_1,u_2\}$ and $\{v_1,v_2\}$ are basis for $U$ and $V$ respectively. 
+    \item Otherwise, we assume $\dim  U = m$ and $\dim  V = n$. Then we can extend $\{u_1,u_2\}$ and $\{v_1,v_2\}$ into $\{u_1,\cdots,u_m\}$ and $\{v_1,\cdots,v_n\}$, which are basis for $U$ and $V$ respectively. Then it is obvious that $\{u_j\otimes v_j\}$ are linearly independent.
 \end{enumerate}
 \end{proof}
 
@@ -11788,7 +11871,7 @@ Show that $K$ is convex and find its gauge function $p_K$.
 \medskip
 
 \begin{exercise}
-Let $K$ be a bounded nonempty closed convex set of a linear space $X$ with $\dim X = n$. Suppose in addition that $K$ contains at least one interior point. Show that $K$ has at least $n+1$ extreme points. 
+Let $K$ be a bounded nonempty closed convex set of a linear space $X$ with $\dim  X = n$. Suppose in addition that $K$ contains at least one interior point. Show that $K$ has at least $n+1$ extreme points. 
 \end{exercise}
 \begin{proof}
 With Caratheodory theorem, we can know that every point in $K$ can be represented by at most $n+1$ extreme points, then we can know that $K$ at least $n+1$ extreme points.
@@ -11889,7 +11972,7 @@ With the norm of $A$ and the spectral radius $r(A)$, we have
 \begin{align*}
     \left|\lambda\right| \leq |r(A)| \leq \left\|A\right\| \leq \left\|A\right\|_{HS} = \left(\sum_{i,j}|a_{ij}|^2\right)^{\frac{1}{2}} \leq n,
 \end{align*}
-which implies that there exists a constant $\Lambda > 0$ such that $\left|\lambda\right| \leq \Lambda$.  
+which implies that there exists a constant $\Lambda > 0$ such that $\left|\lambda\right| \leq \Lambda$.
 \end{proof}
 
 
