@@ -11808,7 +11808,7 @@ Thus, letting $x_i = \max\{x_j\}^n_{j=1}$ and $\left|x_i\right| = 1$ gives
 Let $A, B$ be self-adjoint, and $\lambda_k, \mu_k$ are eigenvalues of $A$ and $B$. Prove that $\lambda_k < \mu_k$ may not imply $A < B$. 
 \end{exercise}
 \begin{proof}
-Take $A = \begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix}$ and $B = \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix}$, and then $B - A$ is not positive. 
+Take $B = \begin{pmatrix} 1 & 0 \\ 0 & 3 \end{pmatrix}$ and $A = \begin{pmatrix} 2 & 0 \\ 0 & 0 \end{pmatrix}$, and then $B - A$ is not positive. 
 \end{proof}
 
 \begin{remark}
@@ -11819,7 +11819,7 @@ If eigenvalues of $A$ and $B$ are arranged in decreasinig order and $\lambda_k <
 
 
 \begin{exercise}
-Let $V$ be a finitely dimensional real Euclidean space and let $B$ be a positive semidefinite linear map on $V$.
+Let $V$ be a finitely dimensional real Euclidean space and let $B$ be a linear map on $V$ such that for all $x \in V$, $(Bx,x) \geq 0$. ($B$ is not necessarily self-adjoint.)
 \begin{enumerate}[label=(\alph*)]
     \item Show that $(Bx, x) = 0$ implies $(Bx, y) + (x, By) = 0$ for all $y \in V$. {\bf Hint:} Consider the map $t \mapsto (B(x+ty), x+ty), t \in \mathbb{R}$.
     
@@ -11834,9 +11834,7 @@ Let $V$ be a finitely dimensional real Euclidean space and let $B$ be a positive
     \end{align*}
     and thus $\dv{}{t} f(t)|_{t=0}$ implies $(Bx, y) + (x, By) = 0$.
     
-    \item Since $B$ is also symmetric, then for any $x \in V$, $Bx = B^*x$, which implies $N_B = N_{B^*}$.
-    
-    Also, for any $x \in N_B$, $y \in R_B$, there exists a $z \in V$ such that $Bz = y$. Then, 
+    \item If $x \in N_B$, then $(Bx,y) = 0$, and by part (a), we have $(B^*x,y) = (x,By) = - (Bx,y) = 0$, hence $x \in N_{B*}$. Similar for the other direction. Hence we have $N_B = N_{B^*}$. Also, for any $x \in N_B$, $y \in R_B$, there exists a $z \in V$ such that $Bz = y$. Then, 
     \begin{align*}
         (x,y) = (x, Bz) = (B^*x, z) = 0,
     \end{align*}
