@@ -3743,7 +3743,7 @@ This norm is a matrix norm induced by vector norms, also called operator norm. W
 Let $A$ be a linear mapping from the Euclidean space $X$ into the
 Euclidean space $U$, where $\|A\|$ is its norm. Then, 
 \begin{enumerate}[label=(\alph*)]
-    \item For any $z\in X$, $\|Az\|\leq \left\|Az\right\|\cdot \|z\|$.
+    \item For any $z\in X$, $\|Az\|\leq \left\|A\right\|\cdot \|z\|$.
     \item $\left\|A\right\| = \sup_{\|x\| = \|z\| = 1} (x, Az)$.
 \end{enumerate}
 \end{theorem}
@@ -4039,7 +4039,7 @@ then $A^* = \overline{A^T}$ as matrix. Fix $y$, $(Ax, y)$ is linear in $X$. We c
 Then, for $A = (a_{ij})_{n\times n}:\mathbb{C}^n \to \mathbb{C}^n$, we have
 \begin{align*}
     (Ax, y) & = \sum_{1\leq i,j\leq n}a_{ij} x_j \overline{y_j} \\
-    & = \sum_{1\leq i,j\leq n}a_{ij} \overline{\overline{a_{ij}} y_i} \\
+    & = \sum_{1\leq i,j\leq n} x_j \overline{\overline{a_{ij}} y_i} \\
     & = (x, A^* y).
 \end{align*}
 
@@ -4052,14 +4052,14 @@ A linear mapping of a complex Euclidean space into itself is called unitary if i
 \medskip
 
 \begin{theorem}
-$M$ is unitary if and only if $M^*M = 1$. Hence, for a unitary map $M$, $$\left|\det M\right| = 1.$$
+$M$ is unitary if and only if $M^*M = I$. Hence, for a unitary map $M$, $$\left|\det M\right| = 1.$$
 \end{theorem}
 \begin{proof}
 ~\begin{enumerate}[label=(\arabic*)]
     \item ($\Rightarrow$) Since $M$ is isometric, then we have $(x,y) = (Mx, My) = (M^* M x, y)$, which implies $M^* M = I$.
     
     Also, $\det M \det M^* = 1$ and $\det M = \det \overline{M}^T = \overline{\dim  M}$. Thus, we have $|\det M| = 1$.
-    \item ($\Leftarrow$) If $M^*M = 1$, then we have
+    \item ($\Leftarrow$) If $M^*M = I$, then we have
     \begin{align*}
         (x,y) = (M^* M x, y) = (Mx, My)
     \end{align*}
@@ -4082,7 +4082,7 @@ For any $x\in \mathbb{C}^n$, we have
     & \leq \sum^n_{i=1} \left(\sum^n_{j=1}\left|a_{ij}\right|^2 \right) \left(\sum^n_{j=1} x_j^2 \right) \\
     & = \|x\| \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right),
 \end{align*}
-then we have $\left\|A\right\|\leq \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right)$.
+then we have $\left\|A\right\|\leq \left(\sum^n_{i=1}\sum^n_{j=1}\left|a_{ij}\right|^2 \right)^{1/2}$.
 \end{proof}
 
 \begin{definition}
@@ -4215,6 +4215,33 @@ We can have $r(A_1 A_2) = \lim_{k\to\infty} \left\|(A_1 A_2)^k\right\|^{1/k}$, a
     \left\|(A_1 A_2)^k\right\|^{1/k} \leq \left(\left\|A_1^k\right\|^{1/k} \right) \left(\left\|A_2^k\right\|^{1/k} \right),
 \end{align*}
 which implies $r(A_1 A_2) \leq r(A_1) r(A_2)$.
+\end{proof}
+
+\medskip
+
+Let's look at a similar result about spectral radius.
+
+\medskip
+
+\begin{exercise}
+Suppose $A$ and $B$ are normal complex matrices. Prove that 
+\begin{align*}
+    r(AB) \leq r(A)r(B),
+\end{align*}
+where $r(\cdot)$ is the spectral radius of a matrix.
+\end{exercise}
+\begin{proof}
+Since $A$ is normal, then it is unitarily diagonalizable, that is, there is a unitary matrix $U$ such that $A = U \Lambda U^*$, where $\Lambda$ is diagonal with diagonal entries being eigenvalues of $A$. Also,
+\begin{align*}
+    r(AB) = \max \left|\lambda(AB)\right| = \max_{\left\|x\right\|=1} \left|(x, ABx)\right| = \max_{\left\|x\right\|=1} \left|(x, U \Lambda U^*Bx)\right|.
+\end{align*}
+Suppose there is $\overline{x}$ such that $\left|(\overline{x}, U \Lambda U^*B\overline{x})\right| = r(AB)$, then let $\widetilde{x} = U^*\overline{x}$ and clearly $\left\|\widetilde{x}\right\| = 1$ since $U$ is unitary. Then, we have
+\begin{align*}
+    \left|(\overline{x}, U \Lambda U^*B\overline{x})\right| & = \left|(U^*\overline{x}, \Lambda U^*BU U^*\overline{x})\right| \\
+    & \leq \max \left|\lambda(A)\right| \left|(U^*\overline{x}, U^*BU U^*\overline{x})\right| \\
+    & = r(A) \left|(\widetilde{x}, U^*BU \widetilde{x})\right| \\
+    & \leq r(A) r(U^*BU) = r(A) r(B).
+\end{align*}
 \end{proof}
 
 
@@ -4921,8 +4948,7 @@ and we claim $A_{22}B_{22} = B_{22}A_{22}$. Then this process can continue.
 If $AB = BA$, then $r(A+B)\leq r(A)+r(B)$.
 \end{theorem}
 \begin{proof}
-With previous theorem, $A,B$ can be simultaneously upper diagonalized by a unitary matrix, then $A = UT_1U^*, B = UT_2U^*$, where $U_1, U_2$ are upper triangular matrix where the diagonal components are eigenvalues of $A$ and $B$. Then we have
-$A+b = U(T_1+T_2)U^*$, and 
+With previous theorem, $A,B$ can be simultaneously upper diagonalized by a unitary matrix, then $A = UT_1U^*, B = UT_2U^*$, where $T_1, T_2$ are upper triangular matrix where the diagonal components are eigenvalues of $A$ and $B$. Then we have $A+B = U(T_1+T_2)U^*$, and 
 \begin{align*}
     T_1+T_2 = \begin{pmatrix}
     \lambda_1 + \mu_1 &  &  \\
@@ -9806,6 +9832,66 @@ $\operatorname*{rank}A=1$.
 
 \medskip
 
+\begin{exercise}
+When for $n \times n$ matrix $T$, can we have a vector $v$ such that $\left\{T^kv\right\}^{n-1}_{k=0}$ form a basis for $\mathbb{C}^n$, i.e, $v$ is a cyclic vector?
+\end{exercise}
+\begin{proof}
+If and only if $m_T(\lambda) = p_T(\lambda)$, that is, the minimal polynomial is equal to the characteristic polynomial.
+
+If there exists a cyclic vector $v$, then $m_T(\lambda) = P_T(\lambda)$. Indeed, $\{T^{k}\}, 0 \leq k \leq n - 1$ does not annihilate $v$ and then the term with order less than $n$ in $m_T(\lambda)$ also does not annihilate $v$. Since $m_T(T)v = 0$, $m_T(\lambda)$ must have order more then $n - 1$, and it must be $n$. Hence $m_T(\lambda) = P_T(\lambda)$. 
+
+Conversely, suppose we have $m_T(\lambda) = P_T(\lambda)$. We have
+\begin{align*}
+    m_T(\lambda) = P_T(\lambda) = \prod^k_{j=1} \left(\lambda - \lambda_j\right)^{d_j},
+\end{align*}
+where $\lambda_j, 1 \leq j \leq k$ are distinct eigenvalues of $T$. For each $1 \leq j \leq k$, choose $v_j$ such that
+\begin{align*}
+    v_j \in N_{(T - \lambda_j)^{d_j}} \setminus N_{(T - \lambda_j)^{d_j - 1}}.
+\end{align*}
+Now we claim that $\left\{T^lv_j\right\}^{d_j-1}_{l=0}$ are linearly independent. Indeed, suppose that for some $c_l, 0 \leq l \leq d_j - 1$,
+\begin{align}\label{exercise1666_equ1}
+    \sum^{d_j-1}_{l=0} c_l T^lv_j = 0.
+\end{align}
+Applying $T^{d_j-1}$ on both sides of \eqref{exercise1666_equ1} gives $c_0 = 0$, and applying $T^{d_j-2}$ gives $c_1 = 0$. Continue this process and we have $c_l = 0, 0 \leq l \leq d_j - 1$, which proves the claim. 
+
+Now we define 
+\begin{align*}
+    v = \sum^k_{j=1} v_j,
+\end{align*}
+and we claim that this vector $v$ is the cyclic vector we desire. Similarly, we suppose there are $a_k, 0 \leq k \leq n - 1$ such that
+\begin{align*}
+    \sum^{n-1}_{k=0} a_k T^k v = 0.
+\end{align*}
+Then we have 
+\begin{align*}
+    0 = \sum^{n-1}_{k=0} a_k T^k \left(\sum^k_{j=1} v_j\right) = \sum^k_{j=1} \sum^{n-1}_{k=0} a_k T^k v_j,
+\end{align*}
+and since $\mathbb{C}^n = \bigoplus^k_{j=1} N_{(T-\lambda_j I)^{d_j}}$ and 
+\begin{align*}
+    \sum^{n-1}_{k=0} a_k T^k v_j \in N_{(T-\lambda_j I)^{d_j}},
+\end{align*}
+we have for each $j$,
+\begin{align*}
+    \sum^{n-1}_{k=0} a_k T^k v_j = 0.
+\end{align*}
+Hence we have
+\begin{align*}
+    p(T) = \sum^{n-1}_{k=0} a_k T^k = 0,
+\end{align*}
+since $\{v_i\}$ form a basis of $\mathbb{C}^n$. Since the order of $m_T$ is $n$, then $p(T)$ defined above is not the minimal polynomial and hence $a_k = 0, 0 \leq k \leq n - 1$. 
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $T$ be a square matrix. Show that $T$ is similar to $2T$ if and only if $T$ is nilpotent.
+\end{exercise}
+\begin{proof}
+Since $T$ is similar to $2T$, then $r(T) = r(2T)$, that is $T$ and $2T$ have the same spectral radius. Then $r(T) = r(2T) = 0$, and hence all eigenvalues of $T$ are zero, which implies that $T$ is nilpotent.
+\end{proof}
+
+\medskip
+
 \begin{exercise}\label{generalized_eigenvectors}
 Let $A_{k}$, $1\leq k\leq K$ be $n\times n$ matrices satisfying%
 $$
@@ -10408,6 +10494,47 @@ Find the Jordan canonical form of $T$.
 $V$ can be spanned by $\left\{1, x, x^2, x^3, y, y^2, y^3, xy, x^2y, xy^2\right\}$, then $\dim  V = 10$. And under operator $T$, the polynomial will become $\left\{0, 0, 0, 0, y, 2y^2, 3y^3, xy, x^2y, 2xy^2\right\}$. Then the matrix representing $T$ is diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$. So it the Jordan of $T$, which is also diagonal matrix with diagonal entries $0,0,0,0,1,2,3,1,1,2$.
 \end{proof}
 
+\medskip
+
+\begin{exercise}
+If $A, B$ are $2 \times 2$ complex matrices and not diagonalizable, then $A$ and $B$ can be simultaneously Jordanized if and only if $A - B$ is a multiple of the identity.
+\end{exercise}
+\begin{proof}
+Suppose that $A, B$ can be simultaneously Jordanized and $A, B$ are not diagonalizable, then there exists invertible matrix $P$ such that 
+\begin{align*}
+    A = P \begin{pmatrix}
+        \lambda & 1 \\
+        0 & \lambda
+    \end{pmatrix} P^{-1}, \quad B = P \begin{pmatrix}
+        \mu & 1 \\
+        0 & \mu
+    \end{pmatrix} P^{-1},
+\end{align*}
+and hence 
+\begin{align*}
+    A - B = P (\lambda - \mu) I P^{-1} = (\lambda - \mu) I.
+\end{align*}
+Conversely, it is obvious.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+If $AB = BA$, can $A, B$ be simultaneously Jordanized?
+\end{exercise}
+\begin{proof}
+No. For example, 
+\begin{align*}
+    A = \begin{pmatrix}
+        0 & 1 \\
+        0 & 0
+    \end{pmatrix}, \quad B = \begin{pmatrix}
+        0 & 2 \\
+        0 & 0
+    \end{pmatrix}.
+\end{align*}
+\end{proof}
+
 
 \medskip
 
@@ -10441,11 +10568,67 @@ Consider Jordan canonical form and each Jordan block.
 
 \medskip
 
-\begin{exercise} 
+\begin{exercise}\label{exercise_16627}
 Suppose $A^3$ is a unitary matrix. Prove that $A$ is diagonalizable.
 \end{exercise}
 \begin{proof}
 Since $A^3$ is unitary matrix, then of course $A^3$ is normal matrix, thus diagonalizable. Suppose $A^3 = S \Lambda_1 S^*$, where $S$ is unitary and $\Lambda_1$ is diagonal with diagonal entries $\lambda_1, \cdots, \lambda_m$. Then, consider diagonal matrix $\Lambda_2$ with diagonal entries $\sqrt[3]{\lambda_1}, \cdots, \sqrt[3]{\lambda_m}$, and it follows that $A = S \Lambda_2 S^*$. Hence, $A$ is also diagonalizable since $\lambda_i^3 \neq \lambda_j^3$ implies $\lambda_i \neq \lambda_j$ \cite{22}.
+\end{proof}
+
+\medskip
+
+\begin{proof}[Second Proof of Exercise \ref{exercise_16627}]
+Since $A^3$ is diagonalizable, its minimal polynomial is
+\begin{align*}
+    m_{A^3}(\lambda) = \prod^k_{j=1} (\lambda - \lambda_j),
+\end{align*}
+where $\lambda_j, 1 \leq j \leq k$ are distinct eigenvalues of $A^3$. Hence, 
+\begin{align*}
+    0 = \prod^k_{j=1} \left(A^3 - \lambda_j I\right) = \prod^k_{j=1} \prod^3_{i=1} \left(A - \mu^i_j I\right),
+\end{align*}
+where $\mu^i_j, i = 1,2,3$ are distinct cube roots of $\lambda_j$. We claim that $\mu^i_j, 1 \leq i \leq 3, 1 \leq j \leq k$ are all distinct. Since $p_A(A) = 0$ for
+\begin{align*}
+    p_A(\lambda) = \prod^k_{j=1} \prod^3_{i=1} \left(\lambda - \mu^i_j\right),
+\end{align*}
+we have $m_A(\lambda)$ divides $p_A(\lambda)$ and hence is a product of distinct linear factors. Thus $A$ is diagonalizable.
+\end{proof}
+
+\medskip
+
+\begin{exercise}
+Let $A$ and $B$ be complex $n \times n$ matrices. Prove or disprove:
+\begin{enumerate}[label=(\alph*)]
+    \item If $A$ and $B$ are diagonalizable, so is $AB$.
+    
+    \item If $A^2 = A$, then $A$ is diagonalizable.
+    
+    \item If $A$ is invertible and $A^2$ is diagonalizable, then $A$ is diagonalizable.
+\end{enumerate}
+\end{exercise}
+\begin{proof}
+~\begin{enumerate}[label=(\alph*)]
+    \item No. Consider
+    \begin{align*}
+        A = \begin{pmatrix}
+            1 & 1 \\ 0 & 2
+        \end{pmatrix}, \quad 
+        B = \begin{pmatrix}
+            2 & 0 \\ 0 & 1
+        \end{pmatrix}.
+    \end{align*}
+    
+    \item True. Since $A(A - I) = 0$, we have $m_A(\lambda)$ divides $\lambda(\lambda - 1)$, and then $m_A(\lambda)$ distinct roots. Hence $A$ is diagonalizable.
+    
+    \item True. Since $A$ is invertible, all eigenvalues of $A$ are nonzero. Since $A^2$ is diagonalizable, then the minimal polynomial of $A^2$ is 
+    \begin{align*}
+        m_{A^2}(\lambda) = \prod^k_{j=1} \left(\lambda - \lambda_j\right),
+    \end{align*}
+    where $\lambda_j, 1 \leq j \leq k$ are distinct eigenvalues of $A^2$. Then we have 
+    \begin{align*}
+        0 = \prod^k_{j=1} \left(A^2 - \lambda_j I\right) = \prod^k_{j=1} \left(A - \sqrt{\lambda_j} I\right)  \left(A + \sqrt{\lambda_j} I\right),
+    \end{align*}
+    where $\sqrt{\lambda_j} \neq - \sqrt{\lambda_j}$ since $\lambda_j \neq 0$. Thus $A$ is diagonalizable.
+\end{enumerate}
 \end{proof}
 
 \medskip
@@ -10558,9 +10741,9 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 
 \begin{exercise} \label{commute_with_all_matrix}
 ~\begin{enumerate}[label=(\alph*)]
-    \item Let $A$ be an $n \times n$ complex symmetric matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
+    \item Let $A$ be an $n \times n$ invertible matrix which commutes with all $n \times n$ orthogonal matrices. Show that $A = kI$ for some scalar $k$.
     
-    \item Let $A$ be an $n \times n$ orthogonal matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
+    \item Let $A$ be an $n \times n$ invertible matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
     
     \item Let $A$ be an invertible $n \times n$ real matrix which commutes with all $n \times n$ matrices. Show that $A = kI$ for some scalar $k$.
 \end{enumerate}
@@ -10568,13 +10751,17 @@ Suppose $A$ and $B$ are $2 \times 2$ nilpotent matrices. Prove that $AB$ is diag
 \begin{proof}
 For any $A, B$, such that $AB = BA$, $A: N_{B - \lambda I} \to N_{B - \lambda I}$, where $\lambda$ is eigenvalue of $B$. If $N_{B - \lambda I} \neq \{0\}$, then there exists an eigenvector of $A$ in $N_{B - \lambda I}$. If $\dim  N_{B - \lambda I} = 1$, then for any nonzero $v \in N_{B - \lambda I}$ is an eigenvector of $A$.
 
-Claim: any nonzero vector is an eigenvector for $A$. For any real $v \neq 0$, need to find $Q$, so that $Qv = \mu v$, and $N_{Q-\mu I} = {\rm span}\{v\}$, where $\mu$ is eigenvalue of $Q$. Then, $v$ is an eigenvector of $A$. 
-
-Claim: $A = kI$, if any vector $y \neq 0$ is an eigenvector. Suppose $\lambda_1 \neq \lambda_2$ such that
+Claim: any nonzero vector is an eigenvector for $A$. For any real vector $v \neq 0$, we want to find a reflection matrix $Q$ such that $Qv = -v$, and for any $w \in \mathbb{R}^n$ such that $(w,v) = 0$, $Qw = w$, then 
 \begin{align*}
-    Av_1 = \lambda_1 v_1, \quad Av_2 = \lambda_2 v_2,
+    Q = I - 2 v v^T,
 \end{align*}
-then $v_1 + v_2$ is not an eigenvector. Otherwise, $v_1$ and $v_2$ are linearly dependent, which is a contraction. Thus, $A = kI$.
+and hence $N_{Q - I} = \operatorname{span} \{v\}$. 
+
+Since any nonzero vector is an eigenvector for $A$, we have $Ae_i = \lambda_i e_i$ if choose the standard basis, which implies $A$ is a diagonal matrix with diagonal entries $\lambda_1, \cdots, \lambda_n$. Also, $e_i - e_j$ is an eigenvector of $A$, we have 
+\begin{align*}
+    A (e_i - e_j) = \lambda (e_i - e_j) = \lambda_i e_i - \lambda_j e_j,
+\end{align*}
+for some $\lambda$, and hence $\lambda_i = \lambda_j = \lambda$ for $i \neq j$. Thus, $A = \lambda I$.
 \end{proof}
 \begin{remark}
 This argument works for $(b)$ and $(c)$, and for part $(a)$, we can split complex matrix $A$ into two parts $\Im A$ and $\Re A$ and this argument works.
@@ -10719,7 +10906,7 @@ Suppose $v_1, v_2, \cdots, v_k$ are nonzero vectors in $\mathbb{R}^n$ such that 
 \begin{proof}
 Claim: $k = n + 1$. 
 
-Indeed, suppose there exists $v_{n+2}$. Since $v_1, \cdots, v_{n+1}$ are linearly independent, then by previous problem, there exists nonnegative $c_1, \cdots, c_{n+1}$ such that
+Indeed, suppose there exists $v_{n+2}$. Since $v_1, \cdots, v_{n+1}$ are linearly dependent, then by previous problem, there exists nonnegative $c_1, \cdots, c_{n+1}$ such that
 \begin{align*}
     \sum^{n+1}_{j=1} c_j v_k = 0,
 \end{align*}
@@ -10786,7 +10973,7 @@ Hence, $|t_i|^2 = |t_j|^2$. Then, $Te_1, \cdots, Te_n$ are orthogonal vectors wi
 
 \medskip
 
-\begin{exercise}{\rm *}
+\begin{exercise} 
 Suppose $A$ and $B$ are orthogonal projections in a finite-dimensional complex inner product space $V$. Suppose for some vector $x \in V$, we have
 $ABx = x$. Prove that $Ax = Bx = x$.
 \end{exercise}
@@ -10932,7 +11119,7 @@ Then,
 
 \medskip
 
-\begin{exercise}{\rm *}
+\begin{exercise} 
 Let $\|\cdot \|$ be a norm on $\mathbb{R}^n$ and let $P$ be an $n \times n$ invertible, real matrix. Define the new norm 
 \begin{align*}
     \|x\|_P = \left\|P^{-1}x\right\|.
@@ -11169,7 +11356,7 @@ Since $A$ is normal matrix, then we have $\left\|A\right\| = r(A)$. Also, we hav
 
 \medskip
 
-\begin{exercise}{\rm *}
+\begin{exercise} 
 Let $A$ be an invertible real symmetric matrix and $B$ a real anti-symmetric matrix such that $AB = BA$. Show that $A + B$ is invertible.
 \end{exercise}
 \begin{proof}
@@ -11186,7 +11373,7 @@ Let $A$ be an invertible real symmetric matrix and $B$ a real anti-symmetric mat
 
 \medskip
 
-\begin{exercise}{\rm *}
+\begin{exercise} 
 Prove or disprove: Complex square matrices $AA^*$ and $A^*A$ are always unitarily similar.
 \end{exercise}
 \begin{proof}
@@ -11289,32 +11476,6 @@ Let $\big\langle \cdot, \cdot\big\rangle$ be non-degenerate, symmetric bilinear 
 
 \medskip
 
-\begin{exercise}{\rm *}
-Let $S$ be the space of all $n \times n$ real skew symmetric matrices and let $A$ be a real invertible matrix, consider the linear map $T_A: S \to S$ defined by 
-\begin{align*}
-    T_A(S) = ASA^T.
-\end{align*}
-Find $\det \left(T_A\right)$. \\
-{\bf Hint.} First consider the cases when $A$ is orthogonal and when $A$ is symmetric.
-\end{exercise}
-\begin{proof}
-First, $\dim  S = n(n-1)/2$. Second, 
-\begin{align*}
-    T_A T_B (S) = A B S B^T A^T = T_{AB}(S),
-\end{align*}
-implies $\det \left(T_{AB}\right) = \det \left(T_A\right) \det \left(T_B\right)$. With these properties, we have
-\begin{align*}
-    \det \left(T_{A^{-1}}\right) \det \left(T_{A}\right) = \det \left(T_{I}\right) = 1,
-\end{align*}
-and if $A = P B P^{-1}$, then 
-\begin{align*}
-    \det \left(T_{A}\right) = \det \left(T_{B}\right).
-\end{align*}
-Using QR decomposition, $A$ can be written as a product of one orthogonal matrix and one real symmetric matrix.
-\end{proof}
-
-\medskip
-
 \begin{exercise}
 Let $A$ be a $2\times 2$ complex matrix. Show that $\left\|A\right\| = r(A)$ if and only if $A$ is normal. Show that the statement is not true if $A$ is an $n\times n$ matrix with $n \geq 3$.
 \end{exercise}
@@ -11355,7 +11516,7 @@ Let $A$ be a $2\times 2$ complex matrix. Show that $\left\|A\right\| = r(A)$ if 
 
 \medskip
 
-\begin{exercise}{\rm *}
+\begin{exercise} 
 Let $A,B$ be $n \times n$ matrices. Suppose $A$ is a Hermitian matrix.
 \begin{enumerate}[label=(\alph*)]
     \item Show that $A^{2015}B = B A^{2015}$ implies that $A^{2014}B = B A^{2014}$.
@@ -11458,7 +11619,7 @@ Since $(n-1)(n-2)/2 + (n-1) = n(n-1)/2 = \dim  S$, then we find all the eigenval
 
 \medskip
 
-\begin{exercise}{\bf (August 2018 Prelim)}{\rm *}
+\begin{exercise}{\bf (August 2018 Prelim)} 
 For an invertible matrix $P \in \mathbb{R}^{n \times n}$, let $T_P: \mathbb{R}^{n \times n} \to \mathbb{R}^{n \times n}$ be the linear map defined by $T_P(M):= PMP^{-1}$ for any $M \in \mathbb{R}^{n \times n}$.
 \begin{enumerate}[label=(\alph*)]
     \item For an orthogonal matrix $O$, show that the space $S(n) \subset \mathbb{R}^{n \times n}$ of symmetric $n \times n$ matrices is invariant under $T_O$.
